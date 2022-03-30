@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/species-distribution-modeling/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/species-distribution-modeling/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/species-distribution-modeling/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/species-distribution-modeling/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/species-distribution-modeling/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/species-distribution-modeling/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/species-distribution-modeling/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/species-distribution-modeling/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/species-distribution-modeling/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/species-distribution-modeling/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/species-distribution-modeling/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fecology%2Ftutorials%2Fspecies-distribution-modeling%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-09-02 13:13:55 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Species distribution modeling",
   "interactivityType": "mixed",
@@ -386,15 +386,27 @@
     <h1 data-toc-skip>Species distribution modeling</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/emichn/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/emichn" alt="Avatar">Elisa Michon</a> <a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/yvanlebras" alt="Avatar">Yvan Le Bras</a> <a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/bebatut" alt="Avatar">Bérénice Batut</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/emichn/" class="contributor-badge contributor-emichn"><img src="https://avatars.githubusercontent.com/emichn?s=27" alt="Avatar">Elisa Michon</a>
+
+
+<a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge contributor-yvanlebras"><img src="https://avatars.githubusercontent.com/yvanlebras?s=27" alt="Avatar">Yvan Le Bras</a>
+
+
+<a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="https://avatars.githubusercontent.com/bebatut?s=27" alt="Avatar">Bérénice Batut</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -470,8 +482,35 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/ecology/tutorials/species-distribution-modeling/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -560,17 +599,19 @@
         
     
         
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
         
     
         
+    
+        
         <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
             Galaxy@GenOuest
         </a>
-        
-    
         
     
         
@@ -666,6 +707,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
+        
     
         
         <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
@@ -673,6 +718,10 @@
         </a>
         
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
+            UseGalaxy.fr
+        </a>
         
     
         
@@ -705,9 +754,11 @@
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Sep 2, 2021 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Nov 13, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -719,6 +770,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>Species Distribution Modeling (SDM) can help understand the distribution of a species depending on its environment. It can also attempt to quantify the impact of climate change on the species habitat, direct conservation efforts and predict invasive species distributions. This is done by associating data of species occurrences (observations) with a set of environmental data (such as temperature and precipitation).</p>
@@ -780,7 +833,7 @@
   <h3 id="question-questions"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
   <ol>
     <li>What do the lines in the files represent?</li>
-    <li>What are the columns 1, 2, 3 and 51 of the generated file?</li>
+    <li>What are the columns 1, 2, 3 and 54 of the generated file?</li>
   </ol>
 
   <blockquote class="solution">
@@ -799,7 +852,7 @@
   <ol>
     <li><strong>Cut columns</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
       <ul>
-        <li><em>“Cut columns”</em>: <code class="language-plaintext highlighter-rouge">c1,c2,c3,c51</code></li>
+        <li><em>“Cut columns”</em>: <code class="language-plaintext highlighter-rouge">c1,c2,c3,c54</code></li>
         <li><em>“Delimited by”</em>: <code class="language-plaintext highlighter-rouge">Tab</code></li>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“From”</em>: output of <strong>Get species occurrences data</strong></li>
       </ul>
@@ -822,7 +875,7 @@
 
         <blockquote class="solution">
           <h3 id="solution-solution-1"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
-          <p>64.55% of the occurrences (6,456) are conserved</p>
+          <p>63.06% of the occurrences (6,306) are conserved</p>
         </blockquote>
       </blockquote>
     </li>
@@ -1029,7 +1082,7 @@
       <li>
         <p>Checkerboard 2 (k=4): four bins are used according to the position of the occurrence on the grid. This require an aggregation factor, which is the size of a second grid put on a first one. For example, with a factor 4, the grids size will be 4x4</p>
 
-        <figure id="figure-1"><img src="../../images/species-distribution-modeling/Checkerboard.png" alt="Checkerboard 2" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Example of checkerboard (k=4) with a factor 4. Source: doi:10.0.4.87/2041-210X.12261</figcaption></figure>
+        <figure id="figure-1"><img src="../../images/species-distribution-modeling/Checkerboard.png" alt="Checkerboard 2. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Example of checkerboard (k=4) with a factor 4. Source: doi:10.0.4.87/2041-210X.12261</figcaption></figure>
       </li>
     </ol>
   </li>
@@ -1059,7 +1112,7 @@
 <p>Wallace can build different models using either:</p>
 
 <ol>
-  <li>The presence-only approach BIOCLIM (Module BIOCLIM) (<a class="citation" href="#booth2018">Booth 2018</a>)</li>
+  <li>The presence-only approach BIOCLIM (Module BIOCLIM) (<span class="citation"><a href="#booth2018">Booth 2018</a></span>)</li>
   <li>The presence-background (presence-pseudo absence) algorithm Maxent (Module Maxent)</li>
 </ol>
 
@@ -1103,7 +1156,7 @@
   </ol>
 </blockquote>
 
-<p><img src="../../images/species-distribution-modeling/bioclim_enveloppe_plots.png" alt="temperature vs annual precipitation" loading="lazy" /></p>
+<p><img src="../../images/species-distribution-modeling/bioclim_enveloppe_plots.png" alt="temperature vs annual precipitation. " loading="lazy" /></p>
 
 <p>The optimum environmental parameters for this species (represented in green) is between 5°C and 15°C (on the graph, values are x10) with an annual precipitation between approximately 700mm and 1250mm.</p>
 
@@ -1126,7 +1179,7 @@
   </ol>
 </blockquote>
 
-<p><img src="../../images/species-distribution-modeling/map_prediction.png" alt="map prediction" loading="lazy" /></p>
+<p><img src="../../images/species-distribution-modeling/map_prediction.png" alt="map prediction. " loading="lazy" /></p>
 
 <!-- **TODO: comment the output / add a question to explain why the next step** -->
 
@@ -1178,7 +1231,7 @@
   </ol>
 </blockquote>
 
-<p><img src="../../images/species-distribution-modeling/GCM_CCSM4_RCP_2.6.png" alt="CCM4 with a 2.6 RCP" loading="lazy" /></p>
+<p><img src="../../images/species-distribution-modeling/GCM_CCSM4_RCP_2.6.png" alt="CCM4 with a 2.6 RCP. " loading="lazy" /></p>
 
 <p>We would like now to compare the prediction for RCP value of 8.5 <!--(**TODO: what does that represent?**)-->.</p>
 
@@ -1198,7 +1251,7 @@
   </ol>
 </blockquote>
 
-<p><img src="../../images/species-distribution-modeling/GCM_CCSM4_RPC_8.5.png" alt="CCM4 with a 8.5 RCP" loading="lazy" /></p>
+<p><img src="../../images/species-distribution-modeling/GCM_CCSM4_RPC_8.5.png" alt="CCM4 with a 8.5 RCP. " loading="lazy" /></p>
 
 <!-- **TODO: comment the output / add a question to compare the 2 predictions**
 
@@ -1213,9 +1266,9 @@
   <h3 id="details-some-useful-references"><i class="fas fa-info-circle" aria-hidden="true"></i><span class="visually-hidden">details</span> Some useful references</h3>
 
   <ul>
-    <li>Predicting species distributions for conservation decisions (<a class="citation" href="#guisan2013">Guisan <i>et al.</i> 2013</a>).</li>
-    <li>BIOCLIM: the first species distribution modelling package, its early applications and relevance to most current MAXENT studies. Diversity and Distributions (<a class="citation" href="#booth2018">Booth 2018</a>).</li>
-    <li>ENMeval: An R package for conducting spatially independent evaluations and estimating optimal model complexity for MAXENT ecological niche models. (<a class="citation" href="#muscarella2014">Muscarella <i>et al.</i> 2014</a>).</li>
+    <li>Predicting species distributions for conservation decisions (<span class="citation"><a href="#guisan2013">Guisan <i>et al.</i> 2013</a></span>).</li>
+    <li>BIOCLIM: the first species distribution modelling package, its early applications and relevance to most current MAXENT studies. Diversity and Distributions (<span class="citation"><a href="#booth2018">Booth 2018</a></span>).</li>
+    <li>ENMeval: An R package for conducting spatially independent evaluations and estimating optimal model complexity for MAXENT ecological niche models. (<span class="citation"><a href="#muscarella2014">Muscarella <i>et al.</i> 2014</a></span>).</li>
   </ul>
 
   <p><a href="http://www.ipcc-data.org/guidelines/pages/gcm_guide.html">Here</a> for informations on Global Circulation Model(GCM), how it’s done what is taken in consideration and more.</p>
@@ -1239,7 +1292,7 @@
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/ecology/faqs/">FAQ page for the Ecology topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/ecology/faqs/">FAQ page for the Ecology topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1250,30 +1303,17 @@
 
                 
                 <h1 id="bibliography">References</h1>
-                <ol class="bibliography"><li><span id="guisan2013">Guisan, A., R. Tingley, J. B. Baumgartner, I. Naujokaitis-Lewis, P. R. Sutcliffe <i>et al.</i>, 2013 <b>Predicting species distributions for conservation decisions</b>. Ecology letters 16: 1424–1435.</span>
-    
-    
-    
-
-</li>
-<li><span id="muscarella2014">Muscarella, R., P. J. Galante, M. Soley-Guardia, R. A. Boria, J. M. Kass <i>et al.</i>, 2014 <b>ENM eval: An R package for conducting spatially independent evaluations and estimating optimal model complexity for Maxent ecological niche models</b>. Methods in Ecology and Evolution 5: 1198–1205.</span>
-    
-    
-    
-
-</li>
-<li><span id="booth2018">Booth, T., 2018 <b>BIOCLIM–the first species distribution modelling package</b>.</span>
-    
-    
-    
-
-</li></ol>
+                <ol class="bibliography"><li id="guisan2013">Guisan, A., R. Tingley, J. B. Baumgartner, I. Naujokaitis-Lewis, P. R. Sutcliffe <i>et al.</i>, 2013 <b>Predicting species distributions for conservation decisions</b>. Ecology letters 16: 1424–1435.</li>
+<li id="muscarella2014">Muscarella, R., P. J. Galante, M. Soley-Guardia, R. A. Boria, J. M. Kass <i>et al.</i>, 2014 <b>ENM eval: An R package for conducting spatially independent evaluations and estimating optimal model complexity for Maxent ecological niche models</b>. Methods in Ecology and Evolution 5: 1198–1205.</li>
+<li id="booth2018">Booth, T., 2018 <b>BIOCLIM–the first species distribution modelling package</b>.</li></ol>
                 
 
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
@@ -1326,8 +1366,8 @@
 author = "Elisa Michon and Yvan Le Bras and Bérénice Batut",
 title = "Species distribution modeling (Galaxy Training Materials)",
 year = "2021",
-month = "09",
-day = "02"
+month = "11",
+day = "13"
 url = "\url{https://training.galaxyproject.org/training-material/topics/ecology/tutorials/species-distribution-modeling/tutorial.html}",
 note = "[Online; accessed TODAY]"
 }

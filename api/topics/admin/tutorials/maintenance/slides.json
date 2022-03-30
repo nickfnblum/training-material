@@ -1,0 +1,85 @@
+{
+  "layout": "tutorial_slides",
+  "logo": "assets/images/gat.png",
+  "video": true,
+  "title": "Server Maintenance and Backups",
+  "zenodo_link": "",
+  "questions": [
+    "How do I maintain a Galaxy server?",
+    "What happens if I lose everything?"
+  ],
+  "objectives": [
+    "Learn about different maintenance steps",
+    "Learn what to back up and how to recover"
+  ],
+  "time_estimation": "30m",
+  "key_points": [
+    "Use configuration management (e.g. Ansible)",
+    "Store configuration management in git",
+    "Back up the parts of Galaxy that can't be recreated"
+  ],
+  "contributors": [
+    {
+      "name": "Nate Coraor",
+      "gitter": "natefoo",
+      "twitter": "natefoo",
+      "email": "nate@bx.psu.edu",
+      "joined": "2017-12",
+      "id": "natefoo",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/natefoo.json"
+    },
+    {
+      "name": "Björn Grüning",
+      "email": "bjoern.gruening@gmail.com",
+      "twitter": "bjoerngruening",
+      "gitter": "bgruening",
+      "orcid": "0000-0002-3079-6586",
+      "linkedin": "bgruening",
+      "joined": "2017-09",
+      "id": "bgruening",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/bgruening.json"
+    },
+    {
+      "name": "Simon Gladman",
+      "email": "simon.gladman@unimelb.edu.au",
+      "joined": "2017-09",
+      "id": "slugger70",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/slugger70.json"
+    },
+    {
+      "name": "Helena Rasche",
+      "email": "helena.rasche@gmail.com",
+      "orcid": "0000-0001-9760-8992",
+      "maintainer_contact": "gitter",
+      "gitter": "hexylena",
+      "joined": "2017-09",
+      "id": "hexylena",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
+    }
+  ],
+  "subtopic": "maintenance",
+  "last_modified_at": "2022-03-01T12:21:57+00:00",
+  "url": "/topics/admin/tutorials/maintenance/slides.html",
+  "topic_name": "admin",
+  "tutorial_name": "maintenance",
+  "hands_on": false,
+  "slides": true,
+  "tools": [
+
+  ],
+  "tours": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": true
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/maintenance/slides.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/maintenance/slides.json"
+  }
+}

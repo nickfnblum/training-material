@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/transcriptomics/tutorials/scrna-umis/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/transcriptomics/tutorials/scrna-umis/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/transcriptomics/tutorials/scrna-umis/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/transcriptomics/tutorials/scrna-umis/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/transcriptomics/tutorials/scrna-umis/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/transcriptomics/tutorials/scrna-umis/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/transcriptomics/tutorials/scrna-umis/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/transcriptomics/tutorials/scrna-umis/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/transcriptomics/tutorials/scrna-umis/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/transcriptomics/tutorials/scrna-umis/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/transcriptomics/tutorials/scrna-umis/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Ftranscriptomics%2Ftutorials%2Fscrna-umis%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-03-23 18:28:07 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Understanding Barcodes",
   "interactivityType": "mixed",
@@ -362,20 +362,6 @@
     },
     {
       "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/sequence-analysis/tutorials/quality-control/slides.html",
-      "name": "Quality Control",
-      "description": "Slides for 'Quality Control' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
       "url": "https://training.galaxyproject.org//training-material/topics/sequence-analysis/tutorials/mapping/slides.html",
       "name": "Mapping",
       "description": "Slides for 'Mapping' tutorial",
@@ -404,20 +390,6 @@
     },
     {
       "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/sequence-analysis/tutorials/mapping/slides.html",
-      "name": "Mapping",
-      "description": "Slides for 'Mapping' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
       "url": "https://training.galaxyproject.org//training-material/topics/transcriptomics/tutorials/scrna-preprocessing/slides.html",
       "name": "Dealing with Cross-Contamination in Fixed Barcode Protocols",
       "description": "Slides for 'Dealing with Cross-Contamination in Fixed Barcode Protocols' tutorial",
@@ -436,20 +408,6 @@
       "name": "Pre-processing of Single-Cell RNA Data",
       "description": "Hands-on for 'Pre-processing of Single-Cell RNA Data' tutorial",
       "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/transcriptomics/tutorials/scrna-preprocessing/slides.html",
-      "name": "Dealing with Cross-Contamination in Fixed Barcode Protocols",
-      "description": "Slides for 'Dealing with Cross-Contamination in Fixed Barcode Protocols' tutorial",
-      "learningResourceType": "slides",
       "interactivityType": "expositive",
       "provider": {
         "@type": "Organization",
@@ -496,15 +454,21 @@
     <h1 data-toc-skip>Understanding Barcodes</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/mtekman/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/mtekman" alt="Avatar">Mehmet Tekman</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/mtekman/" class="contributor-badge contributor-mtekman"><img src="https://avatars.githubusercontent.com/mtekman?s=27" alt="Avatar">Mehmet Tekman</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -643,6 +607,10 @@
                         
                     
                         
+                    
+                        
+                    
+                        
                             
                             <li> Pre-processing of Single-Cell RNA Data:
                             
@@ -655,6 +623,8 @@
                                 
                             
                             </li>
+                        
+                    
                         
                     
                         
@@ -714,7 +684,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://zenodo.org/record/2573177">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/2573177">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -726,8 +696,58 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/transcriptomics/tutorials/scrna-umis/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+  <li class="btn btn-default supporting_material">
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Recordings
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+
+        
+        
+        
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/transcriptomics/scrna-umis/tutorial" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (March 2021)
+            </a>
+        </li>
+        
+        
+        
+    </ul>
+   </li>
+   
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -755,7 +775,9 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 23, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -767,6 +789,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>Barcodes are small oligonucleotides that are inserted into the captured sequence at a specific point, and provide two pieces of information about the sequence:</p>
@@ -788,7 +812,7 @@
 
 <p>In this case; <em>Read1</em> contains the barcoding information followed by the polyT tail of the messenger <span class="notranslate">RNA</span>, and <em>Read2</em> contains the actual sequence. Here, Read1 is regarded as the ‘forward’ strand and Read2 as the ‘reverse’ strand, though this is more a convention when dealing with paired-end data rather than an indication of the actual strand orientation.</p>
 
-<figure id="figure-1"><img src="../../images/celseq2_schema.svg" alt="CEL-Seq2 Scheme" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Read1 encapsulates the barcodes, and Read2 the m<span class="notranslate">RNA</span> sequence</figcaption></figure>
+<figure id="figure-1"><img src="../../images/celseq2_schema.svg" alt="CEL-Seq2 Scheme. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Read1 encapsulates the barcodes, and Read2 the m<span class="notranslate">RNA</span> sequence</figcaption></figure>
 
 <blockquote class="agenda">
   <h3 id="agenda">Agenda</h3>
@@ -819,11 +843,11 @@
 
 <p>Cell barcodes are designed primarily for delineating one cell from another, such that read transcripts containing different cell barcodes can be trivially said to be derived from different cells.</p>
 
-<figure id="figure-2"><img src="../../images/scrna_pbb_barcodes_add.svg" alt="Cell Barcodes" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Two separate cell barcodes GGG and TCT, added to all read transcripts of two different cells</figcaption></figure>
+<figure id="figure-2"><img src="../../images/scrna_pbb_barcodes_add.svg" alt="Cell Barcodes. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Two separate cell barcodes GGG and TCT, added to all read transcripts of two different cells</figcaption></figure>
 
 <p>Transcript barcodes, meanwhile, are random sets of nucleotides added to each transcript.</p>
 
-<figure id="figure-3"><img src="../../images/scrna_umi_add.svg" alt="Transcript Barcodes" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> Random oligonucleotides barcodes added to (cell barcoded) <span class="notranslate">reads</span></figcaption></figure>
+<figure id="figure-3"><img src="../../images/scrna_umi_add.svg" alt="Transcript Barcodes. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> Random oligonucleotides barcodes added to (cell barcoded) <span class="notranslate">reads</span></figcaption></figure>
 
 <p>There are two things to take note of:</p>
 
@@ -884,7 +908,7 @@
 
 <h2 id="naive-amplification">Naive Amplification</h2>
 
-<figure id="figure-4"><img src="../../images/scrna_amplif_errors.svg" alt="Amplification Bias" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> A cell with two <span class="notranslate">reads</span> from different transcripts being amplified unevenly</figcaption></figure>
+<figure id="figure-4"><img src="../../images/scrna_amplif_errors.svg" alt="Amplification Bias. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> A cell with two <span class="notranslate">reads</span> from different transcripts being amplified unevenly</figcaption></figure>
 
 <p>Consider the above example where two <span class="notranslate">reads</span> from different transcripts are amplified unevenly. The resulting frequency table would yield:</p>
 
@@ -916,7 +940,7 @@ How do we correct for this bias?</p>
 
 <p><strong>Unique Molecular Identifiers</strong> (or <em>UMIs</em>) constitute the second portion of a barcode, where their role is to <em>uniquely</em> count <span class="notranslate">reads</span> such that amplicons of the same read are only counted once, e.g:</p>
 
-<figure id="figure-5"><img src="../../images/scrna_amplif_errors_umis.svg" alt="Amplification Bias with UMIs" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> A cell with four unique transcripts, two from Gene Red and two from Gene Blue</figcaption></figure>
+<figure id="figure-5"><img src="../../images/scrna_amplif_errors_umis.svg" alt="Amplification Bias with UMIs. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> A cell with four unique transcripts, two from Gene Red and two from Gene Blue</figcaption></figure>
 
 <p>Here, we see two unique transcripts from Gene Red and two unique transcripts from Gene Blue, each given a (coloured) UMI. After amplification, Gene Red has more <span class="notranslate">reads</span> than Gene Blue. If we were to construct a frequency table as before to count the <span class="notranslate">reads</span>, we would have:</p>
 
@@ -1106,7 +1130,7 @@ https://zenodo.org/record/2573177/files/test_barcodes_celseq2_R2.fastq.gz
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
       <p><br /></p>
     </li>
     <li>Build a <em>Dataset pair</em> for the two FASTQ files <!-- cannot force this to count from 3 -->
@@ -1169,7 +1193,7 @@ J00182:75:HTKJNBBXX:2:1115:8501:46961
       <p>Change the datatypes of the output pair to <code class="language-plaintext highlighter-rouge">fastqsanger</code> if not already set.</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select  your desired datatype</li>  <li>Click the <strong>Change datatype</strong> button</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select  your desired datatype</li>  <li>Click the <strong>Save</strong> button</li></ul></blockquote>
     </li>
     <li>Viewing our 4 <span class="notranslate">reads</span> side-by-side
       <ul>
@@ -1316,7 +1340,7 @@ A-77AA-7FF&lt;7FFJFFFJJJJJJJJJJJJJ-AFJJJJJJJFJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
   </ol>
 </blockquote>
 
-<figure id="figure-6"><img src="../../images/scrna_barcodes_fastq.png" alt="FastQC Plot" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> FastQC plot of Forward read</figcaption></figure>
+<figure id="figure-6"><img src="../../images/scrna_barcodes_fastq.png" alt="FastQC Plot. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> FastQC plot of Forward read</figcaption></figure>
 
 <p>Here we can see the three distinct regions along the x-axis that correspond to our expected <a href="#the-cel-seq2-protocol">CEL-Seq2 Schema</a>:</p>
 
@@ -1563,7 +1587,7 @@ A-77AA-7FF&lt;7FFJFFFJJJJJJJJJJJJJ-AFJJJJJJJFJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
 
 <p>With this tutorial we have understood the importance of handling FASTQ data from different sources, and extracting the information we need (barcodes (cell and UMI) and sequence) using <strong>UMI-tools</strong> so that we can perform <span class="notranslate">mapping</span> without losing any context of where the <span class="notranslate">reads</span> are derived from.</p>
 
-<p>This tutorial is part of the https://singlecell.use<span class="notranslate">galaxy</span>.eu portal (<a class="citation" href="#tekman2020single">Tekman <i>et al.</i> 2020</a>).</p>
+<p>This tutorial is part of the https://singlecell.use<span class="notranslate">galaxy</span>.eu portal (<span class="citation"><a href="#tekman2020single">Tekman <i>et al.</i> 2020</a></span>).</p>
 
 
                 
@@ -1585,7 +1609,7 @@ A-77AA-7FF&lt;7FFJFFFJJJJJJJJJJJJJ-AFJJJJJJJFJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/transcriptomics/faqs/">FAQ page for the Transcriptomics topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/transcriptomics/faqs/">FAQ page for the Transcriptomics topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1596,18 +1620,15 @@ A-77AA-7FF&lt;7FFJFFFJJJJJJJJJJJJJ-AFJJJJJJJFJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
 
                 
                 <h1 id="bibliography">References</h1>
-                <ol class="bibliography"><li><span id="tekman2020single">Tekman, M., B. Batut, A. Ostrovsky, C. Antoniewski, D. Clements <i>et al.</i>, 2020 <b>A single-cell RNA-sequencing training and analysis suite using the Galaxy framework</b>. GigaScience 9: giaa102.</span>
-    
-    
-    
-
-</li></ol>
+                <ol class="bibliography"><li id="tekman2020single">Tekman, M., B. Batut, A. Ostrovsky, C. Antoniewski, D. Clements <i>et al.</i>, 2020 <b>A single-cell RNA-sequencing training and analysis suite using the Galaxy framework</b>. GigaScience 9: giaa102.</li></ol>
                 
 
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
@@ -1739,6 +1760,10 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                         
                     
                         
+                    
+                        
+                    
+                        
                             
                             <li> Plates, Batches, and Barcodes:
                             
@@ -1747,6 +1772,8 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                             
                             
                             </li>
+                        
+                    
                         
                     
                         

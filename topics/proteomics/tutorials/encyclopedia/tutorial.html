@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/encyclopedia/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/encyclopedia/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/encyclopedia/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/encyclopedia/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/encyclopedia/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/encyclopedia/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/encyclopedia/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/encyclopedia/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/encyclopedia/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/encyclopedia/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/encyclopedia/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fproteomics%2Ftutorials%2Fencyclopedia%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-06-21 11:08:34 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "EncyclopeDIA",
   "interactivityType": "mixed",
@@ -402,15 +402,33 @@
     <h1 data-toc-skip>EncyclopeDIA</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/emmaleith/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/emmaleith" alt="Avatar">Emma Leith</a> <a href="/training-material/hall-of-fame/subinamehta/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/subinamehta" alt="Avatar">Subina Mehta</a> <a href="/training-material/hall-of-fame/jj-umn/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/jj-umn" alt="Avatar">James Johnson</a> <a href="/training-material/hall-of-fame/pratikdjagtap/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/pratikdjagtap" alt="Avatar">Pratik Jagtap</a> <a href="/training-material/hall-of-fame/timothygriffin/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/timothygriffin" alt="Avatar">Timothy J. Griffin</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/emmaleith/" class="contributor-badge contributor-emmaleith"><img src="https://avatars.githubusercontent.com/emmaleith?s=27" alt="Avatar">Emma Leith</a>
+
+
+<a href="/training-material/hall-of-fame/subinamehta/" class="contributor-badge contributor-subinamehta"><img src="https://avatars.githubusercontent.com/subinamehta?s=27" alt="Avatar">Subina Mehta</a>
+
+
+<a href="/training-material/hall-of-fame/jj-umn/" class="contributor-badge contributor-jj-umn"><img src="https://avatars.githubusercontent.com/jj-umn?s=27" alt="Avatar">James Johnson</a>
+
+
+<a href="/training-material/hall-of-fame/pratikdjagtap/" class="contributor-badge contributor-pratikdjagtap"><img src="https://avatars.githubusercontent.com/pratikdjagtap?s=27" alt="Avatar">Pratik Jagtap</a>
+
+
+<a href="/training-material/hall-of-fame/timothygriffin/" class="contributor-badge contributor-timothygriffin"><img src="https://avatars.githubusercontent.com/timothygriffin?s=27" alt="Avatar">Timothy J. Griffin</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -478,7 +496,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="http://doi.org/10.5281/zenodo.4926594">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="http://doi.org/10.5281/zenodo.4926594">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -499,8 +517,68 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/proteomics/tutorials/encyclopedia/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+  <li class="btn btn-default supporting_material">
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Recordings
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+
+        
+        
+        
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/proteomics/encyclopedia/tutorial" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (June 2021)
+            </a>
+        </li>
+        
+        
+          
+          
+          
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/proteomics/encyclopedia/slides" title="View GTN Video Library for these Slides">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Lecture (June 2021)
+            </a>
+        </li>
+        
+        
+    </ul>
+   </li>
+   
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -579,11 +657,13 @@
         
     
         
+    
+        
+    
+        
         <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
             Galaxy@GenOuest
         </a>
-        
-    
         
     
         
@@ -680,7 +760,9 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jun 21, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -692,15 +774,17 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
-<p>Data Independent Acquisition (DIA) was introduced as a method to provide reproducible quantitative information as an improvement over the Data Dependent Acquisition (DDA) <a class="citation" href="#Gillet2012">Gillet <i>et al.</i> 2012</a>. Despite benefits of DIA, such as increased depth of coverage and lesser missing values, the computational analysis of the complicated and multiplexed data presents challenges. Therefore, with the rise of usage of this technique, rises a need for new and robust methods of data analysis.</p>
+<p>Data Independent Acquisition (DIA) was introduced as a method to provide reproducible quantitative information as an improvement over the Data Dependent Acquisition (DDA) <span class="citation"><a href="#Gillet2012">Gillet <i>et al.</i> 2012</a></span>. Despite benefits of DIA, such as increased depth of coverage and lesser missing values, the computational analysis of the complicated and multiplexed data presents challenges. Therefore, with the rise of usage of this technique, rises a need for new and robust methods of data analysis.</p>
 
-<p>The EncyclopeDIA <a class="citation" href="#Searle2020">Searle <i>et al.</i> 2020</a> <span class="notranslate">workflow</span> described in this tutorial contains three steps. The first step is the conversion of the input data files from RAW file-types to mzML file-type using the tool msconvert. The second step which is a critical component of this <span class="notranslate">workflow</span> is the generation of a Chromatogram Library. Chromatogram Library is generated by employing the gas-phase fractionation (GPF) method and can make use of DDA-generated or predicted spectral libraries. Lastly, the experimental wide-window DIA files are analyzed using the <a href="https://bitbucket.org/searleb/encyclopedia/wiki/Home">EncyclopeDIA software tool</a> generated by <a href="https://isbscience.org/bio/brian-searle/">Brian Searle</a>. EncyclopeDIA analysis of experimental DIA data against the generated Chromatogram Library and the background proteome FASTA file generates peptide and protein quantitation outputs. The availability of EncyclopeDIA <span class="notranslate">workflow</span> within the <span class="notranslate">Galaxy</span> platform offers another easier way of analyzing DIA data.</p>
+<p>The EncyclopeDIA <span class="citation"><a href="#Searle2020">Searle <i>et al.</i> 2020</a></span> <span class="notranslate">workflow</span> described in this tutorial contains three steps. The first step is the conversion of the input data files from RAW file-types to mzML file-type using the tool msconvert. The second step which is a critical component of this <span class="notranslate">workflow</span> is the generation of a Chromatogram Library. Chromatogram Library is generated by employing the gas-phase fractionation (GPF) method and can make use of DDA-generated or predicted spectral libraries. Lastly, the experimental wide-window DIA files are analyzed using the <a href="https://bitbucket.org/searleb/encyclopedia/wiki/Home">EncyclopeDIA software tool</a> generated by <a href="https://isbscience.org/bio/brian-searle/">Brian Searle</a>. EncyclopeDIA analysis of experimental DIA data against the generated Chromatogram Library and the background proteome FASTA file generates peptide and protein quantitation outputs. The availability of EncyclopeDIA <span class="notranslate">workflow</span> within the <span class="notranslate">Galaxy</span> platform offers another easier way of analyzing DIA data.</p>
 
 <p><strong>An Overview of the EncyclopeDIA Standard <span class="notranslate">Workflow</span>:</strong></p>
 
-<figure id="figure-1"><img src="../../images/EncyclopeDIA_Workflow_LTR.png" alt="EncyclopeDIA workflow" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> EncyclopeDIA <span class="notranslate">Workflow</span></figcaption></figure>
+<figure id="figure-1"><img src="../../images/EncyclopeDIA_Workflow_LTR.png" alt="EncyclopeDIA workflow. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> EncyclopeDIA <span class="notranslate">Workflow</span></figcaption></figure>
 
 <p><strong>About the data:</strong> In this tutorial, we will be analyzing the dataset provided by the iPRG.</p>
 
@@ -729,17 +813,17 @@
 
 <p>In DDA-MS method, the instrument selects specific precursor ions for fragmentation based on their measured abundance in MS1 (Figure 1). Once selected, MS2 data is collected for these m/z time points and used to determine the sequences of the peptides that are present. Additionally, when integrated with the information given with the precursor peak, the quantity of peptide can be calculated.</p>
 
-<figure id="figure-2"><img src="../../images/EncyclopeDIA_Figure1.png" alt="DDA-MS method" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> DDA precursor data selection with resultant MS2 results</figcaption></figure>
+<figure id="figure-2"><img src="../../images/EncyclopeDIA_Figure1.png" alt="DDA-MS method. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> DDA precursor data selection with resultant MS2 results</figcaption></figure>
 
 <p>On the other hand, in the DIA-MS method, the mass spectrometer fragments analytes within a specified m/z range (Figure 2). The MS2 data contribute to analyte identification and provide relative quantification. Compared to DDA that selects for a specific time point corresponding to a specific peptide, DIA scans across a time range resulting in multiplexed and complex MS2 data containing peak information from multiple peptides.</p>
 
-<figure id="figure-3"><img src="../../images/EncyclopeDIA_Figure2.png" alt="DIA-MS method" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> DIA precursor data selection with resultant MS1 ranges and MS2 results</figcaption></figure>
+<figure id="figure-3"><img src="../../images/EncyclopeDIA_Figure2.png" alt="DIA-MS method. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> DIA precursor data selection with resultant MS1 ranges and MS2 results</figcaption></figure>
 
 <h2 id="what-does-a-typical-dia-experiment-look-like">What does a typical DIA experiment look like?</h2>
 
 <p>In a typical the DIA-MS experiment, the precursor scan usually ranges between 400-1000 m/z as opposed to 400-1600 m/z typically associated with DDA experiments. Multiple precursor scans are selected, each containing several fragment scans spanning across the entire 400-1000 m/z range (Figure 3A). Specific corresponding fragment ion scans can then be condensed and each combined fragment ion scan containing a small m/z range and its peaks can be examined and its peptide content can then be analyzed (Figure 3B).</p>
 
-<figure id="figure-4"><img src="../../images/EncyclopeDIA_Figure3.png" alt="Precursor and Fragment scans in DIA" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> Precursor and Fragment ion scans in DIA experiment</figcaption></figure>
+<figure id="figure-4"><img src="../../images/EncyclopeDIA_Figure3.png" alt="Precursor and Fragment scans in DIA. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> Precursor and Fragment ion scans in DIA experiment</figcaption></figure>
 
 <blockquote class="details">
   <h3 id="details-advantages-of-dia-over-dda"><i class="fas fa-info-circle" aria-hidden="true"></i><span class="visually-hidden">details</span> Advantages of DIA over DDA</h3>
@@ -775,7 +859,7 @@ https://zenodo.org/record/4926594/files/T4_Salmonella_Ecoli_Bacillus_fasta_tryps
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
       <!--SNIPPET-->
       <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-data-from-a-data-library"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing data from a data library</h3>  <p>As an alte<span class="notranslate">rna</span>tive to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>  <ul>  <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>  <li>Navigate to the correct folder as indicated by your instructor</li>  <li>Select the desired files</li>  <li>Click on the <strong>To History</strong> button near the top and select <strong>as Datasets</strong> from the dropdown menu</li>  <li>In the pop-up window, select the history you want to import the files to (or create a new one)</li>  <li>Click on <strong>Import</strong></li></ul></blockquote>
     </li>
@@ -805,7 +889,7 @@ https://zenodo.org/record/4926594/files/T4_Salmonella_Ecoli_Bacillus_fasta_tryps
       </ul>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge">thermo.raw</code></li>  <li>Click the <strong>Change datatype</strong> button</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge">thermo.raw</code></li>  <li>Click the <strong>Save</strong> button</li></ul></blockquote>
     </li>
     <li>Add to each dataset a tag corresponding to file-type, i.e.
       <ul>
@@ -955,17 +1039,17 @@ https://zenodo.org/record/4926594/files/T4_Salmonella_Ecoli_Bacillus_fasta_tryps
 
 <h1 id="chromatogram-library-generation">Chromatogram Library Generation</h1>
 
-<p>Libraries used in DIA data analysis are often constructed from DDA data assuming that assuming that DDA data is a reasonable substitute or reasonable representation of DIA data, which is not always the case <a class="citation" href="#PinoLK2020">Pino <i>et al.</i> 2020</a>. However, researchers began postulating that libraries could be generated using DIA data, and formed methods of generating DIA data libraries as well as libraries generated through other methods.</p>
+<p>Libraries used in DIA data analysis are often constructed from DDA data assuming that assuming that DDA data is a reasonable substitute or reasonable representation of DIA data, which is not always the case <span class="citation"><a href="#PinoLK2020">Pino <i>et al.</i> 2020</a></span>. However, researchers began postulating that libraries could be generated using DIA data, and formed methods of generating DIA data libraries as well as libraries generated through other methods.</p>
 
 <p>As mentioned, there are challenges associated with the use of DDA libraries to analyze DIA data. The main challenge is that the difference in the method of data generation causes inconvenient variance between the DDA library and the DIA data to be analyzed, making accurate investigation of data difficult. One significant difference that arises between DDA libraries and DIA data is retention time. Dependent on how the protein elutes off the column as well as changes caused by coelution in the environment, retention time varies between DDA and DIA methods. Additionally, DDA libraries can be cumbersome to generate when examining DIA data due to differences in methods of fractionation. For example, SCX fractionation provides a vastly different profile compared to high pH reverse phase fractionation. Thus, to generate a comprehensive profile with a DDA library, multiple fractionation methods must be completed. So, while DDA libraries can be used to analyze DIA data, their use significantly increases the required labor and the quantity of data required to generate a library.</p>
 
 <p>Libraries generated using DIA data can bypass several issues, including lowering the overall labor required to produce the library, as well as increasing the accuracy of the library concerning the sample that is being analyzed. To generate libraries using DIA data, Gas Phase Fractionation (GPF) is used. In DDA library generation, typically one injection is performed over the precursor scan, with multiple (24) ion fraction windows contained over the scan. However, using GPF, multiple acquisitions are used for each precursor scan to make up the range of 400-1000 m/z. For example, if six injections are performed over this m/z range, each containing the same number of windows like that of the injection in DDA library generation, then each window will be far smaller (Figure 4).</p>
 
-<figure id="figure-5"><img src="../../images/EncyclopeDIA_Figure4.png" alt="Gas-Phase fractionation" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> Gas-Phase fractionation Summary</figcaption></figure>
+<figure id="figure-5"><img src="../../images/EncyclopeDIA_Figure4.png" alt="Gas-Phase fractionation. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> Gas-Phase fractionation Summary</figcaption></figure>
 
 <p>As shown in Figure 4, GPF and its multiple injections allows for a far richer and more in-depth understanding of the peptide content within the sample making it a useful tool in library generation. In addition to producing a more comprehensive picture of the sample, the GPF method can be used on pooled DIA quantitative samples (Figure 5). Therefore, the pooled sample generates a thorough library through GPF while incorporating a spectrum library to create an “On-column Chromatogram Library” from DIA sample data.</p>
 
-<figure id="figure-6"><img src="../../images/EncyclopeDIA_Figure5.png" alt="Chromatogram Library generation" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> Chromatogram Library generation</figcaption></figure>
+<figure id="figure-6"><img src="../../images/EncyclopeDIA_Figure5.png" alt="Chromatogram Library generation. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> Chromatogram Library generation</figcaption></figure>
 
 <p>SearchToLib is the tool responsible for the generation of the Chromatogram Library in this EncyclopeDIA <span class="notranslate">workflow</span>. A library is generated using the GPF DIA dataset collection converted previously, a background proteome FASTA file, as well as a DLIB Spectral Library. Outputs from this tool include the Chromatogram Library in <a href="https://support.proteomesoftware.com/hc/en-us/articles/360022979832-Reference-Libraries-Used-in-Scaffold-DIA">ELIB format</a>, as well as a text log file.</p>
 
@@ -1064,7 +1148,7 @@ https://zenodo.org/record/4926594/files/T4_Salmonella_Ecoli_Bacillus_fasta_tryps
 
 <p>DIA data analysis with EncyclopeDIA is still possible without a Spectral library. Although a Spectral library is a required input for SearchToLib in the Standard EncyclopeDIA <span class="notranslate">workflow</span>, WALNUT (another form of the EncyclopeDIA <span class="notranslate">workflow</span>) can be used. When using the WALNUT <span class="notranslate">workflow</span>, the Background Proteome FASTA file is important, as this will be the primary file SearchToLib will search against in formation of the Chromatogram Library. Otherwise, the WALNUT EncyclopeDIA <span class="notranslate">workflow</span> works similarly to the Standard EncyclopeDIA <span class="notranslate">workflow</span>:</p>
 
-<figure id="figure-7"><img src="../../images/EncyclopeDIA_WALNUT_Workflow.png" alt="EncyclopeDIA WALNUT workflow" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 7:</span> EncyclopeDIA WALNUT <span class="notranslate">workflow</span> overview</figcaption></figure>
+<figure id="figure-7"><img src="../../images/EncyclopeDIA_WALNUT_Workflow.png" alt="EncyclopeDIA WALNUT workflow. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 7:</span> EncyclopeDIA WALNUT <span class="notranslate">workflow</span> overview</figcaption></figure>
 
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-chromatogram-library-generation-using-walnut-variation"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Chromatogram Library generation using WALNUT variation.</h3>
@@ -1103,9 +1187,9 @@ https://zenodo.org/record/4926594/files/T4_Salmonella_Ecoli_Bacillus_fasta_tryps
 
   <p>However, there are situations in which DIA data is analyzed without the use of DIA data generated libraries (Chromatogram Libraries) or DDA libraries. There are a few different methods and tools that can be used in cases where neither a Chromatogram library nor a DDA library can be generated.</p>
 
-  <p>Predicted libraries are being studied in their use in DIA experiments. Specifically, PROSIT is a tool that is used for predicted library generation and it functions by entering peptide sequences through its neural network where it estimates the fragmentation patterns as well as the retention times for the peptide <a class="citation" href="#Searle2020">Searle <i>et al.</i> 2020</a>. As PROSIT generates estimates on peptide inputs, it generates a predicted library that can be used in DIA data analysis. This predicted library requires neither DIA sample data nor DDA sample data and is, therefore, a low labor tool in library generation. Predicted libraries are still being studied in their application to DIA data analysis. Predicted libraries generally underperform compared to DDA generated libraries; however, these libraries do significantly increase the quality of results compared to forgoing the use of a library altogether. This fact combined with their non-laborious nature means that predicted libraries can be useful in analyzing DIA data.</p>
+  <p>Predicted libraries are being studied in their use in DIA experiments. Specifically, PROSIT is a tool that is used for predicted library generation and it functions by entering peptide sequences through its neural network where it estimates the fragmentation patterns as well as the retention times for the peptide <span class="citation"><a href="#Searle2020">Searle <i>et al.</i> 2020</a></span>. As PROSIT generates estimates on peptide inputs, it generates a predicted library that can be used in DIA data analysis. This predicted library requires neither DIA sample data nor DDA sample data and is, therefore, a low labor tool in library generation. Predicted libraries are still being studied in their application to DIA data analysis. Predicted libraries generally underperform compared to DDA generated libraries; however, these libraries do significantly increase the quality of results compared to forgoing the use of a library altogether. This fact combined with their non-laborious nature means that predicted libraries can be useful in analyzing DIA data.</p>
 
-  <p>In the case in which a predicted library cannot be generated, DIA-Umpire is another tool that is involved in DIA data analysis in which pseudo-spectra are generated <a class="citation" href="#TsouCC2015">Chih-Chiang Tsou <i>et al.</i> 2015</a>. This tool extracts information on coeluting fragment ions that are associated with a specific peptide. This information is used to generate a pseudo-spectrum examining the monoisotopic peak as well as its precursor signals and fragment ions that coelute. Once this information is combined and the pseudo-spectrum is generated with DIA-Umpire, this spectrum can be used relatively normally as if it were a DDA generated library. This method of generating pseudo-spectra is relatively robust; however, it does rely on the ability to detect monoisotopic precursor peaks.</p>
+  <p>In the case in which a predicted library cannot be generated, DIA-Umpire is another tool that is involved in DIA data analysis in which pseudo-spectra are generated <span class="citation"><a href="#TsouCC2015">Chih-Chiang Tsou <i>et al.</i> 2015</a></span>. This tool extracts information on coeluting fragment ions that are associated with a specific peptide. This information is used to generate a pseudo-spectrum examining the monoisotopic peak as well as its precursor signals and fragment ions that coelute. Once this information is combined and the pseudo-spectrum is generated with DIA-Umpire, this spectrum can be used relatively normally as if it were a DDA generated library. This method of generating pseudo-spectra is relatively robust; however, it does rely on the ability to detect monoisotopic precursor peaks.</p>
 
 </blockquote>
 
@@ -1168,10 +1252,10 @@ https://zenodo.org/record/4926594/files/T4_Salmonella_Ecoli_Bacillus_fasta_tryps
 <p>As mentioned, EncyclopeDIA generates quantitative information on both peptides and proteins.</p>
 
 <p>Sample ouput of the Peptide Quantitation Ouput:</p>
-<figure id="figure-8"><img src="../../images/EncyclopeDIA_PeptideQuantitation_Output.png" alt="Peptide Quantitation Output" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 8:</span> Peptide Quantitation Output Summary</figcaption></figure>
+<figure id="figure-8"><img src="../../images/EncyclopeDIA_PeptideQuantitation_Output.png" alt="Peptide Quantitation Output. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 8:</span> Peptide Quantitation Output Summary</figcaption></figure>
 
 <p>Sample output of the Protein Quantitation Output:</p>
-<figure id="figure-9"><img src="../../images/EncyclopeDIA_ProteinQuantitation_Output.png" alt="Protein Quantitation Output" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 9:</span> Protein Quantitation Output Summary</figcaption></figure>
+<figure id="figure-9"><img src="../../images/EncyclopeDIA_ProteinQuantitation_Output.png" alt="Protein Quantitation Output. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 9:</span> Protein Quantitation Output Summary</figcaption></figure>
 
 <blockquote class="details">
   <h3 id="details-encyclopedia-inputs-and-ouputs"><i class="fas fa-info-circle" aria-hidden="true"></i><span class="visually-hidden">details</span> EncyclopeDIA Inputs and Ouputs</h3>
@@ -1223,7 +1307,7 @@ Thus, running the <span class="notranslate">workflow</span> provided with the tu
 
 <p>This completes the walkthrough of the EncyclopeDIA Standard <span class="notranslate">workflow</span>.</p>
 
-<figure id="figure-10"><img src="../../images/EncyclopeDIA_Workflow.png" alt="EncyclopeDIA overview" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 10:</span> EncyclopeDIA overview</figcaption></figure>
+<figure id="figure-10"><img src="../../images/EncyclopeDIA_Workflow.png" alt="EncyclopeDIA overview. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 10:</span> EncyclopeDIA overview</figcaption></figure>
 
 <p>This tutorial is a guide to converting DIA data to the required input format, generation of a Chromatogram Library, and analysis of experimental DIA data using the EncyclopeDIA tool, developed by Brian Searle. This tutorial and <span class="notranslate">workflow</span> are available for use bt researchers with their data; however, please note that the tool parameters and the <span class="notranslate">workflow</span> will be needed to be modified accordingly.</p>
 
@@ -1246,7 +1330,7 @@ Thus, running the <span class="notranslate">workflow</span> provided with the tu
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/proteomics/faqs/">FAQ page for the Proteomics topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/proteomics/faqs/">FAQ page for the Proteomics topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1257,56 +1341,18 @@ Thus, running the <span class="notranslate">workflow</span> provided with the tu
 
                 
                 <h1 id="bibliography">References</h1>
-                <ol class="bibliography"><li><span id="Gillet2012">Gillet, L. C., P. Navarro, S. Tate, H. Röst, N. Selevsek <i>et al.</i>, 2012 <b>Targeted Data Extraction of the MS/MS Spectra Generated by Data-independent Acquisition: A New Concept for Consistent and Accurate Proteome Analysis</b>. Molecular &amp; Cellular Proteomics 11: O111.016717.</span>
-    
-    
-    <a href="https://doi.org/10.1074/mcp.o111.016717">10.1074/mcp.o111.016717</a>
-    
-    
-      <!-- prevent duplicate doi links -->
-      
-    
-
-</li>
-<li><span id="TsouCC2015">Chih-Chiang Tsou, D. A., B. Larsen, M. Tucholska, H. Choi, A.-C. Gingras <i>et al.</i>, 2015 <b>DIA-Umpire: comprehensive computational framework for data-independent acquisition proteomics</b>. Nature Methods 12: 258–264.</span>
-    
-    
-    <a href="https://doi.org/10.1038/nmeth.3255">10.1038/nmeth.3255</a>
-    
-    
-      <!-- prevent duplicate doi links -->
-      
-    
-
-</li>
-<li><span id="Searle2020">Searle, B. C., K. E. Swearingen, C. A. Barnes, T. Schmidt, S. Gessulat <i>et al.</i>, 2020 <b>Generating high quality libraries for DIA MS with empirically corrected peptide predictions</b>. Nature Communications 11: 1548.</span>
-    
-    
-    <a href="https://doi.org/10.1038/s41467-020-15346-1">10.1038/s41467-020-15346-1</a>
-    
-    
-      <!-- prevent duplicate doi links -->
-      
-    
-
-</li>
-<li><span id="PinoLK2020">Pino, L. K., S. C. Just, M. J. MacCoss, and B. C. Searle, 2020 <b>Acquiring and Analyzing Data Independent Acquisition Proteomics Experiments without Spectrum Libraries</b>. 19: 1088–1103.</span>
-    
-    
-    <a href="https://doi.org/10.1074/mcp.p119.001913">10.1074/mcp.p119.001913</a>
-    
-    
-      <!-- prevent duplicate doi links -->
-      
-    
-
-</li></ol>
+                <ol class="bibliography"><li id="Gillet2012">Gillet, L. C., P. Navarro, S. Tate, H. Röst, N. Selevsek <i>et al.</i>, 2012 <b>Targeted Data Extraction of the MS/MS Spectra Generated by Data-independent Acquisition: A New Concept for Consistent and Accurate Proteome Analysis</b>. Molecular &amp; Cellular Proteomics 11: O111.016717. <a href="https://doi.org/10.1074/mcp.o111.016717">10.1074/mcp.o111.016717</a></li>
+<li id="TsouCC2015">Chih-Chiang Tsou, D. A., B. Larsen, M. Tucholska, H. Choi, A.-C. Gingras <i>et al.</i>, 2015 <b>DIA-Umpire: comprehensive computational framework for data-independent acquisition proteomics</b>. Nature Methods 12: 258–264. <a href="https://doi.org/10.1038/nmeth.3255">10.1038/nmeth.3255</a></li>
+<li id="PinoLK2020">Pino, L. K., S. C. Just, M. J. MacCoss, and B. C. Searle, 2020 <b>Acquiring and Analyzing Data Independent Acquisition Proteomics Experiments without Spectrum Libraries</b>. 19: 1088–1103. <a href="https://doi.org/10.1074/mcp.p119.001913">10.1074/mcp.p119.001913</a></li>
+<li id="Searle2020">Searle, B. C., K. E. Swearingen, C. A. Barnes, T. Schmidt, S. Gessulat <i>et al.</i>, 2020 <b>Generating high quality libraries for DIA MS with empirically corrected peptide predictions</b>. Nature Communications 11: 1548. <a href="https://doi.org/10.1038/s41467-020-15346-1">10.1038/s41467-020-15346-1</a></li></ol>
                 
 
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />

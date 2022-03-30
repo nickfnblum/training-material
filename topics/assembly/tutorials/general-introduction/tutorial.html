@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/general-introduction/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/general-introduction/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/general-introduction/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/general-introduction/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/general-introduction/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/general-introduction/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/general-introduction/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/general-introduction/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/general-introduction/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/general-introduction/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/general-introduction/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fassembly%2Ftutorials%2Fgeneral-introduction%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-03-12 17:24:55 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "An Introduction to Genome Assembly",
   "interactivityType": "mixed",
@@ -358,20 +358,6 @@
         "name": "Galaxy Training Network",
         "url": "https://galaxyproject.org/teach/gtn/"
       }
-    },
-    {
-      "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/sequence-analysis/tutorials/quality-control/slides.html",
-      "name": "Quality Control",
-      "description": "Slides for 'Quality Control' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
     }
   ],
   "hasPart": [
@@ -405,15 +391,21 @@
     <h1 data-toc-skip>An Introduction to Genome Assembly</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/slugger70" alt="Avatar">Simon Gladman</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge contributor-slugger70"><img src="https://avatars.githubusercontent.com/slugger70?s=27" alt="Avatar">Simon Gladman</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -517,7 +509,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://doi.org/10.5281/zenodo.582600">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.582600">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -545,8 +537,57 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/assembly/tutorials/general-introduction/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+  <li class="btn btn-default supporting_material">
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Recordings
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+        
+          
+          
+          
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/assembly/general-introduction/slides" title="View GTN Video Library for these Slides">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Lecture (February 2021)
+            </a>
+        </li>
+        
+        
+    </ul>
+   </li>
+   
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -617,11 +658,17 @@
         
     
         
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
+    
+        
+        <a class="dropdown-item" href="https://galaxy.mesocentre.uca.fr" title="Galaxy@AuBi">
+            Galaxy@AuBi
         </a>
         
     
+        
+        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
+            Galaxy@GenOuest
+        </a>
         
     
         
@@ -685,6 +732,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
+        
     
         
     
@@ -720,9 +771,11 @@
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 12, 2021 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Oct 26, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -734,9 +787,11 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="genome-assembly-with-velvet-background">Genome assembly with Velvet: Background</h1>
 
-<p>Velvet is one of a number of <em>de novo</em> assemblers that use short read sets as input (<em>e.g.</em> Illumina <span class="notranslate">Reads</span>). The assembly method is based on the manipulation of de Bruijn graphs, via the removal of errors and the simplication of repeated regions.</p>
+<p>Velvet is one of a number of <em>de novo</em> assemblers that use short read sets as input (<em>e.g.</em> Illumina <span class="notranslate">Reads</span>). The assembly method is based on the manipulation of de Bruijn graphs, via the removal of errors and the simplification of repeated regions.</p>
 
 <blockquote class="comment">
   <h3 id="comment-comment"><i class="far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden">comment</span> Comment</h3>
@@ -764,8 +819,6 @@
 </blockquote>
 
 <h1 id="get-the-data">Get the data</h1>
-
-<p>We will now import the data that we will use for the tutorial.</p>
 
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-getting-the-data"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Getting the data</h3>
@@ -873,13 +926,16 @@ https://zenodo.org/record/582600/files/wildtype.fna
   <ol>
     <li><strong>FastQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
       <ul>
-        <li>“Short read data from your current history” to (<strong>Multiple datasets</strong>) <code class="language-plaintext highlighter-rouge">mutant_R1.fastq</code> and <code class="language-plaintext highlighter-rouge">mutant_R2.fastq</code></li>
+        <li><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“Raw read data from your current history”</em>:  <code class="language-plaintext highlighter-rouge">mutant_R1.fastq</code> and <code class="language-plaintext highlighter-rouge">mutant_R2.fastq</code></li>
       </ul>
+
+      <!--SNIPPET-->
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-select-multiple-datasets"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Select multiple datasets</h3>  <ol>  <li>Click on <i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <strong>Multiple datasets</strong></li>  <li>Select several files by keeping the <kbd>Ctrl</kbd> (or<kbd>COMMAND</kbd>) key pressed and clicking on the files of interest</li></ol></blockquote>
     </li>
     <li><strong>MultiQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
       <ul>
-        <li>“Software name” to <code class="language-plaintext highlighter-rouge">FastQC</code></li>
-        <li>“Result file” to the raw data files generated by FastQC</li>
+        <li><em>“Software name”</em>: <code class="language-plaintext highlighter-rouge">FastQC</code></li>
+        <li><em>“Result file”</em>:  All raw data files generated by FastQC.</li>
       </ul>
     </li>
   </ol>
@@ -926,7 +982,7 @@ https://zenodo.org/record/582600/files/wildtype.fna
 
     <p>Dips in quality near the beginning, middle or end of the <span class="notranslate">reads</span> may determine the trimming/cleanup methods and parameters to be used, or may indicate technical problems with the sequencing process/machine run.</p>
 
-    <figure id="figure-1"><img src="../../images/fastqc_per_base_sequence_quality_plot.png" alt="Sequence Quality Histograms with the mean quality value across each base position in the read" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> The mean quality value across each base position in the read</figcaption></figure>
+    <figure id="figure-1"><img src="../../images/fastqc_per_base_sequence_quality_plot.png" alt="Sequence Quality Histograms with the mean quality value across each base position in the read. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> The mean quality value across each base position in the read</figcaption></figure>
 
     <blockquote class="question">
       <h3 id="question-questions-2"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
@@ -982,28 +1038,36 @@ https://zenodo.org/record/582600/files/wildtype.fna
   <ol>
     <li><strong>FASTQ interlacer</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
       <ul>
-        <li>“Type of paired-end datasets” to <code class="language-plaintext highlighter-rouge">2 separate datasets</code></li>
-        <li>“Left-hand mates” to <code class="language-plaintext highlighter-rouge">mutant_R1.fastq</code></li>
-        <li>“Right-hand mates” to <code class="language-plaintext highlighter-rouge">mutant_R2.fastq</code></li>
+        <li><em>“Type of paired-end datasets”</em>: <code class="language-plaintext highlighter-rouge">2 separate datasets</code></li>
+        <li><em>“Left-hand mates”</em>: <code class="language-plaintext highlighter-rouge">mutant_R1.fastq</code></li>
+        <li><em>“Right-hand mates”</em>: <code class="language-plaintext highlighter-rouge">mutant_R2.fastq</code></li>
       </ul>
 
       <p>Currently our paired-end <span class="notranslate">reads</span> are in 2 files (one with the forward <span class="notranslate">reads</span> and one with the reverse <span class="notranslate">reads</span>), but Velvet requires only one file, where each read is next to its mate read. In other words, if the <span class="notranslate">reads</span> are indexed from 0, then <span class="notranslate">reads</span> 0 and 1 are paired, 2 and 3, 4 and 5, etc. Before doing the assembly <em>per se</em>, we need to prepare the files by combining them.</p>
     </li>
     <li><strong>velveth</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
       <ul>
-        <li>“Hash Length” to <code class="language-plaintext highlighter-rouge">29</code></li>
-        <li>“Input Files”: click on <code class="language-plaintext highlighter-rouge">Insert Input Files</code></li>
-        <li>“file format” to <code class="language-plaintext highlighter-rouge">fastq</code></li>
-        <li>“read type” to <code class="language-plaintext highlighter-rouge">shortPaired <span class="notranslate">reads</span></code></li>
-        <li>“Dataset” to the pairs output of <strong>FASTQ interlacer</strong></li>
+        <li><em>“Hash Length”</em>: <code class="language-plaintext highlighter-rouge">29</code></li>
+        <li><em>“Input Files”</em>
+          <ul>
+            <li>Click on <i class="far fa-plus-square" aria-hidden="true"></i><span class="visually-hidden">param-repeat</span> <em>“Input Files”</em></li>
+            <li>In “1: Input Files”
+              <ul>
+                <li><em>“file format”</em>: <code class="language-plaintext highlighter-rouge">fastq</code></li>
+                <li><em>“read type”</em>: <code class="language-plaintext highlighter-rouge">shortPaired <span class="notranslate">reads</span></code></li>
+                <li><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“Dataset”</em>:  outputs of <strong>FASTQ interlacer</strong></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
 
       <p>The tool takes our <span class="notranslate">reads</span> and break them into k-mers.</p>
     </li>
     <li><strong>velvetg</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters
       <ul>
-        <li>“Velvet Dataset” to the output of <strong>velveth</strong></li>
-        <li>“Using Paired <span class="notranslate">Reads</span>” to <code class="language-plaintext highlighter-rouge">Yes</code></li>
+        <li><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“Velvet Dataset”</em>:  outputs of <strong>velveth</strong></li>
+        <li><em>“Using Paired <span class="notranslate">Reads</span>”</em>: <code class="language-plaintext highlighter-rouge">Yes</code></li>
       </ul>
 
       <p>This last tool actually does the assembly.</p>
@@ -1015,7 +1079,7 @@ https://zenodo.org/record/582600/files/wildtype.fna
 
 <ul>
   <li>
-    <p>A “Contigs” file</p>
+    <p>A <strong>Contigs</strong> file</p>
 
     <p>This file contains the sequences of the contigs longer than 2k. In the header of each contig, a bit of information is added:</p>
     <ul>
@@ -1023,14 +1087,14 @@ https://zenodo.org/record/582600/files/wildtype.fna
       <li>the k-mer coverage (called “coverage”): For the value of k chosen in the assembly, a measure of how many k-mers overlap each base position (in the assembly).</li>
     </ul>
 
-    <p><img src="../../images/image10.png" alt="Contigs output" loading="lazy" /></p>
+    <p><img src="../../images/image10.png" alt="Contigs output. " loading="lazy" /></p>
   </li>
   <li>
-    <p>A “Stats” file</p>
+    <p>A <strong>Stats</strong> file</p>
 
     <p>This is a tabular file giving for each contig the k-mer lengths, k-mer coverages and other measures.</p>
 
-    <p><img src="../../images/image11.png" alt="Contigs stats output" loading="lazy" /></p>
+    <p><img src="../../images/image11.png" alt="Contigs stats output. " loading="lazy" /></p>
   </li>
 </ul>
 
@@ -1061,13 +1125,13 @@ https://zenodo.org/record/582600/files/wildtype.fna
   <ol>
     <li><strong>Quast</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with
       <ul>
-        <li>“Contigs/scaffolds output file” to the output of <strong>velvetg</strong></li>
-        <li>“Type of assembly” to <code class="language-plaintext highlighter-rouge">Genome</code></li>
-        <li>“Use a reference genome?” to <code class="language-plaintext highlighter-rouge">Yes</code></li>
-        <li>“Reference genome” to <code class="language-plaintext highlighter-rouge">wildtype.fna</code></li>
-        <li>“Type of organism” to <code class="language-plaintext highlighter-rouge">Prokaryotes</code></li>
-        <li>“Lower Threshold” to <code class="language-plaintext highlighter-rouge">500</code></li>
-        <li>“Comma-separated list of contig length thresholds” to <code class="language-plaintext highlighter-rouge">0,1000</code></li>
+        <li><em>“Contigs/scaffolds output file”</em>: outputs of <strong>velvetg</strong></li>
+        <li><em>“Type of assembly”</em>: <code class="language-plaintext highlighter-rouge">Genome</code></li>
+        <li><em>“Use a reference genome?”</em>: <code class="language-plaintext highlighter-rouge">Yes</code></li>
+        <li><em>“Reference genome”</em>: <code class="language-plaintext highlighter-rouge">wildtype.fna</code></li>
+        <li><em>“Type of organism”</em>: <code class="language-plaintext highlighter-rouge">Prokaryotes</code></li>
+        <li><em>“Lower Threshold”</em>: <code class="language-plaintext highlighter-rouge">500</code></li>
+        <li><em>“Comma-separated list of contig length thresholds”</em>: <code class="language-plaintext highlighter-rouge">0,1000</code></li>
       </ul>
     </li>
   </ol>
@@ -1142,7 +1206,7 @@ https://zenodo.org/record/582600/files/wildtype.fna
   <ol>
     <li><strong>velveth</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the same parameters as before except
       <ul>
-        <li>“Hash Length” to a value between 31 and 101</li>
+        <li><em>“Hash Length”</em>: a value between 31 and 101</li>
       </ul>
     </li>
     <li><strong>velvetg</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the same parameters as before</li>
@@ -1152,13 +1216,13 @@ https://zenodo.org/record/582600/files/wildtype.fna
 
 <p>We have completed an assembly on this data set for a number of k values ranging from 29 to 101. A few of the assembly metrics appear below.</p>
 
-<figure id="figure-2"><img src="../../images/number_of_contigs.png" alt="contigs" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Number of contigs in the assembly for various k-mer sizes</figcaption></figure>
+<figure id="figure-2"><img src="../../images/number_of_contigs.png" alt="contigs. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Number of contigs in the assembly for various k-mer sizes</figcaption></figure>
 
-<figure id="figure-3"><img src="../../images/largest_contig.png" alt="largest_contig" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> Largest contig in each of the assemblies by k-mer size</figcaption></figure>
+<figure id="figure-3"><img src="../../images/largest_contig.png" alt="largest_contig. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> Largest contig in each of the assemblies by k-mer size</figcaption></figure>
 
-<figure id="figure-4"><img src="../../images/total_bp.png" alt="total_bp" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> Total number of base pairs in all the contigs for each assembly by k-mer size</figcaption></figure>
+<figure id="figure-4"><img src="../../images/total_bp.png" alt="total_bp. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> Total number of base pairs in all the contigs for each assembly by k-mer size</figcaption></figure>
 
-<figure id="figure-5"><img src="../../images/n50.png" alt="n50" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> N50 metric for each of the assemblies by k-mer size</figcaption></figure>
+<figure id="figure-5"><img src="../../images/n50.png" alt="n50. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> N50 metric for each of the assemblies by k-mer size</figcaption></figure>
 
 <blockquote class="question">
   <h3 id="question-questions-3"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
@@ -1192,7 +1256,7 @@ https://zenodo.org/record/582600/files/wildtype.fna
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/assembly/faqs/">FAQ page for the Assembly topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/assembly/faqs/">FAQ page for the Assembly topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1203,7 +1267,9 @@ https://zenodo.org/record/582600/files/wildtype.fna
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
@@ -1256,8 +1322,8 @@ https://zenodo.org/record/582600/files/wildtype.fna
 author = "Simon Gladman",
 title = "An Introduction to Genome Assembly (Galaxy Training Materials)",
 year = "2021",
-month = "03",
-day = "12"
+month = "10",
+day = "26"
 url = "\url{https://training.galaxyproject.org/training-material/topics/assembly/tutorials/general-introduction/tutorial.html}",
 note = "[Online; accessed TODAY]"
 }

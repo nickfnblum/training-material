@@ -1,0 +1,78 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Galaxy Monitoring with Telegraf and Grafana",
+  "questions": [
+    "How to monitor Galaxy with Telegraf",
+    "How do I set up InfluxDB",
+    "How can I make graphs in Grafana?",
+    "How can I best alert on important metrics?"
+  ],
+  "objectives": [
+    "Setup InfluxDB",
+    "Setup Telegraf",
+    "Setup Grafana",
+    "Create several charts"
+  ],
+  "time_estimation": "2h",
+  "tags": [
+    "ansible",
+    "monitoring",
+    "git-gat"
+  ],
+  "subtopic": "monitoring",
+  "key_points": [
+    "Telegraf provides an easy solution to monitor servers",
+    "Galaxy can send metrics to Telegraf",
+    "Telegraf can run arbitrary commands like `gxadmin`, which provides influx formatted output",
+    "InfluxDB can collect metrics from Telegraf",
+    "Use Grafana to visualise these metrics, and monitor their values"
+  ],
+  "contributors": [
+    {
+      "name": "Helena Rasche",
+      "email": "helena.rasche@gmail.com",
+      "orcid": "0000-0001-9760-8992",
+      "maintainer_contact": "gitter",
+      "gitter": "hexylena",
+      "joined": "2017-09",
+      "id": "hexylena",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
+    }
+  ],
+  "requirements": [
+    {
+      "type": "internal",
+      "topic_name": "admin",
+      "tutorials": [
+        "ansible",
+        "ansible-galaxy",
+        "gxadmin"
+      ]
+    }
+  ],
+  "last_modified_at": "2022-03-28T08:52:14+00:00",
+  "url": "/topics/admin/tutorials/monitoring/tutorial.html",
+  "topic_name": "admin",
+  "tutorial_name": "monitoring",
+  "hands_on": true,
+  "slides": true,
+  "tools": [
+
+  ],
+  "tours": false,
+  "video": true,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": true
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/monitoring/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/monitoring/tutorial.json"
+  }
+}

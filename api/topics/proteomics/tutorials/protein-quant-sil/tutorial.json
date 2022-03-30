@@ -1,0 +1,115 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Peptide and Protein Quantification via Stable Isotope Labelling (SIL)",
+  "zenodo_link": "https://zenodo.org/record/1051552",
+  "level": "Advanced",
+  "questions": [
+    "What are MS1 features?",
+    "How to quantify based on MS1 features?",
+    "How to map MS1 features to MS2 identifications?",
+    "How to evaluate and optimize the results?"
+  ],
+  "objectives": [
+    "MS1 feature quantitation and mapping of quantitations to peptide and protein IDs."
+  ],
+  "time_estimation": "1h",
+  "requirements": [
+    {
+      "type": "internal",
+      "topic_name": "proteomics",
+      "tutorials": [
+        "database-handling",
+        "protein-id-oms"
+      ]
+    }
+  ],
+  "key_points": [
+    "Peptides labelled with stable isotopes result in multiple parallel MS1 ion traces.",
+    "MS1 features can be used for relative protein quantitation.",
+    "Quantitations have to be mapped to PSMs.",
+    "PSM quantitations can be used to calculate protein quantitations.",
+    "Proper quantitation and mapping needs careful evaluation and optimization."
+  ],
+  "contributors": [
+    {
+      "name": "Florian Christoph Sigloch",
+      "email": "sigloch+github@mailbox.org",
+      "joined": "2017-09",
+      "id": "stortebecker",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/stortebecker.json"
+    },
+    {
+      "name": "Björn Grüning",
+      "email": "bjoern.gruening@gmail.com",
+      "twitter": "bjoerngruening",
+      "gitter": "bgruening",
+      "orcid": "0000-0002-3079-6586",
+      "linkedin": "bgruening",
+      "joined": "2017-09",
+      "id": "bgruening",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/bgruening.json"
+    },
+    {
+      "name": "Matthias Fahrner",
+      "email": "matthias.fahrner@mol-med.uni-freiburg.de",
+      "twitter": "mfahrner313",
+      "gitter": "matthias313",
+      "orcid": "0000-0001-7955-2518",
+      "joined": "2019-03",
+      "id": "matthias313",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/matthias313.json"
+    }
+  ],
+  "subtopic": "id-quant",
+  "tags": [
+    "DDA",
+    "SILAC"
+  ],
+  "last_modified_at": "2021-05-31T09:06:26+00:00",
+  "url": "/topics/proteomics/tutorials/protein-quant-sil/tutorial.html",
+  "topic_name": "proteomics",
+  "tutorial_name": "protein-quant-sil",
+  "hands_on": true,
+  "slides": false,
+  "workflows": [
+    {
+      "workflow": "workflow.ga",
+      "tests": true
+    }
+  ],
+  "tools": [
+    "Grep1",
+    "Summary_Statistics1",
+    "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_tail_tool/1.1.0",
+    "toolshed.g2.bx.psu.edu/repos/devteam/histogram/histogram_rpy/1.0.4",
+    "toolshed.g2.bx.psu.edu/repos/galaxyp/openms_falsediscoveryrate/FalseDiscoveryRate/2.6+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/galaxyp/openms_featurefindermultiplex/FeatureFinderMultiplex/2.6+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/galaxyp/openms_fidoadapter/FidoAdapter/2.6+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/galaxyp/openms_fileinfo/FileInfo/2.6+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/galaxyp/openms_idconflictresolver/IDConflictResolver/2.6+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/galaxyp/openms_idmapper/IDMapper/2.6+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/galaxyp/openms_idposteriorerrorprobability/IDPosteriorErrorProbability/2.6+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/galaxyp/openms_idscoreswitcher/IDScoreSwitcher/2.6+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/galaxyp/openms_multiplexresolver/MultiplexResolver/2.5+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/galaxyp/openms_peptideindexer/PeptideIndexer/2.6+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/galaxyp/openms_proteinquantifier/ProteinQuantifier/2.6+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/galaxyp/openms_textexporter/TextExporter/2.6+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/galaxyp/openms_xtandemadapter/XTandemAdapter/2.6+galaxy0"
+  ],
+  "tours": true,
+  "video": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": false
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//proteomics/tutorials/protein-quant-sil/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//proteomics/tutorials/protein-quant-sil/tutorial.json"
+  }
+}

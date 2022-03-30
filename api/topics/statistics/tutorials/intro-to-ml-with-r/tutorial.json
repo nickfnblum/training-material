@@ -1,0 +1,101 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Introduction to Machine Learning using R",
+  "level": "Intermediate",
+  "zenodo_link": "",
+  "requirements": [
+    {
+      "type": "internal",
+      "topic_name": "galaxy-interface",
+      "tutorials": [
+        "rstudio"
+      ]
+    },
+    {
+      "type": "internal",
+      "topic_name": "data-science",
+      "tutorials": [
+        "r-basics",
+        "r-advanced"
+      ]
+    }
+  ],
+  "follow_up_training": [
+    {
+      "type": "internal",
+      "topic_name": "statistics",
+      "tutorials": [
+        "age-prediction-with-ml"
+      ]
+    }
+  ],
+  "questions": [
+    "What are the main categories in Machine Learning algorithms?",
+    "How can I perform exploratory data analysis?",
+    "What are the main part of a clustering process?",
+    "How can a create a decision tree?",
+    "How can I assess a linear regression model?"
+  ],
+  "objectives": [
+    "Understand the ML taxonomy and the commonly used machine learning algorithms for analysing -omics data",
+    "Understand differences between ML algorithms categories and to which kind of problem they can be applied",
+    "Understand different applications of ML in different -omics studies",
+    "Use some basic, widely used R packages for ML",
+    "Interpret and visualize the results obtained from ML analyses on omics datasets",
+    "Apply the ML techniques to analyse their own datasets"
+  ],
+  "time_estimation": "3H",
+  "tags": [
+    "interactive-tools"
+  ],
+  "key_points": [
+    "To be added"
+  ],
+  "contributors": [
+    {
+      "name": "Fotis E. Psomopoulos",
+      "email": "fpsom@certh.gr",
+      "twitter": "fopsom",
+      "gitter": "fpsom",
+      "orcid": "0000-0002-0222-4273",
+      "linkedin": "fpsom",
+      "joined": "2019-03",
+      "id": "fpsom",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/fpsom.json"
+    },
+    {
+      "name": "Erasmus+ Programme",
+      "joined": "2020-09",
+      "github": false,
+      "funder": true,
+      "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n![eu flag with the text: with the support of the erasmus programme of the european union](https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg)\n",
+      "id": "erasmusplus",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
+    }
+  ],
+  "last_modified_at": "2021-12-14T14:52:15+00:00",
+  "url": "/topics/statistics/tutorials/intro-to-ml-with-r/tutorial.html",
+  "topic_name": "statistics",
+  "tutorial_name": "intro-to-ml-with-r",
+  "hands_on": true,
+  "slides": false,
+  "tools": [
+    "interactive_tool_rstudio"
+  ],
+  "tours": false,
+  "video": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": false
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//statistics/tutorials/intro-to-ml-with-r/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//statistics/tutorials/intro-to-ml-with-r/tutorial.json"
+  }
+}

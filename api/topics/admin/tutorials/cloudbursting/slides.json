@@ -1,0 +1,40 @@
+{
+  "layout": "tutorial_slides",
+  "logo": "assets/images/gat.png",
+  "title": "Galaxy on the Cloud",
+  "contributors": [
+    {
+      "name": "Simon Gladman",
+      "email": "simon.gladman@unimelb.edu.au",
+      "joined": "2017-09",
+      "id": "slugger70",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/slugger70.json"
+    }
+  ],
+  "subtopic": "cloud",
+  "last_modified_at": "2022-03-01T12:21:57+00:00",
+  "url": "/topics/admin/tutorials/cloudbursting/slides.html",
+  "topic_name": "admin",
+  "tutorial_name": "cloudbursting",
+  "hands_on": false,
+  "slides": true,
+  "tools": [
+
+  ],
+  "tours": false,
+  "video": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": false
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/cloudbursting/slides.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/cloudbursting/slides.json"
+  }
+}

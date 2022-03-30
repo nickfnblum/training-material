@@ -47,8 +47,44 @@
                         <a class="nav-link" href="/training-material/hall-of-fame" title="Hall of Fame">
                            <i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span> Contributors
                         </a>
+
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/sequence-analysis/tutorials/human-reads-removal/workflows/&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/sequence-analysis/tutorials/human-reads-removal/workflows/&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/sequence-analysis/tutorials/human-reads-removal/workflows/&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/sequence-analysis/tutorials/human-reads-removal/workflows/&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/sequence-analysis/tutorials/human-reads-removal/workflows/&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/sequence-analysis/tutorials/human-reads-removal/workflows/&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +143,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/sequence-analysis/tutorials/human-reads-removal/workflows/&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/sequence-analysis/tutorials/human-reads-removal/workflows/&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/sequence-analysis/tutorials/human-reads-removal/workflows/&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/sequence-analysis/tutorials/human-reads-removal/workflows/&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/sequence-analysis/tutorials/human-reads-removal/workflows/&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fsequence-analysis%2Ftutorials%2Fhuman-reads-removal%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +197,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -253,7 +254,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "1970-01-01 00:00:03 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "",
   "interactivityType": "mixed",
@@ -337,12 +338,18 @@
         
         <tr>
             <td><a href="/training-material/topics/sequence-analysis/tutorials/human-reads-removal/workflows/human-reads-removal.ga">human-reads-removal.ga</a></td>
-            <td>Sep 22, 2021</td>
+            <td>Mar 30, 2022</td>
         </tr>
         
     
     </tbody>
     </table>
+
+   <h1 style="margin-top:2em">Importing into Galaxy</h1>
+   Below are the instructions for importing these workflows directly into your Galaxy server of choice to start using them!
+
+   <!--SNIPPET--><blockquote class="hands_on">  <h3 data-toc-skip id="-hands-on-importing-a-workflow"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"></span> Hands-on: Importing a workflow</h3>  <ul>  <li>Click on <em>Workflow</em> on the top menu bar of Galaxy. You will see a list of all your workflows.</li>  <li>Click on the upload icon <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> at the top-right of the screen</li>  <li>Provide your workflow    <ul>      <li>Option 1: Paste the URL of the workflow into the box labelled <em>“Archived Workflow URL”</em></li>      <li>Option 2: Upload the workflow file in the box labelled <em>“Archived Workflow File”</em></li>    </ul>  </li>  <li>Click the <strong>Import workflow</strong> button</li></ul></blockquote>
+
 </section>
 
         </div>
@@ -357,7 +364,7 @@
         <p>
 The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
 </p>
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/2c449363b7d2a7d9c09beba391f8d73804500259">2c449363b7d2a7d9c09beba391f8d73804500259</a></p>
+        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/7cdccfe4a2343778b7a2ee82f8fa69f43778c264">7cdccfe4a2343778b7a2ee82f8fa69f43778c264</a></p>
     </div>
 </footer>
 

@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/machinelearning/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/machinelearning/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/machinelearning/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/machinelearning/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/machinelearning/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/machinelearning/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/machinelearning/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/machinelearning/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/machinelearning/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/machinelearning/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/machinelearning/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Fmachinelearning%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-03-12 17:24:55 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Basics of machine learning",
   "interactivityType": "mixed",
@@ -369,15 +369,21 @@
     <h1 data-toc-skip>Basics of machine learning</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/anuprulez" alt="Avatar">Anup Kumar</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge contributor-anuprulez"><img src="https://avatars.githubusercontent.com/anuprulez?s=27" alt="Avatar">Anup Kumar</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -441,7 +447,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://zenodo.org/record/1468039#.W8zyxBRoSAo">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/1468039#.W8zyxBRoSAo">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -469,8 +475,35 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/statistics/tutorials/machinelearning/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -547,17 +580,23 @@
         
     
         
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
+        
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
         
     
         
+    
+        
         <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
             Galaxy@GenOuest
         </a>
-        
-    
         
     
         
@@ -625,6 +664,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
+        
     
         
         <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
@@ -632,6 +675,10 @@
         </a>
         
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
+            UseGalaxy.fr
+        </a>
         
     
         
@@ -670,7 +717,9 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 12, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -682,23 +731,25 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p><a href="https://en.wikipedia.org/wiki/Machine_learning">Machine learning</a> uses techniques from statistics, mathematics and computer science to make computer programs learn from data. It is one of the most popular fields of computer science and finds applications in multiple streams of data analysis such as <a href="https://en.wikipedia.org/wiki/Statistical_classification">classification</a>, <a href="https://en.wikipedia.org/wiki/Regression_analysis">regression</a>, <a href="https://en.wikipedia.org/wiki/Cluster_analysis">clustering</a>, <a href="https://en.wikipedia.org/wiki/Dimensionality_reduction">dimensionality reduction</a>, <a href="https://en.wikipedia.org/wiki/Density_estimation">density estimation</a> and many more. Some real-life applications are spam filtering, medical diagnosis, autonomous driving, recommendation systems, facial recognition, stock prices prediction and many more. The following image shows a basic flow of any machine learning task. Data is provided by a user to a machine learning algorithm for analysis.</p>
 
-<figure id="figure-1"><img src="images/ml_basics.png" alt="data" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Flow of a machine learning task.</figcaption></figure>
+<figure id="figure-1"><img src="images/ml_basics.png" alt="data. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Flow of a machine learning task.</figcaption></figure>
 
 <p>There are multiple ways in which machine learning can be used to perform data analysis. They depend on the nature of data and the kind of data analysis. The following image shows the most popular ones. In <a href="https://en.wikipedia.org/wiki/Supervised_learning">supervised learning</a> techniques, the categories of data records are known beforehand. But in <a href="https://en.wikipedia.org/wiki/Unsupervised_learning">unsupervised learning</a>, the categories of data records are not known.</p>
 
-<figure id="figure-2"><img src="images/variants_ml.png" alt="data" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Different types of machine learning.</figcaption></figure>
+<figure id="figure-2"><img src="images/variants_ml.png" alt="data. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Different types of machine learning.</figcaption></figure>
 
 <p>In general, machine learning can be used in multiple real-life tasks by applying its variants as depicted in the following image.</p>
 
-<figure id="figure-3"><img src="images/usage_ml.png" alt="data" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> Real-life usage of machine learning.</figcaption></figure>
+<figure id="figure-3"><img src="images/usage_ml.png" alt="data. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> Real-life usage of machine learning.</figcaption></figure>
 
 <p>The following image shows how a classification task is performed. The complete data is divided into training and test sets. The training set is used by a classifier to learn features. It results in a trained model and its robustness (of learning) is evaluated using the test set (unseen by the classifier during the training).</p>
 
-<figure id="figure-4"><img src="images/prediction.png" alt="data" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> Supervised learning.</figcaption></figure>
+<figure id="figure-4"><img src="images/prediction.png" alt="data. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> Supervised learning.</figcaption></figure>
 
 <p>This tutorial shows how to use a machine learning module implemented as a <span class="notranslate">Galaxy</span> tool. The data used in this tutorial is available at <a href="https://zenodo.org/record/1468039#.W8zyxBRoSAo">Zenodo</a>.</p>
 
@@ -738,7 +789,7 @@ https://zenodo.org/record/1401230/files/breast-w_test.tsv
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
     </li>
     <li>
       <p>Rename datasets to <code class="language-plaintext highlighter-rouge">breast-w_train</code> and <code class="language-plaintext highlighter-rouge">breast-w_test</code>.</p>
@@ -749,9 +800,9 @@ https://zenodo.org/record/1401230/files/breast-w_test.tsv
     <li>
       <p>The datasets should look like these:</p>
 
-      <figure id="figure-5"><img src="images/train_data.png" alt="data" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> Training data (breast-w_train) with targets (9 features and one target).</figcaption></figure>
+      <figure id="figure-5"><img src="images/train_data.png" alt="data. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> Training data (breast-w_train) with targets (9 features and one target).</figcaption></figure>
 
-      <figure id="figure-6"><img src="images/test_data.png" alt="data" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> Test data (breast-w_test) (9 features and no target).</figcaption></figure>
+      <figure id="figure-6"><img src="images/test_data.png" alt="data. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> Test data (breast-w_test) (9 features and no target).</figcaption></figure>
     </li>
   </ol>
 </blockquote>
@@ -850,7 +901,7 @@ https://zenodo.org/record/1401230/files/breast-w_test.tsv
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/statistics/faqs/">FAQ page for the Statistics and machine learning topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/statistics/faqs/">FAQ page for the Statistics and machine learning topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -861,7 +912,9 @@ https://zenodo.org/record/1401230/files/breast-w_test.tsv
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />

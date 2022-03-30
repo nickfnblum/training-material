@@ -9,9 +9,11 @@
 
 
 
+
+
   <head>
     <meta charset="utf-8">
-    <title>User, Group and Quota managment</title>
+    <title>User, Role, Group and Quota managment</title>
     
         <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
 
@@ -26,7 +28,7 @@
     
     
     <meta name="description" content="Resources related to configuration and maintenance of Gal..." />
-    <meta property="og:title" content="Galaxy Training: User, Group and Quota managment" />
+    <meta property="og:title" content="Galaxy Training: User, Role, Group and Quota managment" />
     <meta property="og:description" content="Resources related to configuration and maintenance of Gal..." />
     <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
     <script type="application/ld+json">
@@ -68,9 +70,9 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "1970-01-01 00:00:06 +0000",
+  "dateModified": "1970-01-01 00:33:42 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
-  "headline": "User, Group and Quota managment",
+  "headline": "User, Role, Group and Quota managment",
   "interactivityType": "mixed",
   "isAccessibleForFree": true,
   "isFamilyFriendly": true,
@@ -101,7 +103,7 @@
   },
   "courseCode": "admin / users-groups-quotas / slides",
   "learningResourceType": "slides",
-  "name": "Slides for 'User, Group and Quota managment' tutorial",
+  "name": "Slides for 'User, Role, Group and Quota managment' tutorial",
   "url": "https://training.galaxyproject.org//training-material/topics/admin/tutorials/users-groups-quotas/slides.html",
   "timeRequired": "PT15M",
   "description": "The questions this  addresses are:\n - How does Galaxy manage users and groups?\n - How can I assign Quotas to specific users/groups?\n\n\\nThe objectives are:\n - Learn the Galaxy user/group management and assign Quotas.\n - Understand the Role Based Access Control (RBAC) of Galaxy.\n\n",
@@ -177,40 +179,54 @@ class: center, middle, inverse
 ---
 
 
+
   
 <img src="/training-material/assets/images/gat.png" alt="page logo" class="cover-logo" />
   
 
 
-# User, Group and Quota managment
+# User, Role, Group and Quota managment
 
 
 <div class="contributors-line">
 
+<a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge contributor-natefoo"><img src="https://avatars.githubusercontent.com/natefoo?s=27" alt="Avatar">Nate Coraor</a>
 
- <a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/natefoo" alt="Avatar">Nate Coraor</a> <a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/bgruening" alt="Avatar">Björn Grüning</a> <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Avatar">Helena Rasche</a>
+
+<a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="https://avatars.githubusercontent.com/bgruening?s=27" alt="Avatar">Björn Grüning</a>
+
+
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 
 </div>
 
 
-<div class="footnote" style="bottom: 3em;"><i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Updated: Apr 6, 2021</div>
-<div class="footnote" style="bottom: 2em;">Or view the <a href="slides-plain.html">plain-text slides without JS</a></div>
-<div class="footnote" style="bottom: 1em;">Tip: press <kbd>P</kbd> to view the presenter notes</div>
+<div class="footnote" style="bottom: 5.5em;"><i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Updated: Mar 14, 2022</div>
+
+<div class="footnote" style="bottom: 4em;"><a href="/training-material/videos/watch.html?v=/admin/tutorials/users-groups-quotas/slides"><i class="far fa-play-circle" aria-hidden="true"></i><span class="visually-hidden">video-slides</span> View video slides for this lecture</a></div>
+
+<div class="footnote" style="bottom: 2.5em;"><i class="fas fa-file-alt" aria-hidden="true"></i><span class="visually-hidden">text-document</span><a href="slides-plain.html"> Plain-text slides</a></div>
+<div class="footnote" style="bottom: 1em;"><strong>Tip: </strong>press <kbd>P</kbd> to view the presenter notes</div>
 
 ???
-Presenter notes contain extra information which might be useful if you
-intend to use these slides for teaching.
+Presenter notes contain extra information which might be useful if you intend to use these slides for teaching.
 
 Press `P` again to switch presenter notes off
 
 Press `C` to create a new window where the same presentation will be displayed.
 This window is linked to the main window. Changing slides on one will cause the
-slide to change on the other. Useful when presenting.
+slide to change on the other.
+
+Useful when presenting.
 
 
 
 ---
+
 
 
 
@@ -386,7 +402,7 @@ option | description
 
 - Galaxy uses RBAC for permissions in many places
 - Roles can be created, and assigned permissions
-- Roles and groups behave similarly, grouping users together and granting permisisons
+- Roles and groups behave similarly, grouping users together and granting permissions
 
 ---
 
@@ -519,15 +535,20 @@ Storage
 
 ---
 
-## Thank you!
+## Thank You!
 
 This material is the result of a collaborative work. Thanks to the [Galaxy Training Network](https://training.galaxyproject.org) and all the contributors!
 
 
 <div class="contributors-line">
 
+<a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge contributor-natefoo"><img src="https://avatars.githubusercontent.com/natefoo?s=27" alt="Avatar">Nate Coraor</a>
 
- <a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/natefoo" alt="Avatar">Nate Coraor</a> <a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/bgruening" alt="Avatar">Björn Grüning</a> <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Avatar">Helena Rasche</a>
+
+<a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="https://avatars.githubusercontent.com/bgruening?s=27" alt="Avatar">Björn Grüning</a>
+
+
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
 
 
 </div>
@@ -539,7 +560,8 @@ This material is the result of a collaborative work. Thanks to the [Galaxy Train
   
 
 
-This material is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+This material is licensed under the Creative Commons Attribution 4.0 International License</a>.
 
 
     </textarea>

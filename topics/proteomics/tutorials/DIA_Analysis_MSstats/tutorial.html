@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_Analysis_MSstats/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_Analysis_MSstats/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_Analysis_MSstats/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_Analysis_MSstats/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_Analysis_MSstats/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_Analysis_MSstats/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_Analysis_MSstats/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_Analysis_MSstats/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_Analysis_MSstats/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_Analysis_MSstats/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_Analysis_MSstats/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fproteomics%2Ftutorials%2FDIA_Analysis_MSstats%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-08-06 16:31:20 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Statistical analysis of DIA data",
   "interactivityType": "mixed",
@@ -407,15 +407,24 @@
     <h1 data-toc-skip>Statistical analysis of DIA data</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/matthias313/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/matthias313" alt="Avatar">Matthias Fahrner</a> <a href="/training-material/hall-of-fame/foellmelanie/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/foellmelanie" alt="Avatar">Melanie Föll</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/matthias313/" class="contributor-badge contributor-matthias313"><img src="https://avatars.githubusercontent.com/matthias313?s=27" alt="Avatar">Matthias Fahrner</a>
+
+
+<a href="/training-material/hall-of-fame/foellmelanie/" class="contributor-badge contributor-foellmelanie"><img src="https://avatars.githubusercontent.com/foellmelanie?s=27" alt="Avatar">Melanie Föll</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -526,6 +535,8 @@
                     
                         
                     
+                        
+                    
                 
                     
                         
@@ -546,6 +557,8 @@
                                 
                             
                             </li>
+                        
+                    
                         
                     
                         
@@ -632,7 +645,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://zenodo.org/record/4307758">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/4307758">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -653,8 +666,35 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/proteomics/tutorials/DIA_Analysis_MSstats/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -737,6 +777,12 @@
         
     
         
+        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
+            Galaxy@GenOuest
+        </a>
+        
+    
+        
     
         
     
@@ -797,6 +843,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
+        
     
         
         <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
@@ -813,7 +863,15 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
+            UseGalaxy.org (Main)
+        </a>
+        
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
+            UseGalaxy.org.au
+        </a>
         
     
         
@@ -834,7 +892,9 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Aug 6, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -846,13 +906,15 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>This training covers the statistical analysis of data independent acquisition (DIA) mass spectrometry (MS) data, after successfull identification and quantification of peptides and proteins. We therefore recommend to first go through the <a href="/training-material/topics/proteomics/tutorials/DIA_lib_OSW/tutorial.html">DIA library generation tutorial</a> as well as the <a href="/training-material/topics/proteomics/tutorials/DIA_Analysis_OSW/tutorial.html">DIA analysis tutorial</a>, which teach the principles and characteristics of DIA data analysis.</p>
 
 <p>Modern mass spectrometry approaches enables the identification and quantification of thousands of proteins and tens of thousands of peptides in single measurements. This provides immense potential to in-depth explorative analysis of a variety of biological samples. However, often the number of available samples is limited leading to large proteomic datasets with only a few numbers of replicates or samples per condition. Thus, the statistical analysis remains challenging in such in-depth proteomic studies.</p>
 
-<p>Here we will use <strong>MSstats</strong>, which enables the statistical analysis and processing of proteomic data (<a class="citation" href="#Choi2014">Choi <i>et al.</i> 2014</a>).</p>
+<p>Here we will use <strong>MSstats</strong>, which enables the statistical analysis and processing of proteomic data (<span class="citation"><a href="#Choi2014">Choi <i>et al.</i> 2014</a></span>).</p>
 
 <blockquote class="agenda">
   <h3 id="agenda">Agenda</h3>
@@ -892,7 +954,7 @@ https://zenodo.org/record/4307758/files/PyProphet_msstats_input.tabular
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
     </li>
     <li>
       <p>Once the files are green, rename the sample annotation file in ‘Sample_annot_MSstats’, the comparison matrix file in ‘Comp_matrix_HEK_Ecoli’ and the two DIA analysis results files in ‘PyProphet_export’ and ‘PyProphet_msstats_input’</p>
@@ -1041,7 +1103,7 @@ https://zenodo.org/record/4307758/files/PyProphet_msstats_input.tabular
 
       <blockquote class="comment">
         <h3 id="comment-comment-msstats-input-format"><i class="far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden">comment</span> Comment: MSstats input format</h3>
-        <p>For the statistical analysis using MSstats the input must be in the long format, containing all relevant information in 10 predefined columns. The conversion of the <strong>PyProphet export</strong> output can either be done using <strong>MSstats</strong> (as we did above), or during the <strong>Pyprophet export</strong> step by using another R package called swath2stats (<a class="citation" href="#Blattmann2016">Blattmann <i>et al.</i> 2016</a>). Prior to the conversion the data can be processed and filtered using the swath2stats functionalities.</p>
+        <p>For the statistical analysis using MSstats the input must be in the long format, containing all relevant information in 10 predefined columns. The conversion of the <strong>PyProphet export</strong> output can either be done using <strong>MSstats</strong> (as we did above), or during the <strong>Pyprophet export</strong> step by using another R package called swath2stats (<span class="citation"><a href="#Blattmann2016">Blattmann <i>et al.</i> 2016</a></span>). Prior to the conversion the data can be processed and filtered using the swath2stats functionalities.</p>
       </blockquote>
     </li>
   </ol>
@@ -1134,11 +1196,11 @@ https://zenodo.org/record/4307758/files/PyProphet_msstats_input.tabular
 
 <h1 class="no_toc" id="conclusion">Conclusion</h1>
 
-<figure id="figure-1"><img src="../../images/DIA_MSstats_sum.png" alt="DIA_MSstats_pipe" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> All-in one <span class="notranslate">workflow</span> for DIA analysis in <span class="notranslate">Galaxy</span>. The statistical analysis using MSstats is highlighted in green.</figcaption></figure>
+<figure id="figure-1"><img src="../../images/DIA_MSstats_sum.png" alt="DIA_MSstats_pipe. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> All-in one <span class="notranslate">workflow</span> for DIA analysis in <span class="notranslate">Galaxy</span>. The statistical analysis using MSstats is highlighted in green.</figcaption></figure>
 
 <p>Using <strong>MSstats</strong> we were able to identify and quantify differentially regulated proteins between two Spike-in conditions in a HEK/Ecoli Benchmark DIA datatset. Furthermore, the preprocessing of the proteomic data prior to the statistical analysis can directly impact results. Thus, it might be beneficial to try various ways of intermediate data processing and statistical analysis to increase the sensitivity and specificity of the investigation.</p>
 
-<figure id="figure-2"><img src="../../images/DIA_MSstats_galaxy.png" alt="DIA_MSstats_galaxy" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> <span class="notranslate">Galaxy</span> worfklow containing all necessary steps for the statistical analysis of DIA data using MSstats</figcaption></figure>
+<figure id="figure-2"><img src="../../images/DIA_MSstats_galaxy.png" alt="DIA_MSstats_galaxy. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> <span class="notranslate">Galaxy</span> worfklow containing all necessary steps for the statistical analysis of DIA data using MSstats</figcaption></figure>
 
 
                 
@@ -1157,7 +1219,7 @@ https://zenodo.org/record/4307758/files/PyProphet_msstats_input.tabular
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/proteomics/faqs/">FAQ page for the Proteomics topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/proteomics/faqs/">FAQ page for the Proteomics topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1168,33 +1230,16 @@ https://zenodo.org/record/4307758/files/PyProphet_msstats_input.tabular
 
                 
                 <h1 id="bibliography">References</h1>
-                <ol class="bibliography"><li><span id="Choi2014">Choi, M., C.-Y. Chang, T. Clough, D. Broudy, T. Killeen <i>et al.</i>, 2014 <b>MSstats: an R package for statistical analysis of quantitative mass spectrometry-based proteomic experiments</b>. Bioinformatics 30: 2524–2526.</span>
-    
-    
-    <a href="https://doi.org/10.1093/bioinformatics/btu305">10.1093/bioinformatics/btu305</a>
-    
-    
-      <!-- prevent duplicate doi links -->
-      
-      <a href="https://academic.oup.com/bioinformatics/bioinformatics/article/2748156/MSstats:">https://academic.oup.com/bioinformatics/bioinformatics/article/2748156/MSstats:</a>
-      
-    
-
-</li>
-<li><span id="Blattmann2016">Blattmann, P., M. Heusel, and R. Aebersold, 2016 <b>SWATH2stats: An R/bioconductor package to process and convert quantitative SWATH-MS proteomics data for downstream analysis tools</b>. PLoS ONE 11: 1–7.</span>
-    
-    
-    <a href="https://doi.org/10.1371/journal.pone.0153160">10.1371/journal.pone.0153160</a>
-    
-    
-
-</li></ol>
+                <ol class="bibliography"><li id="Choi2014">Choi, M., C.-Y. Chang, T. Clough, D. Broudy, T. Killeen <i>et al.</i>, 2014 <b>MSstats: an R package for statistical analysis of quantitative mass spectrometry-based proteomic experiments</b>. Bioinformatics 30: 2524–2526. <a href="https://doi.org/10.1093/bioinformatics/btu305">10.1093/bioinformatics/btu305</a> <a href="https://academic.oup.com/bioinformatics/bioinformatics/article/2748156/MSstats:">https://academic.oup.com/bioinformatics/bioinformatics/article/2748156/MSstats:</a></li>
+<li id="Blattmann2016">Blattmann, P., M. Heusel, and R. Aebersold, 2016 <b>SWATH2stats: An R/bioconductor package to process and convert quantitative SWATH-MS proteomics data for downstream analysis tools</b>. PLoS ONE 11: 1–7. <a href="https://doi.org/10.1371/journal.pone.0153160">10.1371/journal.pone.0153160</a></li></ol>
                 
 
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />

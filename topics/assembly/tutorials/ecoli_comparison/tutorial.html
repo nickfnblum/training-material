@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/ecoli_comparison/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/ecoli_comparison/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/ecoli_comparison/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/ecoli_comparison/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/ecoli_comparison/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/ecoli_comparison/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/ecoli_comparison/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/ecoli_comparison/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/ecoli_comparison/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/ecoli_comparison/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/assembly/tutorials/ecoli_comparison/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fassembly%2Ftutorials%2Fecoli_comparison%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-03-23 18:12:58 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Making sense of a newly assembled genome",
   "interactivityType": "mixed",
@@ -362,20 +362,6 @@
     },
     {
       "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/sequence-analysis/tutorials/quality-control/slides.html",
-      "name": "Quality Control",
-      "description": "Slides for 'Quality Control' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
       "url": "https://training.galaxyproject.org//training-material/topics/assembly/tutorials/unicycler-assembly/slides.html",
       "name": "Unicycler Assembly",
       "description": "Slides for 'Unicycler Assembly' tutorial",
@@ -394,20 +380,6 @@
       "name": "Unicycler Assembly",
       "description": "Hands-on for 'Unicycler Assembly' tutorial",
       "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/assembly/tutorials/unicycler-assembly/slides.html",
-      "name": "Unicycler Assembly",
-      "description": "Slides for 'Unicycler Assembly' tutorial",
-      "learningResourceType": "slides",
       "interactivityType": "expositive",
       "provider": {
         "@type": "Organization",
@@ -463,15 +435,27 @@
     <h1 data-toc-skip>Making sense of a newly assembled genome</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/nekrut/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/nekrut" alt="Avatar">Anton Nekrutenko</a> <a href="/training-material/hall-of-fame/delphine-l/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/delphine-l" alt="Avatar">Delphine Lariviere</a> <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Avatar">Helena Rasche</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/nekrut/" class="contributor-badge contributor-nekrut"><img src="https://avatars.githubusercontent.com/nekrut?s=27" alt="Avatar">Anton Nekrutenko</a>
+
+
+<a href="/training-material/hall-of-fame/delphine-l/" class="contributor-badge contributor-delphine-l"><img src="https://avatars.githubusercontent.com/delphine-l?s=27" alt="Avatar">Delphine Lariviere</a>
+
+
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -569,6 +553,10 @@
                         
                     
                         
+                    
+                        
+                    
+                        
                             
                             <li> Unicycler Assembly:
                             
@@ -581,6 +569,8 @@
                                 
                             
                             </li>
+                        
+                    
                         
                     
                         
@@ -612,7 +602,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://zenodo.org/record/3382053">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/3382053">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -640,8 +630,35 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/assembly/tutorials/ecoli_comparison/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -724,11 +741,13 @@
         
     
         
+    
+        
+    
+        
         <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
             Galaxy@GenOuest
         </a>
-        
-    
         
     
         
@@ -816,6 +835,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
+        
     
         
         <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
@@ -823,6 +846,10 @@
         </a>
         
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
+            UseGalaxy.fr
+        </a>
         
     
         
@@ -861,7 +888,9 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 23, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -873,6 +902,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <p>In this tutorial we begin with a new genome assembly just produced in the <a href="/training-material/topics/assembly/tutorials/unicycler-assembly/tutorial.html">Unicycler tutorial</a>. This is an assembly of <em>E. coli</em> C, which we will be comparing to assemblies of all other complete genes of this species.</p>
 
 <blockquote class="agenda">
@@ -919,7 +950,7 @@
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
     </li>
     <li>
       <p>And skip ahead to <a href="#comparing-genome-architectures">comparing the most related genomes</a>.</p>
@@ -963,12 +994,12 @@ to be altered (e.g. column numbers) when using data directly from NCBI.</p>
     <li>
       <p>Click on “Filters” at the top right:</p>
 
-      <p><img src="../../images/ecoli-list-filter.png" alt="Filter menu button" loading="lazy" /></p>
+      <p><img src="../../images/ecoli-list-filter.png" alt="Filter menu button. " loading="lazy" /></p>
     </li>
     <li>
       <p>Select only the “Complete” genomes with the filter at the top</p>
 
-      <p>&lt;img src=”../../images/ecoli-list.png” alt=”Filter settings, only “complete” is checked”  loading=”lazy”&gt;</p>
+      <p><img src="../../images/ecoli-list.png" alt="Filter settings, only &quot;complete&quot; is checked. " loading="lazy" /></p>
     </li>
     <li>
       <p>At the top right, click “Download”</p>
@@ -1039,7 +1070,7 @@ GCA_003018575.1 | ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/003/018/575/GCA_003
 
 <p>Now that the list is formatted as a table in a sp<span class="notranslate">reads</span>heet, it is time to upload it into <span class="notranslate">Galaxy</span>. There is a problem though: the URLs (web addresses) in the list do not actually point to sequence files that we would need to perform alignments. Instead they point to directories. For example, this URL: <a href="ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/008/865/GCA_000008865.1_ASM886v1">GCA_000008865.1_ASM886v1</a> points to a directory (rather than a file) containing many files, most of which we do not need.</p>
 
-<figure id="figure-1"><img src="../../images/genbank_dir.png" alt="GenBank assembly files for an E. coli strain" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> A list of files for an <i>E. coli</i> assembly. For further analyses we only need the dataset ending with <code>_genomic.fna.gz</code>.</figcaption></figure>
+<figure id="figure-1"><img src="../../images/genbank_dir.png" alt="GenBank assembly files for an E. coli strain. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> A list of files for an <i>E. coli</i> assembly. For further analyses we only need the dataset ending with <code>_genomic.fna.gz</code>.</figcaption></figure>
 
 <p>So to download sequence files we need to edit URLs by adding filenames to them. For example, in the case of the URL shown above we need to add <code class="language-plaintext highlighter-rouge">/GCA_000008865.1_ASM886v1</code> and <code class="language-plaintext highlighter-rouge">_genomic.fna.gz</code> to the end to get this:</p>
 
@@ -1141,7 +1172,7 @@ GCA_003018575.1 | ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/003/018/575/GCA_003
 <blockquote class="tip">
   <h3 id="tip-tip-finding-tools-mentioned-in-this-tutorial"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Tip: Finding tools mentioned in this tutorial</h3>
   <p><span class="notranslate">Galaxy</span> instances contain hundreds of tools. As a result, it can be hard to find tools mentioned in tutorials such as this one. To help with this challenge, <span class="notranslate">Galaxy</span> has a search box at the top of the left panel. Use this box to find the tools mentioned here.</p>
-  <figure id="figure-2"><img src="../../images/tool_search.png" alt="Tool search" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Use search box to find tools!</figcaption></figure>
+  <figure id="figure-2"><img src="../../images/tool_search.png" alt="Tool search. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Use search box to find tools!</figcaption></figure>
 </blockquote>
 
 <p>The assembly we just uploaded has two issues that need to be addressed before proceeding with our analysis:</p>
@@ -1287,7 +1318,7 @@ Ecoli_C BA000007.2 63.06 157 33 3 1874604 1874735 5991 6147 5.8e-26 115.3
 
 <p>The alignment information produced by LASTZ is a collection. In this collection each element contains alignment data between each of the <em>E. coli</em> genomes and our assembly:</p>
 
-<figure id="figure-3"><img src="../../images/lastz_collection.png" alt="LASTZ collection" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> LASTZ produced a collection where each element corresponds to an alignment between an <i>E. coli</i> genome and our assembly. Here one of the elements is expanded (to expand an element simply click on it).</figcaption></figure>
+<figure id="figure-3"><img src="../../images/lastz_collection.png" alt="LASTZ collection. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> LASTZ produced a collection where each element corresponds to an alignment between an <i>E. coli</i> genome and our assembly. Here one of the elements is expanded (to expand an element simply click on it).</figcaption></figure>
 <p>.</p>
 
 <h2 id="collapsing-collection">Collapsing collection</h2>
@@ -1340,7 +1371,7 @@ Ecoli_C BA000007.2 63.06 157 33 3 1874604 1874735 5991 6147 5.8e-26 115.3
 
 <p>The relationship between the alignment identity and alignment length looks like this (remember that this is only a subsample of the data):</p>
 
-<figure id="figure-4"><img src="../../images/id_vs_len.png" alt="Identity versus length" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> Alignment identity (%) versus length (bp). This graph is truncated at the top</figcaption></figure>
+<figure id="figure-4"><img src="../../images/id_vs_len.png" alt="Identity versus length. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> Alignment identity (%) versus length (bp). This graph is truncated at the top</figcaption></figure>
 
 <p>You can see that most alignments are short and have relatively low identity. Thus we can filter the original dataset by identity and length. Judging from this graph we can select alignment longer than 10,000 bp with identity above 90%.</p>
 
@@ -1428,7 +1459,7 @@ Ecoli_C BA000007.2 63.06 157 33 3 1874604 1874735 5991 6147 5.8e-26 115.3
 
 <p>The relationship between the number of alignment blocks and total alignment length looks like this:</p>
 
-<figure id="figure-5"><img src="../../images/best_genomes_chart.png" alt="Identity versus length" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> Number of alignment blocks versus total alignment length (bp).</figcaption></figure>
+<figure id="figure-5"><img src="../../images/best_genomes_chart.png" alt="Identity versus length. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> Number of alignment blocks versus total alignment length (bp).</figcaption></figure>
 
 <p>A group of three dots in the upper left corner of this scatter plot represents genomes that are most similar to our assembly: they have a SMALL number of alignment blocks but HIGH total alignment length. Mousing over these three dots (if you set <strong>Data point labels</strong> correctly in the previous step) will reveal their accession numbers: <code class="language-plaintext highlighter-rouge">LT906474.1</code>, <code class="language-plaintext highlighter-rouge">CP024090.1</code>, and <code class="language-plaintext highlighter-rouge">CP020543.1</code>.</p>
 
@@ -1725,7 +1756,7 @@ GCA_900186905.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/900/186/905/GCA_90018
 
 <p>Because we chose to produce Dot Plots as well, LASTZ will generate two collections: one containing alignment data and the other containing DotPlots in PNG format:</p>
 
-<figure id="figure-6"><img src="../../images/three_dot_plots.png" alt="Dot Plots" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> Dot Plot representations of alignments between three <i>E. coli</i> genomes and our assembly. Target (X-axis) is indicated above each dot plot. Query (Y-axis) is our assembly. Red circle indicates a region deleted in our assembly.</figcaption></figure>
+<figure id="figure-6"><img src="../../images/three_dot_plots.png" alt="Dot Plots. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> Dot Plot representations of alignments between three <i>E. coli</i> genomes and our assembly. Target (X-axis) is indicated above each dot plot. Query (Y-axis) is our assembly. Red circle indicates a region deleted in our assembly.</figcaption></figure>
 
 <p>A quick conclusion that can be drawn here is that there is a large inversion in CP020543 and deletion in our assembly.</p>
 
@@ -1733,7 +1764,7 @@ GCA_900186905.1	ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/900/186/905/GCA_90018
   <h3 id="details-interpreting-dot-plots"><i class="fas fa-info-circle" aria-hidden="true"></i><span class="visually-hidden">details</span> Interpreting Dot Plots</h3>
   <p>If you are not sure how to interpret Dot Plots here is a great explanation by <a href="http://schatz-lab.org/">Michael Schatz</a>:</p>
 
-  <figure id="figure-7"><img src="../../images/dotplot.png" alt="Interpreting Dot Plots" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 7:</span> A quick reference to interpreting Dot Plots. Our case is identical to <i>Insertion into Reference</i> shown in the upper left.</figcaption></figure>
+  <figure id="figure-7"><img src="../../images/dotplot.png" alt="Interpreting Dot Plots. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 7:</span> A quick reference to interpreting Dot Plots. Our case is identical to <i>Insertion into Reference</i> shown in the upper left.</figcaption></figure>
 </blockquote>
 
 <p>For a moment let’s leave LASTZ result and create a browser that would allows us to display our results.</p>
@@ -2089,7 +2120,7 @@ In the second <span class="notranslate">BED</span>, column 1 will contain name o
       <p>Change the datatype of the output to <span class="notranslate">BED</span> and rename the output “Target &amp; Query Alignments”</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge"><span class="notranslate">bed</span></code></li>  <li>Click the <strong>Change datatype</strong> button</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge"><span class="notranslate">bed</span></code></li>  <li>Click the <strong>Save</strong> button</li></ul></blockquote>
 
       <!--SNIPPET-->
       <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-renaming-a-dataset"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Renaming a dataset</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, change the <strong>Name</strong> field  to <code class="language-plaintext highlighter-rouge">Target &amp; Query Alignments</code></li>  <li>Click the <strong>Save</strong> button</li></ul></blockquote>
@@ -2339,7 +2370,7 @@ Finally we can cut necessary columns from these datasets. These columns are 8 (s
       <p>Change the datatype of the collection to <code class="language-plaintext highlighter-rouge"><span class="notranslate">bed</span></code> and rename it to <code class="language-plaintext highlighter-rouge">Genes (E. coli Relatives)</code></p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge"><span class="notranslate">bed</span></code></li>  <li>Click the <strong>Change datatype</strong> button</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge"><span class="notranslate">bed</span></code></li>  <li>Click the <strong>Save</strong> button</li></ul></blockquote>
 
       <!--SNIPPET-->
       <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-renaming-a-dataset"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Renaming a dataset</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, change the <strong>Name</strong> field  to <code class="language-plaintext highlighter-rouge">Genes (E. coli Relatives)</code></li>  <li>Click the <strong>Save</strong> button</li></ul></blockquote>
@@ -2458,7 +2489,7 @@ Finally we can cut necessary columns from these datasets. These columns are 8 (s
       <p>Change the datatype of the collection to <code class="language-plaintext highlighter-rouge"><span class="notranslate">bed</span></code> and rename it to <code class="language-plaintext highlighter-rouge">Genes (E. coli Relatives) with Symbol Name</code></p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge"><span class="notranslate">bed</span></code></li>  <li>Click the <strong>Change datatype</strong> button</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge"><span class="notranslate">bed</span></code></li>  <li>Click the <strong>Save</strong> button</li></ul></blockquote>
 
       <!--SNIPPET-->
       <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-renaming-a-dataset"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Renaming a dataset</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, change the <strong>Name</strong> field  to <code class="language-plaintext highlighter-rouge">Genes (E. coli Relatives) with Symbol Name</code></li>  <li>Click the <strong>Save</strong> button</li></ul></blockquote>
@@ -2471,7 +2502,7 @@ Finally we can cut necessary columns from these datasets. These columns are 8 (s
 
 <p>It can be useful to have the complement of the aligned regions, to know which regions are unique.</p>
 
-<figure id="figure-8"><img src="../../images/complement.png" alt="Complementing genomic ranges" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 8:</span> Any set of genomic intervals can <i>complemented</i> or converted into a set of intervals that do not overlap the original set (image from <span class="notranslate">BED</span>Tools documentation).</figcaption></figure>
+<figure id="figure-8"><img src="../../images/complement.png" alt="Complementing genomic ranges. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 8:</span> Any set of genomic intervals can <i>complemented</i> or converted into a set of intervals that do not overlap the original set (image from <span class="notranslate">BED</span>Tools documentation).</figcaption></figure>
 
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-creating-a-genome-file"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Creating a genome file</h3>
@@ -2884,13 +2915,13 @@ Finally we can cut necessary columns from these datasets. These columns are 8 (s
 
 <p>This should produce a lovely Circos plot of your data:</p>
 
-<figure id="figure-9"><img src="../../images/ecoli-comparison.png" alt="Circos plot" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 9:</span> Circos plot of the four genomes. The insertion in the related genomes is visible around the 3.2Mb region</figcaption></figure>
+<figure id="figure-9"><img src="../../images/ecoli-comparison.png" alt="Circos plot. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 9:</span> Circos plot of the four genomes. The insertion in the related genomes is visible around the 3.2Mb region</figcaption></figure>
 
 <h2 id="extracting-genes-programmatically">Extracting genes programmatically</h2>
 
 <p>Above we’ve been able to look at genes that appear to be deleted in our assembly. But what we really need is to create a list that can be interrogated further. For example, which of these genes are essential? We can easily create such a list by overlapping coordinates of genes with coordinates of our deletion. But to do this we first need to create a set of coordinates corresponding to the deletion. We could do this by inspecting the genome browser, or we can do it automatically by intersecting the gap regions with the list of genes:</p>
 
-<figure id="figure-10"><img src="../../images/intersect.png" alt="Intersect between two BED datasets" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 10:</span> Computing intersect means finding overlapping regions in two <span class="notranslate">BED</span> datasets (image from <span class="notranslate">BED</span>Tools documentation).</figcaption></figure>
+<figure id="figure-10"><img src="../../images/intersect.png" alt="Intersect between two BED datasets. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 10:</span> Computing intersect means finding overlapping regions in two <span class="notranslate">BED</span> datasets (image from <span class="notranslate">BED</span>Tools documentation).</figcaption></figure>
 
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-finding-genes-deleted-in-our-assembly"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Finding genes deleted in our assembly</h3>
@@ -3001,7 +3032,7 @@ Finally we can cut necessary columns from these datasets. These columns are 8 (s
 
 <h2 id="are-any-of-these-genes-essential">Are any of these genes essential?</h2>
 
-<p>Goodall et al. have recently published a list of essential genes for <em>E. coli</em> K-12 (<a class="citation" href="#Goodall2018">Goodall <i>et al.</i> 2018</a>). We can use their data to answer this question. This paper contains a supplementary file in Excel format listing genes and whether they are essential or not. We have converted this to a <kbd>tab</kbd> delimited file for you, but you could do this in any sp<span class="notranslate">reads</span>heet application:</p>
+<p>Goodall et al. have recently published a list of essential genes for <em>E. coli</em> K-12 (<span class="citation"><a href="#Goodall2018">Goodall <i>et al.</i> 2018</a></span>). We can use their data to answer this question. This paper contains a supplementary file in Excel format listing genes and whether they are essential or not. We have converted this to a <kbd>tab</kbd> delimited file for you, but you could do this in any sp<span class="notranslate">reads</span>heet application:</p>
 
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-import-data"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Import data</h3>
@@ -3014,7 +3045,7 @@ Finally we can cut necessary columns from these datasets. These columns are 8 (s
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
     </li>
   </ol>
 
@@ -3630,7 +3661,7 @@ Finally we can cut necessary columns from these datasets. These columns are 8 (s
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/assembly/faqs/">FAQ page for the Assembly topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/assembly/faqs/">FAQ page for the Assembly topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -3638,23 +3669,15 @@ Finally we can cut necessary columns from these datasets. These columns are 8 (s
 
                 
                 <h1 id="bibliography">References</h1>
-                <ol class="bibliography"><li><span id="Goodall2018">Goodall, E. C. A., A. Robinson, I. G. Johnston, S. Jabbari, K. A. Turner <i>et al.</i>, 2018 <b>The Essential Genome of Escherichia coli K-12</b> (S. L. Chen &amp; K. A. Kline, Eds.). mBio 9:</span>
-    
-    
-    <a href="https://doi.org/10.1128/mbio.02096-17">10.1128/mbio.02096-17</a>
-    
-    
-      <!-- prevent duplicate doi links -->
-      
-    
-
-</li></ol>
+                <ol class="bibliography"><li id="Goodall2018">Goodall, E. C. A., A. Robinson, I. G. Johnston, S. Jabbari, K. A. Turner <i>et al.</i>, 2018 <b>The Essential Genome of Escherichia coli K-12</b> (S. L. Chen &amp; K. A. Kline, Eds.). mBio 9: <a href="https://doi.org/10.1128/mbio.02096-17">10.1128/mbio.02096-17</a></li></ol>
                 
 
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />

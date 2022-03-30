@@ -1,0 +1,72 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Enable upload via FTP",
+  "zenodo_link": "",
+  "questions": [
+    "How can I setup FTP to be easy for my users?",
+    "Can I authenticate ftp users with Galaxy credentials?"
+  ],
+  "objectives": [
+    "Configure galaxy and install a FTP server.",
+    "Use an Ansible playbook for this."
+  ],
+  "time_estimation": "1h",
+  "key_points": [
+    "FTP is easy to deploy thanks to the role",
+    "Users can be authenticated with their Galaxy credentials simplifying the user management process significantly"
+  ],
+  "contributors": [
+    {
+      "name": "Lucille Delisle",
+      "email": "lucille.delisle@epfl.ch",
+      "orcid": "0000-0002-1964-4960",
+      "joined": "2019-08",
+      "id": "lldelisle",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/lldelisle.json"
+    }
+  ],
+  "subtopic": "features",
+  "requirements": [
+    {
+      "type": "internal",
+      "topic_name": "admin",
+      "tutorials": [
+        "ansible",
+        "ansible-galaxy"
+      ]
+    }
+  ],
+  "abbreviations": {
+    "FTP": "File Transfer Protocol",
+    "NAT": "Network Address Translation"
+  },
+  "tags": [
+    "data",
+    "git-gat"
+  ],
+  "last_modified_at": "2022-03-10T15:01:21+00:00",
+  "url": "/topics/admin/tutorials/ftp/tutorial.html",
+  "topic_name": "admin",
+  "tutorial_name": "ftp",
+  "hands_on": true,
+  "slides": false,
+  "tools": [
+
+  ],
+  "tours": false,
+  "video": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": false
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/ftp/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/ftp/tutorial.json"
+  }
+}

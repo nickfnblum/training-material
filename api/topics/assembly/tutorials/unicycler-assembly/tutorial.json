@@ -1,0 +1,92 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Unicycler Assembly",
+  "zenodo_link": "https://doi.org/10.5281/zenodo.940733",
+  "level": "Introductory",
+  "tags": [
+    "prokaryote"
+  ],
+  "questions": [
+    "I have short reads and long reads. How do I assemble a genome?"
+  ],
+  "objectives": [
+    "Perform Quality Control on your reads",
+    "Perform a Small genome Assembly with Unicycler",
+    "Evaluate the Quality of the Assembly with Quast",
+    "Annotate the assembly with Prokka"
+  ],
+  "follow_up_training": [
+    {
+      "type": "internal",
+      "topic_name": "assembly",
+      "tutorials": [
+        "ecoli_comparison"
+      ]
+    }
+  ],
+  "time_estimation": "4h",
+  "key_points": [
+    "We learned about the strategies used by assemblers for hybrid assemblies",
+    "We performed an hybrid assembly of a bacterial genome and its annotation",
+    "Unicycler is a pipeline bases on Spades and Pilon dedicated to hybrid assembly of Small genomes",
+    "Combination of short and long reads helped us produce an almost perfect assembly"
+  ],
+  "contributors": [
+    {
+      "name": "Anton Nekrutenko",
+      "email": "anton@nekrut.org",
+      "joined": "2017-09",
+      "id": "nekrut",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/nekrut.json"
+    },
+    {
+      "name": "Delphine Lariviere",
+      "email": "delphine.lariviere@galaxy.org",
+      "joined": "2017-09",
+      "id": "delphine-l",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/delphine-l.json"
+    },
+    {
+      "name": "Simon Gladman",
+      "email": "simon.gladman@unimelb.edu.au",
+      "joined": "2017-09",
+      "id": "slugger70",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/slugger70.json"
+    }
+  ],
+  "last_modified_at": "2021-03-12T17:24:55+00:00",
+  "url": "/topics/assembly/tutorials/unicycler-assembly/tutorial.html",
+  "topic_name": "assembly",
+  "tutorial_name": "unicycler-assembly",
+  "hands_on": true,
+  "slides": true,
+  "workflows": [
+    {
+      "workflow": "unicycler.ga",
+      "tests": true
+    }
+  ],
+  "tools": [
+    "toolshed.g2.bx.psu.edu/repos/crs4/prokka/prokka/1.14.5",
+    "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+    "toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.7",
+    "toolshed.g2.bx.psu.edu/repos/iuc/quast/quast/5.0.2+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/iuc/unicycler/unicycler/0.4.8.0"
+  ],
+  "tours": true,
+  "video": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": false
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//assembly/tutorials/unicycler-assembly/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//assembly/tutorials/unicycler-assembly/tutorial.json"
+  }
+}

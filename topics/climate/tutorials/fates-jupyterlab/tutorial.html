@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/tutorials/fates-jupyterlab/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/tutorials/fates-jupyterlab/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/tutorials/fates-jupyterlab/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/tutorials/fates-jupyterlab/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/tutorials/fates-jupyterlab/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/tutorials/fates-jupyterlab/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/tutorials/fates-jupyterlab/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/tutorials/fates-jupyterlab/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/tutorials/fates-jupyterlab/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/tutorials/fates-jupyterlab/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/climate/tutorials/fates-jupyterlab/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fclimate%2Ftutorials%2Ffates-jupyterlab%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-09-02 13:13:55 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Functionally Assembled Terrestrial Ecosystem Simulator (FATES) with Galaxy Climate JupyterLab",
   "interactivityType": "mixed",
@@ -362,20 +362,6 @@
     },
     {
       "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/climate/tutorials/fates/slides.html",
-      "name": "Functionally Assembled Terrestrial Ecosystem Simulator (FATES)",
-      "description": "Slides for 'Functionally Assembled Terrestrial Ecosystem Simulator (FATES)' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
       "url": "https://training.galaxyproject.org//training-material/topics/galaxy-interface/tutorials/jupyterlab/tutorial.html",
       "name": "JupyterLab in Galaxy",
       "description": "Hands-on for 'JupyterLab in Galaxy' tutorial",
@@ -429,15 +415,21 @@
     <h1 data-toc-skip>Functionally Assembled Terrestrial Ecosystem Simulator (FATES) with Galaxy Climate JupyterLab</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/annefou/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/annefou" alt="Avatar">Anne Fouilloux</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/annefou/" class="contributor-badge contributor-annefou"><img src="https://avatars.githubusercontent.com/annefou?s=27" alt="Avatar">Anne Fouilloux</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -536,6 +528,10 @@
                     
                         
                     
+                        
+                    
+                        
+                    
                 
             </ul>
         
@@ -550,6 +546,8 @@
         
             <ul>
                 
+                    
+                        
                     
                         
                     
@@ -644,7 +642,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://doi.org/10.5281/zenodo.4108341">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.4108341">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -656,8 +654,35 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/climate/tutorials/fates-jupyterlab/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -683,9 +708,11 @@
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Sep 2, 2021 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Nov 17, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -697,6 +724,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>The practical aims at familiarizing you with running CLM-FATES within <span class="notranslate">Galaxy</span> Climate JupyterLab.</p>
@@ -745,7 +774,7 @@ FATES needs what we call a “Host Land Model” (HLM) to run and in this tutori
 we will be using the <a href="http://www.cesm.ucar.edu/models/clm/">Community Land Model</a>
 of the <a href="https://github.com/ESCOMP/CTSM">Community Terrestrial Systems Model</a> (CLM-CTSM).
 FATES was derived from the CLM Ecosystem Demography model (CLM(ED)), which was documented in
-<a class="citation" href="#Fisher2015"><b>Taking off the training wheels: the properties of a dynamic vegetation model without climate envelopes, CLM4.5(ED)</b> 2015</a>.
+<span class="citation"><a href="#Fisher2015"><b>Taking off the training wheels: the properties of a dynamic vegetation model without climate envelopes, CLM4.5(ED)</b> 2015</a></span>.
 and this technical note was first published as an appendix to <a href="https://pdfs.semanticscholar.org/396c/b9f172cb681421ed78325a2237bfb428eece.pdf">that paper</a>.
 The <a href="https://fates-docs.readthedocs.io/en/latest/index.html">FATES documentation</a> will provide some more insight on FATES too.</p>
 
@@ -796,7 +825,7 @@ stopping your JupyterLab.</p>
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
 
       <!--SNIPPET-->
       <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-data-from-a-data-library"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing data from a data library</h3>  <p>As an alte<span class="notranslate">rna</span>tive to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>  <ul>  <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>  <li>Navigate to the correct folder as indicated by your instructor</li>  <li>Select the desired files</li>  <li>Click on the <strong>To History</strong> button near the top and select <strong>as Datasets</strong> from the dropdown menu</li>  <li>In the pop-up window, select the history you want to import the files to (or create a new one)</li>  <li>Click on <strong>Import</strong></li></ul></blockquote>
@@ -805,7 +834,7 @@ stopping your JupyterLab.</p>
       <p>Check the datatype is <strong>tar</strong></p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge">datatypes</code></li>  <li>Click the <strong>Change datatype</strong> button</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge">datatypes</code></li>  <li>Click the <strong>Save</strong> button</li></ul></blockquote>
     </li>
     <li>
       <p>Rename Datasets</p>
@@ -846,7 +875,7 @@ is tutorial.</p>
 
 <p>You should now be looking at a page with the JupyterLab interface:</p>
 
-<p><img src="../../images/jupyterlab_climate_session.png" alt="Jupyterlab climate session" loading="lazy" /></p>
+<p><img src="../../images/jupyterlab_climate_session.png" alt="Jupyterlab climate session interface. " loading="lazy" /></p>
 
 <h1 id="step-3-create-a-new-session-clm-fates-in-jupyterlab">Step-3: Create a new session CLM-FATES in JupyterLab</h1>
 
@@ -946,7 +975,7 @@ create_newcase --help
 </code></pre></div>  </div>
 </blockquote>
 
-<p>The 4 main arguments of create_newcase are explained on the figure below: <img src="../../images/newcase_fates.png" alt="create_newcase main arguments" loading="lazy" />.</p>
+<p>The 4 main arguments of create_newcase are explained on the figure below: <img src="../../images/newcase_fates.png" alt="Snapshot of create_newcase main arguments showing: what is the case name? which resolution? which model configuration? which set of components? which machine are you running on?" loading="lazy" />.</p>
 
 <ul>
   <li><strong>case</strong>: specifies the name and location of the case being created. It creates a new case in <code class="language-plaintext highlighter-rouge">$HOME/ctsm_cases/</code> and its name is <code class="language-plaintext highlighter-rouge">fates_alp1</code>. make sure to give a meaningful name to your FATES experiments.</li>
@@ -1161,7 +1190,7 @@ ax.set_title(dset['AREA_TREES'].long_name)
 fig.savefig('AREA_TREES.png')
 </code></pre></div></div>
 
-<p><img src="../../images/AREA_TREES_10yrs.png" alt="AREA TREES (10 years)" loading="lazy" /></p>
+<p><img src="../../images/AREA_TREES_10yrs.png" alt="AREA TREES (10 years). " loading="lazy" /></p>
 
 <p>In the plot above, we create a figure (with specific dimension [14,7]) and one subplot with one row and one column.
 The last argument of <em>subplot</em> is the index (1) of this particular subplot.</p>
@@ -1174,7 +1203,7 @@ The last argument of <em>subplot</em> is the index (1) of this particular subplo
 p.fig.savefig('CANOPY_HEIGHT_DIST.png')
 </code></pre></div></div>
 
-<p><img src="../../images/CANOPY_HEIGHT_DIST_10yrs.png" alt="CANOPY HEIGHT DIST (10 years)" loading="lazy" /></p>
+<p><img src="../../images/CANOPY_HEIGHT_DIST_10yrs.png" alt="CANOPY HEIGHT DIST (10 years). " loading="lazy" /></p>
 
 <h1 id="save-your-results-to-your-galaxy-history">Save your results to your <span class="notranslate">Galaxy</span> history</h1>
 
@@ -1302,7 +1331,7 @@ If you are not familiar with <code class="language-plaintext highlighter-rouge">
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/climate/faqs/">FAQ page for the Climate topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/climate/faqs/">FAQ page for the Climate topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1310,20 +1339,15 @@ If you are not familiar with <code class="language-plaintext highlighter-rouge">
 
                 
                 <h1 id="bibliography">References</h1>
-                <ol class="bibliography"><li><span id="Fisher2015"><b>Taking off the training wheels: the properties of a dynamic vegetation model without climate envelopes, CLM4.5(ED)</b>, 2015.</span>
-    
-    
-    <a href="https://doi.org/10.5194/gmd-8-3593-2015">10.5194/gmd-8-3593-2015</a>
-    
-    
-
-</li></ol>
+                <ol class="bibliography"><li id="Fisher2015"><b>Taking off the training wheels: the properties of a dynamic vegetation model without climate envelopes, CLM4.5(ED)</b>, 2015. <a href="https://doi.org/10.5194/gmd-8-3593-2015">10.5194/gmd-8-3593-2015</a></li></ol>
                 
 
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
@@ -1376,8 +1400,8 @@ If you are not familiar with <code class="language-plaintext highlighter-rouge">
 author = "Anne Fouilloux",
 title = "Functionally Assembled Terrestrial Ecosystem Simulator (FATES) with Galaxy Climate JupyterLab (Galaxy Training Materials)",
 year = "2021",
-month = "09",
-day = "02"
+month = "11",
+day = "17"
 url = "\url{https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates-jupyterlab/tutorial.html}",
 note = "[Online; accessed TODAY]"
 }

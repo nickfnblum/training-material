@@ -47,8 +47,44 @@
                         <a class="nav-link" href="/training-material/hall-of-fame" title="Hall of Fame">
                            <i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span> Contributors
                         </a>
+
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/mblue9/&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/mblue9/&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/mblue9/&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/mblue9/&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/mblue9/&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/mblue9/&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -100,41 +136,6 @@
                 <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> GTN feedback
             </a>
         
-
-        <div class="dropdown-item">
-            <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/mblue9/&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/mblue9/&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/mblue9/&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/mblue9/&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/mblue9/&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2F%2Ftutorials%2F%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
 
         <div class="dropdown-item">
             <div>
@@ -192,7 +193,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -210,10 +211,6 @@
 
         <div class="container main-content" role="main">
         
-
-
-
-
 
 <style type="text/css" media="all">
 .card-title {
@@ -233,9 +230,7 @@
 				<h3>
 					Maria Doyle
 				</h3>
-
-				
-				
+                
 
 				
 
@@ -257,520 +252,36 @@
 
 				
 				<br/>
+				<h4>Favourite Topics</h4>
 				<canvas id="myChart" height="300px"></canvas>
+				<h4>Favourite Formats</h4>
+				<canvas id="slidesVsTutorials" height="300px"></canvas>
 
 			</div>
 
 			<div class="col-md-9">
 				<h1>Contributions</h1>
-				<p class="text-muted">
-				
-					The following list includes only slides and tutorials where the individual has been added to the contributor list. This may not include the sum total of their contributions to the training materials (e.g. GTN css or design, tutorial datasets, workflow development, etc.)
-				
-				</p>
 
+				<p class="text-muted">
+					
+					The following list includes only slides and tutorials where the individual has been added to the contributor list. This may not include the sum total of their contributions to the training materials (e.g. GTN css or design, tutorial datasets, workflow development, etc.) unless described by a news post.
+					
+
+                
+                <br><br>
+                <h2> GitHub Activity</h2>
+                <ul>
+                  <li><a href="https://github.com/galaxyproject/training-material/pulls?q=is%3Apr+author%3Amblue9"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Pull Requests</a> </li>
+                  <li><a href="https://github.com/galaxyproject/training-material/commits?author=mblue9"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Commits</a></li>
+                  <li><a href="https://github.com/galaxyproject/training-material/issues?q=+is%3Aissue+author%3Amblue9"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Issues Reported</a></li>
+                </ul>
+                
+                </p>
+
+				
 				<h2>Tutorials</h2>
 				<ul>
 				
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/transcriptomics">
-							Transcriptomics
-						</a>
-						/
-						<a href="/training-material//topics/transcriptomics/tutorials/rna-seq-genes-to-pathways/tutorial.html">
-						3: RNA-seq genes to pathways
-						</a>
-					</li>
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/transcriptomics">
-							Transcriptomics
-						</a>
-						/
-						<a href="/training-material//topics/transcriptomics/tutorials/rna-seq-reads-to-counts/tutorial.html">
-						1: RNA-Seq reads to counts
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/transcriptomics">
-							Transcriptomics
-						</a>
-						/
-						<a href="/training-material//topics/transcriptomics/tutorials/rna-seq-viz-with-volcanoplot/tutorial.html">
-						Visualization of RNA-Seq results with Volcano Plot
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/transcriptomics">
-							Transcriptomics
-						</a>
-						/
-						<a href="/training-material//topics/transcriptomics/tutorials/rna-seq-viz-with-heatmap2/tutorial.html">
-						Visualization of RNA-Seq results with heatmap2
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/transcriptomics">
-							Transcriptomics
-						</a>
-						/
-						<a href="/training-material//topics/transcriptomics/tutorials/ref-based/tutorial.html">
-						Reference-based RNA-Seq data analysis
-						</a>
-					</li>
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/transcriptomics">
-							Transcriptomics
-						</a>
-						/
-						<a href="/training-material//topics/transcriptomics/tutorials/rna-seq-counts-to-genes/tutorial.html">
-						2: RNA-seq counts to genes
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/transcriptomics">
-							Transcriptomics
-						</a>
-						/
-						<a href="/training-material//topics/transcriptomics/tutorials/rna-seq-viz-with-volcanoplot-r/tutorial.html">
-						Visualization of RNA-Seq results with Volcano Plot in R
-						</a>
-					</li>
-					
-				
-					
-				
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/transcriptomics">
-							Transcriptomics
-						</a>
-						/
-						<a href="/training-material//topics/transcriptomics/tutorials/goenrichment/tutorial.html">
-						GO Enrichment Analysis
-						</a>
-					</li>
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/sequence-analysis">
-							Sequence analysis
-						</a>
-						/
-						<a href="/training-material//topics/sequence-analysis/tutorials/quality-control/tutorial.html">
-						Quality Control
-						</a>
-					</li>
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 					<li>
 						
 						
@@ -782,226 +293,134 @@
 						ATAC-Seq data analysis
 						</a>
 					</li>
-					
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/sequence-analysis">
+							Sequence analysis
+						</a>
+						/
+						<a href="/training-material//topics/sequence-analysis/tutorials/quality-control/tutorial.html">
+						Quality Control
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/genome-annotation">
+							Genome Annotation
+						</a>
+						/
+						<a href="/training-material//topics/genome-annotation/tutorials/crispr-screen/tutorial.html">
+						CRISPR screen analysis
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/transcriptomics">
+							Transcriptomics
+						</a>
+						/
+						<a href="/training-material//topics/transcriptomics/tutorials/rna-seq-viz-with-heatmap2/tutorial.html">
+						Visualization of RNA-Seq results with heatmap2
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/transcriptomics">
+							Transcriptomics
+						</a>
+						/
+						<a href="/training-material//topics/transcriptomics/tutorials/rna-seq-reads-to-counts/tutorial.html">
+						1: RNA-Seq reads to counts
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/transcriptomics">
+							Transcriptomics
+						</a>
+						/
+						<a href="/training-material//topics/transcriptomics/tutorials/rna-seq-viz-with-volcanoplot-r/tutorial.html">
+						Visualization of RNA-Seq results with Volcano Plot in R
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/transcriptomics">
+							Transcriptomics
+						</a>
+						/
+						<a href="/training-material//topics/transcriptomics/tutorials/ref-based/tutorial.html">
+						Reference-based RNA-Seq data analysis
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/transcriptomics">
+							Transcriptomics
+						</a>
+						/
+						<a href="/training-material//topics/transcriptomics/tutorials/rna-seq-counts-to-genes/tutorial.html">
+						2: RNA-seq counts to genes
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/transcriptomics">
+							Transcriptomics
+						</a>
+						/
+						<a href="/training-material//topics/transcriptomics/tutorials/goenrichment/tutorial.html">
+						GO Enrichment Analysis
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/transcriptomics">
+							Transcriptomics
+						</a>
+						/
+						<a href="/training-material//topics/transcriptomics/tutorials/rna-seq-genes-to-pathways/tutorial.html">
+						3: RNA-seq genes to pathways
+						</a>
+					</li>
 				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/transcriptomics">
+							Transcriptomics
+						</a>
+						/
+						<a href="/training-material//topics/transcriptomics/tutorials/rna-seq-viz-with-volcanoplot/tutorial.html">
+						Visualization of RNA-Seq results with Volcano Plot
+						</a>
+					</li>
 				
 				</ul>
+				
 
+				
 				<h2>Slides</h2>
 				<ul>
 				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 					<li>
 						
 						
@@ -1013,775 +432,296 @@
 						Getting data into Galaxy
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/genome-annotation">
+							Genome Annotation
+						</a>
+						/
+						<a href="/training-material//topics/genome-annotation/tutorials/crispr-screen/slides.html">
+						Introduction to CRISPR screen analysis
+						</a>
+					</li>
 				
 				</ul>
+				
 
+				
+                <h2>News</h2>
+                <div class="newslist">
+                
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/06/26/tutorial-volcanoplot-r.html"><h3 class="card-title">New Tutorial: Visualization of RNA-Seq results with Volcano Plot in R</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material/topics/transcriptomics/images/rna-seq-viz-with-volcanoplot-r/volcano_categories.png" alt="Screenshot of Volcano Plot customised in R. Significant genes had their colour changed to red, and points and labels were made smaller.">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/06/26/tutorial-volcanoplot-r.html"><h4 class="card-title">New Tutorial: Visualization of RNA-Seq results with Volcano Plot in R</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/mblue9/" class="contributor-badge contributor-mblue9"><img src="https://avatars.githubusercontent.com/mblue9?s=27" alt="Avatar">Maria Doyle</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="new tutorial" style="background-color: hsl(46, 80.0%, 85%); color: #333; border: 1px solid hsl(46, 80.0%, 45%)" title="Click to show all tutorials with this tag">new tutorial</button>
+
+<button class="label label-default tutorial_tag" id="visualization" style="background-color: hsl(343, 80.0%, 85%); color: #333; border: 1px solid hsl(343, 80.0%, 45%)" title="Click to show all tutorials with this tag">visualization</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        The Volcano plot tutorial introduced volcano plots and showed how they can be easily generated with the Galaxy Volcano plot tool. This new tutorial shows how you can customise a plot using the R script output from the tool and RStudio in Galaxy. A short video for the tutorial is also available on YouTube, created for the GCC2021 Training week. 
+Happy plotting!
+
+
+      
+    </p>
+    <a href="/training-material/news/2021/06/26/tutorial-volcanoplot-r.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/03/18/gtn_cofest_may.html"><h3 class="card-title">Next GTN CoFest May 20, 2021</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material//assets/images/cofest.png" alt="CoFest logo with two generic people shapes conversing next to the GTN logo and text 'gtn cofest'">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/03/18/gtn_cofest_may.html"><h4 class="card-title">Next GTN CoFest May 20, 2021</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+
+
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+<a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="https://avatars.githubusercontent.com/bebatut?s=27" alt="Avatar">Bérénice Batut</a>
+
+
+<a href="/training-material/hall-of-fame/jennaj/" class="contributor-badge contributor-jennaj"><img src="https://avatars.githubusercontent.com/jennaj?s=27" alt="Avatar">Jennifer Hillman-Jackson</a>
+
+
+<a href="/training-material/hall-of-fame/delphine-l/" class="contributor-badge contributor-delphine-l"><img src="https://avatars.githubusercontent.com/delphine-l?s=27" alt="Avatar">Delphine Lariviere</a>
+
+
+<a href="/training-material/hall-of-fame/annasyme/" class="contributor-badge contributor-annasyme"><img src="https://avatars.githubusercontent.com/annasyme?s=27" alt="Avatar">Anna Syme</a>
+
+
+<a href="/training-material/hall-of-fame/mblue9/" class="contributor-badge contributor-mblue9"><img src="https://avatars.githubusercontent.com/mblue9?s=27" alt="Avatar">Maria Doyle</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="cofest" style="background-color: hsl(318, 80.0%, 85%); color: #333; border: 1px solid hsl(318, 80.0%, 45%)" title="Click to show all tutorials with this tag">cofest</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        Every 3 months we organise one day dedicated to the GTN community! Thursday, May 20th is the next GTN CoFest. We will be working on the training materials, have discussions with the global Galaxy traning community. Do you teach with Galaxy? Want to learn how to add your tutorial to the GTN? New to the community and just want to learn more? Everybody is welcome!
+
+      
+    </p>
+    <a href="/training-material/news/2021/03/18/gtn_cofest_may.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                </div>
+				
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 				<script type="text/javascript">
 
 var ctx = document.getElementById('myChart').getContext('2d');
+var ctx2 = document.getElementById('slidesVsTutorials').getContext('2d');
 
 var topics = [
-
-
-
-
-
-
-	
-	
-	"Transcriptomics",
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-	"Transcriptomics",
-
-
-
-	
-	
-	"Transcriptomics",
-
-
-
-	
-	
-	"Transcriptomics",
-
-
-
-	
-	
-	"Transcriptomics",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-	"Transcriptomics",
-
-
-
-	
-	
-	"Transcriptomics",
-
-
-
-
-
-
-
-
-
-	
-	
-	"Transcriptomics",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-	"Sequence analysis",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	
 	
 	"Epigenetics",
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	
+	"Sequence analysis",
+
+	
+	
+	"Genome Annotation",
+
+	
+	
+	"Transcriptomics",
+
+	
+	
+	"Transcriptomics",
+
+	
+	
+	"Transcriptomics",
+
+	
+	
+	"Transcriptomics",
+
+	
+	
+	"Transcriptomics",
+
+	
+	
+	"Transcriptomics",
+
+	
+	
+	"Transcriptomics",
+
+	
+	
+	"Transcriptomics",
 
 
 	
 	
 	"Using Galaxy and Managing your Data",
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	
+	"Genome Annotation",
 
 ];
 
+var slidesVsTutos = [
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+
+	"Slides",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+
+	"News Posts",
+
+	"News Posts",
+
+]
+
 function foo(arr) {
-var a = [], b = [], prev;
+	var a = [], b = [], prev;
 
-arr.sort();
-for ( var i = 0; i < arr.length; i++ ) {
-	if ( arr[i] !== prev ) {
-		a.push(arr[i]);
-		b.push(1);
-	} else {
-		b[b.length-1]++;
+	arr.sort();
+	for ( var i = 0; i < arr.length; i++ ) {
+		if ( arr[i] !== prev ) {
+			a.push(arr[i]);
+			b.push(1);
+		} else {
+			b[b.length-1]++;
+		}
+		prev = arr[i];
 	}
-	prev = arr[i];
-}
 
-return [a, b];
+	return [a, b];
 }
 
 out = foo(topics)
 
 function genColors(size) {
-var o = [];
-for(i = 0; i < size; i++){
-	o.push(`hsl(${ i * 360 / size }, 100%, 50%)`)
-}
-return o;
-}
-
-
-var chart = new Chart(ctx, {
-// The type of chart we want to create
-type: 'doughnut',
-
-// The data for our dataset
-data: {
-	labels: out[0],
-	datasets: [{
-		label: 'Contribution Areas',
-		backgroundColor: genColors(out[0].length),
-		data: out[1]
-	}]
-},
-
-// Configuration options go here
-options: {
-	legend: {
-		display: false
+	var o = [];
+	for(i = 0; i < size; i++){
+		o.push(`hsl(${ i * 360 / size }, 100%, 50%)`)
 	}
+	return o;
 }
+
+
+// Which topics
+var chart = new Chart(ctx, {
+	type: 'doughnut',
+	data: {
+		labels: out[0],
+		datasets: [{
+			label: 'Contribution Areas',
+			backgroundColor: genColors(out[0].length),
+			data: out[1]
+		}]
+	},
+	options: {
+		legend: {
+			display: false
+		}
+	}
+});
+
+out = foo(slidesVsTutos);
+// What material type
+var chart2 = new Chart(ctx2, {
+	type: 'doughnut',
+	data: {
+		labels: out[0],
+		datasets: [{
+			label: 'Contribution Areas',
+			backgroundColor: genColors(out[0].length),
+			data: out[1]
+		}]
+	},
+	options: {
+		legend: {
+			display: false
+		}
+	}
 });
 				</script>
 
@@ -1804,7 +744,7 @@ options: {
         <p>
 The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
 </p>
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/2c449363b7d2a7d9c09beba391f8d73804500259">2c449363b7d2a7d9c09beba391f8d73804500259</a></p>
+        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/7cdccfe4a2343778b7a2ee82f8fa69f43778c264">7cdccfe4a2343778b7a2ee82f8fa69f43778c264</a></p>
     </div>
 </footer>
 

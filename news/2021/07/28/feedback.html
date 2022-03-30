@@ -47,8 +47,44 @@
                         <a class="nav-link" href="/training-material/hall-of-fame" title="Hall of Fame">
                            <i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span> Contributors
                         </a>
+
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2021/07/28/feedback.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2021/07/28/feedback.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2021/07/28/feedback.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2021/07/28/feedback.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2021/07/28/feedback.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2021/07/28/feedback.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -100,41 +136,6 @@
                 <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> GTN feedback
             </a>
         
-
-        <div class="dropdown-item">
-            <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2021/07/28/feedback.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2021/07/28/feedback.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2021/07/28/feedback.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2021/07/28/feedback.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/news/2021/07/28/feedback.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2F%2Ftutorials%2F%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
 
         <div class="dropdown-item">
             <div>
@@ -192,7 +193,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -218,8 +219,7 @@
 <div class="newsitem">
 
 <div class="contributors-line">By: 
-
- <a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/bebatut" alt="Avatar">Bérénice Batut</a>
+<a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="https://avatars.githubusercontent.com/bebatut?s=27" alt="Avatar">Bérénice Batut</a>
 
 </div>
 
@@ -230,10 +230,13 @@
 <button class="label label-default tutorial_tag" id="contributors" style="background-color: hsl(198, 80.0%, 85%); color: #333; border: 1px solid hsl(198, 80.0%, 45%)" title="contributors">contributors</button>
 
 
+
 <hr/>
 
-<img class="float-right" alt="Screenshot of the top of the feedback page with the titles and 2 graphs: the cumulative number of feedback answers over month for all topics, and a barplot with number of answers for different scores" src="/training-material/news/images/2021-07-28-feedback.png" width="300"/>
-<p>As you have probably already seen, a feedback form is embedded on the bottom of each tutorial.</p>
+<div class="row">
+  <div class="col-md-8">
+
+    <p>As you have probably already seen, a feedback form is embedded on the bottom of each tutorial.</p>
 
 <p>The answers are automatically posted to a <a href="https://github.com/galaxyproject/training-material/issues/989">GitHub issue</a>. With &gt; 1,300 answers, it is quite difficult to keep an eye on the answers, specially because the answers there are for all tutorials, but also to have an overview of the answers.</p>
 
@@ -246,10 +249,19 @@
 <p><a href="/training-material/feedback.html" class="btn btn-primary">Visit the Feedback page</a></p>
 
 
+    
 
+    
 
+    
+  </div>
 
+  <div class="col-md-4">
+    <img alt="Screenshot of the top of the feedback page with the titles and 2 graphs: the cumulative number of feedback answers over month for all topics, and a barplot with number of answers for different scores" src="/training-material/news/images/2021-07-28-feedback.png" width="300"/>
+  </div>
 </div>
+</div>
+
 
 
 </section>
@@ -266,7 +278,7 @@
         <p>
 The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
 </p>
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/2c449363b7d2a7d9c09beba391f8d73804500259">2c449363b7d2a7d9c09beba391f8d73804500259</a></p>
+        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/7cdccfe4a2343778b7a2ee82f8fa69f43778c264">7cdccfe4a2343778b7a2ee82f8fa69f43778c264</a></p>
     </div>
 </footer>
 

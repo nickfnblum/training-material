@@ -1,0 +1,79 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Regression in Machine Learning",
+  "zenodo_link": "https://zenodo.org/record/2545213#.XEWTJ9-YVa0",
+  "questions": [
+    "How to use regression techniques to create predictive models from biological datasets?"
+  ],
+  "objectives": [
+    "Learn regression background",
+    "Apply regression based machine learning algorithms",
+    "Learn ageing biomarkers and predict age from DNA methylation datasets",
+    "Learn how visualizations can be used to analyze predictions"
+  ],
+  "key_points": [
+    "Using regression, real-valued targets are learned using the training set and predicted using the test set.",
+    "For each regression algorithm, its parameters should be optimized based on the dataset."
+  ],
+  "time_estimation": "2H",
+  "contributors": [
+    {
+      "name": "Alireza Khanteymoori",
+      "email": "khanteymoori@gmail.com",
+      "orcid": "0000-0001-6811-9196",
+      "joined": "2019-07",
+      "id": "khanteymoori",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/khanteymoori.json"
+    },
+    {
+      "name": "Anup Kumar",
+      "email": "anup.rulez@gmail.com",
+      "twitter": "musafirtweetsz",
+      "joined": "2018-08",
+      "id": "anuprulez",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/anuprulez.json"
+    },
+    {
+      "name": "Simon Bray",
+      "joined": "2019-05",
+      "id": "simonbray",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/simonbray.json"
+    }
+  ],
+  "last_modified_at": "2021-03-12T17:24:55+00:00",
+  "url": "/topics/statistics/tutorials/regression_machinelearning/tutorial.html",
+  "topic_name": "statistics",
+  "tutorial_name": "regression_machinelearning",
+  "hands_on": true,
+  "slides": false,
+  "workflows": [
+    {
+      "workflow": "regression.ga",
+      "tests": false
+    }
+  ],
+  "tools": [
+    "Remove beginning1",
+    "toolshed.g2.bx.psu.edu/repos/bgruening/plotly_regression_performance_plots/plotly_regression_performance_plots/0.1",
+    "toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_build_pipeline/sklearn_build_pipeline/1.0.8.1",
+    "toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.1",
+    "toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.8.1",
+    "toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_searchcv/sklearn_searchcv/1.0.8.1"
+  ],
+  "tours": false,
+  "video": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": false
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//statistics/tutorials/regression_machinelearning/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//statistics/tutorials/regression_machinelearning/tutorial.json"
+  }
+}

@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fintroduction%2Ftutorials%2Fgalaxy-intro-strands%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-09-21 08:08:13 +0000",
+  "dateModified": "1970-01-01 00:33:42 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Introduction to Genomics and Galaxy",
   "interactivityType": "mixed",
@@ -357,15 +357,24 @@
     <h1 data-toc-skip>Introduction to Genomics and Galaxy</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/tnabtaf/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/tnabtaf" alt="Avatar">Dave Clements</a> <a href="/training-material/hall-of-fame/gallardoalba/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/gallardoalba" alt="Avatar">Cristóbal Gallardo</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/tnabtaf/" class="contributor-badge contributor-tnabtaf"><img src="https://avatars.githubusercontent.com/tnabtaf?s=27" alt="Avatar">Dave Clements</a>
+
+
+<a href="/training-material/hall-of-fame/gallardoalba/" class="contributor-badge contributor-gallardoalba"><img src="https://avatars.githubusercontent.com/gallardoalba?s=27" alt="Avatar">Cristóbal Gallardo</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -432,8 +441,35 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/introduction/tutorials/galaxy-intro-strands/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -522,17 +558,23 @@
         
     
         
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
+        
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
         
     
         
+    
+        
         <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
             Galaxy@GenOuest
         </a>
-        
-    
         
     
         
@@ -628,6 +670,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
+        
     
         
         <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
@@ -679,9 +725,11 @@
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Sep 21, 2021 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Feb 25, 2022 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -693,6 +741,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction-to-galaxy">Introduction to <span class="notranslate">Galaxy</span></h1>
 
 <p>This practical aims to familiarize you with the <span class="notranslate">Galaxy</span> user interface. It will teach you how to perform basic tasks such as importing data, running tools, working with histories, creating workflows, and sharing your work.</p>
@@ -778,11 +828,11 @@
 
   <p>Graphically, the human genome can be shown as the chromosomes that are in it:</p>
 
-  <p><img src="../../images/human_genome_chroms.png" alt="Human genome consists of 23 (pairs of) chromosomes" loading="lazy" /></p>
+  <p><img src="../../images/human_genome_chroms.png" alt="Human genome consists of 23 (pairs of) chromosomes. " loading="lazy" /></p>
 
   <p>And here’s a representation of a chromosome, strands, and genes on the chromosome.</p>
 
-  <p><img src="../../images/chromosome_strands_genes.png" alt="Chromosomes are double stranded and have forward and reverse strands; strands have genes on them" loading="lazy" /></p>
+  <p><img src="../../images/chromosome_strands_genes.png" alt="Chromosomes are double stranded and have forward and reverse strands; strands have genes on them. " loading="lazy" /></p>
 </blockquote>
 
 <p>The question we are asking looks like:</p>
@@ -804,7 +854,7 @@
 
 <p>The <span class="notranslate">Galaxy</span> interface consists of three main parts. The available tools are listed on the left, your analysis history is recorded on the right, and the central panel will show the home page, tool forms, and dataset content.</p>
 
-<p><img src="../../images/galaxy_interface.png" alt="Galaxy interface" loading="lazy" /></p>
+<p><img src="../../images/galaxy_interface.png" alt="Galaxy interface showing history panel on the right, tools panel on the left and main panel at the center. " loading="lazy" /></p>
 
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-start-with-an-empty-history"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Start with an empty history</h3>
@@ -831,7 +881,7 @@
     <li>
       <p><em>Click</em> on the <strong>Get Data</strong> toolbox to expand it.</p>
 
-      <p><img src="../../images/101_01.png" alt="The Get Data toolbox" loading="lazy" /></p>
+      <p><img src="../../images/getdata.PNG" alt="The Get Data toolbox. " loading="lazy" /></p>
     </li>
   </ol>
 
@@ -848,7 +898,7 @@
     <li>
       <p><em>Click</em> on the tool <span class="tool" data-tool="ucsc_table_direct1" title="Tested with ucsc_table_direct1"><strong>UCSC Main table browser</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: ucsc_table_direct1</span></span>  to go to UCSC.</p>
 
-      <p><img src="../../images/101_01.png" alt="Click on UCSC Main table browser" loading="lazy" /></p>
+      <p><img src="../../images/101_01.png" alt="Click on UCSC Main table browser. " loading="lazy" /></p>
     </li>
   </ol>
 
@@ -856,7 +906,7 @@
 
 <p>This will take you to the UCSC Table Browser:</p>
 
-<p><img src="../../images/ucsc_table_browser_w_default_settings.png" alt="UCSC table browser tool, first screen for genes" loading="lazy" /></p>
+<p><img src="../../images/ucsc_table_browser_w_default_settings.png" alt="UCSC table browser tool, first screen for genes. " loading="lazy" /></p>
 
 <p>The <a href="https://genome.ucsc.edu/cgi-bin/hgTables">UCSC Table Browser</a> provides access to all the data that is shown in the <a href="https://genome.ucsc.edu/cgi-bin/hgGateway">UCSC Genome Browser</a> (see box below). If you are working on a species that UCSC supports (like human) then the Table Browser is a great place to get genomic data.</p>
 
@@ -918,14 +968,14 @@
         <li>In the text box next to <code class="language-plaintext highlighter-rouge">position</code> enter <code class="language-plaintext highlighter-rouge">chr22</code> (case matters).</li>
       </ul>
 
-      <p><img src="../../images/ucsc_tb_set_region_chr22.png" alt="Change the region" loading="lazy" /></p>
+      <p><img src="../../images/ucsc_tb_set_region_chr22.png" alt="Change the region. " loading="lazy" /></p>
     </li>
     <li>
       <p><em>Click</em> the <strong>get output</strong> button.</p>
 
       <p>And, that doesn’t actually get us the output.  It sends us to a second UCSC page that asks us exactly what we want.</p>
 
-      <p><img src="../../images/ucsc_tb_2nd_page_whole_gene.png" alt="UCSC Table Browser 2nd page" loading="lazy" /></p>
+      <p><img src="../../images/ucsc_tb_2nd_page_whole_gene.png" alt="UCSC Table Browser 2nd page. " loading="lazy" /></p>
     </li>
     <li>
       <p>Under <strong>Create one <span class="notranslate">BED</span> record per</strong> make sure that <strong>Whole Gene</strong> is selected.</p>
@@ -954,25 +1004,25 @@
       <td><strong>Grey</strong></td>
       <td>Clock</td>
       <td>Item is waiting to start (waiting for data transfer to start)</td>
-      <td><img src="../../images/status_queued.png" alt="Status: Queued" loading="lazy" /></td>
+      <td><img src="../../images/status_queued.png" alt="Status: Queued. " loading="lazy" /></td>
     </tr>
     <tr>
       <td><strong>Yellow</strong></td>
       <td>Spinner</td>
       <td>Item is running (data is actively being transferred).</td>
-      <td><img src="../../images/status_running.png" alt="Status: Running" loading="lazy" /></td>
+      <td><img src="../../images/status_running.png" alt="Status: Running. " loading="lazy" /></td>
     </tr>
     <tr>
       <td><strong>Green</strong></td>
       <td>None</td>
       <td>Item has finished successfully (data transfer complete).</td>
-      <td><img src="../../images/status_finished_success.png" alt="Status: Successfully finished" loading="lazy" /></td>
+      <td><img src="../../images/status_finished_success.png" alt="Status: Successfully finished. " loading="lazy" /></td>
     </tr>
     <tr>
       <td><strong>Red</strong></td>
       <td>Cross</td>
       <td>The job has failed. There can be <a href="https://galaxyproject.org/support/tool-error/">many reasons</a>.</td>
-      <td><img src="../../images/status_failed.png" alt="Status: Successfully finished" loading="lazy" /></td>
+      <td><img src="../../images/status_failed.png" alt="Status: Failed. " loading="lazy" /></td>
     </tr>
   </tbody>
 </table>
@@ -988,7 +1038,7 @@
 
 <p>This expands the dataset and shows you information about it, and a preview of its contents.</p>
 
-<p><img src="../../images/genes_human_chr22_preview.png" alt="Preview of the data from UCSC Table Browser" loading="lazy" /></p>
+<p><img src="../../images/genes_human_chr22_preview.png" alt="Preview of the data from UCSC Table Browser. " loading="lazy" /></p>
 
 <p>From this preview we can obtain a huge amount of useful information:</p>
 <ol>
@@ -1006,7 +1056,7 @@
     <li>
       <p>Click on the <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-eye</span> (eye) icon to view the contents of the dataset. This displays all of the data.</p>
 
-      <p><img src="../../images/genes_human_chr22_dataset_view.png" alt="Full dataset in central panel" loading="lazy" /></p>
+      <p><img src="../../images/genes_human_chr22_dataset_view.png" alt="Full dataset in central panel. " loading="lazy" /></p>
     </li>
     <li>
       <p>Use the side scroll bars to move through the file.</p>
@@ -1089,7 +1139,7 @@
     <li><strong>Name your history</strong> to be meaningful and easy to find.
       <ul>
         <li><em>Click</em> on the title of the history and enter something like <strong>Intro - Strands</strong> as the name.  Hit the <code class="language-plaintext highlighter-rouge">enter</code> key on your keyboard to save it.
-<img src="../../../../shared/images/rename_history.png" alt="Rename the history" loading="lazy" /></li>
+<img src="../../../../shared/images/rename_history.png" alt="Rename the history. " loading="lazy" /></li>
       </ul>
     </li>
     <li><strong>Rename your dataset</strong>
@@ -1101,7 +1151,7 @@
 
       <p>Your history should now look something like this:</p>
 
-      <p><img src="../../images/genes_human_chr22_rename.png" alt="Rename dataset" loading="lazy" /></p>
+      <p><img src="../../images/genes_human_chr22_rename.png" alt="Rename dataset. " loading="lazy" /></p>
     </li>
   </ol>
 </blockquote>
@@ -1139,7 +1189,7 @@
     <li>Take a look at the <strong>Syntax</strong> and <strong>Example</strong> sections to understand what the tool does.</li>
   </ol>
 
-  <p><img src="../../images/filter_tool_defaults.png" alt="The Filter Tool form" loading="lazy" /></p>
+  <p><img src="../../images/filter_tool_defaults.png" alt="The Filter Tool form. " loading="lazy" /></p>
 </blockquote>
 
 <p>It doesn’t say anything about <strong>Filter</strong> being able to split a file into multiple files.  It does look like we can use Filter to get only genes on the forward strand, or only genes on the reverse strand.  We would have to run Filter twice, once for forward strand genes, and once for reverse strand genes. Let’s do that.</p>
@@ -1152,16 +1202,20 @@
       <p>The filter tool has 3 fields:</p>
 
       <ol>
-        <li><strong>Dataset</strong>: This pulldown will list any dataset from your history that this tool can work on.  In your case that’s probably only one dataset.  Make sure this is set to your <code class="language-plaintext highlighter-rouge">Genes chr22</code> dataset.</li>
-        <li><strong>Condition</strong>: this free text field is where we specify which records we want in the output dataset.  <em>Enter</em> <code class="language-plaintext highlighter-rouge">c6 == "+"</code> in the text box.
-This specifies that column 6 (the strand) must be equal to (<code class="language-plaintext highlighter-rouge">==</code> is Python for <em>is equal to</em>) a plus sign.</li>
-        <li><strong>Header lines to skip</strong>: Leave this as <code class="language-plaintext highlighter-rouge">0</code>. Our dataset does not have any header lines.</li>
+        <li><strong>Dataset</strong>: This pulldown will list any dataset from your history that this tool can work on.  In your case that’s probably only one dataset. <i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“filter”</em>: <code class="language-plaintext highlighter-rouge">Genes chr22</code> .</li>
+        <li><strong>Condition</strong>: this free text field is where we specify which records we want in the output dataset. Put in <em>“Condition”</em>:  <code class="language-plaintext highlighter-rouge">c6 == "+" </code> .
+ This specifies that column 6 (the strand) must be equal to (<code class="language-plaintext highlighter-rouge">==</code> is Python for <em>is equal to</em>) a plus sign.</li>
+        <li>
+          <p><em>“Header lines to skip”</em>:  <code class="language-plaintext highlighter-rouge">0 </code></p>
+
+          <p>Our dataset does not have any header lines.</p>
+        </li>
       </ol>
     </li>
     <li>
       <p>Finally, <em>click</em> the <strong>Execute</strong> button.</p>
 
-      <p><img src="../../images/filter_tool_forward_strand_genes_only.png" alt="Run the Filter tool to get only the forward strand genes" loading="lazy" /></p>
+      <p><img src="../../images/filter_tool_forward_strand_genes_only.png" alt="Run the Filter tool to get only the forward strand genes. " loading="lazy" /></p>
     </li>
   </ul>
 
@@ -1179,7 +1233,11 @@ This specifies that column 6 (the strand) must be equal to (<code class="languag
   <ol>
     <li>Open the dataset preview by <em>clicking</em> on the name of the <code class="language-plaintext highlighter-rouge">Genes, forward strand</code> dataset.  This shows an icon than the uploaded <code class="language-plaintext highlighter-rouge">Genes chr22</code> dataset did not: a looping arrow.</li>
     <li><em>Click</em> the <strong>looping arrow</strong> (“Run this job again”) icon.  This won’t actually run the job again.  What it will do is bring up the Filter tool form with <em>the exact same settings that were used to produce this dataset.</em></li>
-    <li>Rather than run Filter again with the same settings, <em>change</em> <strong>Condition</strong> to <code class="language-plaintext highlighter-rouge">c6 == "-"</code></li>
+    <li>Rerun <span class="tool" data-tool="Filter1" title="Tested with Filter1"><strong>Filter</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Filter1</span></span>  but with
+      <ul>
+        <li><em>“Condition”</em>:  <code class="language-plaintext highlighter-rouge">c6 == "-" </code></li>
+      </ul>
+    </li>
     <li><em>Click</em> the <strong>Execute</strong> button.</li>
   </ol>
 
@@ -1253,22 +1311,19 @@ In <span class="notranslate">Galaxy</span>, a <em>genomic interval</em> is a som
   <ol>
     <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/intersect/gops_intersect_1/1.0.0" title="Tested with toolshed.g2.bx.psu.edu/repos/devteam/intersect/gops_intersect_1/1.0.0"><strong>Intersect</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/devteam/intersect/gops_intersect_1/1.0.0</span></span>  with the following parameters:
       <ul>
-        <li><strong>Return</strong> to <code class="language-plaintext highlighter-rouge">Overlapping Intervals</code>.
-          <ul>
-            <li>This looks like it might return whole genes, while <code class="language-plaintext highlighter-rouge">Overlapping pieces</code> may return only the parts that overlap.  We suspect that whole genes might be more useful.</li>
-          </ul>
-        </li>
-        <li><strong>of</strong> (the first dataset) to <code class="language-plaintext highlighter-rouge">Genes, forward strand</code></li>
-        <li><strong>that intersect</strong> (the second dataset) to <code class="language-plaintext highlighter-rouge">Genes, reverse strand</code></li>
-        <li><strong>for at least</strong> to <code class="language-plaintext highlighter-rouge">1</code>
-          <ul>
-            <li>This will return genes with even just one position overlapping.</li>
-          </ul>
+        <li><em>“Return”</em>:  <code class="language-plaintext highlighter-rouge">Overlapping Intervals</code>.
+This looks like it might return whole genes, while <code class="language-plaintext highlighter-rouge">Overlapping pieces</code> may return only the parts that overlap.  We suspect that whole genes might be more useful.</li>
+        <li><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span><em>“of”</em>:  <code class="language-plaintext highlighter-rouge">Genes, forward strand</code> (the first dataset)</li>
+        <li><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“that intersect”</em> : <code class="language-plaintext highlighter-rouge">Genes, reverse strand</code> (the second dataset)</li>
+        <li>
+          <p><em>“for at least”</em>: <code class="language-plaintext highlighter-rouge">1</code></p>
+
+          <p>This will return genes with even just one position overlapping.</p>
         </li>
         <li><em>Click</em> <strong>Execute</strong>.</li>
       </ul>
 
-      <p><img src="../../images/genes_human_intersect_strands.png" alt="Run Intersect" loading="lazy" /></p>
+      <p><img src="../../images/genes_human_intersect_strands.png" alt="Run Intersect. " loading="lazy" /></p>
     </li>
     <li>
       <p>Now repeat the intersect, but make the first dataset be the reverse genes, and the second be the forward genes.</p>
@@ -1302,9 +1357,21 @@ In <span class="notranslate">Galaxy</span>, a <em>genomic interval</em> is a som
     <li>Near the top of the toolbox is <strong>Concatenate datasets tail-to-head</strong>. <em>Click</em> on it.  Lets try that tool.</li>
     <li><span class="tool" data-tool="cat1" title="Tested with cat1"><strong>Concatenate</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: cat1</span></span>  with the following parameters:
       <ul>
-        <li><em>Set</em> <strong>Concatenate Dataset</strong> to <code class="language-plaintext highlighter-rouge">Overlapping reverse genes</code>.</li>
-        <li><em>Click</em> <strong>+ Insert Dataset</strong>.  This adds a second dataset pull-down menu to the form.</li>
-        <li><em>Select</em> <code class="language-plaintext highlighter-rouge">Overlapping forward genes</code> as the second dataset.</li>
+        <li><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“Concatenate Dataset”</em>: <code class="language-plaintext highlighter-rouge">Overlapping reverse genes</code>.</li>
+        <li><em>“Dataset</em>”</li>
+      </ul>
+      <ul>
+        <li>
+          <p>Click on <i class="far fa-plus-square" aria-hidden="true"></i><span class="visually-hidden">param-repeat</span> <em>“Insert Dataset”</em></p>
+
+          <p>This adds a second dataset pull-down menu to the form.</p>
+        </li>
+        <li>
+          <p>In <em>“1: Dataset”</em></p>
+          <ul>
+            <li><i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">param-files</span> <em>“Select”</em>: <code class="language-plaintext highlighter-rouge">Overlapping forward genes</code> as the second dataset.</li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><em>Click</em> <strong>Execute</strong></li>
@@ -1328,7 +1395,7 @@ In <span class="notranslate">Galaxy</span>, a <em>genomic interval</em> is a som
 
   <p>This will launch a new window, showing UCSC’s Genome Browser with our dataset shown right at the top.  UCSC figures out that our first overlapping gene is ~11 million bases into chromosome 22, and it has landed us there.</p>
 
-  <p><img src="../../images/ucsc_gb_genes_strands_overlapping.png" alt="UCSC Genome Browser" loading="lazy" /></p>
+  <p><img src="../../images/ucsc_gb_genes_strands_overlapping.png" alt="UCSC Genome Browser. " loading="lazy" /></p>
 </blockquote>
 
 <blockquote class="comment">
@@ -1355,12 +1422,12 @@ In <span class="notranslate">Galaxy</span>, a <em>genomic interval</em> is a som
   <ul>
     <li><em>Click</em> on the <strong>Scale</strong> track (the top track) just to the left of the start of the black boxes.</li>
     <li>Now <em>drag</em> the mouse across the Scale track to just to the right of the  black boxes and let go.
-<img src="../../images/ucsc_gb_zoom_by_drag.png" alt="Zoom by clicking and dragging on the Scale track" loading="lazy" /></li>
+<img src="../../images/ucsc_gb_zoom_by_drag.png" alt="Zoom by clicking and dragging on the Scale track. " loading="lazy" /></li>
     <li>A window pops up describing several ways to interact with the browser.  Just <em>click</em> the <strong>Zoom In</strong> button at the bottom.</li>
     <li>This redraws the window, this time zoomed in to what you highlighted.</li>
     <li>Continue to zoom in until you have the set of linked black boxes you picked centered on the screen.</li>
     <li>Once you are as zoomed as you want to be, click on one of the linked boxes.  This will expand the track:
-<img src="../../images/ucsc_gb_zoom_to_1_gene.png" alt="One gene, fully zoomed and expanded" loading="lazy" /></li>
+<img src="../../images/ucsc_gb_zoom_to_1_gene.png" alt="One gene, fully zoomed and expanded. " loading="lazy" /></li>
   </ul>
 </blockquote>
 
@@ -1425,7 +1492,7 @@ In humans (and in all plants and animals) the molecules that are built from gene
     <li>Under <strong>Destination History</strong> enter an informative history name in the <strong>New history named:</strong> box.
       <ul>
         <li>For example, <code class="language-plaintext highlighter-rouge">Exon overlaps on opposite strands</code>
-<img src="../../images/copy_datasets_to_new_history.png" alt="Copy only the Genes chr22  dataset to the new history" loading="lazy" /></li>
+<img src="../../images/copy_datasets_to_new_history.png" alt="Copy only the Genes chr22  dataset to the new history. " loading="lazy" /></li>
       </ul>
     </li>
     <li><em>Click</em> the <strong>Copy History Items</strong> button to create your new history.
@@ -1456,7 +1523,7 @@ In humans (and in all plants and animals) the molecules that are built from gene
 </blockquote>
 
 <p>If you got the data from UCSC it will look something like this:
-<img src="../../images/101_exons.png" alt="Contents of the exons dataset from UCSC" loading="lazy" /></p>
+<img src="../../images/101_exons.png" alt="Contents of the exons dataset from UCSC. " loading="lazy" /></p>
 
 <p>Your history should now have two datasets: one describing entire genes, and one describing just the exons.</p>
 
@@ -1468,17 +1535,21 @@ In humans (and in all plants and animals) the molecules that are built from gene
   <h3 id="hands_on-run-the-workflow-on-the-exon-data"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Run the <span class="notranslate">workflow</span> on the exon data.</h3>
 
   <ol>
-    <li><em>Click</em> the <strong><span class="notranslate">Workflow</span></strong> tab in the menu at the top of the <span class="notranslate">Galaxy</span> page.
-      <ul>
-        <li>This lists all of your defined workflows, including the one you just created.</li>
-      </ul>
+    <li>
+      <p><em>Click</em> the <strong><span class="notranslate">Workflow</span></strong> tab in the menu at the top of the <span class="notranslate">Galaxy</span> page.</p>
+
+      <p>This lists all of your defined workflows, including the one you just created.</p>
     </li>
-    <li><em>Click</em> on the newly created <span class="notranslate">workflow</span> and select <strong>Run</strong> from the pull-down menu.
-      <ul>
-        <li>This launches the <span class="notranslate">workflow</span> run form (which you also saw when testing this <span class="notranslate">workflow</span>)</li>
-      </ul>
+    <li>
+      <p><em>Click</em> on the <i class="fas fa-play" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">workflow</span>-run</span> (Run <span class="notranslate">workflow</span>) button next to your <span class="notranslate">workflow</span>.</p>
+
+      <p>This launches the <span class="notranslate">workflow</span> run form (which you also saw when testing this <span class="notranslate">workflow</span>)</p>
     </li>
-    <li><em>Select</em> <strong>No</strong> under <strong>Send results to a new history</strong></li>
+    <li>
+      <p><em>Select</em> <strong>No</strong> under <strong>Send results to a new history</strong></p>
+
+      <p>If you do not see this option displayed, <em>click</em> on <strong>Expand to full <span class="notranslate">workflow</span> form</strong> to reveal it.</p>
+    </li>
     <li><em>Set</em> the first (and only) input dataset to the <code class="language-plaintext highlighter-rouge">Exons</code> dataset, using the pull-down menu.</li>
     <li><em>Click</em> the <strong>Run <span class="notranslate">workflow</span></strong> button.</li>
   </ol>
@@ -1531,7 +1602,7 @@ In humans (and in all plants and animals) the molecules that are built from gene
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/introduction/faqs/">FAQ page for the Introduction to Galaxy Analyses topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/introduction/faqs/">FAQ page for the Introduction to Galaxy Analyses topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1542,7 +1613,9 @@ In humans (and in all plants and animals) the molecules that are built from gene
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
@@ -1577,7 +1650,7 @@ In humans (and in all plants and animals) the molecules that are built from gene
                 <h1>Citing this Tutorial</h1>
                 <p>
                     <ol>
-                        <li id="citation-text">Dave Clements, Cristóbal Gallardo, 2021 <b>Introduction to Genomics and Galaxy (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html">https://training.galaxyproject.org/training-material/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html</a> Online; accessed TODAY
+                        <li id="citation-text">Dave Clements, Cristóbal Gallardo, 2022 <b>Introduction to Genomics and Galaxy (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html">https://training.galaxyproject.org/training-material/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
@@ -1594,9 +1667,9 @@ In humans (and in all plants and animals) the molecules that are built from gene
 <code id="citation-code">@misc{introduction-galaxy-intro-strands,
 author = "Dave Clements and Cristóbal Gallardo",
 title = "Introduction to Genomics and Galaxy (Galaxy Training Materials)",
-year = "2021",
-month = "09",
-day = "21"
+year = "2022",
+month = "02",
+day = "25"
 url = "\url{https://training.galaxyproject.org/training-material/topics/introduction/tutorials/galaxy-intro-strands/tutorial.html}",
 note = "[Online; accessed TODAY]"
 }

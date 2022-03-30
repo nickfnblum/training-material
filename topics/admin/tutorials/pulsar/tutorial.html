@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/pulsar/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/pulsar/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/pulsar/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/pulsar/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/pulsar/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/pulsar/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/pulsar/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/pulsar/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/pulsar/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/pulsar/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/pulsar/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fadmin%2Ftutorials%2Fpulsar%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-07-02 13:25:34 +0000",
+  "dateModified": "1970-01-01 00:33:42 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Running Jobs on Remote Resources with Pulsar",
   "interactivityType": "mixed",
@@ -312,7 +312,7 @@
   "name": "Hands-on for 'Running Jobs on Remote Resources with Pulsar' tutorial",
   "url": "https://training.galaxyproject.org//training-material/topics/admin/tutorials/pulsar/tutorial.html",
   "timeRequired": "PT60M",
-  "keywords": "jobs",
+  "keywords": "ansible, jobs, git-gat",
   "description": "The questions this  addresses are:\n - How does pulsar work?\n - How can I deploy it?\n\n\\nThe objectives are:\n - Have an understanding of what Pulsar is and how it works\n - Install and configure a RabbitMQ message queueing server\n - Install and configure a Pulsar server on a remote linux machine\n - Be able to get Galaxy to send jobs to a remote Pulsar server\n\n",
   "inLanguage": {
     "@type": "Language",
@@ -340,20 +340,6 @@
       "name": "Ansible",
       "description": "Hands-on for 'Ansible' tutorial",
       "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/admin/tutorials/ansible/slides.html",
-      "name": "Ansible",
-      "description": "Slides for 'Ansible' tutorial",
-      "learningResourceType": "slides",
       "interactivityType": "expositive",
       "provider": {
         "@type": "Organization",
@@ -392,20 +378,6 @@
     },
     {
       "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/admin/tutorials/ansible-galaxy/slides.html",
-      "name": "Galaxy Installation with Ansible",
-      "description": "Slides for 'Galaxy Installation with Ansible' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
       "url": "https://training.galaxyproject.org//training-material/topics/admin/tutorials/connect-to-compute-cluster/slides.html",
       "name": "Connecting Galaxy to a compute cluster",
       "description": "Slides for 'Connecting Galaxy to a compute cluster' tutorial",
@@ -424,20 +396,6 @@
       "name": "Connecting Galaxy to a compute cluster",
       "description": "Hands-on for 'Connecting Galaxy to a compute cluster' tutorial",
       "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/admin/tutorials/connect-to-compute-cluster/slides.html",
-      "name": "Connecting Galaxy to a compute cluster",
-      "description": "Slides for 'Connecting Galaxy to a compute cluster' tutorial",
-      "learningResourceType": "slides",
       "interactivityType": "expositive",
       "provider": {
         "@type": "Organization",
@@ -480,20 +438,6 @@
       "name": "Reference Data with CVMFS",
       "description": "Hands-on for 'Reference Data with CVMFS' tutorial",
       "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/admin/tutorials/cvmfs/slides.html",
-      "name": "Reference Data with CVMFS",
-      "description": "Slides for 'Reference Data with CVMFS' tutorial",
-      "learningResourceType": "slides",
       "interactivityType": "expositive",
       "provider": {
         "@type": "Organization",
@@ -566,15 +510,33 @@
     <h1 data-toc-skip>Running Jobs on Remote Resources with Pulsar</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/natefoo" alt="Avatar">Nate Coraor</a> <a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/slugger70" alt="Avatar">Simon Gladman</a> <a href="/training-material/hall-of-fame/mvdbeek/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/mvdbeek" alt="Avatar">Marius van den Beek</a> <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Avatar">Helena Rasche</a> <a href="/training-material/hall-of-fame/gmauro/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/gmauro" alt="Avatar">Gianmauro Cuccuru</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge contributor-natefoo"><img src="https://avatars.githubusercontent.com/natefoo?s=27" alt="Avatar">Nate Coraor</a>
+
+
+<a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge contributor-slugger70"><img src="https://avatars.githubusercontent.com/slugger70?s=27" alt="Avatar">Simon Gladman</a>
+
+
+<a href="/training-material/hall-of-fame/mvdbeek/" class="contributor-badge contributor-mvdbeek"><img src="https://avatars.githubusercontent.com/mvdbeek?s=27" alt="Avatar">Marius van den Beek</a>
+
+
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+<a href="/training-material/hall-of-fame/gmauro/" class="contributor-badge contributor-gmauro"><img src="https://avatars.githubusercontent.com/gmauro?s=27" alt="Avatar">Gianmauro Cuccuru</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -634,6 +596,10 @@
                                 
                             
                             </li>
+                        
+                    
+                        
+                    
                         
                     
                         
@@ -797,6 +763,10 @@
                     
                         
                     
+                        
+                    
+                        
+                    
                 
                     
                         
@@ -820,6 +790,10 @@
                                 
                             
                             </li>
+                        
+                    
+                        
+                    
                         
                     
                         
@@ -976,7 +950,13 @@
                     
                         
                     
+                        
+                    
+                        
+                    
                 
+                    
+                        
                     
                         
                     
@@ -1067,6 +1047,8 @@
                     
                         
                     
+                        
+                    
                 
             </ul>
         
@@ -1107,16 +1089,78 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/admin/tutorials/pulsar/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+  <li class="btn btn-default supporting_material">
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Recordings
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+
+        
+        
+        
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/admin/pulsar/tutorial" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (June 2021)
+            </a>
+        </li>
+        
+        
+          
+          
+          
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/admin/pulsar/slides" title="View GTN Video Library for these Slides">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Lecture (February 2021)
+            </a>
+        </li>
+        
+        
+    </ul>
+   </li>
+   
+
+
 
             
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jul 2, 2021 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 10, 2022 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -1128,6 +1172,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="overview">Overview</h1>
 
 <p>Pulsar is the <span class="notranslate">Galaxy</span> Project’s remote job running system. It was written by John Chilton (<a href="https://github.com/jmchilton">@jmchilton</a>) of the <span class="notranslate">Galaxy</span> Project. It is a python server application that can accept jobs from a <span class="notranslate">Galaxy</span> server, submit them to a local resource and then send the results back to the originating <span class="notranslate">Galaxy</span> server.</p>
@@ -1193,7 +1239,7 @@
 
 <p>We will be installing the RabbitMQ server daemon onto the <span class="notranslate">Galaxy</span> server to act as an intermediary message passing system between <span class="notranslate">Galaxy</span> and the remote Pulsar. The figure below shows a schematic representation of the system.</p>
 
-<figure id="figure-1"><img src="../../images/pulsar_amqp_schema.png" alt="Schematic diagram of Galaxy communicating with a Pulsar server via the RabbitMQ server" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Schematic diagram of <span class="notranslate">Galaxy</span> communicating with a Pulsar server via the RabbitMQ server. Red arrows represent AMQP communications and blue represent file transfers (initiated by the Pulsar server.)</figcaption></figure>
+<figure id="figure-1"><img src="../../images/pulsar_amqp_schema.png" alt="Schematic diagram of Galaxy communicating with a Pulsar server via the RabbitMQ server. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Schematic diagram of <span class="notranslate">Galaxy</span> communicating with a Pulsar server via the RabbitMQ server. Red arrows represent AMQP communications and blue represent file transfers (initiated by the Pulsar server.)</figcaption></figure>
 
 <p><strong>How it will work:</strong></p>
 
@@ -1270,7 +1316,7 @@
 
       <div data-commit="Add requirements" class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">--- a/requirements.yml
 </span><span class="gi">+++ b/requirements.yml
-</span><span class="p">@@ -22,3 +22,7 @@</span>
+</span><span class="p">@@ -24,3 +24,7 @@</span>
    version: 0.0.2
  - src: <span class="notranslate">galaxy</span>project.slurm
    version: 0.1.3
@@ -1385,7 +1431,7 @@
 
       <div data-commit="Configure RabbitMQ" class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">--- a/group_vars/<span class="notranslate">galaxy</span>servers.yml
 </span><span class="gi">+++ b/group_vars/<span class="notranslate">galaxy</span>servers.yml
-</span><span class="p">@@ -126,8 +126,10 @@</span> certbot_environment: staging
+</span><span class="p">@@ -128,8 +128,10 @@</span> certbot_environment: staging
  certbot_well_known_root: /srv/nginx/_well-known_root
  certbot_share_key_users:
    - nginx
@@ -1396,12 +1442,11 @@
 </span> certbot_domains:
   - "{{ inventory_hostname }}"
  certbot_agree_tos: --agree-tos
-<span class="p">@@ -160,3 +162,31 @@</span> slurm_config:
-   SlurmdParameters: config_overrides   # Ignore errors if the host actually has cores != 2
+<span class="p">@@ -163,6 +165,34 @@</span> slurm_config:
    SelectType: select/cons_res
    SelectTypeParameters: CR_CPU_Memory  # Allocate individual cores/memory instead of entire node
-<span class="gi">+
-+# RabbitMQ
+    
+<span class="gi">+# RabbitMQ
 +rabbitmq_version: 3.8.16-1
 +rabbitmq_plugins: rabbitmq_management
 +
@@ -1428,7 +1473,11 @@
 +  - user: <span class="notranslate">galaxy</span>_au
 +    password: "{{ vault_rabbitmq_password_vhost }}"
 +    vhost: /pulsar/<span class="notranslate">galaxy</span>_au
-</span>   
++
+</span> # TUS
+ <span class="notranslate">galaxy</span>_tusd_port: 1080
+ tusd_instances:
+   
 </code></pre></div>      </div>
     </li>
     <li>
@@ -1436,12 +1485,13 @@
 
       <div data-commit="Add role" class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">--- a/<span class="notranslate">galaxy</span>.yml
 </span><span class="gi">+++ b/<span class="notranslate">galaxy</span>.yml
-</span><span class="p">@@ -29,5 +29,6 @@</span>
+</span><span class="p">@@ -29,6 +29,7 @@</span>
      - role: uchida.miniconda
        become: true
        become_user: "{{ <span class="notranslate">galaxy</span>_user.name }}"
 <span class="gi">+    - use<span class="notranslate">galaxy</span>_eu.rabbitmq
 </span>     - <span class="notranslate">galaxy</span>project.nginx
+     - <span class="notranslate">galaxy</span>project.tusd
      - <span class="notranslate">galaxy</span>project.cvmfs
    
 </code></pre></div>      </div>
@@ -1995,7 +2045,7 @@ https://zenodo.org/record/582600/files/mutant_R2.fastq
 <p>How awesome is that? Pulsar in another continent with reference data automatically from CVMFS :)</p>
 
 <!--SNIPPET-->
-<blockquote class="comment">  <h3 data-toc-skip="" id="-got-lost-along-the-way"><i class="far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden"></span> Got lost along the way?</h3>  <p>If you missed any steps, you can compare against the <a href="https://github.com/hexylena/git-gat/tree/step-8">reference files</a>, or see what changed since <a href="https://github.com/hexylena/git-gat/compare/step-7...step-8#files_bucket">the previous tutorial</a>.</p></blockquote>
+<blockquote class="comment">  <h3 data-toc-skip="" id="-got-lost-along-the-way"><i class="far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden"></span> Got lost along the way?</h3>  <p>If you missed any steps, you can compare against the <a href="https://github.com/hexylena/git-gat/tree/step-9">reference files</a>, or see what changed since <a href="https://github.com/hexylena/git-gat/compare/step-8...step-9#files_bucket">the previous tutorial</a>.</p></blockquote>
 
 <h1 id="retries-of-the-staging-actions">Retries of the staging actions</h1>
 
@@ -2083,7 +2133,7 @@ The aim of these parameters is to control the retrying of staging actions in the
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/admin/faqs/">FAQ page for the Galaxy Server administration topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/admin/faqs/">FAQ page for the Galaxy Server administration topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -2094,7 +2144,9 @@ The aim of these parameters is to control the retrying of staging actions in the
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
@@ -2129,7 +2181,7 @@ The aim of these parameters is to control the retrying of staging actions in the
                 <h1>Citing this Tutorial</h1>
                 <p>
                     <ol>
-                        <li id="citation-text">Nate Coraor, Simon Gladman, Marius van den Beek, Helena Rasche, Gianmauro Cuccuru, 2021 <b>Running Jobs on Remote Resources with Pulsar (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/admin/tutorials/pulsar/tutorial.html">https://training.galaxyproject.org/training-material/topics/admin/tutorials/pulsar/tutorial.html</a> Online; accessed TODAY
+                        <li id="citation-text">Nate Coraor, Simon Gladman, Marius van den Beek, Helena Rasche, Gianmauro Cuccuru, 2022 <b>Running Jobs on Remote Resources with Pulsar (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/admin/tutorials/pulsar/tutorial.html">https://training.galaxyproject.org/training-material/topics/admin/tutorials/pulsar/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
@@ -2146,9 +2198,9 @@ The aim of these parameters is to control the retrying of staging actions in the
 <code id="citation-code">@misc{admin-pulsar,
 author = "Nate Coraor and Simon Gladman and Marius van den Beek and Helena Rasche and Gianmauro Cuccuru",
 title = "Running Jobs on Remote Resources with Pulsar (Galaxy Training Materials)",
-year = "2021",
-month = "07",
-day = "02"
+year = "2022",
+month = "03",
+day = "10"
 url = "\url{https://training.galaxyproject.org/training-material/topics/admin/tutorials/pulsar/tutorial.html}",
 note = "[Online; accessed TODAY]"
 }

@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/text-mining_simtext/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/text-mining_simtext/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/text-mining_simtext/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/text-mining_simtext/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/text-mining_simtext/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/text-mining_simtext/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/text-mining_simtext/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/text-mining_simtext/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/text-mining_simtext/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/text-mining_simtext/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/text-mining_simtext/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Ftext-mining_simtext%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-09-02 13:13:55 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Text-mining with the SimText toolset",
   "interactivityType": "mixed",
@@ -386,15 +386,27 @@
     <h1 data-toc-skip>Text-mining with the SimText toolset</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/mgramm1/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/mgramm1" alt="Avatar">Marie Gramm</a> <a href="/training-material/hall-of-fame/dlalgroup/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/dlalgroup" alt="Avatar">Dennis Lal group</a> <a href="/training-material/hall-of-fame/blankenberg/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/blankenberg" alt="Avatar">Daniel Blankenberg</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/mgramm1/" class="contributor-badge contributor-mgramm1"><img src="https://avatars.githubusercontent.com/mgramm1?s=27" alt="Avatar">Marie Gramm</a>
+
+
+<a href="/training-material/hall-of-fame/dlalgroup/" class="contributor-badge contributor-dlalgroup"><img src="https://avatars.githubusercontent.com/dlalgroup?s=27" alt="Avatar">Dennis Lal group</a>
+
+
+<a href="/training-material/hall-of-fame/blankenberg/" class="contributor-badge contributor-blankenberg"><img src="https://avatars.githubusercontent.com/blankenberg?s=27" alt="Avatar">Daniel Blankenberg</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -461,7 +473,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="http://doi.org/10.5281/zenodo.4638516">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="http://doi.org/10.5281/zenodo.4638516">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -482,8 +494,35 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/statistics/tutorials/text-mining_simtext/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -562,9 +601,7 @@
         
     
         
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
+    
         
     
         
@@ -667,7 +704,9 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Sep 2, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -679,15 +718,17 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>Literature exploration in <a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a> on a large number of biomedical entities (e.g., genes, diseases, or experiments) can be time-consuming and challenging, especially when assessing associations between entities. Here, we use SimText, a toolset for literature research that allows you to collect text from PubMed for any given set of biomedical entities, extract associated terms, and analyze similarities among them and their key characteristics in an interactive tool.</p>
 
-<p>This tutorial is based on a proof-of-concept example given in <a class="citation" href="#gramm2020">Gramm <i>et al.</i> 2020</a>. We are going to analyze similarities among 95 genes based on their associated biomedical terms in the literature, and compare their pre-existing disorder categories to their grouping based on the literature.</p>
+<p>This tutorial is based on a proof-of-concept example given in <span class="citation"><a href="#gramm2020">Gramm <i>et al.</i> 2020</a></span>. We are going to analyze similarities among 95 genes based on their associated biomedical terms in the literature, and compare their pre-existing disorder categories to their grouping based on the literature.</p>
 
 <p>The <span class="notranslate">workflow</span> combines 3 main steps, starting with the retrieval of PubMed data for each of the genes. We then use the PubMed data from each gene to extract related scientific terms that are all combined in one large binary matrix. Finally, we explore the generated data in an interactive tool that performs different unsupervised machine-learning algorithms to analyze the similarities/ the grouping among the genes based on their extracted terms from the literature.</p>
 
-<figure id="figure-1"><img src="images/simtext_overview_tutorial.png" alt="Tutorial overview" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Schematic presentation of the <span class="notranslate">workflow</span>.</figcaption></figure>
+<figure id="figure-1"><img src="images/simtext_overview_tutorial.png" alt="Tutorial overview. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Schematic presentation of the <span class="notranslate">workflow</span>.</figcaption></figure>
 
 <blockquote class="agenda">
   <h3 id="agenda">Agenda</h3>
@@ -724,7 +765,7 @@
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
     </li>
   </ol>
 
@@ -754,7 +795,7 @@
       <blockquote class="comment">
         <h3 id="comment-comment"><i class="far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden">comment</span> Comment</h3>
 
-        <p>The tool is also able to save the abstracts as text instead of their PMIDs. This feature is used for another type of analysis (see <a class="citation" href="#gramm2020">Gramm <i>et al.</i> 2020</a>), or can be used if the user wants to use the tool independent from a <span class="notranslate">workflow</span> to retrieve many abstract texts at once. For the next step of our example in this tutorial, only PMIDs are required.</p>
+        <p>The tool is also able to save the abstracts as text instead of their PMIDs. This feature is used for another type of analysis (see <span class="citation"><a href="#gramm2020">Gramm <i>et al.</i> 2020</a></span>), or can be used if the user wants to use the tool independent from a <span class="notranslate">workflow</span> to retrieve many abstract texts at once. For the next step of our example in this tutorial, only PMIDs are required.</p>
       </blockquote>
     </li>
   </ol>
@@ -819,8 +860,8 @@ The following features are generated:</p>
 
 </blockquote>
 
-<figure id="figure-2"><img src="images/simtextapp_wordcloud.gif" alt="Wordcloud" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Left: For all genes a wordcloud with their associated terms cen be generated. Right: In the dimension reduction plot the similarities among the genes can be explored. The colouring corresponds to the pre-existing disorder categories.</figcaption></figure>
-<figure id="figure-3"><img src="images/simtextapp_clustering.gif" alt="Clustering" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> Hierarchical clustering of the matrix. Different clustering methods can be selected and the adjusted rand index be calculated.</figcaption></figure>
+<figure id="figure-2"><img src="images/simtextapp_wordcloud.gif" alt="Wordcloud. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Left: For all genes a wordcloud with their associated terms cen be generated. Right: In the dimension reduction plot the similarities among the genes can be explored. The colouring corresponds to the pre-existing disorder categories.</figcaption></figure>
+<figure id="figure-3"><img src="images/simtextapp_clustering.gif" alt="Clustering. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> Hierarchical clustering of the matrix. Different clustering methods can be selected and the adjusted rand index be calculated.</figcaption></figure>
 
 <h1 class="no_toc" id="conclusion">Conclusion</h1>
 
@@ -845,7 +886,7 @@ The following features are generated:</p>
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/statistics/faqs/">FAQ page for the Statistics and machine learning topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/statistics/faqs/">FAQ page for the Statistics and machine learning topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -853,23 +894,15 @@ The following features are generated:</p>
 
                 
                 <h1 id="bibliography">References</h1>
-                <ol class="bibliography"><li><span id="gramm2020">Gramm, M., E. Perez-Palma, S. Schumacher-Bass, J. Dalton, C. Leu <i>et al.</i>, 2020 <b>SimText: A text mining framework for interactive analysis and visualization of similarities among biomedical entities</b>. BioRxiv.</span>
-    
-    
-    <a href="https://doi.org/10.1101/2020.07.06.190629">10.1101/2020.07.06.190629</a>
-    
-    
-      <!-- prevent duplicate doi links -->
-      
-    
-
-</li></ol>
+                <ol class="bibliography"><li id="gramm2020">Gramm, M., E. Perez-Palma, S. Schumacher-Bass, J. Dalton, C. Leu <i>et al.</i>, 2020 <b>SimText: A text mining framework for interactive analysis and visualization of similarities among biomedical entities</b>. BioRxiv. <a href="https://doi.org/10.1101/2020.07.06.190629">10.1101/2020.07.06.190629</a></li></ol>
                 
 
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />

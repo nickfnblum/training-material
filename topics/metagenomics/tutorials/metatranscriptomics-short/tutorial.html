@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetagenomics%2Ftutorials%2Fmetatranscriptomics-short%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-05-20 16:52:44 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Metatranscriptomics analysis using microbiome RNA-seq data (short)",
   "interactivityType": "mixed",
@@ -419,15 +419,39 @@
     <h1 data-toc-skip>Metatranscriptomics analysis using microbiome RNA-seq data (short)</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/pratikdjagtap/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/pratikdjagtap" alt="Avatar">Pratik Jagtap</a> <a href="/training-material/hall-of-fame/subinamehta/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/subinamehta" alt="Avatar">Subina Mehta</a> <a href="/training-material/hall-of-fame/jraysajulga/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/jraysajulga" alt="Avatar">Ray Sajulga</a> <a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/bebatut" alt="Avatar">Bérénice Batut</a> <a href="/training-material/hall-of-fame/emmaleith/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/emmaleith" alt="Avatar">Emma Leith</a> <a href="/training-material/hall-of-fame/pravs3683/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/pravs3683" alt="Avatar">Praveen Kumar</a> <a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/shiltemann" alt="Avatar">Saskia Hiltemann</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/pratikdjagtap/" class="contributor-badge contributor-pratikdjagtap"><img src="https://avatars.githubusercontent.com/pratikdjagtap?s=27" alt="Avatar">Pratik Jagtap</a>
+
+
+<a href="/training-material/hall-of-fame/subinamehta/" class="contributor-badge contributor-subinamehta"><img src="https://avatars.githubusercontent.com/subinamehta?s=27" alt="Avatar">Subina Mehta</a>
+
+
+<a href="/training-material/hall-of-fame/jraysajulga/" class="contributor-badge contributor-jraysajulga"><img src="https://avatars.githubusercontent.com/jraysajulga?s=27" alt="Avatar">Ray Sajulga</a>
+
+
+<a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="https://avatars.githubusercontent.com/bebatut?s=27" alt="Avatar">Bérénice Batut</a>
+
+
+<a href="/training-material/hall-of-fame/emmaleith/" class="contributor-badge contributor-emmaleith"><img src="https://avatars.githubusercontent.com/emmaleith?s=27" alt="Avatar">Emma Leith</a>
+
+
+<a href="/training-material/hall-of-fame/pravs3683/" class="contributor-badge contributor-pravs3683"><img src="https://avatars.githubusercontent.com/pravs3683?s=27" alt="Avatar">Praveen Kumar</a>
+
+
+<a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -509,7 +533,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://zenodo.org/record/4776250">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/4776250">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -530,8 +554,35 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/metagenomics/tutorials/metatranscriptomics-short/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -648,10 +699,6 @@
         
     
         
-        <a class="dropdown-item" href="https://metagenomics.usegalaxy.eu/" title="Metagenomics">
-            Metagenomics
-        </a>
-        
     
         
     
@@ -666,9 +713,7 @@
         
     
         
-        <a class="dropdown-item" href="https://plants.usegalaxy.eu/" title="Plant Anaylsis Workbench">
-            Plant Anaylsis Workbench
-        </a>
+    
         
     
         
@@ -696,6 +741,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
+            UseGalaxy.org.au
+        </a>
+        
     
         
     
@@ -715,7 +764,9 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> May 20, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -727,10 +778,12 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 
 <h1 id="overview">Overview</h1>
 
-<p>In this tutorial we will perform a metatranscriptomics analysis based on the ASAIM <span class="notranslate">workflow</span> (<a class="citation" href="#batut2018asaim">Batut <i>et al.</i> 2018</a>), using data from <a class="citation" href="#kunath2018proteins">Kunath <i>et al.</i> 2018</a>.</p>
+<p>In this tutorial we will perform a metatranscriptomics analysis based on the ASAIM <span class="notranslate">workflow</span> (<span class="citation"><a href="#batut2018asaim">Batut <i>et al.</i> 2018</a></span>), using data from <span class="citation"><a href="#kunath2018proteins">Kunath <i>et al.</i> 2018</a></span>.</p>
 
 <blockquote class="comment">
   <h3 id="comment-note-two-versions-of-this-tutorial"><i class="far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden">comment</span> Note: Two versions of this tutorial</h3>
@@ -758,11 +811,11 @@ more in-depth discussion of each step, please see the <a href="/training-materia
 
 <p>Metatranscriptomics analysis enables understanding of how the microbiome responds to the environment by studying the functional analysis of genes expressed by the microbiome. It can also estimate the taxonomic composition of the microbial population. It provides scientists with the confirmation of predicted open‐reading frames (ORFs) and potential identification of novel sites of transcription and/or translation from microbial genomes. Metatranscriptomics can enable more complete generation of protein sequences databases for metaproteomics.</p>
 
-<p>To illustrate how to analyze metatranscriptomics data, we will use data from time-series analysis of a microbial community inside a bioreactor (<a class="citation" href="#kunath2018proteins">Kunath <i>et al.</i> 2018</a>). They generated metatranscriptomics data for 3 replicates over 7 time points. <span class="notranslate">RNA</span>s were enriched by r<span class="notranslate">RNA</span> depletion and treated with <span class="notranslate">DNA</span>se and library was prepared with the TruSeq stranded <span class="notranslate">RNA</span> sample preparation, which included the production of a c<span class="notranslate">DNA</span> library.</p>
+<p>To illustrate how to analyze metatranscriptomics data, we will use data from time-series analysis of a microbial community inside a bioreactor (<span class="citation"><a href="#kunath2018proteins">Kunath <i>et al.</i> 2018</a></span>). They generated metatranscriptomics data for 3 replicates over 7 time points. <span class="notranslate">RNA</span>s were enriched by r<span class="notranslate">RNA</span> depletion and treated with <span class="notranslate">DNA</span>se and library was prepared with the TruSeq stranded <span class="notranslate">RNA</span> sample preparation, which included the production of a c<span class="notranslate">DNA</span> library.</p>
 
 <p>In this tutorial, we focus on biological replicate A of the 1st time point. In a follow-up tutorial we will illustrate how compare the results over the different time points and replicates. The input files used here are trimmed version of the original file for the purpose of saving time and resources.</p>
 
-<p>To analyze the data, we will follow the ASaiM <span class="notranslate">workflow</span> and explain it step by step. ASaiM (<a class="citation" href="#batut2018asaim">Batut <i>et al.</i> 2018</a>) is an open-source <span class="notranslate">Galaxy</span>-based <span class="notranslate">workflow</span> that enables microbiome analyses. Its <span class="notranslate">workflow</span> offers a streamlined <span class="notranslate">Galaxy</span> <span class="notranslate">workflow</span> for users to explore metagenomic/metatranscriptomic data in a reproducible and transparent environment. The ASaiM <span class="notranslate">workflow</span> has been updated by the <strong><span class="notranslate">Galaxy</span>P</strong> team (University of Minnesota) to perform metatranscriptomics analysis of large microbial datasets.</p>
+<p>To analyze the data, we will follow the ASaiM <span class="notranslate">workflow</span> and explain it step by step. ASaiM (<span class="citation"><a href="#batut2018asaim">Batut <i>et al.</i> 2018</a></span>) is an open-source <span class="notranslate">Galaxy</span>-based <span class="notranslate">workflow</span> that enables microbiome analyses. Its <span class="notranslate">workflow</span> offers a streamlined <span class="notranslate">Galaxy</span> <span class="notranslate">workflow</span> for users to explore metagenomic/metatranscriptomic data in a reproducible and transparent environment. The ASaiM <span class="notranslate">workflow</span> has been updated by the <strong><span class="notranslate">Galaxy</span>P</strong> team (University of Minnesota) to perform metatranscriptomics analysis of large microbial datasets.</p>
 
 <p>The <span class="notranslate">workflow</span> described in this tutorial takes in paired-end datasets of raw shotgun sequences (in FastQ format) as an input and proceeds to:</p>
 
@@ -833,7 +886,7 @@ https://zenodo.org/record/4776250/files/T1A_reverse.fastqsanger
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
       <!--SNIPPET-->
       <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-data-from-a-data-library"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing data from a data library</h3>  <p>As an alte<span class="notranslate">rna</span>tive to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>  <ul>  <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>  <li>Navigate to the correct folder as indicated by your instructor</li>  <li>Select the desired files</li>  <li>Click on the <strong>To History</strong> button near the top and select <strong>as Datasets</strong> from the dropdown menu</li>  <li>In the pop-up window, select the history you want to import the files to (or create a new one)</li>  <li>Click on <strong>Import</strong></li></ul></blockquote>
 
@@ -849,7 +902,7 @@ https://zenodo.org/record/4776250/files/T1A_reverse.fastqsanger
       <p>Check that the datatype is <code class="language-plaintext highlighter-rouge">fastqsanger</code> (e.g. <strong>not</strong> <code class="language-plaintext highlighter-rouge">fastq</code>). If it is not, please change the datatype to <code class="language-plaintext highlighter-rouge">fastqsanger</code>.</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge">fastqsanger</code></li>  <li>Click the <strong>Change datatype</strong> button</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge">fastqsanger</code></li>  <li>Click the <strong>Save</strong> button</li></ul></blockquote>
     </li>
   </ol>
 
@@ -913,7 +966,7 @@ In this tutorial we use similar tools as described in the tutorial <a href="/tra
   <li><a href="https://cutadapt.readthedocs.io/en/stable/guide.html">Cutadapt</a> for trimming and filtering</li>
 </ul>
 
-<p>For more information about how to interpret the plots generated by FastQC and MultiQC, please see <a href="/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html#assess-quality-with-fastqc">this section</a> in our dedicated Quality Control Tutorial.</p>
+<p>For more information about how to interpret the plots generated by FastQC and MultiQC, please see <a href="/training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html#assess-quality-with-fastqc---short--long-reads">this section</a> in our dedicated Quality Control Tutorial.</p>
 
 <blockquote class="question">
   <h3 id="question-questions"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
@@ -1010,7 +1063,7 @@ In this tutorial we use similar tools as described in the tutorial <a href="/tra
 
 </blockquote>
 
-<p>There are several tools out there that can perform these steps, but in this analysis we use <strong>Cutadapt</strong> (<a class="citation" href="#martin2011cutadapt">Martin 2011</a>).</p>
+<p>There are several tools out there that can perform these steps, but in this analysis we use <strong>Cutadapt</strong> (<span class="citation"><a href="#martin2011cutadapt">Martin 2011</a></span>).</p>
 
 <p><strong>Cutadapt</strong> also helps find and remove adapter sequences, primers, poly-A tails and/or other unwanted sequences from the input FASTQ files. It trims the input <span class="notranslate">reads</span> by finding the adapter or primer sequences in an error-tolerant way. Additional features include modifying and filtering <span class="notranslate">reads</span>.</p>
 
@@ -1039,7 +1092,7 @@ In this tutorial we use similar tools as described in the tutorial <a href="/tra
 
 <p>Metatranscriptomics sequencing targets any <span class="notranslate">RNA</span> in a pool of micro-organisms. The highest proportion of the <span class="notranslate">RNA</span> sequences in any organism will be ribosomal <span class="notranslate">RNA</span>s.</p>
 
-<p>These r<span class="notranslate">RNA</span>s are useful for the taxonomic assignment (i.e. which organisms are found) but they do not provide any functional information, (i.e. which genes are expressed) To make the <span class="notranslate">downstream</span> functional annotation faster, we will sort the r<span class="notranslate">RNA</span> sequences using <strong>SortMe<span class="notranslate">RNA</span></strong> (<a class="citation" href="#kopylova2012sortmerna">Kopylova <i>et al.</i> 2012</a>). It can handle large <span class="notranslate">RNA</span> databases and sort out all fragments matching to the database with high accuracy and specificity:</p>
+<p>These r<span class="notranslate">RNA</span>s are useful for the taxonomic assignment (i.e. which organisms are found) but they do not provide any functional information, (i.e. which genes are expressed) To make the <span class="notranslate">downstream</span> functional annotation faster, we will sort the r<span class="notranslate">RNA</span> sequences using <strong>SortMe<span class="notranslate">RNA</span></strong> (<span class="citation"><a href="#kopylova2012sortmerna">Kopylova <i>et al.</i> 2012</a></span>). It can handle large <span class="notranslate">RNA</span> databases and sort out all fragments matching to the database with high accuracy and specificity:</p>
 
 <p><img src="../../images/metatranscriptomics/sortmerna.png" alt="SortMeRNA" /></p>
 
@@ -1105,7 +1158,7 @@ In this tutorial we use similar tools as described in the tutorial <a href="/tra
   </li>
 </ul>
 
-<p>In this tutorial, we follow second approach using <strong>MetaPhlAn</strong> ((missing reference)). This tool uses a database of ~1M unique clade-specific marker genes (not only the r<span class="notranslate">RNA</span> genes) identified from ~17,000 reference (bacterial, archeal, viral and eukaryotic) genomes.</p>
+<p>In this tutorial, we follow second approach using <strong>MetaPhlAn</strong> (<span class="citation"><a href="#truong2015metaphlan2">Truong <i>et al.</i> 2015</a></span>). This tool uses a database of ~1M unique clade-specific marker genes (not only the r<span class="notranslate">RNA</span> genes) identified from ~17,000 reference (bacterial, archeal, viral and eukaryotic) genomes.</p>
 
 <p>As r<span class="notranslate">RNA</span>s <span class="notranslate">reads</span> are good marker genes, we will use directly the quality controlled files (output of <strong>Cutadapt</strong>) with all <span class="notranslate">reads</span> (not only the non r<span class="notranslate">RNA</span>s).</p>
 
@@ -1222,7 +1275,7 @@ In this tutorial we use similar tools as described in the tutorial <a href="/tra
   <li><strong>Graphlan</strong> for a publication ready visualization</li>
 </ul>
 
-<p><strong>Krona</strong> <a class="citation" href="#ondov2011interactive">Ondov <i>et al.</i> 2011</a> renders results of a metagenomic profiling as a zoomable pie chart. It allows hierarchical data, here taxonomic levels, to be explored with zooming, multi-layered pie charts</p>
+<p><strong>Krona</strong> <span class="citation"><a href="#ondov2011interactive">Ondov <i>et al.</i> 2011</a></span> renders results of a metagenomic profiling as a zoomable pie chart. It allows hierarchical data, here taxonomic levels, to be explored with zooming, multi-layered pie charts</p>
 
 <blockquote class="question">
   <h3 id="question-questions-5"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
@@ -1265,7 +1318,7 @@ In this tutorial we use similar tools as described in the tutorial <a href="/tra
 
 <p>We would now like to answer the question “What are the micro-organisms doing?” or “Which functions are performed by the micro-organisms in the environment?”.</p>
 
-<p>In the metatranscriptomics data, we have access to the genes that are expressed by the community. We can use that to identify genes, their functions, and build pathways, etc., to investigate their contribution to the community using <strong>HUMAnN</strong> (<a class="citation" href="#franzosa2018species">Franzosa <i>et al.</i> 2018</a>). <strong>HUMAnN</strong> is a pipeline developed for efficiently and accurately profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data.</p>
+<p>In the metatranscriptomics data, we have access to the genes that are expressed by the community. We can use that to identify genes, their functions, and build pathways, etc., to investigate their contribution to the community using <strong>HUMAnN</strong> (<span class="citation"><a href="#franzosa2018species">Franzosa <i>et al.</i> 2018</a></span>). <strong>HUMAnN</strong> is a pipeline developed for efficiently and accurately profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data.</p>
 
 <p>To identify the functions made by the community, we do not need the r<span class="notranslate">RNA</span> sequences, specially because they had noise and will slow the run. We will then use the output of <strong>SortMe<span class="notranslate">RNA</span></strong>, but also the identified community profile from <strong>MetaPhlAn</strong>. This will help <strong>HUMAnN</strong> to focus on the know sequences for the identified organisms.</p>
 
@@ -1757,7 +1810,7 @@ Hungateiclostridium	94.67418	Hungateiclostridium_thermocellum	94.67418	UniRef90_
 
 <p><img src="../../images/asaim-wf.png" alt="ASaiM diagram" /></p>
 
-<p>The dataset used here was extracted from a time-series analysis of a microbial community inside a bioreactor (<a class="citation" href="#kunath2018proteins">Kunath <i>et al.</i> 2018</a>) in which there are 3 replicates over 7 time points. We analyzed here only one single time point for one replicate.</p>
+<p>The dataset used here was extracted from a time-series analysis of a microbial community inside a bioreactor (<span class="citation"><a href="#kunath2018proteins">Kunath <i>et al.</i> 2018</a></span>) in which there are 3 replicates over 7 time points. We analyzed here only one single time point for one replicate.</p>
 
 
 
@@ -1783,7 +1836,7 @@ Hungateiclostridium	94.67418	Hungateiclostridium_thermocellum	94.67418	UniRef90_
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/metagenomics/faqs/">FAQ page for the Metagenomics topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/metagenomics/faqs/">FAQ page for the Metagenomics topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1794,48 +1847,21 @@ Hungateiclostridium	94.67418	Hungateiclostridium_thermocellum	94.67418	UniRef90_
 
                 
                 <h1 id="bibliography">References</h1>
-                <ol class="bibliography"><li><span id="martin2011cutadapt">Martin, M., 2011 <b>Cutadapt removes adapter sequences from high-throughput sequencing reads</b>. EMBnet. journal 17: 10–12.</span>
-    
-    
-    
-
-</li>
-<li><span id="ondov2011interactive">Ondov, B. D., N. H. Bergman, and A. M. Phillippy, 2011 <b>Interactive metagenomic visualization in a Web browser</b>. BMC bioinformatics 12: 385.</span>
-    
-    
-    
-
-</li>
-<li><span id="kopylova2012sortmerna">Kopylova, E., L. Noé, and H. Touzet, 2012 <b>SortMeRNA: fast and accurate filtering of ribosomal RNAs in metatranscriptomic data</b>. Bioinformatics 28: 3211–3217.</span>
-    
-    
-    
-
-</li>
-<li><span id="batut2018asaim">Batut, B., K. Gravouil, C. Defois, S. Hiltemann, J.-F. Brugère <i>et al.</i>, 2018 <b>ASaiM: a Galaxy-based framework to analyze microbiota data</b>. GigaScience 7: giy057.</span>
-    
-    
-    
-
-</li>
-<li><span id="franzosa2018species">Franzosa, E. A., L. J. McIver, G. Rahnavard, L. R. Thompson, M. Schirmer <i>et al.</i>, 2018 <b>Species-level functional profiling of metagenomes and metatranscriptomes</b>. Nature methods 15: 962.</span>
-    
-    
-    
-
-</li>
-<li><span id="kunath2018proteins">Kunath, B. J., F. Delogu, A. E. Naas, M. Ø. Arntzen, V. G. H. Eijsink <i>et al.</i>, 2018 <b>From proteins to polysaccharides: lifestyle and genetic evolution of Coprothermobacter proteolyticus</b>. The ISME journal 1.</span>
-    
-    
-    
-
-</li></ol>
+                <ol class="bibliography"><li id="martin2011cutadapt">Martin, M., 2011 <b>Cutadapt removes adapter sequences from high-throughput sequencing reads</b>. EMBnet. journal 17: 10–12.</li>
+<li id="ondov2011interactive">Ondov, B. D., N. H. Bergman, and A. M. Phillippy, 2011 <b>Interactive metagenomic visualization in a Web browser</b>. BMC bioinformatics 12: 385.</li>
+<li id="kopylova2012sortmerna">Kopylova, E., L. Noé, and H. Touzet, 2012 <b>SortMeRNA: fast and accurate filtering of ribosomal RNAs in metatranscriptomic data</b>. Bioinformatics 28: 3211–3217.</li>
+<li id="truong2015metaphlan2">Truong, D. T., E. A. Franzosa, T. L. Tickle, M. Scholz, G. Weingart <i>et al.</i>, 2015 <b>MetaPhlAn2 for enhanced metagenomic taxonomic profiling</b>. Nature methods 12: 902.</li>
+<li id="batut2018asaim">Batut, B., K. Gravouil, C. Defois, S. Hiltemann, J.-F. Brugère <i>et al.</i>, 2018 <b>ASaiM: a Galaxy-based framework to analyze microbiota data</b>. GigaScience 7: giy057.</li>
+<li id="franzosa2018species">Franzosa, E. A., L. J. McIver, G. Rahnavard, L. R. Thompson, M. Schirmer <i>et al.</i>, 2018 <b>Species-level functional profiling of metagenomes and metatranscriptomes</b>. Nature methods 15: 962.</li>
+<li id="kunath2018proteins">Kunath, B. J., F. Delogu, A. E. Naas, M. Ø. Arntzen, V. G. H. Eijsink <i>et al.</i>, 2018 <b>From proteins to polysaccharides: lifestyle and genetic evolution of Coprothermobacter proteolyticus</b>. The ISME journal 1.</li></ol>
                 
 
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />

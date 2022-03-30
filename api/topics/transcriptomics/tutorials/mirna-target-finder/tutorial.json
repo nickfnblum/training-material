@@ -1,0 +1,93 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Whole transcriptome analysis of Arabidopsis thaliana",
+  "zenodo_link": "https://zenodo.org/record/4710649",
+  "tags": [
+    "miRNA",
+    "plants"
+  ],
+  "questions": [
+    "Which miRNAs are upregulated in response to brassinosteroids?",
+    "Which genes are potential target of brassinosteroid-induced miRNAs?"
+  ],
+  "objectives": [
+    "Perform miRNA differential expression analysis",
+    "Understand the quasi-mapping-based Salmon method for quantifying the expression of transcripts using RNA-Seq data",
+    "Idenfity potential miRNAs involved in brassinosteroid-mediated regulation networks"
+  ],
+  "time_estimation": "2H",
+  "key_points": [
+    "MiRDeep2 in combination with the PmiREN database allows to quantify miRNA expression in plants",
+    "The use of the Salmon tool and the AtRTD2 transcriptome allows rapid and accurate quantification of transcripts in _Arabidopsis_",
+    "The combination of differential expression analysis and the TargetFinder tool is an effective strategy for the identification of miRNA target genes"
+  ],
+  "contributors": [
+    {
+      "name": "Cristóbal Gallardo",
+      "joined": "2020-11",
+      "id": "gallardoalba",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/gallardoalba.json"
+    },
+    {
+      "name": "Pavankumar Videm",
+      "joined": "2017-09",
+      "id": "pavanvidem",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/pavanvidem.json"
+    },
+    {
+      "name": "Beatriz Serrano-Solano",
+      "email": "beatrizserrano.galaxy@gmail.com",
+      "twitter": "Birthae",
+      "gitter": "beatrizserrano",
+      "joined": "2020-07",
+      "id": "beatrizserrano",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/beatrizserrano.json"
+    }
+  ],
+  "last_modified_at": "2021-06-17T13:38:13+00:00",
+  "url": "/topics/transcriptomics/tutorials/mirna-target-finder/tutorial.html",
+  "topic_name": "transcriptomics",
+  "tutorial_name": "mirna-target-finder",
+  "hands_on": true,
+  "slides": true,
+  "workflows": [
+    {
+      "workflow": "main_workflow.ga",
+      "tests": false
+    }
+  ],
+  "tools": [
+    "Cut1",
+    "Filter1",
+    "__MERGE_COLLECTION__",
+    "cat1",
+    "sort1",
+    "toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/0.14.1.2+galaxy1",
+    "toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.4.3.1",
+    "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+    "toolshed.g2.bx.psu.edu/repos/galaxyp/filter_by_fasta_ids/filter_by_fasta_ids/2.1",
+    "toolshed.g2.bx.psu.edu/repos/iuc/deseq2/deseq2/2.11.40.6+galaxy1",
+    "toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.7",
+    "toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.8+galaxy1",
+    "toolshed.g2.bx.psu.edu/repos/peterjc/sample_seqs/sample_seqs/0.2.5",
+    "toolshed.g2.bx.psu.edu/repos/rnateam/mirdeep2_mapper/rbc_mirdeep2_mapper/2.0.0",
+    "toolshed.g2.bx.psu.edu/repos/rnateam/mirdeep2_quantifier/rbc_mirdeep2_quantifier/2.0.0",
+    "toolshed.g2.bx.psu.edu/repos/rnateam/targetfinder/targetfinder/1.7.0+galaxy1"
+  ],
+  "tours": false,
+  "video": true,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": true
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//transcriptomics/tutorials/mirna-target-finder/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//transcriptomics/tutorials/mirna-target-finder/tutorial.json"
+  }
+}

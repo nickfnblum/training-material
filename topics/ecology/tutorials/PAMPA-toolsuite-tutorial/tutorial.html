@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fecology%2Ftutorials%2FPAMPA-toolsuite-tutorial%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-03-12 17:24:55 +0000",
+  "dateModified": "1970-01-01 00:33:42 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Compute and analyze biodiversity metrics with PAMPA toolsuite",
   "interactivityType": "mixed",
@@ -343,6 +343,10 @@
     {
       "@type": "Person",
       "name": "Yvan Le Bras"
+    },
+    {
+      "@type": "Person",
+      "name": "Jean-Baptiste Mihoub"
     }
   ],
   "contributor": [
@@ -353,6 +357,10 @@
     {
       "@type": "Person",
       "name": "Yvan Le Bras"
+    },
+    {
+      "@type": "Person",
+      "name": "Jean-Baptiste Mihoub"
     }
   ],
   "about": [
@@ -377,15 +385,27 @@
     <h1 data-toc-skip>Compute and analyze biodiversity metrics with PAMPA toolsuite</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/colineroyaux/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/colineroyaux" alt="Avatar">Coline Royaux</a> <a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/yvanlebras" alt="Avatar">Yvan Le Bras</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/colineroyaux/" class="contributor-badge contributor-colineroyaux"><img src="https://avatars.githubusercontent.com/colineroyaux?s=27" alt="Avatar">Coline Royaux</a>
+
+
+<a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge contributor-yvanlebras"><img src="https://avatars.githubusercontent.com/yvanlebras?s=27" alt="Avatar">Yvan Le Bras</a>
+
+
+<a href="/training-material/hall-of-fame/jbmihoub/" class="contributor-badge contributor-jbmihoub"><img src="https://avatars.githubusercontent.com/jbmihoub?s=27" alt="Avatar">Jean-Baptiste Mihoub</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -455,7 +475,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://doi.org/10.5281/zenodo.4264936">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.4264936">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -476,8 +496,58 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+  <li class="btn btn-default supporting_material">
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Recordings
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+
+        
+        
+        
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/ecology/PAMPA-toolsuite-tutorial/tutorial" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (March 2022)
+            </a>
+        </li>
+        
+        
+        
+    </ul>
+   </li>
+   
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -554,17 +624,19 @@
         
     
         
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
         
     
         
+    
+        
         <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
             Galaxy@GenOuest
         </a>
-        
-    
         
     
         
@@ -636,6 +708,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
+            UseGalaxy.fr
+        </a>
+        
     
         
     
@@ -663,9 +739,11 @@
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 12, 2021 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 14, 2022 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -677,6 +755,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>This tutorial aims to present the PAMPA <span class="notranslate">Galaxy</span> <span class="notranslate">workflow</span>, how to use it to compute common
@@ -699,7 +779,7 @@ Thus, in this tutorial, we’ll start by the Community analysis followed by the 
 
 </blockquote>
 
-<figure id="figure-1"><img src="../../images/PAMPA-toolsuite-tutorial/PAMPA_workflow.png" alt="PAMPA toolsuite workflow" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> PAMPA toolsuite <span class="notranslate">workflow</span></figcaption></figure>
+<figure id="figure-1"><img src="../../images/PAMPA-toolsuite-tutorial/PAMPA_workflow.png" alt="PAMPA toolsuite workflow. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> PAMPA toolsuite <span class="notranslate">workflow</span></figcaption></figure>
 
 <p>Each part of this <span class="notranslate">workflow</span> has the same elementary steps :</p>
 <ul>
@@ -795,7 +875,7 @@ https://zenodo.org/record/4264936/files/CPUE%20per%20length%20per%20area_C.csv?d
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
 
       <p>You may as well use the shared data library or directly download the data from the DATRAS data portal but the previous
 method is preferred.</p>
@@ -860,11 +940,11 @@ repeat the six following steps for each of the three surveys.</li>
 <p>These three data files gather Catch Per Unit Effort (CPUE) observations, a relative abundance measure mostly used
 to assess exploited fish species populations :</p>
 <ul>
-  <li>EVHOE (<a class="citation" href="#EVHOE">MAHE Jean-Claude 1987</a>) is a French survey on Southern Atlantic Bottom Trawl, the extracted file available on Zenodo goes from
+  <li>EVHOE (<span class="citation"><a href="#EVHOE">MAHE Jean-Claude 1987</a></span>) is a French survey on Southern Atlantic Bottom Trawl, the extracted file available on Zenodo goes from
 1997 to 2018 and records CPUE for seven exploited fish species</li>
-  <li>BITS (<a class="citation" href="#BITS">“<b>Fish trawl survey: ICES Baltic Inte<span class="notranslate">rna</span>tional Trawl Survey for commercial fish species. ICES Database of trawl surveys (DATRAS)</b>” 2010</a>) is an inte<span class="notranslate">rna</span>tional survey on Trawl in Baltic sea, the extracted file available on Zenodo goes from 1991
+  <li>BITS (<span class="citation"><a href="#BITS">“<b>Fish trawl survey: ICES Baltic Inte<span class="notranslate">rna</span>tional Trawl Survey for commercial fish species. ICES Database of trawl surveys (DATRAS)</b>” 2010</a></span>) is an inte<span class="notranslate">rna</span>tional survey on Trawl in Baltic sea, the extracted file available on Zenodo goes from 1991
 to 2020 and records CPUE for three exploited fish species</li>
-  <li>SWC-IBTS (<a class="citation" href="#SWCIBTS">“<b>DATRAS Scottish West Coast Bottom Trawl Survey (SWC-IBTS)</b>” 2013</a>) is a Scottish survey on bottom trawl in the west coast, the extracted file available on Zenodo goes
+  <li>SWC-IBTS (<span class="citation"><a href="#SWCIBTS">“<b>DATRAS Scottish West Coast Bottom Trawl Survey (SWC-IBTS)</b>” 2013</a></span>) is a Scottish survey on bottom trawl in the west coast, the extracted file available on Zenodo goes
 from 1985 to 2010 and records CPUE for six exploited fish species</li>
 </ul>
 
@@ -979,7 +1059,7 @@ with following parameters :
           <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“How should the results be sorted?”</em>: <code class="language-plaintext highlighter-rouge">With the rarest value first</code></li>
         </ul>
 
-        <p><strong>Tip:</strong> Hit the rerun button <i class="fas fa-sync-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-refresh</span> on the output of the previous run of <span class="tool" data-tool="Count1" title="Tested with Count1"><strong>Count occurrences of each record</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Count1</span></span> ,
+        <p><strong>Tip:</strong> Hit the rerun button <i class="fas fa-redo" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-refresh</span> on the output of the previous run of <span class="tool" data-tool="Count1" title="Tested with Count1"><strong>Count occurrences of each record</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: Count1</span></span> ,
 and change the input dataset.</p>
 
         <blockquote class="solution">
@@ -1544,7 +1624,7 @@ from your community analysis’ data file</li>
 
 </blockquote>
 
-<figure id="figure-2"><img src="../../images/PAMPA-toolsuite-tutorial/Community.png" alt="Community analysis plots" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Community analysis plots</figcaption></figure>
+<figure id="figure-2"><img src="../../images/PAMPA-toolsuite-tutorial/Community.png" alt="Community analysis plots. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Community analysis plots</figcaption></figure>
 
 <p>Each PNG file contains two plots :</p>
 <ul>
@@ -1620,7 +1700,7 @@ For the need of this tutorial, we’ll be analyzing only the <code class="langua
 one for each species in the <code class="language-plaintext highlighter-rouge">BITS</code> survey: <code class="language-plaintext highlighter-rouge">Gadus morhua</code> (Atlantic cod), <code class="language-plaintext highlighter-rouge">Platichthys flesus</code> (European flounder) and
 <code class="language-plaintext highlighter-rouge">Pleuronectes platessa</code> (European plaice).</p>
 
-<figure id="figure-3"><img src="../../images/PAMPA-toolsuite-tutorial/Fish-BITS.png" alt="BITS survey standard fish species" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> BITS survey standard fish species</figcaption></figure>
+<figure id="figure-3"><img src="../../images/PAMPA-toolsuite-tutorial/Fish-BITS.png" alt="BITS survey standard fish species. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> BITS survey standard fish species</figcaption></figure>
 
 <p>We also see the <code class="language-plaintext highlighter-rouge">Gaussian</code> distribution has been automatically selected by the tool. It seems right even if the interest variable
 “Abundance” is usually a count, here it is a Catch Per Unit Effort abundance so it isn’t a round value.</p>
@@ -1726,7 +1806,7 @@ Hence, more interesting to look at.</p>
 As the interest variable is “Abundance”, the plot with a purple line represents raw abundance: the sum of
 all abundances of the studied species for one year.</p>
 
-<figure id="figure-4"><img src="../../images/PAMPA-toolsuite-tutorial/BITS.png" alt="BITS population analysis plots" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> BITS population analysis plots</figcaption></figure>
+<figure id="figure-4"><img src="../../images/PAMPA-toolsuite-tutorial/BITS.png" alt="BITS population analysis plots. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> BITS population analysis plots</figcaption></figure>
 
 <p>On the <code class="language-plaintext highlighter-rouge">Gadus morhua</code> plots, only small variations of the abundance occured between 1991 and 2020 apart for year 1995
 where we see a huge augmentation for the estimated value and the raw abundance (value almost tripled). As the values
@@ -1770,8 +1850,8 @@ since 30 years. Both species had a first CPUE abundance increase around 2000 tha
 the trawl survey around this time. Then, for <code class="language-plaintext highlighter-rouge">Platichthys flesus</code>, after a decrease in 2003 had a more or less stable
 CPUE abundance. For <code class="language-plaintext highlighter-rouge">Pleuronectes platessa</code> a second wave of increase occured between 2008 and 2013 to decrease after 2018.</p>
 
-<figure id="figure-5"><img src="../../images/PAMPA-toolsuite-tutorial/EVHOE.png" alt="EVHOE population analysis plots" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> EVHOE population analysis plots</figcaption></figure>
-<figure id="figure-6"><img src="../../images/PAMPA-toolsuite-tutorial/SWCIBTS.png" alt="SWCIBTS population analysis plots" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> SWCIBTS population analysis plots</figcaption></figure>
+<figure id="figure-5"><img src="../../images/PAMPA-toolsuite-tutorial/EVHOE.png" alt="EVHOE population analysis plots. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> EVHOE population analysis plots</figcaption></figure>
+<figure id="figure-6"><img src="../../images/PAMPA-toolsuite-tutorial/SWCIBTS.png" alt="SWCIBTS population analysis plots. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> SWCIBTS population analysis plots</figcaption></figure>
 
 <h1 class="no_toc" id="conclusion">Conclusion</h1>
 
@@ -1810,7 +1890,7 @@ that helps evaluate the quality of your GL(M)M (found in the rating file).</p>
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/ecology/faqs/">FAQ page for the Ecology topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/ecology/faqs/">FAQ page for the Ecology topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1821,47 +1901,17 @@ that helps evaluate the quality of your GL(M)M (found in the rating file).</p>
 
                 
                 <h1 id="bibliography">References</h1>
-                <ol class="bibliography"><li><span id="EVHOE">MAHE Jean-Claude, 1987 <b>EVHOE EVALUATION HALIEUTIQUE OUEST DE L’EUROPE</b>.</span>
-    
-    
-    <a href="https://doi.org/10.18142/8">10.18142/8</a>
-    
-    
-      <!-- prevent duplicate doi links -->
-      
-      <a href="https://campagnes.flotteoceanographique.fr/series/8/">https://campagnes.flotteoceanographique.fr/series/8/</a>
-      
-    
-
-</li>
-<li><span id="BITS"><b>Fish trawl survey: ICES Baltic International Trawl Survey for commercial fish species. ICES Database of trawl surveys (DATRAS)</b>, 2010.</span>
-    
-    
-    
-      <!-- prevent duplicate doi links -->
-      
-      <a href="http://ecosystemdata.ices.dk">http://ecosystemdata.ices.dk</a>
-      
-    
-
-</li>
-<li><span id="SWCIBTS"><b>DATRAS Scottish West Coast Bottom Trawl Survey (SWC-IBTS)</b>, 2013.</span>
-    
-    
-    
-      <!-- prevent duplicate doi links -->
-      
-      <a href="https://gis.ices.dk/geonetwork/srv/api/records/a38fb537-0ec4-40bb-a3de-750b5dd3829a">https://gis.ices.dk/geonetwork/srv/api/records/a38fb537-0ec4-40bb-a3de-750b5dd3829a</a>
-      
-    
-
-</li></ol>
+                <ol class="bibliography"><li id="EVHOE">MAHE Jean-Claude, 1987 <b>EVHOE EVALUATION HALIEUTIQUE OUEST DE L’EUROPE</b>. <a href="https://doi.org/10.18142/8">10.18142/8</a> <a href="https://campagnes.flotteoceanographique.fr/series/8/">https://campagnes.flotteoceanographique.fr/series/8/</a></li>
+<li id="BITS"><b>Fish trawl survey: ICES Baltic International Trawl Survey for commercial fish species. ICES Database of trawl surveys (DATRAS)</b>, 2010. <a href="http://ecosystemdata.ices.dk">http://ecosystemdata.ices.dk</a></li>
+<li id="SWCIBTS"><b>DATRAS Scottish West Coast Bottom Trawl Survey (SWC-IBTS)</b>, 2013. <a href="https://gis.ices.dk/geonetwork/srv/api/records/a38fb537-0ec4-40bb-a3de-750b5dd3829a">https://gis.ices.dk/geonetwork/srv/api/records/a38fb537-0ec4-40bb-a3de-750b5dd3829a</a></li></ol>
                 
 
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
@@ -1896,7 +1946,7 @@ that helps evaluate the quality of your GL(M)M (found in the rating file).</p>
                 <h1>Citing this Tutorial</h1>
                 <p>
                     <ol>
-                        <li id="citation-text">Coline Royaux, Yvan Le Bras, 2021 <b>Compute and analyze biodiversity metrics with PAMPA toolsuite (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html">https://training.galaxyproject.org/training-material/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html</a> Online; accessed TODAY
+                        <li id="citation-text">Coline Royaux, Yvan Le Bras, Jean-Baptiste Mihoub, 2022 <b>Compute and analyze biodiversity metrics with PAMPA toolsuite (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html">https://training.galaxyproject.org/training-material/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
@@ -1911,11 +1961,11 @@ that helps evaluate the quality of your GL(M)M (found in the rating file).</p>
 
                 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight">
 <code id="citation-code">@misc{ecology-PAMPA-toolsuite-tutorial,
-author = "Coline Royaux and Yvan Le Bras",
+author = "Coline Royaux and Yvan Le Bras and Jean-Baptiste Mihoub",
 title = "Compute and analyze biodiversity metrics with PAMPA toolsuite (Galaxy Training Materials)",
-year = "2021",
+year = "2022",
 month = "03",
-day = "12"
+day = "14"
 url = "\url{https://training.galaxyproject.org/training-material/topics/ecology/tutorials/PAMPA-toolsuite-tutorial/tutorial.html}",
 note = "[Online; accessed TODAY]"
 }

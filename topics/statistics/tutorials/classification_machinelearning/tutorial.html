@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/classification_machinelearning/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/classification_machinelearning/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/classification_machinelearning/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/classification_machinelearning/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/classification_machinelearning/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/classification_machinelearning/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/classification_machinelearning/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/classification_machinelearning/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/classification_machinelearning/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/classification_machinelearning/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/classification_machinelearning/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Fclassification_machinelearning%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-03-12 17:24:55 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Classification in Machine Learning",
   "interactivityType": "mixed",
@@ -385,15 +385,27 @@
     <h1 data-toc-skip>Classification in Machine Learning</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/khanteymoori/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/khanteymoori" alt="Avatar">Alireza Khanteymoori</a> <a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/anuprulez" alt="Avatar">Anup Kumar</a> <a href="/training-material/hall-of-fame/simonbray/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/simonbray" alt="Avatar">Simon Bray</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/khanteymoori/" class="contributor-badge contributor-khanteymoori"><img src="https://avatars.githubusercontent.com/khanteymoori?s=27" alt="Avatar">Alireza Khanteymoori</a>
+
+
+<a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge contributor-anuprulez"><img src="https://avatars.githubusercontent.com/anuprulez?s=27" alt="Avatar">Anup Kumar</a>
+
+
+<a href="/training-material/hall-of-fame/simonbray/" class="contributor-badge contributor-simonbray"><img src="https://avatars.githubusercontent.com/simonbray?s=27" alt="Avatar">Simon Bray</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -454,7 +466,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://zenodo.org/record/3738729#.XoZyHXUzaV4">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/3738729#.XoZyHXUzaV4">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -475,8 +487,58 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/statistics/tutorials/classification_machinelearning/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+  <li class="btn btn-default supporting_material">
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Recordings
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+
+        
+        
+        
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/statistics/classification_machinelearning/tutorial" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (February 2021)
+            </a>
+        </li>
+        
+        
+        
+    </ul>
+   </li>
+   
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -553,9 +615,17 @@
         
     
         
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
+        
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
+        
+    
         
     
         
@@ -619,13 +689,15 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
             Street Science
         </a>
         
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
         
     
         
@@ -672,7 +744,9 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 12, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -684,6 +758,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>In this tutorial you will learn how to apply <span class="notranslate">Galaxy</span> tools to solve <a href="https://en.wikipedia.org/wiki/Statistical_classification">classification</a> problems. First, we will introduce classification briefly, and then examine logistic regression, which is an example of a linear classifier. Next, we will discuss the nearest neighbor classifier, which is a simple but nonlinear classifier. Then advanced classifiers, such as support vector machines, random forest and ensemble classifiers will be introduced and applied. Furthermore, we will show how to visualize the results in each step.</p>
@@ -726,7 +802,7 @@
 
 <p>The performance of <span class="notranslate">mapping</span> is evaluated using a test dataset, which is separate from the training dataset. The test dataset contains only the feature columns, but not the class column. The class column is predicted using the <span class="notranslate">mapping</span> learned on the training dataset. An example of a classification task is assigning a patient (the object) to a group of healthy or ill (the classes) people on the basis of his or her medical record. In this tutorial, we will use a classifier to train a model using a training dataset, predict the targets for test dataset and visualize the results using plots.</p>
 
-<figure id="figure-1"><img src="images/classification.png" alt="classification" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Classification of samples belonging to different classes.</figcaption></figure>
+<figure id="figure-1"><img src="images/classification.png" alt="classification. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Classification of samples belonging to different classes.</figcaption></figure>
 
 <p>In figure <a href="#figure-1">1</a>, the line is a boundary which separates a class from another class (for example from tumor to no tumor). The task of a classifier is to learn this boundary, which can be used to classify or categorize an unseen/new sample. The line is the decision boundary; there are different ways to learn it, which correspond to different classification algorithms. If the dataset is linearly separable, linear classifiers can produce good classification results. However, when the dataset is complex and requires non-linear decision boundaries, more powerful classifiers like <code class="language-plaintext highlighter-rouge">support vector machine</code> or <code class="language-plaintext highlighter-rouge">ensemble</code> based classifiers may prove to be beneficial.</p>
 
@@ -771,7 +847,7 @@ https://zenodo.org/record/3738729/files/test_rows.csv
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
     </li>
     <li>
       <p>Rename the datasets as <code class="language-plaintext highlighter-rouge">train_rows</code>, <code class="language-plaintext highlighter-rouge">test_rows_labels</code> and <code class="language-plaintext highlighter-rouge">test_rows</code> respectively.</p>
@@ -920,17 +996,17 @@ https://zenodo.org/record/3738729/files/test_rows.csv
   <li>
     <p><a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a>: The confusion matrix summarizes the classification performance of a classifier with respect to the test data. It is a two-dimensional matrix; the horizontal axis (x-axis) shows the predicted labels and the vertical axis (y-axis) shows the true labels. Each rectangular box shows a count of samples falling into the four output combinations (true class, predicted class) - (1, 0), (1, 1), (0, 1) and (0, 0). In Figure 2, the confusion matrix of the predictions is a colour-coded heatmap. For a good prediction, the diagonal running from top-left to bottom-right should contain a smaller number of samples, because it shows the counts of incorrectly predicted samples. Hovering over each box in <span class="notranslate">Galaxy</span> shows the true and predicted class labels and the count of samples.</p>
 
-    <figure id="figure-2"><img src="images/confusion_matrix_linear.png" alt="confusion_matrix" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Confusion matrix for the logistic regression classifier. </figcaption></figure>
+    <figure id="figure-2"><img src="images/confusion_matrix_linear.png" alt="confusion_matrix. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Confusion matrix for the logistic regression classifier. </figcaption></figure>
   </li>
   <li>
     <p><a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision, recall and F1 score</a>: Precision, recall and F1 score. These scores determine the robustness of classification. It is important to analyze the plot for any classification task to verify the accuracy across different classes which provides more information about the balanced or imbalanced accuracy across multiple classes present in the dataset.</p>
 
-    <figure id="figure-3"><img src="images/precision_recall_linear.png" alt="prf1_scores" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> Precision, recall and F1 score for the logistic regression classifier.</figcaption></figure>
+    <figure id="figure-3"><img src="images/precision_recall_linear.png" alt="prf1_scores. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> Precision, recall and F1 score for the logistic regression classifier.</figcaption></figure>
   </li>
   <li>
     <p><a href="https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5">Receiver operator characteristics (ROC) and area under ROC (AUC)</a>: Receiver operator characteristics (ROC) and area under ROC (AUC). The ROC curve is shown in blue. For a good prediction, it should be more towards the top-left of this plot, which results in a high AUC value. For a bad prediction, it is close to the orange line (y = x), resulting in a low AUC value (closer to 0.5). An AUC value of exactly 0.5 means the prediction is doing no better than a random number generator at predicting the classes.</p>
 
-    <figure id="figure-4"><img src="images/roc_linear.png" alt="roc_scores" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> Receiver operator characteristics (ROC) and area under ROC (AUC) for the logistic regression classifier.</figcaption></figure>
+    <figure id="figure-4"><img src="images/roc_linear.png" alt="roc_scores. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> Receiver operator characteristics (ROC) and area under ROC (AUC) for the logistic regression classifier.</figcaption></figure>
   </li>
 </ol>
 
@@ -1092,11 +1168,11 @@ https://zenodo.org/record/3738729/files/test_rows.csv
 
 <p>The visualization tool creates diagrams for the Confusion matrix, Precision, recall and F1 score, Receiver operator characteristics (ROC) and area under ROC (AUC) as follows:</p>
 
-<figure id="figure-5"><img src="images/confusion_matrix_NN.png" alt="confusion_matrix" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> Confusion matrix for the k-nearest neighbor classifier.</figcaption></figure>
+<figure id="figure-5"><img src="images/confusion_matrix_NN.png" alt="confusion_matrix. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> Confusion matrix for the k-nearest neighbor classifier.</figcaption></figure>
 
-<figure id="figure-6"><img src="images/precision_recall_NN.png" alt="prf1_scores" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> Precision, recall and F1 score for the k-nearest neighbor classifier.</figcaption></figure>
+<figure id="figure-6"><img src="images/precision_recall_NN.png" alt="prf1_scores. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> Precision, recall and F1 score for the k-nearest neighbor classifier.</figcaption></figure>
 
-<figure id="figure-7"><img src="images/roc_NN.png" alt="roc_scores" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 7:</span> Receiver operator characteristics (ROC) and area under ROC (AUC) for the k-nearest neighbor classifier.</figcaption></figure>
+<figure id="figure-7"><img src="images/roc_NN.png" alt="roc_scores. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 7:</span> Receiver operator characteristics (ROC) and area under ROC (AUC) for the k-nearest neighbor classifier.</figcaption></figure>
 
 <h1 id="support-vector-machines-svm">Support Vector Machines (SVM)</h1>
 
@@ -1198,7 +1274,7 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
 
 <p>The visualization tool creates the following ROC plot:</p>
 
-<figure id="figure-8"><img src="images/roc_svm.png" alt="roc_scores" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 8:</span> Receiver operator characteristics (ROC) and area under ROC (AUC) for the SVM classifier.</figcaption></figure>
+<figure id="figure-8"><img src="images/roc_svm.png" alt="roc_scores. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 8:</span> Receiver operator characteristics (ROC) and area under ROC (AUC) for the SVM classifier.</figcaption></figure>
 
 <h1 id="random-forest">Random Forest</h1>
 
@@ -1284,7 +1360,7 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
 
 <p>The visualization tool creates the following ROC plot:</p>
 
-<figure id="figure-9"><img src="images/roc_rf.png" alt="roc_scores" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 9:</span> Receiver operator characteristics (ROC) and area under ROC (AUC) for the random forest classifier.</figcaption></figure>
+<figure id="figure-9"><img src="images/roc_rf.png" alt="roc_scores. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 9:</span> Receiver operator characteristics (ROC) and area under ROC (AUC) for the random forest classifier.</figcaption></figure>
 
 <blockquote class="question">
   <h3 id="question-question-6"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Question</h3>
@@ -1424,11 +1500,11 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
 
 <p>Now we will verify the performance by creating and inspecting the plots:</p>
 
-<figure id="figure-10"><img src="images/confusion_matrix_bagging.png" alt="confusion_matrix" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 10:</span> Confusion matrix for the bagging classifier.</figcaption></figure>
+<figure id="figure-10"><img src="images/confusion_matrix_bagging.png" alt="confusion_matrix. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 10:</span> Confusion matrix for the bagging classifier.</figcaption></figure>
 
-<figure id="figure-11"><img src="images/precision_recall_bagging.png" alt="prf1_scores" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 11:</span> Precision, recall and F1 score for the bagging classifier.</figcaption></figure>
+<figure id="figure-11"><img src="images/precision_recall_bagging.png" alt="prf1_scores. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 11:</span> Precision, recall and F1 score for the bagging classifier.</figcaption></figure>
 
-<figure id="figure-12"><img src="images/roc_bagging.png" alt="roc_scores" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 12:</span> Residual plot between residual (predicted - true) and predicted targets. The plot shows a random pattern of points.</figcaption></figure>
+<figure id="figure-12"><img src="images/roc_bagging.png" alt="roc_scores. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 12:</span> Residual plot between residual (predicted - true) and predicted targets. The plot shows a random pattern of points.</figcaption></figure>
 
 <p>Figure 13 shows that we again achieved an AUC value of <code class="language-plaintext highlighter-rouge">1.00</code>, which shows that our model is highly effective at predicting whether or not a molecule is biodegradable.</p>
 
@@ -1463,7 +1539,7 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/statistics/faqs/">FAQ page for the Statistics and machine learning topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/statistics/faqs/">FAQ page for the Statistics and machine learning topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1474,7 +1550,9 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />

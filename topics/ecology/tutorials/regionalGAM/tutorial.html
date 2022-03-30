@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/regionalGAM/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/regionalGAM/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/regionalGAM/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/regionalGAM/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/regionalGAM/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/regionalGAM/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/regionalGAM/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/regionalGAM/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/regionalGAM/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/regionalGAM/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/ecology/tutorials/regionalGAM/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fecology%2Ftutorials%2FregionalGAM%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-03-23 18:12:58 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Regional GAM",
   "interactivityType": "mixed",
@@ -401,15 +401,33 @@
     <h1 data-toc-skip>Regional GAM</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/claraurf/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/claraurf" alt="Avatar">Clara Urfer</a> <a href="/training-material/hall-of-fame/emichn/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/emichn" alt="Avatar">Elisa Michon</a> <a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/yvanlebras" alt="Avatar">Yvan Le Bras</a> <a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/bebatut" alt="Avatar">Bérénice Batut</a> <a href="/training-material/hall-of-fame/sbenateau/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/sbenateau" alt="Avatar">Simon Benateau</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/claraurf/" class="contributor-badge contributor-claraurf"><img src="https://avatars.githubusercontent.com/claraurf?s=27" alt="Avatar">Clara Urfer</a>
+
+
+<a href="/training-material/hall-of-fame/emichn/" class="contributor-badge contributor-emichn"><img src="https://avatars.githubusercontent.com/emichn?s=27" alt="Avatar">Elisa Michon</a>
+
+
+<a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge contributor-yvanlebras"><img src="https://avatars.githubusercontent.com/yvanlebras?s=27" alt="Avatar">Yvan Le Bras</a>
+
+
+<a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="https://avatars.githubusercontent.com/bebatut?s=27" alt="Avatar">Bérénice Batut</a>
+
+
+<a href="/training-material/hall-of-fame/sbenateau/" class="contributor-badge contributor-sbenateau"><img src="https://avatars.githubusercontent.com/sbenateau?s=27" alt="Avatar">Simon Benateau</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -467,7 +485,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://zenodo.org/record/1324204#.W2BmRn7fNE4">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/1324204#.W2BmRn7fNE4">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -488,8 +506,35 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/ecology/tutorials/regionalGAM/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -506,6 +551,10 @@
             </a>
         </li>
     
+    
+        
+    
+        
     
         
     
@@ -622,7 +671,9 @@
         
     
         
-    
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
         
     
         
@@ -653,7 +704,9 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 23, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -665,6 +718,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>This tutorial will show you how to study species abundance through the computation of a flight curve, abundance index, and trends. It will explain you how to use different <a href="https://github.com/RetoSchmucki/regionalGAM">regionalGAM</a> tools on <span class="notranslate">Galaxy</span> allowing you to deal with datasets containing abundance information for various species per site and per date through a couple of years.</p>
@@ -723,7 +778,7 @@
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
 
       <!--SNIPPET-->
       <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-data-from-a-data-library"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing data from a data library</h3>  <p>As an alte<span class="notranslate">rna</span>tive to uploading the data from a URL or your computer, the files may also have been made available from a <em>shared data library</em>:</p>  <ul>  <li>Go into <strong>Shared data</strong> (top panel) then <strong>Data libraries</strong></li>  <li>Navigate to the correct folder as indicated by your instructor</li>  <li>Select the desired files</li>  <li>Click on the <strong>To History</strong> button near the top and select <strong>as Datasets</strong> from the dropdown menu</li>  <li>In the pop-up window, select the history you want to import the files to (or create a new one)</li>  <li>Click on <strong>Import</strong></li></ul></blockquote>
@@ -737,7 +792,7 @@
 
 <p>This dataset gathers years of records of the presence of butterfly species per site and per day. Columns indicates species names (“SPECIES”), observation site (“SITE”), date of the observation (“YEAR”,”MONTH”,”DAY”) and number of individuals (“COUNT”). It compiles counts for the Gatekeeper (Pironia tithonus) collected between 2003 and 2012 and extracted from five European BMSs (United Kingdom, Netherlands, France, Germany, and Catalonia-Spain). The Gatekeeper has one generation per year and feeds mainly on Poaceae. It is found in the Central and Southern Europe, North Africa Anatolia, and Caucasus.</p>
 
-<figure id="figure-1"><img src="../../images/regionalGAM/Gatekeeper-Pyronia_tithonus-male.jpg" alt="Gatekeeper (Pironia tithonus)" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Gatekeeper (Pironia tithonus) Charles J Sharp</figcaption></figure>
+<figure id="figure-1"><img src="../../images/regionalGAM/Gatekeeper-Pyronia_tithonus-male.jpg" alt="Gatekeeper (Pironia tithonus). " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Gatekeeper (Pironia tithonus) Charles J Sharp</figcaption></figure>
 
 <h2 id="prepare-the-data">Prepare the data</h2>
 
@@ -964,7 +1019,7 @@ Warning: depending on the <span class="notranslate">Galaxy</span> instance your 
 
 </blockquote>
 
-<p><img src="../../images/regionalGAM/phenology_year.png" alt="Phenology chart" loading="lazy" /></p>
+<p><img src="../../images/regionalGAM/phenology_year.png" alt="Phenology chart. " loading="lazy" /></p>
 
 <p>This graph displays the modeled flight curve of <em>Pyronia tithonus</em> over the years. But the first year is “null”, probably a left-over of the 1st line with the header, and the week number is not shown.</p>
 
@@ -1054,7 +1109,7 @@ Warning: depending on the <span class="notranslate">Galaxy</span> instance your 
 
 </blockquote>
 
-<p><img src="../../images/regionalGAM/Pyronia_tithonus_phenology_explicit_ID.png" alt="Phenology chart" loading="lazy" /></p>
+<p><img src="../../images/regionalGAM/Pyronia_tithonus_phenology_explicit_ID.png" alt="Phenology chart. " loading="lazy" /></p>
 
 <p>This shows the abundance of <em>Pyronia tithonus</em>, over the weeks. We can see there is a peak every year as expected and we can notice some differences in the values between the weeks and years, but not how the weeks overlap between the years. We will plot a stalked version of this visualization to check if there are no unexpected changes and have an idea of the quality of the reconstructed phenology.</p>
 
@@ -1079,7 +1134,7 @@ Warning: depending on the <span class="notranslate">Galaxy</span> instance your 
 
 </blockquote>
 
-<p><img src="../../images/regionalGAM/Pyronia_tithonus_phenology_stacked_explicit_ID.png" alt="Stacked Phenology chart" loading="lazy" /></p>
+<p><img src="../../images/regionalGAM/Pyronia_tithonus_phenology_stacked_explicit_ID.png" alt="Stacked Phenology chart. " loading="lazy" /></p>
 
 <p>With this graph, we can see that <em>Pyronia tithonus</em> records are always around the same weeks every year. We can also see small differences between years but overall the phenology is quite stable and the results of this step seem good and allow us to continue with the calculation of the abundance index.</p>
 
@@ -1204,7 +1259,7 @@ Warning: depending on the <span class="notranslate">Galaxy</span> instance your 
   <li>
     <p>The graph like:</p>
 
-    <p><img src="../../images/regionalGAM/Expected_temporal_trend.png" alt="Expected temporal trend" loading="lazy" /></p>
+    <p><img src="../../images/regionalGAM/Expected_temporal_trend.png" alt="Expected temporal trend. " loading="lazy" /></p>
   </li>
   <li>
     <p>A table with values of “x”, the collated index value by year</p>
@@ -1243,7 +1298,7 @@ with \(Y_i\) = value of the dependent variable for the unit \(i\)
 
 <p>Have a look at the text file result. This is the output of the linear model.</p>
 
-<p>&lt;img src=”../../images/regionalGAM/output-simple-linear-regression.png” alt=”Output from the “model temporal trend with simple linear regression” tool “  loading=”lazy”&gt;</p>
+<p><img src="../../images/regionalGAM/output-simple-linear-regression.png" alt="Output from the &quot;model temporal trend with simple linear regression&quot; tool . " loading="lazy" /></p>
 
 <p>Details about the output from the tool</p>
 
@@ -1289,7 +1344,7 @@ with \(Y_i\) = value of the dependent variable for the unit \(i\)
   </ol>
 </blockquote>
 
-<p><img src="../../images/regionalGAM/Autocorrelation_test.png" alt="Autocorrelation test graph" loading="lazy" /></p>
+<p><img src="../../images/regionalGAM/Autocorrelation_test.png" alt="Autocorrelation test graph. " loading="lazy" /></p>
 
 <p>Have a look at this plot. We can see that one of the value is above the threshold (blue dashed line), therefore we observe autocorrelation in the data. We will now take into account the autocorrelation in the next model.</p>
 
@@ -1316,7 +1371,7 @@ https://use<span class="notranslate">galaxy</span>.org/tours/core.scratchbook</p
 
 </blockquote>
 
-<p><img src="../../images/regionalGAM/output-both-models.png" alt="Plot of temporal trend with trend line" loading="lazy" /></p>
+<p><img src="../../images/regionalGAM/output-both-models.png" alt="Plot of temporal trend with trend line. " loading="lazy" /></p>
 
 <p>Here you can compare the models using the AIC for Akaike information criterion. We can see that the AIC is lower in the model taking the autocorrelation into account. A lower AIC value is associated with less information loss.
 We will therefore, based on the AIC, select the model taking into account the autocorrelation.
@@ -1334,7 +1389,7 @@ We can now represent the data with the trend line from the model.</p>
   </ol>
 </blockquote>
 
-<p><img src="../../images/regionalGAM/trend_simple.png" alt="Plot of temporal trend with trend line" loading="lazy" /></p>
+<p><img src="../../images/regionalGAM/trend_simple.png" alt="Plot of temporal trend with trend line. " loading="lazy" /></p>
 
 <p>You can see the trends is an apparent decrease. Here results are statistically significant so we can say that there is a significant decrease of the abundance.</p>
 
@@ -1362,7 +1417,7 @@ We can now represent the data with the trend line from the model.</p>
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/ecology/faqs/">FAQ page for the Ecology topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/ecology/faqs/">FAQ page for the Ecology topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1376,7 +1431,9 @@ We can now represent the data with the trend line from the model.</p>
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />

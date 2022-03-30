@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ftp/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ftp/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ftp/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ftp/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ftp/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ftp/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ftp/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ftp/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ftp/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ftp/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ftp/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fadmin%2Ftutorials%2Fftp%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-07-23 18:08:50 +0000",
+  "dateModified": "1970-01-01 00:33:42 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Enable upload via FTP",
   "interactivityType": "mixed",
@@ -312,6 +312,7 @@
   "name": "Hands-on for 'Enable upload via FTP' tutorial",
   "url": "https://training.galaxyproject.org//training-material/topics/admin/tutorials/ftp/tutorial.html",
   "timeRequired": "PT1H",
+  "keywords": "data, git-gat",
   "description": "The questions this  addresses are:\n - How can I setup FTP to be easy for my users?\n - Can I authenticate ftp users with Galaxy credentials?\n\n\\nThe objectives are:\n - Configure galaxy and install a FTP server.\n - Use an Ansible playbook for this.\n\n",
   "inLanguage": {
     "@type": "Language",
@@ -349,20 +350,6 @@
     },
     {
       "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/admin/tutorials/ansible/slides.html",
-      "name": "Ansible",
-      "description": "Slides for 'Ansible' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
       "url": "https://training.galaxyproject.org//training-material/topics/admin/tutorials/ansible-galaxy/slides.html",
       "name": "Galaxy Installation with Ansible",
       "description": "Slides for 'Galaxy Installation with Ansible' tutorial",
@@ -381,20 +368,6 @@
       "name": "Galaxy Installation with Ansible",
       "description": "Hands-on for 'Galaxy Installation with Ansible' tutorial",
       "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/admin/tutorials/ansible-galaxy/slides.html",
-      "name": "Galaxy Installation with Ansible",
-      "description": "Slides for 'Galaxy Installation with Ansible' tutorial",
-      "learningResourceType": "slides",
       "interactivityType": "expositive",
       "provider": {
         "@type": "Organization",
@@ -434,15 +407,21 @@
     <h1 data-toc-skip>Enable upload via FTP</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/lldelisle/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/lldelisle" alt="Avatar">Lucille Delisle</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/lldelisle/" class="contributor-badge contributor-lldelisle"><img src="https://avatars.githubusercontent.com/lldelisle?s=27" alt="Avatar">Lucille Delisle</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -496,6 +475,10 @@
                                 
                             
                             </li>
+                        
+                    
+                        
+                    
                         
                     
                         
@@ -659,6 +642,10 @@
                     
                         
                     
+                        
+                    
+                        
+                    
                 
             </ul>
         
@@ -693,16 +680,45 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/admin/tutorials/ftp/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jul 23, 2021 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 10, 2022 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -714,6 +730,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="overview">Overview</h1>
 
 <p>This tutorial will guide you to setup an File Transfer Protocol (FTP) server so <span class="notranslate">galaxy</span> users can use it to upload large files. Indeed, as written on the <a href="https://galaxyproject.org/ftp-upload/"><span class="notranslate">galaxy</span> community hub</a>, uploading data directly from the browser can be unreliable and cumbersome. FTP will allow users to monitor the upload status as well as resume interrupted transfers.</p>
@@ -734,7 +752,7 @@
 
 <h1 id="ftp">FTP</h1>
 
-<p><abbr title="File Transfer Protocol">FTP</abbr> is a very old and reliable communication protocol that has been around since 1971 <a class="citation" href="#rfc114">Bhushan 1971</a>. It requires a server (here our <span class="notranslate">galaxy</span> server) and a client (user’s computer). The FTP server requires to have at least 2 ports accessible from outside (one for the commands and one for the transfer). Usually the port for the command is 21.</p>
+<p><abbr title="File Transfer Protocol">FTP</abbr> is a very old and reliable communication protocol that has been around since 1971 <span class="citation"><a href="#rfc114">Bhushan 1971</a></span>. It requires a server (here our <span class="notranslate">galaxy</span> server) and a client (user’s computer). The FTP server requires to have at least 2 ports accessible from outside (one for the commands and one for the transfer). Usually the port for the command is 21.</p>
 
 <p>FTP supports two different modes: active, and passive. Active mode requires that the user’s computer be reachable from the internet, which in the age of Network Address Translation (NAT) and firewalls is usually unusable. So passive mode is the most commonly used. In passive mode, a client connects to the FTP server, and requests a channel for sending files. The server responds with an IP and port, from its range of “Passive Ports”.</p>
 
@@ -783,7 +801,7 @@
 
       <div data-commit="Add requirement" class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">--- a/requirements.yml
 </span><span class="gi">+++ b/requirements.yml
-</span><span class="p">@@ -36,3 +36,5 @@</span>
+</span><span class="p">@@ -38,3 +38,5 @@</span>
    version: 0.12.0
  - src: use<span class="notranslate">galaxy</span>_eu.tiaas2
    version: 0.0.8
@@ -806,7 +824,7 @@
 
       <div data-commit="Add proftpd in certbot" class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">--- a/group_vars/<span class="notranslate">galaxy</span>servers.yml
 </span><span class="gi">+++ b/group_vars/<span class="notranslate">galaxy</span>servers.yml
-</span><span class="p">@@ -162,9 +162,11 @@</span> certbot_well_known_root: /srv/nginx/_well-known_root
+</span><span class="p">@@ -164,9 +164,11 @@</span> certbot_well_known_root: /srv/nginx/_well-known_root
  certbot_share_key_users:
    - nginx
    - rabbitmq
@@ -828,10 +846,10 @@
 
       <div data-commit="Add ftp vars in galaxy" class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">--- a/group_vars/<span class="notranslate">galaxy</span>servers.yml
 </span><span class="gi">+++ b/group_vars/<span class="notranslate">galaxy</span>servers.yml
-</span><span class="p">@@ -98,6 +98,9 @@</span> <span class="notranslate">galaxy</span>_config:
-     allow_user_impersonation: true
-     # Tool security
+</span><span class="p">@@ -100,6 +100,9 @@</span> <span class="notranslate">galaxy</span>_config:
      outputs_to_working_directory: true
+     # TUS
+     tus_upload_store: /data/tus
 <span class="gi">+    # FTP
 +    ftp_upload_dir: /data/uploads
 +    ftp_upload_site: "{{ inventory_hostname }}"
@@ -851,7 +869,7 @@
 
       <div data-commit="Add proftpd variables" class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">--- a/group_vars/<span class="notranslate">galaxy</span>servers.yml
 </span><span class="gi">+++ b/group_vars/<span class="notranslate">galaxy</span>servers.yml
-</span><span class="p">@@ -231,6 +231,27 @@</span> rabbitmq_users:
+</span><span class="p">@@ -233,6 +233,27 @@</span> rabbitmq_users:
      password: "{{ vault_rabbitmq_password_vhost }}"
      vhost: /pulsar/<span class="notranslate">galaxy</span>_au
     
@@ -959,9 +977,9 @@ To relax the requirement that the SSL session from the control connection be reu
      - use<span class="notranslate">galaxy</span>_eu.rabbitmq
      - <span class="notranslate">galaxy</span>project.nginx
 <span class="gi">+    - <span class="notranslate">galaxy</span>project.proftpd
-</span>     - <span class="notranslate">galaxy</span>project.cvmfs
+</span>     - <span class="notranslate">galaxy</span>project.tusd
+     - <span class="notranslate">galaxy</span>project.cvmfs
      - <span class="notranslate">galaxy</span>project.gxadmin
-     - dj-wasabi.telegraf
    
 </code></pre></div>      </div>
     </li>
@@ -1179,6 +1197,9 @@ echo "set ssl:ca-file \"/etc/ssl/certs/cert.pem\"" &gt; .lftp/rc
 
 <p>Congratulations! Let your users know this is an option, many of them will prefer to start large uploads from an FTP client.</p>
 
+<!--SNIPPET-->
+<blockquote class="comment">  <h3 data-toc-skip="" id="-got-lost-along-the-way"><i class="far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden"></span> Got lost along the way?</h3>  <p>If you missed any steps, you can compare against the <a href="https://github.com/hexylena/git-gat/tree/step-14">reference files</a>, or see what changed since <a href="https://github.com/hexylena/git-gat/compare/step-13...step-14#files_bucket">the previous tutorial</a>.</p></blockquote>
+
 
                 
                 <blockquote class="key_points">
@@ -1196,7 +1217,7 @@ echo "set ssl:ca-file \"/etc/ssl/certs/cert.pem\"" &gt; .lftp/rc
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/admin/faqs/">FAQ page for the Galaxy Server administration topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/admin/faqs/">FAQ page for the Galaxy Server administration topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1204,12 +1225,7 @@ echo "set ssl:ca-file \"/etc/ssl/certs/cert.pem\"" &gt; .lftp/rc
 
                 
                 <h1 id="bibliography">References</h1>
-                <ol class="bibliography"><li><span id="rfc114">Bhushan, A. K., 1971 <b>File Transfer Protocol</b>: RFC Editor RFC 114.</span>
-    
-    
-    
-
-</li></ol>
+                <ol class="bibliography"><li id="rfc114">Bhushan, A. K., 1971 <b>File Transfer Protocol</b>: RFC Editor RFC 114.</li></ol>
                 
 
                 
@@ -1227,7 +1243,9 @@ echo "set ssl:ca-file \"/etc/ssl/certs/cert.pem\"" &gt; .lftp/rc
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
@@ -1262,7 +1280,7 @@ echo "set ssl:ca-file \"/etc/ssl/certs/cert.pem\"" &gt; .lftp/rc
                 <h1>Citing this Tutorial</h1>
                 <p>
                     <ol>
-                        <li id="citation-text">Lucille Delisle, 2021 <b>Enable upload via FTP (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/admin/tutorials/ftp/tutorial.html">https://training.galaxyproject.org/training-material/topics/admin/tutorials/ftp/tutorial.html</a> Online; accessed TODAY
+                        <li id="citation-text">Lucille Delisle, 2022 <b>Enable upload via FTP (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/admin/tutorials/ftp/tutorial.html">https://training.galaxyproject.org/training-material/topics/admin/tutorials/ftp/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
@@ -1279,9 +1297,9 @@ echo "set ssl:ca-file \"/etc/ssl/certs/cert.pem\"" &gt; .lftp/rc
 <code id="citation-code">@misc{admin-ftp,
 author = "Lucille Delisle",
 title = "Enable upload via FTP (Galaxy Training Materials)",
-year = "2021",
-month = "07",
-day = "23"
+year = "2022",
+month = "03",
+day = "10"
 url = "\url{https://training.galaxyproject.org/training-material/topics/admin/tutorials/ftp/tutorial.html}",
 note = "[Online; accessed TODAY]"
 }

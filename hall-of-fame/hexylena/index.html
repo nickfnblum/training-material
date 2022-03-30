@@ -47,8 +47,44 @@
                         <a class="nav-link" href="/training-material/hall-of-fame" title="Hall of Fame">
                            <i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span> Contributors
                         </a>
+
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/hexylena/&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/hexylena/&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/hexylena/&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/hexylena/&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/hexylena/&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/hexylena/&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -100,41 +136,6 @@
                 <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> GTN feedback
             </a>
         
-
-        <div class="dropdown-item">
-            <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/hexylena/&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/hexylena/&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/hexylena/&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/hexylena/&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/hall-of-fame/hexylena/&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2F%2Ftutorials%2F%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
 
         <div class="dropdown-item">
             <div>
@@ -192,7 +193,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -210,10 +211,6 @@
 
         <div class="container main-content" role="main">
         
-
-
-
-
 
 <style type="text/css" media="all">
 .card-title {
@@ -233,9 +230,7 @@
 				<h3>
 					Helena Rasche
 				</h3>
-
-				
-				
+                
 
 				
 				<div class="contact-items">
@@ -281,480 +276,36 @@
 				</div>
 				
 				<br/>
+				<h4>Favourite Topics</h4>
 				<canvas id="myChart" height="300px"></canvas>
+				<h4>Favourite Formats</h4>
+				<canvas id="slidesVsTutorials" height="300px"></canvas>
 
 			</div>
 
 			<div class="col-md-9">
 				<h1>Contributions</h1>
-				<p class="text-muted">
-				
-					The following list includes only slides and tutorials where the individual has been added to the contributor list. This may not include the sum total of their contributions to the training materials (e.g. GTN css or design, tutorial datasets, workflow development, etc.)
-				
-				</p>
 
+				<p class="text-muted">
+					
+					The following list includes only slides and tutorials where the individual has been added to the contributor list. This may not include the sum total of their contributions to the training materials (e.g. GTN css or design, tutorial datasets, workflow development, etc.) unless described by a news post.
+					
+
+                
+                <br><br>
+                <h2> GitHub Activity</h2>
+                <ul>
+                  <li><a href="https://github.com/galaxyproject/training-material/pulls?q=is%3Apr+author%3Ahexylena"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Pull Requests</a> </li>
+                  <li><a href="https://github.com/galaxyproject/training-material/commits?author=hexylena"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Commits</a></li>
+                  <li><a href="https://github.com/galaxyproject/training-material/issues?q=+is%3Aissue+author%3Ahexylena"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Issues Reported</a></li>
+                </ul>
+                
+                </p>
+
+				
 				<h2>Tutorials</h2>
 				<ul>
 				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/object-store/tutorial.html">
-						Distributed Object Storage
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/job-destinations/tutorial.html">
-						Mapping Jobs to Destinations
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/pulsar/tutorial.html">
-						Running Jobs on Remote Resources with Pulsar
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/gxadmin/tutorial.html">
-						Galaxy Monitoring with gxadmin
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/interactive-tools/tutorial.html">
-						Galaxy Interactive Tools
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/ansible/tutorial.html">
-						Ansible
-						</a>
-					</li>
-					
-				
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/connect-to-compute-cluster/tutorial.html">
-						Connecting Galaxy to a compute cluster
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/cvmfs/tutorial.html">
-						Reference Data with CVMFS
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/tool-management/tutorial.html">
-						Galaxy Tool Management with Ephemeris
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/cvmfs-manual/tutorial.html">
-						Reference Data with CVMFS without Ansible
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/ansible-galaxy/tutorial.html">
-						Galaxy Installation with Ansible
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/jenkins/tutorial.html">
-						Automation with Jenkins
-						</a>
-					</li>
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/terraform/tutorial.html">
-						Deploying a compute cluster in OpenStack via Terraform
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/singularity/tutorial.html">
-						Use Singularity containers for running Galaxy jobs
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/data-library/tutorial.html">
-						Data Libraries
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/reports/tutorial.html">
-						Galaxy Monitoring with Reports
-						</a>
-					</li>
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/monitoring/tutorial.html">
-						Galaxy Monitoring with Telegraf and Grafana
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/tiaas/tutorial.html">
-						Training Infrastructure as a Service (TIaaS)
-						</a>
-					</li>
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/external-auth/tutorial.html">
-						External Authentication
-						</a>
-					</li>
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/sequence-analysis">
-							Sequence analysis
-						</a>
-						/
-						<a href="/training-material//topics/sequence-analysis/tutorials/mapping/tutorial.html">
-						Mapping
-						</a>
-					</li>
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/instructors">
-							Teaching and Hosting Galaxy training
-						</a>
-						/
-						<a href="/training-material//topics/instructors/tutorials/organize-workshop/tutorial.html">
-						Organizing a workshop
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/instructors">
-							Teaching and Hosting Galaxy training
-						</a>
-						/
-						<a href="/training-material//topics/instructors/tutorials/setup-tiaas-for-training/tutorial.html">
-						UseGalaxy.eu's Training Infrastructure as a Service
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/instructors">
-							Teaching and Hosting Galaxy training
-						</a>
-						/
-						<a href="/training-material//topics/instructors/tutorials/running-workshop/tutorial.html">
-						Running a workshop as instructor
-						</a>
-					</li>
-					
-				
-					
 					<li>
 						
 						
@@ -766,251 +317,163 @@
 						Galaxy Admin Training
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 					<li>
 						
 						
-						<a href="/training-material/topics/introduction">
-							Introduction to Galaxy Analyses
+						<a href="/training-material/topics/instructors">
+							Teaching and Hosting Galaxy training
 						</a>
 						/
-						<a href="/training-material//topics/introduction/tutorials/galaxy-intro-peaks2genes/tutorial.html">
-						From peaks to genes
+						<a href="/training-material//topics/instructors/tutorials/setup-tiaas-for-training/tutorial.html">
+						UseGalaxy.eu's Training Infrastructure as a Service
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
-				
-					
 					<li>
 						
 						
-						<a href="/training-material/topics/introduction">
-							Introduction to Galaxy Analyses
+						<a href="/training-material/topics/instructors">
+							Teaching and Hosting Galaxy training
 						</a>
 						/
-						<a href="/training-material//topics/introduction/tutorials/galaxy-intro-101/tutorial.html">
-						Galaxy 101
+						<a href="/training-material//topics/instructors/tutorials/running-workshop/tutorial.html">
+						Running a workshop as instructor
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 					<li>
 						
 						
-						<a href="/training-material/topics/dev">
-							Development in Galaxy
+						<a href="/training-material/topics/instructors">
+							Teaching and Hosting Galaxy training
 						</a>
 						/
-						<a href="/training-material//topics/dev/tutorials/data-source-integration/tutorial.html">
-						Data source integration
+						<a href="/training-material//topics/instructors/tutorials/organize-workshop/tutorial.html">
+						Organizing a workshop
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
 					<li>
 						
 						
-						<a href="/training-material/topics/dev">
-							Development in Galaxy
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
 						</a>
 						/
-						<a href="/training-material//topics/dev/tutorials/tool-generators/tutorial.html">
-						ToolFactory: Generating Tools From Simple Scripts
+						<a href="/training-material//topics/data-science/tutorials/cli-bashcrawl/tutorial.html">
+						CLI Educational Game - Bashcrawl
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 					<li>
 						
 						
-						<a href="/training-material/topics/genome-annotation">
-							Genome Annotation
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
 						</a>
 						/
-						<a href="/training-material//topics/genome-annotation/tutorials/apollo/tutorial.html">
-						Refining Genome Annotations with Apollo
+						<a href="/training-material//topics/data-science/tutorials/sql-python/tutorial.html">
+						SQL with Python
 						</a>
 					</li>
-					
 				
-					
-				
-					
 					<li>
 						
 						
-						<a href="/training-material/topics/galaxy-interface">
-							Using Galaxy and Managing your Data
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
 						</a>
 						/
-						<a href="/training-material//topics/galaxy-interface/tutorials/history/tutorial.html">
-						Understanding Galaxy history system
+						<a href="/training-material//topics/data-science/tutorials/sql-basic/tutorial.html">
+						Introduction to SQL
 						</a>
 					</li>
-					
 				
-					
 					<li>
 						
 						
-						<a href="/training-material/topics/galaxy-interface">
-							Using Galaxy and Managing your Data
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
 						</a>
 						/
-						<a href="/training-material//topics/galaxy-interface/tutorials/name-tags/tutorial.html">
-						Name tags for following complex histories
+						<a href="/training-material//topics/data-science/tutorials/sql-r/tutorial.html">
+						SQL with R
 						</a>
 					</li>
-					
 				
-					
-				
-					
 					<li>
 						
 						
-						<a href="/training-material/topics/galaxy-interface">
-							Using Galaxy and Managing your Data
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
 						</a>
 						/
-						<a href="/training-material//topics/galaxy-interface/tutorials/search/tutorial.html">
-						Searching Your History
+						<a href="/training-material//topics/data-science/tutorials/snakemake/tutorial.html">
+						Make & Snakemake
 						</a>
 					</li>
-					
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
+						<a href="/training-material//topics/data-science/tutorials/sql-advanced/tutorial.html">
+						Advanced SQL
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
+						<a href="/training-material//topics/data-science/tutorials/sql-game/tutorial.html">
+						SQL Educational Game - Murder Mystery
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
+						<a href="/training-material//topics/data-science/tutorials/r-dplyr/tutorial.html">
+						dplyr & tidyverse for data processing
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
+						<a href="/training-material//topics/data-science/tutorials/cli-basics/tutorial.html">
+						CLI basics
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/data-science">
+							Foundations of Data Science
+						</a>
+						/
+						<a href="/training-material//topics/data-science/tutorials/cli-advanced/tutorial.html">
+						Advanced CLI in Galaxy
+						</a>
+					</li>
 				
-					
-				
-					
 					<li>
 						
 						
@@ -1022,13 +485,7 @@
 						Rule Based Uploader
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
 					<li>
 						
 						
@@ -1036,15 +493,11 @@
 							Using Galaxy and Managing your Data
 						</a>
 						/
-						<a href="/training-material//topics/galaxy-interface/tutorials/download-delete-data/tutorial.html">
-						Downloading and Deleting Data in Galaxy
+						<a href="/training-material//topics/galaxy-interface/tutorials/history/tutorial.html">
+						Understanding Galaxy history system
 						</a>
 					</li>
-					
 				
-					
-				
-					
 					<li>
 						
 						
@@ -1052,15 +505,11 @@
 							Using Galaxy and Managing your Data
 						</a>
 						/
-						<a href="/training-material//topics/galaxy-interface/tutorials/upload-rules-advanced/tutorial.html">
-						Rule Based Uploader: Advanced
+						<a href="/training-material//topics/galaxy-interface/tutorials/name-tags/tutorial.html">
+						Name tags for following complex histories
 						</a>
 					</li>
-					
 				
-					
-				
-					
 					<li>
 						
 						
@@ -1072,11 +521,295 @@
 						Using Workflow Parameters
 						</a>
 					</li>
-					
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/galaxy-interface">
+							Using Galaxy and Managing your Data
+						</a>
+						/
+						<a href="/training-material//topics/galaxy-interface/tutorials/download-delete-data/tutorial.html">
+						Downloading and Deleting Data in Galaxy
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/galaxy-interface">
+							Using Galaxy and Managing your Data
+						</a>
+						/
+						<a href="/training-material//topics/galaxy-interface/tutorials/search/tutorial.html">
+						Searching Your History
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/galaxy-interface">
+							Using Galaxy and Managing your Data
+						</a>
+						/
+						<a href="/training-material//topics/galaxy-interface/tutorials/upload-rules-advanced/tutorial.html">
+						Rule Based Uploader: Advanced
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/cvmfs/tutorial.html">
+						Reference Data with CVMFS
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/ansible-galaxy/tutorial.html">
+						Galaxy Installation with Ansible
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/monitoring/tutorial.html">
+						Galaxy Monitoring with Telegraf and Grafana
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/object-store/tutorial.html">
+						Distributed Object Storage
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/jenkins/tutorial.html">
+						Automation with Jenkins
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/ansible/tutorial.html">
+						Ansible
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/tus/tutorial.html">
+						Performant Uploads with TUS
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/singularity/tutorial.html">
+						Use Singularity containers for running Galaxy jobs
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/interactive-tools/tutorial.html">
+						Galaxy Interactive Tools
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/cvmfs-manual/tutorial.html">
+						Reference Data with CVMFS without Ansible
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/gxadmin/tutorial.html">
+						Galaxy Monitoring with gxadmin
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/terraform/tutorial.html">
+						Deploying a compute cluster in OpenStack via Terraform
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/external-auth/tutorial.html">
+						External Authentication
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/data-library/tutorial.html">
+						Data Libraries
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/tool-management/tutorial.html">
+						Galaxy Tool Management with Ephemeris
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/tiaas/tutorial.html">
+						Training Infrastructure as a Service (TIaaS)
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/pulsar/tutorial.html">
+						Running Jobs on Remote Resources with Pulsar
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/job-destinations/tutorial.html">
+						Mapping Jobs to Destinations
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/connect-to-compute-cluster/tutorial.html">
+						Connecting Galaxy to a compute cluster
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/reports/tutorial.html">
+						Galaxy Monitoring with Reports
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/sequence-analysis">
+							Sequence analysis
+						</a>
+						/
+						<a href="/training-material//topics/sequence-analysis/tutorials/mapping/tutorial.html">
+						Mapping
+						</a>
+					</li>
+				
 					<li>
 						
 						
@@ -1088,9 +821,7 @@
 						Visualisation with Circos
 						</a>
 					</li>
-					
 				
-					
 					<li>
 						
 						
@@ -1102,73 +833,55 @@
 						Genomic Data Visualisation with JBrowse
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 					<li>
 						
 						
-						<a href="/training-material/topics/contributing">
-							Contributing to the Galaxy Training Material
+						<a href="/training-material/topics/dev">
+							Development in Galaxy
 						</a>
 						/
-						<a href="/training-material//topics/contributing/tutorials/create-new-tutorial-technical/tutorial.html">
-						Tools, Data, and Workflows for tutorials
+						<a href="/training-material//topics/dev/tutorials/interactive-tools/tutorial.html">
+						Galaxy Interactive Tools
 						</a>
 					</li>
-					
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/dev">
+							Development in Galaxy
+						</a>
+						/
+						<a href="/training-material//topics/dev/tutorials/tool-generators/tutorial.html">
+						ToolFactory: Generating Tools From Simple Scripts
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/dev">
+							Development in Galaxy
+						</a>
+						/
+						<a href="/training-material//topics/dev/tutorials/data-source-integration/tutorial.html">
+						Data source integration
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/genome-annotation">
+							Genome Annotation
+						</a>
+						/
+						<a href="/training-material//topics/genome-annotation/tutorials/apollo/tutorial.html">
+						Refining Genome Annotations with Apollo
+						</a>
+					</li>
+				
 					<li>
 						
 						
@@ -1180,13 +893,7 @@
 						Updating diffs in admin training
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
 					<li>
 						
 						
@@ -1194,27 +901,11 @@
 							Contributing to the Galaxy Training Material
 						</a>
 						/
-						<a href="/training-material//topics/contributing/tutorials/slides-with-video/tutorial.html">
-						Adding auto-generated video to your slides
+						<a href="/training-material//topics/contributing/tutorials/create-new-tutorial-technical/tutorial.html">
+						Tools, Data, and Workflows for tutorials
 						</a>
 					</li>
-					
 				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/contributing">
-							Contributing to the Galaxy Training Material
-						</a>
-						/
-						<a href="/training-material//topics/contributing/tutorials/create-new-tutorial/tutorial.html">
-						Creating a new tutorial
-						</a>
-					</li>
-					
-				
-					
 					<li>
 						
 						
@@ -1226,35 +917,31 @@
 						Creating content in Markdown
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 					<li>
 						
 						
-						<a href="/training-material/topics/assembly">
-							Assembly
+						<a href="/training-material/topics/contributing">
+							Contributing to the Galaxy Training Material
 						</a>
 						/
-						<a href="/training-material//topics/assembly/tutorials/mrsa-illumina/tutorial.html">
-						Genome Assembly of MRSA using Illumina MiSeq Data
+						<a href="/training-material//topics/contributing/tutorials/create-new-tutorial/tutorial.html">
+						Creating a new tutorial
 						</a>
 					</li>
-					
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/contributing">
+							Contributing to the Galaxy Training Material
+						</a>
+						/
+						<a href="/training-material//topics/contributing/tutorials/slides-with-video/tutorial.html">
+						Adding auto-generated video to your slides
+						</a>
+					</li>
 				
-					
 					<li>
 						
 						
@@ -1266,29 +953,7 @@
 						De Bruijn Graph Assembly
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/assembly">
-							Assembly
-						</a>
-						/
-						<a href="/training-material//topics/assembly/tutorials/mrsa-nanopore/tutorial.html">
-						Genome Assembly of MRSA using Oxford Nanopore MinION Data
-						</a>
-					</li>
-					
-				
-					
-				
-					
 					<li>
 						
 						
@@ -1300,26 +965,62 @@
 						Making sense of a newly assembled genome
 						</a>
 					</li>
-					
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/assembly">
+							Assembly
+						</a>
+						/
+						<a href="/training-material//topics/assembly/tutorials/mrsa-illumina/tutorial.html">
+						Genome Assembly of MRSA using Illumina MiSeq Data
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/assembly">
+							Assembly
+						</a>
+						/
+						<a href="/training-material//topics/assembly/tutorials/mrsa-nanopore/tutorial.html">
+						Genome Assembly of MRSA using Oxford Nanopore MinION Data
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/introduction">
+							Introduction to Galaxy Analyses
+						</a>
+						/
+						<a href="/training-material//topics/introduction/tutorials/galaxy-intro-peaks2genes/tutorial.html">
+						From peaks to genes
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/introduction">
+							Introduction to Galaxy Analyses
+						</a>
+						/
+						<a href="/training-material//topics/introduction/tutorials/galaxy-intro-101/tutorial.html">
+						Galaxy 101
+						</a>
+					</li>
 				
 				</ul>
+				
 
+				
 				<h2>Slides</h2>
 				<ul>
 				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 					<li>
 						
 						
@@ -1331,45 +1032,7 @@
 						Galaxy from an administrator's point of view
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/introduction">
-							Introduction to Galaxy Analyses
-						</a>
-						/
-						<a href="/training-material//topics/introduction/slides/introduction.html">
-						Introduction to Galaxy
-						</a>
-					</li>
-					
-				
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/genome-annotation">
-							Genome Annotation
-						</a>
-						/
-						<a href="/training-material//topics/genome-annotation/slides/introduction.html">
-						Introduction to Genome Annotation
-						</a>
-					</li>
-					
-				
-					
 					<li>
 						
 						
@@ -1381,117 +1044,31 @@
 						Visualisations in Galaxy
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 					<li>
 						
 						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
+						<a href="/training-material/topics/genome-annotation">
+							Genome Annotation
 						</a>
 						/
-						<a href="/training-material//topics/admin/tutorials/object-store/slides.html">
-						Storage Management
+						<a href="/training-material//topics/genome-annotation/slides/introduction.html">
+						Introduction to Genome Annotation
 						</a>
 					</li>
-					
 				
-					
 					<li>
 						
 						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
+						<a href="/training-material/topics/introduction">
+							Introduction to Galaxy Analyses
 						</a>
 						/
-						<a href="/training-material//topics/admin/tutorials/pulsar/slides.html">
-						Running Jobs on Remote Resources with Pulsar
+						<a href="/training-material//topics/introduction/slides/introduction.html">
+						Introduction to Galaxy
 						</a>
 					</li>
-					
 				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/gxadmin/slides.html">
-						Galaxy Monitoring with gxadmin
-						</a>
-					</li>
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/ansible/slides.html">
-						Ansible
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/empathy/slides.html">
-						Empathy
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/connect-to-compute-cluster/slides.html">
-						Connecting Galaxy to a compute cluster
-						</a>
-					</li>
-					
-				
-					
 					<li>
 						
 						
@@ -1503,25 +1080,7 @@
 						Reference Data with CVMFS
 						</a>
 					</li>
-					
 				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/tool-management/slides.html">
-						Galaxy Tool Management with Ephemeris
-						</a>
-					</li>
-					
-				
-					
-				
-					
 					<li>
 						
 						
@@ -1533,101 +1092,7 @@
 						Server: Other
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/advanced-galaxy-customisation/slides.html">
-						Advanced customisation of a Galaxy instance
-						</a>
-					</li>
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/terraform/slides.html">
-						Terraform
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/general-monitoring/slides.html">
-						Galaxy Monitoring
-						</a>
-					</li>
-					
-				
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/data-library/slides.html">
-						Storage Management
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/maintenance/slides.html">
-						Server Maintenance and Backups
-						</a>
-					</li>
-					
-				
-					
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/database/slides.html">
-						Galactic Database
-						</a>
-					</li>
-					
-				
-					
 					<li>
 						
 						
@@ -1639,9 +1104,55 @@
 						Galaxy Monitoring with Telegraf and Grafana
 						</a>
 					</li>
-					
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/object-store/slides.html">
+						Storage Management
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/ansible/slides.html">
+						Ansible
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/maintenance/slides.html">
+						Server Maintenance and Backups
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/gxadmin/slides.html">
+						Galaxy Monitoring with gxadmin
+						</a>
+					</li>
+				
 					<li>
 						
 						
@@ -1650,12 +1161,34 @@
 						</a>
 						/
 						<a href="/training-material//topics/admin/tutorials/users-groups-quotas/slides.html">
-						User, Group and Quota managment
+						User, Role, Group and Quota managment
 						</a>
 					</li>
-					
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/terraform/slides.html">
+						Terraform
+						</a>
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/database/slides.html">
+						Galactic Database
+						</a>
+					</li>
+				
 					<li>
 						
 						
@@ -1667,113 +1200,91 @@
 						Controlling Galaxy with systemd or Supervisor
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 					<li>
 						
 						
-						<a href="/training-material/topics/introduction">
-							Introduction to Galaxy Analyses
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/introduction/tutorials/galaxy-intro-short/slides.html">
-						A Short Introduction to Galaxy
+						<a href="/training-material//topics/admin/tutorials/data-library/slides.html">
+						Storage Management
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 					<li>
 						
 						
-						<a href="/training-material/topics/dev">
-							Development in Galaxy
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/dev/tutorials/interactive-environments/slides.html">
-						Galaxy Interactive Environments
+						<a href="/training-material//topics/admin/tutorials/advanced-galaxy-customisation/slides.html">
+						Advanced customisation of a Galaxy instance
 						</a>
 					</li>
-					
 				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 					<li>
 						
 						
-						<a href="/training-material/topics/genome-annotation">
-							Genome Annotation
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/genome-annotation/tutorials/apollo/slides.html">
-						Refining Genome Annotations with Apollo
+						<a href="/training-material//topics/admin/tutorials/tool-management/slides.html">
+						Galaxy Tool Management with Ephemeris
 						</a>
 					</li>
-					
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/empathy/slides.html">
+						Empathy
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/general-monitoring/slides.html">
+						Galaxy Monitoring
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/pulsar/slides.html">
+						Running Jobs on Remote Resources with Pulsar
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/connect-to-compute-cluster/slides.html">
+						Connecting Galaxy to a compute cluster
+						</a>
+					</li>
+				
 					<li>
 						
 						
@@ -1785,9 +1296,7 @@
 						Circos
 						</a>
 					</li>
-					
 				
-					
 					<li>
 						
 						
@@ -1799,15 +1308,31 @@
 						JBrowse
 						</a>
 					</li>
-					
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/dev">
+							Development in Galaxy
+						</a>
+						/
+						<a href="/training-material//topics/dev/tutorials/interactive-environments/slides.html">
+						Galaxy Interactive Environments
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/genome-annotation">
+							Genome Annotation
+						</a>
+						/
+						<a href="/training-material//topics/genome-annotation/tutorials/apollo/slides.html">
+						Refining Genome Annotations with Apollo
+						</a>
+					</li>
 				
-					
-				
-					
 					<li>
 						
 						
@@ -1819,21 +1344,31 @@
 						Creating Slides
 						</a>
 					</li>
-					
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/introduction">
+							Introduction to Galaxy Analyses
+						</a>
+						/
+						<a href="/training-material//topics/introduction/tutorials/galaxy-intro-short/slides.html">
+						A Short Introduction to Galaxy
+						</a>
+					</li>
 				
-					
+					<li>
+						
+						
+						<a href="/training-material/topics/introduction">
+							Introduction to Galaxy Analyses
+						</a>
+						/
+						<a href="/training-material//topics/introduction/tutorials/galaxy-intro-short/slides_CAT_ES.html">
+						Una breve introducción a Galaxy
+						</a>
+					</li>
 				
-					
-				
-					
-				
-					
-				
-					
-				
-					
 					<li>
 						
 						
@@ -1845,1007 +1380,1706 @@
 						Una Breve Introducción a Galaxy
 						</a>
 					</li>
-					
 				
 				</ul>
+				
 
+				
+                <h2>News</h2>
+                <div class="newslist">
+                
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2022/01/28/rmarkdown.html"><h3 class="card-title">New Feature: Automatic RMarkdown</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material/topics/data-science/images/rstudio/r-preview-output.png" alt="Image showing content from a tutorial, rendered as an rmarkdown html via knitting. A table of contents appears on the left, and code and outputs on the right.">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2022/01/28/rmarkdown.html"><h4 class="card-title">New Feature: Automatic RMarkdown</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+<a href="/training-material/hall-of-fame/erasmusplus/" class="contributor-badge contributor-erasmusplus"><img src="https://avatars.githubusercontent.com/erasmusplus?s=27" alt="Avatar">Erasmus+ Programme</a>
+
+
+<a href="/training-material/hall-of-fame/avans-atgm/" class="contributor-badge contributor-avans-atgm"><img src="https://avatars.githubusercontent.com/avans-atgm?s=27" alt="Avatar">Avans Hogeschool</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="gtn infrastructure" style="background-color: hsl(143, 80.0%, 85%); color: #333; border: 1px solid hsl(143, 80.0%, 45%)" title="Click to show all tutorials with this tag">gtn infrastructure</button>
+
+<button class="label label-default tutorial_tag" id="new feature" style="background-color: hsl(265, 80.0%, 85%); color: #333; border: 1px solid hsl(265, 80.0%, 45%)" title="Click to show all tutorials with this tag">new feature</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        Further building on the work in the automatic Jupyter Notebook, we’ve now re-written the Jupyter export to be faster, and more importantly added support for R and RMarkdown! Check out an example material. Here we take the content of the tutorial, written like normal GTN markdown, and we automatically convert it to Jupyter Notebooks and now RMarkdown documents! Check out the documentation on how to setup your tutorials to support this.
+
+      
+    </p>
+    <a href="/training-material/news/2022/01/28/rmarkdown.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/12/14/funding.html"><h3 class="card-title">Support for annotating Funding Agencies</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/12/14/funding.html"><h4 class="card-title">Support for annotating Funding Agencies</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+<a href="/training-material/hall-of-fame/erasmusplus/" class="contributor-badge contributor-erasmusplus"><img src="https://avatars.githubusercontent.com/erasmusplus?s=27" alt="Avatar">Erasmus+ Programme</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="new-feature" style="background-color: hsl(83, 80.0%, 85%); color: #333; border: 1px solid hsl(83, 80.0%, 45%)" title="Click to show all tutorials with this tag">new-feature</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        The Galaxy Training Network will now support annotating Funding Agencies on training materials. This is part of our ongoing effort to better annotate how people are contributing to the GTN and recognise all of the sources of contribution.
+
+      
+    </p>
+    <a href="/training-material/news/2021/12/14/funding.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/12/01/FAIR.html"><h3 class="card-title">New FAQs: How does the GTN stay FAIR and Collaborative</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/12/01/FAIR.html"><h4 class="card-title">New FAQs: How does the GTN stay FAIR and Collaborative</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="faq" style="background-color: hsl(357, 80.0%, 85%); color: #333; border: 1px solid hsl(357, 80.0%, 45%)" title="Click to show all tutorials with this tag">faq</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        The GTN does a lot of work to adhere to the best practices for FAIR training materials as set out in Garcia et al. 2020 and a lot of this work is behind-the-scenes or automatic from the infrastructure we provide, and we wanted to highlight that for educators and organisers who want to use GTN materials. This is one of the ways the GTN works to makes itself a fantastic platform training. Find out how contributing simple markdown tutorials can result in fantastically FAIR training.
+
+      
+    </p>
+    <a href="/training-material/news/2021/12/01/FAIR.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/11/23/video-library.html"><h3 class="card-title">New Feature: GTN Video Library</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material/news/images/gtn-videolib-stats.png" alt="Screenshot of the GTN Video Library Home page">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/11/23/video-library.html"><h4 class="card-title">New Feature: GTN Video Library</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+
+
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="gtn infrastructure" style="background-color: hsl(143, 80.0%, 85%); color: #333; border: 1px solid hsl(143, 80.0%, 45%)" title="Click to show all tutorials with this tag">gtn infrastructure</button>
+
+<button class="label label-default tutorial_tag" id="new feature" style="background-color: hsl(265, 80.0%, 85%); color: #333; border: 1px solid hsl(265, 80.0%, 45%)" title="Click to show all tutorials with this tag">new feature</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        After runnning a number of virtual training events this year (e.g. Smörgåsbord, GCC2021), we now have a large collection of training videos around the GTN materials, created by this community.
+
+      
+    </p>
+    <a href="/training-material/news/2021/11/23/video-library.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/11/10/api.html"><h3 class="card-title">New Feature: GTN API with OpenAPI 3 specification</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material/assets/images/swagger.png" alt="Image showing an OpenAPI / Swagger UI to the training material API featuring several APIs like topics, tutorials, contributors, and a couple internal APIs. At the bottom are a couple of data models.">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/11/10/api.html"><h4 class="card-title">New Feature: GTN API with OpenAPI 3 specification</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="gtn infrastructure" style="background-color: hsl(143, 80.0%, 85%); color: #333; border: 1px solid hsl(143, 80.0%, 45%)" title="Click to show all tutorials with this tag">gtn infrastructure</button>
+
+<button class="label label-default tutorial_tag" id="new feature" style="background-color: hsl(265, 80.0%, 85%); color: #333; border: 1px solid hsl(265, 80.0%, 45%)" title="Click to show all tutorials with this tag">new feature</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        As part of the work for the Gallantries Grant, we wanted to access some of the data from the GTN in a more accessible, API based way. We are working on building a Video Library based on the wild success of our Smörgåsbord and GCC2021 events and to support that we wanted to start pulling in data from the GTN to save course authors time and effort when designing their asynchronous courses.
+
+      
+    </p>
+    <a href="/training-material/news/2021/11/10/api.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/10/12/speed.html"><h3 class="card-title">Attention Contributors: GTN Performance Enhancements</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/10/12/speed.html"><h4 class="card-title">Attention Contributors: GTN Performance Enhancements</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="authors" style="background-color: hsl(34, 80.0%, 85%); color: #333; border: 1px solid hsl(34, 80.0%, 45%)" title="Click to show all tutorials with this tag">authors</button>
+
+<button class="label label-default tutorial_tag" id="developers" style="background-color: hsl(315, 80.0%, 85%); color: #333; border: 1px solid hsl(315, 80.0%, 45%)" title="Click to show all tutorials with this tag">developers</button>
+
+<button class="label label-default tutorial_tag" id="performance" style="background-color: hsl(17, 80.0%, 85%); color: #333; border: 1px solid hsl(17, 80.0%, 45%)" title="Click to show all tutorials with this tag">performance</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        Are you one of our amazing GTN Contributors? Were you ever bothered by how slow it was to build the site locally? This is now fixed completely! We have replaced one of the slowest steps of the GTN’s build process and rewritten it ourselves to be more performant.
+
+      
+    </p>
+    <a href="/training-material/news/2021/10/12/speed.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/10/12/data-science.html"><h3 class="card-title">New Topic: Data Science Survival Kit</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/10/12/data-science.html"><h4 class="card-title">New Topic: Data Science Survival Kit</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+
+
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+<a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="https://avatars.githubusercontent.com/bebatut?s=27" alt="Avatar">Bérénice Batut</a>
+
+
+<a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge contributor-abretaud"><img src="https://avatars.githubusercontent.com/abretaud?s=27" alt="Avatar">Anthony Bretaudeau</a>
+
+
+<a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge contributor-yvanlebras"><img src="https://avatars.githubusercontent.com/yvanlebras?s=27" alt="Avatar">Yvan Le Bras</a>
+
+
+<a href="/training-material/hall-of-fame/fpsom/" class="contributor-badge contributor-fpsom"><img src="https://avatars.githubusercontent.com/fpsom?s=27" alt="Avatar">Fotis E. Psomopoulos</a>
+
+
+<a href="/training-material/hall-of-fame/carpentries/" class="contributor-badge contributor-carpentries"><img src="https://avatars.githubusercontent.com/carpentries?s=27" alt="Avatar">The Carpentries</a>
+
+
+<a href="/training-material/hall-of-fame/erasmusplus/" class="contributor-badge contributor-erasmusplus"><img src="https://avatars.githubusercontent.com/erasmusplus?s=27" alt="Avatar">Erasmus+ Programme</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="gtn infrastructure" style="background-color: hsl(143, 80.0%, 85%); color: #333; border: 1px solid hsl(143, 80.0%, 45%)" title="Click to show all tutorials with this tag">gtn infrastructure</button>
+
+<button class="label label-default tutorial_tag" id="new topic" style="background-color: hsl(267, 80.0%, 85%); color: #333; border: 1px solid hsl(267, 80.0%, 45%)" title="Click to show all tutorials with this tag">new topic</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        As part of our work under the Gallantries Grant we are establishing a new topic within the GTN specifically focused on Data Science skills. This topic will include tutorials covering things such as:
+
+      
+    </p>
+    <a href="/training-material/news/2021/10/12/data-science.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/09/24/jupyter.html"><h3 class="card-title">New Feature: Automatic Jupyter Notebooks</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material/topics/contributing/images/jupyter-notebook.png" alt="Image comparing Markdown, GTN materials, and new Jupyter Notebook output">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/09/24/jupyter.html"><h4 class="card-title">New Feature: Automatic Jupyter Notebooks</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="gtn infrastructure" style="background-color: hsl(143, 80.0%, 85%); color: #333; border: 1px solid hsl(143, 80.0%, 45%)" title="Click to show all tutorials with this tag">gtn infrastructure</button>
+
+<button class="label label-default tutorial_tag" id="new feature" style="background-color: hsl(265, 80.0%, 85%); color: #333; border: 1px solid hsl(265, 80.0%, 45%)" title="Click to show all tutorials with this tag">new feature</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        As part of the work for the Gallantries Grant, we found ourselves wanting to teach a number of non-Galaxy tutorials on topics such as Python, Bash, SQL, and Git. Writing the tutorials was always a bit awkward as you would spend a lot of time writing code blocks that would be copied and pasted by students into a terminal. We thought we could do better than that, so we decided we would try to convert these to Jupyter Notebooks where the students could read the training materials and simultaneously execute the code cells directly there with the text! This worked fantastically and now we’ve built this feature into the GTN to make it easier to run all of the coding tutorials.
+
+      
+    </p>
+    <a href="/training-material/news/2021/09/24/jupyter.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/07/27/a11y.html"><h3 class="card-title">Accessibility Improvements</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/07/27/a11y.html"><h4 class="card-title">Accessibility Improvements</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="new feature" style="background-color: hsl(265, 80.0%, 85%); color: #333; border: 1px solid hsl(265, 80.0%, 45%)" title="Click to show all tutorials with this tag">new feature</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        Accessibility Improvements
+
+      
+    </p>
+    <a href="/training-material/news/2021/07/27/a11y.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/06/25/gitpod.html"><h3 class="card-title">New Tutorial: GitPod for contributing to the GTN</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material/topics/contributing/images/gitpod.png" alt="Screenshot of the GitPod workspace. A file browser pane on the left, terminal on the bottom, text editor in the middle, and preview of the rendered GTN website on the right.">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/06/25/gitpod.html"><h4 class="card-title">New Tutorial: GitPod for contributing to the GTN</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+
+
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="new tutorial" style="background-color: hsl(46, 80.0%, 85%); color: #333; border: 1px solid hsl(46, 80.0%, 45%)" title="Click to show all tutorials with this tag">new tutorial</button>
+
+<button class="label label-default tutorial_tag" id="contributors" style="background-color: hsl(198, 80.0%, 85%); color: #333; border: 1px solid hsl(198, 80.0%, 45%)" title="Click to show all tutorials with this tag">contributors</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        Want to contribute to the GTN without installing anything on your own computer? GitPod provides an online workspace for editing the GTN tutorials, and showing a live preview of the GTN website with your changes. This tutorial shows you how to set up GitPod, how to use it to get a live preview of the GTN website, and how to save any changes you make back to your GitHub fork. This makes it easier than ever to contribute to the GTN!
+
+      
+    </p>
+    <a href="/training-material/news/2021/06/25/gitpod.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/06/04/apollo.html"><h3 class="card-title">New Tutorial: Genome Annotation with Apollo</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material/topics/genome-annotation/images/apollo/gene.png" alt="Screenshot of Apollo embedded within the Galaxy Europe interface, Apollo shows a couple of gene tracks.">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/06/04/apollo.html"><h4 class="card-title">New Tutorial: Genome Annotation with Apollo</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge contributor-abretaud"><img src="https://avatars.githubusercontent.com/abretaud?s=27" alt="Avatar">Anthony Bretaudeau</a>
+
+
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+<a href="/training-material/hall-of-fame/nathandunn/" class="contributor-badge contributor-nathandunn"><img src="https://avatars.githubusercontent.com/nathandunn?s=27" alt="Avatar">Nathan Dunn</a>
+
+
+<a href="/training-material/hall-of-fame/mboudet/" class="contributor-badge contributor-mboudet"><img src="https://avatars.githubusercontent.com/mboudet?s=27" alt="Avatar">Mateo Boudet</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="new tutorial" style="background-color: hsl(46, 80.0%, 85%); color: #333; border: 1px solid hsl(46, 80.0%, 45%)" title="Click to show all tutorials with this tag">new tutorial</button>
+
+<button class="label label-default tutorial_tag" id="genome-annotation" style="background-color: hsl(105, 80.0%, 85%); color: #333; border: 1px solid hsl(105, 80.0%, 45%)" title="Click to show all tutorials with this tag">genome-annotation</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        After two years, the Galaxy Genome Annotation team has finally finished their much awaited tutorial on doing Genome Annotation in Galaxy! Genome annotation is a time consuming and largely manual process as it requires the synthesis of a significant amount of varied information to make inferences, a process tha cannot be accomplished without an interactive editor. To support this, Apollo was deployed on UseGalaxy.eu. Over the past two years the GGA project has pushed forward apollo and tooling around it, and it finally culminates in this look at how to annotated your genomes in Apollo.
+
+      
+    </p>
+    <a href="/training-material/news/2021/06/04/apollo.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/06/01/archive-menu.html"><h3 class="card-title">Oh no, it changed! Quick, to the archive menu.</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/06/01/archive-menu.html"><h4 class="card-title">Oh no, it changed! Quick, to the archive menu.</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+<a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="new feature" style="background-color: hsl(265, 80.0%, 85%); color: #333; border: 1px solid hsl(265, 80.0%, 45%)" title="Click to show all tutorials with this tag">new feature</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        Did you ever start teaching a GTN tutorial, only to realise something changed recently? Oh no! A while ago the GTN created an Archive to address just this concern.
+On every tag, we’d build a copy of the website which we would place online and never touch again. This way we’d have permanent online copies so that if someone needed to go back to an older version of the GTN, they could.
+
+      
+    </p>
+    <a href="/training-material/news/2021/06/01/archive-menu.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/05/25/abbreviations-tag.html"><h3 class="card-title">New Feature: Easy Abbreviation</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/05/25/abbreviations-tag.html"><h4 class="card-title">New Feature: Easy Abbreviation</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+<a href="/training-material/hall-of-fame/rikeshi/" class="contributor-badge contributor-rikeshi"><img src="https://avatars.githubusercontent.com/rikeshi?s=27" alt="Avatar">Erik Schill</a>
+
+
+<a href="/training-material/hall-of-fame/simonbray/" class="contributor-badge contributor-simonbray"><img src="https://avatars.githubusercontent.com/simonbray?s=27" alt="Avatar">Simon Bray</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="new feature" style="background-color: hsl(265, 80.0%, 85%); color: #333; border: 1px solid hsl(265, 80.0%, 45%)" title="Click to show all tutorials with this tag">new feature</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        Thanks to the great tutorial developed by first time contributor 
+Erik Schill
+
+and edited by 
+Simon Bray
+
+, we noticed that they defined a number of abbreviations and re-used those throughout their tutorial.
+
+      
+    </p>
+    <a href="/training-material/news/2021/05/25/abbreviations-tag.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/05/20/spanish_project_begins.html"><h3 class="card-title">¿Hablas español?: The first curated tutorial in Spanish!</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material/topics/introduction/images/hello-languages.png" alt="Hello in many languages">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/05/20/spanish_project_begins.html"><h4 class="card-title">¿Hablas español?: The first curated tutorial in Spanish!</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/nomadscientist/" class="contributor-badge contributor-nomadscientist"><img src="https://avatars.githubusercontent.com/nomadscientist?s=27" alt="Avatar">Wendi Bacon</a>
+
+
+<a href="/training-material/hall-of-fame/beatrizserrano/" class="contributor-badge contributor-beatrizserrano"><img src="https://avatars.githubusercontent.com/beatrizserrano?s=27" alt="Avatar">Beatriz Serrano-Solano</a>
+
+
+<a href="/training-material/hall-of-fame/pclo/" class="contributor-badge contributor-pclo"><img src="https://avatars.githubusercontent.com/pclo?s=27" alt="Avatar">Patricia Carvajal López</a>
+
+
+<a href="/training-material/hall-of-fame/ales-ibt/" class="contributor-badge contributor-ales-ibt"><img src="https://avatars.githubusercontent.com/ales-ibt?s=27" alt="Avatar">Alejandra Escobar-Zepeda</a>
+
+
+<a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+
+
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="new tutorial" style="background-color: hsl(46, 80.0%, 85%); color: #333; border: 1px solid hsl(46, 80.0%, 45%)" title="Click to show all tutorials with this tag">new tutorial</button>
+
+<button class="label label-default tutorial_tag" id="español" style="background-color: hsl(184, 80.0%, 85%); color: #333; border: 1px solid hsl(184, 80.0%, 45%)" title="Click to show all tutorials with this tag">español</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        ¡El primer tutorial en español ya está disponible! Galaxy siempre ha tenido tutoriales traducidos automáticamente mediante Google-Translate, ahora nos estamos embarcando en un nuevo proyecto para estudiar la experiencia de aprendizaje con tutoriales en bioinformática traducidos por humanos. Nuestro objetivo es crear un paquete de tutoriales para el análisis de datos single-cell (célula única) en primera instancia, con el fin de estudiar su uso y utilidad en un taller para hablantes nativos de español. Agradecemos enormemente a las nuevas participantes 
+Patricia Carvajal López
+
+y 
+Alejandra Escobar-Zepeda
+
+(EMBL-EBI) así como a las miembros existentes de GTN 
+Beatriz Serrano-Solano
+
+(University of Freiburg), 
+Saskia Hiltemann
+
+&amp; 
+Helena Rasche
+
+(Erasmus-MC), por su arduo trabajo en este proyecto de traducción y mantenimiento y, por supuesto, a 
+Wendi Bacon
+
+(The Open University/EBI) como líder de proyecto.
+
+      
+    </p>
+    <a href="/training-material/news/2021/05/20/spanish_project_begins.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/04/06/new-video-player.html"><h3 class="card-title">New Feature: Video Player</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material/topics/contributing/images/slides-to-video.png" alt="Example of video player mimicking youtube's interface with a video at the top, a transcript at the bottom left, and suggested videos at the bottom right.">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/04/06/new-video-player.html"><h4 class="card-title">New Feature: Video Player</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="gtn infrastructure" style="background-color: hsl(143, 80.0%, 85%); color: #333; border: 1px solid hsl(143, 80.0%, 45%)" title="Click to show all tutorials with this tag">gtn infrastructure</button>
+
+<button class="label label-default tutorial_tag" id="video" style="background-color: hsl(207, 80.0%, 85%); color: #333; border: 1px solid hsl(207, 80.0%, 45%)" title="Click to show all tutorials with this tag">video</button>
+
+<button class="label label-default tutorial_tag" id="new feature" style="background-color: hsl(265, 80.0%, 85%); color: #333; border: 1px solid hsl(265, 80.0%, 45%)" title="Click to show all tutorials with this tag">new feature</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        One of our contributors (
+Mehmet Tekman
+
+) found himself wanting to link to a specific time point in a video. We said “Wow, what a fantastic idea!” and then we implemented it. To support that we developed a very simple standalone video player page where you can view the GTN videos and browse through our catalog. It features the full transcript on the left, some suggested videos on the right, and a very standard &lt;video&gt; player.
+
+      
+    </p>
+    <a href="/training-material/news/2021/04/06/new-video-player.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/03/24/tutorial_assembly_mrsa.html"><h3 class="card-title">New Tutorials: Genome assembly of a MRSA genome</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material/topics/assembly/images/mrsa/bandage-illumina.jpg" alt="Assembly visualisation from the Bandage tool">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/03/24/tutorial_assembly_mrsa.html"><h4 class="card-title">New Tutorials: Genome assembly of a MRSA genome</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/bazante1/" class="contributor-badge contributor-bazante1"><img src="https://avatars.githubusercontent.com/bazante1?s=27" alt="Avatar">Bazante Sanders</a>
+
+
+<a href="/training-material/hall-of-fame/miaomiaozhou88/" class="contributor-badge contributor-miaomiaozhou88"><img src="https://avatars.githubusercontent.com/miaomiaozhou88?s=27" alt="Avatar">Miaomiao Zhou</a>
+
+
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+<a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="new tutorial" style="background-color: hsl(46, 80.0%, 85%); color: #333; border: 1px solid hsl(46, 80.0%, 45%)" title="Click to show all tutorials with this tag">new tutorial</button>
+
+<button class="label label-default tutorial_tag" id="assembly" style="background-color: hsl(334, 80.0%, 85%); color: #333; border: 1px solid hsl(334, 80.0%, 45%)" title="Click to show all tutorials with this tag">assembly</button>
+
+<button class="label label-default tutorial_tag" id="mrsa" style="background-color: hsl(198, 80.0%, 85%); color: #333; border: 1px solid hsl(198, 80.0%, 45%)" title="Click to show all tutorials with this tag">mrsa</button>
+
+<button class="label label-default tutorial_tag" id="amr" style="background-color: hsl(255, 80.0%, 85%); color: #333; border: 1px solid hsl(255, 80.0%, 45%)" title="Click to show all tutorials with this tag">amr</button>
+
+<button class="label label-default tutorial_tag" id="nanopore" style="background-color: hsl(239, 80.0%, 85%); color: #333; border: 1px solid hsl(239, 80.0%, 45%)" title="Click to show all tutorials with this tag">nanopore</button>
+
+<button class="label label-default tutorial_tag" id="illumina" style="background-color: hsl(52, 80.0%, 85%); color: #333; border: 1px solid hsl(52, 80.0%, 45%)" title="Click to show all tutorials with this tag">illumina</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        Two new assembly tutorials have been added to the GTN! These tutorials walk you through the
+process of assembling MRSA strains from real-world datasets. MRSA stands for “Methicillin-
+resistant Staphylococcus aureus, it is resistance to several antibiotics and is a common
+source of hospital-acquired infections and outbreaks. In this tutorial you will assess the
+quality of your data, perform an assembly and assess its quality, analyze your data for the
+presence of antimicrobial resistance (AMR) genes, and annotate the genome using Prokka and
+JBrowse.
+
+      
+    </p>
+    <a href="/training-material/news/2021/03/24/tutorial_assembly_mrsa.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/03/24/faqs.html"><h3 class="card-title">New Feature: FAQs</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/03/24/faqs.html"><h4 class="card-title">New Feature: FAQs</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+
+
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+<a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="https://avatars.githubusercontent.com/bebatut?s=27" alt="Avatar">Bérénice Batut</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="gtn infrastructure" style="background-color: hsl(143, 80.0%, 85%); color: #333; border: 1px solid hsl(143, 80.0%, 45%)" title="Click to show all tutorials with this tag">gtn infrastructure</button>
+
+<button class="label label-default tutorial_tag" id="contributors" style="background-color: hsl(198, 80.0%, 85%); color: #333; border: 1px solid hsl(198, 80.0%, 45%)" title="Click to show all tutorials with this tag">contributors</button>
+
+<button class="label label-default tutorial_tag" id="instructors" style="background-color: hsl(166, 80.0%, 85%); color: #333; border: 1px solid hsl(166, 80.0%, 45%)" title="Click to show all tutorials with this tag">instructors</button>
+
+<button class="label label-default tutorial_tag" id="new feature" style="background-color: hsl(265, 80.0%, 85%); color: #333; border: 1px solid hsl(265, 80.0%, 45%)" title="Click to show all tutorials with this tag">new feature</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        Snippets have received an major overhaul! Snippets/FAQs are small reusable bits of training, often answering a single question. In addition to the general Galaxy snippets, we now also support topic-level and tutorial-level FAQs. This will allow contributors to add common questions and answers to their tutorials, which not only can be included in the tutorial text itself, but are also used to autogenerate an FAQ page for the tutorial or topic listing all common questions (and answers).This will be useful both to participants following tutorials via self-study, and also to instructors preparing for a training event.
+
+      
+    </p>
+    <a href="/training-material/news/2021/03/24/faqs.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/03/18/gtn_cofest_may.html"><h3 class="card-title">Next GTN CoFest May 20, 2021</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material//assets/images/cofest.png" alt="CoFest logo with two generic people shapes conversing next to the GTN logo and text 'gtn cofest'">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/03/18/gtn_cofest_may.html"><h4 class="card-title">Next GTN CoFest May 20, 2021</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+
+
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+<a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="https://avatars.githubusercontent.com/bebatut?s=27" alt="Avatar">Bérénice Batut</a>
+
+
+<a href="/training-material/hall-of-fame/jennaj/" class="contributor-badge contributor-jennaj"><img src="https://avatars.githubusercontent.com/jennaj?s=27" alt="Avatar">Jennifer Hillman-Jackson</a>
+
+
+<a href="/training-material/hall-of-fame/delphine-l/" class="contributor-badge contributor-delphine-l"><img src="https://avatars.githubusercontent.com/delphine-l?s=27" alt="Avatar">Delphine Lariviere</a>
+
+
+<a href="/training-material/hall-of-fame/annasyme/" class="contributor-badge contributor-annasyme"><img src="https://avatars.githubusercontent.com/annasyme?s=27" alt="Avatar">Anna Syme</a>
+
+
+<a href="/training-material/hall-of-fame/mblue9/" class="contributor-badge contributor-mblue9"><img src="https://avatars.githubusercontent.com/mblue9?s=27" alt="Avatar">Maria Doyle</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="cofest" style="background-color: hsl(318, 80.0%, 85%); color: #333; border: 1px solid hsl(318, 80.0%, 45%)" title="Click to show all tutorials with this tag">cofest</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        Every 3 months we organise one day dedicated to the GTN community! Thursday, May 20th is the next GTN CoFest. We will be working on the training materials, have discussions with the global Galaxy traning community. Do you teach with Galaxy? Want to learn how to add your tutorial to the GTN? New to the community and just want to learn more? Everybody is welcome!
+
+      
+    </p>
+    <a href="/training-material/news/2021/03/18/gtn_cofest_may.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/03/17/smorgasbord_report.html"><h3 class="card-title">Report on the GTN Smörgåsbord event</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="https://gallantries.github.io/assets/images/smorgasbord/emoji-cloud.jpeg" alt="Wordcloud of emoji with them in different sizes based on frequency">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/03/17/smorgasbord_report.html"><h4 class="card-title">Report on the GTN Smörgåsbord event</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+
+
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="event" style="background-color: hsl(197, 80.0%, 85%); color: #333; border: 1px solid hsl(197, 80.0%, 45%)" title="Click to show all tutorials with this tag">event</button>
+
+<button class="label label-default tutorial_tag" id="pandemic" style="background-color: hsl(352, 80.0%, 85%); color: #333; border: 1px solid hsl(352, 80.0%, 45%)" title="Click to show all tutorials with this tag">pandemic</button>
+
+<button class="label label-default tutorial_tag" id="remote-teaching" style="background-color: hsl(222, 80.0%, 85%); color: #333; border: 1px solid hsl(222, 80.0%, 45%)" title="Click to show all tutorials with this tag">remote-teaching</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        The GTN instructors community has just run the largest-ever Galaxy training event: “the GTN Smörgåsbord: A Global Galaxy Course”, co-organized with the Gallantries and the CINECA project and the Galaxy Training Network.
+
+      
+    </p>
+    <a href="/training-material/news/2021/03/17/smorgasbord_report.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                   
+
+
+
+<div class="card newsitem">
+ <div class="card-header">
+     <a href="/training-material/news/2021/03/16/slides_to_videos.html"><h3 class="card-title">New Feature: Automatic Slides-to-video conversion</h3></a>
+  </div>
+ <div class="row no-gutters">
+  <div class="col-sm-5">
+   <img class="card-img newscover" src="/training-material//assets/images/GTN.png" alt="GTN logo with a multi-coloured star and the words Galaxy Training Network">
+  </div>
+  <div class="col-sm-7">
+   <div class="card-body">
+        <!--<a href="/training-material/news/2021/03/16/slides_to_videos.html"><h4 class="card-title">New Feature: Automatic Slides-to-video conversion</h4></a>-->
+        
+        <div class="contributors-line"> 
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+<a href="/training-material/hall-of-fame/delphine-l/" class="contributor-badge contributor-delphine-l"><img src="https://avatars.githubusercontent.com/delphine-l?s=27" alt="Avatar">Delphine Lariviere</a>
+
+</div>
+        
+        
+<button class="label label-default tutorial_tag" id="new feature" style="background-color: hsl(265, 80.0%, 85%); color: #333; border: 1px solid hsl(265, 80.0%, 45%)" title="Click to show all tutorials with this tag">new feature</button>
+
+<button class="label label-default tutorial_tag" id="videos" style="background-color: hsl(145, 80.0%, 85%); color: #333; border: 1px solid hsl(145, 80.0%, 45%)" title="Click to show all tutorials with this tag">videos</button>
+
+<button class="label label-default tutorial_tag" id="gtn" style="background-color: hsl(77, 80.0%, 85%); color: #333; border: 1px solid hsl(77, 80.0%, 45%)" title="Click to show all tutorials with this tag">gtn</button>
+
+<button class="label label-default tutorial_tag" id="pandemic" style="background-color: hsl(352, 80.0%, 85%); color: #333; border: 1px solid hsl(352, 80.0%, 45%)" title="Click to show all tutorials with this tag">pandemic</button>
+
+<button class="label label-default tutorial_tag" id="remote-teaching" style="background-color: hsl(222, 80.0%, 85%); color: #333; border: 1px solid hsl(222, 80.0%, 45%)" title="Click to show all tutorials with this tag">remote-teaching</button>
+
+    <hr/>
+    <p class="card-text">
+      
+        This past year has been a struggle for all of us, but one task has become apparent as one of the most time consuming portions of course preparation during a pandemic: Video Production.
+
+      
+    </p>
+    <a href="/training-material/news/2021/03/16/slides_to_videos.html" class="btn btn-primary">Full Story</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+                
+                </div>
+				
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 				<script type="text/javascript">
 
 var ctx = document.getElementById('myChart').getContext('2d');
+var ctx2 = document.getElementById('slidesVsTutorials').getContext('2d');
 
 var topics = [
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	
+	"Teaching and Hosting Galaxy training",
+
+	
+	
+	"Teaching and Hosting Galaxy training",
+
+	
+	
+	"Teaching and Hosting Galaxy training",
+
+	
+	
+	"Teaching and Hosting Galaxy training",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Foundations of Data Science",
+
+	
+	
+	"Using Galaxy and Managing your Data",
+
+	
+	
+	"Using Galaxy and Managing your Data",
+
+	
+	
+	"Using Galaxy and Managing your Data",
+
+	
+	
+	"Using Galaxy and Managing your Data",
+
+	
+	
+	"Using Galaxy and Managing your Data",
+
+	
+	
+	"Using Galaxy and Managing your Data",
+
+	
+	
+	"Using Galaxy and Managing your Data",
 
 	
 	
 	"Galaxy Server administration",
 
-
+	
+	
+	"Galaxy Server administration",
 
 	
 	
 	"Galaxy Server administration",
 
-
+	
+	
+	"Galaxy Server administration",
 
 	
 	
 	"Galaxy Server administration",
 
-
+	
+	
+	"Galaxy Server administration",
 
 	
 	
 	"Galaxy Server administration",
 
-
+	
+	
+	"Galaxy Server administration",
 
 	
 	
 	"Galaxy Server administration",
 
-
+	
+	
+	"Galaxy Server administration",
 
 	
 	
 	"Galaxy Server administration",
 
-
-
-
-
-
+	
+	
+	"Galaxy Server administration",
 
 	
 	
 	"Galaxy Server administration",
 
-
+	
+	
+	"Galaxy Server administration",
 
 	
 	
 	"Galaxy Server administration",
 
-
+	
+	
+	"Galaxy Server administration",
 
 	
 	
 	"Galaxy Server administration",
 
-
+	
+	
+	"Galaxy Server administration",
 
 	
 	
 	"Galaxy Server administration",
 
-
-
 	
 	
 	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-
-
-
-
-
-
-
-
-
 
 	
 	
 	"Sequence analysis",
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	
+	"Visualisation",
 
 	
 	
-	"Teaching and Hosting Galaxy training",
-
-
-
-	
-	
-	"Teaching and Hosting Galaxy training",
-
-
-
-	
-	
-	"Teaching and Hosting Galaxy training",
-
-
-
-	
-	
-	"Teaching and Hosting Galaxy training",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-	"Introduction to Galaxy Analyses",
-
-
-
-
-
-
-
-
-
-	
-	
-	"Introduction to Galaxy Analyses",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	"Visualisation",
 
 	
 	
 	"Development in Galaxy",
 
-
-
-
-
-
+	
+	
+	"Development in Galaxy",
 
 	
 	
 	"Development in Galaxy",
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	
 	
 	"Genome Annotation",
 
-
-
-
-
 	
 	
-	"Using Galaxy and Managing your Data",
-
-
-
-	
-	
-	"Using Galaxy and Managing your Data",
-
-
-
-
-
-	
-	
-	"Using Galaxy and Managing your Data",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-	"Using Galaxy and Managing your Data",
-
-
-
-
-
-
-
-	
-	
-	"Using Galaxy and Managing your Data",
-
-
-
-
-
-	
-	
-	"Using Galaxy and Managing your Data",
-
-
-
-
-
-	
-	
-	"Using Galaxy and Managing your Data",
-
-
-
-
-
-	
-	
-	"Visualisation",
-
-
-
-	
-	
-	"Visualisation",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	"Contributing to the Galaxy Training Material",
 
 	
 	
 	"Contributing to the Galaxy Training Material",
 
-
-
-
+	
+	
+	"Contributing to the Galaxy Training Material",
 
 	
 	
 	"Contributing to the Galaxy Training Material",
 
-
-
-
-
-
-
 	
 	
 	"Contributing to the Galaxy Training Material",
-
-
-
-	
-	
-	"Contributing to the Galaxy Training Material",
-
-
-
-	
-	
-	"Contributing to the Galaxy Training Material",
-
-
-
-
-
-
-
-
-
-
-
-
 
 	
 	
 	"Assembly",
 
-
-
-
+	
+	
+	"Assembly",
 
 	
 	
 	"Assembly",
 
-
-
-
-
-
-
 	
 	
 	"Assembly",
 
-
-
-
-
 	
 	
-	"Assembly",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-
-
-
+	"Introduction to Galaxy Analyses",
 
 	
 	
 	"Introduction to Galaxy Analyses",
 
 
-
-
-
-
-
 	
 	
-	"Genome Annotation",
-
-
+	"Galaxy Server administration",
 
 	
 	
 	"Visualisation",
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	
 	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-	
-	
-	"Galaxy Server administration",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	"Genome Annotation",
 
 	
 	
 	"Introduction to Galaxy Analyses",
 
+	
+	
+	"Galaxy Server administration",
 
+	
+	
+	"Galaxy Server administration",
 
+	
+	
+	"Galaxy Server administration",
 
+	
+	
+	"Galaxy Server administration",
 
+	
+	
+	"Galaxy Server administration",
 
+	
+	
+	"Galaxy Server administration",
 
+	
+	
+	"Galaxy Server administration",
 
+	
+	
+	"Galaxy Server administration",
 
+	
+	
+	"Galaxy Server administration",
 
+	
+	
+	"Galaxy Server administration",
 
+	
+	
+	"Galaxy Server administration",
 
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Visualisation",
+
+	
+	
+	"Visualisation",
 
 	
 	
 	"Development in Galaxy",
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	
 	
 	"Genome Annotation",
-
-
-
-
-
-
-
-
-
-	
-	
-	"Visualisation",
-
-
-
-	
-	
-	"Visualisation",
-
-
-
-
-
-
-
-
 
 	
 	
 	"Contributing to the Galaxy Training Material",
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	
+	"Introduction to Galaxy Analyses",
 
 	
 	
 	"Introduction to Galaxy Analyses",
 
+	
+	
+	"Introduction to Galaxy Analyses",
 
 ];
 
+var slidesVsTutos = [
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+
+	"Slides",
+	
+
+	"Slides",
+	
+
+	"Slides",
+	
+
+	"Slides",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+	"Slides",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+	"Slides",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+	"Slides",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+	"Slides",
+	
+
+	"Slides",
+	
+
+	"Slides",
+	
+
+	"Slides",
+	
+
+	"Slides",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+	"Slides",
+	
+
+	"Slides",
+	
+
+	"Slides",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+	"Slides",
+	
+	"Videos",
+	
+
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+	"News Posts",
+
+]
+
 function foo(arr) {
-var a = [], b = [], prev;
+	var a = [], b = [], prev;
 
-arr.sort();
-for ( var i = 0; i < arr.length; i++ ) {
-	if ( arr[i] !== prev ) {
-		a.push(arr[i]);
-		b.push(1);
-	} else {
-		b[b.length-1]++;
+	arr.sort();
+	for ( var i = 0; i < arr.length; i++ ) {
+		if ( arr[i] !== prev ) {
+			a.push(arr[i]);
+			b.push(1);
+		} else {
+			b[b.length-1]++;
+		}
+		prev = arr[i];
 	}
-	prev = arr[i];
-}
 
-return [a, b];
+	return [a, b];
 }
 
 out = foo(topics)
 
 function genColors(size) {
-var o = [];
-for(i = 0; i < size; i++){
-	o.push(`hsl(${ i * 360 / size }, 100%, 50%)`)
-}
-return o;
-}
-
-
-var chart = new Chart(ctx, {
-// The type of chart we want to create
-type: 'doughnut',
-
-// The data for our dataset
-data: {
-	labels: out[0],
-	datasets: [{
-		label: 'Contribution Areas',
-		backgroundColor: genColors(out[0].length),
-		data: out[1]
-	}]
-},
-
-// Configuration options go here
-options: {
-	legend: {
-		display: false
+	var o = [];
+	for(i = 0; i < size; i++){
+		o.push(`hsl(${ i * 360 / size }, 100%, 50%)`)
 	}
+	return o;
 }
+
+
+// Which topics
+var chart = new Chart(ctx, {
+	type: 'doughnut',
+	data: {
+		labels: out[0],
+		datasets: [{
+			label: 'Contribution Areas',
+			backgroundColor: genColors(out[0].length),
+			data: out[1]
+		}]
+	},
+	options: {
+		legend: {
+			display: false
+		}
+	}
+});
+
+out = foo(slidesVsTutos);
+// What material type
+var chart2 = new Chart(ctx2, {
+	type: 'doughnut',
+	data: {
+		labels: out[0],
+		datasets: [{
+			label: 'Contribution Areas',
+			backgroundColor: genColors(out[0].length),
+			data: out[1]
+		}]
+	},
+	options: {
+		legend: {
+			display: false
+		}
+	}
 });
 				</script>
 
@@ -2868,7 +3102,7 @@ options: {
         <p>
 The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
 </p>
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/2c449363b7d2a7d9c09beba391f8d73804500259">2c449363b7d2a7d9c09beba391f8d73804500259</a></p>
+        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/7cdccfe4a2343778b7a2ee82f8fa69f43778c264">7cdccfe4a2343778b7a2ee82f8fa69f43778c264</a></p>
     </div>
 </footer>
 

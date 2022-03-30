@@ -1,0 +1,54 @@
+{
+  "layout": "tutorial_hands_on",
+  "redirect_from": [
+    "/topics/galaxy-data-manipulation/tutorials/group-tags/tutorial"
+  ],
+  "title": "Group tags for complex experimental designs",
+  "zenodo_link": "",
+  "questions": [
+    "What are group tags?",
+    "How can I use group tags to perform multi-factor analyses with collections"
+  ],
+  "objectives": [
+    "Learn how to set group tags",
+    "Learn how to select group tags in tools"
+  ],
+  "time_estimation": "10m",
+  "key_points": [
+    "Group tags allow complex analyses without reshaping or unhiding datasets in a collection"
+  ],
+  "contributors": [
+    {
+      "name": "Marius van den Beek",
+      "joined": "2018-06",
+      "id": "mvdbeek",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/mvdbeek.json"
+    }
+  ],
+  "subtopic": "manage",
+  "last_modified_at": "2022-02-18T19:55:27+00:00",
+  "url": "/topics/galaxy-interface/tutorials/group-tags/tutorial.html",
+  "topic_name": "galaxy-interface",
+  "tutorial_name": "group-tags",
+  "hands_on": true,
+  "slides": false,
+  "tools": [
+
+  ],
+  "tours": false,
+  "video": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": false
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/group-tags/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/group-tags/tutorial.json"
+  }
+}

@@ -9,6 +9,8 @@
 
 
 
+
+
   <head>
     <meta charset="utf-8">
     <title>Options for using Galaxy</title>
@@ -68,7 +70,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "1970-01-01 00:00:09 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Options for using Galaxy",
   "interactivityType": "mixed",
@@ -128,6 +130,10 @@
     {
       "@type": "Person",
       "name": "Nicola Soranzo"
+    },
+    {
+      "@type": "Person",
+      "name": "Alaa Elghamry"
     }
   ],
   "contributor": [
@@ -146,6 +152,10 @@
     {
       "@type": "Person",
       "name": "Nicola Soranzo"
+    },
+    {
+      "@type": "Person",
+      "name": "Alaa Elghamry"
     }
   ],
   "about": [
@@ -182,6 +192,7 @@ class: center, middle, inverse
 ---
 
 
+
 <img src="/training-material/assets/images/GTN.png" alt="Galaxy Training Network" class="cover-logo"/>
 
 
@@ -190,30 +201,49 @@ class: center, middle, inverse
 
 <div class="contributors-line">
 
+<a href="/training-material/hall-of-fame/tnabtaf/" class="contributor-badge contributor-tnabtaf"><img src="https://avatars.githubusercontent.com/tnabtaf?s=27" alt="Avatar">Dave Clements</a>
 
- <a href="/training-material/hall-of-fame/tnabtaf/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/tnabtaf" alt="Avatar">Dave Clements</a> <a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/abretaud" alt="Avatar">Anthony Bretaudeau</a> <a href="/training-material/hall-of-fame/pajanne/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/pajanne" alt="Avatar">Anne Pajon</a> <a href="/training-material/hall-of-fame/nsoranzo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/nsoranzo" alt="Avatar">Nicola Soranzo</a>
+
+<a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge contributor-abretaud"><img src="https://avatars.githubusercontent.com/abretaud?s=27" alt="Avatar">Anthony Bretaudeau</a>
+
+
+<a href="/training-material/hall-of-fame/pajanne/" class="contributor-badge contributor-pajanne"><img src="https://avatars.githubusercontent.com/pajanne?s=27" alt="Avatar">Anne Pajon</a>
+
+
+<a href="/training-material/hall-of-fame/nsoranzo/" class="contributor-badge contributor-nsoranzo"><img src="https://avatars.githubusercontent.com/nsoranzo?s=27" alt="Avatar">Nicola Soranzo</a>
+
+
+<a href="/training-material/hall-of-fame/alaaelghamry/" class="contributor-badge contributor-alaaelghamry"><img src="https://avatars.githubusercontent.com/alaaelghamry?s=27" alt="Avatar">Alaa Elghamry</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 
 </div>
 
 
-<div class="footnote" style="bottom: 3em;"><i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Updated: Jul 9, 2021</div>
-<div class="footnote" style="bottom: 2em;">Or view the <a href="slides-plain.html">plain-text slides without JS</a></div>
-<div class="footnote" style="bottom: 1em;">Tip: press <kbd>P</kbd> to view the presenter notes</div>
+<div class="footnote" style="bottom: 5.5em;"><i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Updated: Nov 9, 2021</div>
+
+<div class="footnote" style="bottom: 4em;"><a href="/training-material/videos/watch.html?v=/introduction/tutorials/options-for-using-galaxy/slides"><i class="far fa-play-circle" aria-hidden="true"></i><span class="visually-hidden">video-slides</span> View video slides for this lecture</a></div>
+
+<div class="footnote" style="bottom: 2.5em;"><i class="fas fa-file-alt" aria-hidden="true"></i><span class="visually-hidden">text-document</span><a href="slides-plain.html"> Plain-text slides</a></div>
+<div class="footnote" style="bottom: 1em;"><strong>Tip: </strong>press <kbd>P</kbd> to view the presenter notes</div>
 
 ???
-Presenter notes contain extra information which might be useful if you
-intend to use these slides for teaching.
+Presenter notes contain extra information which might be useful if you intend to use these slides for teaching.
 
 Press `P` again to switch presenter notes off
 
 Press `C` to create a new window where the same presentation will be displayed.
 This window is linked to the main window. Changing slides on one will cause the
-slide to change on the other. Useful when presenting.
+slide to change on the other.
+
+Useful when presenting.
 
 
 
 ---
+
 
 
 
@@ -261,6 +291,12 @@ This deck lists options for using Galaxy outside of a training context.
   - Averages 250,000 jobs *per month* in 2016
   - A single resource cannot scale to meet the demand of the entire world, nor can it support all wanted tools, genomes, ...
 
+???
+- usegalaxy.org is the public server, it's hosted at the Texas Advanced Computing Center.
+- It has lots of tools, reference genomes, computer power, and free storage also.
+- But it's also very busy, in 2016 it had an average of 250,000 jobs per month, that sometimes could slow down the process
+- The world of data analysis is huge and full of tools , genomes , and resources
+-  A single resource cannot scale to meet the demand of the entire world
 ---
 
 ### Public Galaxy Servers
@@ -270,6 +306,12 @@ This deck lists options for using Galaxy outside of a training context.
 [.image-25[![GigaGalaxy's logo mentioning integrated publishing of workflows](../../images/public_server_gigagalaxy.png)]](https://galaxyproject.org/public-galaxy-servers/#gigagalaxy)
 [.image-25[![Prove your point, genome statistics made simple with the Genomic Hyperbrowser](../../images/public_server_genomichyperbrowser.png)]](https://hyperbrowser.uio.no/hb/)
 [.image-25[![Unreadable tiny text with a head the Lanuage Application Grid](../../images/public_server_lappsgrid.png)]](https://galaxy.lappsgrid.org/)
+
+??? 
+- There are currently more than 80 public Galaxy servers, and the number keeps growing.
+- for example, GalaxyEast, an open and powerful galaxy instance for integrative omics data analysis
+- the Genomic Hyperbrowser to Manage and Analyze collections of genome-wide datasets.
+- Galaxy Platform Directory which  lists platforms where you can use or deploy your own Galaxy Server with minimal effort.
 
 ---
 
@@ -286,6 +328,13 @@ This deck lists options for using Galaxy outside of a training context.
 
 Complete list: [bit.ly/gxyServers ](https://bit.ly/gxyServers)
 
+???
+
+- There are three types of servers
+- First is general-purpose genomics servers.
+- The second is domain-specific servers, which can be specific to: Research methods, Organisms or Non-genomic domains
+- the third type is Tool servers , the tool servers host specific tools to make them easy to access and run
+
 ---
 
 ### Semi-public Galaxy services
@@ -300,6 +349,13 @@ Access based on geography or community membership
 | US | [Jetstream](https://galaxyproject.org/cloud/jetstream/) |
 
 Complete list: [bit.ly/gxysemipublic ](https://bit.ly/gxysemipublic)
+
+???
+- There are some semi-public galaxy servers for which access is restricted according to the user's geographic location or community membership
+- In Australia there is the Genomics Virtual Lab
+- In Canada there is GenAP
+- In Norway there is Norwegian e-Infrastructure for Life Sciences
+- In the US there is Jetstream
 
 ---
 
@@ -317,6 +373,13 @@ Complete list: [bit.ly/gxysemipublic ](https://bit.ly/gxysemipublic)
 .pull-right[
 [.image-75[![Illegible screenshot of Galaxy Cloud Launch with a form for entering data.](../../images/cloudlaunch_empty.png)]](https://launch.usegalaxy.org/)
 ]
+
+???
+- In addition to servers there is also Public clouds via Galaxy CloudLaunch
+- Unfortunetly it currently only supports Jetstream and Amazon Web Services
+- You first need to create an Amazon Web Services account (which requires a credit card) and then provide your
+ public and secret keys to CloudLaunch
+
 ---
 
 .pull-left[
@@ -330,6 +393,11 @@ Complete list: [bit.ly/gxysemipublic ](https://bit.ly/gxysemipublic)
 .pull-right[
 [.image-75[![Screenshot of a Galaxy Cloud Man instance](../../../../shared/images/cloudman_based_server_landing_page.png)]](https://wiki.galaxyproject.org/CloudMan)
 ]
+
+???
+- CloudLaunch Comes with hundredss of tools and many pre-defined reference genomes.
+- CloudLaunch starts a Galaxy instance called CloudMan.
+- CloudMan is a cloud management tool that moves so much of the cloud management work into a Graphical user interface.
 ---
 
 ### CloudMan
@@ -343,12 +411,19 @@ CloudMan enables you to statically or dynamically scale compute power
   - Paying to have a cloud instance up for two weeks that you only use for 8 hours is not cost effective
 - **It is very important to shut down and remove everything when you are done**
 
+???
+- CloudMan enables you to statically or dynamically scale compute power
+- Cloud instances can be incredibly cost effective only if you are actually using them when they are up.
+- you can't have a cloud instance up for two weeks when you only use for 8 hours 
+- It is very important to shut down and remove everything when you are done
 ---
 
 ### Docker (and maybe other appliances?)
 
 Stuff about docker...
 
+???
+- Galaxy could be running in Docker 
 ---
 
 ### Run your own Galaxy locally
@@ -361,6 +436,14 @@ Stuff about docker...
   - Installing tools and genomes has become much easier in recent years, and can now often be done with the Galaxy Admin GUI
   - Authentication and connecting to institutional compute resources is still heavy lifting
 
+???
+- Galaxy is open source software which means it's free to use locally 
+- it can be installed on local compute infrastructure, from lab servers to institutional compute clusters.
+- Installing Galaxy locally is relatively easy, but you have to consider this
+- the initial install does not include reference genomes and only has a few tools
+- installing tools and genomes, setting up authentication, and connecting to institutional compute resources all takes work
+- installing has become much easier and can now be done with the Galaxy Admin GUI
+- Authentication and connecting to institutional compute resources is still heavy lifting
 ---
 
 ### Commercial support
@@ -369,6 +452,10 @@ Stuff about docker...
 - [Globus Genomics](http://globusgenomics.org/) provides cloud-based Galaxy servers
 - [Commercially provided consulting and training](https://galaxyproject.org/support/commercial/) are also available
 
+???
+- Commercial solutions are also available, for example:
+- You can buy a preconfigured Galaxy server from BioTeam
+- Globus Genomics also provides cloud-based Galaxy servers
 ---
 
 ### Which Galaxy instance to use?
@@ -378,6 +465,10 @@ Stuff about docker...
   - data security
   - computational requirements
   - tools installed
+???
+- In conclusion, choosing which Galaxy instance to use depends on multiple factors like: size of datasets, available storage, backup
+- you also need to consider data security, computational requirements, and the tools installed
+
 
 
 
@@ -389,15 +480,26 @@ Stuff about docker...
 
 ---
 
-## Thank you!
+## Thank You!
 
 This material is the result of a collaborative work. Thanks to the [Galaxy Training Network](https://training.galaxyproject.org) and all the contributors!
 
 
 <div class="contributors-line">
 
+<a href="/training-material/hall-of-fame/tnabtaf/" class="contributor-badge contributor-tnabtaf"><img src="https://avatars.githubusercontent.com/tnabtaf?s=27" alt="Avatar">Dave Clements</a>
 
- <a href="/training-material/hall-of-fame/tnabtaf/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/tnabtaf" alt="Avatar">Dave Clements</a> <a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/abretaud" alt="Avatar">Anthony Bretaudeau</a> <a href="/training-material/hall-of-fame/pajanne/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/pajanne" alt="Avatar">Anne Pajon</a> <a href="/training-material/hall-of-fame/nsoranzo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/nsoranzo" alt="Avatar">Nicola Soranzo</a>
+
+<a href="/training-material/hall-of-fame/abretaud/" class="contributor-badge contributor-abretaud"><img src="https://avatars.githubusercontent.com/abretaud?s=27" alt="Avatar">Anthony Bretaudeau</a>
+
+
+<a href="/training-material/hall-of-fame/pajanne/" class="contributor-badge contributor-pajanne"><img src="https://avatars.githubusercontent.com/pajanne?s=27" alt="Avatar">Anne Pajon</a>
+
+
+<a href="/training-material/hall-of-fame/nsoranzo/" class="contributor-badge contributor-nsoranzo"><img src="https://avatars.githubusercontent.com/nsoranzo?s=27" alt="Avatar">Nicola Soranzo</a>
+
+
+<a href="/training-material/hall-of-fame/alaaelghamry/" class="contributor-badge contributor-alaaelghamry"><img src="https://avatars.githubusercontent.com/alaaelghamry?s=27" alt="Avatar">Alaa Elghamry</a>
 
 
 </div>
@@ -407,7 +509,8 @@ This material is the result of a collaborative work. Thanks to the [Galaxy Train
 <img src="/training-material/assets/images/GTN.png" alt="Galaxy Training Network" style="height: 100px;"/>
 
 
-This material is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+This material is licensed under the Creative Commons Attribution 4.0 International License</a>.
 
 
     </textarea>

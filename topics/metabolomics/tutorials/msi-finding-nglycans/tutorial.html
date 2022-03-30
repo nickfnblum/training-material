@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fmetabolomics%2Ftutorials%2Fmsi-finding-nglycans%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-03-12 17:24:55 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Mass spectrometry imaging: Finding differential analytes",
   "interactivityType": "mixed",
@@ -384,15 +384,21 @@
     <h1 data-toc-skip>Mass spectrometry imaging: Finding differential analytes</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/foellmelanie/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/foellmelanie" alt="Avatar">Melanie Föll</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/foellmelanie/" class="contributor-badge contributor-foellmelanie"><img src="https://avatars.githubusercontent.com/foellmelanie?s=27" alt="Avatar">Melanie Föll</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -506,6 +512,8 @@
                     
                         
                     
+                        
+                    
                 
             </ul>
         
@@ -548,7 +556,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://zenodo.org/record/2628280">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/2628280">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -569,8 +577,35 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/metabolomics/tutorials/msi-finding-nglycans/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -649,11 +684,13 @@
         
     
         
+    
+        
+    
+        
         <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
             Galaxy@GenOuest
         </a>
-        
-    
         
     
         
@@ -717,6 +754,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
+        
     
         
         <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
@@ -758,7 +799,9 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 12, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -770,6 +813,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>Mass spectrometry imaging (MSI) is applied to measure the spatial distribution of hundreds of biomolecules in a sample. A mass spectrometer scans over the entire sample and collects a mass spectrum every 5-200 µm. This results in thousands of spots (or pixels) for each of which a mass spectrum is acquired. Each mass spectrum consists of hundreds of analytes that are measured by their mass-to-charge (m/z) ratio. For each analyte the peak intensity in the mass spectra of every pixel is known and can be set together to map the spatial distribution of the analyte in the sample.</p>
@@ -778,7 +823,7 @@
 
 <p>Depending on the analyte of interest and the application, different mass spectrometers are used. A mass spectrometer measures the analytes by ionizing, evaporating and sorting them by their mass-to-charge (m/z) ratio. Put simply, a mass spectrometer consists basically of three parts: an ionization source, a mass analyzer and a detector. The most common ionization sources for MSI are MALDI (Matrix Assisted Laser Desorption/Ionization), DESI (Desorption Electrospray Ionization) and SIMS (Secondary Ion Mass Spectrometry).</p>
 
-<figure id="figure-1"><img src="../../images/msi_distribution_maldi_tof_imaging.png" alt="MSI measurement" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> MALDI TOF imaging of a mouse kidney</figcaption></figure>
+<figure id="figure-1"><img src="../../images/msi_distribution_maldi_tof_imaging.png" alt="MSI measurement. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> MALDI TOF imaging of a mouse kidney</figcaption></figure>
 
 <p>One common type of mass spectrometer for MSI is a MALDI Time-Of-Flight (MALDI-TOF) device. During MALDI ionization, a laser is fired onto the sample, which has been covered with a special matrix that absorbs the laser energy and transfers it to the analytes. This process vaporizes and ionizes the analytes. As they are now charged, they can be accelerated in an electric field towards the TOF tube. The time of flight through the tube to the detector is measured, which allows calculation of the mass over charge (m/z) of the analyte, as both mass and charge are correlated with time of flight. During measurement, complete mass spectra with hundreds of m/z - intensity pairs are acquired in thousands of sample plots, leading to large and complex datasets. Each mass spectrum is annotated with coordinates (x,y) that define its location in the sample. This allows visualization of the intensity distribution of each m/z feature in the sample as a heatmap.</p>
 
@@ -825,7 +870,7 @@
 
 <p>To make computation times feasible for this training, we reduced all datasets to a m/z range of 1250 – 2310 and resampled the m/z values with a step size of 0.1. The main part of the training will be performed with the control and one PNGase F treated kidney file, which were both restricted to representative pixels (Figure 2). To test the results on the complete dataset we also provide a file in which all four (m/z reduced and resampled) files (control, calibrants, treated kidney 1 and treated kidney 2) are combined and TIC-normalized. All size-reduced training datasets are available via <a href="https://zenodo.org/record/2628280">Zenodo</a>. We will combine the cropped control and the cropped treated1 file and perform similar steps to those described by <a href="https://doi.org/10.1007/s00216-014-8293-7">Gustafsson et al.</a>. These steps include combining files, preprocessing, unsupervised and supervised analysis, identification of N-glycans and generation of analyte distribution heatmaps.</p>
 
-<figure id="figure-2"><img src="../../images/msi-diff-abundance-file-dimensions.png" alt="file_dimensions" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Top image: All four files after combining them. Black rectangles show the orientation of the cropped control and cropped treated1 files that are used in the major part of the training. Bottom: Cropped training files after combining them.</figcaption></figure>
+<figure id="figure-2"><img src="../../images/msi-diff-abundance-file-dimensions.png" alt="file_dimensions. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Top image: All four files after combining them. Black rectangles show the orientation of the cropped control and cropped treated1 files that are used in the major part of the training. Bottom: Cropped training files after combining them.</figcaption></figure>
 
 <h2 id="get-data">Get data</h2>
 
@@ -1268,7 +1313,7 @@ The average peak picking has removed all spatial information and kept only mean 
 
 </blockquote>
 
-<figure id="figure-3"><img src="../../images/msi-diff-abundance-pca.png" alt="PCA" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> Distribution of the principal components</figcaption></figure>
+<figure id="figure-3"><img src="../../images/msi-diff-abundance-pca.png" alt="PCA. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> Distribution of the principal components</figcaption></figure>
 
 <p>The PCA clustering reveals that the N-glycan profile is different in different kidney compartments. To find the m/z features that correspond to these compartments, the feature tabular file can further be analyzed by sorting the file for the principal components of interest. This reveals the discrete m/z values for the features with the highest loadings: PC1 and PC3: 1905.72, PC4: 2304.91. Later, we will visualize the morphological distribution of those features on the complete dataset.</p>
 
@@ -1305,7 +1350,7 @@ The average peak picking has removed all spatial information and kept only mean 
 
 </blockquote>
 
-<figure id="figure-4"><img src="../../images/msi-diff-abundance-classification.png" alt="SSC" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> T-statistics plot for the classification and distribution of the most discriminating m/z feature and class prediction for all spectra.</figcaption></figure>
+<figure id="figure-4"><img src="../../images/msi-diff-abundance-classification.png" alt="SSC. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> T-statistics plot for the classification and distribution of the most discriminating m/z feature and class prediction for all spectra.</figcaption></figure>
 
 <p>High accuracy, sensitivity and specificity indicate that the control and PNGase F treated kidney sections can be discriminated quite well. The prediction shows the location of the few misclassified spectra towards the border of the tissue. As our aim is not to build and test a classifier for accurate prediction, we move on to investigate the m/z features that were most discriminative for the two groups more deeply. Looking at the feature tabular file, we spot the 2 m/z features that had the highest loadings in the PCA, amongst the top features with the highest t-statistics. Furthermore, this list can be compared to the m/z features that were determined as potential N-linked glycans in <a href="https://static-content.springer.com/esm/art%3A10.1007%2Fs00216-014-8293-7/MediaObjects/216_2014_8293_MOESM1_ESM.pdf">Gustafsson et al. Figure S6</a>. We found nine out of twelve m/z features. Two m/z features were outside our cropped m/z range and could therefore not be found. The 1079.408 m/z feature is missing in our feature list.</p>
 
@@ -1470,13 +1515,13 @@ Next, we visually explore the abundance distribution for all identified N-glycan
   </ol>
 </blockquote>
 
-<figure id="figure-5"><img src="../../images/msi-diff-abundance-mz-images.png" alt="overlay_images" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> Distribution for three analytes that are localized in different kidney compartments and their overlay.</figcaption></figure>
+<figure id="figure-5"><img src="../../images/msi-diff-abundance-mz-images.png" alt="overlay_images. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> Distribution for three analytes that are localized in different kidney compartments and their overlay.</figcaption></figure>
 
 <h1 id="conclusion">Conclusion</h1>
 
 <p>This tutorial covered combining datasets, data preprocessing and supervised as well as unsupervised statistical analysis.</p>
 
-<figure id="figure-6"><img src="../../images/msi-diff-abundance-workflow.png" alt="workflow" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> <span class="notranslate">Workflow</span> that was used during this tutorial.</figcaption></figure>
+<figure id="figure-6"><img src="../../images/msi-diff-abundance-workflow.png" alt="workflow. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> <span class="notranslate">Workflow</span> that was used during this tutorial.</figcaption></figure>
 
 
 
@@ -1508,7 +1553,7 @@ Next, we visually explore the abundance distribution for all identified N-glycan
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/metabolomics/faqs/">FAQ page for the Metabolomics topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/metabolomics/faqs/">FAQ page for the Metabolomics topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1519,7 +1564,9 @@ Next, we visually explore the abundance distribution for all identified N-glycan
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />

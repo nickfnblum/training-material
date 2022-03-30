@@ -47,8 +47,44 @@
                         <a class="nav-link" href="/training-material/hall-of-fame" title="Hall of Fame">
                            <i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span> Contributors
                         </a>
+
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +143,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2F%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +197,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -233,6 +234,7 @@
 <section class="tutorials-list statistics topic-type-use">
     <h1>Statistics and machine learning</h1>
     <p>Statistical Analyses for omics data and machine learning using Galaxy tools</p>
+    <i>You can view the tutorial materials in different languages by clicking the dropdown icon next to the slides (<i class="fab fa-slideshare" aria-hidden="true"></i><span class="visually-hidden">slides</span>) and tutorial (<i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>) buttons below. </i>
 
     
     <h2 id="requirements">Requirements</h2>
@@ -266,17 +268,17 @@
   <thead>
     <tr>
       <th>Lesson</th>
-      <th>Slides</th>
-      <th>Hands-on</th>
+      <th title="Lecture for this training. May include a video version using automated text-to-speech.">Slides</th>
+      <th title="Practical tutorial guiding you through an analysis step by step.">Hands-on</th>
+      <th title="Recordings of various instructors teaching this tutorial. May use an outdated version of the tutorial.">Recordings</th>
 
       
-      <th>Input dataset</th>
-      <th>Workflows</th>
-      <th>Galaxy tour</th>
+      <th title="Datasets used in this tutorial, available from Zenodo.">Input dataset</th>
+      <th title="Galaxy workflows used in this tutorial.">Workflows</th>
       
 
       
-      <th>Galaxy instances</th>
+      <th title="List of public Galaxies on which this tutorial can be performed. ">Galaxy servers</th>
       
     </tr>
   </thead>
@@ -298,11 +300,14 @@
           </td>
           
             <td> 
+
+
     </span>
 
 <!-- video slides -->
 
 
+</span>
 </span>
  </td>
             <td> 
@@ -339,17 +344,30 @@
             </a>
         
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Fage-prediction-with-ml%2Ftutorial.html&edit-text=&act=url" title="">
-            And more!
+            More Languages
         </a>
     </span>
 
  </td>
+            <td> 
 
+
+
+
+
+
+
+
+
+
+
+  
+</td>
             
               <td> 
 
 
-<a class="topic-icon" href="https://zenodo.org/record/2545213#.XEWTJ9-YVa0">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/2545213#.XEWTJ9-YVa0">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -361,8 +379,6 @@
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
- </td>
-              <td> 
  </td>
             
             
@@ -431,6 +447,12 @@
         </a>
         
     
+        
+    
+        
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
         
     
         
@@ -503,6 +525,10 @@
         </a>
         
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
         
     
         
@@ -563,11 +589,14 @@
           </td>
           
             <td> 
+
+
     </span>
 
 <!-- video slides -->
 
 
+</span>
 </span>
  </td>
             <td> 
@@ -604,17 +633,30 @@
             </a>
         
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Fmachinelearning%2Ftutorial.html&edit-text=&act=url" title="">
-            And more!
+            More Languages
         </a>
     </span>
 
  </td>
+            <td> 
 
+
+
+
+
+
+
+
+
+
+
+  
+</td>
             
               <td> 
 
 
-<a class="topic-icon" href="https://zenodo.org/record/1468039#.W8zyxBRoSAo">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/1468039#.W8zyxBRoSAo">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -625,12 +667,6 @@
     <a class="topic-icon" href="/training-material/topics/statistics/tutorials/machinelearning/workflows/" title="Workflows" alt="Basics of machine learning workflows">
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
-
- </td>
-              <td> 
-<a class="topic-icon" href="https://github.com/galaxyproject/training-material/tree/main/topics/statistics/tutorials/machinelearning/tours/" title="Galaxy interactive tour" >
-    <i class="fas fa-magic" aria-hidden="true"></i>
-</a>
 
  </td>
             
@@ -703,17 +739,23 @@
         
     
         
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
+        
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
         
     
         
+    
+        
         <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
             Galaxy@GenOuest
         </a>
-        
-    
         
     
         
@@ -781,6 +823,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
+        
     
         
         <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
@@ -788,6 +834,10 @@
         </a>
         
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
+            UseGalaxy.fr
+        </a>
         
     
         
@@ -840,11 +890,14 @@
           </td>
           
             <td> 
+
+
     </span>
 
 <!-- video slides -->
 
 
+</span>
 </span>
  </td>
             <td> 
@@ -881,17 +934,53 @@
             </a>
         
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Fclassification_machinelearning%2Ftutorial.html&edit-text=&act=url" title="">
-            And more!
+            More Languages
         </a>
     </span>
 
  </td>
+            <td> 
 
+
+
+
+
+
+
+
+
+
+
+  
+  <li class="btn btn-default supporting_material">
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> 
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+
+        
+        
+        
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/statistics/classification_machinelearning/tutorial" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (February 2021)
+            </a>
+        </li>
+        
+        
+        
+    </ul>
+   </li>
+   
+</td>
             
               <td> 
 
 
-<a class="topic-icon" href="https://zenodo.org/record/3738729#.XoZyHXUzaV4">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/3738729#.XoZyHXUzaV4">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -903,8 +992,6 @@
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
- </td>
-              <td> 
  </td>
             
             
@@ -976,9 +1063,17 @@
         
     
         
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
+        
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
+        
+    
         
     
         
@@ -1042,13 +1137,15 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
             Street Science
         </a>
         
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
         
     
         
@@ -1109,11 +1206,14 @@
           </td>
           
             <td> 
+
+
     </span>
 
 <!-- video slides -->
 
 
+</span>
 </span>
  </td>
             <td> 
@@ -1150,17 +1250,30 @@
             </a>
         
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Fclustering_machinelearning%2Ftutorial.html&edit-text=&act=url" title="">
-            And more!
+            More Languages
         </a>
     </span>
 
  </td>
+            <td> 
 
+
+
+
+
+
+
+
+
+
+
+  
+</td>
             
               <td> 
 
 
-<a class="topic-icon" href="https://zenodo.org/record/3813447">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/3813447">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -1172,8 +1285,6 @@
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
- </td>
-              <td> 
  </td>
             
             
@@ -1245,9 +1356,17 @@
         
     
         
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
+        
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
+        
+    
         
     
         
@@ -1311,13 +1430,15 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
             Street Science
         </a>
         
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
         
     
         
@@ -1326,6 +1447,10 @@
         </a>
         
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.fr/" title="UseGalaxy.fr">
+            UseGalaxy.fr
+        </a>
         
     
         
@@ -1378,12 +1503,15 @@
           </td>
           
             <td> 
+
+
+    <span class="btn-group">
 	<a class="visually-hidden" href="/training-material/topics/statistics/tutorials/FNN/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
     <span class="btn-group">
         <a class="btn btn-default topic-icon" href="/training-material/topics/statistics/tutorials/FNN/slides.html" title="Slides">
             <i class="fab fa-slideshare" aria-hidden="true"></i>
         </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
             <span class="sr-only">Toggle Dropdown</span>
         </a>
         <ul class="dropdown-menu">
@@ -1413,7 +1541,7 @@
             </a>
         
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FFNN%2Fslides.html&edit-text=&act=url" title="">
-            And more!
+            More Languages
         </a>
 
 	<a class="btn btn-default topic-icon" href="/training-material/topics/statistics/tutorials/FNN/slides-plain.html" aria-label="more accessible, plain text slides">
@@ -1426,6 +1554,7 @@
 <!-- video slides -->
 
 
+</span>
 </span>
  </td>
             <td> 
@@ -1462,17 +1591,53 @@
             </a>
         
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FFNN%2Ftutorial.html&edit-text=&act=url" title="">
-            And more!
+            More Languages
         </a>
     </span>
 
  </td>
+            <td> 
 
+
+
+
+
+
+
+
+
+
+
+  
+  <li class="btn btn-default supporting_material">
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> 
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+        
+        
+
+        <li>
+
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/statistics/FNN" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Lecture & Tutorial (February 2021)
+            </a>
+        </li>
+        
+        
+        
+        
+    </ul>
+   </li>
+   
+</td>
             
               <td> 
 
 
-<a class="topic-icon" href="https://zenodo.org/record/4660497">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/4660497">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -1484,8 +1649,6 @@
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
- </td>
-              <td> 
  </td>
             
             
@@ -1557,9 +1720,17 @@
         
     
         
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
+        
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
+        
+    
         
     
         
@@ -1623,13 +1794,15 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
             Street Science
         </a>
         
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
         
     
         
@@ -1690,12 +1863,15 @@
           </td>
           
             <td> 
+
+
+    <span class="btn-group">
 	<a class="visually-hidden" href="/training-material/topics/statistics/tutorials/RNN/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
     <span class="btn-group">
         <a class="btn btn-default topic-icon" href="/training-material/topics/statistics/tutorials/RNN/slides.html" title="Slides">
             <i class="fab fa-slideshare" aria-hidden="true"></i>
         </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
             <span class="sr-only">Toggle Dropdown</span>
         </a>
         <ul class="dropdown-menu">
@@ -1725,7 +1901,7 @@
             </a>
         
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FRNN%2Fslides.html&edit-text=&act=url" title="">
-            And more!
+            More Languages
         </a>
 
 	<a class="btn btn-default topic-icon" href="/training-material/topics/statistics/tutorials/RNN/slides-plain.html" aria-label="more accessible, plain text slides">
@@ -1738,6 +1914,7 @@
 <!-- video slides -->
 
 
+</span>
 </span>
  </td>
             <td> 
@@ -1774,17 +1951,53 @@
             </a>
         
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FRNN%2Ftutorial.html&edit-text=&act=url" title="">
-            And more!
+            More Languages
         </a>
     </span>
 
  </td>
+            <td> 
 
+
+
+
+
+
+
+
+
+
+
+  
+  <li class="btn btn-default supporting_material">
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> 
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+        
+        
+
+        <li>
+
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/statistics/RNN" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Lecture & Tutorial (February 2021)
+            </a>
+        </li>
+        
+        
+        
+        
+    </ul>
+   </li>
+   
+</td>
             
               <td> 
 
 
-<a class="topic-icon" href="https://zenodo.org/record/4477881">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/4477881">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -1796,8 +2009,6 @@
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
- </td>
-              <td> 
  </td>
             
             
@@ -1869,9 +2080,17 @@
         
     
         
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
+        
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
+        
+    
         
     
         
@@ -1880,6 +2099,368 @@
         </a>
         
     
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a class="dropdown-item" href="https://ml.usegalaxy.eu/" title="Machine Learning Workbench">
+            Machine Learning Workbench
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
+            Street Science
+        </a>
+        
+    
+        
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
+        
+    
+        
+        <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
+            UseGalaxy.eu
+        </a>
+        
+    
+        
+    
+        
+        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
+            UseGalaxy.no
+        </a>
+        
+    
+        
+        <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
+            UseGalaxy.org (Main)
+        </a>
+        
+    
+        
+        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
+            UseGalaxy.org.au
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    </ul>
+
+
+ </td>
+            
+          
+         </tr>
+         
+       
+    
+    
+
+    
+      
+        <tr>
+          <td class="tutorial_title">
+          Deep Learning (Part 3) - Convolutional neural networks (CNN)
+          <div class="">
+          
+          
+          </div>
+          </td>
+          
+            <td> 
+
+
+    <span class="btn-group">
+	<a class="visually-hidden" href="/training-material/topics/statistics/tutorials/CNN/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
+    <span class="btn-group">
+        <a class="btn btn-default topic-icon" href="/training-material/topics/statistics/tutorials/CNN/slides.html" title="Slides">
+            <i class="fab fa-slideshare" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+
+        <div class="dropdown-item"><strong>Automatic translations</strong></div>
+        
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Fslides.html&edit-text=&act=url" title="">
+                Français
+            </a>
+        
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Fslides.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+        
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Fslides.html&edit-text=&act=url" title="">
+                Español
+            </a>
+        
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Fslides.html&edit-text=&act=url" title="">
+                Português
+            </a>
+        
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Fslides.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+        
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Fslides.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+
+	<a class="btn btn-default topic-icon" href="/training-material/topics/statistics/tutorials/CNN/slides-plain.html" aria-label="more accessible, plain text slides">
+		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
+	</a>
+    </ul>
+    
+    </span>
+
+<!-- video slides -->
+
+
+</span>
+</span>
+ </td>
+            <td> 
+    <span class="btn-group">
+        <a href="/training-material/topics/statistics/tutorials/CNN/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+        
+         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+        
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Ftutorial.html&edit-text=&act=url" title="">
+                Français
+            </a>
+        
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Ftutorial.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+        
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Ftutorial.html&edit-text=&act=url" title="">
+                Español
+            </a>
+        
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Ftutorial.html&edit-text=&act=url" title="">
+                Português
+            </a>
+        
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Ftutorial.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+        
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Ftutorial.html&edit-text=&act=url" title="">
+            More Languages
+        </a>
+    </span>
+
+ </td>
+            <td> 
+
+
+
+
+
+
+
+
+
+
+
+  
+  <li class="btn btn-default supporting_material">
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> 
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+        
+        
+
+        <li>
+
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/statistics/CNN" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Lecture & Tutorial (February 2021)
+            </a>
+        </li>
+        
+        
+        
+        
+    </ul>
+   </li>
+   
+</td>
+            
+              <td> 
+
+
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/4697906">
+    <i class="far fa-copy" aria-hidden="true"></i>
+</a>
+
+ </td>
+              <td> 
+
+
+    <a class="topic-icon" href="/training-material/topics/statistics/tutorials/CNN/workflows/" title="Workflows" alt="Deep Learning (Part 3) - Convolutional neural networks (CNN) workflows">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+    </a>
+
+ </td>
+            
+            
+              <td> 
+
+
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
+        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>
+    </a>
+    <ul class="dropdown-menu">
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
+            Galaxy Africa
+        </a>
+        
+    
+        
+        <a class="dropdown-item" href="https://india.usegalaxy.eu/" title="Galaxy India">
+            Galaxy India
+        </a>
+        
+    
+        
+    
+        
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
+        
+    
+        
+        <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
+            Galaxy for Ecology
+        </a>
+        
+    
+        
+    
+        
+        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
+            Galaxy@GenOuest
+        </a>
         
     
         
@@ -1957,10 +2538,6 @@
         
     
         
-        <a class="dropdown-item" href="https://usegalaxy.no/" title="UseGalaxy.no">
-            UseGalaxy.no
-        </a>
-        
     
         
         <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
@@ -1998,7 +2575,7 @@
       
         <tr>
           <td class="tutorial_title">
-          Deep Learning (Part 3) - Convolutional neural networks (CNN)
+          Image classification in Galaxy with fruit 360 dataset
           <div class="">
           
           
@@ -2006,12 +2583,15 @@
           </td>
           
             <td> 
-	<a class="visually-hidden" href="/training-material/topics/statistics/tutorials/CNN/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
+
+
     <span class="btn-group">
-        <a class="btn btn-default topic-icon" href="/training-material/topics/statistics/tutorials/CNN/slides.html" title="Slides">
+	<a class="visually-hidden" href="/training-material/topics/statistics/tutorials/fruit_360/slides-plain.html" aria-label="more accessible, plain text slides">plain text</a>
+    <span class="btn-group">
+        <a class="btn btn-default topic-icon" href="/training-material/topics/statistics/tutorials/fruit_360/slides.html" title="Slides">
             <i class="fab fa-slideshare" aria-hidden="true"></i>
         </a>
-        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="View slides in different languages">
             <span class="sr-only">Toggle Dropdown</span>
         </a>
         <ul class="dropdown-menu">
@@ -2020,31 +2600,31 @@
 
         <div class="dropdown-item"><strong>Automatic translations</strong></div>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Fslides.html&edit-text=&act=url" title="">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Ffruit_360%2Fslides.html&edit-text=&act=url" title="">
                 Français
             </a>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Fslides.html&edit-text=&act=url" title="">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Ffruit_360%2Fslides.html&edit-text=&act=url" title="">
                 日本語
             </a>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Fslides.html&edit-text=&act=url" title="">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Ffruit_360%2Fslides.html&edit-text=&act=url" title="">
                 Español
             </a>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Fslides.html&edit-text=&act=url" title="">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Ffruit_360%2Fslides.html&edit-text=&act=url" title="">
                 Português
             </a>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Fslides.html&edit-text=&act=url" title="">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Ffruit_360%2Fslides.html&edit-text=&act=url" title="">
                 العربية
             </a>
         
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Fslides.html&edit-text=&act=url" title="">
-            And more!
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Ffruit_360%2Fslides.html&edit-text=&act=url" title="">
+            More Languages
         </a>
 
-	<a class="btn btn-default topic-icon" href="/training-material/topics/statistics/tutorials/CNN/slides-plain.html" aria-label="more accessible, plain text slides">
+	<a class="btn btn-default topic-icon" href="/training-material/topics/statistics/tutorials/fruit_360/slides-plain.html" aria-label="more accessible, plain text slides">
 		<i class="fas fa-file-alt" aria-hidden="true"></i> Plain text slides
 	</a>
     </ul>
@@ -2055,10 +2635,11 @@
 
 
 </span>
+</span>
  </td>
             <td> 
     <span class="btn-group">
-        <a href="/training-material/topics/statistics/tutorials/CNN/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+        <a href="/training-material/topics/statistics/tutorials/fruit_360/tutorial.html" class="btn btn-default" title="Follow the tutorial">
             <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
         </a>
         <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
@@ -2069,38 +2650,74 @@
         
          <div class="dropdown-item"><strong>Automatic translations</strong></div>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Ftutorial.html&edit-text=&act=url" title="">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Ffruit_360%2Ftutorial.html&edit-text=&act=url" title="">
                 Français
             </a>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Ftutorial.html&edit-text=&act=url" title="">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Ffruit_360%2Ftutorial.html&edit-text=&act=url" title="">
                 日本語
             </a>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Ftutorial.html&edit-text=&act=url" title="">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Ffruit_360%2Ftutorial.html&edit-text=&act=url" title="">
                 Español
             </a>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Ftutorial.html&edit-text=&act=url" title="">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Ffruit_360%2Ftutorial.html&edit-text=&act=url" title="">
                 Português
             </a>
         
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Ftutorial.html&edit-text=&act=url" title="">
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Ffruit_360%2Ftutorial.html&edit-text=&act=url" title="">
                 العربية
             </a>
         
-        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2FCNN%2Ftutorial.html&edit-text=&act=url" title="">
-            And more!
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Ffruit_360%2Ftutorial.html&edit-text=&act=url" title="">
+            More Languages
         </a>
     </span>
 
  </td>
+            <td> 
 
+
+
+
+
+
+
+
+
+
+
+  
+  <li class="btn btn-default supporting_material">
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> 
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+        
+        
+
+        <li>
+
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/statistics/fruit_360" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Lecture & Tutorial (January 2022)
+            </a>
+        </li>
+        
+        
+        
+        
+    </ul>
+   </li>
+   
+</td>
             
               <td> 
 
 
-<a class="topic-icon" href="https://zenodo.org/record/4697906">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/5702887">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -2108,12 +2725,10 @@
               <td> 
 
 
-    <a class="topic-icon" href="/training-material/topics/statistics/tutorials/CNN/workflows/" title="Workflows" alt="Deep Learning (Part 3) - Convolutional neural networks (CNN) workflows">
+    <a class="topic-icon" href="/training-material/topics/statistics/tutorials/fruit_360/workflows/" title="Workflows" alt="Image classification in Galaxy with fruit 360 dataset workflows">
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
- </td>
-              <td> 
  </td>
             
             
@@ -2185,17 +2800,23 @@
         
     
         
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
+        
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
         
     
         
+    
+        
         <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
             Galaxy@GenOuest
         </a>
-        
-    
         
     
         
@@ -2318,11 +2939,14 @@
           </td>
           
             <td> 
+
+
     </span>
 
 <!-- video slides -->
 
 
+</span>
 </span>
  </td>
             <td> 
@@ -2359,17 +2983,30 @@
             </a>
         
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Fiwtomics%2Ftutorial.html&edit-text=&act=url" title="">
-            And more!
+            More Languages
         </a>
     </span>
 
  </td>
+            <td> 
 
+
+
+
+
+
+
+
+
+
+
+  
+</td>
             
               <td> 
 
 
-<a class="topic-icon" href="https://doi.org/10.5281/zenodo.1288429">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.5589610">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -2380,12 +3017,6 @@
     <a class="topic-icon" href="/training-material/topics/statistics/tutorials/iwtomics/workflows/" title="Workflows" alt="Interval-Wise Testing for omics data workflows">
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
-
- </td>
-              <td> 
-<a class="topic-icon" href="https://github.com/galaxyproject/training-material/tree/main/topics/statistics/tutorials/iwtomics/tours/" title="Galaxy interactive tour" >
-    <i class="fas fa-magic" aria-hidden="true"></i>
-</a>
 
  </td>
             
@@ -2458,17 +3089,23 @@
         
     
         
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
+        
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
         
     
         
+    
+        
         <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
             Galaxy@GenOuest
         </a>
-        
-    
         
     
         
@@ -2532,6 +3169,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
+        
     
         
         <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
@@ -2591,11 +3232,14 @@
           </td>
           
             <td> 
+
+
     </span>
 
 <!-- video slides -->
 
 
+</span>
 </span>
  </td>
             <td> 
@@ -2632,17 +3276,30 @@
             </a>
         
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Fintro_deep_learning%2Ftutorial.html&edit-text=&act=url" title="">
-            And more!
+            More Languages
         </a>
     </span>
 
  </td>
+            <td> 
 
+
+
+
+
+
+
+
+
+
+
+  
+</td>
             
               <td> 
 
 
-<a class="topic-icon" href="https://zenodo.org/record/3706539#.XmjDYHVKg5k">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/3706539#.XmjDYHVKg5k">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -2654,8 +3311,6 @@
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
- </td>
-              <td> 
  </td>
             
             
@@ -2727,17 +3382,23 @@
         
     
         
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
+        
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
         
     
         
+    
+        
         <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
             Galaxy@GenOuest
         </a>
-        
-    
         
     
         
@@ -2805,6 +3466,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
+        
     
         
         <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
@@ -2871,20 +3536,21 @@
           
           
             
-              <form method="GET" action="/training-material/search" style="display:inline"><input type="hidden" name="query" value="interactive-tools">
-              <button class="label label-default tutorial_tag" id="interactive-tools" style="background-color: hsl(29, 80.0%, 85%); color: #333; border: 1px solid hsl(29, 80.0%, 45%)" title="Click to show all tutorials with this tag">interactive-tools</button>
-               </form>
+            <a href="/training-material/search?query=interactive-tools" class="label label-default tutorial_tag" id="interactive-tools" style="background-color: hsl(29, 80.0%, 85%); color: #333; border: 1px solid hsl(29, 80.0%, 45%)" title="Click to show all tutorials tagged interactive-tools">interactive-tools</a>
             
           
           </div>
           </td>
           
             <td> 
+
+
     </span>
 
 <!-- video slides -->
 
 
+</span>
 </span>
  </td>
             <td> 
@@ -2921,12 +3587,48 @@
             </a>
         
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Fintro-to-ml-with-r%2Ftutorial.html&edit-text=&act=url" title="">
-            And more!
+            More Languages
         </a>
     </span>
 
  </td>
+            <td> 
 
+
+
+
+
+
+
+
+
+
+
+  
+  <li class="btn btn-default supporting_material">
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> 
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+
+        
+        
+        
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/statistics/intro-to-ml-with-r/tutorial" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (February 2021)
+            </a>
+        </li>
+        
+        
+        
+    </ul>
+   </li>
+   
+</td>
             
               <td> 
 
@@ -2935,8 +3637,6 @@
               <td> 
 
 
- </td>
-              <td> 
  </td>
             
             
@@ -2965,11 +3665,14 @@
           </td>
           
             <td> 
+
+
     </span>
 
 <!-- video slides -->
 
 
+</span>
 </span>
  </td>
             <td> 
@@ -3006,17 +3709,30 @@
             </a>
         
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Fclassification_regression%2Ftutorial.html&edit-text=&act=url" title="">
-            And more!
+            More Languages
         </a>
     </span>
 
  </td>
+            <td> 
 
+
+
+
+
+
+
+
+
+
+
+  
+</td>
             
               <td> 
 
 
-<a class="topic-icon" href="https://zenodo.org/record/2579649#.XHep39F7mL4">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/2579649#.XHep39F7mL4">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -3027,12 +3743,6 @@
     <a class="topic-icon" href="/training-material/topics/statistics/tutorials/classification_regression/workflows/" title="Workflows" alt="Machine learning: classification and regression workflows">
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
-
- </td>
-              <td> 
-<a class="topic-icon" href="https://github.com/galaxyproject/training-material/tree/main/topics/statistics/tutorials/classification_regression/tours/" title="Galaxy interactive tour" >
-    <i class="fas fa-magic" aria-hidden="true"></i>
-</a>
 
  </td>
             
@@ -3105,9 +3815,17 @@
         
     
         
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
+        
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
+        
+    
         
     
         
@@ -3171,13 +3889,15 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
             Street Science
         </a>
         
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
         
     
         
@@ -3235,32 +3955,27 @@
           
           
             
-              <form method="GET" action="/training-material/search" style="display:inline"><input type="hidden" name="query" value="Machine learning">
-              <button class="label label-default tutorial_tag" id="Machine learning" style="background-color: hsl(269, 80.0%, 85%); color: #333; border: 1px solid hsl(269, 80.0%, 45%)" title="Click to show all tutorials with this tag">Machine learning</button>
-               </form>
+            <a href="/training-material/search?query=Machine learning" class="label label-default tutorial_tag" id="Machine learning" style="background-color: hsl(269, 80.0%, 85%); color: #333; border: 1px solid hsl(269, 80.0%, 45%)" title="Click to show all tutorials tagged Machine learning">Machine learning</a>
             
-              <form method="GET" action="/training-material/search" style="display:inline"><input type="hidden" name="query" value="Pan-cancer">
-              <button class="label label-default tutorial_tag" id="Pan-cancer" style="background-color: hsl(185, 80.0%, 85%); color: #333; border: 1px solid hsl(185, 80.0%, 45%)" title="Click to show all tutorials with this tag">Pan-cancer</button>
-               </form>
+            <a href="/training-material/search?query=Pan-cancer" class="label label-default tutorial_tag" id="Pan-cancer" style="background-color: hsl(185, 80.0%, 85%); color: #333; border: 1px solid hsl(185, 80.0%, 45%)" title="Click to show all tutorials tagged Pan-cancer">Pan-cancer</a>
             
-              <form method="GET" action="/training-material/search" style="display:inline"><input type="hidden" name="query" value="cancer biomarkers">
-              <button class="label label-default tutorial_tag" id="cancer biomarkers" style="background-color: hsl(143, 80.0%, 85%); color: #333; border: 1px solid hsl(143, 80.0%, 45%)" title="Click to show all tutorials with this tag">cancer biomarkers</button>
-               </form>
+            <a href="/training-material/search?query=cancer biomarkers" class="label label-default tutorial_tag" id="cancer biomarkers" style="background-color: hsl(143, 80.0%, 85%); color: #333; border: 1px solid hsl(143, 80.0%, 45%)" title="Click to show all tutorials tagged cancer biomarkers">cancer biomarkers</a>
             
-              <form method="GET" action="/training-material/search" style="display:inline"><input type="hidden" name="query" value="oncogenes and tumor suppressor genes">
-              <button class="label label-default tutorial_tag" id="oncogenes and tumor suppressor genes" style="background-color: hsl(358, 80.0%, 85%); color: #333; border: 1px solid hsl(358, 80.0%, 45%)" title="Click to show all tutorials with this tag">oncogenes and tumor suppressor genes</button>
-               </form>
+            <a href="/training-material/search?query=oncogenes and tumor suppressor genes" class="label label-default tutorial_tag" id="oncogenes and tumor suppressor genes" style="background-color: hsl(358, 80.0%, 85%); color: #333; border: 1px solid hsl(358, 80.0%, 45%)" title="Click to show all tutorials tagged oncogenes and tumor suppressor genes">oncogenes and tumor suppressor genes</a>
             
           
           </div>
           </td>
           
             <td> 
+
+
     </span>
 
 <!-- video slides -->
 
 
+</span>
 </span>
  </td>
             <td> 
@@ -3297,17 +4012,30 @@
             </a>
         
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Faberrant_pi3k_pathway_analysis%2Ftutorial.html&edit-text=&act=url" title="">
-            And more!
+            More Languages
         </a>
     </span>
 
  </td>
+            <td> 
 
+
+
+
+
+
+
+
+
+
+
+  
+</td>
             
               <td> 
 
 
-<a class="topic-icon" href="https://zenodo.org/record/4306639#.X9FJF-lKgZE">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/4306639#.X9FJF-lKgZE">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -3319,8 +4047,6 @@
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
- </td>
-              <td> 
  </td>
             
             
@@ -3349,11 +4075,14 @@
           </td>
           
             <td> 
+
+
     </span>
 
 <!-- video slides -->
 
 
+</span>
 </span>
  </td>
             <td> 
@@ -3390,17 +4119,53 @@
             </a>
         
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Fregression_machinelearning%2Ftutorial.html&edit-text=&act=url" title="">
-            And more!
+            More Languages
         </a>
     </span>
 
  </td>
+            <td> 
 
+
+
+
+
+
+
+
+
+
+
+  
+  <li class="btn btn-default supporting_material">
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> 
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+
+        
+        
+        
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/statistics/regression_machinelearning/tutorial" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (February 2021)
+            </a>
+        </li>
+        
+        
+        
+    </ul>
+   </li>
+   
+</td>
             
               <td> 
 
 
-<a class="topic-icon" href="https://zenodo.org/record/2545213#.XEWTJ9-YVa0">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/2545213#.XEWTJ9-YVa0">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -3412,8 +4177,6 @@
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
- </td>
-              <td> 
  </td>
             
             
@@ -3485,17 +4248,23 @@
         
     
         
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
+        
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
         
     
         
+    
+        
         <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
             Galaxy@GenOuest
         </a>
-        
-    
         
     
         
@@ -3559,6 +4328,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
+        
     
         
         <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
@@ -3615,20 +4388,21 @@
           
           
             
-              <form method="GET" action="/training-material/search" style="display:inline"><input type="hidden" name="query" value="interactive-tools">
-              <button class="label label-default tutorial_tag" id="interactive-tools" style="background-color: hsl(29, 80.0%, 85%); color: #333; border: 1px solid hsl(29, 80.0%, 45%)" title="Click to show all tutorials with this tag">interactive-tools</button>
-               </form>
+            <a href="/training-material/search?query=interactive-tools" class="label label-default tutorial_tag" id="interactive-tools" style="background-color: hsl(29, 80.0%, 85%); color: #333; border: 1px solid hsl(29, 80.0%, 45%)" title="Click to show all tutorials tagged interactive-tools">interactive-tools</a>
             
           
           </div>
           </td>
           
             <td> 
+
+
     </span>
 
 <!-- video slides -->
 
 
+</span>
 </span>
  </td>
             <td> 
@@ -3665,17 +4439,30 @@
             </a>
         
         <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Ftext-mining_simtext%2Ftutorial.html&edit-text=&act=url" title="">
-            And more!
+            More Languages
         </a>
     </span>
 
  </td>
+            <td> 
 
+
+
+
+
+
+
+
+
+
+
+  
+</td>
             
               <td> 
 
 
-<a class="topic-icon" href="http://doi.org/10.5281/zenodo.4638516">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="http://doi.org/10.5281/zenodo.4638516">
     <i class="far fa-copy" aria-hidden="true"></i>
 </a>
 
@@ -3687,8 +4474,6 @@
         <i class="fas fa-share-alt" aria-hidden="true"></i>
     </a>
 
- </td>
-              <td> 
  </td>
             
             
@@ -3762,9 +4547,7 @@
         
     
         
-        <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
-            Galaxy@GenOuest
-        </a>
+    
         
     
         
@@ -3893,8 +4676,13 @@
     <p>This material is maintained by:</p>
     
     
+<a href="/training-material/hall-of-fame/marziacremona/" class="contributor-badge contributor-marziacremona"><img src="https://avatars.githubusercontent.com/marziacremona?s=27" alt="Avatar">Marzia A Cremona</a>
 
- <a href="/training-material/hall-of-fame/marziacremona/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/marziacremona" alt="Avatar">Marzia A Cremona</a> <a href="/training-material/hall-of-fame/fabio-cumbo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/fabio-cumbo" alt="Avatar">Fabio Cumbo</a> <a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/anuprulez" alt="Avatar">Anup Kumar</a>
+
+<a href="/training-material/hall-of-fame/fabio-cumbo/" class="contributor-badge contributor-fabio-cumbo"><img src="https://avatars.githubusercontent.com/fabio-cumbo?s=27" alt="Avatar">Fabio Cumbo</a>
+
+
+<a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge contributor-anuprulez"><img src="https://avatars.githubusercontent.com/anuprulez?s=27" alt="Avatar">Anup Kumar</a>
 
 
 
@@ -3908,8 +4696,46 @@
     
     
     
+<a href="/training-material/hall-of-fame/polkhe/" class="contributor-badge contributor-polkhe"><img src="https://avatars.githubusercontent.com/polkhe?s=27" alt="Avatar">Ekaterina Polkh</a>
 
- <a href="/training-material/hall-of-fame/polkhe/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/polkhe" alt="Avatar">Ekaterina Polkh</a> <a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/anuprulez" alt="Avatar">Anup Kumar</a> <a href="/training-material/hall-of-fame/khanteymoori/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/khanteymoori" alt="Avatar">Alireza Khanteymoori</a> <a href="/training-material/hall-of-fame/simonbray/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/simonbray" alt="Avatar">Simon Bray</a> <a href="/training-material/hall-of-fame/kxk302/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/kxk302" alt="Avatar">Kaivan Kamali</a> <a href="/training-material/hall-of-fame/marziacremona/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/marziacremona" alt="Avatar">Marzia A Cremona</a> <a href="/training-material/hall-of-fame/fabio-cumbo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/fabio-cumbo" alt="Avatar">Fabio Cumbo</a> <a href="/training-material/hall-of-fame/fpsom/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/fpsom" alt="Avatar">Fotis E. Psomopoulos</a> <a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/bebatut" alt="Avatar">Bérénice Batut</a> <a href="/training-material/hall-of-fame/nvk747/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/nvk747" alt="Avatar">Vijay</a> <a href="/training-material/hall-of-fame/blankenberg/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/blankenberg" alt="Avatar">Daniel Blankenberg</a> <a href="/training-material/hall-of-fame/mgramm1/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/mgramm1" alt="Avatar">Marie Gramm</a> <a href="/training-material/hall-of-fame/dlalgroup/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/dlalgroup" alt="Avatar">Dennis Lal group</a>
+
+<a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge contributor-anuprulez"><img src="https://avatars.githubusercontent.com/anuprulez?s=27" alt="Avatar">Anup Kumar</a>
+
+
+<a href="/training-material/hall-of-fame/khanteymoori/" class="contributor-badge contributor-khanteymoori"><img src="https://avatars.githubusercontent.com/khanteymoori?s=27" alt="Avatar">Alireza Khanteymoori</a>
+
+
+<a href="/training-material/hall-of-fame/simonbray/" class="contributor-badge contributor-simonbray"><img src="https://avatars.githubusercontent.com/simonbray?s=27" alt="Avatar">Simon Bray</a>
+
+
+<a href="/training-material/hall-of-fame/kxk302/" class="contributor-badge contributor-kxk302"><img src="https://avatars.githubusercontent.com/kxk302?s=27" alt="Avatar">Kaivan Kamali</a>
+
+
+<a href="/training-material/hall-of-fame/marziacremona/" class="contributor-badge contributor-marziacremona"><img src="https://avatars.githubusercontent.com/marziacremona?s=27" alt="Avatar">Marzia A Cremona</a>
+
+
+<a href="/training-material/hall-of-fame/fabio-cumbo/" class="contributor-badge contributor-fabio-cumbo"><img src="https://avatars.githubusercontent.com/fabio-cumbo?s=27" alt="Avatar">Fabio Cumbo</a>
+
+
+<a href="/training-material/hall-of-fame/fpsom/" class="contributor-badge contributor-fpsom"><img src="https://avatars.githubusercontent.com/fpsom?s=27" alt="Avatar">Fotis E. Psomopoulos</a>
+
+
+<a href="/training-material/hall-of-fame/erasmusplus/" class="contributor-badge contributor-erasmusplus"><img src="https://avatars.githubusercontent.com/erasmusplus?s=27" alt="Avatar">Erasmus+ Programme</a>
+
+
+<a href="/training-material/hall-of-fame/bebatut/" class="contributor-badge contributor-bebatut"><img src="https://avatars.githubusercontent.com/bebatut?s=27" alt="Avatar">Bérénice Batut</a>
+
+
+<a href="/training-material/hall-of-fame/nvk747/" class="contributor-badge contributor-nvk747"><img src="https://avatars.githubusercontent.com/nvk747?s=27" alt="Avatar">Vijay</a>
+
+
+<a href="/training-material/hall-of-fame/blankenberg/" class="contributor-badge contributor-blankenberg"><img src="https://avatars.githubusercontent.com/blankenberg?s=27" alt="Avatar">Daniel Blankenberg</a>
+
+
+<a href="/training-material/hall-of-fame/mgramm1/" class="contributor-badge contributor-mgramm1"><img src="https://avatars.githubusercontent.com/mgramm1?s=27" alt="Avatar">Marie Gramm</a>
+
+
+<a href="/training-material/hall-of-fame/dlalgroup/" class="contributor-badge contributor-dlalgroup"><img src="https://avatars.githubusercontent.com/dlalgroup?s=27" alt="Avatar">Dennis Lal group</a>
 
 
 
@@ -3928,7 +4754,7 @@
         <p>
 The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
 </p>
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/2c449363b7d2a7d9c09beba391f8d73804500259">2c449363b7d2a7d9c09beba391f8d73804500259</a></p>
+        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/7cdccfe4a2343778b7a2ee82f8fa69f43778c264">7cdccfe4a2343778b7a2ee82f8fa69f43778c264</a></p>
     </div>
 </footer>
 

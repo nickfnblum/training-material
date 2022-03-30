@@ -1,0 +1,78 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Genome annotation with Prokka",
+  "zenodo_link": "https://doi.org/10.5281/zenodo.1156405",
+  "tags": [
+    "prokaryote"
+  ],
+  "questions": [
+    "How can we annotate a bacterial genome?",
+    "How can we visualize annotated genomic features?"
+  ],
+  "objectives": [
+    "Load genome into Galaxy",
+    "Annotate genome with Prokka",
+    "View annotations in JBrowse"
+  ],
+  "time_estimation": "1h",
+  "level": "Introductory",
+  "key_points": [
+    "Prokka is a useful tool to annotate a bacterial genome.",
+    "JBrowse can be used to inspect the annotation of a genome."
+  ],
+  "contributors": [
+    {
+      "name": "Anna Syme",
+      "joined": "2017-09",
+      "id": "annasyme",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/annasyme.json"
+    },
+    {
+      "name": "Torsten Seemann",
+      "joined": "2018-06",
+      "id": "tseemann",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/tseemann.json"
+    },
+    {
+      "name": "Simon Gladman",
+      "email": "simon.gladman@unimelb.edu.au",
+      "joined": "2017-09",
+      "id": "slugger70",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/slugger70.json"
+    }
+  ],
+  "last_modified_at": "2021-05-28T15:48:59+00:00",
+  "url": "/topics/genome-annotation/tutorials/annotation-with-prokka/tutorial.html",
+  "topic_name": "genome-annotation",
+  "tutorial_name": "annotation-with-prokka",
+  "hands_on": true,
+  "slides": true,
+  "workflows": [
+    {
+      "workflow": "Galaxy-Workflow-Workflow_constructed_from_history__prokka-workflow_.ga",
+      "tests": true
+    }
+  ],
+  "tools": [
+    "toolshed.g2.bx.psu.edu/repos/crs4/prokka/prokka/1.14.5",
+    "toolshed.g2.bx.psu.edu/repos/crs4/prokka/prokka/1.14.5+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.5+galaxy7",
+    "toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.9+galaxy0"
+  ],
+  "tours": true,
+  "video": true,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": true
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//genome-annotation/tutorials/annotation-with-prokka/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//genome-annotation/tutorials/annotation-with-prokka/tutorial.json"
+  }
+}

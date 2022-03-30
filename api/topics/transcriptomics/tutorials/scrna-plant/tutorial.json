@@ -1,0 +1,104 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Analysis of plant scRNA-Seq Data with Scanpy",
+  "subtopic": "single-cell",
+  "priority": 9,
+  "zenodo_link": "https://zenodo.org/record/4597857",
+  "tags": [
+    "single-cell",
+    "plants",
+    "paper-replication"
+  ],
+  "questions": [
+    "Can we reclaim cell markers using a different analysis method?",
+    "Are highly variable genes paramount to the analysis?"
+  ],
+  "objectives": [
+    "Perform filtering, dimensionality reduction, and clustering",
+    "Generate a DotPlot emulating the original paper using a different analysis tool",
+    "Determine robust clusters across scRNA-seq pipelines"
+  ],
+  "requirements": [
+    {
+      "type": "internal",
+      "topic_name": "transcriptomics",
+      "tutorials": [
+        "scrna-scanpy-pbmc3k"
+      ]
+    }
+  ],
+  "time_estimation": "2H",
+  "key_points": [
+    "Filtering parameters are dependent on the dataset, and should be explored using scatter or violin plots",
+    "A DotPlot is a fantastic way to validate clusters across different analyses"
+  ],
+  "contributors": [
+    {
+      "name": "Mehmet Tekman",
+      "email": "mtekman89@gmail.com",
+      "joined": "2018-11",
+      "id": "mtekman",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/mtekman.json"
+    },
+    {
+      "name": "Beatriz Serrano-Solano",
+      "email": "beatrizserrano.galaxy@gmail.com",
+      "twitter": "Birthae",
+      "gitter": "beatrizserrano",
+      "joined": "2020-07",
+      "id": "beatrizserrano",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/beatrizserrano.json"
+    },
+    {
+      "name": "Cristóbal Gallardo",
+      "joined": "2020-11",
+      "id": "gallardoalba",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/gallardoalba.json"
+    },
+    {
+      "name": "Pavankumar Videm",
+      "joined": "2017-09",
+      "id": "pavanvidem",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/pavanvidem.json"
+    }
+  ],
+  "gitter": "Galaxy-Training-Network/galaxy-single-cell",
+  "last_modified_at": "2021-05-27T10:56:26+00:00",
+  "url": "/topics/transcriptomics/tutorials/scrna-plant/tutorial.html",
+  "topic_name": "transcriptomics",
+  "tutorial_name": "scrna-plant",
+  "hands_on": true,
+  "slides": false,
+  "workflows": [
+    {
+      "workflow": "main_workflow.ga",
+      "tests": false
+    }
+  ],
+  "tools": [
+    "toolshed.g2.bx.psu.edu/repos/iuc/anndata_import/anndata_import/0.7.5+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/iuc/anndata_manipulate/anndata_manipulate/0.7.5+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_cluster_reduce_dimension/scanpy_cluster_reduce_dimension/1.7.1+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_filter/scanpy_filter/1.7.1+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.7.1+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_normalize/scanpy_normalize/1.7.1+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.7.1+galaxy0",
+    "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_remove_confounders/scanpy_remove_confounders/1.7.1+galaxy0"
+  ],
+  "tours": false,
+  "video": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": false
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//transcriptomics/tutorials/scrna-plant/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//transcriptomics/tutorials/scrna-plant/tutorial.json"
+  }
+}

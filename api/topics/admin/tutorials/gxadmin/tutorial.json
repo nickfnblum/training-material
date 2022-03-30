@@ -1,0 +1,62 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Galaxy Monitoring with gxadmin",
+  "zenodo_link": "",
+  "questions": [
+    "What is gxadmin",
+    "What can it do?",
+    "How to write a query?"
+  ],
+  "objectives": [
+    "Learn gxadmin basics",
+    "See some queries and learn how they help debug production issues"
+  ],
+  "time_estimation": "30m",
+  "key_points": [
+    "gxadmin is a tool to run common database queries useful for Galaxy admins",
+    "new queries are welcome and easy to contribute"
+  ],
+  "contributors": [
+    {
+      "name": "Helena Rasche",
+      "email": "helena.rasche@gmail.com",
+      "orcid": "0000-0001-9760-8992",
+      "maintainer_contact": "gitter",
+      "gitter": "hexylena",
+      "joined": "2017-09",
+      "id": "hexylena",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
+    }
+  ],
+  "subtopic": "monitoring",
+  "tags": [
+    "monitoring",
+    "ansible",
+    "git-gat"
+  ],
+  "last_modified_at": "2022-03-10T15:01:21+00:00",
+  "url": "/topics/admin/tutorials/gxadmin/tutorial.html",
+  "topic_name": "admin",
+  "tutorial_name": "gxadmin",
+  "hands_on": true,
+  "slides": true,
+  "tools": [
+
+  ],
+  "tours": false,
+  "video": true,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": true
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/gxadmin/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/gxadmin/tutorial.json"
+  }
+}

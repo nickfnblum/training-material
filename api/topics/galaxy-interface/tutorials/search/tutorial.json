@@ -1,0 +1,64 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Searching Your History",
+  "zenodo_link": "",
+  "level": "Introductory",
+  "questions": [
+    "How can you find your datasets?",
+    "How to search by file type?",
+    "What filters are available to you?"
+  ],
+  "objectives": [
+    "Feel confident in searching your history"
+  ],
+  "time_estimation": "5m",
+  "key_points": [
+    "Searching is easy and powerful",
+    "It will help you manage large histories with complex analyses"
+  ],
+  "contributors": [
+    {
+      "name": "Helena Rasche",
+      "email": "helena.rasche@gmail.com",
+      "orcid": "0000-0001-9760-8992",
+      "maintainer_contact": "gitter",
+      "gitter": "hexylena",
+      "joined": "2017-09",
+      "id": "hexylena",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
+    },
+    {
+      "name": "Anton Nekrutenko",
+      "email": "anton@nekrut.org",
+      "joined": "2017-09",
+      "id": "nekrut",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/nekrut.json"
+    }
+  ],
+  "subtopic": "interface",
+  "last_modified_at": "2020-07-15T10:11:58+00:00",
+  "url": "/topics/galaxy-interface/tutorials/search/tutorial.html",
+  "topic_name": "galaxy-interface",
+  "tutorial_name": "search",
+  "hands_on": true,
+  "slides": false,
+  "tools": [
+
+  ],
+  "tours": false,
+  "video": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": false
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/search/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//galaxy-interface/tutorials/search/tutorial.json"
+  }
+}

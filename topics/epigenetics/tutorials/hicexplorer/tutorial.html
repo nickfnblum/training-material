@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/hicexplorer/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/hicexplorer/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/hicexplorer/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/hicexplorer/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/hicexplorer/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/hicexplorer/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/hicexplorer/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/hicexplorer/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/hicexplorer/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/hicexplorer/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/epigenetics/tutorials/hicexplorer/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fepigenetics%2Ftutorials%2Fhicexplorer%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-03-12 17:24:55 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Hi-C analysis of Drosophila melanogaster cells using HiCExplorer",
   "interactivityType": "mixed",
@@ -361,20 +361,6 @@
     },
     {
       "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/sequence-analysis/tutorials/quality-control/slides.html",
-      "name": "Quality Control",
-      "description": "Slides for 'Quality Control' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
       "url": "https://training.galaxyproject.org//training-material/topics/sequence-analysis/tutorials/mapping/slides.html",
       "name": "Mapping",
       "description": "Slides for 'Mapping' tutorial",
@@ -393,20 +379,6 @@
       "name": "Mapping",
       "description": "Hands-on for 'Mapping' tutorial",
       "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/sequence-analysis/tutorials/mapping/slides.html",
-      "name": "Mapping",
-      "description": "Slides for 'Mapping' tutorial",
-      "learningResourceType": "slides",
       "interactivityType": "expositive",
       "provider": {
         "@type": "Organization",
@@ -477,15 +449,30 @@
     <h1 data-toc-skip>Hi-C analysis of Drosophila melanogaster cells using HiCExplorer</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/joachimwolff/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/joachimwolff" alt="Avatar">Joachim Wolff</a> <a href="/training-material/hall-of-fame/fidelram/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/fidelram" alt="Avatar">Fidel Ramirez</a> <a href="/training-material/hall-of-fame/vivekbhr/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/vivekbhr" alt="Avatar">Vivek Bhardwaj</a> <a href="/training-material/hall-of-fame/polkhe/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/polkhe" alt="Avatar">Ekaterina Polkh</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/joachimwolff/" class="contributor-badge contributor-joachimwolff"><img src="https://avatars.githubusercontent.com/joachimwolff?s=27" alt="Avatar">Joachim Wolff</a>
+
+
+<a href="/training-material/hall-of-fame/fidelram/" class="contributor-badge contributor-fidelram"><img src="https://avatars.githubusercontent.com/fidelram?s=27" alt="Avatar">Fidel Ramirez</a>
+
+
+<a href="/training-material/hall-of-fame/vivekbhr/" class="contributor-badge contributor-vivekbhr"><img src="https://avatars.githubusercontent.com/vivekbhr?s=27" alt="Avatar">Vivek Bhardwaj</a>
+
+
+<a href="/training-material/hall-of-fame/polkhe/" class="contributor-badge contributor-polkhe"><img src="https://avatars.githubusercontent.com/polkhe?s=27" alt="Avatar">Ekaterina Polkh</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -599,7 +586,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://doi.org/10.5281/zenodo.1183661">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.1183661">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -627,8 +614,35 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/epigenetics/tutorials/hicexplorer/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -778,6 +792,8 @@
     
         
     
+        
+    
     </ul>
 
 
@@ -788,7 +804,9 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 12, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -800,6 +818,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>In this HiCExplorer tutorial we will generate and plot a Hi-C contact matrix.
@@ -996,7 +1016,7 @@ A quality report is created in e.g. <code class="language-plaintext highlighter-
 </blockquote>
 
 <p>The resulting plot of the 1 Mb contact matrix should look like:
-<img src="../../images/plotMatrix.png" alt="TAD plot" loading="lazy" /></p>
+<img src="../../images/plotMatrix.png" alt="TAD plot. " loading="lazy" /></p>
 
 <h1 id="correction-of-hi-c-matrix">Correction of Hi-C matrix</h1>
 
@@ -1157,9 +1177,9 @@ This is often caused by bins of low counts. Use a more stringent filtering of bi
 
 </blockquote>
 
-<p><img src="../../images/pearson_pc1.png" alt="Pearson PC1" loading="lazy" /></p>
+<p><img src="../../images/pearson_pc1.png" alt="Pearson PC1. " loading="lazy" /></p>
 
-<p><img src="../../images/pearson_pc2.png" alt="Pearson PC2" loading="lazy" /></p>
+<p><img src="../../images/pearson_pc2.png" alt="Pearson PC2. " loading="lazy" /></p>
 
 <p>The first principal component correlates with the chromosome arms, while the second component correlates with A/B compartments.</p>
 
@@ -1263,13 +1283,13 @@ This is often caused by bins of low counts. Use a more stringent filtering of bi
 </blockquote>
 
 <p>The resulting image should look like this one:
-<img src="../../images/plotTADs.png" alt="TAD plot" loading="lazy" /></p>
+<img src="../../images/plotTADs.png" alt="TAD plot. " loading="lazy" /></p>
 
 <h1 id="loop-detection">Loop detection</h1>
 
 <p>In Hi-C data, the term <code class="language-plaintext highlighter-rouge">loop</code> refers to a 3D structure which represents enhancer-promoter, gene, architectural or polycomb-mediated interactions. These interactions have the characteristics to be enriched in a single region compared to the local background. These loops are also called long-range interactions with an expected maximum distance of 2 MB (see <a href="https://doi.org/10.1016/j.cell.2014.11.021">Rao et al. 2014</a>).</p>
 
-<p><img src="../../images/loops_bonev_cavalli.png" alt="Loops visualization" loading="lazy" /></p>
+<p><img src="../../images/loops_bonev_cavalli.png" alt="Loops visualization. " loading="lazy" /></p>
 
 <p>To compute loops, we have to import a new data set from the shared library to our history: <code class="language-plaintext highlighter-rouge">GM12878-MboI-allreps-filtered.10kb.cool</code> or download it via the <a href="ftp://cooler.csail.mit.edu/coolers/hg19/Rao2014-GM12878-MboI-allreps-filtered.10kb.cool">FTP cool files server</a>. (FTP links seems to be blocked, therefore the full URL: <code class="language-plaintext highlighter-rouge">ftp://cooler.csail.mit.edu/coolers/hg19/Rao2014-GM12878-MboI-allreps-filtered.10kb.cool</code>)</p>
 
@@ -1312,7 +1332,7 @@ This is often caused by bins of low counts. Use a more stringent filtering of bi
 
 <p>As an output we get a loop file containing the positions of both anchor points of the loop and the p-value of the used statistical test.</p>
 
-<p><img src="../../images/loops_result.png" alt="Loops computed_file" loading="lazy" /></p>
+<p><img src="../../images/loops_result.png" alt="Loops computed_file. " loading="lazy" /></p>
 
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-plotting-of-loops"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Plotting of loops</h3>
@@ -1332,7 +1352,7 @@ This is often caused by bins of low counts. Use a more stringent filtering of bi
 
 </blockquote>
 
-<p><img src="../../images/loops_plot.png" alt="Loops result_plot" loading="lazy" /></p>
+<p><img src="../../images/loops_plot.png" alt="Loops result_plot. " loading="lazy" /></p>
 
 <h1 class="no_toc" id="conclusion">Conclusion</h1>
 
@@ -1360,7 +1380,7 @@ This is often caused by bins of low counts. Use a more stringent filtering of bi
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/epigenetics/faqs/">FAQ page for the Epigenetics topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/epigenetics/faqs/">FAQ page for the Epigenetics topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1371,7 +1391,9 @@ This is often caused by bins of low counts. Use a more stringent filtering of bi
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />

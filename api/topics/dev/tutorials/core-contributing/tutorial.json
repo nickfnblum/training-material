@@ -1,0 +1,67 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Contributing a New Feature to Galaxy Core",
+  "questions": [
+    "How can I develop extensions to Galaxy data model?",
+    "How can I implement new API functionality within Galaxy?",
+    "How can I extend the Galaxy user interface with VueJS components?"
+  ],
+  "objectives": null,
+  "time_estimation": "3H",
+  "contributors": [
+    {
+      "name": "John Chilton",
+      "email": "jmchilton@gmail.com",
+      "joined": "2017-09",
+      "id": "jmchilton",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json"
+    }
+  ],
+  "key_points": [
+    "Galaxy database interactions are mitigated via SQL Alchemy code in lib/galaxy/model.",
+    "Galaxy API endpoints are implemented in lib/galaxy/webapps/galaxy, but generally defer to application logic in lib/galaxy/managers.",
+    "Galaxy client code should do its best to separate API interaction logic from display components."
+  ],
+  "subtopic": "core",
+  "requirements": [
+    {
+      "type": "internal",
+      "topic_name": "contributing",
+      "tutorials": [
+        "github-command-line-contribution"
+      ]
+    },
+    {
+      "type": "internal",
+      "topic_name": "dev",
+      "tutorials": [
+        "architecture"
+      ]
+    }
+  ],
+  "last_modified_at": "2021-06-24T07:06:12+00:00",
+  "url": "/topics/dev/tutorials/core-contributing/tutorial.html",
+  "topic_name": "dev",
+  "tutorial_name": "core-contributing",
+  "hands_on": true,
+  "slides": false,
+  "tools": [
+
+  ],
+  "tours": false,
+  "video": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": false
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/core-contributing/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/core-contributing/tutorial.json"
+  }
+}

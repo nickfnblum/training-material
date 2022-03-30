@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/age-prediction-with-ml/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/age-prediction-with-ml/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/age-prediction-with-ml/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/age-prediction-with-ml/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/age-prediction-with-ml/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/age-prediction-with-ml/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/age-prediction-with-ml/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/age-prediction-with-ml/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/age-prediction-with-ml/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/age-prediction-with-ml/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/statistics/tutorials/age-prediction-with-ml/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fstatistics%2Ftutorials%2Fage-prediction-with-ml%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-03-12 17:24:55 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Age prediction using machine learning",
   "interactivityType": "mixed",
@@ -377,15 +377,24 @@
     <h1 data-toc-skip>Age prediction using machine learning</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/polkhe/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/polkhe" alt="Avatar">Ekaterina Polkh</a> <a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/anuprulez" alt="Avatar">Anup Kumar</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/polkhe/" class="contributor-badge contributor-polkhe"><img src="https://avatars.githubusercontent.com/polkhe?s=27" alt="Avatar">Ekaterina Polkh</a>
+
+
+<a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge contributor-anuprulez"><img src="https://avatars.githubusercontent.com/anuprulez?s=27" alt="Avatar">Anup Kumar</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -443,7 +452,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://zenodo.org/record/2545213#.XEWTJ9-YVa0">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/2545213#.XEWTJ9-YVa0">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -464,8 +473,35 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/statistics/tutorials/age-prediction-with-ml/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -542,6 +578,12 @@
         
     
         
+        <a class="dropdown-item" href="https://test.galaxyproject.org/" title="Galaxy Test">
+            Galaxy Test
+        </a>
+        
+    
+        
         <a class="dropdown-item" href="https://ecology.usegalaxy.eu/" title="Galaxy for Ecology">
             Galaxy for Ecology
         </a>
@@ -612,6 +654,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
+        
     
         
         <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
@@ -657,7 +703,9 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 12, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -669,6 +717,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p><a href="https://en.wikipedia.org/wiki/Machine_learning">Machine Learning</a> is used to create predictive models by learning features from datasets. In the studies performed by <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1599-6#Sec9">Jason G. Fleischer et al. 2018</a> and <a href="https://www.sciencedirect.com/science/article/pii/S1872497317301643?via%3Dihub">Jana Naue et al. 2017</a>, biomarkers are examined to predict the chronological age of humans by analysing the <span class="notranslate">RNA</span>-seq gene <span class="notranslate">expression</span> levels and <span class="notranslate">DNA</span> methylation pattern respectively. Different machine learning algorithms are used in these studies to select specific biomarkers to make age prediction. The <span class="notranslate">RNA</span>-seq gene <span class="notranslate">expression</span> (<a href="https://www.ebi.ac.uk/training/online/glossary/fpkm">FPKM</a>) dataset is generated using fibroblast cell lines of humans. The skin fibroblasts cells keep damage that happens with age. Epigenomic and phenotypic changes which are age-dependent are also contained in these cells. Within each individual, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3174260/"><span class="notranslate">DNA</span> methylation</a> changes with age. This knowledge is used to select useful biomarkers from <span class="notranslate">DNA</span> methylation dataset. The <a href="https://en.wikipedia.org/wiki/CpG_site">CpGs sites</a> with the highest correlation to age are selected as the biomarkers/features. In both these studies, specific biomarkers are analysed by machine learning algorithms to create an age prediction model.</p>
@@ -683,9 +733,9 @@
 <h4 id="r2-coefficient-of-determination">R2 (coefficient of determination)</h4>
 <p>In both the parts, learning on datasets is done using cross-validation and the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html">R2</a> scoring metric is used to evaluate the performance of the trained model. The closer it is to 1.0, the better it is. If it is negative, then the trained model is not good. To infer how its values exhibit model performance, we can compare the figures <a href="#figure-1">1</a> and <a href="#figure-2">2</a>. In both the plots, the true and predicted targets are plotted in a scatter plot. For a good model, most of the points should lie along the <code class="language-plaintext highlighter-rouge">x = y</code> line as the true and predicted targets are close to each other. In figure <a href="#figure-1">1</a>, we can see that the points are scattered and do not show any pattern. Therefore, the R2 score is <code class="language-plaintext highlighter-rouge">-0.06</code>. But, figure <a href="#figure-2">2</a> shows a better pattern as most of the points lie along the line and the R2 score is almost <code class="language-plaintext highlighter-rouge">1.0</code>. For <span class="notranslate">RNA</span>-seq dataset, we will compute the cross-validated R2 score using the training set and for <span class="notranslate">DNA</span> methylation dataset, we will compute the R2 score for the test set.</p>
 
-<figure id="figure-1"><img src="../../images/age-prediction-with-ml/model_bad.png" alt="model_bad" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> This shows an example of a bad model as most of the points are scattered. For a model to be good, most of the points should lie along the x = y  line. It means that the predicted target on the y (vertical) axis is close to the true targets on the x (horizontal) axis.</figcaption></figure>
+<figure id="figure-1"><img src="../../images/age-prediction-with-ml/model_bad.png" alt="model_bad. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> This shows an example of a bad model as most of the points are scattered. For a model to be good, most of the points should lie along the x = y  line. It means that the predicted target on the y (vertical) axis is close to the true targets on the x (horizontal) axis.</figcaption></figure>
 
-<figure id="figure-2"><img src="../../images/age-prediction-with-ml/model_good.png" alt="model_good" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> This shows an example of a good model as most of the points lie along the x = y line. Because most of the points lie along the x = y line, R2 score is 0.99 very close to the best score of 1.0</figcaption></figure>
+<figure id="figure-2"><img src="../../images/age-prediction-with-ml/model_good.png" alt="model_good. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> This shows an example of a good model as most of the points lie along the x = y line. Because most of the points lie along the x = y line, R2 score is 0.99 very close to the best score of 1.0</figcaption></figure>
 
 <blockquote class="agenda">
   <h3 id="agenda">Agenda</h3>
@@ -725,7 +775,7 @@
 
   <p>It is a model validation technique which estimates the performance of a predictive model on an unseen data. A dataset is divided into <code class="language-plaintext highlighter-rouge">5</code> folds and these folds are categorised into training and validation sets. The idea of cross-validation is shown in figure <a href="#figure-3">3</a>. The complete dataset is divided into <code class="language-plaintext highlighter-rouge">5</code> equal parts. 80% of the dataset is used for training and the remaining 20% is used for validating the performance of training. This is done for <code class="language-plaintext highlighter-rouge">5</code> folds/iterations, each time the validation set (20% of the dataset) is different. In all five folds, the complete dataset is used for training and validation. The final validation performance is averaged over <code class="language-plaintext highlighter-rouge">5</code> folds.</p>
 
-  <figure id="figure-3"><img src="../../images/age-prediction-with-ml/5fold_cv.png" alt="5fold_cv" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> The image shows how the 5-fold cross-validation works. The complete dataset is divided into 5 equal parts/folds. 4 parts (80%) of the data (training set shown in yellow) are used for training the model and the remaining one part is used for evaluating (validation set shown in blue) the trained model. This is repeated for 5 times till every part/fold is used as the validation set. The accuracies computed for different validation folds are averaged to give 5-fold cross-validation accuracy.</figcaption></figure>
+  <figure id="figure-3"><img src="../../images/age-prediction-with-ml/5fold_cv.png" alt="5fold_cv. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> The image shows how the 5-fold cross-validation works. The complete dataset is divided into 5 equal parts/folds. 4 parts (80%) of the data (training set shown in yellow) are used for training the model and the remaining one part is used for evaluating (validation set shown in blue) the trained model. This is repeated for 5 times till every part/fold is used as the validation set. The accuracies computed for different validation folds are averaged to give 5-fold cross-validation accuracy.</figcaption></figure>
 
 </blockquote>
 
@@ -750,7 +800,7 @@
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
     </li>
     <li>
       <p>Rename the dataset to <code class="language-plaintext highlighter-rouge">training_data_normal</code>.</p>
@@ -762,7 +812,7 @@
       <p>Check that the datatype is <code class="language-plaintext highlighter-rouge">tabular</code>.</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge">datatypes</code></li>  <li>Click the <strong>Change datatype</strong> button</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge">datatypes</code></li>  <li>Click the <strong>Save</strong> button</li></ul></blockquote>
     </li>
   </ol>
 
@@ -996,7 +1046,7 @@
 
 <p>The output plot has the following legend: the colour-coding is based on the <code class="language-plaintext highlighter-rouge">mean_test_score</code> (<code class="language-plaintext highlighter-rouge">c3</code>) column. You can follow the line leading to the score along every column with the parameters’ settings. The columns <code class="language-plaintext highlighter-rouge">c4, c5</code> and <code class="language-plaintext highlighter-rouge">c6</code> are the parameters we chose and <code class="language-plaintext highlighter-rouge">c3</code> is the accuracy column present in the <code class="language-plaintext highlighter-rouge">tabular</code> output of <strong>Hyperparameter search</strong> tool.</p>
 
-<figure id="figure-4"><img src="../../images/age-prediction-with-ml/parallel_coor_plot.png" alt="data" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> The visualization of the hyperparameter optimisation tool output. We optimised the values of 3 hyperparameters (alpha, normalize and k). These can be seen as the columns (first three from left to right) in the plot. The rightmost column contains the accuracy values (mean_test_score).</figcaption></figure>
+<figure id="figure-4"><img src="../../images/age-prediction-with-ml/parallel_coor_plot.png" alt="data. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> The visualization of the hyperparameter optimisation tool output. We optimised the values of 3 hyperparameters (alpha, normalize and k). These can be seen as the columns (first three from left to right) in the plot. The rightmost column contains the accuracy values (mean_test_score).</figcaption></figure>
 
 <blockquote class="question">
   <h3 id="question-questions-1"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
@@ -1020,7 +1070,7 @@
 
 <h2 id="compare-results-with-original-paper">Compare results with original paper</h2>
 
-<figure id="figure-5"><img src="../../images/age-prediction-with-ml/rna_seq_age.png" alt="rna_seq_age_paper" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> The plot shows accuracy obtained in the paper from Jason G. Fleischer et al. 2018 (Predicting age from the transcriptome of human dermal fibroblasts) using ElasticNet regressor. The R2 scores achieved in the tutorial and mentioned in the paper using the same regressor are comparable.</figcaption></figure>
+<figure id="figure-5"><img src="../../images/age-prediction-with-ml/rna_seq_age.png" alt="rna_seq_age_paper. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> The plot shows accuracy obtained in the paper from Jason G. Fleischer et al. 2018 (Predicting age from the transcriptome of human dermal fibroblasts) using ElasticNet regressor. The R2 scores achieved in the tutorial and mentioned in the paper using the same regressor are comparable.</figcaption></figure>
 
 <h2 id="summary">Summary</h2>
 
@@ -1048,7 +1098,7 @@ https://zenodo.org/record/2545213/files/test_rows.csv
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
     </li>
     <li>
       <p>Rename the datasets as <code class="language-plaintext highlighter-rouge">train_rows</code>, <code class="language-plaintext highlighter-rouge">test_rows_labels</code> and <code class="language-plaintext highlighter-rouge">test_rows</code> respectively.</p>
@@ -1060,7 +1110,7 @@ https://zenodo.org/record/2545213/files/test_rows.csv
       <p>Check that the datatype of all the three datasets is <code class="language-plaintext highlighter-rouge">tabular</code>.</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge">datatypes</code></li>  <li>Click the <strong>Change datatype</strong> button</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-changing-the-datatype"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Changing the datatype</h3>  <ul>  <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>  <li>In the central panel, click on the <i class="fas fa-database" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-chart-select-data</span> <strong>Datatypes</strong> tab on the top</li>  <li>Select <code class="language-plaintext highlighter-rouge">datatypes</code></li>  <li>Click the <strong>Save</strong> button</li></ul></blockquote>
     </li>
   </ol>
 
@@ -1263,19 +1313,19 @@ We use only one parameter <code class="language-plaintext highlighter-rouge">n_e
   </blockquote>
 </blockquote>
 
-<figure id="figure-6"><img src="../../images/age-prediction-with-ml/scatter_plot.png" alt="Scatter plot" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> Scatter plot for true and predicted age for test set. It is evident from the plot that most of the points lie along the x = y line, which means that true and predicted ages are close to each other. The root mean squared error in predicting age is 3.76 years and R2 score (0.94) is close to the best score of 1.0.</figcaption></figure>
+<figure id="figure-6"><img src="../../images/age-prediction-with-ml/scatter_plot.png" alt="Scatter plot. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> Scatter plot for true and predicted age for test set. It is evident from the plot that most of the points lie along the x = y line, which means that true and predicted ages are close to each other. The root mean squared error in predicting age is 3.76 years and R2 score (0.94) is close to the best score of 1.0.</figcaption></figure>
 
 <p>We can see in the scatter plot (figure <a href="#figure-6">6</a>) that most of the points lie along the x=y curve. It means that the true and predicted ages are close to each other. The root mean square error (<code class="language-plaintext highlighter-rouge">RMSE</code>) is <code class="language-plaintext highlighter-rouge">3.76</code> and the R2 score is <code class="language-plaintext highlighter-rouge">0.94</code>.</p>
 
-<figure id="figure-7"><img src="../../images/age-prediction-with-ml/residual_plot.png" alt="Residuals" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 7:</span> The plot shows the residuals (predicted age - true) age against the predicted age. For a good learning/training, this plot should not show any distinct pattern and the points should be symmetrically distributed along the y = 0 line.</figcaption></figure>
+<figure id="figure-7"><img src="../../images/age-prediction-with-ml/residual_plot.png" alt="Residuals. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 7:</span> The plot shows the residuals (predicted age - true) age against the predicted age. For a good learning/training, this plot should not show any distinct pattern and the points should be symmetrically distributed along the y = 0 line.</figcaption></figure>
 
 <p>The <a href="http://docs.statwing.com/interpreting-residual-plots-to-improve-your-regression/">residual plot</a> shown in figure <a href="#figure-7">7</a> is generated to see if there is any visible pattern between residual (predicted age - true age) and predicted age. For a good model, there should not be any visible pattern with the plotted points.</p>
 
-<figure id="figure-8"><img src="../../images/age-prediction-with-ml/true_vs_predicted_plot.png" alt="True vs predicted age" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 8:</span> The plot shows the true vs predicted age for all the samples in the test set. We can see that the predicted values are close to the true values.</figcaption></figure>
+<figure id="figure-8"><img src="../../images/age-prediction-with-ml/true_vs_predicted_plot.png" alt="True vs predicted age. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 8:</span> The plot shows the true vs predicted age for all the samples in the test set. We can see that the predicted values are close to the true values.</figcaption></figure>
 
 <h2 id="compare-results-with-original-paper-1">Compare results with original paper</h2>
 
-<figure id="figure-9"><img src="../../images/age-prediction-with-ml/dnam_age_paper.png" alt="dnam_image_paper" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 9:</span> The plot is from Jana Naue et al. 2017 (Chronological age prediction based on <span class="notranslate">DNA</span> methylation) and shows a scatter plot with the predicted age on the vertical axis and the true age on the horizontal axis. The plot is comparable to the scatter plot shown in figure 6. The RMSE score is also comparable. The paper used Random forest as the regressor and we used Gradient boosting as the regressor.</figcaption></figure>
+<figure id="figure-9"><img src="../../images/age-prediction-with-ml/dnam_age_paper.png" alt="dnam_image_paper. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 9:</span> The plot is from Jana Naue et al. 2017 (Chronological age prediction based on <span class="notranslate">DNA</span> methylation) and shows a scatter plot with the predicted age on the vertical axis and the true age on the horizontal axis. The plot is comparable to the scatter plot shown in figure 6. The RMSE score is also comparable. The paper used Random forest as the regressor and we used Gradient boosting as the regressor.</figcaption></figure>
 
 <h2 id="summary-1">Summary</h2>
 
@@ -1305,7 +1355,7 @@ We use only one parameter <code class="language-plaintext highlighter-rouge">n_e
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/statistics/faqs/">FAQ page for the Statistics and machine learning topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/statistics/faqs/">FAQ page for the Statistics and machine learning topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1316,7 +1366,9 @@ We use only one parameter <code class="language-plaintext highlighter-rouge">n_e
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />

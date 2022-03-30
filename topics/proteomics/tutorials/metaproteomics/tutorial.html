@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/metaproteomics/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/metaproteomics/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/metaproteomics/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/metaproteomics/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/metaproteomics/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/metaproteomics/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/metaproteomics/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/metaproteomics/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/metaproteomics/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/metaproteomics/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/metaproteomics/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fproteomics%2Ftutorials%2Fmetaproteomics%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-06-21 16:21:33 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Metaproteomics tutorial",
   "interactivityType": "mixed",
@@ -402,15 +402,33 @@
     <h1 data-toc-skip>Metaproteomics tutorial</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/timothygriffin/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/timothygriffin" alt="Avatar">Timothy J. Griffin</a> <a href="/training-material/hall-of-fame/pratikdjagtap/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/pratikdjagtap" alt="Avatar">Pratik Jagtap</a> <a href="/training-material/hall-of-fame/jj-umn/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/jj-umn" alt="Avatar">James Johnson</a> <a href="/training-material/hall-of-fame/blankclemens/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/blankclemens" alt="Avatar">Clemens Blank</a> <a href="/training-material/hall-of-fame/subinamehta/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/subinamehta" alt="Avatar">Subina Mehta</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/timothygriffin/" class="contributor-badge contributor-timothygriffin"><img src="https://avatars.githubusercontent.com/timothygriffin?s=27" alt="Avatar">Timothy J. Griffin</a>
+
+
+<a href="/training-material/hall-of-fame/pratikdjagtap/" class="contributor-badge contributor-pratikdjagtap"><img src="https://avatars.githubusercontent.com/pratikdjagtap?s=27" alt="Avatar">Pratik Jagtap</a>
+
+
+<a href="/training-material/hall-of-fame/jj-umn/" class="contributor-badge contributor-jj-umn"><img src="https://avatars.githubusercontent.com/jj-umn?s=27" alt="Avatar">James Johnson</a>
+
+
+<a href="/training-material/hall-of-fame/blankclemens/" class="contributor-badge contributor-blankclemens"><img src="https://avatars.githubusercontent.com/blankclemens?s=27" alt="Avatar">Clemens Blank</a>
+
+
+<a href="/training-material/hall-of-fame/subinamehta/" class="contributor-badge contributor-subinamehta"><img src="https://avatars.githubusercontent.com/subinamehta?s=27" alt="Avatar">Subina Mehta</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -472,7 +490,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://doi.org/10.5281/zenodo.839701">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://doi.org/10.5281/zenodo.839701">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -500,8 +518,58 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/proteomics/tutorials/metaproteomics/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+  <li class="btn btn-default supporting_material">
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Recordings
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+
+        
+        
+        
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/proteomics/metaproteomics/tutorial" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (February 2021)
+            </a>
+        </li>
+        
+        
+        
+    </ul>
+   </li>
+   
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -638,11 +706,17 @@
         
     
         
+    
+        
         <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
             Street Science
         </a>
         
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
         
     
         
@@ -687,9 +761,11 @@
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jun 21, 2021 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Nov 4, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -701,6 +777,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>In this metaproteomics tutorial we will identify expressed proteins from a complex bacterial community sample.
@@ -746,7 +824,7 @@ Strait chlorophyll maximum layer (7m depth, 65° 43.44″ N, 168° 57.42″ W). 
   <li>Import from the data library if your instance provides the files</li>
 </ul>
 
-<p>In this tutorial, we will get the data from Zenodo: <a href="https://doi.org/10.5281/zenodo.839701"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.839701.svg" alt="DOI" loading="lazy" /></a>.</p>
+<p>In this tutorial, we will get the data from Zenodo: <a href="https://doi.org/10.5281/zenodo.839701"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.839701.svg" alt="DOI. " loading="lazy" /></a>.</p>
 
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-data-upload-and-organization"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Data upload and organization</h3>
@@ -764,7 +842,13 @@ Strait chlorophyll maximum layer (7m depth, 65° 43.44″ N, 168° 57.42″ W). 
       <p>Import the three MGF MS/MS files and the FASTA sequence file from Zenodo.</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://zenodo.org/record/839701/files/2016_Jan_12_QE2_45.mgf
+https://zenodo.org/record/839701/files/2016_Jan_12_QE2_46.mgf
+https://zenodo.org/record/839701/files/2016_Jan_12_QE2_47.mgf
+https://zenodo.org/record/839701/files/FASTA_Bering_Strait_Trimmed_metapeptides_cRAP.fasta
+https://zenodo.org/record/839701/files/Gene_Ontology_Terms.tabular
+</code></pre></div>      </div>
 
       <p>As default, <span class="notranslate">Galaxy</span> takes the link as name.</p>
 
@@ -780,6 +864,36 @@ Strait chlorophyll maximum layer (7m depth, 65° 43.44″ N, 168° 57.42″ W). 
 
       <!--SNIPPET-->
       <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-creating-a-dataset-collection"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Creating a dataset collection</h3>  <ul>  <li>Click on <strong>Operations on multiple datasets</strong> (check box icon) at the top of the history panel <img src="/training-material/topics/galaxy-interface/images/historyItemControls.png" alt="Operations on multiple datasets button" /></li>  <li>Check all the datasets in your history you would like to include</li>  <li>    <p>Click <strong>For all selected..</strong> and choose <strong>Build dataset list</strong></p>    <p><img src="/training-material/topics/galaxy-interface/images/buildList.png" alt="build list collection menu item" width="15%" /></p>  </li>  <li>Enter a name for your collection</li>  <li>Click <strong>Create List</strong> to build your collection</li>  <li>Click on the checkmark icon at the top of your history again</li></ul></blockquote>
+    </li>
+  </ol>
+
+</blockquote>
+
+<p>We have a choice to run all these steps using a single <span class="notranslate">workflow</span>, then discuss each step and the results in more detail.</p>
+
+<blockquote class="notranslate hands_on">
+  <h3 id="hands_on-hands-on-pretreatments"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Pretreatments</h3>
+
+  <ol>
+    <li><strong>Import the <span class="notranslate">workflow</span></strong> into <span class="notranslate">Galaxy</span>
+      <ul>
+        <li>Copy the URL (e.g. via right-click) of <a href="/training-material/topics/proteomics/tutorials/metaproteomics/workflows/workflow.ga">this <span class="notranslate">workflow</span></a> or download it to your computer.</li>
+        <li>Import the <span class="notranslate">workflow</span> into <span class="notranslate">Galaxy</span></li>
+      </ul>
+
+      <!--SNIPPET-->
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-a-workflow"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing a <span class="notranslate">workflow</span></h3>  <ul>  <li>Click on <em><span class="notranslate">Workflow</span></em> on the top menu bar of <span class="notranslate">Galaxy</span>. You will see a list of all your workflows.</li>  <li>Click on the upload icon <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> at the top-right of the screen</li>  <li>Provide your <span class="notranslate">workflow</span>    <ul>      <li>Option 1: Paste the URL of the <span class="notranslate">workflow</span> into the box labelled <em>“Archived <span class="notranslate">Workflow</span> URL”</em></li>      <li>Option 2: Upload the <span class="notranslate">workflow</span> file in the box labelled <em>“Archived <span class="notranslate">Workflow</span> File”</em></li>    </ul>  </li>  <li>Click the <strong>Import <span class="notranslate">workflow</span></strong> button</li></ul></blockquote>
+    </li>
+    <li>Run <strong><span class="notranslate">Workflow</span></strong> <i class="fas fa-share-alt" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">workflow</span></span> using the following parameters:
+      <ul>
+        <li><em>“Send results to a new history”</em>: <code class="language-plaintext highlighter-rouge">No</code></li>
+        <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“1: SixGill generated protein fasta file”</em>: <code class="language-plaintext highlighter-rouge">FASTA_Bering_Strait_Trimmed_metapeptides_cRAP.fasta</code></li>
+        <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“2: Dataset collection of Bering Strait MGF files”</em>: <code class="language-plaintext highlighter-rouge">Dataset collection of bering MGF</code></li>
+        <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“3: GeneOntology terms (selected)”</em>: <code class="language-plaintext highlighter-rouge">Gene_Ontology_terms.tabular</code></li>
+      </ul>
+
+      <!--SNIPPET-->
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-running-a-workflow"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Running a <span class="notranslate">workflow</span></h3>  <ul>  <li>Click on <em><span class="notranslate">Workflow</span></em> on the top menu bar of <span class="notranslate">Galaxy</span>. You will see a list of all your workflows.</li>  <li>Click on the <i class="fas fa-play" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">workflow</span>-run</span> (<em>Run <span class="notranslate">workflow</span></em>) button next to your <span class="notranslate">workflow</span></li>  <li>Configure the <span class="notranslate">workflow</span> as needed</li>  <li>Click the <strong>Run <span class="notranslate">Workflow</span></strong> button at the top-right of the screen</li>  <li>You may have to refresh your history to see the queued jobs</li></ul></blockquote>
     </li>
   </ol>
 
@@ -814,7 +928,7 @@ The created dataset collection of the three <em>MGF files</em> in the history is
           <li>
             <p>Click the <strong>Dataset collection</strong> icon on the left of the input field:</p>
 
-            <p><img src="../../images/dataset_button.png" alt="Dataset collection button" loading="lazy" /></p>
+            <p><img src="../../images/dataset_button.png" alt="Dataset collection button. " loading="lazy" /></p>
           </li>
           <li>
             <p>Select the appropriate dataset collection from the list</p>
@@ -932,7 +1046,7 @@ used by both SearchGUI and PeptideShaker in the analysis. This can be downloaded
       </blockquote>
     </li>
     <li>Click <strong>Execute</strong> and inspect the resulting files after they turned green with the <strong>View data</strong> icon:
- <img src="../../images/view_data_icon.png" alt="View data button" loading="lazy" /></li>
+ <img src="../../images/view_data_icon.png" alt="View data button. " loading="lazy" /></li>
   </ol>
 
 </blockquote>
@@ -940,7 +1054,7 @@ used by both SearchGUI and PeptideShaker in the analysis. This can be downloaded
 <p>A number of new items will appear in your history, each corresponding to the outputs selected
 in the PeptideShaker parameters. Most relevant for this tutorial is the PSM report:</p>
 
-<figure id="figure-1"><img src="../../images/psm_report.png" alt="Display of the PSM report tabular file" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> The PSM report</figcaption></figure>
+<figure id="figure-1"><img src="../../images/psm_report.png" alt="Display of the PSM report tabular file. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> The PSM report</figcaption></figure>
 
 <p>Scrolling towards left will show the sequence for the PSM that matched to these
 metapeptide entries. Column 3 is the sequence matched for each PSM entry. Every identified PSM is a
@@ -1076,7 +1190,7 @@ ORDER BY sequence
     <li>
       <p>Click <strong>Execute</strong> and inspect the query results file after it turned green. If everything went well, it should look similiar:</p>
 
-      <figure id="figure-2"><img src="../../images/query_tabular_1.png" alt="Query Tabular output showing the peptides" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Query Tabular output</figcaption></figure>
+      <figure id="figure-2"><img src="../../images/query_tabular_1.png" alt="Query Tabular output showing the peptides. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Query Tabular output</figcaption></figure>
     </li>
   </ol>
 
@@ -1154,12 +1268,12 @@ Instead, we can use it to use JavaScript libraries to visualize this data.</p>
         <li>
           <p>Click on the JSON output file from the <em>Unipept</em> tool to expand it. Click on the <strong>Visualize</strong> button and select <strong>Unipept Tree viewer</strong>:</p>
 
-          <p><img src="../../images/visualize_button.png" alt="Visualize button" loading="lazy" /></p>
+          <p><img src="../../images/visualize_button.png" alt="Visualize button. " loading="lazy" /></p>
         </li>
         <li>
           <p>A new window should appear with a visualization of the taxonomy tree of your data. Use the mouse wheel to scroll in and out and click on nodes to expand or collapse them:</p>
 
-          <figure id="figure-3"><img src="../../images/unipept_tree_viewer.png" alt="Unipept Tree viewer visual output" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> Interactive visualization from the Unipept Tree viever plugin</figcaption></figure>
+          <figure id="figure-3"><img src="../../images/unipept_tree_viewer.png" alt="Unipept Tree viewer visual output. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> Interactive visualization from the Unipept Tree viever plugin</figcaption></figure>
         </li>
       </ul>
     </li>
@@ -1258,7 +1372,7 @@ ORDER BY PSMs desc, 'DISTINCT PEPTIDES' desc
     <li>
       <p>Click <strong>Execute</strong> and inspect the query results file after it turned green:</p>
 
-      <figure id="figure-4"><img src="../../images/metaproteomics_summary.png" alt="Query Tabular output showing gene, PSMs and distinct peptides" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> Query Tabular output</figcaption></figure>
+      <figure id="figure-4"><img src="../../images/metaproteomics_summary.png" alt="Query Tabular output showing gene, PSMs and distinct peptides. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> Query Tabular output</figcaption></figure>
     </li>
   </ol>
 
@@ -1310,7 +1424,7 @@ The GO defines concepts/classes used to describe gene function, and relationship
 <h4 id="data-upload-1">Data upload</h4>
 
 <p>For this tutorial, a tabular file containing the relevant GO terms has been created. It contains the GO aspect, the ID and the name.
-It is available at Zenodo: <a href="https://doi.org/10.5281/zenodo.839701"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.839701.svg" alt="DOI" loading="lazy" /></a>.</p>
+It is available at Zenodo: <a href="https://doi.org/10.5281/zenodo.839701"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.839701.svg" alt="DOI. " loading="lazy" /></a>.</p>
 
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-data-upload"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Data upload</h3>
@@ -1348,7 +1462,8 @@ This might be handy if the automatic detection of the filetype didn’t work out
 
   <p>In order to receive a file like we use in the tutorial for your own analysis, different tools are available to extract information from <code class="language-plaintext highlighter-rouge">OBO</code> files,
 one of them being <a href="https://doi.org/10.1093/bioinformatics/btn042">ONTO-PERL</a>.
-An example file with all GO terms from 08.07.2017 named <code class="language-plaintext highlighter-rouge">Gene_Ontology_Terms_full_07.08.2017.tabular</code> can be found on the <a href="https://doi.org/10.5281/zenodo.839701">Zenodo repository</a> of this tutorial as well.</p>
+An example file with all GO terms from 08.07.2017 named <code class="language-plaintext highlighter-rouge">Gene_Ontology_Terms_full_07.08.2017.tabular</code> can be found on the <a href="https://doi.org/10.5281/zenodo.839701">Zenodo repository</a> of this tutorial as well.
+You could also upload the Gene Ontology Terms by copying this link on to the Upload Data - Paste/Fetch data <code class="language-plaintext highlighter-rouge">https://zenodo.org/record/839701/files/Gene_Ontology_Terms_full_07.08.2017.tabular</code></p>
 
 </blockquote>
 
@@ -1684,7 +1799,7 @@ ORDER BY  bering_peptides desc,bering_psms desc
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/proteomics/faqs/">FAQ page for the Proteomics topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/proteomics/faqs/">FAQ page for the Proteomics topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1698,7 +1813,9 @@ ORDER BY  bering_peptides desc,bering_psms desc
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
@@ -1751,8 +1868,8 @@ ORDER BY  bering_peptides desc,bering_psms desc
 author = "Timothy J. Griffin and Pratik Jagtap and James Johnson and Clemens Blank and Subina Mehta",
 title = "Metaproteomics tutorial (Galaxy Training Materials)",
 year = "2021",
-month = "06",
-day = "21"
+month = "11",
+day = "04"
 url = "\url{https://training.galaxyproject.org/training-material/topics/proteomics/tutorials/metaproteomics/tutorial.html}",
 note = "[Online; accessed TODAY]"
 }

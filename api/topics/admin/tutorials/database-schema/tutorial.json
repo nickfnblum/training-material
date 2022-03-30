@@ -1,0 +1,69 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Galaxy Database schema",
+  "zenodo_link": "",
+  "questions": [
+    "Running a production Galaxy server, you some times end up in with a situation, where you manually need to interact with the Galaxy database: how do you do that",
+    "How to extract usage information, which can not be gathered using the given report tools",
+    "How to move from MySQL to PostgreSQL",
+    "Is there ever a need to manually change the contents of a table"
+  ],
+  "objectives": [
+    "Learn some of the design concepts of the Galaxy database",
+    "Extract information from the Galaxy database",
+    "Get to know SchemaSpy"
+  ],
+  "time_estimation": "2h",
+  "key_points": [
+    "Be careful, when you interact with the Galaxy database. And make sure you always have a backup!"
+  ],
+  "contributors": [
+    {
+      "name": "Hans-Rudolf Hotz",
+      "email": "hrhotz@googlemail.com",
+      "twitter": "hrhotz",
+      "gitter": "hrhotz",
+      "orcid": "0000-0002-2799-424X",
+      "linkedin": "hans-rudolf-hotz-542b31",
+      "joined": "2017-09",
+      "id": "hrhotz",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/hrhotz.json"
+    },
+    {
+      "name": "Björn Grüning",
+      "email": "bjoern.gruening@gmail.com",
+      "twitter": "bjoerngruening",
+      "gitter": "bgruening",
+      "orcid": "0000-0002-3079-6586",
+      "linkedin": "bgruening",
+      "joined": "2017-09",
+      "id": "bgruening",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/bgruening.json"
+    }
+  ],
+  "last_modified_at": "2020-06-30T21:57:57+00:00",
+  "url": "/topics/admin/tutorials/database-schema/tutorial.html",
+  "topic_name": "admin",
+  "tutorial_name": "database-schema",
+  "hands_on": true,
+  "slides": false,
+  "tools": [
+
+  ],
+  "tours": false,
+  "video": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": false
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/database-schema/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/database-schema/tutorial.json"
+  }
+}

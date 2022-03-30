@@ -1,0 +1,82 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Use Singularity containers for running Galaxy jobs",
+  "zenodo_link": "",
+  "questions": null,
+  "objectives": [
+    "Configure your Galaxy to use Singularity and BioContainers for running jobs"
+  ],
+  "time_estimation": "1h",
+  "key_points": null,
+  "contributors": [
+    {
+      "name": "Torfinn Nome",
+      "joined": "2021-01",
+      "id": "torfinnnome",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/torfinnnome.json"
+    },
+    {
+      "name": "Marius van den Beek",
+      "joined": "2018-06",
+      "id": "mvdbeek",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/mvdbeek.json"
+    },
+    {
+      "name": "Matthias Bernt",
+      "joined": "2017-09",
+      "id": "bernt-matthias",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/bernt-matthias.json"
+    },
+    {
+      "name": "Helena Rasche",
+      "email": "helena.rasche@gmail.com",
+      "orcid": "0000-0001-9760-8992",
+      "maintainer_contact": "gitter",
+      "gitter": "hexylena",
+      "joined": "2017-09",
+      "id": "hexylena",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
+    }
+  ],
+  "subtopic": "jobs",
+  "tags": [
+    "jobs",
+    "ansible",
+    "git-gat"
+  ],
+  "requirements": [
+    {
+      "type": "internal",
+      "topic_name": "admin",
+      "tutorials": [
+        "ansible",
+        "ansible-galaxy"
+      ]
+    }
+  ],
+  "last_modified_at": "2022-03-10T15:01:21+00:00",
+  "url": "/topics/admin/tutorials/singularity/tutorial.html",
+  "topic_name": "admin",
+  "tutorial_name": "singularity",
+  "hands_on": true,
+  "slides": false,
+  "tools": [
+
+  ],
+  "tours": false,
+  "video": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": false
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/singularity/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/singularity/tutorial.json"
+  }
+}

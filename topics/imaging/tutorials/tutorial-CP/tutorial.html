@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/imaging/tutorials/tutorial-CP/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/imaging/tutorials/tutorial-CP/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/imaging/tutorials/tutorial-CP/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/imaging/tutorials/tutorial-CP/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/imaging/tutorials/tutorial-CP/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/imaging/tutorials/tutorial-CP/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/imaging/tutorials/tutorial-CP/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/imaging/tutorials/tutorial-CP/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/imaging/tutorials/tutorial-CP/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/imaging/tutorials/tutorial-CP/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/imaging/tutorials/tutorial-CP/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fimaging%2Ftutorials%2Ftutorial-CP%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-03-12 17:24:55 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Nucleoli segmentation and feature extraction using CellProfiler",
   "interactivityType": "mixed",
@@ -370,15 +370,24 @@
     <h1 data-toc-skip>Nucleoli segmentation and feature extraction using CellProfiler</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/beatrizserrano/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/beatrizserrano" alt="Avatar">Beatriz Serrano-Solano</a> <a href="/training-material/hall-of-fame/jkh1/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/jkh1" alt="Avatar">Jean-Karim Hériché</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/beatrizserrano/" class="contributor-badge contributor-beatrizserrano"><img src="https://avatars.githubusercontent.com/beatrizserrano?s=27" alt="Avatar">Beatriz Serrano-Solano</a>
+
+
+<a href="/training-material/hall-of-fame/jkh1/" class="contributor-badge contributor-jkh1"><img src="https://avatars.githubusercontent.com/jkh1?s=27" alt="Avatar">Jean-Karim Hériché</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -482,8 +491,35 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/imaging/tutorials/tutorial-CP/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -562,11 +598,13 @@
         
     
         
+    
+        
+    
+        
         <a class="dropdown-item" href="https://galaxy.genouest.org" title="Galaxy@GenOuest">
             Galaxy@GenOuest
         </a>
-        
-    
         
     
         
@@ -630,6 +668,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
+        
     
         
         <a class="dropdown-item" href="https://usegalaxy.eu" title="UseGalaxy.eu">
@@ -667,7 +709,9 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 12, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -679,6 +723,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>The nucleolus is a prominent structure of the nucleus of eukaryotic cells and is involved in ribosome biogenesis and cell cycle regulation. In <span class="notranslate">DNA</span> staining of cells, nucleoli can be identified as the absence of <span class="notranslate">DNA</span> in nuclei (<a href="#nucleoli">Fig. 1</a>).<br />
@@ -686,12 +732,12 @@ Phenotypes caused by reduced gene function are widely used to elucidate gene fun
 In particular, regardless of the targeted biological process, many screens include a <span class="notranslate">DNA</span> label and therefore can also reveal the effect of gene knock-downs on nucleoli.</p>
 
 <p><a name="nucleoli"></a></p>
-<figure id="figure-1"><img src="../../images/tutorial-CP/img_dna_channel.png" alt="DNA channel" width="50%" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> <span class="notranslate">DNA</span> channel from the screen described in <a class="citation" href="#Heriche_2014">“<b>Integration of biological data by kernels on graph nodes allows prediction of new genes involved in mitotic chromosome condensation</b>” 2014</a>. The red arrows point at nucleoli.</figcaption></figure>
+<figure id="figure-1"><img src="../../images/tutorial-CP/img_dna_channel.png" alt="DNA channel. " width="50%" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> <span class="notranslate">DNA</span> channel from the screen described in <span class="citation"><a href="#Heriche_2014">“<b>Integration of biological data by kernels on graph nodes allows prediction of new genes involved in mitotic chromosome condensation</b>” 2014</a></span>. The red arrows point at nucleoli.</figcaption></figure>
 
 <p>In this tutorial, we will analyse <span class="notranslate">DNA</span> channel images of publicly available <span class="notranslate">RNA</span>i screens to extract numerical descriptors (i.e. features) of nucleoli.
 The images and associated metadata will be retrieved from the <a href="http://idr.openmicroscopy.org/" target="_blank">Image Data Resource (IDR)</a>, a repository that collects image datasets of tissues and cells.</p>
 
-<p>To process and analyse the images, we will use <a href="http://cellprofiler-manual.s3.amazonaws.com/CellProfiler-3.1.9/index.html">CellProfiler</a> (<a class="citation" href="#McQuin_2018">“<b>CellProfiler 3.0: Next-generation image processing for biology</b>” 2018</a>), a popular image analysis software. CellProfiler normally comes as a desktop application in which users can compose image analysis workflows from a series of modules. Many of these modules are now also available as tools in <span class="notranslate">Galaxy</span>.</p>
+<p>To process and analyse the images, we will use <a href="http://cellprofiler-manual.s3.amazonaws.com/CellProfiler-3.1.9/index.html">CellProfiler</a> (<span class="citation"><a href="#McQuin_2018">“<b>CellProfiler 3.0: Next-generation image processing for biology</b>” 2018</a></span>), a popular image analysis software. CellProfiler normally comes as a desktop application in which users can compose image analysis workflows from a series of modules. Many of these modules are now also available as tools in <span class="notranslate">Galaxy</span>.</p>
 
 <p>To fully emulate the behaviour of the standalone CellProfiler in <span class="notranslate">Galaxy</span>, each image analysis <span class="notranslate">workflow</span> needs to have three parts:</p>
 
@@ -702,7 +748,7 @@ The images and associated metadata will be retrieved from the <a href="http://id
 <p>3) <strong>CellProfiler</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> to actually run the pipeline.</p>
 
 <p><a name="high_level_view"></a></p>
-<figure id="figure-2"><img src="../../images/tutorial-CP/wf.jpg" alt="High-level view of the workflow" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> High-level view of the <span class="notranslate">workflow</span></figcaption></figure>
+<figure id="figure-2"><img src="../../images/tutorial-CP/wf.jpg" alt="High-level view of the workflow. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> High-level view of the <span class="notranslate">workflow</span></figcaption></figure>
 
 <p>In this tutorial, you will learn how to create a <span class="notranslate">workflow</span> that downloads a selection of images from the IDR, and uses CellProfiler to segment the nuclei and nucleoli. You will also learn how to extract and export features at three different levels: image, nucleus, nucleolus.</p>
 
@@ -767,7 +813,7 @@ The images and associated metadata will be retrieved from the <a href="http://id
 
         <p>To get the valid IDR link, go to the <a href="http://idr.openmicroscopy.org/webclient/?show=screen-102" target="_blank">dataset of interest in the IDR</a> and select in the preview of a plate a few images ((figure <a href="#IDR_interface">Fig. 3</a> - 1)). Once you see them at the bottom of the page (figure <a href="#IDR_interface">Fig. 3</a> - 2), select them again and click the link button in the top-right corner of the right panel (figure <a href="#IDR_interface">Fig. 3</a> - 3).
 <a name="IDR_interface"></a></p>
-        <figure id="figure-3"><img src="../../images/tutorial-CP/IDR_interface.jpg" alt="IDR interface" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> IDR interface</figcaption></figure>
+        <figure id="figure-3"><img src="../../images/tutorial-CP/IDR_interface.jpg" alt="IDR interface. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> IDR interface</figcaption></figure>
       </blockquote>
 
       <blockquote class="comment">
@@ -948,7 +994,7 @@ The images and associated metadata will be retrieved from the <a href="http://id
 
 <p>From the previous tool, we got a group of objects (nuclei). Now, we want to export the segmentation masks as a single image to check how well the segmentation algorithm is performing. We also want to label the nuclei with their identifiers for future visual inspection of the results. The output of this step will look like (you will only get this image after running the whole <span class="notranslate">workflow</span>):</p>
 
-<figure id="figure-4"><img src="../../images/tutorial-CP/img_nuclei_labels.png" alt="Identified nuclei with labels" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> Identified nuclei with labels.</figcaption></figure>
+<figure id="figure-4"><img src="../../images/tutorial-CP/img_nuclei_labels.png" alt="Identified nuclei with labels. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 4:</span> Identified nuclei with labels.</figcaption></figure>
 
 <blockquote class="question">
   <h3 id="question-questions-1"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
@@ -1124,7 +1170,7 @@ The images and associated metadata will be retrieved from the <a href="http://id
 
 <p>We have now one segmentation mask per image with all the nuclei detected, <code class="language-plaintext highlighter-rouge">MaskNuclei</code>, and another one for the nucleoli, <code class="language-plaintext highlighter-rouge">MaskNucleoli</code>. These are binary masks in which the background is black and the objects detected are white. We would like to check whether both segmentation steps went well. That could be achieved by combining both of them (using different colors) into one image. Here, we are converting the nucleus mask to blue and the nucleoli to magenta. The outcome that you will obtain after the execution of the <span class="notranslate">workflow</span> will look like:</p>
 
-<figure id="figure-5"><img src="../../images/tutorial-CP/img_combined_masks.png" alt="Combined mask for nuclei and nucleoli" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> Combined segmentation masks for nuclei (blue) and nucleoli (magenta).</figcaption></figure>
+<figure id="figure-5"><img src="../../images/tutorial-CP/img_combined_masks.png" alt="Combined mask for nuclei and nucleoli. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 5:</span> Combined segmentation masks for nuclei (blue) and nucleoli (magenta).</figcaption></figure>
 
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-convert-and-save-the-nuclei-and-nucleoli-masks"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Convert and save the nuclei and nucleoli masks</h3>
@@ -1606,7 +1652,7 @@ The images and associated metadata will be retrieved from the <a href="http://id
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/imaging/faqs/">FAQ page for the Imaging topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/imaging/faqs/">FAQ page for the Imaging topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1617,33 +1663,16 @@ The images and associated metadata will be retrieved from the <a href="http://id
 
                 
                 <h1 id="bibliography">References</h1>
-                <ol class="bibliography"><li><span id="Heriche_2014"><b>Integration of biological data by kernels on graph nodes allows prediction of new genes involved in mitotic chromosome condensation</b>, 2014 Mol Biol Cell. 2014;25(16):2522-2536:</span>
-    
-    
-    <a href="https://doi.org/10.1091/mbc.E13-04-0221">10.1091/mbc.E13-04-0221</a>
-    
-    
-
-</li>
-<li><span id="McQuin_2018"><b>CellProfiler 3.0: Next-generation image processing for biology</b>, 2018 PLoS Biol. 16(7):e2005970:</span>
-    
-    
-    <a href="https://doi.org/10.1371/journal.pbio.2005970">10.1371/journal.pbio.2005970</a>
-    
-    
-      <!-- prevent duplicate doi links -->
-      
-      <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2005970">https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2005970</a>
-      
-    
-
-</li></ol>
+                <ol class="bibliography"><li id="Heriche_2014"><b>Integration of biological data by kernels on graph nodes allows prediction of new genes involved in mitotic chromosome condensation</b>, 2014 Mol Biol Cell. 2014;25(16):2522-2536: <a href="https://doi.org/10.1091/mbc.E13-04-0221">10.1091/mbc.E13-04-0221</a></li>
+<li id="McQuin_2018"><b>CellProfiler 3.0: Next-generation image processing for biology</b>, 2018 PLoS Biol. 16(7):e2005970: <a href="https://doi.org/10.1371/journal.pbio.2005970">10.1371/journal.pbio.2005970</a> <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2005970">https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2005970</a></li></ol>
                 
 
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />

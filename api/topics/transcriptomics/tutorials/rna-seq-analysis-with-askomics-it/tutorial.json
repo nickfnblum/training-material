@@ -1,0 +1,95 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "RNA-Seq analysis with AskOmics Interactive Tool",
+  "zenodo_link": "https://zenodo.org/record/3925863",
+  "requirements": [
+    {
+      "type": "internal",
+      "topic_name": "transcriptomics",
+      "tutorials": [
+        "rna-seq-counts-to-genes"
+      ]
+    }
+  ],
+  "questions": [
+    "How to integrate RNA-Seq results with other datasets using AskOmics?",
+    "How to query these datasets to answer a biological question?",
+    "How to exploit a distant SPARQL endpoint to retrieve information?"
+  ],
+  "objectives": [
+    "Launch an AskOmics Interactive Tool",
+    "Integrate RNA-Seq and reference datasets into AskOmics",
+    "Create a complex query to get over-expressed genes, their location on the reference genome, and check if they are included in a known QTL",
+    "Complete the query to get the human homologs and their location using neXtProt database"
+  ],
+  "time_estimation": "2H",
+  "key_points": [
+    "AskOmics helps to integrate multiple data sources into an RDF database without prior knowledge in the Semantic Web",
+    "It can also be connected to external SPARQL endpoints, such as [neXtProt](https://www.nextprot.org)",
+    "AskOmics helps to perform complex SPARQL queries without knowing SPARQL, using a user-friendly interface"
+  ],
+  "contributors": [
+    {
+      "name": "Xavier Garnier",
+      "email": "xavier.garnier@irisa.fr",
+      "joined": "2020-07",
+      "id": "xgaia",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/xgaia.json"
+    },
+    {
+      "name": "Anthony Bretaudeau",
+      "email": "anthony.bretaudeau@inra.fr",
+      "twitter": "abretau",
+      "gitter": "abretaud",
+      "orcid": "0000-0003-0914-2470",
+      "joined": "2017-09",
+      "id": "abretaud",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/abretaud.json"
+    },
+    {
+      "name": "Anne Siegel",
+      "joined": "2020-07",
+      "id": "annesiegel",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/annesiegel.json"
+    },
+    {
+      "name": "Olivier Dameron",
+      "joined": "2020-07",
+      "id": "odameron",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/odameron.json"
+    },
+    {
+      "name": "Mateo Boudet",
+      "email": "mateo.boudet@inrae.fr",
+      "orcid": "0000-0002-7028-7620",
+      "joined": "2021-05",
+      "id": "mboudet",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/mboudet.json"
+    }
+  ],
+  "last_modified_at": "2021-05-21T15:23:44+00:00",
+  "url": "/topics/transcriptomics/tutorials/rna-seq-analysis-with-askomics-it/tutorial.html",
+  "topic_name": "transcriptomics",
+  "tutorial_name": "rna-seq-analysis-with-askomics-it",
+  "hands_on": true,
+  "slides": true,
+  "tools": [
+
+  ],
+  "tours": false,
+  "video": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": false
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//transcriptomics/tutorials/rna-seq-analysis-with-askomics-it/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//transcriptomics/tutorials/rna-seq-analysis-with-askomics-it/tutorial.json"
+  }
+}

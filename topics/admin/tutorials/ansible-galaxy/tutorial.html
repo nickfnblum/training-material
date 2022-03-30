@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ansible-galaxy/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ansible-galaxy/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ansible-galaxy/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ansible-galaxy/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ansible-galaxy/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ansible-galaxy/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ansible-galaxy/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ansible-galaxy/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ansible-galaxy/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ansible-galaxy/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/admin/tutorials/ansible-galaxy/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fadmin%2Ftutorials%2Fansible-galaxy%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-07-09 16:20:06 +0000",
+  "dateModified": "1970-01-01 00:33:42 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Galaxy Installation with Ansible",
   "interactivityType": "mixed",
@@ -312,7 +312,7 @@
   "name": "Hands-on for 'Galaxy Installation with Ansible' tutorial",
   "url": "https://training.galaxyproject.org//training-material/topics/admin/tutorials/ansible-galaxy/tutorial.html",
   "timeRequired": "PT2H30M",
-  "keywords": "deploying",
+  "keywords": "ansible, deploying, git-gat",
   "description": "The questions this  addresses are:\n - How does the Galaxy Ansible module work internally?\n - How can I install a Galaxy server with Ansible\n\n\\nThe objectives are:\n - Have an understanding of how Galaxy's Ansible roles are structured and interact with one another\n - Be able to use an Ansible playbook to install different flavors of Galaxy for different purposes\n\n",
   "inLanguage": {
     "@type": "Language",
@@ -340,20 +340,6 @@
       "name": "Ansible",
       "description": "Hands-on for 'Ansible' tutorial",
       "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/admin/tutorials/ansible/slides.html",
-      "name": "Ansible",
-      "description": "Slides for 'Ansible' tutorial",
-      "learningResourceType": "slides",
       "interactivityType": "expositive",
       "provider": {
         "@type": "Organization",
@@ -426,15 +412,33 @@
     <h1 data-toc-skip>Galaxy Installation with Ansible</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Avatar">Helena Rasche</a> <a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/natefoo" alt="Avatar">Nate Coraor</a> <a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/slugger70" alt="Avatar">Simon Gladman</a> <a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/shiltemann" alt="Avatar">Saskia Hiltemann</a> <a href="/training-material/hall-of-fame/nsoranzo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/nsoranzo" alt="Avatar">Nicola Soranzo</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
+
+
+<a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge contributor-natefoo"><img src="https://avatars.githubusercontent.com/natefoo?s=27" alt="Avatar">Nate Coraor</a>
+
+
+<a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge contributor-slugger70"><img src="https://avatars.githubusercontent.com/slugger70?s=27" alt="Avatar">Simon Gladman</a>
+
+
+<a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="https://avatars.githubusercontent.com/shiltemann?s=27" alt="Avatar">Saskia Hiltemann</a>
+
+
+<a href="/training-material/hall-of-fame/nsoranzo/" class="contributor-badge contributor-nsoranzo"><img src="https://avatars.githubusercontent.com/nsoranzo?s=27" alt="Avatar">Nicola Soranzo</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -560,6 +564,10 @@
                     
                         
                     
+                        
+                    
+                        
+                    
                 
             </ul>
         
@@ -600,16 +608,68 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/admin/tutorials/ansible-galaxy/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+  <li class="btn btn-default supporting_material">
+    <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Latest recordings of this tutorial in the GTN Video Library">
+        <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Recordings
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+
+        
+        
+        
+
+        <li>
+            <a class="dropdown-item" href="https://gallantries.github.io/video-library/videos/admin/ansible-galaxy/tutorial" title="View GTN Video Library for this Tutorial">
+                <i class="fas fa-video" aria-hidden="true"></i><span class="visually-hidden">video</span> Tutorial (June 2021)
+            </a>
+        </li>
+        
+        
+        
+    </ul>
+   </li>
+   
+
+
 
             
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jul 9, 2021 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Mar 15, 2022 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -621,6 +681,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="overview">Overview</h1>
 
 <p>This tutorial assumes you have some familiarity with <a href="https://www.ansible.com/resources/get-started">Ansible</a> and are comfortable with writing and running playbooks. Here we’ll see how to install a <span class="notranslate">Galaxy</span> server using an Ansible playbook. The <span class="notranslate">Galaxy</span> Project has decided on Ansible for all of its deployment recipes. For our project, Ansible is even more fitting due to its name:</p>
@@ -915,6 +977,9 @@ best practices and knowledge from previous admins codified for you.</p>
 +  version: 0.1.5
 </span>   
 </code></pre></div>      </div>
+
+      <!--SNIPPET-->
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-how-to-read-a-diff"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: How to read a Diff</h3>  <p>If you haven’t worked with diffs before, this can be something quite new or different.</p>  <p>If we have two files, let’s say a grocery list, in two files. We’ll call them ‘a’ and ‘b’.</p>  <blockquote class="code-2col">  <blockquote class="code-in">    <h3 data-toc-skip="" id="code-in-old"><i class="far fa-keyboard" aria-hidden="true"></i><span class="visually-hidden">code-in</span> Old</h3>    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cat old<br />🍎<br />🍐<br />🍊<br />🍋<br />🍒<br />🥑<br /></code></pre></div>    </div>  </blockquote>  <blockquote class="code-out">    <h3 data-toc-skip="" id="code-out-new"><i class="fas fa-laptop-code" aria-hidden="true"></i><span class="visually-hidden">code-out</span> New</h3>    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cat new<br />🍎<br />🍐<br />🍊<br />🍋<br />🍍<br />🥑<br /></code></pre></div>    </div>  </blockquote></blockquote>  <p>We can see that they have some different entries. We’ve removed 🍒 because they’re awful, and replaced them with an 🍍</p>  <p>Diff lets us compare these files</p>  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>diff old new<br />5c5<br />&lt; 🍒<br /><span class="nt">---</span><br /><span class="o">&gt;</span> 🍍<br /></code></pre></div></div>  <p>Here we see that ‘pears’ is only in a, and ‘ananas’ is only in b. But otherwise the files are identical.</p>  <p>There are a couple different formats to diffs, one is the ‘unified diff’</p>  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>diff <span class="nt">-U2</span> old new<br /><span class="nt">---</span> old	2022-02-16 14:06:19.697132568 +0100<br />+++ new	2022-02-16 14:06:36.340962616 +0100<br />@@ <span class="nt">-3</span>,4 +3,4 @@<br /> 🍊<br /> 🍋<br />-🍒<br />+🍍<br /> 🥑<br /></code></pre></div></div>  <p>This is basically what you see in the training materials which gives you a lot of context about the changes:</p>  <ul>  <li><code class="language-plaintext highlighter-rouge">--- old</code> is the ‘old’ file in our view</li>  <li><code class="language-plaintext highlighter-rouge">+++ new</code> is the ‘new’ file</li>  <li>@@ these lines tell us where the change occurs and how many lines are added or removed.</li>  <li>Lines starting with a - are removed from our ‘new’ file</li>  <li>Lines with a + have been added.</li></ul>  <p>So when you go to apply these diffs to your files in the training:</p>  <ol>  <li>Ignore the header</li>  <li>Remove lines starting with - from your file</li>  <li>Add lines starting with + to your file</li></ol>  <p>The other lines (🍊/🍋 and 🥑) above just provide “context”, they help you know where a change belongs in a file, but <strong>should not be edited</strong> when you’re making the above change. Given the above diff, you would find a line with a 🍒, and replace it with a 🍍</p>  <h4 id="added--removed-lines">Added &amp; Removed Lines</h4>  <p>Removals are very easy to spot, we just have removed lines</p>  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">---</span> old	2022-02-16 14:06:19.697132568 +0100<br />+++ new	2022-02-16 14:10:14.370722802 +0100<br />@@ <span class="nt">-4</span>,3 +4,2 @@<br /> 🍋<br /> 🍒<br />-🥑<br /></code></pre></div></div>  <p>And additions likewise are very easy, just add a new line, between the other lines in your file.</p>  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">---</span> old	2022-02-16 14:06:19.697132568 +0100<br />+++ new	2022-02-16 14:11:11.422135393 +0100<br />@@ <span class="nt">-1</span>,3 +1,4 @@<br /> 🍎<br />+🍍<br /> 🍐<br /> 🍊<br /></code></pre></div></div>  <h4 id="completely-new-files">Completely new files</h4>  <p>Completely new files look a bit different, there the “old” file is <code class="language-plaintext highlighter-rouge">/dev/null</code>, the empty file in a Linux machine.</p>  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>diff <span class="nt">-U2</span> /dev/null old<br /><span class="nt">---</span> /dev/null	2022-02-15 11:47:16.100000270 +0100<br />+++ old	2022-02-16 14:06:19.697132568 +0100<br />@@ <span class="nt">-0</span>,0 +1,6 @@<br />+🍎<br />+🍐<br />+🍊<br />+🍋<br />+🍒<br />+🥑<br /></code></pre></div></div>  <p>And removed files are similar, except with the the new file being /dev/null</p>  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">---</span> old	2022-02-16 14:06:19.697132568 +0100<br />+++ /dev/null	2022-02-15 11:47:16.100000270 +0100<br />@@ <span class="nt">-1</span>,6 +0,0 @@<br />-🍎<br />-🍐<br />-🍊<br />-🍋<br />-🍒<br />-🥑<br /></code></pre></div></div></blockquote>
 
       <blockquote class="details">
         <h3 id="details-what-do-each-of-these-roles-do"><i class="fas fa-info-circle" aria-hidden="true"></i><span class="visually-hidden">details</span> What do each of these roles do?</h3>
@@ -1281,6 +1346,14 @@ A: They  are correlated (because generally new <span class="notranslate">Galaxy<
       </blockquote>
 
       <blockquote class="comment">
+        <h3 id="comment-error-postgresql_version-is-version_compare93--failed"><i class="far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden">comment</span> Error: <code class="language-plaintext highlighter-rouge">postgresql_version is version_compare('9.3', '&gt;=')' failed</code></h3>
+        <p>You might see an error like this, if you’re running with <code class="language-plaintext highlighter-rouge">--check</code> mode. Unfortunately here <code class="language-plaintext highlighter-rouge">--check</code> mode meets real life: not all modules support it because some rely on running command line tools to obtain version numbers, something that cannot be mocked with check mode. You can solve this by running it without <code class="language-plaintext highlighter-rouge">--check</code>.</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fatal: [gat-34.us.<span class="notranslate">galaxy</span>.training]: FAILED! =&gt; {"msg": "The conditional check 'postgresql_version is version_compare('9.3', '&gt;=')' failed. The error was: Input version value cannot be empty\n\nThe error appears to be in '/home/ubuntu/<span class="notranslate">galaxy</span>/roles/<span class="notranslate">galaxy</span>project.postgresql/tasks/main.yml': line 42, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n# etc.). So check for a match first and then add if there's no match.\n- name: Check for conf.d include in postgresql.conf\n ^ here\n"}
+</code></pre></div>        </div>
+      </blockquote>
+
+      <blockquote class="comment">
         <h3 id="comment-comment-when-running-ansible"><i class="far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden">comment</span> Comment: When running Ansible</h3>
         <p>Always pay close attention to tasks reported as <strong>changed</strong> and ensure that the changes were expected!</p>
       </blockquote>
@@ -1510,8 +1583,8 @@ We’ll start by assuming you’re running the command</p>
           </tr>
           <tr>
             <td><code class="language-plaintext highlighter-rouge"><span class="notranslate">galaxy</span>_commit_id</code></td>
-            <td><code class="language-plaintext highlighter-rouge">release_20.09</code></td>
-            <td>The git reference to check out, which in this case is the branch for <span class="notranslate">Galaxy</span> Release 20.09</td>
+            <td><code class="language-plaintext highlighter-rouge">release_22.01</code></td>
+            <td>The git reference to check out, which in this case is the branch for <span class="notranslate">Galaxy</span> Release 22.01</td>
           </tr>
           <tr>
             <td><code class="language-plaintext highlighter-rouge"><span class="notranslate">galaxy</span>_force_checkout</code></td>
@@ -1538,7 +1611,7 @@ We’ll start by assuming you’re running the command</p>
 
       <blockquote class="tip">
         <h3 id="tip-different-galaxy-releases"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Different <span class="notranslate">Galaxy</span> Releases!</h3>
-        <p>In the time between this tutorial was last updated (2021-07-09), and when you are now reading it, one or more new releases of <span class="notranslate">Galaxy</span> may have occured.</p>
+        <p>In the time between this tutorial was last updated (2022-03-15), and when you are now reading it, one or more new releases of <span class="notranslate">Galaxy</span> may have occured.</p>
 
         <p>If you wish to use a different version of <span class="notranslate">Galaxy</span> than the one listed, you can do so, but there is no guarantee this tutorial will work without modifications.</p>
 
@@ -1559,13 +1632,18 @@ We’ll start by assuming you’re running the command</p>
 +<span class="notranslate">galaxy</span>_layout: root-dir
 +<span class="notranslate">galaxy</span>_root: /srv/<span class="notranslate">galaxy</span>
 +<span class="notranslate">galaxy</span>_user: {name: <span class="notranslate">galaxy</span>, shell: /bin/bash}
-+<span class="notranslate">galaxy</span>_commit_id: release_20.09
++<span class="notranslate">galaxy</span>_commit_id: release_22.01
 +<span class="notranslate">galaxy</span>_force_checkout: true
 +miniconda_prefix: "{{ <span class="notranslate">galaxy</span>_tool_dependency_dir }}/_conda"
 +miniconda_version: 4.7.12
 +miniconda_manage_dependencies: false
 </span>   
 </code></pre></div>      </div>
+
+      <blockquote class="tip">
+        <h3 id="tip-tip-following-this-training-outside-of-a-gat-course"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Tip: Following this training outside of a GAT course?</h3>
+        <p>Consider updating the <span class="notranslate">Galaxy</span> Commit ID to the latest version of <span class="notranslate">Galaxy</span> available, this will probably give better results (given that dependencies are always updating) than using a potentially outdated version.</p>
+      </blockquote>
     </li>
     <li>
       <p>Again edit the group variables file and add a variable for <code class="language-plaintext highlighter-rouge"><span class="notranslate">galaxy</span>_config</code>. It will be a hash with one key, <code class="language-plaintext highlighter-rouge"><span class="notranslate">galaxy</span></code> which will also be a hash. Inside here you can place all of your <span class="notranslate">Galaxy</span> configuration.</p>
@@ -2765,15 +2843,15 @@ In a training setting there is no need to request certificates that will be trus
 
   <p>You will probably see an error like this, when trying to access your <span class="notranslate">Galaxy</span>:</p>
 
-  <figure id="figure-1"><img src="../../images/ssl-warning0.png" alt="Browser warning for invalid certificate" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> A browser warning for an invalid certificate. But because we requested a staging certificate, we expected this.</figcaption></figure>
+  <figure id="figure-1"><img src="../../images/ssl-warning0.png" alt="Browser warning for invalid certificate. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> A browser warning for an invalid certificate. But because we requested a staging certificate, we expected this.</figcaption></figure>
 
   <p>If you view the details of the certificate, you can see that it is trusted, but by the Fake LE Intermediate, which browsers do not trust.</p>
 
-  <figure id="figure-2"><img src="../../images/ssl-warning1.png" alt="Certificate information" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Investigating the certificate a little, we can see that it was signed, just untrusted.</figcaption></figure>
+  <figure id="figure-2"><img src="../../images/ssl-warning1.png" alt="Certificate information. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> Investigating the certificate a little, we can see that it was signed, just untrusted.</figcaption></figure>
 
   <p>Clicking through the warnings (with full knowledge of why) we will see our secured <span class="notranslate">Galaxy</span>:</p>
 
-  <figure id="figure-3"><img src="../../images/working-galaxy.png" alt="The finally working Galaxy" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> <span class="notranslate">Galaxy</span> is alive!</figcaption></figure>
+  <figure id="figure-3"><img src="../../images/working-galaxy.png" alt="The finally working Galaxy. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> <span class="notranslate">Galaxy</span> is alive!</figcaption></figure>
 
 </blockquote>
 
@@ -3168,7 +3246,7 @@ changed: [gat-88.training.<span class="notranslate">galaxy</span>project.eu]
 
 <h2 id="keeping-galaxy-updated">Keeping <span class="notranslate">Galaxy</span> Updated</h2>
 
-<p>If you have set your <code class="language-plaintext highlighter-rouge"><span class="notranslate">galaxy</span>_commit_id</code> group variable to a branch name like <code class="language-plaintext highlighter-rouge">release_20.09</code>, then all you need to do to keep <span class="notranslate">Galaxy</span> up to date (e.g. for security and bug fixes) is to run the playbook regularly. The <code class="language-plaintext highlighter-rouge">git</code> module in Ansible checks if you are on the latest commit of a given branch, and will update the clone of the repository if it is not.</p>
+<p>If you have set your <code class="language-plaintext highlighter-rouge"><span class="notranslate">galaxy</span>_commit_id</code> group variable to a branch name like <code class="language-plaintext highlighter-rouge">release_22.01</code>, then all you need to do to keep <span class="notranslate">Galaxy</span> up to date (e.g. for security and bug fixes) is to run the playbook regularly. The <code class="language-plaintext highlighter-rouge">git</code> module in Ansible checks if you are on the latest commit of a given branch, and will update the clone of the repository if it is not.</p>
 
 <h2 id="upgrading-galaxy-optional">Upgrading <span class="notranslate">Galaxy</span> (Optional)</h2>
 
@@ -3281,7 +3359,7 @@ Additionally you can automatically send failing job error reports, even if users
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/admin/faqs/">FAQ page for the Galaxy Server administration topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/admin/faqs/">FAQ page for the Galaxy Server administration topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -3292,7 +3370,9 @@ Additionally you can automatically send failing job error reports, even if users
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
@@ -3327,7 +3407,7 @@ Additionally you can automatically send failing job error reports, even if users
                 <h1>Citing this Tutorial</h1>
                 <p>
                     <ol>
-                        <li id="citation-text">Helena Rasche, Nate Coraor, Simon Gladman, Saskia Hiltemann, Nicola Soranzo, 2021 <b>Galaxy Installation with Ansible (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/admin/tutorials/ansible-galaxy/tutorial.html">https://training.galaxyproject.org/training-material/topics/admin/tutorials/ansible-galaxy/tutorial.html</a> Online; accessed TODAY
+                        <li id="citation-text">Helena Rasche, Nate Coraor, Simon Gladman, Saskia Hiltemann, Nicola Soranzo, 2022 <b>Galaxy Installation with Ansible (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/admin/tutorials/ansible-galaxy/tutorial.html">https://training.galaxyproject.org/training-material/topics/admin/tutorials/ansible-galaxy/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
@@ -3344,9 +3424,9 @@ Additionally you can automatically send failing job error reports, even if users
 <code id="citation-code">@misc{admin-ansible-galaxy,
 author = "Helena Rasche and Nate Coraor and Simon Gladman and Saskia Hiltemann and Nicola Soranzo",
 title = "Galaxy Installation with Ansible (Galaxy Training Materials)",
-year = "2021",
-month = "07",
-day = "09"
+year = "2022",
+month = "03",
+day = "15"
 url = "\url{https://training.galaxyproject.org/training-material/topics/admin/tutorials/ansible-galaxy/tutorial.html}",
 note = "[Online; accessed TODAY]"
 }

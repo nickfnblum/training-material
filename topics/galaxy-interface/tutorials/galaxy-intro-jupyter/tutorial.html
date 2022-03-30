@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/galaxy-intro-jupyter/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/galaxy-intro-jupyter/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/galaxy-intro-jupyter/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/galaxy-intro-jupyter/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/galaxy-intro-jupyter/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/galaxy-intro-jupyter/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/galaxy-intro-jupyter/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/galaxy-intro-jupyter/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/galaxy-intro-jupyter/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/galaxy-intro-jupyter/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/galaxy-interface/tutorials/galaxy-intro-jupyter/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fgalaxy-interface%2Ftutorials%2Fgalaxy-intro-jupyter%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2020-06-15 09:16:12 +0000",
+  "dateModified": "1970-01-01 00:33:40 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Use Jupyter notebooks in Galaxy",
   "interactivityType": "mixed",
@@ -348,15 +348,21 @@
     <h1 data-toc-skip>Use Jupyter notebooks in Galaxy</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/delphine-l/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/delphine-l" alt="Avatar">Delphine Lariviere</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/delphine-l/" class="contributor-badge contributor-delphine-l"><img src="https://avatars.githubusercontent.com/delphine-l?s=27" alt="Avatar">Delphine Lariviere</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -393,7 +399,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://zenodo.org/record/1185122/files/GSM461176_untreat_single.counts">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/1185122/files/GSM461176_untreat_single.counts">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -405,8 +411,35 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/galaxy-interface/tutorials/galaxy-intro-jupyter/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
         </ul>
@@ -414,7 +447,9 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jun 15, 2020 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -426,6 +461,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>In this tutorial we are going to explore the basics of using Jupyter in <span class="notranslate">Galaxy</span>. We will use a <span class="notranslate">RNA</span> seq count file as a test set to get a hang of the Jupyter notebooks.
@@ -457,7 +494,7 @@ Select a file ending with <code class="language-plaintext highlighter-rouge">.co
 
 <p>These notebooks allow you to replace any in-house script you might need to complete your analysis. You don’t need to move your data out of <span class="notranslate">Galaxy</span>. You can describe each step of your analysis in the markdown cells for an easy understanding of the processes, and save it in your history for sharing and reproducibility. In addition, thanks to <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">Jupyter magic commands</a>, you can use several different languages in a single notebook.</p>
 
-<p><img src="../../images/notebook_overview.png" alt="Jupyter notebook" loading="lazy" /></p>
+<p><img src="../../images/notebook_overview.png" alt="Jupyter notebook. " loading="lazy" /></p>
 
 <p>You can find the complete manual for Jupyter commands <a href="http://jupyter-notebook.readthedocs.io/en/stable/">here</a>.</p>
 
@@ -472,7 +509,7 @@ Select a file ending with <code class="language-plaintext highlighter-rouge">.co
   <ol>
     <li>Expand the dataset in you history by clicking on its name.</li>
     <li>Click on the visualization icon <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-barchart</span> of the dataset <code class="language-plaintext highlighter-rouge">[...].count</code>.</li>
-    <li>Select the Jupyter visualization in the list. <img src="../../images/visu_list.png" alt="Visualisation list" loading="lazy" /></li>
+    <li>Select the Jupyter visualization in the list. <img src="../../images/visu_list.png" alt="Visualisation list. " loading="lazy" /></li>
   </ol>
 
 </blockquote>
@@ -545,7 +582,7 @@ Select a file ending with <code class="language-plaintext highlighter-rouge">.co
       </ul>
     </li>
     <li>Draw the distribution plot of the second column of our dataset with the command <code class="language-plaintext highlighter-rouge">sns.distplot(dataframe[1]);</code></li>
-    <li>Show the figure in the Jupyter notebook with <code class="language-plaintext highlighter-rouge">display(fig)</code> <img src="../../images/jupyter_plot.png" alt="Distribution plot in Jupyter" loading="lazy" /></li>
+    <li>Show the figure in the Jupyter notebook with <code class="language-plaintext highlighter-rouge">display(fig)</code> <img src="../../images/jupyter_plot.png" alt="Distribution plot in Jupyter. " loading="lazy" /></li>
   </ol>
 
 </blockquote>
@@ -569,7 +606,7 @@ If you want to save a file you generated in your notebook, use the <code class="
 
 <p>Once you are done with you analysis or anytime during the editing process, you can save the notebook into your history by clicking on the <em>Save</em> icon.</p>
 
-<p><img src="../../images/save_notebook.png" alt="Save a Jupyter notebook" loading="lazy" /></p>
+<p><img src="../../images/save_notebook.png" alt="Save a Jupyter notebook. " loading="lazy" /></p>
 
 <p>This will create a new notebook <code class="language-plaintext highlighter-rouge">.pynb</code> file in your history every time you click on this icon. You can later re-open it to continue to use it as described in the <a href="#open-a-notebook">open a notebook section</a></p>
 
@@ -603,7 +640,7 @@ If you want to save a file you generated in your notebook, use the <code class="
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/galaxy-interface/faqs/">FAQ page for the Using Galaxy and Managing your Data topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/galaxy-interface/faqs/">FAQ page for the Using Galaxy and Managing your Data topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -614,7 +651,9 @@ If you want to save a file you generated in your notebook, use the <code class="
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />

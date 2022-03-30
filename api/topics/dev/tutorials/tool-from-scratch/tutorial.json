@@ -1,0 +1,71 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Creating Galaxy tools from Conda Through Deployment",
+  "zenodo_link": "",
+  "questions": [
+    "How do you create a conda package used as a dependency in a Galaxy tool wrapper?",
+    "How do you create a Galaxy tool wrapper and all of its requirements?",
+    "How do you test a Galaxy tool wrapper after it's written?",
+    "How do you deploy a Galaxy tool wrapper?",
+    "How to do you make a Galaxy tool wrapper publicly available?"
+  ],
+  "objectives": [
+    "Learn how to make and deploy a conda package",
+    "Understand how to write a Galaxy tool wrapper",
+    "Be able to use a tool wrapper locally",
+    "Be able to test the tool wrapper",
+    "Learn how to add tools to the Galaxy toolshed and make them available to any user"
+  ],
+  "time_estimation": "3H",
+  "key_points": [
+    "Galaxy tools are made in 3 parts -- Conda, tool wrappers, and planemo",
+    "Anyone can write and deploy a tool wrapper!"
+  ],
+  "subtopic": "tooldev",
+  "contributors": [
+    {
+      "name": "Alex Ostrovsky",
+      "email": "a.ostrovsky@mac.com",
+      "joined": "2019-06",
+      "id": "astrovsky01",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/astrovsky01.json"
+    },
+    {
+      "name": "Dave B.",
+      "joined": "2021-06",
+      "id": "davebx",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/davebx.json"
+    },
+    {
+      "name": "Matthias Bernt",
+      "joined": "2017-09",
+      "id": "bernt-matthias",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/bernt-matthias.json"
+    }
+  ],
+  "last_modified_at": "2022-03-24T08:43:07+00:00",
+  "url": "/topics/dev/tutorials/tool-from-scratch/tutorial.html",
+  "topic_name": "dev",
+  "tutorial_name": "tool-from-scratch",
+  "hands_on": true,
+  "slides": false,
+  "tools": [
+
+  ],
+  "tours": false,
+  "video": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": false
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/tool-from-scratch/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/tool-from-scratch/tutorial.json"
+  }
+}

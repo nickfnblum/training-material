@@ -1,0 +1,83 @@
+{
+  "layout": "tutorial_hands_on",
+  "title": "Contributing to BioBlend as a developer",
+  "questions": [
+    "How to get started making contributions to BioBlend?"
+  ],
+  "objectives": [
+    "Learn the basics behind BioBlend and the Galaxy API from a developer perspective.",
+    "Learn how to implement a simple method in BioBlend.",
+    "Learn how to run the BioBlend test suite."
+  ],
+  "requirements": [
+    {
+      "title": "Basic command line knowledge",
+      "type": "none"
+    },
+    {
+      "title": "Familiarity with git and access to a GitHub account",
+      "type": "none"
+    },
+    {
+      "title": "Familiarity with the Python programming language",
+      "type": "none"
+    },
+    {
+      "title": "Familiarity with HTTP methods and JavaScript Object Notation (JSON)",
+      "type": "none"
+    }
+  ],
+  "time_estimation": "3h",
+  "key_points": [
+    "BioBlend is a Python library that provides methods for easy interaction with the Galaxy API.",
+    "Implementing BioBlend methods is generally quite an easy process, making it well suited to beginners and a viable stepping stone into Galaxy development."
+  ],
+  "subtopic": "api",
+  "contributors": [
+    {
+      "name": "Erik Schill",
+      "joined": "2021-05",
+      "id": "rikeshi",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/rikeshi.json"
+    },
+    {
+      "name": "Simon Bray",
+      "joined": "2019-05",
+      "id": "simonbray",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/simonbray.json"
+    }
+  ],
+  "abbreviations": {
+    "LDA": "Library Dataset Association",
+    "HDA": "History Dataset Association",
+    "LDCA": "Library Dataset Collection Association",
+    "HDCA": "History Dataset Collection Association",
+    "API": "Application Programming Interface",
+    "PR": "Pull Request"
+  },
+  "last_modified_at": "2021-12-15T15:59:20+00:00",
+  "url": "/topics/dev/tutorials/bioblend-dev/tutorial.html",
+  "topic_name": "dev",
+  "tutorial_name": "bioblend-dev",
+  "hands_on": true,
+  "slides": false,
+  "tools": [
+
+  ],
+  "tours": false,
+  "video": false,
+  "translations": {
+    "tutorial": [
+
+    ],
+    "slides": [
+
+    ],
+    "video": false
+  },
+  "type": "tutorial",
+  "urls": {
+    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/bioblend-dev/tutorial.json",
+    "slides": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/bioblend-dev/tutorial.json"
+  }
+}

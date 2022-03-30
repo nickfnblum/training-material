@@ -49,6 +49,41 @@
                         </a>
                         
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
+                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                              <strong class="dropdown-header">Automatic Translations</strong>
+            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_lib_OSW/tutorial.html&edit-text=&act=url">
+                            Français
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_lib_OSW/tutorial.html&edit-text=&act=url">
+                            日本語
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_lib_OSW/tutorial.html&edit-text=&act=url">
+                            Español
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_lib_OSW/tutorial.html&edit-text=&act=url">
+                            Português
+                            </a>
+                            
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_lib_OSW/tutorial.html&edit-text=&act=url">
+                            العربية
+                            </a>
+                            
+                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_lib_OSW/tutorial.html&edit-text=&act=url" title="">
+                            And more!
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
         <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
@@ -107,41 +142,6 @@
 
         <div class="dropdown-item">
             <div>
-                <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Translate this page
-            </div>
-
-            <div id="lang-selector">
-                
-                <strong>Automatic Translations</strong>
-
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_lib_OSW/tutorial.html&edit-text=&act=url">
-                Français
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_lib_OSW/tutorial.html&edit-text=&act=url">
-                日本語
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_lib_OSW/tutorial.html&edit-text=&act=url">
-                Español
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_lib_OSW/tutorial.html&edit-text=&act=url">
-                Português
-                </a>
-                
-<a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/proteomics/tutorials/DIA_lib_OSW/tutorial.html&edit-text=&act=url">
-                العربية
-                </a>
-                
-                <a class="btn btn-info" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Fproteomics%2Ftutorials%2FDIA_lib_OSW%2Ftutorial.html&edit-text=&act=url" title="">
-                And more!
-                </a>
-            </div>
-        </div>
-
-        <div class="dropdown-item">
-            <div>
                 <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
             </div>
 
@@ -196,7 +196,7 @@
 
                     <!-- Search bar-->
                     <li class="nav-item">
-                      <div id="navbarSupportedContent">
+                      <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
                         <form class="form-inline mr-auto" method="GET" action="/training-material/search">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "2021-08-06 18:10:40 +0000",
+  "dateModified": "1970-01-01 00:33:41 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Library Generation for DIA Analysis",
   "interactivityType": "mixed",
@@ -379,15 +379,24 @@
     <h1 data-toc-skip>Library Generation for DIA Analysis</h1>
     
 
-    <div class="contributors-line">Authors: 
 
- <a href="/training-material/hall-of-fame/matthias313/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/matthias313" alt="Avatar">Matthias Fahrner</a> <a href="/training-material/hall-of-fame/foellmelanie/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/foellmelanie" alt="Avatar">Melanie Föll</a>
+    <div class="contributors-line">Authors: 
+<a href="/training-material/hall-of-fame/matthias313/" class="contributor-badge contributor-matthias313"><img src="https://avatars.githubusercontent.com/matthias313?s=27" alt="Avatar">Matthias Fahrner</a>
+
+
+<a href="/training-material/hall-of-fame/foellmelanie/" class="contributor-badge contributor-foellmelanie"><img src="https://avatars.githubusercontent.com/foellmelanie?s=27" alt="Avatar">Melanie Föll</a>
+
+
+<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
 </div>
 
+
     <blockquote class="overview">
         <h3>Overview</h3>
+        
         <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
         
@@ -463,7 +472,7 @@
                 <li class="btn btn-default supporting_material">
 
 
-<a class="topic-icon" href="https://zenodo.org/record/4293493">
+<a class="topic-icon" title="Zenodo datasets used in this tutorial" href="https://zenodo.org/record/4293493">
     <i class="far fa-copy" aria-hidden="true"></i> Datasets
 </a>
 
@@ -484,8 +493,35 @@
             
 
             
+
             
             
+            
+                 <li class="btn btn-default supporting_material">
+    <a class="topic-icon" href="/training-material/topics/proteomics/tutorials/DIA_lib_OSW/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+        <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
+    </a>
+  </li>
+
+
+            
+
+            <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
+            
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
             
                 <li class="btn btn-default supporting_material">
@@ -622,6 +658,8 @@
         
     
         
+    
+        
         <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
             Street Science
         </a>
@@ -646,6 +684,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
+            UseGalaxy.org.au
+        </a>
+        
     
         
     
@@ -665,7 +707,9 @@
 
         <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Aug 6, 2021 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+            
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
+            
             <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
         </div>
     </blockquote>
@@ -677,6 +721,8 @@
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
+                 
+
                 <h1 class="no_toc" id="introduction">Introduction</h1>
 
 <p>The proteome refers to the entirety of proteins in a biological system (e.g cell, tissue, organism). Proteomics is the large-scale experimental analysis of proteins and proteomes, most often performed by mass spectrometry that enables great sensitivity and throughput. Especially for complex protein mixtures, bottom-up mass spectrometry is the standard approach. In bottom-up proteomics, proteins are digested with a specific protease into peptides and the measured peptides are in silico reassembled into the corresponding proteins. Inside the mass spectrometer, not only the peptides are measured (MS1 level), but the peptides are also fragmented into smaller peptides which are measured again (MS2 level). This is referred to as tandem-mass spectrometry (MS/MS). Identification of peptides is performed by peptide spectrum matching of the theoretical spectra generated from the input protein database (fasta file) with the measured MS2 spectra. Peptide quantification is most often performed by measuring the area under the curve of the MS1 level peptide peaks, but special techniques such as TMT and DIA allow to quantify peptides on MS2 level. Nowadays, bottom-up tandem-mass spectrometry approaches allow for the identification and quantification of several thousand proteins.</p>
@@ -686,12 +732,12 @@
 <p>Another more recently developed method is the so called data independent acquisition (DIA). However due to some unique characteristics of this acquisition method it requieres spectral libraries, which contain the peptide sequences as well as their respective fragment spectrum (MS2) information.
 Here we will use DDA data from the same samples to build a spectral library which can than be used for the identification of peptides in data independent acquisition (DIA) data from the same samples using e.g. OpenSwath<span class="notranslate">Workflow</span> <a href="/training-material/topics/proteomics/tutorials/DIA_Analysis_OSW/tutorial.html">OpenSwath<span class="notranslate">workflow</span> tutorial</a>.</p>
 
-<figure id="figure-1"><img src="../../images/DIA_lib_gen_basic.png" alt="DDA_lib_gen" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Labelfree proteomics using liquid chromatography tandem-mass spectrometry (LC-MS/MS). Principles of data dependent acquisition (DDA).</figcaption></figure>
+<figure id="figure-1"><img src="../../images/DIA_lib_gen_basic.png" alt="DDA_lib_gen. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> Labelfree proteomics using liquid chromatography tandem-mass spectrometry (LC-MS/MS). Principles of data dependent acquisition (DDA).</figcaption></figure>
 
 <p>High quality spectral libraries can be generated by fractionation and separate measurment of a representative sample or mixture for a cohort. During the analysis the peptide and protein identifications of all fractions can than be combined into comprehensive spectral libraries. Here the spectral libraries tend to be relativly large offering great sensitivity (even to low abundant peptides), but also contain peptides which are only observable due to the prior fractionation.
 Another way of generating spectral libraries is by measuring the same samples using DDA as well as using DIA. Here the DDA results will be analyzed and sample specific spectral library is generated which can than be used for the analysis of the DIA data. The resulting spectral libraries are often smaller and contain only peptides which are observable in complex and non-fractionated samples.</p>
 
-<p>A plethora of software solutions were developed for the analysis of DDA proteomics data. MaxQuant is one of the most popular proteomics softwares because it is an easy to use and free software that offers functionalities for nearly all kinds of proteomics data analysis challenges <a class="citation" href="#Cox2008">Cox and Mann 2008</a>. Mass spectrometry raw data is normally obtained in a vendor specific, proprietary file format. MaxQuant can directly take those raw files as input. For peptide identification MaxQuant uses a search engine called “Andromeda”.</p>
+<p>A plethora of software solutions were developed for the analysis of DDA proteomics data. MaxQuant is one of the most popular proteomics softwares because it is an easy to use and free software that offers functionalities for nearly all kinds of proteomics data analysis challenges <span class="citation"><a href="#Cox2008">Cox and Mann 2008</a></span>. Mass spectrometry raw data is normally obtained in a vendor specific, proprietary file format. MaxQuant can directly take those raw files as input. For peptide identification MaxQuant uses a search engine called “Andromeda”.</p>
 
 <p>The dataset in this training consists of different Spike-in mixtures of stable amounts of human peptides and different amounts of Ecoli peptides. Each sample reflects a non-fractionated MS measurement (DDA) of different Spike-in ratios. To faciliate the analysis and directly combine the identifications of all measurements, we will define the different measurements as fractions of one sample, as it would be the case for e.g. high pH, SCX or HILIC fractionated samples.</p>
 
@@ -740,7 +786,7 @@ https://zenodo.org/record/4293493/files/Sample5.raw
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li>    <p><strong>Close</strong> the window</p>  </li>  <li>By default, <span class="notranslate">Galaxy</span> uses the URL as the name, so rename the files with a more useful name.</li></ul></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-importing-via-links"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Importing via links</h3>  <ul>  <li>Copy the link location</li>  <li>    <p>Open the <span class="notranslate">Galaxy</span> Upload Manager (<i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-upload</span> on the top-right of the tool panel)</p>  </li>  <li>Select <strong>Paste/Fetch Data</strong></li>  <li>    <p>Paste the link into the text field</p>  </li>  <li>    <p>Press <strong>Start</strong></p>  </li>  <li><strong>Close</strong> the window</li></ul></blockquote>
     </li>
     <li>
       <p>Once the files are green, rename the experimental design file in ‘HEK_Ecoli_exp_design’, the iRT transition file in ‘iRTassays’ and all of the the raw files in ‘Sample1.raw’, ‘Sample2.raw’, ‘Sample3.raw’, ‘Sample4.raw’ and ‘Sample5.raw’</p>
@@ -838,7 +884,7 @@ https://zenodo.org/record/4293493/files/MaxQuant_mqpar.xml
 
 <p>To get a first overview of the MaxQuant results, the PTXQC report is helpful. Click on the <i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-eye</span> eye of the PTXQC pdf file to open it in <span class="notranslate">Galaxy</span>. Screening through the different plots might already give you a hint on how many peptides and proteins were identified as well as some of the data quality.</p>
 
-<p>The PTXQC software (<a class="citation" href="#Bielow2015">Bielow <i>et al.</i> 2015</a>) was built to enable direct proteomcs quality control from MaxQuant result files. This quality control can be directly used in the <span class="notranslate">Galaxy</span> MaxQuant wrapper by setting <em>“Generate PTXQC”</em> to <code class="language-plaintext highlighter-rouge">yes</code>. This will generate a pdf file with multiple quality control plots. Be aware that the cutoffs set in PTXQC might not be applicable to your experiment and mass spectrometer type and therefore “under performing” and “fail” do not necessarily mean that the quality is poor.</p>
+<p>The PTXQC software (<span class="citation"><a href="#Bielow2015">Bielow <i>et al.</i> 2015</a></span>) was built to enable direct proteomcs quality control from MaxQuant result files. This quality control can be directly used in the <span class="notranslate">Galaxy</span> MaxQuant wrapper by setting <em>“Generate PTXQC”</em> to <code class="language-plaintext highlighter-rouge">yes</code>. This will generate a pdf file with multiple quality control plots. Be aware that the cutoffs set in PTXQC might not be applicable to your experiment and mass spectrometer type and therefore “under performing” and “fail” do not necessarily mean that the quality is poor.</p>
 
 <blockquote class="question">
   <h3 id="question-questions"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
@@ -1090,11 +1136,11 @@ Example: By applying an FDR of 1 % we only allow for e.g only 1 such decoy trans
 
 <h1 class="no_toc" id="conclusion">Conclusion</h1>
 
-<figure id="figure-2"><img src="../../images/DIA_lib_gen_sum.png" alt="DDA_lib_gen_pipe" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> All-in one <span class="notranslate">workflow</span> for DIA analysis in <span class="notranslate">Galaxy</span>. The generation of a spectral library is highlighted in red.</figcaption></figure>
+<figure id="figure-2"><img src="../../images/DIA_lib_gen_sum.png" alt="DDA_lib_gen_pipe. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 2:</span> All-in one <span class="notranslate">workflow</span> for DIA analysis in <span class="notranslate">Galaxy</span>. The generation of a spectral library is highlighted in red.</figcaption></figure>
 
 <p>Using data dependent acquisiton (DDA) mass spectrometry data we generated a spectral library which can be used for the analysis of data independent acquisition (DIA) data. The quality and content of the spectral library is crucial for the following DIA data analysis. Thus, in some analysis it might be beneficial or even necessary to use slightly adjusted spectral libraries, containing e.g. semi-tryptic peptides (see enzyme in <strong>MaxQuant</strong>), non-unique peptides (skip filtering) or longer peptides (higher missed cleavages).</p>
 
-<figure id="figure-3"><img src="../../images/DIA_lib_gen_workflow.png" alt="DDA_lib_gen_galaxy" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> <span class="notranslate">Galaxy</span> worfklow containing all necessary steps for the genration of a spectral library.</figcaption></figure>
+<figure id="figure-3"><img src="../../images/DIA_lib_gen_workflow.png" alt="DDA_lib_gen_galaxy. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 3:</span> <span class="notranslate">Galaxy</span> worfklow containing all necessary steps for the genration of a spectral library.</figcaption></figure>
 
 
 
@@ -1114,7 +1160,7 @@ Example: By applying an FDR of 1 % we only allow for e.g only 1 such decoy trans
                 
 
                 <h1>Frequently Asked Questions</h1>
-                Have questions about this tutorial? Check out the  <a href="/training-material/topics/proteomics/faqs/">FAQ page for the Proteomics topic</a> to see if your question is listed there.
+                Have questions about this tutorial? Check out the <a href="faqs/">tutorial FAQ page</a> or the  <a href="/training-material/topics/proteomics/faqs/">FAQ page for the Proteomics topic</a> to see if your question is listed there.
                 If not, please ask your question on the <a href="https://gitter.im/Galaxy-Training-Network/Lobby">GTN Gitter Channel</a> or the
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
@@ -1125,34 +1171,16 @@ Example: By applying an FDR of 1 % we only allow for e.g only 1 such decoy trans
 
                 
                 <h1 id="bibliography">References</h1>
-                <ol class="bibliography"><li><span id="Cox2008">Cox, J., and M. Mann, 2008 <b>MaxQuant enables high peptide identification rates,  individualized p.p.b.-range mass accuracies and proteome-wide protein quantification</b>. Nature Biotechnology 26: 1367–1372.</span>
-    
-    
-    <a href="https://doi.org/10.1038/nbt.1511">10.1038/nbt.1511</a>
-    
-    
-      <!-- prevent duplicate doi links -->
-      
-    
-
-</li>
-<li><span id="Bielow2015">Bielow, C., G. Mastrobuoni, and S. Kempa, 2015 <b>Proteomics Quality Control: Quality Control Software for MaxQuant Results</b>. Journal of Proteome Research 15: 777–787.</span>
-    
-    
-    <a href="https://doi.org/10.1021/acs.jproteome.5b00780">10.1021/acs.jproteome.5b00780</a>
-    
-    
-      <!-- prevent duplicate doi links -->
-      
-    
-
-</li></ol>
+                <ol class="bibliography"><li id="Cox2008">Cox, J., and M. Mann, 2008 <b>MaxQuant enables high peptide identification rates,  individualized p.p.b.-range mass accuracies and proteome-wide protein quantification</b>. Nature Biotechnology 26: 1367–1372. <a href="https://doi.org/10.1038/nbt.1511">10.1038/nbt.1511</a></li>
+<li id="Bielow2015">Bielow, C., G. Mastrobuoni, and S. Kempa, 2015 <b>Proteomics Quality Control: Quality Control Software for MaxQuant Results</b>. Journal of Proteome Research 15: 777–787. <a href="https://doi.org/10.1021/acs.jproteome.5b00780">10.1021/acs.jproteome.5b00780</a></li></ol>
                 
 
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
+                </p>
 
                 <div id="feedback-button">
                     <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
