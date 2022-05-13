@@ -191,7 +191,7 @@
           "joined": "2020-09",
           "github": false,
           "funder": true,
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n![eu flag with the text: with the support of the erasmus programme of the european union](https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg)\n",
+          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         },
@@ -205,10 +205,9 @@
         }
       ],
       "tags": [
-        "bash",
-        "jupyter-notebook"
+        "bash"
       ],
-      "last_modified_at": "2021-12-21T10:14:03+00:00",
+      "last_modified_at": "21-Dec-21",
       "url": "/topics/data-science/tutorials/cli-advanced/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "cli-advanced",
@@ -293,7 +292,7 @@
           "joined": "2020-09",
           "github": false,
           "funder": true,
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n![eu flag with the text: with the support of the erasmus programme of the european union](https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg)\n",
+          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }
@@ -302,10 +301,7 @@
       "notebook": {
         "language": "python"
       },
-      "last_modified_at": "2021-12-14T14:52:15+00:00",
-      "tags": [
-        "jupyter-notebook"
-      ],
+      "last_modified_at": "14-Dec-21",
       "url": "/topics/data-science/tutorials/python-advanced-np-pd/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "python-advanced-np-pd",
@@ -426,7 +422,7 @@
           "joined": "2020-09",
           "github": false,
           "funder": true,
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n![eu flag with the text: with the support of the erasmus programme of the european union](https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg)\n",
+          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }
@@ -434,7 +430,7 @@
       "tags": [
         "R"
       ],
-      "last_modified_at": "2021-12-14T14:52:15+00:00",
+      "last_modified_at": "14-Dec-21",
       "url": "/topics/data-science/tutorials/r-advanced/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "r-advanced",
@@ -577,10 +573,9 @@
         "SQL": "Structured Query Language"
       },
       "tags": [
-        "SQL",
-        "jupyter-notebook"
+        "SQL"
       ],
-      "last_modified_at": "2021-12-21T10:14:03+00:00",
+      "last_modified_at": "21-Dec-21",
       "url": "/topics/data-science/tutorials/sql-advanced/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "sql-advanced",
@@ -706,7 +701,7 @@
           "joined": "2020-09",
           "github": false,
           "funder": true,
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n![eu flag with the text: with the support of the erasmus programme of the european union](https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg)\n",
+          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         },
@@ -720,10 +715,9 @@
         }
       ],
       "tags": [
-        "bash",
-        "jupyter-notebook"
+        "bash"
       ],
-      "last_modified_at": "2021-12-21T10:14:03+00:00",
+      "last_modified_at": "21-Dec-21",
       "url": "/topics/data-science/tutorials/cli-basics/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "cli-basics",
@@ -802,17 +796,16 @@
           "joined": "2020-09",
           "github": false,
           "funder": true,
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n![eu flag with the text: with the support of the erasmus programme of the european union](https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg)\n",
+          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }
       ],
       "tags": [
         "game",
-        "bash",
-        "jupyter-notebook"
+        "bash"
       ],
-      "last_modified_at": "2021-12-21T10:14:03+00:00",
+      "last_modified_at": "21-Dec-21",
       "url": "/topics/data-science/tutorials/cli-bashcrawl/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "cli-bashcrawl",
@@ -886,7 +879,7 @@
           "joined": "2020-09",
           "github": false,
           "funder": true,
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n![eu flag with the text: with the support of the erasmus programme of the european union](https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg)\n",
+          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         },
@@ -906,11 +899,10 @@
       "priority": 3,
       "tags": [
         "R",
-        "jupyter-notebook",
         "rmarkdown-notebook"
       ],
       "license": "MIT",
-      "last_modified_at": "2021-12-21T10:14:03+00:00",
+      "last_modified_at": "21-Dec-21",
       "url": "/topics/data-science/tutorials/r-dplyr/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "r-dplyr",
@@ -994,7 +986,7 @@
           "joined": "2020-09",
           "github": false,
           "funder": true,
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n![eu flag with the text: with the support of the erasmus programme of the european union](https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg)\n",
+          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }
@@ -1003,10 +995,7 @@
       "notebook": {
         "language": "python"
       },
-      "last_modified_at": "2021-12-14T14:52:15+00:00",
-      "tags": [
-        "jupyter-notebook"
-      ],
+      "last_modified_at": "14-Dec-21",
       "url": "/topics/data-science/tutorials/python-basics/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "python-basics",
@@ -1138,10 +1127,9 @@
         "SQL": "Structured Query Language"
       },
       "tags": [
-        "SQL",
-        "jupyter-notebook"
+        "SQL"
       ],
-      "last_modified_at": "2021-12-21T10:14:03+00:00",
+      "last_modified_at": "21-Dec-21",
       "url": "/topics/data-science/tutorials/sql-basic/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "sql-basic",
@@ -1243,7 +1231,7 @@
         "SciWMS": "Scientific Workflow Management System",
         "DAG": "Directed Acyclic Graph"
       },
-      "last_modified_at": "2021-12-14T14:52:15+00:00",
+      "last_modified_at": "14-Dec-21",
       "url": "/topics/data-science/tutorials/snakemake/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "snakemake",
@@ -1327,7 +1315,7 @@
           "joined": "2020-09",
           "github": false,
           "funder": true,
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n![eu flag with the text: with the support of the erasmus programme of the european union](https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg)\n",
+          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }
@@ -1336,10 +1324,7 @@
       "notebook": {
         "language": "python"
       },
-      "last_modified_at": "2021-12-14T14:52:15+00:00",
-      "tags": [
-        "jupyter-notebook"
-      ],
+      "last_modified_at": "14-Dec-21",
       "url": "/topics/data-science/tutorials/python-plotting/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "python-plotting",
@@ -1452,12 +1437,12 @@
           "joined": "2020-09",
           "github": false,
           "funder": true,
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n![eu flag with the text: with the support of the erasmus programme of the european union](https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg)\n",
+          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }
       ],
-      "last_modified_at": "2021-12-14T14:52:15+00:00",
+      "last_modified_at": "14-Dec-21",
       "url": "/topics/data-science/tutorials/r-basics/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "r-basics",
@@ -1538,7 +1523,7 @@
           "joined": "2020-09",
           "github": false,
           "funder": true,
-          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n![eu flag with the text: with the support of the erasmus programme of the european union](https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg)\n",
+          "funding_statement": "This project ([`2020-1-NL01-KA203-064717`](https://ec.europa.eu/programmes/erasmus-plus/projects/eplus-project-details/#project/2020-1-NL01-KA203-064717)) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n<img src="https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg" alt="eu flag with the text: with the support of the erasmus programme of the european union. "  loading="lazy">\n",
           "id": "erasmusplus",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         },
@@ -1553,10 +1538,9 @@
       ],
       "tags": [
         "game",
-        "SQL",
-        "jupyter-notebook"
+        "SQL"
       ],
-      "last_modified_at": "2021-12-21T10:14:03+00:00",
+      "last_modified_at": "21-Dec-21",
       "url": "/topics/data-science/tutorials/sql-game/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "sql-game",
@@ -1647,10 +1631,9 @@
       },
       "tags": [
         "SQL",
-        "Python",
-        "jupyter-notebook"
+        "Python"
       ],
-      "last_modified_at": "2021-12-21T10:14:03+00:00",
+      "last_modified_at": "21-Dec-21",
       "url": "/topics/data-science/tutorials/sql-python/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "sql-python",
@@ -1751,10 +1734,9 @@
       "tags": [
         "SQL",
         "R",
-        "jupyter-notebook",
         "rmarkdown-notebook"
       ],
-      "last_modified_at": "2021-12-21T10:14:03+00:00",
+      "last_modified_at": "21-Dec-21",
       "url": "/topics/data-science/tutorials/sql-r/tutorial.html",
       "topic_name": "data-science",
       "tutorial_name": "sql-r",
