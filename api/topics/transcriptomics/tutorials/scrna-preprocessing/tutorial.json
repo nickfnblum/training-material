@@ -90,11 +90,11 @@
   "slides": true,
   "workflows": [
     {
-      "workflow": "scrna_mp_celseq.ga",
+      "workflow": "scrna_pp_celseq.ga",
       "tests": false
     },
     {
-      "workflow": "scrna_pp_celseq.ga",
+      "workflow": "scrna_mp_celseq.ga",
       "tests": false
     }
   ],
