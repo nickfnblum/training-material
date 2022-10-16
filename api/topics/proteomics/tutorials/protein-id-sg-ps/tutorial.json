@@ -50,11 +50,11 @@
   "slides": false,
   "workflows": [
     {
-      "workflow": "wf_proteinID_SG_PS_multipleFiles.ga",
+      "workflow": "wf_proteinID_SG_PS.ga",
       "tests": false
     },
     {
-      "workflow": "wf_proteinID_SG_PS.ga",
+      "workflow": "wf_proteinID_SG_PS_multipleFiles.ga",
       "tests": false
     }
   ],
