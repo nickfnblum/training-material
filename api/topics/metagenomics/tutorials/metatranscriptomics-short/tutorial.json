@@ -97,15 +97,15 @@
   "slides": false,
   "workflows": [
     {
-      "workflow": "workflow3_functional_information_quick.ga",
-      "tests": false
-    },
-    {
       "workflow": "workflow1_preprocessing.ga",
       "tests": false
     },
     {
       "workflow": "workflow3_functional_information.ga",
+      "tests": false
+    },
+    {
+      "workflow": "workflow3_functional_information_quick.ga",
       "tests": false
     },
     {

@@ -295,11 +295,11 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "rna-seq-reads-to-counts.ga",
+          "workflow": "qc_report.ga",
           "tests": false
         },
         {
-          "workflow": "qc_report.ga",
+          "workflow": "rna-seq-reads-to-counts.ga",
           "tests": false
         }
       ],
@@ -1260,11 +1260,11 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "sRNA_seq_Step_2_Salmon_and_DESeq2.ga",
+          "workflow": "sRNA_seq_Step_1_Read_preprocessing_and_removal_of_artifacts.ga",
           "tests": false
         },
         {
-          "workflow": "sRNA_seq_Step_1_Read_preprocessing_and_removal_of_artifacts.ga",
+          "workflow": "sRNA_seq_Step_2_Salmon_and_DESeq2.ga",
           "tests": false
         }
       ],
@@ -1578,11 +1578,11 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "Pre-processing_with_Alevin_Steps_1-3.ga",
+          "workflow": "Pre-processing_with_Alevin_Steps_4-6.ga",
           "tests": false
         },
         {
-          "workflow": "Pre-processing_with_Alevin_Steps_4-6.ga",
+          "workflow": "Pre-processing_with_Alevin_Steps_1-3.ga",
           "tests": false
         }
       ],
@@ -2047,11 +2047,11 @@
       "slides": true,
       "workflows": [
         {
-          "workflow": "scrna_pp_celseq.ga",
+          "workflow": "scrna_mp_celseq.ga",
           "tests": false
         },
         {
-          "workflow": "scrna_mp_celseq.ga",
+          "workflow": "scrna_pp_celseq.ga",
           "tests": false
         }
       ],
@@ -2210,11 +2210,11 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "qc-mapping-counting.ga",
+          "workflow": "deg-analysis.ga",
           "tests": true
         },
         {
-          "workflow": "deg-analysis.ga",
+          "workflow": "qc-mapping-counting.ga",
           "tests": true
         }
       ],
