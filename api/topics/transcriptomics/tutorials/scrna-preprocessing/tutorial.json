@@ -82,7 +82,7 @@
     }
   ],
   "gitter": "Galaxy-Training-Network/galaxy-single-cell",
-  "last_modified_at": "26-Nov-21",
+  "last_modified_at": "2021-11-26T14:22:34+00:00",
   "url": "/topics/transcriptomics/tutorials/scrna-preprocessing/tutorial.html",
   "topic_name": "transcriptomics",
   "tutorial_name": "scrna-preprocessing",
@@ -90,11 +90,11 @@
   "slides": true,
   "workflows": [
     {
-      "workflow": "scrna_mp_celseq.ga",
+      "workflow": "scrna_pp_celseq.ga",
       "tests": false
     },
     {
-      "workflow": "scrna_pp_celseq.ga",
+      "workflow": "scrna_mp_celseq.ga",
       "tests": false
     }
   ],
