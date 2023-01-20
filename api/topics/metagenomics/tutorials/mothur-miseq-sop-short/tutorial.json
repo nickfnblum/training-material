@@ -57,15 +57,19 @@
   "slides": false,
   "workflows": [
     {
-      "workflow": "workflow6_alpha_diversity.ga",
-      "tests": false
-    },
-    {
-      "workflow": "workflow3_classification.ga",
+      "workflow": "workflow5_otu_clustering.ga",
       "tests": false
     },
     {
       "workflow": "workflow4_mock_otu_clustering.ga",
+      "tests": false
+    },
+    {
+      "workflow": "workflow6_alpha_diversity.ga",
+      "tests": false
+    },
+    {
+      "workflow": "workflow1_quality_control.ga",
       "tests": false
     },
     {
@@ -77,11 +81,7 @@
       "tests": false
     },
     {
-      "workflow": "workflow5_otu_clustering.ga",
-      "tests": false
-    },
-    {
-      "workflow": "workflow1_quality_control.ga",
+      "workflow": "workflow3_classification.ga",
       "tests": false
     }
   ],
