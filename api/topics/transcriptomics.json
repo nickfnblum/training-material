@@ -295,11 +295,11 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "rna-seq-reads-to-counts.ga",
+          "workflow": "qc_report.ga",
           "tests": false
         },
         {
-          "workflow": "qc_report.ga",
+          "workflow": "rna-seq-reads-to-counts.ga",
           "tests": false
         }
       ],
@@ -1578,11 +1578,11 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "Pre-processing_with_Alevin_Steps_4-6.ga",
+          "workflow": "Pre-processing_with_Alevin_Steps_1-3.ga",
           "tests": false
         },
         {
-          "workflow": "Pre-processing_with_Alevin_Steps_1-3.ga",
+          "workflow": "Pre-processing_with_Alevin_Steps_4-6.ga",
           "tests": false
         }
       ],
@@ -2210,11 +2210,11 @@
       "slides": false,
       "workflows": [
         {
-          "workflow": "deg-analysis.ga",
+          "workflow": "qc-mapping-counting.ga",
           "tests": true
         },
         {
-          "workflow": "qc-mapping-counting.ga",
+          "workflow": "deg-analysis.ga",
           "tests": true
         }
       ],
