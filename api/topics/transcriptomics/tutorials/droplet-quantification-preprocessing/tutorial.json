@@ -69,11 +69,11 @@
   "slides": false,
   "workflows": [
     {
-      "workflow": "Pre-processing_with_Alevin_Steps_4-6.ga",
+      "workflow": "Pre-processing_with_Alevin_Steps_1-3.ga",
       "tests": false
     },
     {
-      "workflow": "Pre-processing_with_Alevin_Steps_1-3.ga",
+      "workflow": "Pre-processing_with_Alevin_Steps_4-6.ga",
       "tests": false
     }
   ],
