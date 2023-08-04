@@ -121,11 +121,11 @@
   "slides": false,
   "workflows": [
     {
-      "workflow": "deg-analysis.ga",
+      "workflow": "qc-mapping-counting.ga",
       "tests": true
     },
     {
-      "workflow": "qc-mapping-counting.ga",
+      "workflow": "deg-analysis.ga",
       "tests": true
     }
   ],
