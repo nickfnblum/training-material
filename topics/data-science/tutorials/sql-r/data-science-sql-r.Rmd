@@ -25,7 +25,7 @@ output:
     toc_float:
       collapsed: false
       smooth_scroll: false
-date: '2023-09-26 00:33:53 +0000'
+date: '2023-09-27 00:34:03 +0000'
 link-citations: true
 anchor_sections: true
 code_download: true
