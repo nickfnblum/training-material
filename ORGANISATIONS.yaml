@@ -39,6 +39,14 @@ deNBI:
     name: de.NBI
     url: https://www.denbi.de/
 
+dfg:
+    name:  Deutsche Forschungsgemeinschaft
+    short_name: "DFG"
+    github: false
+    joined: 2024-12
+    url: https://www.dfg.de/de
+    avatar: "/training-material/shared/images/DFG_grant.png"
+
 earlham:
     name: Earlham Institute
     joined: 2017-09
@@ -208,13 +216,6 @@ ncbi:
     avatar: "/training-material/shared/images/ncbi.png"
     ror: "02meqm098"
 
-nfdi4plants:
-    short_name: DataPLANT
-    name: DataPLANT (NFDI4Plants)
-    joined: 2024-07
-    url:  https://nfdi4plants.org
-    avatar: "/training-material/shared/images/logo-dataplant.svg"
-
 NIH:
     name: National Institutes of Health
     short_name: "NIH"
@@ -363,9 +364,3 @@ vib:
     github: false
     ror: "03xrhmk39"
 
-nfdi4bioimage:
-    short_name: NFDI4BIOIMAGE
-    name: NFDI4BIOIMAGE
-    joined: 2024-11
-    url:  https://nfdi4bioimage.de
-    avatar: "/training-material/shared/images/nfdi4bioimage.jpeg"

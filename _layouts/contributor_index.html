@@ -249,8 +249,8 @@ layout: base
 		{% if page.gh_prs_count > 0 %}
 		<h4>{{ page.gh_prs_count }} Merged Pull Requests</h4>
 		<p>
-		See all of the 
-                <a href="https://github.com/galaxyproject/training-material/pulls?q=is%3Apr+author%3A{{page.contributor}}">{% icon github %} Pull Requests</a> and 
+		See all of the
+                <a href="https://github.com/galaxyproject/training-material/pulls?q=is%3Apr+author%3A{{page.contributor}}">{% icon github %} Pull Requests</a> and
 		<a href="https://github.com/galaxyproject/training-material/commits?author={{page.contributor}}">{% icon github %} Commits</a> by {{ entity.name | default: page.contributor }}.
 		</p>
 		<ul>
@@ -350,15 +350,23 @@ layout: base
 				{% endif %}
 
 				{% if entity.funding_id %}
-					Grant ID:
+                <div class="contact-items">
+                    <p><b>Funding information</b>
+                    {% if entity.funder_name %}
+                    <br>Funding body: {{entity.funder_name}}
+                    {% endif %}
+					<br>Grant ID:
 					{% if entity.funding_database %}
 						{% assign url = entity | fetch_funding_url %}
 						<a href="{{ url }}">
 							{{ entity.funding_id }}
 						</a>
 					{% else %}
-						{{ entity.funding_id }}
+						<br>{{ entity.funding_id }}
 					{% endif %}
+
+                    </p>
+                </div>
 				{% endif %}
 
 				{% if entity.email %}
@@ -424,9 +432,9 @@ layout: base
 				</div>
 				{% endif %}
 
-				<p>Favourite Topics</p>
+				<p><b>Favourite Topics</b></p>
 				<canvas id="myChart" height="300px"></canvas>
-				<p>Favourite Formats</p>
+				<p><b>Favourite Formats</b></p>
 				<canvas id="slidesVsTutorials" height="300px"></canvas>
 
 			</div>

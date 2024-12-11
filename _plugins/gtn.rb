@@ -342,6 +342,13 @@ module Jekyll
       str.sub(regex, value_replace)
     end
 
+    ##
+    # Check if a match is found
+    def matches(str, regex_search)
+      r = /#{regex_search}/
+      str.match?(r)
+    end
+
     def convert_to_material_list(site, materials)
       # [{"name"=>"introduction", "topic"=>"admin"}]
       return [] if materials.nil?

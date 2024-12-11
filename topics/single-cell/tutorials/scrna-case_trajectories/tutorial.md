@@ -50,8 +50,6 @@ contributions:
 ---
 
 
-# Introduction
-
 You've done all the hard work of preparing a single-cell matrix, processing it, plotting it, interpreting it, and finding lots of lovely genes. Now you want to infer trajectories, or relationships between cells... you can do that here, using the Galaxy interface, or head over to the [Jupyter notebook version of this tutorial]({% link topics/single-cell/tutorials/scrna-case_JUPYTER-trajectories/tutorial.md %}) to learn how to perform the same analysis using Python.
 
 Traditionally, we thought that differentiating or changing cells jumped between discrete states, so 'Cell A' became 'Cell B' as part of its maturation. However, most data shows otherwise. Generally, there is a spectrum (a 'trajectory', if you will...) of small, subtle changes along a pathway of that differentiation. Trying to analyse cells every 10 seconds can be pretty tricky, so 'pseudotime' analysis takes a single sample and assumes that those cells are all on slightly different points along a path of differentiation. Some cells might be slightly more mature and others slightly less, all captured at the same 'time'.  These cells are sorted accordingly along these pseudotime paths of differentiation to build a continuum of cells from one state to the next.  We therefore 'assume' or 'infer' relationships from this continuum of cells.
@@ -227,7 +225,7 @@ Now that we have our diffusion map, we need to re-calculate neighbors using the 
 {: .hands_on}
 
 > <comment-title></comment-title>
-> If you're using the latest versions of these tools (e.g. {% tool [Scanpy ComputeGraph](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_compute_graph/scanpy_compute_graph/1.9.3+galaxy0) %}, rather than the ones suggested in the tutorial (e.g. {% tool [Scanpy ComputeGraph](toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_compute_graph/scanpy_compute_graph/1.8.1+galaxy9) %} then you may need to change one more parameter here to set the `Number of PCs to use` to 15. These are the 15 diffusion components we just calculated, rather than actual PCs.
+> If you're using the latest versions of these tools (e.g. {% tool [Scanpy ComputeGraph](toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_compute_graph/scanpy_compute_graph/1.9.3+galaxy0) %}, rather than the ones suggested in the tutorial (e.g. {% tool [Scanpy ComputeGraph](toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_compute_graph/scanpy_compute_graph/1.8.1+galaxy9) %} then you may need to change one more parameter here to set the `Number of PCs to use` to 15. These are the 15 diffusion components we just calculated, rather than actual PCs.
 {: .comment}
 
 ## Re-draw the FDG

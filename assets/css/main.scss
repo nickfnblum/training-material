@@ -33,7 +33,7 @@ $tutorial-box-spacing: 1rem;
 	--navbar-item-hover: transparent;
 
 	// Basically only for the breadcrumbs.
-	--secondary-color: #e9ecef;
+	--secondary-color: #f2d57c;
 	--secondary-color-text: #000;
 
 	// A11y
@@ -1638,6 +1638,11 @@ $btn-pink: var(--keypoints-color);
 	background-color: var(--brand-color);
 	border-color: var(--brand-color);
 	color: var(--brand-color-contrast);
+}
+.btn-secondary {
+	background-color: var(--secondary-color);
+	border-color: var(--secondary-color);
+	color: var(--secondary-color-text);
 }
 .btn-success {
 	background-color: #1d7531; // AA
