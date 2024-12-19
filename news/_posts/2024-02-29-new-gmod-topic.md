@@ -1,6 +1,6 @@
 ---
 title: "GTN ❤️ GMOD"
-tags: [new topic, new feature, genome annotation]
+tags: [new topic, new feature, genome-annotation, GMOD]
 contributions:
   authorship: [hexylena, abretaud]
   infrastructure: [hexylena]
@@ -8,7 +8,7 @@ layout: news
 tutorial: topics/gmod/index.html
 ---
 
-Building upon the work previously done for the [SARS-Cov-2 Topic](/training-material/news/2023/01/23/new-covid19-topic.html) we have further expanded the 'tag based topics' to support a new GMOD topic. 
+Building upon the work previously done for the [SARS-Cov-2 Topic](/training-material/news/2023/01/23/new-covid19-topic.html) we have further expanded the 'tag based topics' to support a new GMOD topic.
 
 # Generic Model Organism Database
 

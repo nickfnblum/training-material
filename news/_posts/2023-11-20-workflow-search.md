@@ -3,7 +3,7 @@ title: "Update: Workflow List now searches WorkflowHub.eu, advanced query syntax
 contributions:
   authorship: [hexylena]
   testing: [paulzierep, wm75]
-tags: [feature update, gtn]
+tags: [feature update, gtn, contributing]
 layout: news
 ---
 

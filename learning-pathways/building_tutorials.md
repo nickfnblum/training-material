@@ -6,6 +6,8 @@ type: instructors
 editorial_board:
 - nomadscientist
 
+tags: [contributing]
+
 priority: 1
 
 title: Building training material in Galaxy

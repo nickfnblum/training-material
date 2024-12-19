@@ -15,6 +15,8 @@ contributions:
   - jennaj
   infrastructure:
   - hexylena
+
+tags: [contributing, community]
 ---
 
 Howdy teachers and support staff! We are exploring displaying GTN content directly in the Galaxy Help site, furthering the integration between the GTN and the Galaxy community infrastructure.

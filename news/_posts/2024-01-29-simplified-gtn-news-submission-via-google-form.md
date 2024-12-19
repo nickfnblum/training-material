@@ -14,6 +14,8 @@ contributions:
   infrastructure:
   - hexylena
 link: https://forms.gle/TqGTr6y46wrJDri7A
+tags: [contributing, community]
+
 ---
 Based on user feedback of the difficulties of the GTN news submission process we have significantly simplified and removed the need for manually editing a YAML file by providing a quick and easy [Google Form](https://forms.gle/TqGTr6y46wrJDri7A)
 

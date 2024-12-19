@@ -35,6 +35,7 @@ contributions:
   #editing:
   funding:
     - nfdi4plants
+    - dfg
 
 subtopic: dataplant
 

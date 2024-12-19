@@ -1,6 +1,6 @@
 ---
 layout: learning-pathway
-tags: [advanced]
+tags: [advanced, single-cell]
 cover-image: assets/images/wab-annotatedcells-2.png
 cover-image-alt: "Image of cells in different coloured clusters"
 type: use

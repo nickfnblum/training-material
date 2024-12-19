@@ -2,7 +2,7 @@
 title: "New Feature: Automatic Slides-to-video conversion"
 contributions:
   authorship: [hexylena,delphine-l]
-tags: [new feature, videos, gtn, pandemic, remote-teaching]
+tags: [new feature, videos, gtn, pandemic, remote-teaching, contributing]
 layout: news
 ---
 

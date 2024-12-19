@@ -88,7 +88,7 @@ This tutorial covers how to set up a subdomain on usegalaxy.eu. We will take her
 > ![Image of the modification to make in the global_host_filters.py.j2 file](../../images/create_subdomain/add_gxit.png)
 >
 >   - Second, on the same fork go to **files/traefik/rules/**
->   - Open and edit **template-subdomains.yml**, there you need to add the folowing line for your subdomain `{{template "subdomain" "my_new_and_shiny_subdomain"}}`
+>   - Open and edit **template-subdomains.yml**, there you need to add the folowing line for your subdomain `{% raw %}{{template "subdomain" "my_new_and_shiny_subdomain"}}{% endraw %}`
 >
 >   - Finally, commit all your changes and write a nice message for the admin when you open your Pull Request.
 {: .hands_on}

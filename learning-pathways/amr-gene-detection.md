@@ -4,7 +4,7 @@ title: Detection of AMR genes in bacterial genomes
 description: |
   This learning path aims to teach you the basic steps to detect and check Antimicrobial resistance (AMR) genes in bacterial genomes using Galaxy.
 type: use
-tags: [amr, bacteria, microgalaxy, one-health]
+tags: [amr, bacteria, microgalaxy, one-health, microbiome]
 
 editorial_board:
 - bebatut

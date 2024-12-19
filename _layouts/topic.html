@@ -16,20 +16,31 @@ layout: base
     <h1>{{ topic.title }}</h1>
     <p>{{ topic.summary | markdownify }}</p>
 
-    {% if topic.gitter %}
-    <p><em>For any question or discussions related to this topic, or to connect with others in the community, please visit the community chat:</em></p>
-    <p><a class="btn btn-success" href="https://matrix.to/#/#{{topic.gitter}}">{% icon comment %} &nbsp; Community Matrix Chat</a></p>
-    {% endif%}
+    {% if topic.community_ctas %}
+        <div class="row" style="margin-bottom: 1em">
+            {% for cta in topic.community_ctas %}
+            <div class="col-md-3">
+                {{ cta.description | markdownify }}
+                <a href="{{ cta.link }}" class="btn {% if forloop.first %} btn-primary {% else %} btn-secondary {% endif %} ">
+                   {% icon_var cta.icon %} &nbsp; {{ cta.link_text }}
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
 
+        {% if topic.gitter %}
+        <p><em>For any question or discussions related to this topic, or to connect with others in the community, please visit the community chat:</em></p>
+        <p><a class="btn btn-success" href="https://matrix.to/#/#{{topic.gitter}}">{% icon comment %} &nbsp; Community Matrix Chat</a></p>
+        {% endif%}
 
-
-    {% if topic.requirements %}
-    <h2 id="requirements">Requirements</h2>
-    <p>Before diving into this topic, we recommend you to have a look at:</p>
-
-    <ul>
-        {% include _includes/display_extra_training.md extra_trainings=topic.requirements %}
-    </ul>
+        {% if topic.requirements %}
+        <h2 id="requirements">Requirements</h2>
+        <p>Before diving into this topic, we recommend you to have a look at:</p>
+        <ul>
+            {% include _includes/display_extra_training.md extra_trainings=topic.requirements %}
+        </ul>
+        {% endif %}
     {% endif %}
 
     {% if topic.learning_path_cta %}
@@ -44,7 +55,37 @@ layout: base
     </div>
     {% endif %}
 
+    {% if topic.learning_path_ctas %}
+    <div id="cta-lp" style="color: var(--brand-color-contrast);background: var(--brand-color);">
+      <div style="background: repeating-linear-gradient( 135deg, transparent, transparent 10px, #fff1 10px, #fff1 20px );padding: 1rem;">
+        <h3 style="margin: unset;">Not sure where to start?</h3>
+        <p style="display: flex;justify-content: space-between;align-items: center;vertical-align: bottom;margin-bottom: 0;">
+          <span>Try a {{ topic.title }} Learning Pathway!</span>
+          <span>
+	  {% for cta in topic.learning_path_ctas %}
+	  <a href="/training-material/learning-pathways/{{ cta[1] }}.html?utm_source=gtn&utm_medium=topic-{{ topic.name }}&utm_campaign=home-cta-lp" class="btn btn-success">{{ cta[0] }}</a>
+	  {% endfor %}
+          </span>
+        </p>
+      </div>
+    </div>
+    {% endif %}
+
     <h2 id="material">Material</h2>
+
+    {% if topic.toc %}
+      <p>
+      <blockquote class="agenda">
+      <div class="box-title agenda-title" id="agenda">Jump to a section!</div>
+      <ul class="markdown-toc">
+      {% for subtopic in topic_material %}
+        <li><a href="#st-{{ subtopic[0] | slugify }}">{{subtopic[1].subtopic.title}}</a></li>
+      {% endfor %}
+      </ul>
+      </blockquote>
+      </p>
+    {% endif %}
+
     <i>You can view the tutorial materials in different languages by clicking the dropdown icon next to the slides ({% icon slides %}) and tutorial ({% icon tutorial %}) buttons below. </i>
 
     {% if topic.draft %}
@@ -69,6 +110,12 @@ layout: base
     {% if jekyll.environment == "production" %}
     <p><a href="feed.xml">Follow topic updates {% icon rss-feed %}</a> with our RSS Feed</p>
     {% endif %}
+    {% endunless %}
+
+    {% unless topic.tag_based %}
+    <h2 id="community">Community Resources</h2>
+    <a class="btn btn-primary" href="community.html">Community Home</a>
+    <a class="btn btn-primary" href="maintainer.html">Maintainer Home</a>
     {% endunless %}
 
     {% if topic.editorial_board %}

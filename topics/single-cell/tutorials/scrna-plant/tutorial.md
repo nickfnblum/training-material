@@ -6,6 +6,10 @@ priority: 3
 redirect_from:
   - /topics/transcriptomics/tutorials/scrna-plant/tutorial
 zenodo_link: 'https://zenodo.org/record/4597857'
+answer_histories:
+  - label: "UseGalaxy.eu"
+    history: https://singlecell.usegalaxy.eu/u/videmp/h/analysis-of-plant-scrna-seq-data-with-scanpy
+    date: 2024-12-13
 tags:
   - plants
   - paper-replication
@@ -33,10 +37,7 @@ contributors:
   - gallardoalba
   - pavanvidem
 
-
 gitter: Galaxy-Training-Network/galaxy-single-cell
-
-
 
 recordings:
 - captioners:

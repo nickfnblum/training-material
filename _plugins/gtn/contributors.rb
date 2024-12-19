@@ -235,6 +235,8 @@ module Gtn
         "https://gtr.ukri.org/projects?ref=#{contributor['funding_id']}"
       when 'highergov'
         "https://www.highergov.com/contract/#{contributor['funding_id']}/"
+      when 'dfg'
+        "https://gepris-extern.dfg.de/gepris/projekt/#{contributor['funding_id']}?language=en"
       else
         Jekyll.logger.error "Unknown funding system #{contributor['funding_database']}. Please let us know so we can add support for it!"
         'ERROR'

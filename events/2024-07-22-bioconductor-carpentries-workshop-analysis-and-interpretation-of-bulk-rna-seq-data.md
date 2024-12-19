@@ -17,4 +17,6 @@ location:
   country: USA
 date_start: 2024-07-22
 date_end: 2024-07-23
+tags:
+- transcriptomics
 ---

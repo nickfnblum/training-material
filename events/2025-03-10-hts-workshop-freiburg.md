@@ -42,45 +42,60 @@ infrastructure:
     - server: https://usegalaxy.eu
       name: Galaxy EU
 
+tags:
+- introduction
+- sequence-analysis
+- epigenetics
+- transcriptomics
+- variant-analysis
+- microbiome
+
 # Program of your course
 # Add GTN tutorials by supplying the topic and tutorial name
 program:
-  - section: "Galaxy Freiburg workshop"  # section title is optional
-    description: |
-      Next, you see the schedule for the full week. We will do at least one coffee break in the morning, one in the afternoon, and 1h lunch break around noon.
+  - section: "Monday: Introduction and Quality Control"  # section title is optional
+    description: We will do at least one coffee break in the morning, one in the afternoon, and 1h lunch break around noon.
     tutorials:
       - type: custom
-        name: "Monday "
-        time: "09:15 - 16:00"
-        description: Introduction and Quality control
+        name: "Welcome"
+        time: "09:15"
       - name: galaxy-intro-peaks2genes
         topic: introduction
       - name: quality-control
         topic: sequence-analysis
       - type: custom
-        name: "Tuesday "
-        time: "09:15 - 17:00"
-        description: ChIP-Sequencing
+        name: "End"
+        time: "16:00"
+
+  - section: "Tuesday: ChIP-Sequencing"
+    description: We will do at least one coffee break in the morning, one in the afternoon, and 1h lunch break around noon.
+    tutorials:
       - name: formation_of_super-structures_on_xi
         topic: epigenetics
-      - type: custom
-        name: "Wednesday "
-        time: "09:15 - 17:00"
-        description: RNA-Sequencing
+        time: "09:15-17:00"
+
+  - section: "Wednesday: RNA Sequencing"
+    description: We will do at least one coffee break in the morning, one in the afternoon, and 1h lunch break around noon.
+    tutorials:
       - name: ref-based
         topic: transcriptomics
-      - type: custom
-        name: "Thursday "
-        time: "09:15 - 17:00"
-        description: Variant Calling/Exome Sequencing
+        time: "09:15-17:00"
+
+
+  - section: "Thursday: Variant Calling/Exome Sequencing"
+    description:  We will do at least one coffee break in the morning, one in the afternoon, and 1h lunch break around noon.
+    tutorials:
       - name: exome-seq
         topic: variant-analysis
-      - type: custom
-        name: "Friday "
-        time: "09:15 - 16:00"
-        description: Metagenomics
+        time: "09:15-17:00"
+
+
+  - section: "Friday: Metagenomics"
+    description:  We will do at least one coffee break in the morning, one in the afternoon, and 1h lunch break around noon.
+    tutorials:
       - name: pathogen-detection-from-nanopore-foodborne-data
         topic: microbiome
+        time: "09:15-16:00"
 
 ---
 # Welcome to the Comprehensive Galaxy Workshop: From Introduction to Advanced Applications

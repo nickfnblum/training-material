@@ -41,7 +41,7 @@ def jupyter_pre_render(site)
   site.config['__rendered_notebook_cache'] = {}
 
   # For every tutorial with the 'notebook' key in the page data
-  site.pages.select { |page| GTNNotebooks.notebook_filter(page.data) }.each do |page|
+  site.pages.select { |page| Gtn::Notebooks.notebook_filter(page.data) }.each do |page|
     # We get the path to the tutorial source
     dir = File.dirname(File.join('.', page.url))
     fn = File.join('.', page.url).sub(/html$/, 'md')
@@ -53,7 +53,7 @@ def jupyter_pre_render(site)
 
     Jekyll.logger.info "[GTN/Notebooks] Rendering #{notebook_language} #{fn}"
     last_modified = Gtn::ModificationTimes.obtain_time(page.path)
-    notebook = GTNNotebooks.render_jupyter_notebook(page.data, page.content, page.url, last_modified,
+    notebook = Gtn::Notebooks.render_jupyter_notebook(page.data, page.content, page.url, last_modified,
                                                     notebook_language, site, dir)
 
     topic_id = dir.split('/')[-3]

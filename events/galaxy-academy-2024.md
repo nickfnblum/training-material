@@ -25,6 +25,17 @@ contact_email: academy@galaxyproject.org
 async: true
 mode: online
 
+tags:
+- microbiome
+- single-cell
+- proteomics
+- introduction
+- galaxy-interface
+- ecology
+- assembly
+- one-health
+- statistics
+
 contributions:
     organisers:
         - teresa-m

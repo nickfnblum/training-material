@@ -40,12 +40,32 @@
         <tr>
           {% assign hidetime = material.async | default: async%}
           {% if page.layout == 'event' and hidetimes != true %}
-          <td>{{material.time | markdownify }}</td>
+          <td>{{material.time | markdownify }}
+
+              <div class="duplicate" style="display: none;">
+              <b>{{material.title}}</b>
+              <div class="btn-group" role="group" aria-label="Supporting materials for this resource">
+              {% include _includes/resource-slides.html material=material topic=topic.name %}
+              {% include _includes/resource-handson.html material=material topic=topic.name %}
+              {% include _includes/resource-recordings.html material=material topic=topic.name %}
+
+              {% if topic.type == "use" %}
+                  {% include _includes/resource-zenodo.html material=material topic=topic.name %}
+                  {% include _includes/resource-workflows.html material=material topic=topic.name %}
+              {% endif %}
+
+              {% if instances[topic.name].supported %}
+                  {% include _includes/instance-dropdown.html instances=instances topic=topic.name tuto=material.tutorial_name %}
+              {% endif %}
+              </div>
+            </div>
+
+          </td>
           {% endif %}
 
           {% if material.layout == 'custom' %} <!-- e.g. for events -->
             <td>
-              {{material.title | markdownify }} 
+              {{material.title | markdownify }}
               <div class="duplicate" style="display: none;">
                 {{material.description | markdownify }}
               </div>

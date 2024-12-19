@@ -3,6 +3,9 @@ title: "GTN Video Library 2.0: 107 hours of learning across 154 videos"
 layout: news
 tags:
   - gtn
+  - contributing
+  - teaching
+  - community
 
 cover: "assets/images/video-library.png"
 coveralt: Screenshot of the GTN Video Library showing a tutorial recording with a large youtube player and extensive metadata about who created the video (Natalie Kucher) and when, how long, etc.

@@ -2,10 +2,11 @@
 layout: news
 title: "New Galaxy training: Building an amplicon sequence variant (ASV) table from 16S data using DADA2"
 contributions:
-  authorship: 
+  authorship:
   - bebatut
-tags: 
+tags:
 - new tutorial
+- microbiome
 tutorial: topics/microbiome/tutorials/dada-16S/tutorial.html
 ---
 

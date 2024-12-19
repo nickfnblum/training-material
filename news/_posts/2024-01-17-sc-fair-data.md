@@ -1,6 +1,6 @@
 ---
 title: "FAIR Data management in single cell analysis"
-tags: [single cell,data management,data import,fair]
+tags: [single-cell,data management,data import,fair]
 contributions:
   authorship: [wee-snufkin, hexhowells, nomadscientist]
   funding: [elixir-fair-data]
@@ -9,7 +9,7 @@ layout: news
 
 # New single cell section: Changing data formats & preparing objects
 
-Now a nightmare of switching between single cell datatypes or importing the data is gone! With the new section on Changing data formats & preparing objects, the users can now confidently jump into the analysis. Some of those tutorials were created in the framework of ELIXIR-UK: FAIR Data Stewardship training, which aims to improve Findable Accessible Interoperable Reusable (FAIR) data management in the life sciences. 
+Now a nightmare of switching between single cell datatypes or importing the data is gone! With the new section on Changing data formats & preparing objects, the users can now confidently jump into the analysis. Some of those tutorials were created in the framework of ELIXIR-UK: FAIR Data Stewardship training, which aims to improve Findable Accessible Interoperable Reusable (FAIR) data management in the life sciences.
 
 We have developed the following tutorials:
 -	[Converting between common single cell data formats]({% link topics/single-cell/tutorials/scrna-data-ingest/tutorial.md %})

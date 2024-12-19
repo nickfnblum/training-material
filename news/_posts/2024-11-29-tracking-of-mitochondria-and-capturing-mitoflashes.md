@@ -5,6 +5,7 @@ tags:
 - bioimaging
 - mitoflash
 - mitochondria
+- imaging
 contributions:
   authorship:
   - dianichj

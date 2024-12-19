@@ -1,6 +1,6 @@
 ---
 layout: learning-pathway
-tags: [beginner]
+tags: [beginner, galaxy-interface, microbiome, visualisation, data-science, variant-analysis ]
 type: use
 
 editorial_board:

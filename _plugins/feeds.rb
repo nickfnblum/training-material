@@ -6,6 +6,12 @@ require './_plugins/util'
 require 'json'
 
 class DateTime
+  ##
+  # Convert a given DateTime stamp roughly to an African/European lunch time
+  #
+  # Why that time? It is when the majority of our users are online and wanting to read the news.
+  #
+  # This is really only available in the feeds plugin, should not be assumed to be available elsewhere.
   def to_euro_lunch
     self.to_date.to_datetime + 0.6
   end
@@ -35,30 +41,6 @@ def track(url)
   else
     url + TRACKING
   end
-end
-
-def objectify(attrs, url, path)
-  obj = attrs.clone
-  obj['__path'] = path
-  obj['__url'] = url
-
-  def obj.data
-    self
-  end
-
-  def obj.path
-    self['__path']
-  end
-
-  def obj.url
-    self['__url']
-  end
-
-  def obj.content
-    self.fetch('content', 'NO CONTENT AVAILABLE')
-  end
-
-  obj
 end
 
 FEED_WIDGET_XSLT = Nokogiri::XSLT(File.read('feed-widget.xslt.xml'))
@@ -213,135 +195,6 @@ def generate_tag_topic_feeds(_site)
   # Any new materials tagged with that tag
   # Any news by tag
   ''
-end
-
-def all_date_sorted_materials(site)
-  events = site.pages.select { |x| x['layout'] == 'event' || x['layout'] == 'event-external' }
-  materials = TopicFilter.list_all_materials(site).reject { |k, _v| k['draft'] }
-  news = site.posts.select { |x| x['layout'] == 'news' }
-  faqs = site.pages.select { |x| x['layout'] == 'faq' }
-  pathways = site.pages.select { |x| x['layout'] == 'learning-pathway' }
-  workflows = Dir.glob('topics/**/*.ga')
-
-  bucket = events.map do |e|
-    [Gtn::PublicationTimes.obtain_time(e.path).to_datetime, 'events', e, ['event'] + e.data.fetch('tags', [])]
-  end
-
-  materials.each do |m|
-    tags = [m['topic_name']] + (m['tags'] || [])
-    m.fetch('ref_tutorials', []).map do |t|
-      bucket << [Gtn::PublicationTimes.obtain_time(t.path).to_datetime, 'tutorials', t, tags]
-
-      (t['recordings'] || []).map do |r|
-        url = '/' + t.path.gsub(/tutorial(_[A_Z_]*)?.(html|md)$/, 'recordings/')
-        url += "#tutorial-recording-#{Date.parse(r['date']).strftime('%-d-%B-%Y').downcase}"
-        attr = {'title' => "Recording of " + t['title'], 
-                'contributors' => r['speakers'] + (r['captions'] || []),
-                'content' => "A #{r['length']} long recording is now available."}
-
-        obj = objectify(attr, url, t.path)
-        bucket << [DateTime.parse(r['date'].to_s), 'recordings', obj, tags]
-      end
-    end
-
-
-
-    m.fetch('ref_slides', []).reject { |s| s.url =~ /-plain.html/ }.map do |s|
-      bucket << [Gtn::PublicationTimes.obtain_time(s.path).to_datetime, 'slides', s, tags]
-
-      (s['recordings'] || []).map do |r|
-        url = '/' + s.path.gsub(/slides(_[A_Z_]*)?.(html|md)$/, 'recordings/')
-        url += "#tutorial-recording-#{Date.parse(r['date']).strftime('%-d-%B-%Y').downcase}"
-        attr = {'title' => "Recording of " + s['title'], 
-                'contributors' => r['speakers'] + (r['captions'] || []),
-                'content' => "A #{r['length']} long recording is now available."}
-        obj = objectify(attr, url, s.path)
-        bucket << [DateTime.parse(r['date'].to_s), 'recordings', obj, tags]
-      end
-    end
-  end
-
-  bucket += news.map do |n|
-    [n.date.to_datetime, 'news', n, ['news'] + n.data.fetch('tags', [])]
-  end
-
-  bucket += faqs.map do |n|
-    tag = Gtn::PublicationTimes.clean_path(n.path).split('/')[1]
-    [Gtn::PublicationTimes.obtain_time(n.path).to_datetime, 'faqs', n, ['faqs', tag]]
-  end
-
-  bucket += pathways.map do |n|
-    tags = ['learning-pathway'] + (n['tags'] || [])
-    [Gtn::PublicationTimes.obtain_time(n.path).to_datetime, 'learning-pathways', n, tags]
-  end
-
-  bucket += workflows.map do |n|
-    tag = Gtn::PublicationTimes.clean_path(n).split('/')[1]
-    wf_data = JSON.parse(File.read(n))
-
-    attrs = {
-      'title' => wf_data['name'],
-      'description' => wf_data['annotation'],
-      'tags' => wf_data['tags'],
-      'contributors' => wf_data.fetch('creator', []).map do |c|
-        matched = site.data['contributors'].select{|k, v| 
-          v.fetch('orcid', "does-not-exist") == c.fetch('identifier', "").gsub('https://orcid.org/', '')
-        }.first
-        if matched
-          matched[0]
-        else
-          c['name']
-        end
-      end
-    }
-
-    # These aren't truly stable. I'm not sure what to do about that.
-    obj = objectify(attrs, '/' + n.gsub(/\.ga$/, '.html'), n)
-    # obj = objectify(attrs, '/' + n.path[0..n.path.rindex('/')], n)
-
-
-    [Gtn::PublicationTimes.obtain_time(n).to_datetime, 'workflows', obj, ['workflows', tag] + obj['tags']]
-  end
-
-  # Remove symlinks from bucket.
-  bucket = bucket.reject { |date, type, page, tags|
-    File.symlink?(page.path) || File.symlink?(File.dirname(page.path)) || File.symlink?(File.dirname(File.dirname(page.path)))
-  }
-
-  bucket += site.data['contributors'].map do |k, v|
-    a = {'title' => "@#{k}",
-         'content' => "GTN Contributions from #{k}"}
-    obj = objectify(a, "/hall-of-fame/#{k}/", k)
-
-    [DateTime.parse("#{v['joined']}-01T12:00:00", 'content' => "GTN Contributions from #{k}"), 'contributors', obj, ['contributor']]
-  end
-
-  bucket += site.data['grants'].map do |k, v|
-    a = {'title' => "@#{k}",
-         'content' => "GTN Contributions from #{k}"}
-    obj = objectify(a, "/hall-of-fame/#{k}/", k)
-
-    # TODO: backdate grants, organisations
-    if v['joined']
-      [DateTime.parse("#{v['joined']}-01T12:00:00"), 'grants', obj, ['grant']]
-    end
-  end.compact
-
-  bucket += site.data['organisations'].map do |k, v|
-    a = {'title' => "@#{k}",
-         'content' => "GTN Contributions from #{k}"}
-    obj = objectify(a, "/hall-of-fame/#{k}/", k)
-
-    if v['joined']
-      [DateTime.parse("#{v['joined']}-01T12:00:00"), 'organisations', obj, ['organisation']]
-    end
-  end.compact
-
-  bucket
-    .reject{|x| x[0] > DateTime.now } # Remove future-dated materials
-    .reject{|x| x[2]['draft'] == true } # Remove drafts
-    .sort_by {|x| x[0] } # Date-sorted, not strictly necessary since will be grouped.
-    .reverse
 end
 
 def group_bucket_by(bucket, group_by: 'day')
@@ -736,12 +589,12 @@ Jekyll::Hooks.register :site, :post_write do |site|
       {title: 'Events', url: "#{site.config['url']}#{site.baseurl}/events/feed.xml"}
     ]
 
-    bucket = all_date_sorted_materials(site)
+    bucket = Gtn::TopicFilter.all_date_sorted_resources(site)
     bucket.freeze
 
     opml['GTN Topics'] = []
     opml['GTN Topics - Digests'] = []
-    TopicFilter.list_topics(site).each do |topic|
+    Gtn::TopicFilter.list_topics(site).each do |topic|
       generate_topic_feeds(site, topic, bucket)
       opml['GTN Topics'] <<
         {title: "#{topic} all changes", url: "#{site.config['url']}#{site.baseurl}/topic/feed.xml"}

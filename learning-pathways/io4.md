@@ -1,6 +1,6 @@
 ---
 layout: learning-pathway
-tags: [beginner]
+tags: [beginner, ecology]
 type: use
 
 editorial_board:

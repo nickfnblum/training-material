@@ -1162,3 +1162,5 @@ detail in [the next section](#).
 ```sql
 -- Try solutions here!
 ```
+
+{% include _includes/quiz.html id="recap.yml" %}

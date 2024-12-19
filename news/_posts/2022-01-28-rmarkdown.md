@@ -3,7 +3,7 @@ title: "New Feature: Automatic RMarkdown"
 contributions:
   authorship: [hexylena]
   funding: [gallantries, avans-atgm]
-tags: [gtn infrastructure, new feature]
+tags: [gtn infrastructure, new feature, contributing]
 cover: topics/data-science/images/rstudio/r-preview-output.png
 coveralt: Image showing content from a tutorial, rendered as an rmarkdown html via knitting. A table of contents appears on the left, and code and outputs on the right.
 layout: news

@@ -3,7 +3,7 @@ title: "Single cell subdomain re-launch: Unified and feedback-driven"
 contributions:
   authorship: [nomadscientist, pavanvidem]
   infrastructure: [kysrpex]
-tags: [gtn, singlecell]
+tags: [gtn, single-cell]
 cover: "news/images/2023-10-12-singlecell_subdomain.png"
 coveralt: "screenshot of the Single Cell Omics subdomain page, with purple mastheader, Single Cell Tools categories along the side, and an updated logo combining the Single Cell Omics connected cells image with the Human Cell Atlas blue embyro logo"
 layout: news

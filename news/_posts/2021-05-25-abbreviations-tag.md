@@ -1,6 +1,6 @@
 ---
 title: "New Feature: Easy Abbreviation"
-tags: [new feature]
+tags: [new feature, contributing]
 contributions:
   authorship: [hexylena, rikeshi, simonbray]
 tutorial: "topics/dev/tutorials/bioblend-dev/tutorial.html"

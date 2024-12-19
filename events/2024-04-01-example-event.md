@@ -14,6 +14,9 @@ description: |
 cover-image:         # image for your corse, put in 'events/images' folder
 cover-image-alt:     # supply alt text describing your image
 
+# Tags to help users find your event. Tag with a topic id to have it show op on the topic community page
+tags:
+- single-cell
 
 # Practical Information
 date_start: 1970-04-01

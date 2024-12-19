@@ -89,8 +89,6 @@ tags:
 - SQL
 ---
 
-{% include _includes/quiz.html id="recap.yml" %}
-
 > <comment-title></comment-title>
 >
 > This tutorial is **significantly** based on [the Carpentries](https://carpentries.org) [Databases and SQL](https://github.com/swcarpentry/sql-novice-survey/) lesson, which is licensed CC-BY 4.0.
@@ -1002,6 +1000,8 @@ this technique is outside the scope of this chapter.
 ```sql
 -- Try solutions here!
 ```
+
+{% include _includes/quiz.html id="recap.yml" %}
 
 [create-table]: https://www.sqlite.org/lang_createtable.html
 [drop-table]: https://www.sqlite.org/lang_droptable.html

@@ -1,6 +1,6 @@
 ---
 layout: learning-pathway
-tags: [beginner]
+tags: [beginner, contributing, teaching]
 type: use
 
 editorial_board:

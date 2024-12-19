@@ -364,7 +364,7 @@ Setting up Telegraf is again very simple. We just add a single role to our playb
 >    +  - plugin: disk
 >    +  - plugin: kernel
 >    +  - plugin: processes
->    +  - plugin: io
+>    +  - plugin: diskio
 >    +  - plugin: mem
 >    +  - plugin: system
 >    +  - plugin: swap
@@ -535,15 +535,15 @@ There are some nice examples of dashboards available from the public Galaxies, w
 >    ```diff
 >    --- a/templates/nginx/galaxy.j2
 >    +++ b/templates/nginx/galaxy.j2
->    @@ -108,4 +108,9 @@ server {
->     		proxy_pass http://{{ galaxy_config.gravity.reports.bind }}:/;
+>    @@ -109,4 +109,9 @@ server {
+>     		proxy_set_header X-Forwarded-Host $host;
+>     		proxy_set_header X-Forwarded-Proto $scheme;
 >     	}
->     
+>    +
 >    +	location /grafana/ {
 >    +		proxy_pass http://127.0.0.1:3000/;
 >    +		proxy_set_header Host $http_host;
 >    +	}
->    +
 >     }
 >    {% endraw %}
 >    ```

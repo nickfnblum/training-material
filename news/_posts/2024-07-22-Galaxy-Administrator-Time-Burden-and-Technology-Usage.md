@@ -5,6 +5,7 @@ tags:
 - deploying
 - maintenance
 - survey
+- admin
 contributions:
   authorship:
   - vladvisan
@@ -21,5 +22,5 @@ tutorial: topics/admin/tutorials/poll-ssa/slides.html
 
 Have you wondered how difficult Galaxy is to run? How much time people must spend to run Galaxy?
 - In February 2024, we collected 9 responses from the [Galaxy Small Scale Admin group](https://galaxyproject.org/community/sig/small-scale-admins/).
-- The questions cover various time burdens and technological choices. 
+- The questions cover various time burdens and technological choices.
 - The report provides answers to prospective future admins' most common questions.

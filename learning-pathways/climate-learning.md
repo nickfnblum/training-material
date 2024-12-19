@@ -11,6 +11,8 @@ tags: [Climate, Overview]
 editorial_board:
 - Marie59
 
+tags: [climate]
+
 type: use
 
 pathway:

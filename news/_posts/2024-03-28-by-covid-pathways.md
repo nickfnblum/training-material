@@ -7,6 +7,9 @@ tags:
 - minerva
 - gtn infrastructure
 - new feature
+- one-health
+- transcriptomics
+
 contributions:
   authorship:
     - hexylena

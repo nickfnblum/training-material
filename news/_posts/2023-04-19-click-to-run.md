@@ -2,7 +2,7 @@
 title: "New Feature: Click-to-run Workflows"
 contributions:
   authorship: [hexylena]
-tags: [new feature, gtn]
+tags: [new feature, gtn, contributing]
 layout: news
 tutorial: topics/microbiome/tutorials/mothur-miseq-sop-short/workflows/
 ---

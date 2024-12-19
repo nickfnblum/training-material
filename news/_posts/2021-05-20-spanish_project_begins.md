@@ -1,6 +1,6 @@
 ---
 title: "¿Hablas español?: The first curated tutorial in Spanish!"
-tags: [new tutorial, español]
+tags: [new tutorial, español, introduction]
 contributions:
   authorship: [nomadscientist, beatrizserrano, pclo, ales-ibt, shiltemann, hexylena]
 cover: "topics/introduction/images/hello-languages.png"
