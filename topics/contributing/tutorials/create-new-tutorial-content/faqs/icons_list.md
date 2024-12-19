@@ -14,6 +14,8 @@ To use icons in your tutorial, take the name of the icon, 'details' in this exam
 
 Some icons have multiple aliases, any may be used, but we'd suggest trying to choose the most semantically appropriate one in case Galaxy later decides to change the icon.
 
+New icons can be added in `_config.yaml`, and you can search for the corresponding icons at [FontAwesome](https://fontawesome.com/v4/icons/)
+
 The following icons are currently available:
 
 <div class="row">
@@ -25,5 +27,3 @@ The following icons are currently available:
 	</div>
 {% endfor %}
 </div>
-
-New icons can be added in `_config.yaml`, and you can search for the corresponding icons at https://fontawesome.com/v4/icons/

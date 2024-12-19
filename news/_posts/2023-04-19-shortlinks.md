@@ -2,7 +2,7 @@
 title: "New Feature: Persistent URLs (PURLs) / Shortlinks"
 contributions:
   authorship: [hexylena]
-tags: [new feature, gtn]
+tags: [new feature, gtn, contributing]
 layout: news
 cover: "assets/images/purl.png"
 coveralt: the bottom left corner of an overview box from a training material is shown, a label short link clearly has a short link as described in the tutorial

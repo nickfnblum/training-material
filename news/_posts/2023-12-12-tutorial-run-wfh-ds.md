@@ -3,7 +3,7 @@ title: "Tutorial Feature: Easier launching of WorkflowHub & Dockstore Workflows"
 contributions:
   authorship: [hexylena]
   funding: [by-covid]
-tags: [feature update, gtn, tutorials]
+tags: [feature update, gtn, tutorials, contributing]
 layout: news
 ---
 

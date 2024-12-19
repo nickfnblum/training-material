@@ -1,6 +1,6 @@
 ---
 layout: learning-pathway
-tags: [beginner]
+tags: [beginner, data-science, contributing, sequence-analysis, transcriptomics]
 type: use
 
 editorial_board:

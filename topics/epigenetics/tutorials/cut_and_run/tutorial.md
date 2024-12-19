@@ -32,7 +32,6 @@ abbreviations:
 
 ---
 
-# Introduction
 In many organism, {TF} play an important tole in the regulation of the gene expression. In human, we have up to 2,800 proteins and more than 1,600 are
 TF ([list of transcription factors](https://en.wikipedia.org/wiki/List_of_human_transcription_factors)), although the number might change over timer.
 Investigating the role of TFs, such as [GATA1](https://en.wikipedia.org/wiki/GATA1), is a very important task to understand the regulatory mechanisms in the cell and thus ascertain
@@ -179,7 +178,7 @@ The FastQC report pointed out that we have in our data some standard Illumina ad
 
 > <hands-on-title>Task description</hands-on-title>
 >
-> 1. {% tool [Trim Galore!]( https://toolshed.g2.bx.psu.edu/view/bgruening/trim_galore/cd7e644cae1d) %} with the following parameters:
+> 1. {% tool Trim Galore! %} with the following parameters:
 >    - *"Is this library paired- or single-end?"*: `Paired Collection`
 >        - *"Select a paired collection"*: select `2 PE fastqs`
 >    - In *"Adapter sequence to be trimmed"*: `Illumina universal`

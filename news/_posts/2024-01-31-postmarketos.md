@@ -1,6 +1,6 @@
 ---
 title: "🪐📲 Hosting Galaxy at the Edge: Directly in Your Pocket!"
-tags: [fun, system administrators, developers, humour]
+tags: [fun, system administrators, developers, humour, admin]
 contributions:
   authorship: [mtekman]
   editing: [hexylena]

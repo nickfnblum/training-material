@@ -51,6 +51,7 @@ awspolly:
 
 # our real contributors <3 (please add yourself in alphabetical order)
 
+    
 a-asai:
     name: Atsushi Asai
     email: tbudcm7zk@i.softbank.jp
@@ -86,6 +87,14 @@ abueg:
     orcid: 0000-0002-6879-3954
     joined: 2022-01
 
+adya29:
+    name: Adya Shreya
+    email: adya_shreya@gis.a-star.edu.sg
+    joined: 2024-12
+    linkedin: adya-shreya
+    location:
+      country: SG
+
 adairama:
     name: Adaikalavan Ramasamy
     email: adai@gis.a-star.edu.sg
@@ -95,6 +104,7 @@ adairama:
     location:
       country: SG
     
+
 ahmedhamidawan:
     name: Ahmed Hamid Awan
     email: aawan7@jhu.edu
@@ -696,6 +706,12 @@ dyusuf:
     joined: 2017-09
     affiliations:
       - uni-freiburg
+
+dometto:
+    name: Dawa Ometto
+    joined: 2024-12
+    affiliations:
+      - surf
 
 eancelet:
     name: Estelle Ancelet
@@ -1684,6 +1700,12 @@ miRlyKayleigh:
     email: kayleigh.smith@open.ac.uk
     joined: 2022-12
 
+mirelaminkova:
+    name: Mirela Minkova
+    joined: 2024-12
+    affiliations:
+      - surf
+
 moffmade:
     name: Cory Maughmer
     joined: 2018-06
@@ -1755,6 +1777,11 @@ nagoue:
     email: nadia.goue@uca.fr
     orcid: 0000-0003-2750-1473
     joined: 2019-07
+    
+Najatamk:
+    name: Najat Amoukou
+    email: najatibrahim21@gmail.com
+    joined: 2024-07
 
 nakucher:
     name: Natalie Kucher
@@ -2680,6 +2707,10 @@ yvesvdb:
     joined: 2024-05
     affiliations:
       - ifb
+
+yuliiaorlova:
+    name: Yuliia Orlova
+    joined: 2024-12
 
 zargham-ahmad:
     name: Zargham Ahmad

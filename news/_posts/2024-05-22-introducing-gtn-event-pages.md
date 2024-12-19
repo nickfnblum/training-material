@@ -6,6 +6,8 @@ tags:
 - gtn infrastructure
 - new feature
 - events
+- contributing
+- community
 contributions:
   authorship:
     - shiltemann

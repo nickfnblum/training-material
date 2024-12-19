@@ -3,6 +3,8 @@ title: "Open Call for Trainers for the Galaxy Training Academy"
 layout: news
 tags:
   - gtn
+  - teaching
+  - contributing
 contributions:
   authorship:
     - teresa-m

@@ -1,6 +1,6 @@
 ---
 title: "New Tutorial: Workflow Reports"
-tags: [new tutorial, Galaxy Tips & Tricks]
+tags: [new tutorial, Galaxy Tips & Tricks, galaxy-interface]
 contributions:
   authorship: [shiltemann]
 cover: "topics/galaxy-interface/tutorials/workflow-reports/images/invocations-list.png"

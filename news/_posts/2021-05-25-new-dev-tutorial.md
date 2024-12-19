@@ -1,6 +1,6 @@
 ---
 title: "Contributing to BioBlend as a developer"
-tags: [new tutorial]
+tags: [new tutorial, dev]
 contributions:
   authorship: [rikeshi, simonbray]
 tutorial: "topics/dev/tutorials/bioblend-dev/tutorial.html"

@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 module Gtn
-  # This module is responsible for generating shortlinks for tutorials and FAQs
+  # This module is responsible for generating shortlinks for tutorials and FAQs and any other pages we add.
+  #
+  # Every category gets its own prefix letter.
   module Shortlinks
     CATEGORY_TUTORIAL = 'T'
     CATEGORY_SLIDES = 'S'
@@ -11,8 +13,49 @@ module Gtn
     CATEGORY_EVENTS = 'E'
     CATEGORY_WORKFLOW = 'W'
 
+    REDIRECT_TEMPLATE = <<~REDIR
+      <!DOCTYPE html>
+      <html lang="en-US">
+        <meta charset="utf-8">
+        <title>Redirecting&hellip;</title>
+        <link rel="canonical" href="REDIRECT_URL">
+        <script>location="REDIRECT_URL"</script>
+        <meta http-equiv="refresh" content="0; url=REDIRECT_URL">
+        <meta name="robots" content="noindex">
+        <h1>Redirecting&hellip;</h1>
+        <a href="REDIRECT_URL">Click here if you are not redirected.</a>
+      </html>
+    REDIR
+
     def self.mapped?(tutorial, current_mapping)
       current_mapping['id'].values.include? tutorial
+    end
+
+    ##
+    # Duplicate of the jekyll-redirect-from plugin template.
+    # We can't use that for, reasons.
+    def self.html_redirect(target)
+      REDIRECT_TEMPLATE.gsub('REDIRECT_URL', target)
+    end
+
+    ##
+    # Fix missing symlinks (usually exist because the target file has been
+    # renamed and doesn't exist anymore.) However, a redirect *will* be present
+    # for the original filename so we just fix the missing symlink.
+    #
+    # Params:
+    # +site+:: The Jekyll site object
+    def self.fix_missing_redirs(site)
+      missing_redirs = site.data['shortlinks']['id'].select do |id, target|
+        short_link = "short/#{id}.html"
+        ! File.exist?(site.in_dest_dir(short_link))
+      end
+
+      missing_redirs.each do |id, target|
+        short_link = "short/#{id}.html"
+        Jekyll.logger.warn "[GTN/Shortlink]" "Shortlink target #{target} does not exist for shortlink #{short_link}, fixing."
+        File.write(site.in_dest_dir(short_link), Gtn::Shortlinks.html_redirect(target))
+      end
     end
 
     def self.update(current_mapping)

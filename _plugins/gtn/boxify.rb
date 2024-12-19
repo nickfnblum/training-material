@@ -221,7 +221,7 @@ end
 if $PROGRAM_NAME == __FILE__
   require 'test/unit'
   # Test the box ID algorithm
-  class BoxIdTest < Test::Unit::TestCase
+  class Gtn::Boxify::BoxIdTest < Test::Unit::TestCase
     def test_single_page
       assert_equal(Gtn::Boxify.get_id('hands-on', 'a box', 'index.md'), 'hands-on-a-box')
       assert_equal(Gtn::Boxify.get_id('hands-on', 'a box', 'index.md'), 'hands-on-a-box-1')

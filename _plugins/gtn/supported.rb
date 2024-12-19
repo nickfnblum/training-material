@@ -72,17 +72,17 @@ module Gtn
       # generate a 'false' value when merging sets.
       inexact_support -= exact_support
 
-      usegalaxy_server_urls = Gtn::Usegalaxy.servers.map { |x| x[:url] }
+      usegalaxy_server_urls = Gtn::Usegalaxy.servers.map { |x| x[:url].downcase.gsub(/\/$/, '')}
 
       {
         'exact' => (exact_support || []).map do |id|
           data['servers'][id].update(
-            { 'usegalaxy' => usegalaxy_server_urls.include?(data['servers'][id]['url']) }
+            { 'usegalaxy' => usegalaxy_server_urls.include?(data['servers'][id]['url'].downcase.gsub(/\/$/, '')) }
           )
         end,
         'inexact' => (inexact_support || []).map do |id|
           data['servers'][id].update(
-            { 'usegalaxy' => usegalaxy_server_urls.include?(data['servers'][id]['url']) }
+            { 'usegalaxy' => usegalaxy_server_urls.include?(data['servers'][id]['url'].downcase.gsub(/\/$/, '')) }
           )
         end
       }
@@ -183,7 +183,7 @@ if __FILE__ == $PROGRAM_NAME
   if ARGV.length.positive? && (ARGV[0] == 'test')
     require 'test/unit'
     # Testing for the class
-    class IntersectionTest < Test::Unit::TestCase
+    class Gtn::Test::IntersectionTest < Test::Unit::TestCase
       def test_exact
         data = {
           'servers' => { 0 => 's0', 1 => 's1', 2 => 's2' },

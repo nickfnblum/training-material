@@ -15,6 +15,11 @@ description: |
 date_start: 1970-04-01
 date_end:   # if multi-day event
 
+# add tags to help users find your event
+# tag with a topic to have it show op on the topic community page
+tags:
+- single-cell
+
 contributions:
   organisers: # organisers must be defined in CONTRIBUTORS.yaml
   - shiltemann

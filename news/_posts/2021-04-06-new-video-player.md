@@ -2,7 +2,7 @@
 title: "New Feature: Video Player"
 contributions:
   authorship: [hexylena]
-tags: [gtn infrastructure, video, new feature]
+tags: [gtn infrastructure, video, new feature, contributing]
 cover: topics/contributing/images/slides-to-video.png
 coveralt: Example of video player mimicking youtube's interface with a video at the top, a transcript at the bottom left, and suggested videos at the bottom right.
 layout: news

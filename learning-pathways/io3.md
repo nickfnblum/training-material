@@ -1,6 +1,6 @@
 ---
 layout: learning-pathway
-tags: [beginner]
+tags: [beginner, genome-annotation]
 type: use
 
 editorial_board:

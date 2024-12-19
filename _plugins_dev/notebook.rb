@@ -7,17 +7,19 @@ def jupyter_post_write(_site)
 end
 
 module Jekyll
-  # Notebook Generation Disabled
-  class RmarkdownGenerator < Generator
-    def generate(_site)
-      Jekyll.logger.info 'Notebooks disabled'
+  module Generators
+    # Notebook Generation Disabled
+    class RmarkdownGenerator < Generator
+      def generate(_site)
+        Jekyll.logger.info 'Notebooks disabled'
+      end
     end
-  end
 
-  # Notebook Generation Disabled
-  class JupyterNotebookGenerator < Generator
-    def generate(_site)
-      Jekyll.logger.info 'Notebooks disabled'
+    # Notebook Generation Disabled
+    class JupyterNotebookGenerator < Generator
+      def generate(_site)
+        Jekyll.logger.info 'Notebooks disabled'
+      end
     end
   end
 end

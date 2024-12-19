@@ -21,6 +21,7 @@ contributions:
     - bgruening
   funding:
     - nfdi4bioimage
+    - dfg
 ---
 The efficient and accurate treatment of microscopy metadata is of great importance, as it 
 provides insights that are essential for effective image management, search, organisation, 

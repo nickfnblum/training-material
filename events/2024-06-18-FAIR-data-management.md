@@ -19,4 +19,7 @@ contributions:
 location:
   name: Online
 
+tags:
+- fair
+- single-cell
 ---

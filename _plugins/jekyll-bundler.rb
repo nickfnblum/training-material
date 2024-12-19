@@ -43,77 +43,92 @@ Jekyll::Hooks.register :site, :post_write do |site|
 end
 
 module Jekyll
-  # The main GTN function library
-  module JsBundle
-    # Return the preloads for the bundles, when in production
-    # +test+:: ignore this
-    # Returns the HTML to load the bundle
-    #
-    # Example:
-    # {{ 'load' | bundle_preloads }}
-    def bundle_preloads(_test)
-      if Jekyll.env == 'production'
-        bundle_preloads_prod
-      else
-        ''
-      end
-    end
+  module Filters
 
-    # (Internal) Return the production preloads for the bundles
-    def bundle_preloads_prod
-      bundles = @context.registers[:site].config['javascript_bundles']
-      baseurl = @context.registers[:site].config['baseurl']
-
-      # Select the ones wishing to be preloaded
-      bundles = bundles.select do |_name, bundle|
-        bundle['preload'] == true
+    # Our (very simple) JS Bundler
+    module JsBundle
+      ##
+      # Setup the local cache via +Jekyll::Cache+
+      def cache
+        @@cache ||= Jekyll::Cache.new('GtnJsBundle')
       end
 
-      bundles.map do |_name, bundle|
+      # Return the preloads for the bundles, when in production
+      # +test+:: ignore this
+      # Returns the HTML to load the bundle
+      #
+      # Example:
+      # {{ 'load' | bundle_preloads }}
+      def bundle_preloads(_test)
+        if Jekyll.env == 'production'
+          bundle_preloads_prod
+        else
+          ''
+        end
+      end
+
+      # (Internal) Return the production preloads for the bundles
+      def bundle_preloads_prod
+        bundles = @context.registers[:site].config['javascript_bundles']
+        baseurl = @context.registers[:site].config['baseurl']
+
+        # Select the ones wishing to be preloaded
+        bundles = bundles.select do |_name, bundle|
+          bundle['preload'] == true
+        end
+
+        bundles.map do |_name, bundle|
+          bundle_path = "#{baseurl}#{bundle['path']}"
+          "<link rel='preload' href='#{bundle_path}' as='script'>"
+        end.join("\n")
+      end
+
+      # Load a specific bundle, in liquid
+      # +name+:: the name of the bundle to load
+      # Returns the HTML to load the bundle
+      #
+      # Example:
+      # {{ 'main' | load_bundle }}
+      def load_bundle(name)
+        cache.getset("#{Jekyll.env}-#{name}") do
+          if Jekyll.env == 'production'
+            load_bundle_production(name)
+          else
+            load_bundle_dev(name)
+          end
+        end
+      end
+
+      ##
+      # Dev version of the bundle loader, just direct script links
+      def load_bundle_dev(name)
+        bundle = @context.registers[:site].config['javascript_bundles'][name]
+        raise "Bundle #{name} not found in site config" if bundle.nil?
+
+        Jekyll.logger.debug "[GTN/Bundler] Bundle #{bundle}"
+
+        baseurl = @context.registers[:site].config['baseurl']
+
+        bundle['resources'].map do |f|
+          "<script src='#{baseurl}/#{f}'></script>"
+        end.join("\n")
+      end
+
+      ##
+      # Production version of the bundle loader, with cache busting
+      def load_bundle_production(name)
+        bundle = @context.registers[:site].config['javascript_bundles'][name]
+        raise "Bundle #{name} not found in site config" if bundle.nil?
+
+        baseurl = @context.registers[:site].config['baseurl']
+        attrs = ''
+        attrs += ' async' if bundle['async']
+        attrs += ' defer' if bundle['defer']
         bundle_path = "#{baseurl}#{bundle['path']}"
-        "<link rel='preload' href='#{bundle_path}' as='script'>"
-      end.join("\n")
-    end
-
-    # Load a specific bundle, in liquid
-    # +name+:: the name of the bundle to load
-    # Returns the HTML to load the bundle
-    #
-    # Example:
-    # {{ 'main' | load_bundle }}
-    def load_bundle(name)
-      if Jekyll.env == 'production'
-        load_bundle_production(name)
-      else
-        load_bundle_dev(name)
+        "<script #{attrs} src='#{bundle_path}'></script>"
       end
-    end
-
-    def load_bundle_dev(name)
-      bundle = @context.registers[:site].config['javascript_bundles'][name]
-      raise "Bundle #{name} not found in site config" if bundle.nil?
-
-      Jekyll.logger.debug "[GTN/Bundler] Bundle #{bundle}"
-
-      baseurl = @context.registers[:site].config['baseurl']
-
-      bundle['resources'].map do |f|
-        "<script src='#{baseurl}/#{f}'></script>"
-      end.join("\n")
-    end
-
-    def load_bundle_production(name)
-      bundle = @context.registers[:site].config['javascript_bundles'][name]
-      raise "Bundle #{name} not found in site config" if bundle.nil?
-
-      baseurl = @context.registers[:site].config['baseurl']
-      attrs = ''
-      attrs += ' async' if bundle['async']
-      attrs += ' defer' if bundle['defer']
-      bundle_path = "#{baseurl}#{bundle['path']}"
-      "<script #{attrs} src='#{bundle_path}'></script>"
     end
   end
 end
 
-Liquid::Template.register_filter(Jekyll::JsBundle)
+Liquid::Template.register_filter(Jekyll::Filters::JsBundle)

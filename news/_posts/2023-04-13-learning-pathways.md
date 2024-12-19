@@ -1,6 +1,6 @@
 ---
 title: "New Feature: Learning Pathways!"
-tags: [new feature]
+tags: [new feature, contributing]
 contributions:
     authorship: [shiltemann, hexylena]
     funding: [gallantries]

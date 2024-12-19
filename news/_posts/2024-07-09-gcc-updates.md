@@ -4,6 +4,7 @@ layout: news
 tags:
 - gcc
 - gtn infrastructure
+- contributing
 contributions:
   authorship:
   - shiltemann

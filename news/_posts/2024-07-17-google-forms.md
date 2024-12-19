@@ -5,6 +5,7 @@ tags:
 - gtn infrastructure
 - new feature
 - automation
+- contributing
 contributions:
   authorship:
   - hexylena

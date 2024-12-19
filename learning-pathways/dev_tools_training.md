@@ -10,7 +10,7 @@ cover-image-alt: Image of a researcher or developer on a computer thinking of bu
 editorial_board:
 - Marie59
 
-tags: [subdomain, community, tool development, 3-day course]
+tags: [subdomain, community, tool development, 3-day course, dev]
 
 pathway:
 
@@ -23,7 +23,7 @@ pathway:
         topic: admin
       - name: sig_create
         topic: community
-        
+
   - section: "Day 2: Build a batch tool"
     description: This module covers getting your package on Conda, a local Galaxy instance with Planemo, write a Galaxy tool, publish it, and make it visible on a Galaxy server.
     tutorials:
@@ -32,7 +32,7 @@ pathway:
       - name: tools_subdomains
         topic: community
       - name: community-tool-table
-        topic: dev
+        topic: community
 
   - section: "Day 3: Build an interactive tool"
     description: |

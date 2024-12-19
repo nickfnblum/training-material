@@ -5,6 +5,8 @@ tags:
 - gtn infrastructure
 - new feature
 - automation
+- contributing
+- community
 contributions:
   authorship:
   - hexylena
@@ -21,4 +23,4 @@ We would like to recognise and thank all of the reviewers who have contributed t
 
 However given our extensive automation, the we took that one step further! The GTN has recently implemented a new automation that collects metadata about every pull request that is merged into the GTN. This metadata includes the reviewers of learning materials, so of course we can automatically annotate this on every single material within our codebase, leading to our updated headers including up to dozens of previously uncredited reviewers per tutorial.
 
-Thank you all for your hard work and dedication to the GTN community! 
+Thank you all for your hard work and dedication to the GTN community!

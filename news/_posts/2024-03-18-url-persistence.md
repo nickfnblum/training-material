@@ -4,6 +4,7 @@ layout: news
 tags:
 - gtn infrastructure
 - new feature
+- contributing
 contributions:
   authorship:
   - hexylena

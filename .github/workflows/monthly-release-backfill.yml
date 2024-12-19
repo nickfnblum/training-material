@@ -71,7 +71,6 @@ jobs:
           sed -i s"|^title: .*|title: 'GTN Archive ${SOURCE_TAG}'|g" _config.yml
           curl -L https://hexylena.github.io/toolshed-version-database/tool-meta.json > metadata/tool-meta.json
           make rebuild-search-index ACTIVATE_ENV=pwd
-          cat metadata/swagger.yaml | python bin/yaml2json.py > api/swagger.json
           JEKYLL_ENV=production bundle exec jekyll build --strict_front_matter -d _site/training-material
         env:
           SOURCE_TAG: ${{ github.event.inputs.selected_tag }}

@@ -8,6 +8,7 @@ tags:
 - trajectory
 - user
 - contributor
+- contributing
 from_google_form: true
 contributions:
   authorship:

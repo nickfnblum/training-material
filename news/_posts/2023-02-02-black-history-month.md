@@ -1,6 +1,6 @@
 ---
 title: "GTN Celebrates Black History Month"
-tags: []
+tags: [contributing]
 contributions:
   authorship: [hexylena]
 layout: news

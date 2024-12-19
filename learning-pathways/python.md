@@ -12,7 +12,7 @@ funding:
 - gallantries
 - avans-atgm
 
-tags: [python, real-course]
+tags: [python, real-course, data-science]
 
 pathway:
   - section: "Week 1: Python is a Calculator"

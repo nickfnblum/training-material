@@ -8,13 +8,15 @@ contributions:
   - shiltemann
 tags:
   - gtn
+  - contributing
+  - community
 abbreviations:
   GTN: Galaxy Training Network
 cover: news/images/2024-06-06-400-tutorials.png
 coveralt: 400 tutorials
 ---
 
-The Galaxy Training Network (GTN) has reached an exciting milestone: **our 400th tutorial**! This achievement is a testament to the dedication and hard work of our community of educators, researchers, and developers over the last 9 years. 
+The Galaxy Training Network (GTN) has reached an exciting milestone: **our 400th tutorial**! This achievement is a testament to the dedication and hard work of our community of educators, researchers, and developers over the last 9 years.
 
 The GTN was established to provide comprehensive and accessible training materials for users of the [Galaxy](https://galaxyproject.org/), a widely-used, open-source platform that empowers researchers worldwide to conduct data analysis. Over the years, the network has massively grown, both in content and community engagement, reflecting the dynamic nature of scientific research and the continuous need for up-to-date training resources.
 
