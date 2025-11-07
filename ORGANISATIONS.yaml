@@ -303,6 +303,13 @@ NIH:
     url: https://nih.gov/
     github: false
 
+nlbioimaging:
+    name: NL-BioImaging
+    short_name: "NL-BioImaging"
+    joined: 2025-11
+    url: https://eurobioimaging.nl
+    github: false
+
 nsf:
     short_name: NSF
     name: National Science Foundation
