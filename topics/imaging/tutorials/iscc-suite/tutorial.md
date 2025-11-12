@@ -24,7 +24,7 @@ contributions:
     - maartenpaul
 ---
 
-# Introduction
+# File content and integrity validation with International Standard Content Code (ISCC)
 
 In scientific workflows, ensuring data integrity and tracking modifications to data content is crucial for reproducibility. Traditional checksums (like MD5 or SHA) can verify if files are identical, but they cannot detect similar content or survive format conversions.
 
@@ -36,27 +36,28 @@ The **Galaxy ISCC-suite** allows you to integrate content tracking into any Gala
 
 ## ISCC Code Structure
 
-An ISCC-SUM code is a 55-character identifier with two main components, which are combined in one code:
+An ISCC-SUM code is a 55-character identifier with two main components, which are combined into one code:
 
-- **Meta-Code**: Identifies the content type and basic metadata
 - **Data-Code**: Content-based hash that allows similarity comparison
+- **Instance-Code**: A fast checksum or cryptographic hash
 
 For example:
 ```
 K4AOMGOGQJA4Y46PAC4YPPA63GKD5RVFPR7FU3I4OOEW44TYXNYOTMY
 ```
 
-Files with similar content will have similar Data-Code components, while the Meta-Code helps categorize the content type.
+Files with similar content will have similar Data-Code components, while the Instance-Code verifies file integrity.
+
 
 > <agenda-title></agenda-title>
 >
-> In this tutorial, we will cover:
+> In this tutorial, we will deal with:
 >
-> 1. Generating ISCC codes for workflow inputs
-> 2. Verifying file integrity during processing
-> 3. Detecting similar content across files
-> 4. Integrating ISCC tools into image analysis workflows
+> 1. TOC
+> {:toc}
+>
 {: .agenda}
+
 
 # Prepare your data
 
@@ -77,16 +78,13 @@ For this tutorial, we'll use a simple dataset with images that demonstrate diffe
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
 >
 {: .hands_on}
+>
+For this tutorial, ideally we would have:
+- An original image (e.g., `sample_image.png`)
+- A modified version (e.g., slightly cropped or adjusted)
+- A completely different image
 
-> <comment-title>Test Data</comment-title>
->
-> For this tutorial, ideally we would have:
-> - An original image (e.g., `sample_image.png`)
-> - A modified version (e.g., slightly cropped or adjusted)
-> - A completely different image
->
-> This would demonstrate both verification and similarity detection.
-{: .comment}
+This would demonstrate both verification and similarity detection.
 
 # Generate ISCC Codes
 
@@ -94,7 +92,7 @@ The first step is generating ISCC codes for your input files. This creates a con
 
 > <hands-on-title>Generate ISCC codes for input files</hands-on-title>
 >
-> 1. {% tool [Generate ISCC hash](toolshed.g2.bx.psu.edu/repos/bgruening/iscc_sum/iscc_sum) %} with the following parameters:
+> 1. {% tool [Generate ISCC hash]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum) %} with the following parameters:
 >    - {% icon param-file %} *"Input File"*: Select your first test image
 >
 >    This will generate a 55-character ISCC code for the file.
@@ -178,7 +176,7 @@ One of ISCC's unique features is detecting similar content, even across differen
 
 > <hands-on-title>Compare two files for similarity</hands-on-title>
 >
-> 1. {% tool [Compare ISCC hash similarity](toolshed.g2.bx.psu.edu/repos/bgruening/iscc_sum_compare/iscc_sum_compare) %} with the following parameters:
+> 1. {% tool [Compare ISCC hash similarity]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_compare) %} with the following parameters:
 >    - *"Input type"*: `Compare two files`
 >        - {% icon param-file %} *"First file"*: Select your original image
 >        - {% icon param-file %} *"Second file"*: Select a similar or converted version
@@ -203,7 +201,7 @@ When working with many files, you can identify all similar items:
 >
 >    {% snippet faqs/galaxy/collections_build_list.md %}
 >
-> 2. {% tool [Compare ISCC hash similarity](toolshed.g2.bx.psu.edu/repos/bgruening/iscc_sum_compare/iscc_sum_compare) %} with the following parameters:
+> 2. {% tool [Compare ISCC hash similarity]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_compare/iscc_sum_compare) %} with the following parameters:
 >    - *"Input type"*: `Find similar files in collection`
 >        - {% icon param-collection %} *"File collection to compare"*: Select your collection
 >    - *"Similarity threshold"*: `12`
