@@ -2,7 +2,7 @@
 layout: tutorial_slides
 logo: "GTN"
 
-title: "Galaxy Project Management and Contribution"
+title: "Architecture 02 - Galaxy Project Management and Contribution"
 questions:
   - "How do I contribute to Galaxy?"
   - "What is Galaxy's governance model?"
@@ -20,34 +20,31 @@ key_points:
 subtopic: architecture
 contributors:
   - jmchilton
-  - bgruening
+
 
 ---
-layout: true
-name: left-aligned
-class: left, middle
-
----
-
-layout: true
-class: center, middle
-
----
-
 layout: introduction_slides
 topic_name: Galaxy Architecture
 
-# Galaxy Project Management and Contribution
+# Architecture 02 - Galaxy Project Management and Contribution
 
 *The social architecture of the project.*
 
 ---
 
-## Project Management
 
-*The social architecture of the project.*
+
+layout: true
+name: left-aligned
+class: left, middle
+---
+layout: true
+class: center, middle
+
+
 
 ---
+
 
 class: enlarge200
 
@@ -55,7 +52,9 @@ class: enlarge200
 
 Contribution guidelines: https://bit.ly/gx-CONTRIBUTING-md
 
+
 ---
+
 
 class: enlarge200
 
@@ -65,7 +64,9 @@ Nearly all changes should come in through GitHub Pull Requests.
 
 The exceptions include security patches, packaging and release process artifacts, and backporting fixes to older releases.
 
+
 ---
+
 
 class: enlarge150
 
@@ -77,13 +78,17 @@ In brief, to responsibly report security issues e-mail
 
 Check out the full policy in [SECURITY_POLICY.md](https://github.com/galaxyproject/galaxy/blob/dev/SECURITY_POLICY.md).
 
+
 ---
+
 
 ### Branches
 
-![Branches](../../images/core_branches.plantuml.svg)
+![Branches](../../images/core_branches.mindmap.plantuml.svg)
+
 
 ---
+
 
 class: enlarge150
 
@@ -97,7 +102,9 @@ All repository goverance is done in the open on GitHub via Pull Requests and vot
 
 > "Committers may participate in all formal votes, including votes to modify team membership, merge pull requests, and modify [policies]."
 
+
 ---
+
 
 class: enlarge150
 
@@ -107,7 +114,9 @@ https://galaxyproject.org/community/wg/
 
 > "Galaxy has grown a lot over the years, going from a project at one university in 2005 to the global community it is today. Several parts of the Galaxy ecosystem have become avowedly and obviously community driven during that time, including tools, code, training, and several other international efforts. Galaxy Working Groups push this global model to other areas of Galaxy as well."
 
+
 ---
+
 
 class: enlarge200
 
@@ -117,7 +126,9 @@ Describes expectations, encourages diversity, and describes how to report issues
 
 Check out the full policy in [CODE_OF_CONDUCT.md](https://github.com/galaxyproject/galaxy/blob/dev/CODE_OF_CONDUCT.md).
 
+
 ---
+
 
 class: enlarge150
 
@@ -126,11 +137,13 @@ class: enlarge150
 New large releases are issued roughly every 4 months. The process is guided by an auto-created
 self documenting release issue.
 
-Check out the [21.05 release issue](https://github.com/galaxyproject/galaxy/issues/11770) as an example.
+Check out the [25.1 release issue](https://github.com/galaxyproject/galaxy/issues/20952) as an example.
 
 Working groups create roadmaps aligned with each release and coordinated with project leadership.
 
+
 ---
+
 
 class: enlarge150
 
@@ -141,7 +154,9 @@ pull requests of the Galaxy repository.
 
 The tags are described in detail in [issues.rst](https://github.com/galaxyproject/galaxy/blob/dev/doc/source/project/issues.rst).
 
+
 ---
+
 
 ### Continuous Integration (CI)
 
@@ -149,7 +164,9 @@ The tags are described in detail in [issues.rst](https://github.com/galaxyprojec
 
 If you get Red Xs - take a second to ponder whether they make sense and don't be afraid to ask, it is a complex system with a lot of noise!
 
+
 ---
+
 
 ### Linting and Code Formatting
 
@@ -175,7 +192,9 @@ $ make client-format
 $ make client-lint
 ```
 
+
 ---
+
 
 ### mypy and Python Types
 
@@ -203,7 +222,9 @@ them can be found on this [blog post](https://dev.to/dstarner/using-pythons-type
 Additional useful resources include [this cheat sheet from mypy](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html)
 and the Python docs for the [typing module](https://docs.python.org/3/library/typing.html).
 
+
 ---
+
 
 class: enlarge200
 
@@ -213,7 +234,9 @@ Galaxy developers use a wide range of IDEs and we don't offer any formal recomme
 
 However, Marius has assembled some documentation on debugging the [Galaxy server](https://docs.galaxyproject.org/en/master/dev/debugging_galaxy.html) and [tests](https://docs.galaxyproject.org/en/master/dev/debugging_tests.html) using VS Code.
 
+
 ---
+
 
 ### Development Environment - Gitpod
 
@@ -221,7 +244,11 @@ Galaxy does have a Gitpod configuration that is enabled to allow editing and tes
 
 Video from Marius presenting Gitpod at the Galaxy Developer Roundtable (https://www.youtube.com/watch?v=3e71DFg3gsw#t=39m0s)
 
+
 ---
+
+
+class: center
 
 ### docs.galaxyproject.org
 
@@ -230,4 +257,4 @@ Video from Marius presenting Gitpod at the Galaxy Developer Roundtable (https://
 All these documents as well as versions code and deployment documentation and release notes
 can be found at [docs.galaxyproject.org](https://docs.galaxyproject.org).
 
-.footnote[Previous: [Ecosystem]({% link topics/dev/tutorials/architecture-1-ecosystem/slides.html %}) | Next: [Principles]({% link topics/dev/tutorials/architecture-3-principles/slides.html %})]
+.footnote[Previous: [Galaxy Ecosystem and Projects]({% link topics/dev/tutorials/architecture-ecosystem/slides.html %}) | Next: [Galaxy Architecture Principles]({% link topics/dev/tutorials/architecture-principles/slides.html %})]

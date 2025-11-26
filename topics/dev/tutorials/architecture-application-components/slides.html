@@ -2,7 +2,7 @@
 layout: tutorial_slides
 logo: "GTN"
 
-title: "Galaxy Application Components: Models, Managers, and Services"
+title: "Architecture 08 - Galaxy Application Components: Models, Managers, and Services"
 questions:
   - "How is business logic organized in Galaxy?"
   - "What are models, managers, and services?"
@@ -22,38 +22,39 @@ key_points:
 subtopic: architecture
 contributors:
   - jmchilton
-  - bgruening
+
 
 ---
-layout: true
-name: left-aligned
-class: left, middle
-
----
-
-layout: true
-class: center, middle
-
----
-
 layout: introduction_slides
 topic_name: Galaxy Architecture
 
-# Galaxy Application Components: Models, Managers, and Services
+# Architecture 08 - Galaxy Application Components: Models, Managers, and Services
 
 *The architecture surrounding Galaxy components.*
 
 ---
 
-## Application Components - Models, Managers, and Services
 
-*The architecture surrounding Galaxy components.*
+
+layout: true
+name: left-aligned
+class: left, middle
+---
+layout: true
+class: center, middle
+
+
 
 ---
+
+
+class: center
 
 ![This section will talk about that manager layer and what lies below](../../images/asgi_app.plantuml.svg)
 
+
 ---
+
 
 There are many ways to describe and visualize the Galaxy server architecture,
 one is to imagine the Galaxy database as the ultimate source for Galaxy "stuff"
@@ -64,11 +65,17 @@ mediate all controller interactions (and isolate the backend from the web
 framework) while the model layer is meant to mediate all database interactions
 (and isolate the backend from database internals).
 
+
 ---
+
+
+class: center
 
 ![Models and Managers](../../images/core_models_managers.plantuml.svg)
 
+
 ---
+
 
 class: enlarge150
 
@@ -79,9 +86,12 @@ Handle API and web processing details of requests and responses at a high-level.
 Thin layer below the controllers to shield applciation logic from FastAPI internals.
 
 In practice, it is totally fine to skip this layer and have FastAPI controllers talk directly
-to managers.
+to managers. Also in practice, there are many places where the controller or service layers
+are thicker than they should be - and these are anti-patterns that shouldn't be followed.
+
 
 ---
+
 
 class: enlarge150
 
@@ -94,19 +104,29 @@ Controllers should ideally be thin wrappers around actions defined in managers.
 Whenever a model requires more than just the database, the operation should be defined
 in a manager instead of in the model.
 
+
 ---
+
+
+class: center
 
 ### Managers - Some Key Files
 
-![Key Managers](../../images/core_files_managers.plantuml.svg)
+![Key Managers](../../images/core_files_managers.mindmap.plantuml.svg)
+
 
 ---
+
+
+class: center
 
 ### Managers - Some Helpers
 
-![Manager Helpers](../../images/core_files_managers_helpers.plantuml.svg)
+![Manager Helpers](../../images/core_files_managers_helpers.mindmap.plantuml.svg)
+
 
 ---
+
 
 ### Galaxy Models
 
@@ -120,9 +140,14 @@ in a manager instead of in the model.
 
 ---
 
+
+class: center
+
 ![SQLAlchemy Architecture](../../images/sqla_arch_small.png)
 
+
 ---
+
 
 ### Galaxy Database Schema Migrations
 
@@ -135,7 +160,9 @@ in a manager instead of in the model.
   - `6a67bf27e6a6_deferred_data_tables.py`
   - `b182f655505f_add_workflow_source_metadata_column.py`
 
+
 ---
+
 
 ### More on Schema Migrations
 
@@ -149,23 +176,37 @@ in a manager instead of in the model.
   - `lib/galaxy/model/migrations/alembic/versions_gxy` (gxy branch: galaxy model)
   - `lib/galaxy/model/migrations/alembic/versions_tsi` (tsi branch: legacy install model)
 
+
 ---
 
-![Galaxy Schema](../../images/galaxy_schema.png)
+
+class: center
 
 ### Database Diagram
 
+![Galaxy Schema](../../images/galaxy_schema.png)
+
 https://galaxyproject.org/admin/internals/data-model/
 
----
-
-![HDA](../../images/hda.svg)
 
 ---
+
+
+class: center
+
+![HDA foor bar...](../../images/hda.svg)
+
+
+---
+
+
+class: center
 
 ![HDA Dataset](../../images/hda_dataset.plantuml.svg)
 
+
 ---
+
 
 ### Dataset Metadata
 
@@ -175,24 +216,44 @@ https://galaxyproject.org/admin/internals/data-model/
 
 ???
 
+
 ---
+
+
+class: center
 
 ![HDAs and HDCAs](../../images/hda_hdca.plantuml.svg)
 
+
 ---
+
+
+class: center
 
 ![Workflows](../../images/workflow_definition.svg)
 
+
 ---
+
+
+class: center
 
 ![Workflow Running](../../images/workflow_run.svg)
 
+
 ---
+
+
+class: center
 
 ![Libraries](../../images/libraries.svg)
 
+
 ---
+
+
+class: center
 
 ![Library Permissions](../../images/library_permissions.svg)
 
-.footnote[Previous: [Tasks]({% link topics/dev/tutorials/architecture-7-tasks/slides.html %}) | Next: [Plugins]({% link topics/dev/tutorials/architecture-9-plugins/slides.html %})]
+.footnote[Previous: [Galaxy Task Management with Celery]({% link topics/dev/tutorials/architecture-tasks/slides.html %}) | Next: [Galaxy Plugin Architecture]({% link topics/dev/tutorials/architecture-plugins/slides.html %})]

@@ -2,7 +2,7 @@
 layout: tutorial_slides
 logo: "GTN"
 
-title: "Galaxy Architecture Principles"
+title: "Architecture 03 - Galaxy Architecture Principles"
 questions:
   - "What are the guiding principles of Galaxy architecture?"
   - "Why is the frontend opinionated but the backend plugin-driven?"
@@ -20,34 +20,31 @@ key_points:
 subtopic: architecture
 contributors:
   - jmchilton
-  - bgruening
+
 
 ---
-layout: true
-name: left-aligned
-class: left, middle
-
----
-
-layout: true
-class: center, middle
-
----
-
 layout: introduction_slides
 topic_name: Galaxy Architecture
 
-# Galaxy Architecture Principles
+# Architecture 03 - Galaxy Architecture Principles
 
 *The guiding principles of the core code architecture.*
 
 ---
 
-## Principles
 
-*The guiding principles of the core code architecture.*
+
+layout: true
+name: left-aligned
+class: left, middle
+---
+layout: true
+class: center, middle
+
+
 
 ---
+
 
 ### Aspirational Principles of Galaxy Architecture
 
@@ -65,7 +62,9 @@ should be as simple and consistent as possible. The backend has been deployed at
 so many different sites and targeting so many different technologies - that
 flexibility is paramount.
 
+
 ---
+
 
 ### An Opinionated Frontend
 
@@ -73,11 +72,13 @@ flexibility is paramount.
 - Consistent colors, fonts, themes, etc...
 - Reusable components for presenting common widgets - from the generic (forms and grids) to the specific (tools and histories).
 - Tied to specific technologies:
-  - Implemented in JavaScript (ES6)
+  - Implemented in TypeScript
   - Built with [webpack](https://webpack.js.org/)
   - [Vue.js](https://vuejs.org/) for component definitions
 
+
 ---
+
 
 ### A Plugin Driven Backend
 
@@ -87,7 +88,7 @@ can be adapted to many different technologies.
 - SQLAlchemy allows using SQLite, PostgreSQL, or MySQL (sort of) for your database.
 - Many different cluster backends or job managers are supported.
 - Different frontend proxies (e.g. nginx) are supported as well as web
-  application containers (e.g. uWSGI, gunicorn).
+  application containers (e.g. uvicorn, gunicorn).
 - Different storage strategies and technologies are supported (e.g. S3, iRODS).
 - Tool definitions, job metrics, stat middleware, tool dependency resolution, workflow modules,
   datatype definitions are all plugin driven.
@@ -98,7 +99,9 @@ If the chief architectural principle guiding the frontend is a fast and accessib
 experience for the bench scientist, perhaps for the backend it is allowing
 deployment on many different platforms and a different scales.
 
+
 ---
+
 
 ### A Plugin Driven Backend but...
 
@@ -112,7 +115,9 @@ So by default Galaxy does not require:
  - An external database server - Galaxy can use an sqlite database.
  - A web proxy or external Python web server.
 
+
 ---
+
 
 class: enlarge200
 
@@ -125,4 +130,4 @@ the Galaxy backend is architected with Galaxy administrators in mind first and f
 
 TODO: slide connecting architecture to people here
 
-.footnote[Previous: [Project Management]({% link topics/dev/tutorials/architecture-2-project-management/slides.html %}) | Next: [Files]({% link topics/dev/tutorials/architecture-4-files/slides.html %})]
+.footnote[Previous: [Galaxy Project Management and Contribution]({% link topics/dev/tutorials/architecture-project-management/slides.html %}) | Next: [Galaxy Files and Directory Structure]({% link topics/dev/tutorials/architecture-files/slides.html %})]

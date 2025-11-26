@@ -2,7 +2,7 @@
 layout: tutorial_slides
 logo: "GTN"
 
-title: "Galaxy Task Management with Celery"
+title: "Architecture 07 - Galaxy Task Management with Celery"
 questions:
   - "How does Galaxy handle long-running tasks?"
   - "When should I use Celery?"
@@ -22,38 +22,43 @@ key_points:
 subtopic: architecture
 contributors:
   - jmchilton
-  - bgruening
+
 
 ---
-layout: true
-name: left-aligned
-class: left, middle
-
----
-
-layout: true
-class: center, middle
-
----
-
 layout: introduction_slides
 topic_name: Galaxy Architecture
 
-# Galaxy Task Management with Celery
+# Architecture 07 - Galaxy Task Management with Celery
 
 *The architecture surrounding Galaxy task management.*
 
 ---
 
-## Galaxy Tasks
 
-*The architecture surrounding Galaxy task management.*
+
+layout: true
+name: left-aligned
+class: left, middle
+---
+layout: true
+class: center, middle
+
+
 
 ---
+
+
+class: center
 
 ![Processing requests on the server](../../images/asgi_app.plantuml.svg)
 
-???
+
+---
+
+
+class: enlarge120
+
+### Avoid Doing Work in Web Threads
 
 Web servers are a terrible place to do work. Traditional Python WSGI servers
 are meant for processing requests that take less a minute - they are meant
@@ -63,11 +68,19 @@ This request/response cycle is inappropriate for deleting all the files in a
 history, submitted 10,000 batch jobs for a collection, building a zip file for
 a library folder.
 
+
 ---
+
+
+class: center
 
 ![Zoom in on Backend](../../images/core_backend_controllers.plantuml.svg)
 
+
 ---
+
+
+class: center
 
 ![Infrastructure including Celery](../../images/core_backend_celery.plantuml.svg)
 
@@ -77,11 +90,17 @@ Handling a task description off to Celery allows the web server to respond right
 away and avoid various hacks. Celery is meant for these long running tasks and has
 a set of operations for handling them properly.
 
+
 ---
+
+
+class: center
 
 ![Celery Overview](https://d33wubrfki0l68.cloudfront.net/f6a5a0c33eac1250034747d375da9a396e5488ce/0196f/media/async-task-python.png)
 
+
 ---
+
 
 class: enlarge150
 
@@ -90,7 +109,9 @@ class: enlarge150
 Adds more complexity to deploying Galaxy. Celery needs to be available to Galaxy
 at runtime, production Galaxy instances need a broker and a backend.
 
+
 ---
+
 
 class: reduce90
 
@@ -120,11 +141,17 @@ gunicorn                         STARTING
 Start Galaxy with Gravity starts not only the Python web server (gunicorn)
 running the Galaxy application but also celery and required services.
 
+
 ---
+
+
+class: center
 
 ![Celery tasks being registered at startup](../../images/celery_tasks_list.png)
 
+
 ---
+
 
 class: enlarge150
 
@@ -136,9 +163,9 @@ class: enlarge150
   - Implicit type based dependency injection from Galaxy's DI container (using Lagom)
   - Feels a lot like writing an API endpoint.
 
+
 ---
 
-class: enlarge150
 
 ### A Simple Task
 
@@ -154,13 +181,15 @@ def export_history(
     model_store_manager.setup_history_export_job(request)
 ```]
 
+
 ---
 
-class: enlarge150
+
+class: reduce70
 
 ### The `galaxy_task` Decorator
 
-.code[```
+.code[```python
 @galaxy_task(
     ignore_result=True,
     action="setting up export history job"
@@ -176,16 +205,16 @@ def export_history(
 - Wrap a simple function to turn it into a task.
 - Ensure all inputs are JSON serializable or components in Galaxy's dependency injection container
 
+
 ---
 
-class: enlarge150
 
 ### Celery and Pydantic
 
 The `request` argument to `export_history` is a Pydantic model type named
 `SetupHistoryExportJob`. These are mostly defined in `galaxy.schema.tasks`.
 
-.code[```
+.code[```python
 from pydantic import BaseModel
 
 class SetupHistoryExportJob(BaseModel):
@@ -197,7 +226,9 @@ class SetupHistoryExportJob(BaseModel):
     include_deleted: bool
 ```]
 
+
 ---
+
 
 class: enlarge200
 
@@ -208,9 +239,9 @@ class: enlarge200
 - Inject `__type__` and `__class__` attributes into JSON description.
 - `@galaxy_task` decorator sets Celery `serializer` attribute.
 
+
 ---
 
-class: enlarge150
 
 ### Celery and Dependency Injection
 
@@ -231,13 +262,15 @@ def export_history(
   task is running.
 - Client does not need to have any knowledge of this class.
 
+
 ---
+
 
 ### Executing Tasks from Galaxy
 
 See `lib/galaxy/tools/imp_exp/__init__.py`:
 
-.code[```
+.code[```python
 from galaxy.schema.tasks import SetupHistoryExportJob
 
 ...
@@ -256,7 +289,9 @@ from galaxy.schema.tasks import SetupHistoryExportJob
 
 The delay method is created implicitly from the `galaxy_task` decorator.
 
+
 ---
+
 
 class: enlarge200
 
@@ -269,11 +304,17 @@ class: enlarge200
   possible.
 - Place new request definition argument types in `galaxy.schema.tasks`.
 
+
 ---
+
 
 ### Existing Tasks Success Stories
 
+
+
+
 ---
+
 
 class: enlarge150
 
@@ -282,7 +323,9 @@ class: enlarge150
 - We added PDF export of Galaxy Markdown using weasyprint
 - Generation of PDF took too long, feature was quite unstable
 
+
 ---
+
 
 class: enlarge150
 
@@ -297,7 +340,9 @@ class: enlarge150
 
 https://github.com/galaxyproject/galaxy/pull/13691
 
+
 ---
+
 
 class: enlarge150
 
@@ -308,13 +353,13 @@ class GeneratePdfDownload(BaseModel):
     document_type: PdfDocumentType
 ```]
 
+
 ---
 
-class: enlarge120
 
 ### Robust PDF Export
 
-.code[```
+.code[```python
 from galaxy.managers.markdown_util import generate_branded_pdf
 
 @galaxy_task(
@@ -332,7 +377,9 @@ def prepare_pdf_download(
     )
 ```]
 
+
 ---
+
 
 class: enlarge120
 
@@ -353,7 +400,9 @@ def prepare_invocation_download(
 
 https://github.com/galaxyproject/galaxy/pull/12533
 
+
 ---
+
 
 class: enlarge150
 
@@ -367,7 +416,9 @@ class: enlarge150
 
 https://github.com/galaxyproject/galaxy/pull/13655
 
+
 ---
+
 
 ### Uploads - Task Composition
 
@@ -388,7 +439,9 @@ async_result = (
 )()
 ```]
 
+
 ---
+
 
 class: enlarge200
 
@@ -401,7 +454,9 @@ Task-based operations enable the most expensive of the new history's batch opera
 
 https://github.com/galaxyproject/galaxy/pull/14042
 
+
 ---
+
 
 class: enlarge200
 
@@ -413,4 +468,4 @@ class: enlarge200
 
 https://github.com/galaxyproject/galaxy/issues/11721
 
-.footnote[Previous: [Dependency Injection]({% link topics/dev/tutorials/architecture-6-dependency-injection/slides.html %}) | Next: [Application Components]({% link topics/dev/tutorials/architecture-8-application-components/slides.html %})]
+.footnote[Previous: [Dependency Injection in Galaxy]({% link topics/dev/tutorials/architecture-dependency-injection/slides.html %}) | Next: [Galaxy Application Components: Models, Managers, and Services]({% link topics/dev/tutorials/architecture-application-components/slides.html %})]

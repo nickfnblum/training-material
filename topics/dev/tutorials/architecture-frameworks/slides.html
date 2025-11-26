@@ -2,7 +2,7 @@
 layout: tutorial_slides
 logo: "GTN"
 
-title: "Galaxy Web Frameworks"
+title: "Architecture 05 - Galaxy Web Frameworks"
 questions:
   - "How does Galaxy handle web requests?"
   - "What web frameworks does Galaxy use?"
@@ -22,52 +22,54 @@ key_points:
 subtopic: architecture
 contributors:
   - jmchilton
-  - bgruening
+
 
 ---
-layout: true
-name: left-aligned
-class: left, middle
-
----
-
-layout: true
-class: center, middle
-
----
-
 layout: introduction_slides
 topic_name: Galaxy Architecture
 
-# Galaxy Web Frameworks
+# Architecture 05 - Galaxy Web Frameworks
 
 *The architecture of an interaction.*
 
 ---
 
-## Web Frameworks
 
-*The architecture of an interaction.*
+
+layout: true
+name: left-aligned
+class: left, middle
+---
+layout: true
+class: center, middle
+
+
 
 ---
+
 
 class: reduce70
 
 ![Client-Server Communications](../../images/server_client_vuejs.plantuml.svg)
 
 Bits and pieces of older client technologies appear throughout - ranging from Python
-mako templates to generate HTML, lower-level jQuery, and lots of Backbone legacy MVC.
+mako templates to generate HTML, lower-level jQuery, Axios interactions, and Backbone legacy MVC.
+
 
 ---
+
+
+class: center
 
 ![Processing requests on the server](../../images/asgi_app.plantuml.svg)
 
 Expanding the right side of that diagram. We will move through the components left to right.
 
+
 ---
 
+
 class: enlarge120
-template: left-aligned
 
 ### ASGI - Application
 
@@ -86,9 +88,9 @@ async def application(scope, receive, send):
 
 Checkout [ASGI documentation](https://asgi.readthedocs.io/) for more details.
 
+
 ---
 
-template: left-aligned
 
 ### ASGI & Starlette Low-level Example
 
@@ -116,9 +118,9 @@ INFO: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 
 Example from [starlette.io](https://www.starlette.io/).
 
+
 ---
 
-template: left-aligned
 
 ### ASGI - Starlette High-level Example
 
@@ -142,9 +144,9 @@ app = Starlette(debug=True, routes=[
 
 A small framework for building web applications.
 
+
 ---
 
-template: left-aligned
 
 ### ASGI - FastAPI
 
@@ -162,13 +164,17 @@ class FastAPI(Starlette):
 FastAPI (the library and the application base) extends starlette framework with features for building APIs. These include data
 validation, serialization, documentation generation.
 
+
 ---
+
+
+class: center
 
 ![Processing requests on the server](../../images/asgi_app.plantuml.svg)
 
+
 ---
 
-template: left-aligned
 
 ### FastAPI `__call__`
 
@@ -188,9 +194,9 @@ async def __call__(self, scope: Scope, receive: Receive, send: Send) -> None:
 
 A light wrapper around Starlette's call entry point.
 
+
 ---
 
-template: left-aligned
 
 ### Starlette `__call__`
 
@@ -204,9 +210,9 @@ async def __call__(self, scope: Scope, receive: Receive, send: Send) -> None:
 
 Walks through Starlette middleware.
 
+
 ---
 
-template: left-aligned
 
 ### Starlette `build_middleware_stack`
 
@@ -224,9 +230,10 @@ def build_middleware_stack(self) -> ASGIApp:
 
 Start with the router and surround it with each layer of configured middleware.
 
+
 ---
 
-template: left-aligned
+
 class: enlarge150
 
 ### ASGI Middleware
@@ -235,9 +242,10 @@ class: enlarge150
 
 https://asgi.readthedocs.io/en/latest/specs/main.html#middleware
 
+
 ---
 
-template: left-aligned
+
 class: enlarge150
 
 ### Starlette Middleware
@@ -246,9 +254,9 @@ class: enlarge150
 
 https://www.starlette.io/middleware/
 
+
 ---
 
-template: left-aligned
 
 ### Starlette `build_middleware_stack`
 
@@ -266,9 +274,9 @@ def build_middleware_stack(self) -> ASGIApp:
 
 Notice the inner most layer is the router.
 
+
 ---
 
-template: left-aligned
 
 ### FastAPI Router Initialization
 
@@ -282,7 +290,9 @@ class FastAPI(Starlette):
         )
 ```
 
+
 ---
+
 
 ### FastAPI Router
 
@@ -293,7 +303,9 @@ class APIRouter(routing.Router):
    ...
 ```
 
+
 ---
+
 
 ### Starlette Router
 
@@ -315,7 +327,11 @@ async def __call__(self, scope: Scope, receive: Receive, send: Send) -> None:
 
 https://www.starlette.io/routing/
 
+
 ---
+
+
+class: center
 
 ![Router Class Diagram](../../images/routers.plantuml.svg)
 
@@ -323,7 +339,9 @@ https://www.starlette.io/routing/
 - https://fastapi.tiangolo.com/tutorial/bigger-applications/#apirouter
 - https://fastapi-utils.davidmontague.xyz/user-guide/inferring-router/
 
+
 ---
+
 
 class: enlarge200
 
@@ -331,7 +349,9 @@ In order to understand how the routing classes are setup within Galaxy,
 lets step back and look really quickly at how Galaxy's FastAPI
 application (ASGI endpoint) is constructed.
 
+
 ---
+
 
 ### FastAPI Factory
 
@@ -356,7 +376,9 @@ def factory():
     return initialize_fast_app(gx_webapp, gx_app)
 ```
 
+
 ---
+
 
 ### FastAPI Application
 
@@ -378,7 +400,9 @@ def initialize_fast_app(gx_webapp, gx_app):
     return app
 ```
 
+
 ---
+
 
 ### Finding API Routers
 
@@ -398,7 +422,9 @@ def include_all_package_routers(app: FastAPI, package_name: str):
             app.include_router(router)
 ```
 
+
 ---
+
 
 class: reduce70
 
@@ -434,7 +460,11 @@ class FastAPITags:
         self.manager.update(trans, payload)
 ```
 
+
 ---
+
+
+class: center
 
 ![Router Class Diagram](../../images/routers.plantuml.svg)
 
@@ -444,6 +474,7 @@ class FastAPITags:
 
 
 ---
+
 
 ### WSGI Fallback
 
@@ -456,7 +487,9 @@ app.mount('/', wsgi_handler)
 
 This effectively provides a fallback to our legacy WSGI application.
 
+
 ---
+
 
 ### WSGI
 
@@ -466,13 +499,15 @@ This effectively provides a fallback to our legacy WSGI application.
   - https://gunicorn.org/ (simpler, more standard Python 3 WSGI server)
   - https://bitbucket.org/ianb/paste (more of legacy interest, but still heavily used in testing for instance)
 
+
 ---
+
 
 ![Processing requests on the server](../../images/wsgi_app.plantuml.svg)
 
+
 ---
 
-template: left-aligned
 
 ### WSGI Middleware
 
@@ -484,9 +519,9 @@ A WSGI function:
 - Galaxy uses several middleware components defined in the `wrap_in_middleware`
   function of `galaxy.webapps.galaxy.buildapp`.
 
+
 ---
 
-template: left-aligned
 
 ### Galaxy's WSGI Middleware
 
@@ -501,25 +536,37 @@ Middleware configured in `galaxy.webapps.galaxy.buildapp#wrap_in_middleware`.
 - `galaxy.web.framework.middleware.xforwardedhost#XForwardedHostMiddleware`
 - `galaxy.web.framework.middleware.request_id#RequestIDMiddleware`
 
+
 ---
+
+
+class: center
 
 ![Processing requests on the server (WSGI)](../../images/wsgi_app.plantuml.svg)
 
+
 ---
+
+
+class: center
 
 ### Instances
 
 ![webapp](../../images/webapp.plantuml.svg)
 
+
 ---
+
+
+class: center
 
 ### Classes
 
 ![GalaxyWebApplication class diagram](../../images/webapp_classes.plantuml.svg)
 
+
 ---
 
-template: left-aligned
 
 ### Routes
 
@@ -541,9 +588,11 @@ URL `/datasets/278043/display` matches this route, so `handle_request` will
 
 Uses popular Routes library (https://pypi.python.org/pypi/Routes).
 
+
 ---
 
-template: left-aligned
+
+class: reduce70
 
 Simplified `handle_request` from `lib/galaxy/web/framework/base.py`.
 
@@ -573,7 +622,9 @@ def handle_request(self, environ, start_response):
     # Body may be a file, string, etc... respond with it.
 ```
 
+
 ---
+
 
 class: enlarge150
 
@@ -588,7 +639,9 @@ Three varieties
 Ideally each of these are *thin*. Focused on "web things" - adapting parameters and responses and move
 "business logic" to components not bound to web functionality.
 
+
 ---
+
 
 class: enlarge150
 
@@ -598,7 +651,9 @@ class: enlarge150
 - Consume and produce typed data using Python 3 type annotations, FastAPI helpers, and Pydantic models.
 - Router specifies HTTP verb (GET, POST, PUT, etc..) and how to parse path.
 
+
 ---
+
 
 class: reduce70
 
@@ -628,7 +683,9 @@ class FastAPIRoles:
         return role_to_model(trans, role)
 ```
 
+
 ---
+
 
 class: reduce70
 
@@ -659,7 +716,9 @@ class RoleDefinitionModel(BaseModel):
     group_ids: Optional[List[EncodedDatabaseIdField]] = Field(title="Group IDs", default=[])
 ```
 
+
 ---
+
 
 ### FastAPI and OpenAPI
 
@@ -667,11 +726,15 @@ class RoleDefinitionModel(BaseModel):
 
 ![OpenAPI Docs from FastAPI at api/docs](../../images/core_api_docs.png)
 
+
 ---
+
 
 ![OpenAPI Docs from FastAPI at api/docs for roles](../../images/core_api_docs_roles.png)
 
+
 ---
+
 
 class: enlarge150
 
@@ -681,9 +744,11 @@ class: enlarge150
 - Mirroring FastAPI controllers until FastAPI required (likely 21.09)
 - Exposed method take `trans` and request parameters and return a JSON response (possibly including Pydantic objects)
 
+
 ---
 
-class: reduce70
+
+class: reduce50
 
 ### WSGI API Controller Example
 
@@ -725,7 +790,9 @@ class RoleAPIController(BaseGalaxyAPIController):
         return role_to_model(trans, role)
 ```
 
+
 ---
+
 
 class: enlarge150
 
@@ -736,4 +803,4 @@ class: enlarge150
 - Render HTML components using [mako](http://www.makotemplates.org/) templates (see `templates/`)
 - The usage of these should continue to decrease over time.
 
-.footnote[Previous: [Files]({% link topics/dev/tutorials/architecture-4-files/slides.html %}) | Next: [Dependency Injection]({% link topics/dev/tutorials/architecture-6-dependency-injection/slides.html %})]
+.footnote[Previous: [Galaxy Files and Directory Structure]({% link topics/dev/tutorials/architecture-files/slides.html %}) | Next: [Dependency Injection in Galaxy]({% link topics/dev/tutorials/architecture-dependency-injection/slides.html %})]
