@@ -63,7 +63,7 @@ Files with similar content will have similar Data-Code components, while the Ins
 
 For this tutorial, we'll use a simple dataset with images that demonstrate different use cases.
 
-## Data Upload
+## Get the data
 
 > <hands-on-title>Data Upload</hands-on-title>
 >
@@ -71,18 +71,18 @@ For this tutorial, we'll use a simple dataset with images that demonstrate diffe
 >
 >    {% snippet faqs/galaxy/histories_create_new.md %}
 >
-> 2. Import sample images (we'll create a simple test set):
->    - Upload 2-3 test images in different formats (PNG, TIFF, JPG)
->    - Include one duplicate or very similar image
+> 2. Download the following image and import it into your Galaxy history.
+>    - [`example_image.tiff`](workflows/test-data/example_image.tiff)
+>    - [`example_image2.tiff`](workflows/test-data/example_image.tiff)
+>    - [`example_thresholded1.tiff`](workflows/test-data/example_image.tiff)
+>    
+>    If you are importing the image via URL:
 >
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
 >
+
 {: .hands_on}
 >
-For this tutorial, ideally we would have:
-- An original image (e.g., `sample_image.png`)
-- A modified version (e.g., slightly cropped or adjusted)
-- A completely different image
 
 This would demonstrate both verification and similarity detection.
 
@@ -93,27 +93,27 @@ The first step is generating ISCC codes for your input files. This creates a con
 > <hands-on-title>Generate ISCC codes for input files</hands-on-title>
 >
 > 1. {% tool [Generate ISCC hash]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum) %} with the following parameters:
->    - {% icon param-file %} *"Input File"*: Select your first test image
+>    - {% icon param-file %} *"Input File"*: Select your first example image
 >
 >    This will generate a 55-character ISCC code for the file.
 >
 > 2. Inspect the output by clicking on the dataset.
 >    
->    You should see a single line containing the ISCC code.
->
-> 3. Repeat for your other test images to generate codes for comparison.
+>    You should see a single line containing the ISCC code. For the first example image the code is expected to be:
+> ```
+> K4AGSPOSB5SS2X427WZ27QASTSBVTS55DXLMFDF7WOJKEOSTDEI3OXQ
+> ```
+> 3. Repeat for the other example image to generate codes for comparison.
 >
 {: .hands_on}
 
 > <question-title></question-title>
 >
 > 1. Will the same file always generate the same ISCC code?
-> 2. If you convert an image to a different format, will the ISCC code change?
 >
 > > <solution-title></solution-title>
 > >
 > > 1. Yes! The same file will always generate the identical ISCC code, making it suitable for integrity verification.
-> > 2. The Meta-Code component may change (reflecting different file type), but the Data-Code component remains similar, allowing similarity detection across formats.
 > >
 > {: .solution}
 >
@@ -128,7 +128,7 @@ During workflow execution, you may want to verify that intermediate files match 
 > <hands-on-title>Verify a file against its ISCC code</hands-on-title>
 >
 > 1. {% tool [Verify ISCC hash](toolshed.g2.bx.psu.edu/repos/bgruening/iscc_sum_verify/iscc_sum_verify) %} with the following parameters:
->    - {% icon param-file %} *"File to verify"*: Select one of your test images
+>    - {% icon param-file %} *"File to verify"*: Select the first example image
 >    - *"Source of expected ISCC code"*: `Enter manually`
 >        - *"Expected ISCC code"*: Paste the ISCC code you generated in the previous step
 >
@@ -149,14 +149,34 @@ A more powerful use case is connecting verification directly in workflows:
 > <hands-on-title>Automated verification in workflows</hands-on-title>
 >
 > 1. Create a simple workflow:
+>    {% snippet faqs/galaxy/workflows_create_new.md %}
+>    - Create an **Input Dataset** tool
 >    - Add **Generate ISCC hash** tool for your input file
->    - Add a processing step (e.g., an image conversion tool)
 >    - Add **Verify ISCC hash** tool
 >        - Connect the processed file as input
 >        - Connect the ISCC output from step 1 to "File containing expected ISCC code"
 >
 > This creates an automated check that your processing didn't unexpectedly alter the content.
+> ![fetch_data.jpg](../../images/iscc-suite/verify_wf1.png)
+{: .hands_on}
+
+## Image analysis workflow Integration
+
+This can be applied in an image analysis workflow to verify an image processing tool provides the expected reproducible output.
+
+> <hands-on-title>Image analysis verification in workflows</hands-on-title>
 >
+> 1. Create a workflow:
+>    - Create an **Input Dataset** tool. Rename to 'Original image'.
+>    - Connect the "**Treshold image** with scikit-image" tool
+>      - At the Tool Parameters step make sure to select the Otsu threshold.
+>    - Add a second input. Rename to 'Segmented image'.
+>    - Add **Generate ISCC hash** tool to the second input file
+>    - Add **Verify ISCC hash** tool
+>        - Connect the processed file as input
+>
+> This creates an automated check that your processing didn't unexpectedly alter the content.
+> ![fetch_data.jpg](../../images/iscc-suite/verify_wf.png)
 {: .hands_on}
 
 > <comment-title>When to Use Verification</comment-title>
@@ -233,13 +253,13 @@ When working with many files, you can identify all similar items:
 
 # Practical Example: Integrating with Image Analysis
 
-Let's see how ISCC tools can enhance a typical image analysis workflow with quality control checkpoints.
+Let's see how ISCC tools can be benificial in a typical image analysis workflow with quality control checkpoints.
 
 > <hands-on-title>ISCC-enhanced image processing workflow</hands-on-title>
 >
 > 1. Start with an input image and generate its ISCC code
 >
-> 2. Process the image (e.g., format conversion, filtering, segmentation)
+> 2. Process the image
 >
 > 3. Add verification checkpoints:
 >    - After format conversion: verify the Data-Code remains similar
@@ -257,10 +277,6 @@ Input Image
     ↓
 [Generate ISCC] → Store original code
     ↓
-[Convert Format]
-    ↓
-[Verify Similarity] → Check Data-Code similarity
-    ↓
 [Image Processing]
     ↓
 [Generate ISCC] → Store processed code
@@ -268,26 +284,7 @@ Input Image
 Output + Provenance Data
 ```
 
-> <comment-title>Benefits of ISCC Integration</comment-title>
->
-> Adding ISCC tools to your workflows provides:
-> - **Quality Control**: Automated verification of data integrity
-> - **Provenance**: Clear records of content transformations
-> - **Deduplication**: Identify redundant data automatically
-> - **Reproducibility**: Content-based identifiers for exact file matching
-{: .comment}
-
-# Use Cases in Research
-
-## Use Case 1: Multi-Format Image Archive
-
-Research projects often have the same images in multiple formats. ISCC helps identify which files contain the same content:
-
-- Generate ISCC codes for all archived images
-- Use similarity detection to find duplicates across formats
-- Keep one canonical version and document conversions
-
-## Use Case 2: Quality Control in High-Throughput Workflows
+## Use Case 1: Quality Control in High-Throughput Workflows
 
 For processing thousands of images:
 
@@ -296,7 +293,7 @@ For processing thousands of images:
 - Flag unexpected changes automatically
 - Maintain full provenance chain
 
-## Use Case 3: Collaborative Data Sharing
+## Use Case 2: Collaborative Data Sharing
 
 When sharing data between institutions:
 
