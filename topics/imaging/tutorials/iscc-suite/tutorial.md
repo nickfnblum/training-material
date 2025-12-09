@@ -41,13 +41,16 @@ An ISCC-SUM code is a 55-character identifier with two main components, which ar
 - **Data-Code**: Content-based hash that allows similarity comparison
 - **Instance-Code**: A fast checksum or cryptographic hash
 
-For example:
+For example the ISCC hash for this file [`example_image.tiff`](workflows/test-data/example_image.tiff):
 ```
-K4AOMGOGQJA4Y46PAC4YPPA63GKD5RVFPR7FU3I4OOEW44TYXNYOTMY
+ISCC:K4AOMGOGQJA4Y46PAC4YPPA63GKD5RVFPR7FU3I4OOEW44TYXNYOTMY
 ```
-
+Which is composed of the Data and Instance hashes.
+``` 
+    ISCC:GAD6MGOGQJA4Y46PAC4YPPA63GKD5T7NDBHDOY5EY2CLX35RBVPF55I
+    ISCC:IAD4NJL4PZNG2HDTRFXHE6F3ODU3HP3RQ75QJDH6RJSEGXFSUQVBUNI
+```
 Files with similar content will have similar Data-Code components, while the Instance-Code verifies file integrity.
-
 
 > <agenda-title></agenda-title>
 >
@@ -61,7 +64,7 @@ Files with similar content will have similar Data-Code components, while the Ins
 
 # Prepare your data
 
-For this tutorial, we'll use a simple dataset with images that demonstrate different use cases.
+For this tutorial, we'll use a simple dataset with microscope images that demonstrate different use cases. However, the ISCC SUM tools can ben used for any type of digital content.
 
 ## Get the data
 
@@ -79,12 +82,8 @@ For this tutorial, we'll use a simple dataset with images that demonstrate diffe
 >    If you are importing the image via URL:
 >
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
->
-
+> 
 {: .hands_on}
->
-
-This would demonstrate both verification and similarity detection.
 
 # Generate ISCC Codes
 
@@ -93,9 +92,9 @@ The first step is generating ISCC codes for your input files. This creates a con
 > <hands-on-title>Generate ISCC codes for input files</hands-on-title>
 >
 > 1. {% tool [Generate ISCC hash]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum) %} with the following parameters:
->    - {% icon param-file %} *"Input File"*: Select your first example image
->
->    This will generate a 55-character ISCC code for the file.
+>    - {% icon param-file %} *"Input File"*: Select the first example image (`example_image.tiff`.)
+>  
+>    Run the tool. This will generate a 55-character ISCC code for the file.
 >
 > 2. Inspect the output by clicking on the dataset.
 >    
@@ -103,7 +102,7 @@ The first step is generating ISCC codes for your input files. This creates a con
 > ```
 > K4AGSPOSB5SS2X427WZ27QASTSBVTS55DXLMFDF7WOJKEOSTDEI3OXQ
 > ```
-> 3. Repeat for the other example image to generate codes for comparison.
+> 3. Repeat for the other example image to generate a code for comparison.
 >
 {: .hands_on}
 
@@ -127,7 +126,7 @@ During workflow execution, you may want to verify that intermediate files match 
 
 > <hands-on-title>Verify a file against its ISCC code</hands-on-title>
 >
-> 1. {% tool [Verify ISCC hash](toolshed.g2.bx.psu.edu/repos/bgruening/iscc_sum_verify/iscc_sum_verify) %} with the following parameters:
+> 1. {% tool [Verify ISCC hash](https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_verify) %} with the following parameters:
 >    - {% icon param-file %} *"File to verify"*: Select the first example image
 >    - *"Source of expected ISCC code"*: `Enter manually`
 >        - *"Expected ISCC code"*: Paste the ISCC code you generated in the previous step
@@ -149,7 +148,9 @@ A more powerful use case is connecting verification directly in workflows:
 > <hands-on-title>Automated verification in workflows</hands-on-title>
 >
 > 1. Create a simple workflow:
->    {% snippet faqs/galaxy/workflows_create_new.md %}
+>
+> {% snippet faqs/galaxy/workflows_create_new.md %}
+>
 >    - Create an **Input Dataset** tool
 >    - Add **Generate ISCC hash** tool for your input file
 >    - Add **Verify ISCC hash** tool
@@ -196,13 +197,12 @@ One of ISCC's unique features is detecting similar content, even across differen
 
 > <hands-on-title>Compare two files for similarity</hands-on-title>
 >
-> 1. {% tool [Compare ISCC hash similarity]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_compare) %} with the following parameters:
->    - *"Input type"*: `Compare two files`
->        - {% icon param-file %} *"First file"*: Select your original image
->        - {% icon param-file %} *"Second file"*: Select a similar or converted version
+> 1. {% tool [Find datasets with similar ISCC hashes]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_similarity) %} with the following parameters:
+>    - *"Input type"*: `Datasets to compare`
+>        - {% icon param-file %} Select multiple datasets (or a collection, see below)
 >    - *"Similarity threshold (Hamming distance)"*: `12` (default)
 >
-> 2. Examine the output report.
+> 2. The tool will create tabular output which indicates which datasets are similar.
 >    
 >    The report shows the Hamming distance between files. Lower numbers indicate higher similarity:
 >    - 0-5: Nearly identical
@@ -221,10 +221,10 @@ When working with many files, you can identify all similar items:
 >
 >    {% snippet faqs/galaxy/collections_build_list.md %}
 >
-> 2. {% tool [Compare ISCC hash similarity]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_compare/iscc_sum_compare) %} with the following parameters:
->    - *"Input type"*: `Find similar files in collection`
->        - {% icon param-collection %} *"File collection to compare"*: Select your collection
->    - *"Similarity threshold"*: `12`
+> 2. {% tool [Find datasets with similar ISCC hashes]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_similarity) %} with the following parameters:
+>    - *"Input type"*: `Datasets to compare`
+>        - {% icon param-file %} Select a collection
+>    - *"Similarity threshold (Hamming distance)"*: `12` (default)
 >
 > 3. Review the similarity groupings.
 >    
