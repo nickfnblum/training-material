@@ -50,7 +50,7 @@ Which is composed of the Data and Instance hashes.
     ISCC:GAD6MGOGQJA4Y46PAC4YPPA63GKD5T7NDBHDOY5EY2CLX35RBVPF55I
     ISCC:IAD4NJL4PZNG2HDTRFXHE6F3ODU3HP3RQ75QJDH6RJSEGXFSUQVBUNI
 ```
-Files with similar content will have similar Data-Code components, while the Instance-Code verifies file integrity.
+Files with similar content will have similar Data-Code components, but their Instance-Code will be different. Hence the Instance-Code allows to verify file integrity.
 
 > <agenda-title></agenda-title>
 >
@@ -91,18 +91,18 @@ The first step is generating ISCC codes for your input files. This creates a con
 
 > <hands-on-title>Generate ISCC codes for input files</hands-on-title>
 >
-> 1. {% tool [Generate ISCC hash]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum) %} with the following parameters:
+> 1. {% tool [Generate ISCC-CODE]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum) %} with the following parameters:
 >    - {% icon param-file %} *"Input File"*: Select the first example image (`example_image.tiff`.)
 >  
 >    Run the tool. This will generate a 55-character ISCC code for the file.
 >
 > 2. Inspect the output by clicking on the dataset.
 >    
->    You should see a single line containing the ISCC code. For the first example image the code is expected to be:
+>    You should see a single line containing the ISCC code in the output. For the first example image the code is expected to be:
 > ```
 > K4AGSPOSB5SS2X427WZ27QASTSBVTS55DXLMFDF7WOJKEOSTDEI3OXQ
 > ```
-> 3. Repeat for the other example image to generate a code for comparison.
+> 3. Repeat for the other example image to generate another ISCC code for comparison.
 >
 {: .hands_on}
 
@@ -126,24 +126,24 @@ During workflow execution, you may want to verify that intermediate files match 
 
 > <hands-on-title>Verify a file against its ISCC code</hands-on-title>
 >
-> 1. {% tool [Verify ISCC hash](https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_verify) %} with the following parameters:
->    - {% icon param-file %} *"File to verify"*: Select the first example image
->    - *"Source of expected ISCC code"*: `Enter manually`
+> 1. {% tool [Verify ISCC-CODE](https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_verify) %} with the following parameters:
+>    - {% icon param-file %} *"Dataset to verify"*: Select the first example image
+>    - *"Expected ISCC-CODE"*: 
 >        - *"Expected ISCC code"*: Paste the ISCC code you generated in the previous step
 >
 > 2. Check the verification report in the output.
 >    
 >    The report shows:
->    - The filename
+>    - Status: OK (match) or FAILED (mismatch)
 >    - Expected ISCC code
 >    - Generated ISCC code
->    - Status: OK (match) or FAILED (mismatch)
->
+
 {: .hands_on}
 
 ## Workflow Integration
 
-A more powerful use case is connecting verification directly in workflows:
+Integration of ISCC-CODES in 
+A more powerful usecase is integrating verification directly in workflows:
 
 > <hands-on-title>Automated verification in workflows</hands-on-title>
 >
@@ -197,23 +197,19 @@ One of ISCC's unique features is detecting similar content, even across differen
 
 > <hands-on-title>Compare two files for similarity</hands-on-title>
 >
-> 1. {% tool [Find datasets with similar ISCC hashes]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_similarity) %} with the following parameters:
+> 1. {% tool [Find datasets with similar ISCC-CODEs]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_similarity) %} with the following parameters:
 >    - *"Input type"*: `Datasets to compare`
 >        - {% icon param-file %} Select multiple datasets (or a collection, see below)
 >    - *"Similarity threshold (Hamming distance)"*: `12` (default)
 >
 > 2. The tool will create tabular output which indicates which datasets are similar.
->    
->    The report shows the Hamming distance between files. Lower numbers indicate higher similarity:
->    - 0-5: Nearly identical
->    - 6-12: Likely similar
->    - 13-20: Possibly related
->
+>    The table will list all the files that has been set as input. For the files which have a similar file, below the set threshold, the similar file is listed.
+
 {: .hands_on}
 
 ## Find Similar Files in Collections
 
-When working with many files, you can identify all similar items:
+When working with a collection of files, you can identify all similar items:
 
 > <hands-on-title>Find similar files in a collection</hands-on-title>
 >
@@ -221,21 +217,19 @@ When working with many files, you can identify all similar items:
 >
 >    {% snippet faqs/galaxy/collections_build_list.md %}
 >
-> 2. {% tool [Find datasets with similar ISCC hashes]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_similarity) %} with the following parameters:
+> 2. {% tool [Find datasets with similar ISCC-CODEs]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_similarity) %} with the following parameters:
 >    - *"Input type"*: `Datasets to compare`
 >        - {% icon param-file %} Select a collection
 >    - *"Similarity threshold (Hamming distance)"*: `12` (default)
 >
-> 3. Review the similarity groupings.
+> 3. Review the similarity groupings. As explained above.
 >    
->    Files are grouped by similarity, with reference files listed first and similar files indented with their distance (~N).
 >
 {: .hands_on}
 
 > <question-title></question-title>
 >
 > 1. Why would you want to detect similar files in your workflow?
-> 2. What threshold would you use to find near-duplicates?
 >
 > > <solution-title></solution-title>
 > >
@@ -244,45 +238,14 @@ When working with many files, you can identify all similar items:
 > >    - Track how files are transformed through processing
 > >    - Find related samples or experimental replicates
 > >    - Detect unexpected modifications in supposedly identical files
-> >
-> > 2. For near-duplicates (files that should be essentially identical), use a threshold of 5 or lower. For broader similarity (e.g., different versions of the same content), 12-15 works well.
+> 
 > >
 > {: .solution}
 >
 {: .question}
 
-# Practical Example: Integrating with Image Analysis
 
-Let's see how ISCC tools can be benificial in a typical image analysis workflow with quality control checkpoints.
-
-> <hands-on-title>ISCC-enhanced image processing workflow</hands-on-title>
->
-> 1. Start with an input image and generate its ISCC code
->
-> 2. Process the image
->
-> 3. Add verification checkpoints:
->    - After format conversion: verify the Data-Code remains similar
->    - After filtering: document the new ISCC code for provenance
->    - Before final output: generate ISCC codes for all results
->
-> 4. Store ISCC codes alongside your results for future reference
->
-{: .hands_on}
-
-Example workflow structure:
-
-```
-Input Image
-    ↓
-[Generate ISCC] → Store original code
-    ↓
-[Image Processing]
-    ↓
-[Generate ISCC] → Store processed code
-    ↓
-Output + Provenance Data
-```
+# Practical use cases:
 
 ## Use Case 1: Quality Control in High-Throughput Workflows
 
