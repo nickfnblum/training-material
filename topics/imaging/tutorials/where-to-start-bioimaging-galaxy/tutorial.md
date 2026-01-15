@@ -32,9 +32,6 @@ contributions:
     - dianichj
     - beatrizserrano
     - kostrykin
-  funding:
-    - elixir-europe
-    - eurobioimaging
 ---
 
 Bioimage analysis is the process of extracting meaningful quantitative data from biological images. Whether you are looking at stained tissue sections (Histology) or fluorescently labeled proteins in live cells, the goal is often the same: **turning pixels into numbers.**
