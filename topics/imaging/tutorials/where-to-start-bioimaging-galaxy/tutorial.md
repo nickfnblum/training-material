@@ -492,6 +492,6 @@ Now that you have your "compass," it is time to choose a specific path. Pick the
 
 * **Automated Pipelines:** [CellProfiler in Galaxy]({% link topics/imaging/tutorials/tutorial-CP/tutorial.md %}) – Master the use of CellProfiler modules to build end-to-end automated workflows.
 
-* **Tracking:** [Object Tracking using CellProfiler](https://training.galaxyproject.org/training-material/topics/imaging/tutorials/object-tracking-using-cell-profiler/tutorial.html) – Move from static images to following individual objects through time and space.
+* **Tracking:** [Object Tracking using CellProfiler]({% link topics/imaging/tutorials/object-tracking-using-cell-profiler/tutorial.md %}) – Move from static images to following individual objects through time and space.
 
 * **Histology & Pathology:** *Coming Soon!* A dedicated tutorial on **Histology Staining and Color Deconvolution** is currently in development.
