@@ -484,7 +484,7 @@ Now that you have your "compass," it is time to choose a specific path. Pick the
 
 * **Fluorescence & Screening:** [HeLa Cell Screen Analysis]({% link topics/imaging/tutorials/hela-screen-analysis/tutorial.md %}) – Learn to process high-throughput screens using classical techniques.
 
-* **Time-Lapse & Events:** [Detection of MitoFlashes](https://training.galaxyproject.org/training-material/topics/imaging/tutorials/detection-of-mitoflashes/tutorial.html) – Track transient biological events over time.
+* **Time-Lapse & Events:** [Detection of MitoFlashes]({% link topics/imaging/tutorials/detection-of-mitoflashes/tutorial.md %}) – Track transient biological events over time.
 
 * **Classical Segmentation:** [Voronoi-based Segmentation](https://training.galaxyproject.org/training-material/topics/imaging/tutorials/voronoi-segmentation/tutorial.html) – A powerful approach for partitioning cells when they are touching but have clear centers.
 
