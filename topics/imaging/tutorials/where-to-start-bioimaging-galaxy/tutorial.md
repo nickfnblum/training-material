@@ -490,7 +490,7 @@ Now that you have your "compass," it is time to choose a specific path. Pick the
 
 * **Advanced AI:** [Imaging using Bioimage Zoo Models]({% link topics/imaging/tutorials/process-image-bioimageio/tutorial.md %}) – Use pre-trained deep learning models for complex segmentation tasks.
 
-* **Automated Pipelines:** [CellProfiler in Galaxy](https://training.galaxyproject.org/training-material/topics/imaging/tutorials/tutorial-CP/tutorial.html) – Master the use of CellProfiler modules to build end-to-end automated workflows.
+* **Automated Pipelines:** [CellProfiler in Galaxy]({% link topics/imaging/tutorials/tutorial-CP/tutorial.md %}) – Master the use of CellProfiler modules to build end-to-end automated workflows.
 
 * **Tracking:** [Object Tracking using CellProfiler](https://training.galaxyproject.org/training-material/topics/imaging/tutorials/object-tracking-using-cell-profiler/tutorial.html) – Move from static images to following individual objects through time and space.
 
