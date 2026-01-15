@@ -37,15 +37,13 @@ contributions:
     - eurobioimaging
 ---
 
-# Introduction
-
 Bioimage analysis is the process of extracting meaningful quantitative data from biological images. Whether you are looking at stained tissue sections (Histology) or fluorescently labeled proteins in live cells, the goal is often the same: **turning pixels into numbers.**
 
 In Galaxy, we provide a robust ecosystem to make this process reproducible and scalable. We focus on making image analysis **FAIR by design** _(Findable, Accesible, Interoperable, Reusable)_, ensuring that your image formats, metadata, tools, and workflows remain reusable, transparent, and traceable from the very first upload to the final figure {% GalaxyCommunity2024 %}.
 
 This tutorial acts as your **compass** to navigate the Galaxy imaging landscape, specifically as it applies to bioimage data pre-processing and analysis. You will establish the foundations necessary to transform raw, complex image data into structured tables of measurements, ready for downstream statistical analysis.
 
-**(To be add: image showing simple workflow 1. Raw image-Pixels, 2. Numerical Grid for intensities, 3. Data extraction, 4. Final Data)**
+**To be add: image showing simple workflow, Raw image-Pixels, Numerical Grid for intensities, Data extraction, Final Data**
 
 > <agenda-title></agenda-title>
 >
@@ -60,7 +58,7 @@ As Pete Bankhead points out in *[Introduction to Bioimage Analysis](https://bioi
 
 To the human eye, an image is a visual representation of a biological sample. However, to a computer, it is a **numerical matrix** ({% cite Sedgewick2010 %}). Every point in that grid—the **pixel**—is a data point representing the number of photons or the signal intensity detected at that specific coordinate. Understanding your "digital anatomy" means knowing exactly how those numbers were recorded, how they are spaced in 3D space, and what the intensity limits are. 
 
-**(Add Pete B's Image from his book)**
+**Add Pete B's Image from his book**
 
 If you don't understand the numbers behind the colors, you risk performing "Image processing" (simply making a pretty picture) rather than "Image analysis" (extracting scientific truth). Let's unpack the data behind an image step by step. 
 
@@ -122,7 +120,7 @@ When you perform analysis, such as subtracting background or enhancing contrast,
 * In **8-bit**, stretching creates "gaps" in your histogram (quantization errors), making your data look like a staircase rather than a smooth curve ({% cite Cromey2010 %}).
 * In **16-bit**, you have enough "spare" values between intensities that the data remains smooth and mathematically accurate even after heavy processing.
 
-**(Add example images of how two images that look the same to the human eye have different data)**
+**Add example images of how two images that look the same to the human eye have different data**
 
 > <tip-title> Precision </tip-title> 
 > Always try to keep your data in **16-bit** or **32-bit (float)** during analysis. Converting to 8-bit too early is like rounding your currency to the nearest dollar before finishing your taxes, and you lose crucial precision that can never be recovered ({% cite Haase2022 %}). 
@@ -158,7 +156,7 @@ The **{% tool [Convert image format with Bio-formats](toolshed.g2.bx.psu.edu/rep
 >    - {% icon param-file %} *"Input image"*: `Select your uploaded microscopy file`
 > 2. **Review the output:** Examine the resulting text file. Look for key metadata fields like "PhysicalSizeX" (pixel calibration) and "BitDepth". 
 >
->  **(Add image and output example)**
+>  **Add image and output example**
 > > <comment-title>Why check this first?</comment-title>
 > > Before starting a long analysis, this tool helps you verify if Galaxy correctly "unlocked" the metadata inside your proprietary file. If pixel sizes are missing here, your final results will be in pixels rather than biological units like micrometers ($\mu m$).
 > {: .comment}
@@ -335,7 +333,7 @@ graph TD
 
 Once you have identified your path on the tree, use this guide to find the corresponding tools in Galaxy. We categorize these into **Standard Tools** (for automated batch processing) and **Interactive Tools** (for visual exploration).
 
-#### A. Standard tools (single images, high-performance & batch)
+### A. Standard tools (single images, high-performance & batch)
 
 These tools are "wrapped" in Galaxy to build individual workflows and adapt your analysis to your biological question needs. 
 
@@ -373,7 +371,7 @@ These other set of "wrapped" tools allow you to run them on hundreds of images a
 > {: .comment}
 {: .hands_on}
 
-#### B. Interactive tools (Visual exploration)
+### B. Interactive tools (Visual exploration)
 
 If you prefer a "hands-on" approach to see your results in real-time before scaling up, launch an **Interactive Tool (IT)** directly in your browser:
 
