@@ -1,4 +1,3 @@
----
 layout: tutorial_hands_on
 
 title: "Where to start with bioimage analysis in Galaxy"
