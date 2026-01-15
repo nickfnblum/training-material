@@ -488,7 +488,7 @@ Now that you have your "compass," it is time to choose a specific path. Pick the
 
 * **Classical Segmentation:** [Voronoi-based Segmentation]({% link topics/imaging/tutorials/voronoi-segmentation/tutorial.md %}) – A powerful approach for partitioning cells when they are touching but have clear centers.
 
-* **Advanced AI:** [Imaging using Bioimage Zoo Models](https://training.galaxyproject.org/training-material/topics/imaging/tutorials/process-image-bioimageio/tutorial.html) – Use pre-trained deep learning models for complex segmentation tasks.
+* **Advanced AI:** [Imaging using Bioimage Zoo Models]({% link topics/imaging/tutorials/process-image-bioimageio/tutorial.md %}) – Use pre-trained deep learning models for complex segmentation tasks.
 
 * **Automated Pipelines:** [CellProfiler in Galaxy](https://training.galaxyproject.org/training-material/topics/imaging/tutorials/tutorial-CP/tutorial.html) – Master the use of CellProfiler modules to build end-to-end automated workflows.
 
