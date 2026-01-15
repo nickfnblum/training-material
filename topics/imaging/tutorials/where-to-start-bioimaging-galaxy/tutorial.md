@@ -146,7 +146,7 @@ Galaxy is built to handle the complexity of biological data. However, microscopy
 * **Proprietary Formats (.czi, .nd2, .lif):** These formats "wrap" image data and metadata together. While you can often export TIFFs from your microscope software, using the **{% tool [Convert image format with Bioformats](toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %}** tool allows Galaxy to "unlock" and standardize the metadata hidden inside these files ({% cite Moore2021 %}).
 * **OMERO Integration:** If your institution uses an **OMERO server**, you can import images directly via the **Remote Files** section in the upload tool.
 
-### Why use the Bio-Formats tool suite?
+## Why use the Bio-Formats tool suite?
 
 The **{% tool [Convert image format with Bio-formats](toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %}** tool does more than just open a file; it acts as a **translator**. It extracts the "digital anatomy" (metadata)—such as pixel size, laser wavelengths, and objective settings—and converts the proprietary data into standardized open formats. This ensures that your analysis remains reproducible and that your metadata remains **FAIR** throughout the entire Galaxy workflow ({% cite GalaxyCommunity2024 %}).
 
@@ -202,14 +202,14 @@ Depending on your answers, your starting path in Galaxy will change.
 
 A typical project in Galaxy is not a single click, but a sequence of logical stages. Think of it as a factory assembly line: you start with raw materials (pixels) and move through various stations until you have a finished product (a table of results). Let's examine these stages together.
 
-### Stage A: Pre-processing (cleaning)
+## Stage A: Pre-processing (cleaning)
 Raw images are rarely perfect. They often contain electronic noise from the camera, uneven lighting from the microscope, or staining artifacts. Pre-processing prepares your "digital anatomy" for the computer to read it more easily by improving the signal-to-noise ratio ({% cite Bankhead2022 %}).
 
 * **Background subtraction:** Removes the "haze" or background fluorescence caused by out-of-focus light. This is crucial for accurate intensity measurements later on.
 * **Denoising:** Uses mathematical filters to smooth the image. A **Gaussian filter** smooths everything slightly to reduce graininess, while a **Median filter** is excellent for removing "salt and pepper" noise while keeping the edges of your cells sharp ({% cite Haase2022 %}).
 
 > <tip-title> Document your filters </tip-title> 
-> Every filter you apply changes the pixel values. While this is necessary for segmentation, you must document these steps to ensure reproducibility. In Galaxy, this is done automatically by your history, which records every parameter used in your pre-processing steps ({% cite Kemmer2023 %}).
+> Every filter you apply changes the pixel values. While this is necessary for segmentation, you must document these steps to ensure reproducibility. In Galaxy, this is done automatically by your history, which records every parameter used in your pre-processing steps.
 {: .tip} 
 
 In Galaxy, you can start the pre-processing stage with tools like **{% tool [Apply standard image filter](toolshed.g2.bx.psu.edu/repos/imgteam/2d_simple_filter/ip_filter_standard/1.16.3+galaxy1) %}**.
@@ -228,7 +228,7 @@ In Galaxy, you can start the pre-processing stage with tools like **{% tool [App
 >
 {: .hands_on}
 
-### Stage B: Segmentation (Defining objects)
+## Stage B: Segmentation (Defining objects)
 This is the most critical step. Here, you tell the computer which pixels belong to an "object" (like a nucleus) and which belong to the "background." 
 
 * **Thresholding:** A simple "cutoff" method. You decide that any pixel brighter than a certain value is part of your object. This usually results in a **Binary Mask**.
@@ -256,7 +256,7 @@ This is the most critical step. Here, you tell the computer which pixels belong 
 >
 {: .comment}
 
-### Stage B.2: The Region of Interest (ROI)
+## Stage B.2: The Region of Interest (ROI)
 
 Once you have segmented your image, you have created **Regions of Interest (ROIs)**. This is a central concept in bioimaging. An ROI is a spatial selection that tells the software: "Ignore the background; only calculate values for these specific coordinates."
 
@@ -269,18 +269,18 @@ In Galaxy, ROIs can take three forms depending on the tool you use:
 > In interactive tools like **QuPath**, you often draw ROIs by hand with a mouse. In automated Galaxy workflows, we use algorithms like **Cellpose** to "draw" thousands of ROIs instantly and reproducibly ({% cite Stringer2021 %}).
 {: .comment}
 
-### Stage C: Post-processing (Refining)
+## Stage C: Post-processing (Refining)
 Computers are literal; they might detect tiny specs of dust as "cells." Post-processing is your "cleanup crew" for the mask you created in Stage B.
 * **Size filtering:** Automatically removing any detected objects that are too small (noise) or too large (clumps of cells) to be biologically relevant.
 * **Morphological operations:** Using operations like "Fill Holes" to fix gaps inside a detected cell or "Erode/Dilate" to slightly adjust the boundaries.
 
-### Stage D: Quantification (Extracting numbers)
+## Stage D: Quantification (Extracting numbers)
 Now that you have a clean mask, Galaxy "overlays" it back onto your original raw image. Since the computer knows exactly which pixels belong to which cell, it can now do the math:
 * **Intensity:** "How much protein (fluorescence) is inside this specific mask?"
 * **Morphology:** "How large, round, or elongated is this nucleus?"
 * **Spatial distribution:** "How far is the nucleus from the cell membrane?"
 
-### Stage E: Validation (The sanity check)
+## Stage E: Validation (The sanity check)
 
 **Never trust an algorithm blindly.** The final step is a visual inspection to ensure your numerical outputs represent biological reality rather than processing artifacts ({% cite Bankhead2022 %}). 
 
@@ -379,7 +379,7 @@ If you prefer a "hands-on" approach to see your results in real-time before scal
 * **{% tool [Ilastik IT](interactive_tool_ilastik) %}:** Best for "training by example"—manually paint a few cells to teach the computer how to segment the rest based on texture.
 * **{% tool [Cellpose IT](interactive_tool_cellpose) %}:** & **{% tool [Cellprofiler IT](interactive_tool_cellprofiler) %}:** Useful for building and fine-tuning your parameters visually before running a massive batch job.
 
-### Identifying your modality 
+## Identifying your modality 
 
 To navigate the tree correctly, you must understand your image type:
 
@@ -390,7 +390,7 @@ To navigate the tree correctly, you must understand your image type:
 * **High-density/Tissues:** For packed cells, classical thresholding fails. This is where **Inference** tools like **Cellpose** or **StarDist** shine, as they use pre-trained models to predict boundaries even in crowded environments.
 [Image comparing simple thresholding versus AI-based instance segmentation in crowded tissues]
 
-### Practice: applying the roadmap
+## Practice: applying the roadmap
 
 > <question-title> Scenario 1: The High-Volume Screen </question-title>
 > You have 500 images of crowded mitochondria. Which path do you choose?
@@ -402,7 +402,7 @@ To navigate the tree correctly, you must understand your image type:
 > > 2. **Volume:** With 500 images, you need the batch-processing power of **CellProfiler** to stay efficient.
 > > 
 > {: .solution}
-> {: .question}
+{: .question}
 
 > <question-title> Scenario 2: The 3D Volume </question-title>
 > You have a single 3D Z-stack of a zebrafish embryo with one fluorescent marker. What is your path?
@@ -421,16 +421,16 @@ To navigate the tree correctly, you must understand your image type:
 
 Even with the best tools, it is easy to accidentally "break" your data before you even start measuring. In bioimage analysis, these errors are often called **artifacts**.
 
-### 1. The "JPG" trap
+## 1. The "JPG" trap
 **Never use JPEG for science.** JPEGs use "lossy" compression, meaning the computer slightly changes pixel intensities to save space. This creates "blocky" artifacts that ruin your ability to measure protein concentration or fine textures.
 * **The fix:** Always use **TIFF**, **OME-TIFF**, or **PNG**. These are "lossless" formats that preserve every photon counted by the camera.
 
-### 2. The "merged image" mistake
+## 2. The "merged image" mistake
 Analyzing a "Merge" (RGB) image is risky because the intensities of different channels (like DAPI and GFP) are mathematically blended into a single color value.
 * **The fix:** Always **Split Channels** in Galaxy. For this purpose you may the **{% tool [Split image along axes
 with NumPy](toolshed.g2.bx.psu.edu/repos/imgteam/split_image/ip_split_image/2.3.5+galaxy0). Measure your DAPI (nuclei) and GFP (protein) separately to ensure scientific accuracy.} 
 
-### 3. Ignoring Saturation
+## 3. Ignoring Saturation
 If your image is too bright, you might hit the camera sensor's limit ($255$ for 8-bit or $65,535$ for 16-bit). This is called **Clipping**. 
 * **The fix:** Check your histogram. If you see a giant "spike" at the very end of the graph, your data is saturated and you cannot accurately quantify the brightest parts of your sample.
 
