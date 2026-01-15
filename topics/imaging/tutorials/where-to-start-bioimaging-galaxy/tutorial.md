@@ -480,7 +480,7 @@ By building modular workflows in Galaxy, you have created a pipeline that is not
 
 Now that you have your "compass," it is time to choose a specific path. Pick the tutorial that matches your research goal:
 
-* **The Basics:** [Introduction to Image Analysis](https://training.galaxyproject.org/training-material/topics/imaging/tutorials/imaging-introduction/tutorial.html) – A deeper dive into the fundamental concepts of digital images.
+* **The Basics:** [Introduction to Image Analysis]({% link topics/imaging/tutorials/imaging-introduction/tutorial.md %}) – A deeper dive into the fundamental concepts of digital images.
 
 * **Fluorescence & Screening:** [HeLa Cell Screen Analysis](https://training.galaxyproject.org/training-material/topics/imaging/tutorials/hela-screen-analysis/tutorial.html) – Learn to process high-throughput screens using classical techniques.
 
