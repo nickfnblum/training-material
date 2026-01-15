@@ -482,7 +482,7 @@ Now that you have your "compass," it is time to choose a specific path. Pick the
 
 * **The Basics:** [Introduction to Image Analysis]({% link topics/imaging/tutorials/imaging-introduction/tutorial.md %}) – A deeper dive into the fundamental concepts of digital images.
 
-* **Fluorescence & Screening:** [HeLa Cell Screen Analysis](https://training.galaxyproject.org/training-material/topics/imaging/tutorials/hela-screen-analysis/tutorial.html) – Learn to process high-throughput screens using classical techniques.
+* **Fluorescence & Screening:** [HeLa Cell Screen Analysis]({% link topics/imaging/tutorials/hela-screen-analysis/tutorial.md %}) – Learn to process high-throughput screens using classical techniques.
 
 * **Time-Lapse & Events:** [Detection of MitoFlashes](https://training.galaxyproject.org/training-material/topics/imaging/tutorials/detection-of-mitoflashes/tutorial.html) – Track transient biological events over time.
 
