@@ -146,16 +146,16 @@ When you perform analysis, such as subtracting background or enhancing contrast,
 Galaxy is built to handle the complexity of biological data. However, microscopy images often come in "vendor-specific" formats. Your entry point into Galaxy depends on how your data was saved:
 
 * **Standard Formats (.tiff, .png):** Use the standard Galaxy **Upload** tool.
-* **Proprietary Formats (.czi, .nd2, .lif):** These formats "wrap" image data and metadata together. While you can often export TIFFs from your microscope software, using the **{% tool [Convert image format with Bioformats](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %}** tool allows Galaxy to "unlock" and standardize the metadata hidden inside these files ({% cite Moore2021 %}).
+* **Proprietary Formats (.czi, .nd2, .lif):** These formats "wrap" image data and metadata together. While you can often export TIFFs from your microscope software, using the **{% tool [Convert image format with Bioformats](toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %}** tool allows Galaxy to "unlock" and standardize the metadata hidden inside these files ({% cite Moore2021 %}).
 * **OMERO Integration:** If your institution uses an **OMERO server**, you can import images directly via the **Remote Files** section in the upload tool.
 
 ### Why use the Bio-Formats tool suite?
 
-The **{% tool [Convert image format with Bio-formats](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %}** tool does more than just open a file; it acts as a **translator**. It extracts the "digital anatomy" (metadata)—such as pixel size, laser wavelengths, and objective settings—and converts the proprietary data into standardized open formats. This ensures that your analysis remains reproducible and that your metadata remains **FAIR** throughout the entire Galaxy workflow ({% cite GalaxyCommunity2024 %}).
+The **{% tool [Convert image format with Bio-formats](toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %}** tool does more than just open a file; it acts as a **translator**. It extracts the "digital anatomy" (metadata)—such as pixel size, laser wavelengths, and objective settings—and converts the proprietary data into standardized open formats. This ensures that your analysis remains reproducible and that your metadata remains **FAIR** throughout the entire Galaxy workflow ({% cite GalaxyCommunity2024 %}).
 
 > <hands-on-title> Inspecting Image Metadata </hands-on-title>
 >
-> 1. {% tool [Show image info](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/imgteam/image_info/ip_imageinfo/5.7.1+galaxy1) %} with the following parameters:
+> 1. {% tool [Show image info](toolshed.g2.bx.psu.edu/repos/imgteam/image_info/ip_imageinfo/5.7.1+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Input image"*: `Select your uploaded microscopy file`
 > 2. **Review the output:** Examine the resulting text file. Look for key metadata fields like "PhysicalSizeX" (pixel calibration) and "BitDepth". 
 >
@@ -215,11 +215,11 @@ Raw images are rarely perfect. They often contain electronic noise from the came
 > Every filter you apply changes the pixel values. While this is necessary for segmentation, you must document these steps to ensure reproducibility. In Galaxy, this is done automatically by your history, which records every parameter used in your pre-processing steps ({% cite Kemmer2023 %}).
 {: .tip} 
 
-In Galaxy, you can start the pre-processing stage with tools like **{% tool [Apply standard image filter](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/imgteam/2d_simple_filter/ip_filter_standard/1.16.3+galaxy1) %}**.
+In Galaxy, you can start the pre-processing stage with tools like **{% tool [Apply standard image filter](toolshed.g2.bx.psu.edu/repos/imgteam/2d_simple_filter/ip_filter_standard/1.16.3+galaxy1) %}**.
 
 > <hands-on-title> Filtering Noise </hands-on-title>
 >
-> 1. {% tool [Apply standard image filter](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/imgteam/2d_simple_filter/ip_filter_standard/1.16.3+galaxy1) %} with the following parameters:
+> 1. {% tool [Apply standard image filter](toolshed.g2.bx.psu.edu/repos/imgteam/2d_simple_filter/ip_filter_standard/1.16.3+galaxy1) %} with the following parameters:
 >    - {% icon param-conditional %} *"Type of image data to process"*: `2-D image data (or series thereof)`
 >        - {% icon param-file %} *"Input image (2-D)"*: `your_uploaded_image.tif`
 >        - {% icon param-conditional %} *"Filter type"*: `Median`
@@ -241,7 +241,7 @@ This is the most critical step. Here, you tell the computer which pixels belong 
 
 > <hands-on-title> Creating a Segmentation Mask </hands-on-title>
 >
-> 1. {% tool [Threshold image](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.25.2+galaxy0) %} with the following parameters:
+> 1. {% tool [Threshold image](toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.25.2+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Input image"*: `your_filtered_image.tif`
 >    - {% icon param-conditional %} *"Thresholding method"*: `Globally adaptive / Otsu`
 >        - {% icon param-text %} *"Offset"*: `0`
@@ -287,9 +287,9 @@ Now that you have a clean mask, Galaxy "overlays" it back onto your original raw
 
 **Never trust an algorithm blindly.** The final step is a visual inspection to ensure your numerical outputs represent biological reality rather than processing artifacts ({% cite Bankhead2022 %}). 
 
-* **{% tool [Overlay outlines](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/cp_overlay_outlines/cp_overlay_outlines/3.1.9+galaxy1) %}**: This tool takes your **original image** and draws the boundaries of your **detected objects** (from your Label Image) on top of it as colored lines. It is the gold standard for visual validation, allowing you to confirm that the computer's segmentation accurately followed the biological edges of your cells.
+* **{% tool [Overlay outlines](toolshed.g2.bx.psu.edu/repos/bgruening/cp_overlay_outlines/cp_overlay_outlines/3.1.9+galaxy1) %}**: This tool takes your **original image** and draws the boundaries of your **detected objects** (from your Label Image) on top of it as colored lines. It is the gold standard for visual validation, allowing you to confirm that the computer's segmentation accurately followed the biological edges of your cells.
 
-* **{% tool [Overlay images](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/imgteam/overlay_images/ip_overlay_images/0.0.5) %}**: A versatile tool for visualizing colocalization or blending two different channels to see where biological signals overlap.
+* **{% tool [Overlay images](toolshed.g2.bx.psu.edu/repos/imgteam/overlay_images/ip_overlay_images/0.0.5) %}**: A versatile tool for visualizing colocalization or blending two different channels to see where biological signals overlap.
 
 > <tip-title> Garbage In, Garbage Out </tip-title>
 > If your segmentation (Stage B) is poor, your quantification (Stage D) will be meaningless. Always spend the most time optimizing your segmentation and validating it visually before trusting the final spreadsheet of numbers ({% cite Haase2022 %}).
@@ -344,9 +344,9 @@ These other set of "wrapped" tools allow you to run them on hundreds of images a
 
 | Tool Name | Primary Application | Key Benefit |
 | --- | --- | --- |
-| **{% tool [Cellpose](https://usegalaxy.eu/root?tool_id=interactive_tool_cellpose) %}** | General cellular segmentation | Superior at "unsticking" crowded or overlapping cells using vector flow. |
-| **{% tool [CellProfiler](https://usegalaxy.eu/root?tool_id=interactive_tool_cellprofiler) %}** | High-content screening & automation | Allows you to build a complex multi-step "pipeline" and run it on thousands of images consistently. |
-| **{% tool [Process image using a BioImage.IO model](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/bioimage_inference/bioimage_inference/2.4.1+galaxy3) %}** | Advanced AI model inference | Gateway to the [BioImage Model Zoo](https://bioimage.io/), run pre-trained models (like 3D U-Nets) on your data. |
+| **{% tool [Cellpose](interactive_tool_cellpose) %}** | General cellular segmentation | Superior at "unsticking" crowded or overlapping cells using vector flow. |
+| **{% tool [CellProfiler](interactive_tool_cellprofiler) %}** | High-content screening & automation | Allows you to build a complex multi-step "pipeline" and run it on thousands of images consistently. |
+| **{% tool [Process image using a BioImage.IO model](toolshed.g2.bx.psu.edu/repos/bgruening/bioimage_inference/bioimage_inference/2.4.1+galaxy3) %}** | Advanced AI model inference | Gateway to the [BioImage Model Zoo](https://bioimage.io/), run pre-trained models (like 3D U-Nets) on your data. |
 
 > <hands-on-title> Segmentation with Cellpose </hands-on-title>
 >
@@ -378,9 +378,9 @@ These other set of "wrapped" tools allow you to run them on hundreds of images a
 
 If you prefer a "hands-on" approach to see your results in real-time before scaling up, launch an **Interactive Tool (IT)** directly in your browser:
 
-* **{% tool [QuPath IT](https://usegalaxy.eu/root?tool_id=interactive_tool_qupath) %}:** The gold standard for digital pathology. Use this for large tissue sections and to access **StarDist** segmentation.
-* **{% tool [Ilastik IT](https://usegalaxy.eu/root?tool_id=interactive_tool_ilastik) %}:** Best for "training by example"—manually paint a few cells to teach the computer how to segment the rest based on texture.
-* **{% tool [Cellpose IT](https://usegalaxy.eu/root?tool_id=interactive_tool_cellpose) %}:** & **{% tool [Cellprofiler IT](https://usegalaxy.eu/root?tool_id=interactive_tool_cellprofiler) %}:** Useful for building and fine-tuning your parameters visually before running a massive batch job.
+* **{% tool [QuPath IT](interactive_tool_qupath) %}:** The gold standard for digital pathology. Use this for large tissue sections and to access **StarDist** segmentation.
+* **{% tool [Ilastik IT](interactive_tool_ilastik) %}:** Best for "training by example"—manually paint a few cells to teach the computer how to segment the rest based on texture.
+* **{% tool [Cellpose IT](interactive_tool_cellpose) %}:** & **{% tool [Cellprofiler IT](interactive_tool_cellprofiler) %}:** Useful for building and fine-tuning your parameters visually before running a massive batch job.
 
 ### Identifying your modality 
 
@@ -388,7 +388,7 @@ To navigate the tree correctly, you must understand your image type:
 
 * **Fluorescence:** Images where pixel intensity represents the amount of light emitted. While often visualized as multi-colored immunofluorescence, the computer treats each channel as an intensity map where higher values indicate more signal.
 
-* **Brightfield/Histology (Color):** True-color images (RGB) where stains like H&E overlap. You must use **Color Deconvolution** to separate these into individual channels (e.g., separating Hematoxylin from DAB) before measurement. In Galaxy, you may find this tool as: {% tool [Perform color deconvolution or transformation](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/imgteam/color_deconvolution/ip_color_deconvolution/0.9+galaxy0) %}
+* **Brightfield/Histology (Color):** True-color images (RGB) where stains like H&E overlap. You must use **Color Deconvolution** to separate these into individual channels (e.g., separating Hematoxylin from DAB) before measurement. In Galaxy, you may find this tool as: {% tool [Perform color deconvolution or transformation](toolshed.g2.bx.psu.edu/repos/imgteam/color_deconvolution/ip_color_deconvolution/0.9+galaxy0) %}
 
 * **High-density/Tissues:** For packed cells, classical thresholding fails. This is where **Inference** tools like **Cellpose** or **StarDist** shine, as they use pre-trained models to predict boundaries even in crowded environments.
 [Image comparing simple thresholding versus AI-based instance segmentation in crowded tissues]
@@ -431,7 +431,7 @@ Even with the best tools, it is easy to accidentally "break" your data before yo
 ### 2. The "merged image" mistake
 Analyzing a "Merge" (RGB) image is risky because the intensities of different channels (like DAPI and GFP) are mathematically blended into a single color value.
 * **The fix:** Always **Split Channels** in Galaxy. For this purpose you may the **{% tool [Split image along axes
-with NumPy](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/imgteam/split_image/ip_split_image/2.2.3+galaxy1). Measure your DAPI (nuclei) and GFP (protein) separately to ensure scientific accuracy.} 
+with NumPy](toolshed.g2.bx.psu.edu/repos/imgteam/split_image/ip_split_image/2.3.5+galaxy0). Measure your DAPI (nuclei) and GFP (protein) separately to ensure scientific accuracy.} 
 
 ### 3. Ignoring Saturation
 If your image is too bright, you might hit the camera sensor's limit ($255$ for 8-bit or $65,535$ for 16-bit). This is called **Clipping**. 
@@ -447,7 +447,7 @@ If your image is too bright, you might hit the camera sensor's limit ($255$ for 
 > >
 > > 
 > >
-> > The standard approach to fix this is **Bleach Correction**. While a dedicated tool for this is not currently in this Galaxy workflow, you can use {% tool [Perform histogram equalization](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/imgteam/2d_histogram_equalization/ip_histogram_equalization/0.18.1+galaxy0) %} with the **CLAHE** algorithm as a workaround. 
+> > The standard approach to fix this is **Bleach Correction**. While a dedicated tool for this is not currently in this Galaxy workflow, you can use {% tool [Perform histogram equalization](toolshed.g2.bx.psu.edu/repos/imgteam/2d_histogram_equalization/ip_histogram_equalization/0.18.1+galaxy0) %} with the **CLAHE** algorithm as a workaround. 
 > >
 > > This does not "fix" the physical loss of signal, but it enhances the local contrast of the dim frames. This makes it possible for the segmentation tools to still detect and outline your objects in the later, darker stages of the experiment.
 > >
