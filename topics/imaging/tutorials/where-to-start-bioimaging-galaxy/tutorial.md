@@ -43,7 +43,7 @@ In Galaxy, we provide a robust ecosystem to make this process reproducible and s
 
 This tutorial acts as your **compass** to navigate the Galaxy imaging landscape, specifically as it applies to bioimage data pre-processing and analysis. You will establish the foundations necessary to transform raw, complex image data into structured tables of measurements, ready for downstream statistical analysis.
 
-**To be add: image showing simple workflow, Raw image-Pixels, Numerical Grid for intensities, Data extraction, Final Data**
+*To be add: image showing simple workflow, Raw image-Pixels, Numerical Grid for intensities, Data extraction, Final Data*
 
 > <agenda-title></agenda-title>
 >
@@ -58,7 +58,7 @@ As Pete Bankhead points out in *[Introduction to Bioimage Analysis](https://bioi
 
 To the human eye, an image is a visual representation of a biological sample. However, to a computer, it is a **numerical matrix** ({% cite Sedgewick2010 %}). Every point in that grid—the **pixel**—is a data point representing the number of photons or the signal intensity detected at that specific coordinate. Understanding your "digital anatomy" means knowing exactly how those numbers were recorded, how they are spaced in 3D space, and what the intensity limits are. 
 
-**Add Pete B's Image from his book**
+*Add Pete B's Image from his book*
 
 If you don't understand the numbers behind the colors, you risk performing "Image processing" (simply making a pretty picture) rather than "Image analysis" (extracting scientific truth). Let's unpack the data behind an image step by step. 
 
@@ -120,7 +120,7 @@ When you perform analysis, such as subtracting background or enhancing contrast,
 * In **8-bit**, stretching creates "gaps" in your histogram (quantization errors), making your data look like a staircase rather than a smooth curve ({% cite Cromey2010 %}).
 * In **16-bit**, you have enough "spare" values between intensities that the data remains smooth and mathematically accurate even after heavy processing.
 
-**Add example images of how two images that look the same to the human eye have different data**
+*Add here example images of how two images that look the same to the human eye have different data*
 
 > <tip-title> Precision </tip-title> 
 > Always try to keep your data in **16-bit** or **32-bit (float)** during analysis. Converting to 8-bit too early is like rounding your currency to the nearest dollar before finishing your taxes, and you lose crucial precision that can never be recovered ({% cite Haase2022 %}). 
@@ -156,7 +156,7 @@ The **{% tool [Convert image format with Bio-formats](toolshed.g2.bx.psu.edu/rep
 >    - {% icon param-file %} *"Input image"*: `Select your uploaded microscopy file`
 > 2. **Review the output:** Examine the resulting text file. Look for key metadata fields like "PhysicalSizeX" (pixel calibration) and "BitDepth". 
 >
->  **Add image and output example**
+> *Add image and output example*
 > > <comment-title>Why check this first?</comment-title>
 > > Before starting a long analysis, this tool helps you verify if Galaxy correctly "unlocked" the metadata inside your proprietary file. If pixel sizes are missing here, your final results will be in pixels rather than biological units like micrometers ($\mu m$).
 > {: .comment}
@@ -217,9 +217,9 @@ In Galaxy, you can start the pre-processing stage with tools like **{% tool [App
 > <hands-on-title> Filtering Noise </hands-on-title>
 >
 > 1. {% tool [Apply standard image filter](toolshed.g2.bx.psu.edu/repos/imgteam/2d_simple_filter/ip_filter_standard/1.16.3+galaxy1) %} with the following parameters:
->    - {% icon param-conditional %} *"Type of image data to process"*: `2-D image data (or series thereof)`
+>    - {% icon param-select %} *"Type of image data to process"*: `2-D image data (or series thereof)`
 >        - {% icon param-file %} *"Input image (2-D)"*: `your_uploaded_image.tif`
->        - {% icon param-conditional %} *"Filter type"*: `Median`
+>        - {% icon param-select %} *"Filter type"*: `Median`
 >            - {% icon param-text %} *"Size"*: `3`
 >
 > > <comment-title>Choosing the right filter</comment-title>
@@ -240,7 +240,7 @@ This is the most critical step. Here, you tell the computer which pixels belong 
 >
 > 1. {% tool [Threshold image](toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.25.2+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Input image"*: `your_filtered_image.tif`
->    - {% icon param-conditional %} *"Thresholding method"*: `Globally adaptive / Otsu`
+>    - {% icon param-select %} *"Thresholding method"*: `Globally adaptive / Otsu`
 >        - {% icon param-text %} *"Offset"*: `0`
 >    - {% icon param-check %} *"Invert output labels"*: `No`
 >
