@@ -486,7 +486,7 @@ Now that you have your "compass," it is time to choose a specific path. Pick the
 
 * **Time-Lapse & Events:** [Detection of MitoFlashes]({% link topics/imaging/tutorials/detection-of-mitoflashes/tutorial.md %}) – Track transient biological events over time.
 
-* **Classical Segmentation:** [Voronoi-based Segmentation](https://training.galaxyproject.org/training-material/topics/imaging/tutorials/voronoi-segmentation/tutorial.html) – A powerful approach for partitioning cells when they are touching but have clear centers.
+* **Classical Segmentation:** [Voronoi-based Segmentation]({% link topics/imaging/tutorials/voronoi-segmentation/tutorial.md %}) – A powerful approach for partitioning cells when they are touching but have clear centers.
 
 * **Advanced AI:** [Imaging using Bioimage Zoo Models](https://training.galaxyproject.org/training-material/topics/imaging/tutorials/process-image-bioimageio/tutorial.html) – Use pre-trained deep learning models for complex segmentation tasks.
 
