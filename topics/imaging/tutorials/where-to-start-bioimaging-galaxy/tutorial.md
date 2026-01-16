@@ -1,7 +1,9 @@
+---
 layout: tutorial_hands_on
 
 title: "Where to start with bioimage analysis in Galaxy"
 level: Introductory
+subtopic: introduction
 questions:
   - I have images from my experimental data. Can I process them in Galaxy? Where do I begin?
   - How do I identify my image type and the metadata hidden inside?
@@ -36,7 +38,7 @@ contributions:
 
 Bioimage analysis is the process of extracting meaningful quantitative data from biological images. Whether you are looking at stained tissue sections (Histology) or fluorescently labeled proteins in live cells, the goal is often the same: **turning pixels into numbers.**
 
-In Galaxy, we provide a robust ecosystem to make this process reproducible and scalable. We focus on making image analysis **FAIR by design** _(Findable, Accesible, Interoperable, Reusable)_, ensuring that your image formats, metadata, tools, and workflows remain reusable, transparent, and traceable from the very first upload to the final figure {% GalaxyCommunity2024 %}.
+In Galaxy, we provide a robust ecosystem to make this process reproducible and scalable. We focus on making image analysis **FAIR by design** _(Findable, Accesible, Interoperable, Reusable)_, ensuring that your image formats, metadata, tools, and workflows remain reusable, transparent, and traceable from the very first upload to the final figure {% cite GalaxyCommunity2024 %}.
 
 This tutorial acts as your **compass** to navigate the Galaxy imaging landscape, specifically as it applies to bioimage data pre-processing and analysis. You will establish the foundations necessary to transform raw, complex image data into structured tables of measurements, ready for downstream statistical analysis.
 
