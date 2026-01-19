@@ -20,7 +20,7 @@ contributions:
   funding:
   - deNBI
   - uni-freiburg
-subtopic: monitoring
+subtopic: deprecated
 tags:
   - ansible
   - monitoring
