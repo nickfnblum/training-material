@@ -75,7 +75,7 @@ This defines the precision of your "buckets" by setting the range of possible in
 ### Spatial calibration (the size)
 Image pixels (or voxels) have no _intrinsic_ physical size; they are just units of storage and representation. **Spatial calibration** is the metadata that links these digital units to physical reality (e.g., $1 \text{ pixel} = 0.25 \mu m$). Without this "secret sauce," you can count objects, but you cannot accurately measure how big they are, how fast they move, or their concentration (e.g., {% cite Linkert2010 %}, {% cite Haase2022 %}). 
 
-This calibration is usually stored in the image header. If you lose this metadata during a file conversion (e.g., saving as a standard .jpg), your analysis will only be able to provide results in "pixels," which have no biological meaning in a publication.
+This calibration information is usually stored in the image header. If you lose this metadata during a file conversion (e.g., saving as a standard .jpg), your analysis will only be able to provide results in "pixels," which have no biological meaning in a publication.
 
 > <tip-title> Avoid Saturation </tip-title> 
 > If you see a "0," the sensor detected nothing. If you see the maximum value ($255$ or $65,535$), your sensor was overwhelmed, this is called **saturation**. Saturated pixels are often "clipped," meaning the true biological signal was higher than what the camera could record ({% cite Pawley2006 %}). This data is lost forever and cannot be accurately quantified. 
