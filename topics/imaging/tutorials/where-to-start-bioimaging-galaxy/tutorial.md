@@ -73,7 +73,7 @@ This defines the precision of your "buckets" by setting the range of possible in
 * **16-bit:** $2^{16} = 65,536$ levels ($0–65,535$). This is the **scientific gold standard** because it allows you to detect subtle differences in image intensities that would be lost (e.g., due to rounding) when using an 8-bit representation (e.g., {% cite Haase2022 %}).
 
 ### Spatial calibration (the size)
-By itself, a pixel has no physical size; it is just a unit of storage. **Spatial Calibration** is the metadata that links these digital units to physical reality (e.g., $1 \text{ pixel} = 0.25 \mu m$). Without this "secret sauce," you can count objects, but you cannot accurately measure how big they are, how fast they move, or their concentration ({% cite Linkert2010 %}, {% cite Haase2022 %}). 
+Image pixels (or voxels) have no _intrinsic_ physical size; they are just units of storage and representation. **Spatial calibration** is the metadata that links these digital units to physical reality (e.g., $1 \text{ pixel} = 0.25 \mu m$). Without this "secret sauce," you can count objects, but you cannot accurately measure how big they are, how fast they move, or their concentration (e.g., {% cite Linkert2010 %}, {% cite Haase2022 %}). 
 
 This calibration is usually stored in the image header. If you lose this metadata during a file conversion (e.g., saving as a standard .jpg), your analysis will only be able to provide results in "pixels," which have no biological meaning in a publication.
 
