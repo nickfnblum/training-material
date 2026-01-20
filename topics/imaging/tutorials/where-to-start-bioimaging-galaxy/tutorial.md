@@ -91,7 +91,7 @@ In everyday photography, we usually deal with 2D color images. However, in the l
 * **C (Channel):** Different "colors" or fluorescent probes (e.g., DAPI for nuclei, GFP for proteins).
 * **T (Time):** Separate frames captured over a duration (time-lapse), allowing you to track movement or dynamic changes.
 
-However, it is important to note that while we describe them in this order, different microscope vendors store them in different internal sequences (e.g., $TCZXY$). Using standard metadata readers is essential to ensure Galaxy doesn't accidentally interpret a Z-slice as a Time-point ({% cite Linkert2010 %}).
+However, it is important to note that while we describe them in this order, different microscope vendors store them in different order (e.g., $TCZXY$). Ensuring that the order is properly annotated within the image metadata is essential to ensure that Galaxy (and any image analysis software in general) doesn't accidentally interpret a Z-slice as a Time-point (e.g., {% cite Linkert2010 %}).
 
 > <tip-title> Respect the channels </tip-title> 
 > While we often look at "merged" RGB images for presentations, you should **always perform quantification on the raw, individual channels.** Merging or converting to RGB often involves data compression, bit-depth reduction, or "clipping" that distorts the underlying intensity measurements ({% cite Cromey2010 %}). 
