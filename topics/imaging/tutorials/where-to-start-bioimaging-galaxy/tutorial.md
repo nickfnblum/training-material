@@ -69,7 +69,7 @@ To make these numbers useful for science, we must define their **range** and the
 ### Bit depth (the range)
 This defines the precision of your "buckets" by setting the range of possible intensity values. 
 
-* **8-bit:** $2^{8} = 256$ levels ($0–255$). While this looks fine to our eyes, it is often too "coarse" for sensitive mathematical analysis.
+* **8-bit:** $2^{8} = 256$ levels ($0–255$). While this looks fine to our eyes, it is often too "coarse" for thorough quantitative analysis.
 * **16-bit:** $2^{16} = 65,536$ levels ($0–65,535$). This is the **scientific gold standard** because it allows you to detect tiny differences in brightness that would be lost or rounded away in 8-bit ({% cite Haase2022 %}).
 
 ### Spatial calibration (the size)
