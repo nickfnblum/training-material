@@ -36,7 +36,7 @@ contributions:
     - kostrykin
 ---
 
-Bioimage analysis is the process of extracting meaningful quantitative data from biological images. Whether you are looking at stained tissue sections (Histology) or fluorescently labeled proteins in live cells, the goal is often the same: **turning pixels into numbers.**
+Bioimage analysis is the process of extracting meaningful information (e.g., quantitative data) from image data in the life sciences (usually microscopy images). Whether you are looking at stained tissue sections (histology) or fluorescently labeled proteins in live cells, the goal is often the same: **turning pixels into numbers.**
 
 In Galaxy, we provide a robust ecosystem to make this process reproducible and scalable. We focus on making image analysis **FAIR by design** _(Findable, Accesible, Interoperable, Reusable)_, ensuring that your image formats, metadata, tools, and workflows remain reusable, transparent, and traceable from the very first upload to the final figure ({% cite GalaxyCommunity2024 %}).
 
