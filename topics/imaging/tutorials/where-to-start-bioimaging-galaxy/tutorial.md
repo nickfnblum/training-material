@@ -70,7 +70,7 @@ To make these numbers useful for science, we must define their **range** and the
 This defines the precision of your "buckets" by setting the range of possible intensity values. 
 
 * **8-bit:** $2^{8} = 256$ levels ($0–255$). While this looks fine to our eyes, it is often too "coarse" for thorough quantitative analysis.
-* **16-bit:** $2^{16} = 65,536$ levels ($0–65,535$). This is the **scientific gold standard** because it allows you to detect tiny differences in brightness that would be lost or rounded away in 8-bit ({% cite Haase2022 %}).
+* **16-bit:** $2^{16} = 65,536$ levels ($0–65,535$). This is the **scientific gold standard** because it allows you to detect subtle differences in image intensities that would be lost (e.g., due to rounding) when using an 8-bit representation (e.g., {% cite Haase2022 %}).
 
 ### Spatial calibration (the size)
 By itself, a pixel has no physical size; it is just a unit of storage. **Spatial Calibration** is the metadata that links these digital units to physical reality (e.g., $1 \text{ pixel} = 0.25 \mu m$). Without this "secret sauce," you can count objects, but you cannot accurately measure how big they are, how fast they move, or their concentration ({% cite Linkert2010 %}, {% cite Haase2022 %}). 
