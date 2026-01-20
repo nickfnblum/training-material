@@ -77,7 +77,7 @@ Image pixels (or voxels) have no _intrinsic_ physical size; they are just units 
 
 This calibration information is usually stored in the image header. If you lose this metadata during a file conversion (e.g., saving as a standard .jpg), your analysis will only be able to provide results in "pixels," which have no biological meaning in a publication.
 
-> <tip-title> Avoid Saturation </tip-title> 
+> <tip-title> Avoid saturation </tip-title> 
 > If you see an image intensity value of "0", the sensor detected nothing. If you see the maximum value (e.g., $255$ or $65,535$), your sensor was overwhelmed. These phenomena are called **saturation** (under- and oversaturation, respectively). Saturated pixels are often "clipped," meaning the true biological signal was lower or higher than what the camera could record (e.g., {% cite Pawley2006 %}). This data is lost forever and cannot be accurately quantified. 
 >
 {: .tip}
