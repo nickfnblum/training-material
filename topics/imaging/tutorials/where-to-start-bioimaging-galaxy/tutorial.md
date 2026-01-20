@@ -25,10 +25,9 @@ key_points:
   - Validate your segmentation visually before trusting the numbers.
 time_estimation: 2h
 tags:
-  - imaging
-  - microscopy
-  - introduction
-  - bioimaging
+  - Microscopy
+  - Bioimaging
+  - Histology
 contributions:
   authorship:
     - dianichj
