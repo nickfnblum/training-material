@@ -131,7 +131,7 @@ When you perform certain pre-processing tasks, such as subtracting the image bac
 >
 > > <solution-title></solution-title>
 > >
-> > 16-bit images only store whole numbers (integers). If you divide a pixel value of 5 by 2, a 16-bit image must round the result to 2 or 3. A **32-bit float** image can store the exact result ($2.5$). This is essential for advanced operations like image deconvolution, applying Gaussian filters, or calculating ratios between channels ({% cite Pawley2006 %}).
+> > 16-bit images only store whole numbers (integers). If you divide an image intensity value of 5 by 2, a 16-bit image must round the result to 2 or 3. A **32-bit float** image can store the exact result ($2.5$). This is essential for advanced operations like image deconvolution, filtering, or calculating ratios between channels (e.g., {% cite Pawley2006 %}).
 > >
 > {: .solution}
 {: .question}
