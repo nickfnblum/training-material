@@ -63,7 +63,7 @@ If you don't understand the numbers behind the colors, you risk performing "Imag
 
 ## Pixels and voxels
 
-An image is a grid of **pixels** (2D) or **voxels** (3D). Think of an image as a vast mosaic where every tile is a "picture element." In 2D, these tiles are flat, but in 3D imaging, they have depth and are called **voxels** ("volumetric elements") ({% cite Pawley2006 %}). Each one is like a small bucket that has captured a specific amount of signal (usually light), which the computer records as a single number.
+An image is a grid of **pixels** (2D) or **voxels** (3D). Think of an image as a vast mosaic where every tile is a "picture element." In 2D, these tiles are flat, but in 3D imaging, they have depth and are called **voxels** ("volumetric elements", e.g., {% cite Pawley2006 %}). Each one is like a small bucket that has captured a specific amount of signal (usually light), which the computer records as a single number.
 
 To make these numbers useful for science, we must define their **range** and their **size**.
 
