@@ -55,7 +55,7 @@ This tutorial acts as your **compass** to navigate the Galaxy imaging landscape,
 
 As Pete Bankhead points out in *[Introduction to Bioimage Analysis](https://bioimagebook.github.io/index.html)* ({% cite Bankhead2022 %}), an image is not just a picture, it is a collection of measurements. Therefore, before starting any analysis, you must understand the underlying structure of your data.
 
-To the human eye, an image is a visual representation of a biological sample. However, to a computer, it is a **numerical matrix** ({% cite Sedgewick2010 %}). Every point in that grid—the **pixel**—is a data point representing the number of photons or the signal intensity detected at that specific coordinate. Understanding your "digital anatomy" means knowing exactly how those numbers were recorded, how they are spaced in 3D space, and what the intensity limits are. 
+To the human eye, an image is a visual representation of a biological sample. However, to a computer, it is a **numerical matrix** ({% cite Sedgewick2010 %}). Every point in that grid—the **pixel**—is a data point representing the number of photons or the signal intensity detected at that specific coordinate. Understanding your "digital anatomy" means knowing exactly how those numbers were recorded, how they are spaced and oriented in 3D space, and what the limitations of the employed imaging technique are (e.g., due to over/undersaturation that leads to clipped intensities). 
 
 *Add Pete B's Image from his book*
 
