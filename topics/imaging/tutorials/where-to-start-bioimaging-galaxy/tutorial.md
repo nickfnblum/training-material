@@ -114,7 +114,7 @@ However, it is important to note that while we describe them in this order, diff
 
 A common misconception is that if two images look identical on a desktop monitor, they contain the same data. However, our eyes and screens are usually limited to 8-bit displays, while your microscope sensor is far more sensitive. 
 
-When you perform analysis, such as subtracting background or enhancing contrast, you are essentially "**stretching**" the data. 
+When you perform certain pre-processing tasks, such as subtracting the image background or contrast enhancement, you are essentially **stretching the histogram** of the image data.
 
 * In **8-bit**, stretching creates "gaps" in your histogram (quantization errors), making your data look like a staircase rather than a smooth curve ({% cite Cromey2010 %}).
 * In **16-bit**, you have enough "spare" values between intensities that the data remains smooth and mathematically accurate even after heavy processing.
