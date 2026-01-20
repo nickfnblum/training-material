@@ -100,7 +100,7 @@ However, it is important to note that while we describe them in this order, diff
 
 > <question-title> Identify the dimensions </question-title>
 >
-> If you have a time-lapse experiment where you filmed 3 different fluorescent markers across 10 focal planes (Z-slices) every minute for an hour, how many total 2D images (planes) are in your file?
+> If you have a time-lapse experiment where you recorded 3 different fluorescent markers across 10 focal planes (Z-slices) every minute for an hour, how many total 2D images (planes) are in your file?
 >
 > > <solution-title></solution-title>
 > >
