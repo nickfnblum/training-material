@@ -54,7 +54,14 @@ This tutorial acts as your **compass** to navigate the Galaxy imaging landscape,
 
 As Pete Bankhead points out in *[Introduction to Bioimage Analysis](https://bioimagebook.github.io/index.html)* ({% cite Bankhead2022 %}), an image is not just a picture, it is a collection of measurements. Therefore, before starting any analysis, you must understand the underlying structure of your data.
 
-To the human eye, an image is a visual representation of a biological sample. However, to a computer, it is a **numerical matrix** ({% cite Sedgewick2010 %}). Every point in that grid—the **pixel**—is a data point representing the number of photons or the signal intensity detected at that specific coordinate. Understanding your "digital anatomy" means knowing exactly how those numbers were recorded, how they are spaced and oriented in 3D space, and what the limitations of the employed imaging technique are (e.g., due to over/undersaturation that leads to clipped intensities). 
+To the human eye, an image is a visual representation of a biological sample. However, to a computer, it is a **numerical array** ({% cite Sedgewick2010 %}). The dimensionality of this array depends on your data:
+
+* A 2D grayscale image is a **matrix** (2D array): rows × columns
+* A 2D color image is a **3D array**: rows × columns × channels (RGB)
+* A 3D volume is a **3D array**: X × Y × Z
+* A multi-dimensional hyperstack is a **tensor**: a multi-dimensional array (e.g., X × Y × Z × C × T)
+
+Every point in that array—the **pixel** (2D) or **voxel** (3D)—is a data point representing the number of photons or the signal intensity detected at that specific coordinate. Understanding your "digital anatomy" means knowing exactly how those numbers were recorded, how they are organized across dimensions, how they are spaced and oriented in 3D space, and what the limitations of the employed imaging technique are (e.g., due to over/undersaturation that leads to clipped intensities).
 
 *Add Pete B's Image from his book*
 
@@ -104,15 +111,15 @@ This calibration information is usually stored in the image header. If you lose 
 
 In everyday photography, we usually deal with 2D color images. However, in the life sciences, we can capture **hyperstacks**: multi-dimensional data structures that represent a biological sample across space, spectrum, and time. Most scientific images follow the $(X, Y, Z, C, T)$ convention ({% cite Goldberg2005 %}):
 
-* **X & Y (Spatial):** The width and height of your image.
-* **Z (Depth):** Multiple optical sections or "slices" taken at different focal planes to reconstruct a 3D volume.
-* **C (Channel):** Different "colors" or fluorescent probes (e.g., DAPI for nuclei, GFP for proteins).
-* **T (Time):** Separate frames captured over a duration (time-lapse), allowing you to track movement or dynamic changes.
+* **X & Y (Spatial):** The width and height of your image (the 2D plane).
+* **Z (Depth):** Multiple optical sections or "slices" taken at different focal planes to reconstruct a 3D volume. In confocal or light-sheet microscopy, these represent different depths through the sample.
+* **C (Channel):** Different wavelengths or fluorescent probes corresponding to specific biological structures or molecules (e.g., DAPI for nuclei, GFP for proteins, Phalloidin for actin).
+* **T (Time):** Separate frames captured over a duration (time-lapse), allowing you to track movement, growth, or dynamic changes in cellular processes.
 
-However, it is important to note that while we describe them in this order, different microscope vendors store them in different order (e.g., $TCZXY$). Ensuring that the order is properly annotated within the image metadata is essential to ensure that Galaxy (and any image analysis software in general) doesn't accidentally interpret a Z-slice as a Time-point (e.g., {% cite Linkert2010 %}).
+However, it is important to note that while we describe them in this $(X, Y, Z, C, T)$ order, different microscope vendors and file formats store them in different orders (e.g., $TZCXY$, $XYCZT$). Ensuring that the dimensional order is properly annotated within the image metadata is essential so that Galaxy (and any image analysis software in general) doesn't accidentally interpret a Z-slice as a time-point or a channel as a Z-position (e.g., {% cite Linkert2010 %}).
 
 > <tip-title> Respect the channels </tip-title> 
-> While we often look at "merged" RGB images for presentations, you should **always perform quantification on the raw, individual channels.** Merging or converting to RGB often involves data compression, bit-depth reduction, or "clipping" that distorts the underlying intensity measurements ({% cite Cromey2010 %}). 
+> While we often look at "merged" RGB images for presentations, you should **always perform quantification on the raw, individual channels.** Merging or converting to RGB often involves data compression, bit-depth reduction (typically down to 8-bit), or intensity scaling that distorts the underlying measurements and loses quantitative information ({% cite Cromey2010 %}). Each channel should be analyzed separately and then results can be compared or combined downstream.
 > 
 {: .tip}
 
@@ -122,7 +129,7 @@ However, it is important to note that while we describe them in this order, diff
 >
 > > <solution-title></solution-title>
 > >
-> > You would have $3 \text{ (Channels)} \times 10 \text{ (Z-slices)} \times 60 \text{ (Time points)} = 1,800$ total planes. Galaxy tools need to know the correct order of these dimensions (e.g., $XYZCT$) to ensure they don't accidentally measure a Z-slice as a Time-point!
+> > You would have $3 \text{ (Channels)} \times 10 \text{ (Z-slices)} \times 60 \text{ (Time points)} = 1,800$ total 2D planes. Each individual plane is an $X \times Y$ image. Galaxy tools need to know the correct dimensional order (e.g., $XYZCT$ vs. $XYCZT$ vs. $TZCXY$) to ensure they correctly interpret which dimension is which—otherwise, you might accidentally measure intensity changes across Z-depth when you meant to measure changes over time!
 > >
 > {: .solution} 
 {: .question}
