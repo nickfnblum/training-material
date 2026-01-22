@@ -84,7 +84,7 @@ This calibration information is usually stored in the image header. If you lose 
 
 ## The 5 dimensions (5D)
 
-In everyday photography, we usually deal with 2D color images. However, in the life sciences, we can capture **hyperstacks**: multi-dimensional data structures that represent a biological event across space, spectrum, and time. Most scientific images follow the $(X, Y, Z, C, T)$ convention ({% cite Goldberg2005 %}):
+In everyday photography, we usually deal with 2D color images. However, in the life sciences, we can capture **hyperstacks**: multi-dimensional data structures that represent a biological sample across space, spectrum, and time. Most scientific images follow the $(X, Y, Z, C, T)$ convention ({% cite Goldberg2005 %}):
 
 * **X & Y (Spatial):** The width and height of your image.
 * **Z (Depth):** Multiple optical sections or "slices" taken at different focal planes to reconstruct a 3D volume.
