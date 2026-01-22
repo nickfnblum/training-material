@@ -151,7 +151,9 @@ Daniel Hartl. Essential Genetics: A Genomics Perspective. Jones & Bartlett Learn
 ### DNA extraction tips
 
 .left[
-- Many **DNA extraction protocol** are available for a wide range of species/taxa (VGP, Darwin Tree of Life, Nanopore, PacBio, etc)
+- Many **DNA extraction protocol** are available for a wide range of species/taxa (EBP, VGP, Darwin Tree of Life, Nanopore, PacBio, etc)
+<br>
+Here are a few open-access protocols: https://www.protocols.io/workspaces/earth-biogenome-project/publications?page_id=2
 <br><br>
 - **Keep DNA samples** from the same individual in case of library preparation or sequencing failure, need more coverage, new sequencing technology, etc
 <br><br>
@@ -167,7 +169,22 @@ Daniel Hartl. Essential Genetics: A Genomics Perspective. Jones & Bartlett Learn
 ### Bioinformatics steps - Definitions
 
 .image-5[
-  ![Illustration of the working principle of scaffolding](../../images/genome_assembly_introduction/scaffolding.png)
+  ![Illustration of the working principle of contig](../../images/contigs.png)
+]
+
+.left[
+**Contig**: a contiguous sequence in an assembly. A contig does not contain long stretches of unknown sequences (aka assembly **gaps**).
+The contig is usually generated using the long-reads data.
+]
+
+.footnote[https://bioinformaticamente.com/2020/12/16/assembly-of-reads/]
+
+---
+
+### Bioinformatics steps - Definitions
+
+.image-5[
+  ![Illustration of the working principle of scaffolding](../../images/contigs_scaffolds)
 ]
 
 .left[
@@ -179,6 +196,8 @@ Usually, scaffolds are generated using the Hi-C data
 <br>
 **Assembly**: a set of contigs or scaffolds.
 ]
+
+.footnote[https://bioinformaticamente.com/2020/12/16/assembly-of-reads/]
 
 ---
 
