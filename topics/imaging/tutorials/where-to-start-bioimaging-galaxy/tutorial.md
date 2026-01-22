@@ -66,19 +66,37 @@ An image is a grid of **pixels** (2D) or **voxels** (3D). Think of an image as a
 
 To make these numbers useful for science, we must define their **range** and their **spatial extent** (i.e. the *resolution* of the image, like pixels or voxels per real-world unit).
 
-### Bit depth (the range)
-This defines the precision of your "buckets" by setting the range of possible intensity values. 
+### Bit depth (the range and precision limits)
 
-* **8-bit:** $2^{8} = 256$ levels ($0–255$). While this looks fine to our eyes, it is often too "coarse" for thorough quantitative analysis.
-* **16-bit:** $2^{16} = 65,536$ levels ($0–65,535$). This is the **scientific gold standard** because it allows you to detect subtle differences in image intensities that would be lost (e.g., due to rounding) when using an 8-bit representation (e.g., {% cite Haase2022 %}).
+Bit depth sets the **maximum theoretical precision** of your measurements by determining the range of possible intensity values and the smallest distinguishable difference between them. However, the **actual achievable precision** depends on many factors in your imaging system: sensor noise, photon statistics, optical aberrations, and sample preparation quality. In other words, bit depth imposes an upper bound—the real precision may be lower due to experimental limitations (e.g., {% cite Pawley2006 %}).
+
+There are two main representation types:
+
+#### Integer representations
+
+These are the natural format for raw camera data, as imaging sensors essentially count photons:
+
+* **8-bit:** $2^{8} = 256$ discrete levels ($0–255$). While this looks fine to our eyes, it is often too "coarse" for thorough quantitative analysis.
+* **16-bit:** $2^{16} = 65,536$ discrete levels ($0–65,535$). This is the **scientific gold standard for acquisition** because it allows you to detect subtle differences in image intensities that would be lost (e.g., due to rounding) when using an 8-bit representation (e.g., {% cite Haase2022 %}).
+
+#### Floating-point representations
+
+After image processing operations (e.g., background subtraction, normalization, deconvolution), intensity values often become non-integer or fall outside the original acquisition range. Floating-point formats accommodate this:
+
+* **16-bit float (half precision):** Can represent a range of approximately $6.1 \times 10^{-5}$ to $65,504$ with decimal precision. This format is increasingly used in machine learning and GPU-accelerated image processing because it saves memory while providing sufficient precision for many applications.
+* **32-bit float (single precision):** Can represent an enormous range (~$10^{-38}$ to ~$10^{38}$) with ~7 significant decimal digits of precision. This is the **most common format for image processing** as it balances precision, range, and computational efficiency.
+* **64-bit float (double precision):** Offers even greater precision (~15-16 significant decimal digits) and range (~$10^{-308}$ to ~$10^{308}$), useful for iterative algorithms or when accumulating many operations where small errors could compound.
+
+Note that floating-point images have **different limits** than integer images—instead of a fixed maximum like 255 or 65,535, the "range" depends on your actual data and processing steps. Many analysis tools automatically convert to floating-point internally to preserve accuracy during calculations.
 
 ### Spatial calibration (the size)
+
 Image pixels (or voxels) have no _intrinsic_ physical size; they are just units of storage and representation. **Spatial calibration** is the metadata that links these digital units to physical reality (e.g., $1 \text{ pixel} = 0.25 \mu m$). Without this "secret sauce," you can count objects, but you cannot accurately measure how big they are, how fast they move, or their concentration (e.g., {% cite Linkert2010 %}, {% cite Haase2022 %}). 
 
 This calibration information is usually stored in the image header. If you lose this metadata during a file conversion (e.g., saving as a standard .jpg), your analysis will only be able to provide results in "pixels," which have no biological meaning in a publication.
 
 > <tip-title> Avoid saturation </tip-title> 
-> If you see an image intensity value of "0", the sensor detected nothing. If you see the maximum value (e.g., $255$ or $65,535$), your sensor was overwhelmed. These phenomena are called **saturation** (under- and oversaturation, respectively). Saturated pixels are often "clipped," meaning the true biological signal was lower or higher than what the camera could record (e.g., {% cite Pawley2006 %}). This data is lost forever and cannot be accurately quantified. 
+> If you see an image intensity value of "0", the sensor may have detected nothing, or it could represent true absence of signal—context matters. If you see the maximum value (e.g., $255$ or $65,535$), your sensor was overwhelmed. These phenomena are called **saturation** (under- and oversaturation, respectively). Saturated pixels are often "clipped," meaning the true biological signal was lower or higher than what the camera could record (e.g., {% cite Pawley2006 %}). This data is lost forever and cannot be accurately quantified. 
 >
 {: .tip}
 
@@ -115,23 +133,32 @@ A common misconception is that if two images look identical on a desktop monitor
 
 When you perform certain pre-processing tasks, such as subtracting the image background or contrast enhancement, you are essentially **stretching the histogram** of the image data.
 
-* In **8-bit**, stretching creates "gaps" in your histogram (quantization errors), making your data look like a staircase rather than a smooth curve ({% cite Cromey2010 %}).
-* In **16-bit**, you have enough "spare" values between intensities that the data remains smooth and mathematically accurate even after heavy processing.
+* In **8-bit**, with only 256 possible values, stretching creates more pronounced "gaps" in your histogram (quantization artifacts), potentially making your data distribution appear discontinuous.
+* In **16-bit integer**, with 65,536 possible values, the same stretching operation creates smaller relative gaps. While quantization artifacts still occur, they are far less severe and less likely to impact downstream quantitative analysis ({% cite Cromey2010 %}).
+
+The key difference is not whether artifacts appear, but their **magnitude relative to your data range**. Think of it this way: spreading 256 values across a wider range creates larger "jumps" between adjacent intensity levels than spreading 65,536 values across the same range.
 
 *Add here example images of how two images that look the same to the human eye have different data*
 
 > <tip-title> Precision </tip-title> 
-> Always try to keep your data in **16-bit** or **32-bit (float)** during analysis. Converting to 8-bit too early is like rounding your currency to the nearest dollar before finishing your taxes, and you lose crucial precision that can never be recovered ({% cite Haase2022 %}). 
+> Always try to keep your data in **16-bit integer** or **floating-point formats** (16-bit, 32-bit, or 64-bit float) during analysis. Converting to 8-bit too early reduces your ability to detect subtle intensity differences and makes quantization artifacts more severe during processing. This lost precision can never be recovered ({% cite Haase2022 %}). 
 >
 {: .tip}
 
-> <question-title> Thinking about 32-bit </question-title>
+> <question-title> Why use floating-point instead of 16-bit integer? </question-title>
 >
-> Why would someone use **32-bit (float)** instead of 16-bit?
+> We already covered different floating-point formats in the bit depth section above. But why would we need to convert from 16-bit integer to floating-point during analysis?
 >
 > > <solution-title></solution-title>
 > >
-> > 16-bit images only store whole numbers (integers). If you divide an image intensity value of 5 by 2, a 16-bit image must round the result to 2 or 3. A **32-bit float** image can store the exact result ($2.5$). This is essential for advanced operations like image deconvolution, filtering, or calculating ratios between channels (e.g., {% cite Pawley2006 %}).
+> > 16-bit **integer** images can only store whole numbers (0–65,535). Many image processing operations produce non-integer results that would be lost through rounding:
+> >
+> > * Dividing pixel intensity 5 by 2 gives 2.5 (must be rounded to 2 or 3 in integer format)
+> > * Background subtraction can produce negative values (impossible in unsigned integer format)
+> > * Averaging two pixels with values 100 and 101 gives 100.5 (precision lost in integer)
+> > * Normalizing intensities often produces fractional values
+> >
+> > Floating-point formats preserve these exact values, preventing cumulative rounding errors across multiple processing steps. Additionally, floating-point formats can represent values outside the 0–65,535 range, which is useful when processing operations produce negative values or very large values (e.g., summing multiple images) (e.g., {% cite Pawley2006 %}). Most image analysis software automatically converts to 32-bit float internally for this reason.
 > >
 > {: .solution}
 {: .question}
