@@ -163,7 +163,7 @@ A more powerful usecase is integrating verification directly in workflows:
 > ![verify_wf1.png](../../images/iscc-suite/verify_wf1.png)
 {: .hands_on}
 
-## Image analysis workflow Integration
+## Image analysis workflow integration
 
 This can be applied in an image analysis workflow to verify an image processing tool provides the expected reproducible output. In the example files we shared a thresholded image `example_thresholded1.tiff` . We will use it to verify whether the Otsu threshold result of this image can be reproduced.
 
@@ -178,7 +178,7 @@ This can be applied in an image analysis workflow to verify an image processing 
 >    - Add **Verify ISCC hash** tool
 >        - Connect the processed file as input
 >
-> This creates an automated check that your processing didn't unexpectedly alter the content.
+> This allows you to verify whether the thresholding method is working as expected and the algorithm has not been altered (e.g. in a new version).
 > ![verify_wf2.png](../../images/iscc-suite/verify_wf2.png)
 {: .hands_on}
 
@@ -199,7 +199,7 @@ One of ISCC's unique features is detecting similar content, even across differen
 
 > <hands-on-title>Compare two files for similarity</hands-on-title>
 >
-> 1. {% tool [Find datasets with similar ISCC-CODEs]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_similarity) %} with the following parameters:
+> 1. {% tool [Find datasets with similar ISCC-CODEs]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_similarity/0.1.0+galaxy1) %} with the following parameters:
 >    - *"Input type"*: `Datasets to compare`
 >        - {% icon param-file %} Select multiple datasets (or a collection, see below)
 >    - *"Similarity threshold (Hamming distance)"*: `12` (default)
@@ -219,7 +219,7 @@ When working with a collection of files, you can identify all similar items:
 >
 >    {% snippet faqs/galaxy/collections_build_list.md %}
 >
-> 2. {% tool [Find datasets with similar ISCC-CODEs]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_similarity) %} with the following parameters:
+> 2. {% tool [Find datasets with similar ISCC-CODEs]( https://toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum_similarity/iscc_sum_similarity/0.1.0+galaxy1) %} with the following parameters:
 >    - *"Input type"*: `Datasets to compare`
 >        - {% icon param-file %} Select a collection
 >    - *"Similarity threshold (Hamming distance)"*: `12` (default)
