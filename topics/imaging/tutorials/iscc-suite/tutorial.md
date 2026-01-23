@@ -160,12 +160,12 @@ A more powerful usecase is integrating verification directly in workflows:
 >        - Connect the "Parse parameter value" from step 1 to "File containing expected ISCC code"
 >
 > When placing this in a full workflow this can help to validate that your processing didn't unexpectedly alter the content.
-> ![fetch_data.jpg](../../images/iscc-suite/verify_wf1.png)
+> ![verify_wf1.png](../../images/iscc-suite/verify_wf1.png)
 {: .hands_on}
 
 ## Image analysis workflow Integration
 
-This can be applied in an image analysis workflow to verify an image processing tool provides the expected reproducible output.
+This can be applied in an image analysis workflow to verify an image processing tool provides the expected reproducible output. In the example files we shared a thresholded image `example_thresholded1.tiff` . We will use it to verify whether the Otsu threshold result of this image can be reproduced.
 
 > <hands-on-title>Image analysis verification in workflows</hands-on-title>
 >
@@ -179,7 +179,7 @@ This can be applied in an image analysis workflow to verify an image processing 
 >        - Connect the processed file as input
 >
 > This creates an automated check that your processing didn't unexpectedly alter the content.
-> ![fetch_data.jpg](../../images/iscc-suite/verify_wf.png)
+> ![verify_wf2.png](../../images/iscc-suite/verify_wf2.png)
 {: .hands_on}
 
 > <comment-title>When to Use Verification</comment-title>
