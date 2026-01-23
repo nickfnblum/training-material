@@ -3,6 +3,10 @@ layout: tutorial_hands_on
 title: Content Tracking and Verification in Galaxy Workflows with ISCC-SUM
 level: Intermediate
 zenodo_link: https://zenodo.org/records/XXXXXXX
+answer_histories:
+- label:
+  history:
+  date:
 questions:
 - What is an ISCC code and why is it useful for data management?
 - How can I generate content hashes for files in Galaxy?
@@ -76,8 +80,9 @@ For this tutorial, we'll use a simple dataset with microscope images that demons
 >
 > 2. Download the following image and import it into your Galaxy history.
 >    - [`example_image.tiff`](workflows/test-data/example_image.tiff)
->    - [`example_image2.tiff`](workflows/test-data/example_image.tiff)
->    - [`example_thresholded1.tiff`](workflows/test-data/example_image.tiff)
+>    - [`example_image2.tiff`](workflows/test-data/example_image2.tiff)
+>    - [`example_image3.tiff`](workflows/test-data/example_image3.tiff)
+>    - [`example_thresholded1.tiff`](workflows/test-data/example_thresholded1.tiff)
 >    
 >    If you are importing the image via URL:
 >
@@ -91,7 +96,7 @@ The first step is generating ISCC codes for your input files. This creates a con
 
 > <hands-on-title>Generate ISCC codes for input files</hands-on-title>
 >
-> 1. {% tool [Generate ISCC-CODE]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum) %} with the following parameters:
+> 1. {% tool [Generate ISCC-CODE]( https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum/0.1.0+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Input File"*: Select the first example image (`example_image.tiff`.)
 >  
 >    Run the tool. This will generate a 55-character ISCC code for the file.
@@ -126,7 +131,7 @@ During workflow execution, you may want to verify that intermediate files match 
 
 > <hands-on-title>Verify a file against its ISCC code</hands-on-title>
 >
-> 1. {% tool [Verify ISCC-CODE](https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_verify) %} with the following parameters:
+> 1. {% tool [Verify ISCC-CODE](https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_verify/0.1.0+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Dataset to verify"*: Select the first example image
 >    - *"Expected ISCC-CODE"*: 
 >        - *"Expected ISCC code"*: Paste the ISCC code you generated in the previous step
@@ -211,7 +216,7 @@ One of ISCC's unique features is detecting similar content, even across differen
 
 ## Find Similar Files in Collections
 
-When working with a collection of files, you can identify all similar items:
+When working with a collection of files, you can identify all similar items. This is particularly useful when you have large datasets and want to find duplicates or track how processing affects content similarity.
 
 > <hands-on-title>Find similar files in a collection</hands-on-title>
 >
@@ -219,15 +224,32 @@ When working with a collection of files, you can identify all similar items:
 >
 >    {% snippet faqs/galaxy/collections_build_list.md %}
 >
-> 2. {% tool [Find datasets with similar ISCC-CODEs]( https://toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum_similarity/iscc_sum_similarity/0.1.0+galaxy1) %} with the following parameters:
+>    Include all three images from the tutorial: `example_image.tiff`, `example_image2.tiff`, and `example_thresholded1.tiff`
+>
+> 2. {% tool [Find datasets with similar ISCC-CODEs](https://toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum_similarity/iscc_sum_similarity/0.1.0+galaxy1) %} with the following parameters:
 >    - *"Input type"*: `Datasets to compare`
->        - {% icon param-file %} Select a collection
+>        - {% icon param-file %} Select your collection
 >    - *"Similarity threshold (Hamming distance)"*: `12` (default)
 >
-> 3. Review the similarity groupings. As explained above.
->    
+> 3. Examine the output table. Each row represents a file from your collection. The columns show:
+>    - The filename
+>    - Its ISCC code
+>    - Any similar files found (with their similarity score)
+>
+>    Files that share content (like `example_image.tiff` and `example_image2.tiff` if they are copies) will be grouped together.
 >
 {: .hands_on}
+
+> <tip-title>Understanding the Hamming distance threshold</tip-title>
+>
+> The Hamming distance measures how different two ISCC codes are. Lower values mean more similar content:
+> - **0**: Identical content
+> - **1-12**: Very similar (default threshold)
+> - **>12**: Increasingly different content
+>
+> Adjust the threshold based on your use case: lower values for stricter matching, higher values to catch more distant similarities.
+{: .tip}
+
 
 > <question-title></question-title>
 >
