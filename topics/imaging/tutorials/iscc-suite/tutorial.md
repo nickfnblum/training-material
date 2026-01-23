@@ -4,9 +4,9 @@ title: Content Tracking and Verification in Galaxy Workflows with ISCC-SUM
 level: Intermediate
 zenodo_link: https://zenodo.org/records/XXXXXXX
 answer_histories:
-- label:
-  history:
-  date:
+- label: UseGalaxy.eu - ISCC workflow integration
+  history: https://usegalaxy.eu/u/maartenpaul/h/iscc-simple-workflow-integration
+  date: 2026-01-23
 questions:
 - What is an ISCC code and why is it useful for data management?
 - How can I generate content hashes for files in Galaxy?
