@@ -7,6 +7,9 @@ answer_histories:
 - label: UseGalaxy.eu - ISCC workflow integration
   history: https://usegalaxy.eu/u/maartenpaul/h/iscc-simple-workflow-integration
   date: 2026-01-23
+- label: UseGalaxy.eu - ISCC similarity
+  history: https://usegalaxy.eu/u/maartenpaul/h/iscc-similarity
+  date: 2026-01-23
 questions:
 - What is an ISCC code and why is it useful for data management?
 - How can I generate content hashes for files in Galaxy?
@@ -183,7 +186,7 @@ This can be applied in an image analysis workflow to verify an image processing 
 >    - Add **Verify ISCC hash** tool
 >        - Connect the processed file as input
 >
-> This allows you to verify whether the thresholding method is working as expected and the algorithm has not been altered (e.g. in a new version).
+> This allows you to verify whether the thresholding method is working as expected and the algorithm has not been altered (e.g. in a new version). You can run with the example images and check the output of the workflow to see if the result is as expected.
 > ![verify_wf2.png](../../images/iscc-suite/verify_wf2.png)
 {: .hands_on}
 
@@ -236,8 +239,17 @@ When working with a collection of files, you can identify all similar items. Thi
 >    - Its ISCC code
 >    - Any similar files found (with their similarity score)
 >
->    Files that share content (like `example_image.tiff` and `example_image2.tiff` if they are copies) will be grouped together.
+>    Files that share content (like `example_image.tiff` and `example_image3.tiff`, which is slightly modified ) will be grouped together, although their ISCC-SUM codes are different.
 >
+>
+>
+>| file_id | filename | iscc_code | match_id | match_filename | match_iscc_code | distance |
+>|---------|----------|-----------|----------|----------------|-----------------|----------|
+>| 237291288 | example_image3.tiff | K4AN4LWVHDBNDGB27ET2YM7I24WVI2KJZMSS33J45PDQBDUIAGRNVYI | 237291291 | >example_image.tiff | K4AN4LWXHTANDGB27ET24M7K24WVJMP2VEBGSEFNY2OGYJAEBIKZA4I | 5 |
+>| 237291291 | example_image.tiff | K4AN4LWXHTANDGB27ET24M7K24WVJMP2VEBGSEFNY2OGYJAEBIKZA4I | 237291288 | >example_image3.tiff | K4AN4LWVHDBNDGB27ET2YM7I24WVI2KJZMSS33J45PDQBDUIAGRNVYI | 5 |
+>| 237291289 | example_tresholded1.tiff | K4AHURTQUKYKYEC5WOOWWE5K33XATG2PPANVCV55OSBGKFDFNUVKVQI | | | | -1 |
+>| 237291290 | example_image2.tiff | K4AMN2R2RSZBJDHU76VOCICGVSNGTU67TPON5OVQQNGXC4FZROSVTTQ | | | | -1 |
+
 {: .hands_on}
 
 > <tip-title>Understanding the Hamming distance threshold</tip-title>
@@ -253,56 +265,56 @@ When working with a collection of files, you can identify all similar items. Thi
 
 > <question-title></question-title>
 >
-> 1. Why would you want to detect similar files in your workflow?
+> 1. Looking at the similarity results table, why do `example_image.tiff` and `example_image3.tiff` show a match while `example_thresholded1.tiff` does not?
+>
+> 2. What does a distance value of -1 indicate?
 >
 > > <solution-title></solution-title>
 > >
-> > 1. Similar file detection helps to:
-> >    - Identify duplicate data that wastes storage and compute
-> >    - Track how files are transformed through processing
-> >    - Find related samples or experimental replicates
-> >    - Detect unexpected modifications in supposedly identical files
-> 
+> > 1. `example_image.tiff` and `example_image3.tiff` contain similar visual content, resulting in a Hamming distance of 5, which is below the threshold of 12. The thresholded image has undergone significant processing (binarization), changing its content substantially so it no longer matches the original within the similarity threshold.
+> >
+> > 2. A distance of -1 indicates that no similar file was found within the specified threshold. The file is unique compared to all other files in the collection.
 > >
 > {: .solution}
 >
 {: .question}
 
 
-# Practical use cases:
+# Practical Use Cases
 
-## Use Case 1: Quality Control in High-Throughput Workflows
+## Use Case 1: Quality Control in Image Analysis Pipelines
 
-For processing thousands of images:
+When processing large microscopy datasets:
 
-- Generate ISCC codes for all inputs at the start
-- Add verification steps after critical transformations
-- Flag unexpected changes automatically
-- Maintain full provenance chain
+- Generate ISCC codes for raw images upon acquisition
+- Detect if processing steps produce consistent outputs across batch runs
+- Identify accidentally duplicated samples before analysis
 
-## Use Case 2: Collaborative Data Sharing
+## Use Case 2: Data Deduplication and Organization
 
-When sharing data between institutions:
+When managing growing image repositories:
 
-- Generate and publish ISCC codes alongside data
-- Recipients verify data integrity upon receipt
-- Track data lineage across organizations
+- Scan collections to find duplicate uploads that waste storage
+- Identify images that are near-duplicates (e.g., same sample, different export settings)
+- Group related experimental replicates automatically
+
+## Use Case 3: Reproducibility and Data Sharing
+
+When publishing or sharing datasets:
+
+- Include ISCC codes in data publications for recipient verification
+- Document the exact input files used in published analyses
+- Enable collaborators to confirm they have identical source data
 
 # Conclusion
 
-The Galaxy ISCC-suite provides powerful tools for content tracking and verification in scientific workflows:
+In this tutorial you learned to use the Galaxy ISCC-suite for content tracking and verification:
 
-- **Generate ISCC hash**: Create content identifiers for any file
-- **Verify ISCC hash**: Check file integrity at workflow checkpoints
-- **Compare ISCC similarity**: Detect related or duplicate content
+- **Generate ISCC-CODE**: Creates content-based identifiers for any file
+- **Verify ISCC-CODE**: Confirms files match expected content at workflow checkpoints  
+- **Find datasets with similar ISCC-CODEs**: Detects related or duplicate content in collections
 
-By integrating these tools into your Galaxy workflows, you can:
-- Improve data quality control
-- Track content provenance
-- Detect duplicates and similar content
-- Enhance workflow reproducibility
-
-The ISCC standard works with any file type, making these tools universally applicable across different research domains.
+These tools help you maintain data integrity throughout your analysis workflows, from initial data import through to final results.
 
 # References
 
