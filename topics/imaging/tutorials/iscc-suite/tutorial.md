@@ -153,11 +153,13 @@ A more powerful usecase is integrating verification directly in workflows:
 >
 >    - Create an **Input Dataset** tool
 >    - Add **Generate ISCC hash** tool for your input file
+>    - Add **Parse parameter value** tool to get the ISCC code that you generated.
+         - Connect its input to the output of `Generate ISCC-CODE`
 >    - Add **Verify ISCC hash** tool
->        - Connect the processed file as input
->        - Connect the ISCC output from step 1 to "File containing expected ISCC code"
+>        - Connect the input file as input
+>        - Connect the "Parse parameter value" from step 1 to "File containing expected ISCC code"
 >
-> This creates an automated check that your processing didn't unexpectedly alter the content.
+> When placing this in a full workflow this can help to validate that your processing didn't unexpectedly alter the content.
 > ![fetch_data.jpg](../../images/iscc-suite/verify_wf1.png)
 {: .hands_on}
 
