@@ -220,9 +220,10 @@ For modern, large-scale, or cloud-based datasets, you can use **{% tool [Convert
 > {: .solution}
 {: .question}
 
-# 3. Before you begin: diagnose your data
+# 3. Before you begin: diagnose your data and define your goals
 
-The first step in any analysis is understanding what you are holding. Before clicking any tools, ask yourself these four questions:
+The first step in any analysis is to characterize the data you have. Before clicking any tools, ask yourself these four questions:
+
 
  - **What was the imaging modality?** (Fluorescence microscopy, brightfield histology, high-content screening?)
  - **What is the biological subject?** (Individual cells, complex tissues, or subcellular structures?)
