@@ -78,7 +78,7 @@ To make these numbers useful for science, we must define their **range** and the
 
 The bit depth corresponds to an **upper limit of the precision** when storing image intensities by determining the range of possible intensity values and the smallest distinguishable difference between them. The **actual precision** may also be lower and depends on many factors in your imaging system, like sensor noise, photon statistics, optical aberrations, and sample preparation quality (e.g., {% cite Pawley2006 %}).
 
-There are two main representation types:
+When it comes to the representation of the measurements of the imaging system as the image intensities, there generally are two main types of such representation:
 
 #### Integer representations
 
