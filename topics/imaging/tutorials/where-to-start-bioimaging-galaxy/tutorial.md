@@ -265,7 +265,7 @@ In Galaxy, you can start the pre-processing stage with tools like **{% tool [App
 ## Stage B: Segmentation (Defining objects)
 This is the most critical step. Here, you tell the computer which pixels belong to an "object" (like a nucleus) and which belong to the "background." 
 
-* **Thresholding:** A simple "cutoff" method. You decide that any pixel brighter than a certain value is part of your object. This usually results in a **Binary Mask**.
+* **Thresholding:** A "cutoff" method where pixels above (or below) a certain intensity value are classified as object. This value can be set manually or determined automatically using algorithms like Otsu or Li. The result is typically a **Binary Mask**.
 * **Inference (Deep Learning):** Advanced AI models like **Cellpose** or **StarDist** use pre-trained neural networks to recognize complex shapes. These are superior at "untangling" cells that are touching or overlapping in high-density environments ({% cite Stringer2021 %}, {% cite Schmidt2018 %}).
 
 [Image comparing simple thresholding versus AI-based instance segmentation in crowded tissues]
