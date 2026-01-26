@@ -234,7 +234,7 @@ Depending on your answers, your starting path in Galaxy will change.
 
 # 4. The lifecycle of an analysis pipeline
 
-A typical project in Galaxy is not a single click, but a sequence of logical stages. Think of it as a factory assembly line: you start with raw materials (pixels) and move through various stations until you have a finished product (a table of results). Let's examine these stages together.
+A typical project in Galaxy is not a single click, but a sequence of logical steps. Think of it as a factory assembly line: you start with raw materials (pixels) and move through various stations until you have a finished product (a table of measurements). Let's examine these stages together.
 
 ## Stage A: Pre-processing (cleaning)
 Raw images are rarely perfect. They often contain electronic noise from the camera, uneven lighting from the microscope, or staining artifacts. Pre-processing prepares your "digital anatomy" for the computer to read it more easily by improving the signal-to-noise ratio ({% cite Bankhead2022 %}).
