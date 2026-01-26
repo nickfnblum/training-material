@@ -215,7 +215,7 @@ For modern, large-scale, or cloud-based datasets, you can use **{% tool [Convert
 > > <solution-title></solution-title>
 > >
 > > 1. **Data Integrity:** JPEGs use "lossy" compression, which changes pixel values to save space. This approach literally modifies your scientific data.
-> > 2. **Metadata Retention:** A standard JPEG or simple TIFF often "strips" the metadata. You would lose the information about how many microns are in a pixel, making it impossible to calculate the real size of your objects later.
+> > 2. **Metadata Retention:** A standard JPEG or simple TIFF often "strips" the metadata. You would lose the information about the physical size a pixel represents, making it impossible to calculate the size of your objects later.
 > >
 > {: .solution}
 {: .question}
