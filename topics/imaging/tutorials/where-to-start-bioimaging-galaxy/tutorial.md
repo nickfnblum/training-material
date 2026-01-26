@@ -166,7 +166,7 @@ The key difference is not whether artifacts appear, but their **magnitude relati
 > > * Averaging two pixels with values 100 and 101 gives 100.5 (precision lost in integer)
 > > * Normalizing intensities often produces fractional values
 > >
-> > Floating-point formats preserve these exact values, preventing cumulative rounding errors across multiple processing steps. Additionally, floating-point formats can represent values outside the 0–65,535 range, which is useful when processing operations produce negative values or very large values (e.g., summing multiple images) (e.g., {% cite Pawley2006 %}). Most image analysis software automatically converts to 32-bit float internally for this reason.
+> > Floating-point still suffer from rounding but are capable to preserve these exact values with a much higher precision, reducing cumulative rounding errors across multiple processing steps. Additionally, floating-point formats can represent values in a far larger range, which is useful when processing operations produce very small or very large values (e.g., summing image intensities across multiple images; e.g., {% cite Pawley2006 %}). Most image analysis software automatically converts images to 32-bit float internally for this reason.
 > >
 > {: .solution}
 {: .question}
