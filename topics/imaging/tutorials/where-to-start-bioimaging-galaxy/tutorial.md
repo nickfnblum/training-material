@@ -75,7 +75,7 @@ To make these numbers useful for science, we must define their **range** and the
 
 ### Bit depth (the range and precision limits)
 
-Bit depth sets the **maximum theoretical precision** of your measurements by determining the range of possible intensity values and the smallest distinguishable difference between them. However, the **actual achievable precision** depends on many factors in your imaging system: sensor noise, photon statistics, optical aberrations, and sample preparation quality. In other words, bit depth imposes an upper bound—the real precision may be lower due to experimental limitations (e.g., {% cite Pawley2006 %}).
+The bit depth corresponds to an **upper limit of the precision** when storing image intensities by determining the range of possible intensity values and the smallest distinguishable difference between them. The **actual precision** may also be lower and depends on many factors in your imaging system, like sensor noise, photon statistics, optical aberrations, and sample preparation quality (e.g., {% cite Pawley2006 %}).
 
 There are two main representation types:
 
