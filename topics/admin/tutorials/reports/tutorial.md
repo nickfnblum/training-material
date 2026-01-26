@@ -20,6 +20,9 @@ contributions:
   funding:
   - deNBI
   - uni-freiburg
+  - unimelb
+  - melbournebioinformatics
+  - AustralianBioCommons
 subtopic: deprecated
 tags:
   - ansible
