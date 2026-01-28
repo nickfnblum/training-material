@@ -175,12 +175,21 @@ alliecreason:
 almahmoud:
     name: Alex Mahmoud
     joined: 2019-06
+
 andreacabibbe:
     name: Andrea Cabibbe
     affiliations:
     - irccs
     github: false
     joined: 2024-06
+
+afpybus:
+    name: Alyssa Pybus
+    joined: 2025-12
+    email: alyssa.pybus@moffitt.org
+    orcid: 0000-0002-9722-3977
+    affiliations:
+    - moffitt
 
 andrea-spitaleri:
     name: Andrea Spitaleri
@@ -682,6 +691,11 @@ d-salgado:
 danielabutano:
     name: Daniela Butano
     joined: 2019-09
+
+khaivandangusf2210:
+    name: Khai Van Dang
+    email: Khai.Dang@moffitt.org
+    joined: 2025-01
 
 dawnmy:
     name: Zhi-Luo Deng
