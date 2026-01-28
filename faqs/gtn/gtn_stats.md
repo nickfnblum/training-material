@@ -153,7 +153,7 @@ description: Statistics over the GTN
 
 <div class="col-md-3">
  <div class="gtn-card color-rainbow-violet h-100">
-   <div class="card-title">{{ orgs | size }}</div>
+   <div class="card-title">{{ orgs | where_exp: "org", "org.gtn-halloffame != 'no'" | size }}</div>
    <div class="card-text">Supporting Organisations</div>
  </div>
 </div>
