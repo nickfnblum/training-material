@@ -117,7 +117,7 @@ As first step, we can visualize one slice of the segmentation on the original im
 
 > <hands-on-title>Extract 2D results from the BiaPy output</hands-on-title>
 >
-> 1. {% tool [Extract dataset](Galaxy Version 1.0.2) %} with the following parameters:
+> 1. [Extract Dataset](__EXTRACT_DATASET__) %} with the following parameters:
 >- Input List: '"Build a workflow with BiaPy on dataset 2, 3, and others: Post-processed test predictions"'
 >- How should a dataset be selected?:
 >     - Select by Index
@@ -223,7 +223,7 @@ We can visualize again the results using the previous approach:
 
 > <hands-on-title>Extract the results from the BiaPy output</hands-on-title>
 >
-> 1. {% tool [Extract dataset](Galaxy Version 1.0.2) %} with the following parameters:
+> 1. [Extract Dataset](__EXTRACT_DATASET__) %} with the following parameters:
 >- Input List: '"Build a workflow with BiaPy on dataset 2, 3, and others: Post-processed test predictions"'
 >- How should a dataset be selected?:
 >     - Select by Index
