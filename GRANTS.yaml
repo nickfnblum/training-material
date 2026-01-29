@@ -24,7 +24,6 @@
 # Please add in alphabetical order of the key (id)
 
 
----
 ai4life:
     name: AI4Life
     github: false
