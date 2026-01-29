@@ -91,19 +91,13 @@ Now we can set up the BiaPy tool with the [venoumus-swam model](https://bioimage
 >     - [x]  `Evaluation metrics (if exist, on test data)`
 {: .hands_on}
 
-Once the tool finish its run you will have three different datasets in your history:
+Once the tool finish its run you will have three different datasets in your history.
 
-**### Test predictions**
+**Test predictions**: Full-size output images produced by the model on the test set. Because the model predicts small, overlapping patches, these patch outputs are merged back together to form one prediction per original image.
 
-Full-size output images produced by the model on the test set. Because the model predicts small, overlapping patches, these patch outputs are merged back together to form one prediction per original image.
+**Post-Processed Test Prediction**: Test predictions after automatic “clean-up” steps defined in the configuration. These steps can refine the raw output (for example, removing small spurious regions or separating touching objects). In this tutorial, Voronoi tessellation is applied to help split instances.
 
-**### Post-Processed Test Prediction**
-
-Test predictions after automatic “clean-up” steps defined in the configuration. These steps can refine the raw output (for example, removing small spurious regions or separating touching objects). In this tutorial, Voronoi tessellation is applied to help split instances.
-
-**### Test metrics**
-
-Numerical scores that measure how well the predictions match the ground truth (if provided). In instance segmentation, the report typically includes:
+**Test metrics:** Numerical scores that measure how well the predictions match the ground truth (if provided). In instance segmentation, the report typically includes:
 
 - IoU per output channel (how well pixel regions overlap), and
 
@@ -305,7 +299,7 @@ So **Water-buffalo** is better both in:
 
 ## Conclusions
 
-**### TODO**
+This need to be done...
 
 # Optional: Extract complete training workflow from history
 As an optional step, you can extract a complete workflow from your Galaxy history. This allows you to save and reuse the entire training process as a reproducible and shareable workflow.
