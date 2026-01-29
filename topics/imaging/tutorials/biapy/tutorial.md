@@ -115,7 +115,7 @@ As first step, we can visualize one slice of the segmentation on the original im
 
 > <hands-on-title>Extract 2D results from the BiaPy output</hands-on-title>
 >
-> 1. {% [Extract Dataset](__EXTRACT_DATASET__) %} with the following parameters:
+> 1. {% tool [Extract Dataset](__EXTRACT_DATASET__) %} with the following parameters:
 >- Input List: '"Build a workflow with BiaPy on dataset 2, 3, and others: Post-processed test predictions"'
 >- How should a dataset be selected?:
 >     - Select by Index
@@ -225,7 +225,7 @@ We can visualize again the results using the previous approach:
 
 > <hands-on-title>Extract the results from the BiaPy output</hands-on-title>
 >
-> 1. [Extract Dataset](__EXTRACT_DATASET__) %} with the following parameters:
+> 1. {% tool [Extract Dataset](__EXTRACT_DATASET__) %} with the following parameters:
 >- Input List: '"Build a workflow with BiaPy on dataset 2, 3, and others: Post-processed test predictions"'
 >- How should a dataset be selected?:
 >     - Select by Index
@@ -303,46 +303,6 @@ So **Water-buffalo** is better both in:
 
 - Finding objects (higher recall)
 - Keeping predictions correct (higher precision).
-
-## Visualize metrics in Galaxy
-
-To compare the two models more clearly, we will create a single summary table and plot key metrics in Galaxy.
-
-> <hands-on-title>Create a combined metrics table</hands-on-title>
->
-> 1. Identify the two **Evaluation metrics** outputs in your history:
->    - one from the `venomous-swan` run
->    - one from the `merry-water-buffalo` run
->
-> 2. Rename {% icon galaxy-pencil %} them to:
->    - `metrics_swan.tsv`
->    - `metrics_buffalo.tsv`
->
-> 3. {% tool [Add column](toolshed.g2.bx.psu.edu/repos/bgruening/add_value/addValue/1.1.0) %} on `metrics_swan.tsv`:
->    - *Value to add*: `venomous-swan`
->    - *Position*: `First column`
->
-> 4. Repeat on `metrics_buffalo.tsv`, but add the value `merry-water-buffalo`.
->
-> 5. {% tool [Concatenate datasets](toolshed.g2.bx.psu.edu/repos/bgruening/concatenate_multiple_datasets/concatenate_multiple_datasets/0.1.0) %}:
->    - Select the two updated tables (with the model column)
->
-> 6. Rename {% icon galaxy-pencil %} the output to `metrics_models_combined.tsv`
-{: .hands_on}
-
-> <hands-on-title>Plot the metrics with Galaxy Charts</hands-on-title>
->
-> 1. Click the dataset `metrics_models_combined.tsv`
-> 2. Click **Visualize** (eye icon) → **Charts**
-> 3. Choose **Bar chart**
-> 4. Configure:
->    - *X-axis*: the **model** column (the one you added)
->    - *Y-axis*: choose one metric column (e.g. `F1` or `PQ`)
-> 5. Save the visualization (optional), then repeat for another metric (e.g. IoU or Precision/Recall).
-{: .hands_on}
-
-> Tip: If your metrics file contains multiple thresholds (e.g. IoU ≥ 0.3, 0.5, 0.7), filter to **IoU ≥ 0.5** first, then plot.
-{: .tip}
 
 ## Conclusions
 
