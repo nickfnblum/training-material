@@ -60,6 +60,16 @@ a-asai:
     email: tbudcm7zk@i.softbank.jp
     joined: 2018-06
 
+abdussalam:
+    gtn-halloffame: "no"
+    name: Abdus Salam
+    github: false
+
+abrahamnievadelahidalga:
+    gtn-halloffame: "no"
+    name: Abraham Nieva de la Hidalga
+    github: false
+
 abretaud:
     name: Anthony Bretaudeau
     email: anthony.bretaudeau@irisa.fr
@@ -144,13 +154,33 @@ ajadi-abiola:
     name: Barakat Ajadi
     joined: 2021-10
 
+akankshabafna:
+    gtn-halloffame: "no"
+    name: Akanksha Bafna
+    github: false
+
 alaaelghamry:
     name: Alaa Elghamry
     joined: 2021-11
 
+alejandragonzalezbeltran:
+    gtn-halloffame: "no"
+    name: Alejandra Gonzalez-Beltran
+    github: false
+
+alejandrococacastro:
+    gtn-halloffame: "no"
+    name: Alejandro Coca-Castro
+    github: false
+
 ales-ibt:
     name: Alejandra Escobar-Zepeda
     joined: 2021-05
+
+alessandroculotti:
+    gtn-halloffame: "no"
+    name: Alessandro Culotti
+    github: false
 
 alexcorm:
     name: Alexandre Cormier
@@ -158,6 +188,16 @@ alexcorm:
     twitter: allanssx
     orcid: 0000-0002-7775-8413
     joined: 2021-11
+
+alexkanterakis:
+    gtn-halloffame: "no"
+    name: Alex Kanterakis
+    github: false
+
+alisajidimami:
+    gtn-halloffame: "no"
+    name: Ali Sajid Imami
+    github: false
 
 allegravia:
     name: Allegra Via
@@ -178,6 +218,16 @@ alliecreason:
 almahmoud:
     name: Alex Mahmoud
     joined: 2019-06
+
+ambrejousselin:
+    gtn-halloffame: "no"
+    name: Ambre Jousselin
+    github: false
+
+amirsabbaghian:
+    gtn-halloffame: "no"
+    name: Amir Sabbaghian
+    github: false
 
 andreacabibbe:
     name: Andrea Cabibbe
@@ -281,12 +331,21 @@ anuprulez:
       - eurosciencegateway
       - elixir-europe
 
+arash77:
+    gtn-halloffame: "no"
+    name: Arash Kadkhodaei
+
 arashghodousi:
     name: Arash Ghodousi
     affiliations:
     - irccs
     - san-raffaele-uni
     joined: 2024-06
+
+arundecano:
+    gtn-halloffame: "no"
+    name: Arun Decano
+    github: false
 
 asmasonomics:
     name: Andrew Mason
@@ -335,10 +394,20 @@ bagnacan:
     email: andrea.bagnacani@gmail.com
     joined: 2017-10
 
+bcc2020organizers:
+    gtn-halloffame: "no"
+    name: BCC2020 Organizers
+    github: false
+
 beachyesh:
    name: Eshaan Deshmukh
    email: eshaan.deshmukh99@gmail.com
    joined: 2022-04
+
+beatascholtz:
+    gtn-halloffame: "no"
+    name: Beata Scholtz
+    github: false
 
 beatrizserrano:
     name: Beatriz Serrano-Solano
@@ -380,6 +449,26 @@ bedroesb:
     affiliations:
       - elixir-europe
 
+benediktrauscher:
+    gtn-halloffame: "no"
+    name: Benedikt Rauscher
+    github: false
+
+benjamenwhite:
+    gtn-halloffame: "no"
+    name: Benjamen White
+    github: false
+
+benjamindartigues:
+    gtn-halloffame: "no"
+    name: Benjamin Dartigues
+    github: false
+
+benorsburn:
+    gtn-halloffame: "no"
+    name: Ben Orsburn
+    github: false
+
 bernandez:
     name: Alouzeh Brandone
     email: alouzehm@gmail.com
@@ -389,6 +478,11 @@ bernt-matthias:
     name: Matthias Bernt
     joined: 2017-09
     elixir_node: de
+
+bertbogaerts:
+    gtn-halloffame: "no"
+    name: Bert Bogaerts
+    github: false
 
 bethanmanley:
    name: Bethan Manley
@@ -457,6 +551,11 @@ blankenberg:
     orcid: 0000-0002-6833-9049
     joined: 2018-07
 
+borisjuric:
+    gtn-halloffame: "no"
+    name: Boris Juric
+    github: false
+
 bphipson:
     name: Belinda Phipson
     joined: 2018-09
@@ -472,6 +571,11 @@ bfranicevic:
 BirdmanRidesAgain :
     name : Keiler Collier
     joined: 2025-08
+
+bradchapman:
+    gtn-halloffame: "no"
+    name: Brad Chapman
+    github: false
 
 breakthewall:
     name: Joan Hérisson
@@ -528,6 +632,16 @@ cansavvy:
     name: Candace Savonen
     joined: 2023-06
 
+carolverheeckevaessen:
+    gtn-halloffame: "no"
+    name: Carol Verheecke-Vaessen
+    github: false
+
+carolynnielsen:
+    gtn-halloffame: "no"
+    name: Carolyn Nielsen
+    github: false
+
 casper937:
     name: Casper de Visser
     joined: 2025-05
@@ -580,9 +694,24 @@ charitylaw:
     name: Charity Law
     joined: 2018-09
 
+charlesgirardot:
+    gtn-halloffame: "no"
+    name: Charles Girardot
+    github: false
+
 charlotteradboud:
     name: Charlotte Adang
     joined: 2025-05
+
+charlottesoneson:
+    gtn-halloffame: "no"
+    name: Charlotte Soneson
+    github: false
+
+chasemiller:
+    gtn-halloffame: "no"
+    name: Chase Miller
+    github: false
 
 chensy96:
     name: Siyu Chen
@@ -600,6 +729,21 @@ ChaoZhang123:
     name: Chao Zhang
     maintainer_contact: https://hi-it.org
     joined: 2018-08
+
+chrisarmit:
+    gtn-halloffame: "no"
+    name: Chris Armit
+    github: false
+
+christinahall:
+    gtn-halloffame: "no"
+    name: Christina Hall
+    github: false
+
+clairerioualen:
+    gtn-halloffame: "no"
+    name: Claire Rioualen
+    github: false
 
 claraurf:
     name: Clara Urfer
@@ -695,6 +839,149 @@ danielabutano:
     name: Daniela Butano
     joined: 2019-09
 
+danifranco:
+    gtn-halloffame: "no"
+    name: Daniel Franco Barranco
+    joined: 2025-10
+
+deisyjohannagalvisrodriguez:
+    gtn-halloffame: "no"
+    name: Deisy Johanna Galvis Rodriguez
+    github: false
+
+dennypopp:
+    gtn-halloffame: "no"
+    name: Denny Popp
+    github: false
+
+diegodepanis:
+    gtn-halloffame: "no"
+    name: Diego De Panis
+    github: false
+
+emilylescak:
+    gtn-halloffame: "no"
+    name: Emily Lescak
+    github: false
+
+erinbecker:
+    gtn-halloffame: "no"
+    name: Erin Becker
+    github: false
+
+fabiomiloro:
+    gtn-halloffame: "no"
+    name: Fabio Miloro
+    github: false
+
+federicaisidori:
+    gtn-halloffame: "no"
+    name: Federica Isidori
+    github: false
+
+Federico77z:
+    gtn-halloffame: "no"
+    name: Federico Zambelli
+
+federicomarini:
+    gtn-halloffame: "no"
+    name: Federico Marini
+    github: false
+
+francoismichonneau:
+    gtn-halloffame: "no"
+    name: Francois Michonneau
+    github: false
+
+freiburggalaxyteam:
+    gtn-halloffame: "no"
+    name: Freiburg Galaxy Team
+    github: false
+
+galaxyproject:
+    gtn-halloffame: "no"
+    name: Galaxy Project
+    github: false
+
+gauravsharma:
+    gtn-halloffame: "no"
+    name: Gaurav Sharma
+    github: false
+
+geraldinevanderauwera:
+    gtn-halloffame: "no"
+    name: Geraldine Van der Auwera
+    github: false
+
+gregvonkuster:
+    gtn-halloffame: "no"
+    name: Greg Von Kuster
+    github: false
+
+gvlteam:
+    gtn-halloffame: "no"
+    name: GVL Team
+    github: false
+
+harrybulstrode:
+    gtn-halloffame: "no"
+    name: Harry Bulstrode
+    github: false
+
+hollydawnmurry:
+    gtn-halloffame: "no"
+    name: Hollydawn Murry
+    github: false
+
+ileanaduranfernandez:
+    gtn-halloffame: "no"
+    name: Ileana Duran Fernandez
+    github: false
+
+intergalacticutilitiescommissioniuc:
+    gtn-halloffame: "no"
+    name: Intergalactic Utilities Commission (IUC)
+    github: false
+
+isabellaparedescisneros:
+    gtn-halloffame: "no"
+    name: Isabella Paredes Cisneros
+    github: false
+
+itisalirh:
+    gtn-halloffame: "no"
+    name: Alireza Heidari
+
+jannemarkustoivonen:
+    gtn-halloffame: "no"
+    name: Janne Markus Toivonen
+    github: false
+    
+jeffreyperkel:
+    gtn-halloffame: "no"
+    name: Jeffrey Perkel
+    github: false
+
+jellescholtalbers:
+    gtn-halloffame: "no"
+    name: Jelle Scholtalbers
+    github: false
+
+jyotiprakashmohanty:
+    gtn-halloffame: "no"
+    name: Jyoti Prakash Mohanty
+    github: false
+
+kellishute:
+    gtn-halloffame: "no"
+    name: Kelli Shute
+    github: false
+
+kevinvanneste:
+    gtn-halloffame: "no"
+    name: Kevin Vanneste
+    github: false
+
 khaivandangusf2210:
     name: Khai Van Dang
     email: Khai.Dang@moffitt.org
@@ -706,6 +993,273 @@ dawnmy:
     affiliations:
       - hzi-bifo
       - nfdi4microbiota
+
+kostaskarasavvas:
+    gtn-halloffame: "no"
+    name: Kostas Karasavvas
+    github: false
+
+krantikonganti:
+    gtn-halloffame: "no"
+    name: Kranti Konganti
+    github: false
+
+lachlangray:
+    gtn-halloffame: "no"
+    name: Lachlan Gray
+    github: false
+
+leightonpritchard:
+    gtn-halloffame: "no"
+    name: Leighton Pritchard
+    github: false
+
+liamwhitmore:
+    gtn-halloffame: "no"
+    name: Liam Whitmore
+    github: false
+
+lukesargent:
+    gtn-halloffame: "no"
+    name: Luke Sargent
+    github: false
+
+magdalenaharakalova:
+    gtn-halloffame: "no"
+    name: Magdalena Harakalova
+    github: false
+
+magnusøarntzen:
+    name: Magnus Ø. Arntzen
+    github: false
+
+malisalmondivon:
+    gtn-halloffame: "no"
+    name: Mali Salmon-Divon
+    github: false
+
+marceladavila:
+    gtn-halloffame: "no"
+    name: Marcela Davila
+    github: false
+
+marcelschulz:
+    gtn-halloffame: "no"
+    name: Marcel Schulz
+    github: false
+
+markuskonkol:
+    gtn-halloffame: "no"
+    name: Markus Konkol
+    github: false
+
+meaghanmcconlogue:
+    gtn-halloffame: "no"
+    name: Meaghan McConlogue
+    github: false
+
+michaelreich:
+    gtn-halloffame: "no"
+    name: Michael Reich
+    github: false
+
+michaelthompson:
+    gtn-halloffame: "no"
+    name: Michael Thompson
+    github: false
+
+miguelmorard:
+    gtn-halloffame: "no"
+    name: Miguel Morard
+    github: false
+
+mikaelloaec:
+    gtn-halloffame: "no"
+    name: Mikael Loaec
+    github: false
+
+mingchen:
+    gtn-halloffame: "no"
+    name: Ming Chen
+    github: false
+
+mingli:
+    gtn-halloffame: "no"
+    name: Ming Li
+    github: false
+
+mirandaembl:
+    gtn-halloffame: "no"
+    name: Eduardo Jacobo Miranda Ackerman
+    joined: 2025-05
+    elixir_node: de
+    orcid: '0009-0005-0673-021X'
+    affiliations:
+      - deKCD
+      - embl-ebi
+
+mohamadsafadieh:
+    gtn-halloffame: "no"
+    name: Mohamad Safadieh
+    github: false
+
+mohammadjoudy:
+    gtn-halloffame: "no"
+    name: Mohammad Joudy
+    github: false
+
+monamalekmohammadi:
+    gtn-halloffame: "no"
+    name: Mona Malek Mohammadi
+    github: false
+
+mtangaro:
+    gtn-halloffame: "no"
+    name: Marco Antonio Tangaro
+
+mzwanelengubo:
+    gtn-halloffame: "no"
+    name: Mzwanele Ngubo
+    github: false
+
+nabihoudineibou:
+    gtn-halloffame: "no"
+    name: Nabihoudine Ibou
+    github: false
+
+nataliapadilloanthemides:
+    gtn-halloffame: "no"
+    name: Natalia Padillo-Anthemides
+    github: false
+
+nathanbott:
+    gtn-halloffame: "no"
+    name: Nathan Bott
+    github: false
+
+ncbistaff:
+    gtn-halloffame: "no"
+    name: NCBI Staff
+    github: false
+
+nevenaveljkovic:
+    gtn-halloffame: "no"
+    name: Nevena Veljkovic
+    github: false
+
+nicolenogoy:
+    gtn-halloffame: "no"
+    name: Nicole Nogoy
+    github: false
+
+nikolaosstrepis:
+    gtn-halloffame: "no"
+    name: Nikolaos Strepis
+    github: false
+
+nolanwoods:
+    gtn-halloffame: "no"
+    name: Nolan Woods
+    github: false
+
+olivierinizan:
+    gtn-halloffame: "no"
+    name: Olivier Inizan
+    github: false
+
+paulgordon:
+    gtn-halloffame: "no"
+    name: Paul Gordon
+    github: false
+
+paulklemm:
+    gtn-halloffame: "no"
+    name: Paul Klemm
+    github: false
+
+peterbickerton:
+    gtn-halloffame: "no"
+    name: Peter Bickerton
+    github: false
+
+peterbriggs:
+    gtn-halloffame: "no"
+    name: Peter Briggs
+    github: false
+
+pierrelindenbaum:
+    gtn-halloffame: "no"
+    name: Pierre Lindenbaum
+    github: false
+
+pietromandreoli:
+    gtn-halloffame: "no"
+    name: Pietro Mandreoli
+    github: false
+
+polinakhmelevskaia:
+    gtn-halloffame: "no"
+    name: Polina Khmelevskaia
+    github: false
+
+profgiuseppe:
+    gtn-halloffame: "no"
+    name: Giuseppe Profiti
+
+pubudusanethsamarakoon:
+    gtn-halloffame: "no"
+    name: Pubudu Saneth Samarakoon
+    github: false
+
+quangtrinh:
+    gtn-halloffame: "no"
+    name: Quang Trinh
+    github: false
+
+reginaldjohnson:
+    gtn-halloffame: "no"
+    name: Reginald Johnson
+    github: false
+
+rendanigangazhe:
+    gtn-halloffame: "no"
+    name: Rendani Gangazhe
+    github: false
+
+ricardogonzalosanz:
+    gtn-halloffame: "no"
+    name: Ricardo Gonzalo Sanz
+    github: false
+
+rodrigoortegapolo:
+    gtn-halloffame: "no"
+    name: Rodrigo Ortega Polo
+    github: false
+
+sabryrazick:
+    gtn-halloffame: "no"
+    name: Sabry Razick
+    github: false
+
+samuellampa:
+    gtn-halloffame: "no"
+    name: Samuel Lampa
+    github: false
+
+sandyrogers:
+    gtn-halloffame: "no"
+    name: Sandy Rogers
+    github: false
+
+sarahbowden:
+    gtn-halloffame: "no"
+    name: Sarah Bowden
+    github: false
+
+sarahmaman:
+    gtn-halloffame: "no"
+    name: Sarah Maman
+    github: false
 
 Sch-Da:
     name: Daniela Schneider
@@ -1367,6 +1921,144 @@ jennydg:
 jfallmann:
     name: Joerg Fallmann
     joined: 2017-09
+
+scottedmunds:
+    gtn-halloffame: "no"
+    name: Scott Edmunds
+    github: false
+
+sebastian-luna-valero:
+    gtn-halloffame: "no"
+    name: Sebastián Luna-Valero
+
+serenalorenzini:
+    gtn-halloffame: "no"
+    name: Serena Lorenzini
+    github: false
+
+sergeikosakovskypond:
+    gtn-halloffame: "no"
+    name: Sergei Kosakovsky Pond
+    github: false
+
+shaobinzhong:
+    gtn-halloffame: "no"
+    name: Shaobin Zhong
+    github: false
+
+sheutijaniolawaleabogunloko:
+    gtn-halloffame: "no"
+    name: Sheu Tijani Olawale Abogunloko
+    github: false
+
+shivanisangwan:
+    gtn-halloffame: "no"
+    name: Shivani Sangwan
+    github: false
+
+smiteshjain:
+    gtn-halloffame: "no"
+    name: Smitesh Jain
+    github: false
+
+stefaniedukowicschulze:
+    gtn-halloffame: "no"
+    name: Stefanie Dukowic-Schulze
+    github: false
+
+stephanbeck:
+    gtn-halloffame: "no"
+    name: Stephan Beck
+    github: false
+
+stevecassidy:
+    gtn-halloffame: "no"
+    name: Steve Cassidy
+    github: false
+
+stuartjackson:
+    gtn-halloffame: "no"
+    name: Stuart Jackson
+    github: false
+
+subindevdevadasan:
+    gtn-halloffame: "no"
+    name: Subindev Devadasan
+    github: false
+
+theodoratsirka:
+    gtn-halloffame: "no"
+    name: Theodora Tsirka
+    github: false
+
+thomascokelaer:
+    gtn-halloffame: "no"
+    name: Thomas Cokelaer
+    github: false
+
+thorintabor:
+    gtn-halloffame: "no"
+    name: Thorin Tabor
+    github: false
+
+timbooth:
+    gtn-halloffame: "no"
+    name: Tim Booth
+    github: false
+
+tomasvondrak:
+    gtn-halloffame: "no"
+    name: Tomas Vondrak
+    github: false
+
+tommasopippucci:
+    gtn-halloffame: "no"
+    name: Tommaso Pippucci
+    github: false
+
+traceytimmswilson:
+    gtn-halloffame: "no"
+    name: Tracey Timms-Wilson
+    github: false
+
+tsaisangdederichs:
+    gtn-halloffame: "no"
+    name: Tsai-sang Dederichs
+    github: false
+
+tuanlengtay:
+    gtn-halloffame: "no"
+    name: Tuan Leng Tay
+    github: false
+
+uweschwartz:
+    gtn-halloffame: "no"
+    name: Uwe Schwartz
+    github: false
+
+vahidjalili:
+    gtn-halloffame: "no"
+    name: Vahid Jalili
+    github: false
+
+vanessastoeckl:
+    gtn-halloffame: "no"
+    name: Vanessa Stoeckl
+    github: false
+
+vazovn:
+    gtn-halloffame: "no"
+    name: Nikolay Vazov
+
+vimalkumarvelayudhan:
+    gtn-halloffame: "no"
+    name: Vimalkumar Velayudhan
+    github: false
+
+waichengthang:
+    gtn-halloffame: "no"
+    name: Wai Cheng Thang
+    github: false
 
 wennj:
     name: Jörg Wennmann
@@ -3174,6 +3866,11 @@ willemdek11:
     affiliations:
       - elixir-europe
 
+williamholtz:
+    gtn-halloffame: "no"
+    name: William Holtz
+    github: false
+
 workflow4metabolomics:
     name: Workflow4Metabolomics core team
     joined: 2019-06
@@ -3229,6 +3926,11 @@ yguitton:
 yhoogstrate:
     name: Youri Hoogstrate
     joined: 2017-09
+
+yiyang:
+    gtn-halloffame: "no"
+    name: Yi Yang
+    github: false
 
 yochannah:
     name: Yo Yehudi
