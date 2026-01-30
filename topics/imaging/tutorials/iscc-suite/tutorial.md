@@ -48,6 +48,8 @@ An ISCC-SUM code is a 55-character identifier with two main components, which ar
 - **Data-Code**: Content-based hash that allows similarity comparison
 - **Instance-Code**: A fast checksum or cryptographic hash
 
+  The Instance-Code uses BLAKE3 hashing, truncated to 64 bits by default. For applications requiring cryptographic-strength verification, ISCC-SUM can output the full 256-bit hash.
+
 For example the ISCC hash for this file [`example_image.tiff`](workflows/test-data/example_image.tiff):
 ```
 ISCC:K4AOMGOGQJA4Y46PAC4YPPA63GKD5RVFPR7FU3I4OOEW44TYXNYOTMY
@@ -163,6 +165,7 @@ A more powerful usecase is integrating verification directly in workflows:
 >    - Add **Generate ISCC hash** tool for your input file
 >    - Add **Parse parameter value** tool to get the ISCC code that you generated.
          - Connect its input to the output of `Generate ISCC-CODE`
+>      **Why this step?** The Generate tool outputs the ISCC code as a text file, but the Verify tool expects the expected code as a parameter input. Parse parameter value bridges this gap by extracting the text content from the file and making it available as a connectable workflow parameter.
 >    - Add **Verify ISCC hash** tool
 >        - Connect the input file as input
 >        - Connect the "Parse parameter value" from step 1 to "File containing expected ISCC code"
@@ -247,15 +250,15 @@ When working with a collection of files, you can identify all similar items. Thi
 >|---------|----------|-----------|----------|----------------|-----------------|----------|
 >| 237291288 | example_image3.tiff | K4AN4LWVHDBNDGB27ET2YM7I24WVI2KJZMSS33J45PDQBDUIAGRNVYI | 237291291 | >example_image.tiff | K4AN4LWXHTANDGB27ET24M7K24WVJMP2VEBGSEFNY2OGYJAEBIKZA4I | 5 |
 >| 237291291 | example_image.tiff | K4AN4LWXHTANDGB27ET24M7K24WVJMP2VEBGSEFNY2OGYJAEBIKZA4I | 237291288 | >example_image3.tiff | K4AN4LWVHDBNDGB27ET2YM7I24WVI2KJZMSS33J45PDQBDUIAGRNVYI | 5 |
->| 237291289 | example_tresholded1.tiff | K4AHURTQUKYKYEC5WOOWWE5K33XATG2PPANVCV55OSBGKFDFNUVKVQI | | | | -1 |
+>| 237291289 | example_thresholded1.tiff | K4AHURTQUKYKYEC5WOOWWE5K33XATG2PPANVCV55OSBGKFDFNUVKVQI | | | | -1 |
 >| 237291290 | example_image2.tiff | K4AMN2R2RSZBJDHU76VOCICGVSNGTU67TPON5OVQQNGXC4FZROSVTTQ | | | | -1 |
 
 {: .hands_on}
 
 > <tip-title>Understanding the Hamming distance threshold</tip-title>
 >
-> The Hamming distance measures how different two ISCC codes are. Lower values mean more similar content:
-> - **0**: Identical content
+> Data-Code similarity reflects byte-level similarity, not semantic content. Interpreting whether observed differences are scientifically significant requires domain expertise. For the default 64-bit Data-Code, Hamming distance ranges from 0 to 64. A threshold of 12 represents approximately 19% bit difference. Lower values mean more similar content:
+> - **0**: Identical Data-Code 
 > - **1-12**: Very similar (default threshold)
 > - **>12**: Increasingly different content
 >
