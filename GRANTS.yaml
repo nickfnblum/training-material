@@ -368,9 +368,10 @@ skills4eosc:
     url: https://www.skills4eosc.eu/
     github: false
 
-ViCE:
-    name: ViCE
-    github: false
-    url: https://www.bw-uni-it.de/laufende-projekte/abgeschlossene-projekte/abgeschlossene-projekte-detail?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=46&cHash=b11f782f112e3383db2c23f6277d188e
-    gtn-halloffame: "no"
+# funding_id and funding_database for the following grant is not know yet. We are investigating.
+#ViCE:
+#    name: ViCE
+#    github: false
+#    url: https://www.bw-uni-it.de/laufende-projekte/abgeschlossene-projekte/abgeschlossene-projekte-detail?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=46&cHash=b11f782f112e3383db2c23f6277d188e
+#    gtn-halloffame: "no"
 
