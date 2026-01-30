@@ -146,24 +146,6 @@ eubi:
     url: https://www.eurobioimaging.eu/
     gtn-halloffame: "no"
 
-galaxy:
-    name: Galaxy Project
-    github: false
-    url: https://galaxyproject.org/
-    gtn-halloffame: "no"
-
-galaxy-australia:
-    name: Galaxy Australia
-    github: false
-    url: https://www.biocommons.org.au/galaxy-australia
-    gtn-halloffame: "no"
-
-galaxy-europe:
-    name: Galaxy Europe
-    github: false
-    url: https://galaxyproject.org/eu/
-    gtn-halloffame: "no"
-
 galaxyworks:
     name: GalaxyWorks
     url: https://galaxyworks.io/
