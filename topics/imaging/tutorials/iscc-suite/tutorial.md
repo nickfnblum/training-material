@@ -2,7 +2,7 @@
 layout: tutorial_hands_on
 title: Content Tracking and Verification in Galaxy Workflows with ISCC-SUM
 level: Intermediate
-zenodo_link: https://zenodo.org/records/XXXXXXX #TODO add zenodo
+zenodo_link: https://zenodo.org/records/18435595
 answer_histories: #TODO update histories
 - label: UseGalaxy.eu - ISCC workflow integration
   history: https://usegalaxy.eu/u/maartenpaul/h/iscc-simple-workflow-integration
@@ -163,8 +163,8 @@ A more powerful usecase is integrating verification directly in workflows:
 >
 >    - Create an **Input Dataset** tool
 >    - Add **Generate ISCC hash** tool for your input file
->    - Add **Parse parameter value** tool to get the ISCC code that you generated.
-         - Connect its input to the output of `Generate ISCC-CODE`
+>    - Add **Parse parameter value** tool to extract the ISCC code that you generated.
+>        - Connect its input to the output of `Generate ISCC-CODE`
 >      **Why this step?** The Generate tool outputs the ISCC code as a text file, but the Verify tool expects the expected code as a parameter input. Parse parameter value bridges this gap by extracting the text content from the file and making it available as a connectable workflow parameter.
 >    - Add **Verify ISCC hash** tool
 >        - Connect the input file as input
@@ -182,10 +182,14 @@ This can be applied in an image analysis workflow to verify an image processing 
 >
 > 1. Create a workflow:
 >    - Create an **Input Dataset** tool. Rename to 'Original image'.
+>    - The input data set consists of 3 channels so we first split the channels with the **Split image along axes** tool.
+>      - At the option **Axis to split along** selection **C-axis**.
 >    - Connect the "**Treshold image** with scikit-image" tool
 >      - At the Tool Parameters step make sure to select the Otsu threshold.
 >    - Add a second input. Rename to 'Segmented image'.
 >    - Add **Generate ISCC hash** tool to the second input file
+>    - Add **Parse parameter value** tool to extract the ISCC code that you generated.
+>        - Connect its input to the output of `Generate ISCC-CODE`
 >    - Add **Verify ISCC hash** tool
 >        - Connect the processed file as input
 >
@@ -248,10 +252,10 @@ When working with a collection of files, you can identify all similar items. Thi
 >
 >| file_id | filename | iscc_code | match_id | match_filename | match_iscc_code | distance |
 >|---------|----------|-----------|----------|----------------|-----------------|----------|
->| 237291288 | example_image3.tiff | K4AN4LWVHDBNDGB27ET2YM7I24WVI2KJZMSS33J45PDQBDUIAGRNVYI | 237291291 | >example_image.tiff | K4AN4LWXHTANDGB27ET24M7K24WVJMP2VEBGSEFNY2OGYJAEBIKZA4I | 5 |
->| 237291291 | example_image.tiff | K4AN4LWXHTANDGB27ET24M7K24WVJMP2VEBGSEFNY2OGYJAEBIKZA4I | 237291288 | >example_image3.tiff | K4AN4LWVHDBNDGB27ET2YM7I24WVI2KJZMSS33J45PDQBDUIAGRNVYI | 5 |
->| 237291289 | example_thresholded1.tiff | K4AHURTQUKYKYEC5WOOWWE5K33XATG2PPANVCV55OSBGKFDFNUVKVQI | | | | -1 |
->| 237291290 | example_image2.tiff | K4AMN2R2RSZBJDHU76VOCICGVSNGTU67TPON5OVQQNGXC4FZROSVTTQ | | | | -1 |
+>| 238219003 | example_image3.tiff |  K4AI45QXX6J3LYNEHONZMQD2GJ6YO4GFNFH7UPCBORVJW4FOABL2ZPY | 238219006 | >example_image.tiff | K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI | 3 |
+>| 238219006 | example_image.tiff | K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI | 238219003 | >example_image3.tiff | K4AI45QXX6J3LYNEHONZMQD2GJ6YO4GFNFH7UPCBORVJW4FOABL2ZPY | 3 |
+>| 238219004 | example_image2.tiff | K4AHJAICHVVDAB3C6LLJ5PJV6AON3JZUGFOTAAOELT5QTVGYELO55BA | | | | -1 |
+>| 238219005 | example_thresholded1.tiff | K4AC3DH66DCNU22KNYVHQOFIMESNRZCZNEOAD3UVWNI6ZVHPWMMFWYI | | | | -1 |
 
 {: .hands_on}
 
