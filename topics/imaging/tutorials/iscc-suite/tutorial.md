@@ -2,8 +2,8 @@
 layout: tutorial_hands_on
 title: Content Tracking and Verification in Galaxy Workflows with ISCC-SUM
 level: Intermediate
-zenodo_link: https://zenodo.org/records/XXXXXXX
-answer_histories:
+zenodo_link: https://zenodo.org/records/XXXXXXX #TODO add zenodo
+answer_histories: #TODO update histories
 - label: UseGalaxy.eu - ISCC workflow integration
   history: https://usegalaxy.eu/u/maartenpaul/h/iscc-simple-workflow-integration
   date: 2026-01-23
@@ -52,12 +52,12 @@ An ISCC-SUM code is a 55-character identifier with two main components, which ar
 
 For example the ISCC hash for this file [`example_image.tiff`](workflows/test-data/example_image.tiff):
 ```
-ISCC:K4AOMGOGQJA4Y46PAC4YPPA63GKD5RVFPR7FU3I4OOEW44TYXNYOTMY
+ISCC:K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI
 ```
 Which is composed of the Data and Instance hashes.
 ``` 
-    ISCC:GAD6MGOGQJA4Y46PAC4YPPA63GKD5T7NDBHDOY5EY2CLX35RBVPF55I
-    ISCC:IAD4NJL4PZNG2HDTRFXHE6F3ODU3HP3RQ75QJDH6RJSEGXFSUQVBUNI
+    ISCC:GADY45QGX6J3LYNEHONZMQT2GJ6YPZ4BXJQ7ZHWZ7EHRLKANDCSACWI
+    ISCC:IAD2I4X7BCAWWDETUJPEXJ7MSR4EDZCTTBQS6LQQDWDHS6T4KDDPZ5A
 ```
 Files with similar content will have similar Data-Code components, but their Instance-Code will be different. Hence the Instance-Code allows to verify file integrity.
 
@@ -110,9 +110,9 @@ The first step is generating ISCC codes for your input files. This creates a con
 >    
 >    You should see a single line containing the ISCC code in the output. For the first example image the code is expected to be:
 > ```
-> K4AGSPOSB5SS2X427WZ27QASTSBVTS55DXLMFDF7WOJKEOSTDEI3OXQ
+> K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI 
 > ```
-> 3. Repeat for the other example image to generate another ISCC code for comparison.
+> 3. Repeat for the other example images to generate another ISCC code for comparison.
 >
 {: .hands_on}
 
@@ -171,7 +171,7 @@ A more powerful usecase is integrating verification directly in workflows:
 >        - Connect the "Parse parameter value" from step 1 to "File containing expected ISCC code"
 >
 > When placing this in a full workflow this can help to validate that your processing didn't unexpectedly alter the content.
-> ![verify_wf1.png](../../images/iscc-suite/verify_wf1.png)
+> ![verify_wf1.png](../../images/iscc-suite/verify_wf1.png) #TODO refresh screenshot
 {: .hands_on}
 
 ## Image analysis workflow integration
@@ -190,7 +190,7 @@ This can be applied in an image analysis workflow to verify an image processing 
 >        - Connect the processed file as input
 >
 > This allows you to verify whether the thresholding method is working as expected and the algorithm has not been altered (e.g. in a new version). You can run with the example images and check the output of the workflow to see if the result is as expected.
-> ![verify_wf2.png](../../images/iscc-suite/verify_wf2.png)
+> ![verify_wf2.png](../../images/iscc-suite/verify_wf2.png) #TODO refresh screenshot
 {: .hands_on}
 
 > <comment-title>When to Use Verification</comment-title>
