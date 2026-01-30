@@ -54,7 +54,7 @@ aws:
     gtn-halloffame: "no"
 
 bioconda:
-    name: BIOCONDA
+    name: Bioconda
     github: false
     url: https://bioconda.github.io/
     gtn-halloffame: "no"
@@ -98,7 +98,7 @@ crc992:
     github: false
     url: http://www.sfb992.uni-freiburg.de/
 
-de.KCD:
+de.kcd:
     name: Das Deutsche Kompetenzzentrum Cloud-Technologien für Datenmanagement und -verarbeitung
     github: false
     url: https://datenkompetenz.cloud/
@@ -110,7 +110,7 @@ dataterra:
     github: false
     gtn-halloffame: "no"
 
-DECHEMA:
+dechema:
     name: DECHEMA
     url: https://dechema.de/
     github: false
@@ -164,13 +164,13 @@ galaxy-europe:
     url: https://galaxyproject.org/eu/
     gtn-halloffame: "no"
 
-GalaxyWorks:
+galaxyworks:
     name: GalaxyWorks
     url: https://galaxyworks.io/
     github: false
     gtn-halloffame: "no"
 
-GigaScience:
+gigascience:
     name: GigaScience
     url: https://academic.oup.com/gigascience
     github: false
@@ -188,19 +188,19 @@ ifremer:
     github: false
     gtn-halloffame: "no"
 
-JXTXFoundation:
+jxtxfoundation:
     name: JXTX Foundation
     url: https://jxtxfoundation.org/
     github: false
     gtn-halloffame: "no"
 
-KWS:
+kws:
     name: KWS
     url: https://www.kws.com/corp/en/
     github: false
     gtn-halloffame: "no"
 
-Limagrain:
+limagrain:
     name: Limagrain
     url: https://www.limagrain-europe.com/
     github: false
@@ -666,7 +666,8 @@ vib:
     avatar: "/training-material/shared/images/logo-vib.png"
     github: false
     ror: "03xrhmk39"
-Worfklow4Metabelomics:
+
+worfklow4metabelomics:
     name: Worfklow4Metabelomics
     url: https://workflow4metabolomics.org/
     github: false
