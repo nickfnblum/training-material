@@ -5,10 +5,10 @@ level: Intermediate
 zenodo_link: https://zenodo.org/records/18435595
 answer_histories:
 - label: UseGalaxy.eu - ISCC workflow integration
-  history: https://usegalaxy.eu/u/maartenpaul/h/iscc-simple-workflow-integration
+  history: https://usegalaxy.eu/u/maartenpaul/h/iscc-tutorial-1
   date: 2026-01-23
 - label: UseGalaxy.eu - ISCC similarity
-  history: https://usegalaxy.eu/u/maartenpaul/h/iscc-similarity
+  history: https://usegalaxy.eu/u/maartenpaul/h/iscc-tutorial-part-2
   date: 2026-01-23
 questions:
 - What is an ISCC code and why is it useful for data management?
@@ -231,7 +231,7 @@ When working with a collection of files, you can identify all similar items. Thi
 >
 >    {% snippet faqs/galaxy/collections_build_list.md %}
 >
->    Include all three images from the tutorial: `example_image.tiff`, `example_image2.tiff`, and `example_thresholded1.tiff`
+>    Include all images from the tutorial: `example_image.tiff`, `example_image2.tiff`, `example_image3.tiff` and `example_thresholded1.tiff`
 >
 > 2. {% tool [Find datasets with similar ISCC-CODEs](https://toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum_similarity/iscc_sum_similarity/0.1.0+galaxy1) %} with the following parameters:
 >    - *"Input type"*: `Datasets to compare`
