@@ -944,6 +944,13 @@ ethering:
     orcid: 0000-0002-5003-1425
     joined: 2019-10
 
+etzm:
+    name: Martin Etzrodt 
+    joined: 2026-01
+    orcid: 0000-0003-1928-3904
+    affiliations:
+      - iscc
+
 evenmm:
     name: Even Moa Myklebust
     orcid: 0000-0002-8380-6370

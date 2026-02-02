@@ -29,6 +29,7 @@ key_points:
 contributions:
   authorship:
     - maartenpaul
+    - etzm
 ---
 
 # File content and integrity validation with International Standard Content Code (ISCC)

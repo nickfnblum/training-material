@@ -218,6 +218,13 @@ irccs:
     github: false
     ror: "039zxt351"
 
+iscc:
+    name: ISCC Foundation
+    short_name: ISCC
+    joined: 2026-01
+    url: https://iscc.io
+    github: false
+
 jetstream2:
     name: JetStream
     url: https://jetstream-cloud.org/
