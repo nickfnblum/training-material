@@ -1,3 +1,38 @@
+GTN_GTN:1769786402
+
+A	events/2026-02-09-love-data-week-ufr.md
+GTN_GTN:1769776591
+
+A	topics/assembly/images/contigs.png
+A	topics/assembly/images/contigs_scaffolds.png
+A	topics/assembly/images/data_lifecycle_4_conceptual_lenses_mccartney_2023.png
+GTN_GTN:1769679763
+
+A	assets/images/eu-cofunded.png
+GTN_GTN:1769603724
+
+A	topics/statistics/images/skin_tutorial/confusion_matrix.png
+A	topics/statistics/images/skin_tutorial/horizontal_flip_augmentation.png
+A	topics/statistics/images/skin_tutorial/image_learner_workflow_diagram.png
+A	topics/statistics/images/skin_tutorial/per_class_metrics.png
+A	topics/statistics/images/skin_tutorial/test_metrics.png
+A	topics/statistics/images/skin_tutorial/test_metrics_2.png
+A	topics/statistics/images/skin_tutorial/tool_configuration_interface.png
+A	topics/statistics/images/skin_tutorial/training_config.png
+A	topics/statistics/images/skin_tutorial/training_config_2.png
+A	topics/statistics/tutorials/image_learner/README.md
+A	topics/statistics/tutorials/image_learner/data-library.yaml
+A	topics/statistics/tutorials/image_learner/faqs/index.md
+A	topics/statistics/tutorials/image_learner/slides.html
+A	topics/statistics/tutorials/image_learner/tutorial.bib
+A	topics/statistics/tutorials/image_learner/tutorial.md
+A	topics/statistics/tutorials/image_learner/workflows/index.md
+A	topics/statistics/tutorials/image_learner/workflows/main_workflow-tests.yml
+A	topics/statistics/tutorials/image_learner/workflows/main_workflow.ga
+GTN_GTN:1769596884
+
+R099	metadata/git-mod-45e7346898e2ead87f4cd301996b1fc561ba5872.txt	metadata/git-mod-d6e95451808b17357ab275654780821662e084ca.txt
+R099	metadata/git-pub-45e7346898e2ead87f4cd301996b1fc561ba5872.txt	metadata/git-pub-d6e95451808b17357ab275654780821662e084ca.txt
 GTN_GTN:1769015691
 
 A	events/2025-05-18-galaxy-academy.md
