@@ -3,7 +3,7 @@ layout: tutorial_hands_on
 title: Content Tracking and Verification in Galaxy Workflows with ISCC-SUM
 level: Intermediate
 zenodo_link: https://zenodo.org/records/18435595
-answer_histories: #TODO update histories
+answer_histories:
 - label: UseGalaxy.eu - ISCC workflow integration
   history: https://usegalaxy.eu/u/maartenpaul/h/iscc-simple-workflow-integration
   date: 2026-01-23
@@ -152,8 +152,7 @@ During workflow execution, you may want to verify that intermediate files match 
 
 ## Workflow Integration
 
-Integration of ISCC-CODES in 
-A more powerful usecase is integrating verification directly in workflows:
+A powerful use case is integrating ISCC verification directly into your workflows. Here we'll build a simple verification workflow step by step.
 
 > <hands-on-title>Automated verification in workflows</hands-on-title>
 >
@@ -171,30 +170,28 @@ A more powerful usecase is integrating verification directly in workflows:
 >        - Connect the "Parse parameter value" from step 1 to "File containing expected ISCC code"
 >
 > When placing this in a full workflow this can help to validate that your processing didn't unexpectedly alter the content.
-> ![verify_wf1.png](../../images/iscc-suite/verify_wf1.png) #TODO refresh screenshot
+> ![Workflow diagram showing ISCC verification integrated into a simple workflow](../../images/iscc-suite/verify_wf1.png)
 {: .hands_on}
 
 ## Image analysis workflow integration
 
-This can be applied in an image analysis workflow to verify an image processing tool provides the expected reproducible output. In the example files we shared a thresholded image `example_thresholded1.tiff` . We will use it to verify whether the Otsu threshold result of this image can be reproduced.
+This can be applied in an image analysis workflow to verify an image processing tool provides the expected reproducible output. In the example files we shared a thresholded image `example_thresholded1.tiff`. We will use it to verify whether the Otsu threshold result of this image can be reproduced.
 
-> <hands-on-title>Image analysis verification in workflows</hands-on-title>
+> <hands-on-title>Image analysis verification workflow</hands-on-title>
 >
-> 1. Create a workflow:
->    - Create an **Input Dataset** tool. Rename to 'Original image'.
->    - The input data set consists of 3 channels so we first split the channels with the **Split image along axes** tool.
->      - At the option **Axis to split along** selection **C-axis**.
->    - Connect the "**Treshold image** with scikit-image" tool
->      - At the Tool Parameters step make sure to select the Otsu threshold.
->    - Add a second input. Rename to 'Segmented image'.
->    - Add **Generate ISCC hash** tool to the second input file
->    - Add **Parse parameter value** tool to extract the ISCC code that you generated.
->        - Connect its input to the output of `Generate ISCC-CODE`
->    - Add **Verify ISCC hash** tool
->        - Connect the processed file as input
+> 1. Import and run the ready-to-use workflow:
 >
-> This allows you to verify whether the thresholding method is working as expected and the algorithm has not been altered (e.g. in a new version). You can run with the example images and check the output of the workflow to see if the result is as expected.
-> ![verify_wf2.png](../../images/iscc-suite/verify_wf2.png) #TODO refresh screenshot
+>    {% snippet faqs/galaxy/workflows_run_trs.md path="topics/imaging/tutorials/iscc-suite/workflows/Galaxy-Workflow-ISCC_-_image_analysis_workflow_example.ga" title="ISCC Image Analysis Verification" %}
+>
+> 2. Provide the inputs:
+>    - **Original image**: Select `example_image.tiff` - the image to be processed
+>    - **Segmented image**: Select `example_thresholded1.tiff` - the reference segmentation to compare against
+>
+> 3. Run the workflow and inspect the verification output.
+>
+> The workflow performs Otsu thresholding on the original image and verifies whether the result matches the expected segmentation using ISCC codes. This allows you to verify whether the thresholding method is working as expected and the algorithm has not been altered (e.g. in a new version).
+>
+> ![Workflow diagram showing ISCC verification in an image analysis pipeline](../../images/iscc-suite/verify_wf2.png)
 {: .hands_on}
 
 > <comment-title>When to Use Verification</comment-title>
