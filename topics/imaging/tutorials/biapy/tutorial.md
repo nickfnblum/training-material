@@ -33,12 +33,12 @@ However, running DL models often require high-level programming skills which can
 one without a proper computation background. Additionally, many DL models require GPU acceleration, which is not always accessible to all researchers. 
 Such obstacoles might the practical and routine adoption of DL models in bioimaging. 
 
-*So, how to make DL models accessible to a larger audience?* Well, [BiaPy](https://biapy.readthedocs.io/en/latest/) is an open source library and application that streamlines the use of common deep-learning workflows for a large variety of bioimage analysis tasks, including 2D and 3D semantic segmentation, instance segmentation, object detection, image denoising, single image super-resolution, self-supervised learning (for model pretraining), image classification and image-to-image translation. 
+*So, how to make DL models accessible to a larger audience?* Well, [BiaPy](https://biapyx.github.io/) is an open source library and application that streamlines the use of common deep-learning workflows for a large variety of bioimage analysis tasks, including 2D and 3D semantic segmentation, instance segmentation, object detection, image denoising, single image super-resolution, self-supervised learning (for model pretraining), image classification and image-to-image translation. 
 
 In this training, you will learn how to execute a BiaPy worflow directly in Galaxy. We learn how to run [inference](https://en.wikipedia.org/wiki/Deep_learning) on a set of images using two pre-trained models from BioImage.IO defined in a 
 BiaPy YAML configuration file. A BiaPy YAML configuration file includes information about the hardware to be used, such as the number of CPUs or GPUs, the specific task or workflow, the model to be used, optional hyperparameters, the optimizer, and the paths for loading and storing data. 
 
-![example-yaml.png](../../images/biapy/example-yaml.png "Example of a BiaPy YAML file where the model merry-water-buffalo is defined (red box)")
+![example-yaml.png](../../images/biapy/example-yaml.png "Example of a BiaPy YAML file where the model 'merry-water-buffalo' is defined (red box)")
 
 For this training we will use two configuration file with two different models from BioImage.IO.
 
@@ -66,24 +66,28 @@ You should then have in your history the following files:
 - `01_raw_mask.tiff`
 - `02_raw_image.tiff`
 - `02_raw_mask.tiff`
-- `conf_cartocell_model1.yaml`
-- `conf_cartocell_model2.yaml`
+- `conf_cartocell_swam.yaml`
+- `conf_cartocell_buffalo.yaml`
 
 ## Run inference using the BioImage.IO pre-trained model
 
-Now we can set up the BiaPy tool with the [venoumus-swam model](https://bioimage.io/#/artifacts/venomous-swan) which is defined in `conf_cartocell_model1.yaml`
+Now we can set up the BiaPy tool with the ['venomous-swam' model](https://bioimage.io/#/artifacts/venomous-swan) which is defined in `conf_cartocell_swam.yaml`
 
-> <hands-on-title>Configure the BiaPy Tool with venoumus-Swam</hands-on-title>
+> <hands-on-title>Configure the BiaPy Tool with 'venomous-swam'</hands-on-title>
 >
 > 1. {% tool [Build a workflow with BiaPy](toolshed.g2.bx.psu.edu/repos/iuc/biapy/biapy/3.6.5+galaxy0) %} with the following parameters to extract metadata from the image:
 >
 >- *Do you have a configuration file?* : `Yes, I have one and I want to run BiaPy directly`
 >
->- *Select a configuration file*: `conf_cartocell_model1.yaml`
+>- *Select a configuration file*: `conf_cartocell_swam.yaml`
 >
->- *Specify the test raw images*: `01_raw_image.tiff` and `02_raw_image.tiff`
+>- *Select the model checkpoint (if needed)* : Leave it blank. We will load the pretrained model directly from the BioImage Model Zoo, so no checkpoint file is required.
 >
->- *Specify the test ground truth/target images*: `01_raw_mask.tiff` and `02_raw_mask.tiff`
+>- In the test data section, select the raw images to run predictions on and the ground truth/target images to evaluate those predictions. If no target data is provided, evaluation metrics will not be computed. **Make sure the files are in the same order so each raw image is paired with its corresponding target image**.
+>
+>     - *Specify the test raw images*: `01_raw_image.tiff` and `02_raw_image.tiff`
+>
+>     - *Specify the test ground truth/target images*: `01_raw_mask.tiff` and `02_raw_mask.tiff`
 >
 >- On *Select output* check the boxes:
 >     - [x]  `Test predictions (if exist)`
@@ -99,7 +103,7 @@ Once the tool finish its run you will have three different datasets in your hist
 
 **Test metrics:** Numerical scores that measure how well the predictions match the ground truth (if provided). In instance segmentation, the report typically includes:
 
-- IoU per output channel (how well pixel regions overlap), and
+- Intersection Over Union (IoU) per output channel (how well pixel regions overlap), and
 
 - Matching metrics (how well individual predicted objects match true objects), shown for raw predictions and post-processed predictions.
 
@@ -111,16 +115,16 @@ As first step, we can visualize one slice of the segmentation on the original im
 
 > <hands-on-title>Extract 2D results from the BiaPy output</hands-on-title>
 >
-> 1. [Extract Dataset](__EXTRACT_DATASET__) %} with the following parameters:
+> 1. {% tool [Extract Dataset](__EXTRACT_DATASET__) %} with the following parameters:
 >- Input List: '"Build a workflow with BiaPy on dataset 2, 3, and others: Post-processed test predictions"'
 >- How should a dataset be selected?:
 >     - Select by Index
 >         - Element index: `1`
 >
-> 2. Rename {% icon galaxy-pencil %} the dataset to `biapy_prediction.tiff`
+> 2. Rename {% icon galaxy-pencil %} the dataset to `biapy_prediction_swam.tiff`
 >
 > 3. {% tool [Convert image format](toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %} with the following parameters:
->    - {% icon param-file %} *"Input Image"*: `biapy_prediction.tiff`
+>    - {% icon param-file %} *"Input Image"*: `biapy_prediction_swam.tiff`
 >    - *"Extract series"*: `All series`
 >    - *"Extract timepoint"*: `All timepoints`
 >    - *"Extract channel"*: `All channels`
@@ -131,7 +135,7 @@ As first step, we can visualize one slice of the segmentation on the original im
 >    - *"Tile image"*: `No tiling`
 >    - *"Pyramid image"*: `No Pyramid`
 >
-> 4. Rename {% icon galaxy-pencil %} the dataset to `stack_biapy_prediction.tiff`
+> 4. Rename {% icon galaxy-pencil %} the dataset to `stack_biapy_prediction_swam.tiff`
 >
 > 5. {% tool [Convert image format](toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %} with the following parameters:
 >    - {% icon param-file %} *"Input Image"*: `01_raw_image.tiff`
@@ -150,16 +154,16 @@ As first step, we can visualize one slice of the segmentation on the original im
 > 7. {% tool [Overlay images](toolshed.g2.bx.psu.edu/repos/imgteam/overlay_images/ip_overlay_images/0.0.4+galaxy4) %} with the following parameters to convert the image to PNG:
 >    - *"Type of the overlay"*: `Segmentation contours over image`
 >    - {% icon param-file %} *"Intensity image"*: `stack_raw_image.tiff` file
->    - {% icon param-file %} *"Label map"*: `stack_biapy_prediction.tiff` file (output of {% tool [Convert binary image to label map](toolshed.g2.bx.psu.edu/repos/imgteam/binary2labelimage/ip_binary_to_labelimage/0.5+galaxy0) %})
+>    - {% icon param-file %} *"Label map"*: `stack_biapy_prediction_swam.tiff` file (output of {% tool [Convert binary image to label map](toolshed.g2.bx.psu.edu/repos/imgteam/binary2labelimage/ip_binary_to_labelimage/0.5+galaxy0) %})
 >    - *"Contour thickness"*: `1`
 >    - *"Contour color"*: `green`
 >    - *"Show labels"*: `no`
->8. Rename {% icon galaxy-pencil %} the dataset to `2D-overlay_biapy.tiff`
+>8. Rename {% icon galaxy-pencil %} the dataset to `2D-overlay_biapy_swam.tiff`
 {: .hands_on}
 
 The segmentation results for the 22th z-stack are shown below:
 
-![comparison_2D_biapy2.png](../../images/biapy/comparison_2D_biapy2.png "Segmentation results with the venoumus-swam model"){: width="50%"}
+![comparison_2D_swam.png](../../images/biapy/comparison_2D_swam.png "Segmentation results obtained with the 'venomous-swan' model. From left to right: the raw input image, predicted segmentation labels, and an overlay of the labels on the raw image."){: width="50%"}
 
 We can also do better and visualize the full 3D segmentation using the [LibCarna](https://github.com/kostrykin/LibCarna) tool in Galaxy!
 
@@ -173,10 +177,10 @@ We can also do better and visualize the full 3D segmentation using the [LibCarna
 >    - *"Color map"*: `gist_gray`
 >    - *"Camera parameters"*:
 >      - *"Distance"*: `200`
+>    - *"Render mask overlay"*:
+>      - {% icon param-file %} *"Mask overlay (3-D) "*: `biapy_prediction_swam.tiff`
 >    - *"Video parameters"*:
 >      - *"Frames"*: `400`
->    - *"Render mask overlay"*:
->      - {% icon param-file %} *"Mask overlay (3-D) *"*: `biapy_prediction.tiff`
 {: .hands_on}
 
 <video loop="true" autoplay="autoplay" muted width="75%">
@@ -193,19 +197,23 @@ We can do the same for also for `02_raw_image.tiff`:
 
 ## Compare different pre-trained models 
 
-Lets now run the BiaPy tool again but this time with the [merry-water-buffalo](https://bioimage.io/#/artifacts/merry-water-buffalo) model:
+Lets now run the BiaPy tool again but this time with the ['merry-water-buffalo'](https://bioimage.io/#/artifacts/merry-water-buffalo) model:
 
-> <hands-on-title>Configure the BiaPy Tool for Merry-Water-Buffalo</hands-on-title>
+> <hands-on-title>Configure the BiaPy Tool for 'merry-water-buffalo'</hands-on-title>
 >
 > 1. {% tool [Build a workflow with BiaPy](toolshed.g2.bx.psu.edu/repos/iuc/biapy/biapy/3.6.5+galaxy0) %} with the following parameters to extract metadata from the image:
 >
 >- *Do you have a configuration file?* : `Yes, I have one and I want to run BiaPy directly`
 >
->- *Select a configuration file*: `conf_cartocell_model2.yaml`
+>- *Select a configuration file*: `conf_cartocell_buffalo.yaml`
 >
->- *Specify the test raw images*: `01_raw_image.tiff` and `02_raw_image.tiff`
+>- *Select the model checkpoint (if needed)* : Leave it blank. We will load the pretrained model directly from the BioImage Model Zoo, so no checkpoint file is required.
 >
->- *Specify the test ground truth/target images*: `01_raw_mask.tiff` and `02_raw_mask.tiff`
+>- In the test data section, select the raw images to run predictions on and the ground truth/target images to evaluate those predictions. If no target data is provided, evaluation metrics will not be computed. **Make sure the files are in the same order so each raw image is paired with its corresponding target image**.
+>
+>     - *Specify the test raw images*: `01_raw_image.tiff` and `02_raw_image.tiff`
+>
+>     - *Specify the test ground truth/target images*: `01_raw_mask.tiff` and `02_raw_mask.tiff`
 >
 >- On *Select output* check the boxes:
 >     - [x]  `Test predictions (if exist)`
@@ -217,16 +225,16 @@ We can visualize again the results using the previous approach:
 
 > <hands-on-title>Extract the results from the BiaPy output</hands-on-title>
 >
-> 1. [Extract Dataset](__EXTRACT_DATASET__) %} with the following parameters:
+> 1. {% tool [Extract Dataset](__EXTRACT_DATASET__) %} with the following parameters:
 >- Input List: '"Build a workflow with BiaPy on dataset 2, 3, and others: Post-processed test predictions"'
 >- How should a dataset be selected?:
 >     - Select by Index
 >         - Element index: `1`
 >
-> 2. Rename {% icon galaxy-pencil %} the dataset to `biapy_prediction.tiff`
+> 2. Rename {% icon galaxy-pencil %} the dataset to `biapy_prediction_buffalo.tiff`
 >
 > 3. {% tool [Convert image format](toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %} with the following parameters:
->    - {% icon param-file %} *"Input Image"*: `biapy_prediction.tiff`
+>    - {% icon param-file %} *"Input Image"*: `biapy_prediction_buffalo.tiff`
 >    - *"Extract series"*: `All series`
 >    - *"Extract timepoint"*: `All timepoints`
 >    - *"Extract channel"*: `All channels`
@@ -237,7 +245,7 @@ We can visualize again the results using the previous approach:
 >    - *"Tile image"*: `No tiling`
 >    - *"Pyramid image"*: `No Pyramid`
 >
-> 4. Rename {% icon galaxy-pencil %} the dataset to `stack_biapy_prediction.tiff`
+> 4. Rename {% icon galaxy-pencil %} the dataset to `stack_biapy_prediction_buffalo.tiff`
 >
 > 5. {% tool [Convert image format](toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %} with the following parameters:
 >    - {% icon param-file %} *"Input Image"*: `01_raw_image.tiff`
@@ -256,24 +264,24 @@ We can visualize again the results using the previous approach:
 > 7. {% tool [Overlay images](toolshed.g2.bx.psu.edu/repos/imgteam/overlay_images/ip_overlay_images/0.0.4+galaxy4) %} with the following parameters to convert the image to PNG:
 >    - *"Type of the overlay"*: `Segmentation contours over image`
 >    - {% icon param-file %} *"Intensity image"*: `stack_raw_image.tiff` file
->    - {% icon param-file %} *"Label map"*: `stack_biapy_prediction.tiff` file (output of {% tool [Convert binary image to label map](toolshed.g2.bx.psu.edu/repos/imgteam/binary2labelimage/ip_binary_to_labelimage/0.5+galaxy0) %})
+>    - {% icon param-file %} *"Label map"*: `stack_biapy_prediction_buffalo.tiff` file (output of {% tool [Convert binary image to label map](toolshed.g2.bx.psu.edu/repos/imgteam/binary2labelimage/ip_binary_to_labelimage/0.5+galaxy0) %})
 >    - *"Contour thickness"*: `1`
 >    - *"Contour color"*: `green`
 >    - *"Show labels"*: `no`
->8. Rename {% icon galaxy-pencil %} the dataset to `2D-overlay_biapy.tiff`
+>8. Rename {% icon galaxy-pencil %} the dataset to `2D-overlay_biapy_buffalo.tiff`
 {: .hands_on}
 
 Results will look like this:
 
-![comparison_2D_biapy3.png](../../images/biapy/comparison_2D_biapy3.png "Segmentation results with the merry-water-buffalo model"){: width="50%"}
+![comparison_2D_buffalo.png](../../images/biapy/comparison_2D_buffalo.png "Segmentation results with the 'merry-water-buffalo' model"){: width="50%"}
 
-Just by visually inspecting the results, it seems that **venomous-swan** model predict more sharp contours and cells, but **merry-water-buffalo** seems to capture better the cells with less merges... however segmentation is a bit noiser.
+Just by visually inspecting the results, it seems that **'venomous-swan'** model predict more sharp contours and cells, but **'merry-water-buffalo'** seems to capture better the cells with less merges... however segmentation is a bit noiser.
 
 It is hard to say that a prediction is better than other by just looking at a slice when working in 3D! 
 
 The **Test metrics** will give us a better overview on which model is performing better!
 
-**Venoumus-swam** struggles mainly with missing objects (low recall)
+**'venomous-swam'** struggles mainly with missing objects (low recall)
 
 At IoU ≥ 0.5:
 
@@ -296,10 +304,24 @@ So **Water-buffalo** is better both in:
 - Finding objects (higher recall)
 - Keeping predictions correct (higher precision).
 
-
 ## Conclusions
 
-This need to be done...
+In this tutorial, you executed BiaPy inference workflows directly in Galaxy using YAML configuration files, and compared two pre-trained BioImage.IO models on the same 3D dataset.
+
+You learned how to:
+
+- Run BiaPy in **“configuration-file driven”** mode, which makes analyses easier to reproduce and share
+- Load **pre-trained BioImage.IO models** without providing a local checkpoint
+- Inspect results both as a **2D slice overlay** and as a **3D rendering**
+- Use the **evaluation metrics** to compare models objectively rather than relying on visual inspection alone
+
+In our example, the two models showed different strengths: one produced cleaner contours in a slice view, while the other achieved stronger quantitative performance (higher object-level matching metrics at common IoU thresholds). This illustrates why combining **qualitative visualization** with **quantitative scoring** is important when selecting a model.
+
+### Where to go next
+
+- Edit the YAML to test different post-processing settings (e.g. instance separation parameters)
+- Run inference on additional images or your own data (keeping image/mask pairing consistent)
+- Try other BioImage.IO models and compare them using the same workflow and plots
 
 # Optional: Extract complete training workflow from history
 As an optional step, you can extract a complete workflow from your Galaxy history. This allows you to save and reuse the entire training process as a reproducible and shareable workflow.
