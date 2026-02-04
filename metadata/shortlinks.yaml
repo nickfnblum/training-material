@@ -710,6 +710,8 @@ name:
   dev/tool-from-notebook: "/topics/dev/tutorials/tool-from-notebook/tutorial.html"
   microbiome/host-removal: "/topics/microbiome/tutorials/host-removal/tutorial.html"
   microbiome/mags-building: "/topics/microbiome/tutorials/mags-building/tutorial.html"
+  statistics/image_learner: "/topics/statistics/tutorials/image_learner/tutorial.html"
+  statistics/image_learner/slides: "/topics/statistics/tutorials/image_learner/slides.html"
 id:
   T00000: "/topics/admin/tutorials/ansible/tutorial.html"
   T00001: "/topics/admin/tutorials/ansible-galaxy/tutorial.html"
@@ -2469,6 +2471,10 @@ id:
   W00370: "/topics/assembly/tutorials/debruijn-graph-assembly/workflows/Debruijn-Graph-Velvet-Optimiser-and-SPAdes-Assembly.html"
   W00371: "/topics/variant-analysis/tutorials/tb-variant-analysis/workflows/TB-variants-tutorial-main-workflow.html"
   E00044: "/events/2025-05-18-galaxy-academy.html"
+  T00570: "/topics/statistics/tutorials/image_learner/tutorial.html"
+  S00140: "/topics/statistics/tutorials/image_learner/slides.html"
+  E00045: "/events/2026-02-09-love-data-week-ufr.html"
+  W00372: "/topics/statistics/tutorials/image_learner/workflows/main_workflow.html"
 misc:
   ansible-galaxy: "/topics/admin/tutorials/ansible-galaxy/tutorial.html"
   feeds: "/feeds/index.html"
