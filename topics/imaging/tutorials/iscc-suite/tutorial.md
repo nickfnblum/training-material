@@ -12,7 +12,7 @@ answer_histories:
   date: 2026-01-23
 questions:
 - What is an ISCC code and why is it useful for data management?
-- How can I generate content hashes for files in Galaxy?
+- How can I generate content hashes for microscopy data in Galaxy?
 - How can I verify file integrity in my workflows?
 - How can I detect similar content across different files?
 objectives:
@@ -155,24 +155,48 @@ During workflow execution, you may want to verify that intermediate files match 
 
 A powerful use case is integrating ISCC verification directly into your workflows. Here we'll build a simple verification workflow step by step.
 
-> <hands-on-title>Automated verification in workflows</hands-on-title>
+### Step 1 - Define the workflow inputs
+
+To make the workflow reusable, we need to define two inputs: the image to verify and a file containing the expected ISCC code.
+
+> <hands-on-title>Create the workflow inputs</hands-on-title>
 >
-> 1. Create a simple workflow:
+> 1. Create a new workflow in the workflow editor.
 >
-> {% snippet faqs/galaxy/workflows_create_new.md %}
+>    {% snippet faqs/galaxy/workflows_create_new.md %}
 >
->    - Create an imput for the workflow:  **Input Dataset** 
->    - Add **Generate ISCC-CODE** tool for your input file
->    - Add **Parse parameter value** tool to extract the ISCC code that you generated.
->        - Connect its input to the output of `Generate ISCC-CODE`
->      **Why this step?** The Generate tool outputs the ISCC code as a text file, but the Verify tool expects the expected code as a parameter input. Parse parameter value bridges this gap by extracting the text content from the file and making it available as a connectable workflow parameter.
->    - Add **Verify ISCC hash** tool
->        - Connect the input file as input of the *Verify ISCC-CODE* tool
->        - Connect the "Parse parameter value" from step 1 to "File containing expected ISCC code"
->
-> When placing this in a full workflow this can help to validate that your processing didn't unexpectedly alter the content.
-> ![Workflow diagram showing ISCC verification integrated into a simple workflow](../../images/iscc-suite/verify_wf1.png)
+> 2. Select {% icon tool %} **Input dataset** from the list of tools:
+>    - {% icon param-file %} **1: Input Dataset** appears in your workflow.
+>    Change the "Label" of this input to *Input image*.
+> 3. Add another {% icon tool %} **Input dataset**:
+>    - {% icon param-file %} **2: Input Dataset** appears in your workflow.
+>    Change the "Label" of this input to *Expected ISCC code file*.
 {: .hands_on}
+
+### Step 2 - Parse the expected ISCC code
+
+The *Generate ISCC-CODE* tool outputs the ISCC code as a text file, but the *Verify ISCC-CODE* tool expects the code as a parameter input. We use *Parse parameter value* to bridge this gap.
+
+> <hands-on-title>Add the parameter parsing step</hands-on-title>
+>
+> 1. While in the workflow editor, add {% icon tool %} **Parse parameter value** from the list of tools:
+>    - Connect the output of {% icon param-file %} **2: Expected ISCC code file** to the "Input file containing parameter to parse" input of {% icon tool %} **3: Parse parameter value**.
+{: .hands_on}
+
+### Step 3 - Add the verification step
+
+Now we add the ISCC verification tool and connect all the inputs.
+
+> <hands-on-title>Add the ISCC verification step</hands-on-title>
+>
+> 1. Add {% tool [Verify ISCC-CODE](https://toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_verify/0.1.0+galaxy1) %} from the list of tools:
+>    - Connect the output of {% icon param-file %} **1: Input image** to the "Dataset to verify" input of {% icon tool %} **4: Verify ISCC-CODE**.
+>    - Connect the output of {% icon tool %} **3: Parse parameter value** to the "File containing expected ISCC code" input of {% icon tool %} **4: Verify ISCC-CODE**.
+{: .hands_on}
+
+When placing this verification step in a full workflow, it can help validate that your processing didn't unexpectedly alter the content.
+
+![Workflow diagram showing ISCC verification integrated into a simple workflow](../../images/iscc-suite/verify_wf1.png)
 
 ## Image analysis workflow integration
 
