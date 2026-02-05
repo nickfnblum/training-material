@@ -42,20 +42,20 @@ The **International Standard Content Code (ISCC)** is a content-derived identifi
 
 The **Galaxy ISCC-suite** allows you to integrate content tracking into any Galaxy workflow, providing quality control and provenance tracking for your data analysis pipelines.
 
-## ISCC Code Structure
+## ISCC Code structure
 
 An ISCC-SUM code is a 55-character identifier with two main components, which are combined into one code:
 
 - **Data-Code**: Content-based hash that allows similarity comparison
 - **Instance-Code**: A fast checksum or cryptographic hash
 
-  The Instance-Code uses BLAKE3 hashing, truncated to 64 bits by default. For applications requiring cryptographic-strength verification, ISCC-SUM can output the full 256-bit hash.
+The Instance-Code uses BLAKE3 hashing, truncated to 64 bits by default. For applications requiring cryptographic-strength verification, ISCC-SUM can output the full 256-bit hash.
 
 For example the ISCC hash for this file [`example_image.tiff`](workflows/test-data/example_image.tiff):
 ```
 ISCC:K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI
 ```
-Which is composed of the Data and Instance hashes.
+Which is composed of the **Data-Code** and **Instance-Code** hashes.
 ``` 
     ISCC:GADY45QGX6J3LYNEHONZMQT2GJ6YPZ4BXJQ7ZHWZ7EHRLKANDCSACWI
     ISCC:IAD2I4X7BCAWWDETUJPEXJ7MSR4EDZCTTBQS6LQQDWDHS6T4KDDPZ5A
@@ -96,7 +96,7 @@ For this tutorial, we'll use a simple dataset with microscope images that demons
 > 
 {: .hands_on}
 
-# Generate ISCC Codes
+# Generate ISCC codes
 
 The first step is generating ISCC codes for your input files. This creates a content fingerprint that can be used throughout your workflow.
 
@@ -129,11 +129,11 @@ The first step is generating ISCC codes for your input files. This creates a con
 >
 {: .question}
 
-# Verify File Integrity
+# Verify file integrity
 
 During workflow execution, you may want to verify that intermediate files match expected content. The **Verify ISCC hash** tool allows you to check if a file matches a known ISCC code.
 
-## Manual Verification
+## Manual verification
 
 > <hands-on-title>Verify a file against its ISCC code</hands-on-title>
 >
@@ -151,7 +151,7 @@ During workflow execution, you may want to verify that intermediate files match 
 
 {: .hands_on}
 
-## Workflow Integration
+## Workflow integration
 
 A powerful use case is integrating ISCC verification directly into your workflows. Here we'll build a simple verification workflow step by step.
 
@@ -161,13 +161,13 @@ A powerful use case is integrating ISCC verification directly into your workflow
 >
 > {% snippet faqs/galaxy/workflows_create_new.md %}
 >
->    - Create an **Input Dataset** tool
->    - Add **Generate ISCC hash** tool for your input file
+>    - Create an imput for the workflow:  **Input Dataset** 
+>    - Add **Generate ISCC-CODE** tool for your input file
 >    - Add **Parse parameter value** tool to extract the ISCC code that you generated.
 >        - Connect its input to the output of `Generate ISCC-CODE`
 >      **Why this step?** The Generate tool outputs the ISCC code as a text file, but the Verify tool expects the expected code as a parameter input. Parse parameter value bridges this gap by extracting the text content from the file and making it available as a connectable workflow parameter.
 >    - Add **Verify ISCC hash** tool
->        - Connect the input file as input
+>        - Connect the input file as input of the *Verify ISCC-CODE* tool
 >        - Connect the "Parse parameter value" from step 1 to "File containing expected ISCC code"
 >
 > When placing this in a full workflow this can help to validate that your processing didn't unexpectedly alter the content.
@@ -176,7 +176,7 @@ A powerful use case is integrating ISCC verification directly into your workflow
 
 ## Image analysis workflow integration
 
-This can be applied in an image analysis workflow to verify an image processing tool provides the expected reproducible output. In the example files we shared a thresholded image `example_thresholded1.tiff`. We will use it to verify whether the Otsu threshold result of this image can be reproduced.
+This can be applied in an image analysis workflow to verify an image processing tool provides the expected reproducible output. In the example files we shared, a thresholded image `example_thresholded1.tiff` can be found. We will use it to verify whether the Otsu threshold result of this image can be reproduced.
 
 > <hands-on-title>Image analysis verification workflow</hands-on-title>
 >
@@ -190,12 +190,12 @@ This can be applied in an image analysis workflow to verify an image processing 
 >
 > 3. Run the workflow and inspect the verification output.
 >
-> The workflow performs Otsu thresholding on the original image and verifies whether the result matches the expected segmentation using ISCC codes. This allows you to verify whether the thresholding method is working as expected and the algorithm has not been altered (e.g. in a new version).
+> The workflow performs Otsu thresholding on the original image and verifies whether the result matches the expected segmentation using ISCC codes. This allows you to verify whether the thresholding method is working as expected and the algorithm has not been altered (e.g., in a new version).
 >
 > ![Workflow diagram showing ISCC verification in an image analysis pipeline](../../images/iscc-suite/verify_wf2.png)
 {: .hands_on}
 
-> <comment-title>When to Use Verification</comment-title>
+> <comment-title>When to use verification</comment-title>
 >
 > Verification is particularly useful:
 > - After file transfers or storage operations
@@ -204,11 +204,11 @@ This can be applied in an image analysis workflow to verify an image processing 
 > - To detect unintended data modifications
 {: .comment}
 
-# Detect Similar Content
+# Detect similar content
 
 One of ISCC's unique features is detecting similar content, even across different formats. This is useful for finding duplicates, tracking content transformations, or identifying related files.
 
-## Compare Two Files
+## Compare two files
 
 > <hands-on-title>Compare two files for similarity</hands-on-title>
 >
@@ -222,7 +222,7 @@ One of ISCC's unique features is detecting similar content, even across differen
 
 {: .hands_on}
 
-## Find Similar Files in Collections
+## Find similar files in collections
 
 When working with a collection of files, you can identify all similar items. This is particularly useful when you have large datasets and want to find duplicates or track how processing affects content similarity.
 
@@ -285,9 +285,9 @@ When working with a collection of files, you can identify all similar items. Thi
 {: .question}
 
 
-# Practical Use Cases
+# Practical use cases
 
-## Use Case 1: Quality Control in Image Analysis Pipelines
+## Use case 1: Quality control in image analysis pipelines
 
 When processing large microscopy datasets:
 
@@ -295,7 +295,7 @@ When processing large microscopy datasets:
 - Detect if processing steps produce consistent outputs across batch runs
 - Identify accidentally duplicated samples before analysis
 
-## Use Case 2: Data Deduplication and Organization
+## Use case 2: Data deduplication and organization
 
 When managing growing image repositories:
 
@@ -303,7 +303,7 @@ When managing growing image repositories:
 - Identify images that are near-duplicates (e.g., same sample, different export settings)
 - Group related experimental replicates automatically
 
-## Use Case 3: Reproducibility and Data Sharing
+## Use case 3: Reproducibility and data sharing
 
 When publishing or sharing datasets:
 
@@ -313,7 +313,7 @@ When publishing or sharing datasets:
 
 # Conclusion
 
-In this tutorial you learned to use the Galaxy ISCC-suite for content tracking and verification:
+In this tutorial, you learned to use the Galaxy ISCC-suite for content tracking and verification:
 
 - **Generate ISCC-CODE**: Creates content-based identifiers for any file
 - **Verify ISCC-CODE**: Confirms files match expected content at workflow checkpoints  
