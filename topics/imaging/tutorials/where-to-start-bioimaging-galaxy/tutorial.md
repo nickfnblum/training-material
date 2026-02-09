@@ -145,7 +145,7 @@ When you perform certain pre-processing tasks, such as subtracting the image bac
 * In **8-bit**, with only 256 possible values, stretching creates more pronounced "gaps" in your histogram (quantization artifacts), potentially making your data distribution appear discontinuous.
 * In **16-bit integer**, with 65,536 possible values, the same stretching operation creates smaller relative gaps. While quantization artifacts still occur, they are far less severe and less likely to impact downstream quantitative analysis ({% cite Cromey2010 %}).
 
-The key difference is not whether artifacts appear, but their **magnitude relative to your data range**. Think of it this way: spreading 256 values across a wider range creates larger "jumps" between adjacent intensity levels than spreading 65,536 values across the same range.
+The key difference is not whether artifacts appear, but their **magnitude in relation to your data range**. Think of it this way: spreading 256 values across a wider range creates larger "holes" between adjacent intensity levels than spreading 65,536 values across the same range.
 
 *Add here example images of how two images that look the same to the human eye have different data*
 
