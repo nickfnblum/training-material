@@ -5,18 +5,18 @@ zenodo_link: https://zenodo.org/records/10973241
 level: Intermediate
 subtopic: advanced
 questions:
-- "How can we make Deep Learning (DL) models accessible to a broader audience ?"
+- "How can we make Deep Learning (DL) models accessible to a broader audience?"
 - "What is BiaPy and how does it streamline deep learning workflows for bioimage analysis?"
-- "How can I execute a BiaPy workflow directly within the Galaxy platform?"
+- "How can I execute a BiaPy pipeline directly within the Galaxy platform?"
 - "How do I utilize pre-trained models from the BioImage.IO repository to perform inference on image data?"
 objectives:
-- Learn to configure a BiaPy workflow by editing a YAML file to define hardware settings, data paths, and model selection.
-- Execute an inference workflow in Galaxy using two different pre-trained models sourced from BioImage.IO
+- Learn to configure and run a BiaPy workflow by editing a YAML file to define hardware settings, data paths, and model selection.
+- Execute an inference workflow in Galaxy using two different pre-trained models sourced from BioImage.IO.
 time_estimation: 2H
 key_points:
 - BiaPy is an open-source tool designed to lower the technical barriers for using DL in bioimage analysis.
 - Pre-trained models hosted on BioImage.IO can be used directly in Galaxy thanks to the BiaPy tool
-- The BiaPy workflow can be controlled via a YAML configuration file, which specifies the task type and model source
+- The BiaPy pipeline can be controlled via a YAML configuration file, which specifies the task type and model source.
 contributors:
 - rmassei
 - danifranco
@@ -36,9 +36,9 @@ Such obstacoles might the practical and routine adoption of DL models in bioimag
 *So, how to make DL models accessible to a larger audience?* Well, [BiaPy](https://biapyx.github.io/) is an open source library and application that streamlines the use of common deep-learning workflows for a large variety of bioimage analysis tasks, including 2D and 3D semantic segmentation, instance segmentation, object detection, image denoising, single image super-resolution, self-supervised learning (for model pretraining), image classification and image-to-image translation. 
 
 In this training, you will learn how to execute a BiaPy worflow directly in Galaxy. We learn how to run [inference](https://en.wikipedia.org/wiki/Deep_learning) on a set of images using two pre-trained models from BioImage.IO defined in a 
-BiaPy YAML configuration file. A BiaPy YAML configuration file includes information about the hardware to be used, such as the number of CPUs or GPUs, the specific task or workflow, the model to be used, optional hyperparameters, the optimizer, and the paths for loading and storing data. 
+BiaPy YAML configuration file. A BiaPy YAML configuration file includes information about the hardware to be used, such as the number of CPUs or GPUs, the specific image analysis task, the model to be used, optional hyperparameters, the optimizer, and the paths for loading and storing data. 
 
-![example-yaml.png](../../images/biapy/example-yaml.png "Example of a BiaPy YAML file where the model 'merry-water-buffalo' is defined (red box)")
+![example-yaml.png](../../images/biapy/example-yaml.png "Example of a BiaPy YAML file where the model with ID in BioImage.IO 'merry-water-buffalo' is defined (red box)")
 
 For this training we will use two configuration file with two different models from BioImage.IO.
 
@@ -55,13 +55,13 @@ Let's start with BiaPy!
 
 ## Getting test data and the BiaPy YAML configuration file
 
-The dataset required for this tutorial is available from [Zenodo]({{ page.zenodo_link }}). The CartoCell dataset containts whole epithelial cysts acquired at low resolution with minimal human intervention ([more information]({{ page.zenodo_link }})). The dataset is divided test, train and validation data each folder containg images and associated masks.
+The dataset required for this tutorial is available from [Zenodo]({{ page.zenodo_link }}). The CartoCell dataset containts whole epithelial cysts acquired at low resolution with minimal human intervention ([more information]({{ page.zenodo_link }})). The dataset is divided into *test*, *train* and *validation* data each folder containg images and associated masks.
 
-In order to simplify the your upload, we already prepared the test images and YAML files in the **Data Library** which is easy to be accessed on the left pannel in Galaxy.
+In order to simplify the upload, we already prepared the test images and YAML files in the **Data Library** that you can access on the left panel in Galaxy.
 
 {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
 
-You should then have in your history the following files:
+After importing from the Data Library, you should have the following files in your history: 
 - `01_raw_image.tiff`
 - `01_raw_mask.tiff`
 - `02_raw_image.tiff`
@@ -95,13 +95,13 @@ Now we can set up the BiaPy tool with the ['venomous-swam' model](https://bioima
 >     - [x]  `Evaluation metrics (if exist, on test data)`
 {: .hands_on}
 
-Once the tool finish its run you will have three different datasets in your history.
+Once the tool finishes running, you will have three different datasets in your history.
 
 **Test predictions**: Full-size output images produced by the model on the test set. Because the model predicts small, overlapping patches, these patch outputs are merged back together to form one prediction per original image.
 
 **Post-Processed Test Prediction**: Test predictions after automatic “clean-up” steps defined in the configuration. These steps can refine the raw output (for example, removing small spurious regions or separating touching objects). In this tutorial, Voronoi tessellation is applied to help split instances.
 
-**Test metrics:** Numerical scores that measure how well the predictions match the ground truth (if provided). In instance segmentation, the report typically includes:
+**3. Test metrics:** Numerical scores that measure how well the predictions match the ground truth (if provided). In instance segmentation, the report typically includes:
 
 - Intersection Over Union (IoU) per output channel (how well pixel regions overlap), and
 
@@ -273,7 +273,7 @@ We can visualize again the results using the previous approach:
 
 Results will look like this:
 
-![comparison_2D_buffalo.png](../../images/biapy/comparison_2D_buffalo.png "Segmentation results with the 'merry-water-buffalo' model"){: width="50%"}
+![comparison_2D_buffalo.png](../../images/biapy/comparison_2D_buffalo.png "Segmentation results with the 'merry-water-buffalo' model from BioImage.IO"){: width="50%"}
 
 Just by visually inspecting the results, it seems that **'venomous-swan'** model predict more sharp contours and cells, but **'merry-water-buffalo'** seems to capture better the cells with less merges... however segmentation is a bit noiser.
 
@@ -301,8 +301,8 @@ At a commonly used matching threshold (IoU ≥ 0.5), averaged across the 2 test 
 
 So **Water-buffalo** is better both in:
 
-- Finding objects (higher recall)
-- Keeping predictions correct (higher precision).
+- finding objects (higher recall),
+- keeping predictions correct (higher precision).
 
 ## Conclusions
 
@@ -319,7 +319,7 @@ In our example, the two models showed different strengths: one produced cleaner 
 
 ### Where to go next
 
-- Edit the YAML to test different post-processing settings (e.g. instance separation parameters)
+- Edit the YAML to test different post-processing settings (e.g., instance separation parameters)
 - Run inference on additional images or your own data (keeping image/mask pairing consistent)
 - Try other BioImage.IO models and compare them using the same workflow and plots
 
