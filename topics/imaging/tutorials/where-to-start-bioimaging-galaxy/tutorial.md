@@ -262,7 +262,7 @@ In Galaxy, you can start the pre-processing stage with tools like **{% tool [App
 >
 {: .hands_on}
 
-## Stage B: Segmentation (Defining objects)
+## Stage B: Segmentation (defining objects)
 This is the most critical step. Here, you tell the computer which pixels belong to an "object" (like a nucleus) and which belong to the "background." 
 
 * **Thresholding:** A "cutoff" method where pixels above (or below) a certain intensity value are classified as object. This value can be set manually or determined automatically using algorithms like Otsu or Li. The result is typically a **Binary Mask**.
