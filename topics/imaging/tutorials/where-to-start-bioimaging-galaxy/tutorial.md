@@ -113,7 +113,7 @@ Metadata like the calibration information is usually stored in the image header.
 
 ## The 5 dimensions (5D)
 
-In everyday photography, we usually deal with 2D color images. However, in the life sciences, we can capture **hyperstacks**: multi-dimensional data structures that represent a biological sample across space, spectrum, and time. Most scientific images follow the $(X, Y, Z, C, T)$ convention ({% cite Goldberg2005 %}):
+In everyday photography, we usually deal with 2D color images. However, in the life sciences, we can capture **hyperstacks**: multi-dimensional data structures that represent a biological sample across space (`X`, `Y`, `Z` axes), spectrum (`C` axis), and time (`T` axis). Although many scientific images adopt to the `XYZCT` ({% cite Goldberg2005 %}) or `TCZYX` axes order (e.g., Moore et al. 2023), making wrong assumptions about that order is a frequent source of error. It is thus important to make sure, that the axes order is properly annotated in the image metadata. 
 
 * **X & Y (Spatial):** The width and height of your image (the 2D plane).
 * **Z (Depth):** Multiple optical sections or "slices" taken at different focal planes to reconstruct a 3D volume. In confocal or light-sheet microscopy, these represent different depths through the sample.
