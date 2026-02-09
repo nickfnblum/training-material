@@ -5,8 +5,8 @@ zenodo_link: https://zenodo.org/records/10973241
 level: Intermediate
 subtopic: advanced
 questions:
-- "How can we make Deep Learning (DL) models accessible to a broader audience?"
 - "What is BiaPy and how does it streamline deep learning workflows for bioimage analysis?"
+- "How can we make Deep Learning (DL) models accessible to a broader audience?"
 - "How can I execute a BiaPy pipeline directly within the Galaxy platform?"
 - "How do I utilize pre-trained models from the BioImage.IO repository to perform inference on image data?"
 objectives:
@@ -15,7 +15,7 @@ objectives:
 time_estimation: 2H
 key_points:
 - BiaPy is an open-source tool designed to lower the technical barriers for using DL in bioimage analysis.
-- Pre-trained models hosted on BioImage.IO can be used directly in Galaxy thanks to the BiaPy tool
+- In Galaxy, BiaPy can run BioImage.IO pre-trained models and provides task-aware pre/post-processing (e.g. instance segmentation decoding) and summary statistics—beyond raw model predictions.
 - The BiaPy pipeline can be controlled via a YAML configuration file, which specifies the task type and model source.
 contributors:
 - rmassei
@@ -81,7 +81,7 @@ Now we can set up the BiaPy tool with the ['venomous-swam' model](https://bioima
 >
 >- *Select a configuration file*: `conf_cartocell_swam.yaml`
 >
->- *Select the model checkpoint (if needed)* : Leave it blank. We will load the pretrained model directly from the BioImage Model Zoo, so no checkpoint file is required.
+>- *Select the model checkpoint (if needed)* : Leave it blank. A checkpoint is a local file containing the trained model weights (e.g. .safetensors/.pth). In this tutorial we load a pretrained model from the BioImage Model Zoo (BioImage.IO), so no local checkpoint file is required.
 >
 >- In the test data section, select the raw images to run predictions on and the ground truth/target images to evaluate those predictions. If no target data is provided, evaluation metrics will not be computed. **Make sure the files are in the same order so each raw image is paired with its corresponding target image**.
 >
