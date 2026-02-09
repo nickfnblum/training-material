@@ -204,7 +204,7 @@ For modern, large-scale, or cloud-based datasets, you can use **{% tool [Convert
 > * **OME-TIFF:** Best for "classic" microscopy (2D/3D stacks) and maximum compatibility with classical software like ImageJ/Fiji or QuPath.
 > * **OME-Zarr:** The modern choice for "Big Data," cloud storage, and spatial transcriptomics. {% cite Moore2021 %}
 > 
-> Both are superior to proprietary formats because they ensure your metadata stays attached to your pixels throughout the entire Galaxy workflow.
+> Both are superior to proprietary formats because they make it possible to preserve your metadata attached to your pixel data throughout the entire Galaxy workflow.
 >
 {: .tip}
 
