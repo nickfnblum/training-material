@@ -85,8 +85,8 @@ When it comes to the representation of the measurements of the imaging system as
 
 These are the natural format for raw camera data, as imaging sensors essentially count photons:
 
-* **8-bit:** $2^{8} = 256$ discrete levels ($0–255$). While this looks fine to our eyes, it is often too "coarse" for thorough quantitative analysis.
-* **16-bit:** $2^{16} = 65,536$ discrete levels ($0–65,535$). This is the **scientific gold standard for acquisition** because it allows you to detect subtle differences in image intensities that would be lost (e.g., due to rounding) when using an 8-bit representation (e.g., {% cite Haase2022 %}).
+* **8-bit:** $$2^{8} = 256$$ possible values ($$-127--128$$ or $0--255$ for signed and unsigned values, respectively). While this looks fine to our eyes, it is often too "coarse" for thorough quantitative analysis.
+* **16-bit:** $$2^{16} = 65,536$$ possible values ($$-32,767--32,768$$ or $$0--65,535$$ for signed and unsigned values, respectively). This is the **scientific gold standard for image acquisition** and storing the image data, because it allows you to detect even subtle differences in image intensities that would be lost (e.g., due to rounding) when using an 8-bit representation (e.g., {% cite Haase2022 %}).
 
 #### Floating-point representations
 
