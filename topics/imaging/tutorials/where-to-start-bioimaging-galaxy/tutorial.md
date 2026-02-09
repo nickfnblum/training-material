@@ -5,7 +5,7 @@ title: "Where to start with bioimage analysis in Galaxy"
 level: Introductory
 subtopic: introduction
 questions:
-  - I have images from my experimental data. Can I process them in Galaxy? Where do I begin?
+  - Can I process images from my experiments in Galaxy? Where do I begin?
   - How do I identify my image type and the metadata hidden inside?
   - What are the basic steps of a bioimage analysis workflow?
   - Which workflows are best suited for my specific biological questions?
