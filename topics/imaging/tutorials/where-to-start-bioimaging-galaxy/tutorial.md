@@ -56,9 +56,10 @@ As Pete Bankhead points out in *[Introduction to Bioimage Analysis](https://bioi
 
 To the human eye, an image is a visual representation of a biological sample. However, to a computer, it is a **numerical array** ({% cite Sedgewick2010 %}). The dimensionality of this array depends on your data:
 
-* A 2D grayscale image is a **matrix** (2D array): rows × columns
-* A 2D color image is a **3D array**: rows × columns × channels (RGB)
-* A 3D volume is a **3D array**: X × Y × Z
+* A **2D grayscale image** is a **2D array** (matrix): rows × columns
+* A **2D color image** is a **3D array** (tensor): rows × columns × channels (RGB)
+* A **3D grayscale image (volume)** is a **3D array**: X × Y × Z
+* A **3D color image (volume)** is a **4D array**: X × Y × Z × C
 * A multi-dimensional hyperstack is a **tensor**: a multi-dimensional array (e.g., X × Y × Z × C × T)
 
 Every point in that array—the **pixel** (2D) or **voxel** (3D)—is a data point representing the number of photons or the signal intensity detected at that specific coordinate. Understanding your "digital anatomy" means knowing exactly how those numbers were recorded, how they are organized across dimensions, how they are spaced and oriented in 3D space, and what the limitations of the employed imaging technique are (e.g., due to over/undersaturation that leads to clipped intensities).
