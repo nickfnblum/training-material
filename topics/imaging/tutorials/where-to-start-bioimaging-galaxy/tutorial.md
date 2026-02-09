@@ -295,7 +295,7 @@ This is the most critical step. Here, you tell the computer which pixels belong 
 Once you have segmented your image, you have created **Regions of Interest (ROIs)**. This is a central concept in bioimaging. An ROI is a spatial selection that tells the software: "Ignore the background; only calculate values for these specific coordinates."
 
 In Galaxy, ROIs can take three forms depending on the tool you use:
-* **Bounding Boxes:** Simple rectangles used to crop an image or define a search area. In Galaxy, this is only possible to perform this step using interactive tools like Qupath.
+* **Bounding Boxes:** Simple rectangles used to crop an image or define a search area. In Galaxy, this is only possible to perform this step using interactive tools like QuPath.
 * **Binary Masks:** A "stencil" where the ROI is white and everything else is black.
 * **Label Images:** A "smart map" where every individual ROI has its own unique integer ID ({% cite Tosi2021 %}).
 
