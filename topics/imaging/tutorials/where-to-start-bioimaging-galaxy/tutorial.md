@@ -20,7 +20,7 @@ objectives:
 key_points:
   - Image analysis starts with understanding your metadata; pixels are just numbers with biological context.
   - Bioimage analysis is a multi-step pipeline, not a single tool step.
-  - Reproducibility in Galaxy is achieved by saving every step in your history.
+  - Reproducibility in Galaxy is achieved by saving every step and associated metadata in your history.
   - Always preserve your raw data; avoid lossy formats like JPG for analysis.
   - Validate your segmentation visually before trusting the numbers.
 time_estimation: 2h
