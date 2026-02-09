@@ -6,7 +6,7 @@ level: Introductory
 subtopic: introduction
 questions:
   - Can I process images from my experiments in Galaxy? Where do I begin?
-  - How do I identify my image type and the metadata hidden inside?
+  - How do I identify an image type and the metadata included?
   - What are the basic steps of a bioimage analysis workflow?
   - Which workflows are best suited for my specific biological questions?
   - How do I choose between different segmentation strategies?
