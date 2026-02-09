@@ -339,7 +339,7 @@ Now that you have a clean mask, Galaxy "overlays" it back onto your original raw
 
 # 4. Finding your workflow: modality and tools
 
-Bioimage analysis is not "one size fits all." Galaxy provides a diverse suite of tools,from classical computer vision to state-of-the-art Deep Learning. Use the logical roadmap below to identify your specific path.
+Bioimage analysis is not "one size fits all." Galaxy provides a diverse suite of tools, from classical computer vision to state-of-the-art Deep Learning. Use the logical roadmap below to identify your specific path.
 
 ## The decision tree: your logical roadmap
 
