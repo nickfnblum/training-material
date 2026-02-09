@@ -5,8 +5,8 @@ title: "Where to start with bioimage analysis in Galaxy"
 level: Introductory
 subtopic: introduction
 questions:
-  - Can I process images from my experiments in Galaxy? Where do I begin?
-  - How do I identify an image type and the metadata included?
+  - Can I process images from experimental data in Galaxy? Where do I begin?
+  - How do I identify an image type and its metadata?
   - What are the basic steps of a bioimage analysis workflow?
   - Which workflows are best suited for my specific biological questions?
   - How do I choose between different segmentation strategies?
@@ -14,8 +14,6 @@ objectives:
   - Classify your imaging data based on modality and dimensions (5D).
   - Identify the correct entry point in Galaxy (Upload vs. Bio-Formats vs. OMERO).
   - Apply pre-processing filters to improve data quality before analysis.
-  - Understand the difference between classical segmentation, Machine Learning, and Deep Learning.
-  - Validate analysis results by overlaying masks on raw data.
   - Navigate the GTN ecosystem to find specialized follow-up tutorials.
 key_points:
   - Image analysis starts with understanding your metadata; pixels are just numbers with biological context.
@@ -33,9 +31,13 @@ contributions:
     - dianichj
     - beatrizserrano
     - kostrykin
+  reviewing:
+    - maartenpaul
+    - beatrizserrano
+    - kostrykin
 ---
 
-Bioimage analysis is the process of extracting meaningful information (e.g., quantitative data) from image data in the life sciences (usually microscopy images). Whether you are looking at stained tissue sections (histology) or fluorescently labeled proteins in live cells, the goal is often the same: **turning pixels into numbers.**
+Bioimage analysis is the process of extracting meaningful information (e.g., quantitative data) from image data in the life sciences (usually microscopy images). Whether you are looking at stained tissue sections (histology) or fluorescently labeled proteins in live cells, the goal is often the same: **turning pixels into numbers**.
 
 In Galaxy, we provide a robust ecosystem to make this process reproducible and scalable. We focus on making image analysis **FAIR by design** _(Findable, Accesible, Interoperable, Reusable)_, ensuring that your image formats, metadata, tools, and workflows remain reusable, transparent, and traceable from the very first upload to the final figure ({% cite GalaxyCommunity2024 %}).
 
@@ -66,57 +68,21 @@ Every point in that array—the **pixel** (2D) or **voxel** (3D)—is a data poi
 
 *Add Pete B's Image from his book*
 
-If you don't understand the numbers behind the colors, you risk performing "Image processing" (simply making a pretty picture) rather than "Image analysis" (extracting scientific truth). Let's unpack the data behind an image step by step. 
+If you don't understand the numbers behind the colors, you risk performing "image processing" (simply making a pretty picture) rather than "image analysis" (extracting scientific truth). Let's unpack the data behind an image step by step.
 
 ## Pixels and voxels
 
 An image is a grid of **pixels** (2D images) or **voxels** (3D images). Think of an image as a vast mosaic where every tile is a "picture element." In 2D, these tiles are flat, but in 3D imaging, they have depth and are called **voxels** ("volumetric elements", e.g., {% cite Pawley2006 %}). Each one is like a small bucket that has captured a specific amount of signal (usually light), which the computer records as a single number.
+
 Image intensities represent the measurements of the imaging system.
 
-To make these numbers useful for science, we must define their **range** and their **spatial extent** (i.e. the *resolution* of the image, like pixels or voxels per real-world unit).
-
-### Bit depth (the range and precision limits)
-
-The bit depth corresponds to an **upper limit of the precision** when storing image intensities by determining the range of possible intensity values and the smallest distinguishable difference between them. The **actual precision** may also be lower and depends on many factors in your imaging system, like sensor noise, photon statistics, optical aberrations, and sample preparation quality (e.g., {% cite Pawley2006 %}).
-
-When it comes to the representation of the measurements of the imaging system as the image intensities, there generally are two main types of such representation:
-
-#### Integer representations
-
-These are the natural format for raw camera data, as imaging sensors essentially count photons:
-
-* **8-bit:** $$2^{8} = 256$$ possible values ($$-127--128$$ or $0--255$ for signed and unsigned values, respectively). While this looks fine to our eyes, it is often too "coarse" for thorough quantitative analysis.
-* **16-bit:** $$2^{16} = 65,536$$ possible values ($$-32,767--32,768$$ or $$0--65,535$$ for signed and unsigned values, respectively). This is the **scientific gold standard for image acquisition** and storing the image data, because it allows you to detect even subtle differences in image intensities that would be lost (e.g., due to rounding) when using an 8-bit representation (e.g., {% cite Haase2022 %}).
-
-#### Floating-point representations
-
-After image processing operations (e.g., background subtraction, normalization, deconvolution), intensity values often become non-integer (i.e. decimal, fractional) or fall outside the original acquisition range. Floating-point formats accommodate this:
-
-* **16-bit float (half precision):** Can represent a range of approximately $6.1 \times 10^{-5}$ to $65,504$ with decimal precision. This format is increasingly used in machine learning and GPU-accelerated image processing because it saves memory while providing sufficient precision for many applications.
-* **32-bit float (single precision):** Can represent an enormous range (~$10^{-38}$ to ~$10^{38}$) with ~7 significant decimal digits of precision. This is the **most common format for image processing** as it balances precision, range, and computational efficiency.
-* **64-bit float (double precision):** Offers even greater precision (~15-16 significant decimal digits) and range (~$10^{-308}$ to ~$10^{308}$), useful for iterative algorithms or when accumulating many operations where small errors could compound.
-
-Note that, in contrast to images that encode image intensities as integers, floating-point images have no absolute precision in terms of the smallest distinguishable difference between values. The precision is highest around 0 and decays to the limits of the range of the representable values.
-
-Many analysis tools automatically convert to floating-point internally to preserve accuracy during calculations.
-
-### Spatial calibration (the size)
-
-Image pixels (or voxels) have no _intrinsic_ physical size; they are just units of storage and representation. **Spatial calibration** is the metadata that links these digital units to physical reality (e.g., $1 \text{ pixel} = 0.25 \mu m$). Without this "secret sauce," you can count objects, but you cannot accurately measure how big they are, how fast they move, or their concentration (e.g., {% cite Linkert2010 %}, {% cite Haase2022 %}). 
-
-Metadata like the calibration information is usually stored in the image header. If you lose this metadata during a file conversion (e.g., saving as a standard .jpg), your analysis will only be able to provide results in "pixels," which have no biological meaning in a publication.
-
-> <tip-title> Avoid saturation </tip-title> 
-> If you see an image intensity value of "0", the sensor may have detected nothing, or it could represent true absence of signal—context matters. If you see the maximum value (e.g., $255$ or $65,535$), your sensor was overwhelmed. These phenomena are called **saturation** (under- and oversaturation, respectively). Saturated pixels are often "clipped," meaning the true biological signal was lower or higher than what the camera could record (e.g., {% cite Pawley2006 %}). This data is lost forever and cannot be accurately quantified. 
->
-{: .tip}
+To make these numbers useful for science, we must define their **range** and their **spatial extent** (i.e., the *resolution* of the image, like pixels or voxels per real-world unit).
 
 ## The 5 dimensions (5D)
 
-In everyday photography, we usually deal with 2D color images. However, in the life sciences, we can capture **hyperstacks**: multi-dimensional data structures that represent a biological sample across space (`X`, `Y`, `Z` axes), spectrum (`C` axis), and time (`T` axis). Although many scientific images adopt to the `XYZCT` ({% cite Goldberg2005 %}) or `TCZYX` axes order (e.g., Moore et al. 2023), making wrong assumptions about that order is a frequent source of error. It is thus important to make sure, that the axes order is properly annotated in the image metadata. 
+In everyday photography, we usually deal with 2D color images. However, in the life sciences, we can capture **hyperstacks**: multi-dimensional data structures that represent a biological sample across space (`X`, `Y`, `Z` axes), spectrum (`C` axis), and time (`T` axis). Although many scientific images adopt the `XYZCT` ({% cite Goldberg2005 %}) or `TCZYX` axes order (e.g., Moore et al. 2023), making wrong assumptions about that order is a frequent source of error. It is thus important to make sure that the axes order is properly annotated in the image metadata.
 
-* **X & Y (Spatial):** The width and height of your image (the 2D plane).
-* **Z (Depth):** Multiple optical sections or "slices" taken at different focal planes to reconstruct a 3D volume. In confocal or light-sheet microscopy, these represent different depths through the sample.
+* **X, Y & Z (Spatial):** X and Y represent the width and height of your image (the 2D plane). Z represents multiple optical sections or "slices" taken at different focal planes to reconstruct a 3D volume. In confocal or light-sheet microscopy, Z captures different depths through the sample.
 * **C (Channel):** Different wavelengths or fluorescent probes corresponding to specific biological structures or molecules (e.g., DAPI for nuclei, GFP for proteins, Phalloidin for actin).
 * **T (Time):** Separate frames captured over a duration (time-lapse), allowing you to track movement, growth, or dynamic changes in cellular processes.
 
@@ -137,6 +103,43 @@ However, it is important to note that while we describe them in this $(X, Y, Z, 
 > >
 > {: .solution} 
 {: .question}
+
+## Bit depth (the range and precision limits)
+
+The bit depth corresponds to an **upper limit of the precision** when storing image intensities by determining the range of possible intensity values and the smallest distinguishable difference between them. The **actual precision** may also be lower and depends on many factors in your imaging system, like sensor noise, photon statistics, optical aberrations, and sample preparation quality (e.g., {% cite Pawley2006 %}).
+
+When it comes to the representation of the measurements of the imaging system as the image intensities, there generally are two main types of such representation:
+
+### Integer representations
+
+These are the natural format for raw camera data, as imaging sensors essentially count photons:
+
+* **8-bit:** $2^{8} = 256$ possible values (range: $0$ to $255$ for unsigned, or $-128$ to $127$ for signed). While this looks fine to our eyes, it is often too "coarse" for thorough quantitative analysis.
+* **16-bit:** $2^{16} = 65,536$ possible values (range: $0$ to $65,535$ for unsigned, or $-32,768$ to $32,767$ for signed). This is the **scientific gold standard for image acquisition** and storing the image data, because it allows you to detect even subtle differences in image intensities that would be lost (e.g., due to rounding) when using an 8-bit representation (e.g., {% cite Haase2022 %}).
+* **32-bit:** $2^{32} = 4,294,967,296$ possible values. While less common in direct acquisition, 32-bit integer formats are sometimes used in intermediate processing steps or for label images where many distinct regions need to be encoded.
+
+### Floating-point representations
+
+After image processing operations (e.g., background subtraction, normalization, deconvolution), intensity values often become non-integer (i.e., decimal, fractional) or fall outside the original acquisition range. Floating-point formats accommodate this by representing both positive and negative values with decimal precision:
+
+* **16-bit float (half precision):** Can represent values approximately in the range of $\pm 65,504$ with limited decimal precision. This format is increasingly used in machine learning and GPU-accelerated image processing because it saves memory while providing sufficient precision for many applications.
+* **32-bit float (single precision):** Can represent values approximately in the range of $\pm 10^{38}$ with about 7 significant decimal digits of precision. This is the **most common format for image processing** as it balances precision, range, and computational efficiency.
+* **64-bit float (double precision):** Can represent values approximately in the range of $\pm 10^{308}$ with about 15-16 significant decimal digits of precision, useful for iterative algorithms or when accumulating many operations where small errors could compound.
+
+Unlike integer representations where the precision (smallest distinguishable difference) is constant across the entire range, floating-point precision varies: it is highest near zero and decreases as values approach the limits of the representable range.
+
+Many analysis tools automatically convert to floating-point internally to preserve accuracy during calculations.
+
+## Spatial calibration (the size)
+
+Image pixels (or voxels) have no _intrinsic_ physical size; they are just units of storage and representation. **Spatial calibration** is the metadata that links these digital units to physical reality (e.g., $1 \text{ pixel} = 0.25 \mu m$). Without this "secret sauce," you can count objects, but you cannot accurately measure how big they are, how fast they move, or their concentration (e.g., {% cite Linkert2010 %}, {% cite Haase2022 %}). 
+
+Metadata like the calibration information is usually stored in the image header. If you lose this metadata during a file conversion (e.g., saving as a standard .jpg), your analysis will only be able to provide results in "pixels," which have no biological meaning in a publication.
+
+> <tip-title> Avoid saturation </tip-title> 
+> If you see an image intensity value of "0", the sensor may have detected nothing, or it could represent true absence of signal—context matters. If you see the maximum value (e.g., $255$ or $65,535$), your sensor was overwhelmed. These phenomena are called **saturation** (under- and oversaturation, respectively). Saturated pixels are often "clipped," meaning the true biological signal was lower or higher than what the camera could record (e.g., {% cite Pawley2006 %}). This data is lost forever and cannot be accurately quantified. 
+>
+{: .tip}
 
 ## Bit depth: why it matters for science
 
