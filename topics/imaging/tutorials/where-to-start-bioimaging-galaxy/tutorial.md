@@ -90,7 +90,7 @@ These are the natural format for raw camera data, as imaging sensors essentially
 
 #### Floating-point representations
 
-After image processing operations (e.g., background subtraction, normalization, deconvolution), intensity values often become non-integer or fall outside the original acquisition range. Floating-point formats accommodate this:
+After image processing operations (e.g., background subtraction, normalization, deconvolution), intensity values often become non-integer (i.e. decimal, fractional) or fall outside the original acquisition range. Floating-point formats accommodate this:
 
 * **16-bit float (half precision):** Can represent a range of approximately $6.1 \times 10^{-5}$ to $65,504$ with decimal precision. This format is increasingly used in machine learning and GPU-accelerated image processing because it saves memory while providing sufficient precision for many applications.
 * **32-bit float (single precision):** Can represent an enormous range (~$10^{-38}$ to ~$10^{38}$) with ~7 significant decimal digits of precision. This is the **most common format for image processing** as it balances precision, range, and computational efficiency.
