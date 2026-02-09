@@ -514,18 +514,18 @@ By building modular workflows in Galaxy, you have created a pipeline that is not
 
 Now that you have your "compass," it is time to choose a specific path. Pick the tutorial that matches your research goal:
 
-* **The Basics:** [Introduction to Image Analysis]({% link topics/imaging/tutorials/imaging-introduction/tutorial.md %}) – A deeper dive into the fundamental concepts of digital images.
+* **The Basics:** {% icon level %} [Introduction to Image Analysis]({% link topics/imaging/tutorials/imaging-introduction/tutorial.md %}) – A deeper dive into the fundamental concepts of digital images.
 
-* **Fluorescence & Screening:** [HeLa Cell Screen Analysis]({% link topics/imaging/tutorials/hela-screen-analysis/tutorial.md %}) – Learn to process high-throughput screens using classical techniques.
+* **Fluorescence & Screening:** {% icon level %} [HeLa Cell Screen Analysis]({% link topics/imaging/tutorials/hela-screen-analysis/tutorial.md %}) – Learn to process high-throughput screens using classical techniques.
 
-* **Time-Lapse & Events:** [Detection of MitoFlashes]({% link topics/imaging/tutorials/detection-of-mitoflashes/tutorial.md %}) – Track transient biological events over time.
+* **Time-Lapse & Events:** {% icon level %} [Detection of MitoFlashes]({% link topics/imaging/tutorials/detection-of-mitoflashes/tutorial.md %}) – Track transient biological events over time.
 
-* **Classical Segmentation:** [Voronoi-based Segmentation]({% link topics/imaging/tutorials/voronoi-segmentation/tutorial.md %}) – A powerful approach for partitioning cells when they are touching but have clear centers.
+* **Classical Segmentation:** {% icon level %} [Voronoi-based Segmentation]({% link topics/imaging/tutorials/voronoi-segmentation/tutorial.md %}) – A powerful approach for partitioning cells when they are touching but have clear centers.
 
-* **Advanced AI:** [Imaging using Bioimage Zoo Models]({% link topics/imaging/tutorials/process-image-bioimageio/tutorial.md %}) – Use pre-trained deep learning models for complex segmentation tasks.
+* **Advanced AI:** {% icon level %} [Imaging using Bioimage Zoo Models]({% link topics/imaging/tutorials/process-image-bioimageio/tutorial.md %}) – Use pre-trained deep learning models for complex segmentation tasks.
 
-* **Automated Pipelines:** [CellProfiler in Galaxy]({% link topics/imaging/tutorials/tutorial-CP/tutorial.md %}) – Master the use of CellProfiler modules to build end-to-end automated workflows.
+* **Automated Pipelines:** {% icon level %} [CellProfiler in Galaxy]({% link topics/imaging/tutorials/tutorial-CP/tutorial.md %}) – Master the use of CellProfiler modules to build end-to-end automated workflows.
 
-* **Tracking:** [Object Tracking using CellProfiler]({% link topics/imaging/tutorials/object-tracking-using-cell-profiler/tutorial.md %}) – Move from static images to following individual objects through time and space.
+* **Tracking:** {% icon level %} [Object Tracking using CellProfiler]({% link topics/imaging/tutorials/object-tracking-using-cell-profiler/tutorial.md %}) – Move from static images to following individual objects through time and space.
 
 * **Histology & Pathology:** *Coming Soon!* A dedicated tutorial on **Histology Staining and Color Deconvolution** is currently in development.
