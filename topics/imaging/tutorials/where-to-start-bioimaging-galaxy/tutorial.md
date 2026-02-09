@@ -96,7 +96,9 @@ After image processing operations (e.g., background subtraction, normalization, 
 * **32-bit float (single precision):** Can represent an enormous range (~$10^{-38}$ to ~$10^{38}$) with ~7 significant decimal digits of precision. This is the **most common format for image processing** as it balances precision, range, and computational efficiency.
 * **64-bit float (double precision):** Offers even greater precision (~15-16 significant decimal digits) and range (~$10^{-308}$ to ~$10^{308}$), useful for iterative algorithms or when accumulating many operations where small errors could compound.
 
-Note that floating-point images have **different limits** than integer images—instead of a fixed maximum like 255 or 65,535, the "range" depends on your actual data and processing steps. Many analysis tools automatically convert to floating-point internally to preserve accuracy during calculations.
+Note that, in contrast to images that encode image intensities as integers, floating-point images have no absolute precision in terms of the smallest distinguishable difference between values. The precision is highest around 0 and decays to the limits of the range of the representable values.
+
+Many analysis tools automatically convert to floating-point internally to preserve accuracy during calculations.
 
 ### Spatial calibration (the size)
 
