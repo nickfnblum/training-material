@@ -200,7 +200,7 @@ For modern, large-scale, or cloud-based datasets, you can use **{% tool [Convert
 
 > <tip-title> Which open format should I choose? </tip-title>
 >
-> While there are many options, two open standards dominate bioimaging:
+> While there are many options, two open community-endorsed formats are increasingly dominant in bioimaging:
 > * **OME-TIFF:** Best for "classic" microscopy (2D/3D stacks) and maximum compatibility with classical software like ImageJ/Fiji or QuPath.
 > * **OME-Zarr:** The modern choice for "Big Data," cloud storage, and spatial transcriptomics. {% cite Moore2021 %}
 > 
