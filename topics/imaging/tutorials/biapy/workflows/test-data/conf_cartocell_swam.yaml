@@ -22,7 +22,6 @@ DATA:
 
 TRAIN:
     ENABLE: False
-    
 MODEL:
     SOURCE: bmz
     BMZ:
