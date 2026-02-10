@@ -98,9 +98,9 @@ Now we can set up the BiaPy tool with the ['venomous-swam' model](https://bioima
 >     - *Specify the test ground truth/target images*: `01_raw_mask.tiff` and `02_raw_mask.tiff`
 >
 >- On *Select output* check the boxes:
->     - [x]  `Test predictions (if exist)`
->     - [x]  `Post-processed test predictions (if exist)` 
->     - [x]  `Evaluation metrics (if exist, on test data)`
+>     - {% icon param-check %} `Test predictions (if exist)`
+>     - {% icon param-check %} `Post-processed test predictions (if exist)` 
+>     - {% icon param-check %} `Evaluation metrics (if exist, on test data)`
 {: .hands_on}
 
 Once the tool finishes running, you will have three different datasets in your history.
