@@ -2,28 +2,28 @@
   job:
     Input a BiaPy YAML configuration file:
       class: File
-      path: test-data/conf_cartocell_swam.yaml
+      path: test-data/Input a BiaPy YAML configuration file.yaml
       filetype: yaml
+    Input the image ground truth:
+      class: Collection
+      collection_type: list
+      elements:
+      - class: File
+        identifier: 01_raw_mask.tiff
+        path: test-data/Input the image ground truth_01_raw_mask.tiff.tiff
+      - class: File
+        identifier: 02_raw_mask
+        path: test-data/Input the image ground truth_02_raw_mask.tiff
     Input the test data:
       class: Collection
       collection_type: list
       elements:
       - class: File
         identifier: 01_raw_image
-        path: test-data/01_raw_image.tiff
+        path: test-data/Input the test data_01_raw_image.tiff
       - class: File
         identifier: 02_raw_image
-        path: test-data/02_raw_image.tiff
-    Input the image ground truth:
-      class: Collection
-      collection_type: list
-      elements:
-      - class: File
-        identifier: 01_raw_mask
-        path: test-data/01_raw_mask.tiff
-      - class: File
-        identifier: 02_raw_mask
-        path: test-data/02_raw_mask.tiff
+        path: test-data/Input the test data_02_raw_image.tiff
   outputs:
     predictions_post_proc:
       element_tests:
@@ -33,7 +33,7 @@
           path: test-data/predictions_post_proc_test-1.tif
     html:
       element_tests:
-        x-CYST 7d Filt 3well Pha,Bcat,DAPI 40x Z4 15.7.19 3a:
+        01_raw_image:
           path: test-data/html_01_raw_image.html
-        x-cyst 4d fil 3well Pha,bcat,dapi 02.08.19 40x Z5 12a:
+        02_raw_image:
           path: test-data/html_02_raw_image.html

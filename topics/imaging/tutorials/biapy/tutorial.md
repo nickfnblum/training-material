@@ -34,21 +34,34 @@ tags:
   - Volume rendering
 ---
 
-The application of supervised and unsupervised **Deep Learning (DL)** methods in bioimage analysis have been constantly increasing in biomedical research in the last decades ([Esteva, A. et al.](https://www.nature.com/articles/s41746-020-00376-2)). DL algorithms allow automatically classifying complex biological structures by learning complex patterns and features directly from large-scale imaging data, medical scans, or high-throughput biological datasets ([Franco-Barranco et al., 2025](https://www.nature.com/articles/s41592-025-02699-y)). Furthermore, trained models can be easily
+The application of supervised and unsupervised **Deep Learning (DL)** methods in bioimage analysis have been constantly increasing in biomedical research in the last decades {% cite esteva2021deep %}. 
+DL algorithms allow automatically classifying complex biological structures by learning complex patterns and features directly from large-scale imaging data, medical scans, or high-throughput biological datasets {% cite franco2025biapy %}. Furthermore, trained models can be easily
 shared on online repositories (e.g., [BioImage.IO](https://bioimage.io/#/models)) to be reused by other scientists and support open science. 
 
 However, running DL models often requires high-level programming skills which can often be a barrier to general audience especially the 
 one without a proper computational background. Additionally, many DL models require GPU acceleration, which is not always accessible to all researchers. 
-Such obstacoles might the practical and routine adoption of DL models in bioimaging. 
+Such obstacles might limit the practical and routine adoption of DL models in bioimaging. 
 
-*So, how to make DL models accessible to a larger audience?* Well, [BiaPy](https://biapyx.github.io/) is an open source library and application that streamlines the use of common deep-learning workflows for a large variety of bioimage analysis tasks, including 2D and 3D semantic segmentation, instance segmentation, object detection, image denoising, single image super-resolution, self-supervised learning (for model pretraining), image classification and image-to-image translation. 
+So, how to make DL models accessible to a larger audience? Well, [BiaPy](https://biapyx.github.io/) is an open source framework that streamlines the use of common deep-learning workflows for a large variety of bioimage analysis tasks, including 2D and 3D semantic segmentation, instance segmentation, object detection, image denoising, single image super-resolution, self-supervised learning (for model pretraining), image classification and image-to-image translation. 
 
-In this training, you will learn how to execute a BiaPy worflow directly in Galaxy. We learn how to run [inference](https://en.wikipedia.org/wiki/Deep_learning) on a set of images using two pre-trained models from BioImage.IO defined in a 
-BiaPy YAML configuration file. A BiaPy YAML configuration file includes information about the hardware to be used, such as the number of CPUs or GPUs, the specific image analysis task, the model to be used, optional hyperparameters, the optimizer, and the paths for loading and storing data. 
+In this training, you will learn how to execute a BiaPy workflow directly in Galaxy by running [inference](https://en.wikipedia.org/wiki/Deep_learning) on a set of images using two pre-trained models from BioImage.IO defined in a 
+BiaPy YAML configuration file. 
 
-![example-yaml.png](../../images/biapy/example-yaml.png "Example of a BiaPy YAML file where the model with ID in BioImage.IO 'merry-water-buffalo' is defined (red box)")
+![example-yaml.png](../../images/biapy/example-yaml.png "Example of a BiaPy YAML file where the model with ID in BioImage.IO 'merry-water-buffalo' is defined (red box).
+A BiaPy YAML configuration file includes information about the hardware to be used, such as the number of CPUs or GPUs, 
+the specific image analysis task, the model to be used, optional hyperparameters, the optimizer, and the paths for loading and storing data.")
 
-For this training we will use two configuration file with two different models from BioImage.IO.
+You will perform a comparative analysis of the segmentation performance of two models from BioImage.IO, namely
+[venomous-swan](https://bioimage.io/#/artifacts/venomous-swan) and [merry-water-buffalo](https://bioimage.io/#/artifacts/merry-water-buffalo).
+Both model can perform cyst segmentation for fluorescence microscopy images and have the same 3D [U-Net](https://en.wikipedia.org/wiki/U-Net) + Residual Blocks base architecture. 
+However, venomous-swan enhances the 3D Residual U-Net with Squeeze-and-Excitation (SE) blocks.
+
+Our goal is to check if whether the inclusion of SE blocks in the venomous-swan model leads to improved segmentation accuracy 
+compared to the merry-water-buffalo model. This comparison will help us understand the impact of the SE blocks on the model's ability to segment 
+cysts in fluorescence microscopy images.
+
+Finally, we will assess the models using various metrics as well as a qualitative assessments of the segmentation masks will be conducted to 
+visually inspect the differences in segmentation quality between the two models.
 
 Let's start with BiaPy!
 
@@ -63,7 +76,7 @@ Let's start with BiaPy!
 
 ## Getting test data and the BiaPy YAML configuration file
 
-The dataset required for this tutorial is available from [Zenodo]({{ page.zenodo_link }}). The CartoCell dataset containts whole epithelial cysts acquired at low resolution with minimal human intervention ([more information]({{ page.zenodo_link }})). The dataset is divided into *test*, *train* and *validation* data, each folder containing images and associated segmentation masks.
+The dataset required for this tutorial is available from [Zenodo]({{ page.zenodo_link }}). The CartoCell dataset contains whole epithelial cysts acquired at low resolution with minimal human intervention ([more information]({{ page.zenodo_link }})). The dataset is divided into *test*, *train* and *validation* data, each folder containing images and associated segmentation masks.
 
 In order to simplify the upload, we already prepared the test images and YAML files in the **Data Library** that you can access on the left panel in Galaxy.
 
@@ -89,7 +102,7 @@ Now we can set up the BiaPy tool with the ['venomous-swam' model](https://bioima
 >
 >- *Select a configuration file*: `conf_cartocell_swam.yaml`
 >
->- *Select the model checkpoint (if needed)* : Leave it blank. A checkpoint is a local file containing the trained model weights (e.g. .safetensors/.pth). In this tutorial we load a pretrained model from the BioImage Model Zoo (BioImage.IO), so no local checkpoint file is required.
+>- *Select the model checkpoint (if needed)* : Leave it blank. A checkpoint is a local file containing the trained model weights (e.g. .safetensors/.pth). In this tutorial we load a pre-trained model from the BioImage Model Zoo (BioImage.IO), so no local checkpoint file is required.
 >
 >- In the test data section, select the raw images to run predictions on and the ground truth/target images to evaluate those predictions. If no target data is provided, evaluation metrics will not be computed. **Make sure the files are in the same order so each raw image is paired with its corresponding target image**.
 >
@@ -105,17 +118,23 @@ Now we can set up the BiaPy tool with the ['venomous-swam' model](https://bioima
 
 Once the tool finishes running, you will have three different datasets in your history.
 
-**Test predictions**: Full-size output images produced by the model on the test set. Because the model predicts small, overlapping patches, these patch outputs are merged back together to form one prediction per original image.
+**1. Test predictions**: Full-size output images produced by the model on the test set. Because the model predicts small, overlapping patches, these patch outputs are merged back together to form one prediction per original image.
 
-**Post-Processed Test Prediction**: Test predictions after automatic “clean-up” steps defined in the configuration. These steps can refine the raw output (for example, removing small spurious regions or separating touching objects). In this tutorial, Voronoi tessellation is applied to help split instances.
+![test-prediction.png](../../images/biapy/test-prediction.png "Test predition on 22th z-stack of 01_raw_image.tiff"){: width="50%"}
 
-**3. Test metrics:** Numerical scores that measure how well the predictions match the ground truth (if provided). In instance segmentation, the report typically includes:
+**2. Post-Processed Test Prediction**: Test predictions after automatic “clean-up” steps defined in the configuration. These steps can refine the raw output (for example, removing small spurious regions or separating touching objects). 
+In this tutorial, Voronoi tessellation is automatically applied to help split instances.
+
+![post-test-prediction.png](../../images/biapy/post-test-prediction.png "Post test predition on 22th z-stack of 01_raw_image.tiff"){: width="50%"}
+
+**3. Test metrics:** Numerical scores that measure how well the predictions match the ground truth (if provided). 
+In instance segmentation, the report typically includes:
 
 - Intersection Over Union (IoU) per output channel (how well pixel regions overlap), and
 
 - Matching metrics (how well individual predicted objects match true objects), shown for raw predictions and post-processed predictions.
 
-...but you can find more info in [BiaPy documentation](https://biapy.readthedocs.io/en/latest/)!
+...but you can find more info on the test metrics in [BiaPy documentation](https://biapy.readthedocs.io/en/latest/)!
 
 ## Visualize the results
 
@@ -184,7 +203,7 @@ We can also do better and visualize the full 3D segmentation using the [LibCarna
 >    - *"Rendering mode"*: `Maximum Intensity Projection (MIP)`
 >    - *"Color map"*: `gist_gray`
 >    - *"Camera parameters"*:
->      - *"Distance"*: `200`
+>      - *"Distance"*: `100`
 >    - *"Render mask overlay"*:
 >      - {% icon param-file %} *"Mask overlay (3-D) "*: `biapy_prediction_swam.tiff`
 >    - *"Video parameters"*:
@@ -205,7 +224,7 @@ We can do the same for also for `02_raw_image.tiff`:
 
 ## Compare different pre-trained models 
 
-Lets now run the BiaPy tool again but this time with the ['merry-water-buffalo'](https://bioimage.io/#/artifacts/merry-water-buffalo) model:
+Let's now run the BiaPy tool again but this time with the ['merry-water-buffalo'](https://bioimage.io/#/artifacts/merry-water-buffalo) model:
 
 > <hands-on-title>Configure the BiaPy Tool for 'merry-water-buffalo'</hands-on-title>
 >
@@ -215,7 +234,7 @@ Lets now run the BiaPy tool again but this time with the ['merry-water-buffalo']
 >
 >- *Select a configuration file*: `conf_cartocell_buffalo.yaml`
 >
->- *Select the model checkpoint (if needed)* : Leave it blank. We will load the pretrained model directly from the BioImage Model Zoo, so no checkpoint file is required.
+>- *Select the model checkpoint (if needed)* : Leave it blank. We will load the pre-trained model directly from the BioImage.IO, so no checkpoint file is required.
 >
 >- In the test data section, select the raw images to run predictions on and the ground truth/target images to evaluate those predictions. If no target data is provided, evaluation metrics will not be computed. **Make sure the files are in the same order so each raw image is paired with its corresponding target image**.
 >

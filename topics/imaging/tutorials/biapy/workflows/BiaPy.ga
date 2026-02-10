@@ -4,6 +4,27 @@
     "comments": [
         {
             "child_steps": [
+                1,
+                2,
+                0
+            ],
+            "color": "orange",
+            "data": {
+                "title": "User Input"
+            },
+            "id": 0,
+            "position": [
+                0,
+                0
+            ],
+            "size": [
+                240,
+                422.6
+            ],
+            "type": "frame"
+        },
+        {
+            "child_steps": [
                 4
             ],
             "color": "lime",
@@ -18,27 +39,6 @@
             "size": [
                 240,
                 204.5
-            ],
-            "type": "frame"
-        },
-        {
-            "child_steps": [
-                0,
-                2,
-                1
-            ],
-            "color": "orange",
-            "data": {
-                "title": "User Input"
-            },
-            "id": 0,
-            "position": [
-                0,
-                0
-            ],
-            "size": [
-                240,
-                422.6
             ],
             "type": "frame"
         }
@@ -253,7 +253,7 @@
                 "owner": "imgteam",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
-            "tool_state": "{\"axes\": \"XYZ\", \"camera\": {\"fov\": \"90.0\", \"distance\": \"200.0\", \"z_near\": \"10.0\", \"z_far\": \"1000.0\"}, \"colorbar\": true, \"colormap\": {\"name\": \"gist_grey\", \"__current_case__\": 76, \"ramp\": {\"enabled\": \"false\", \"__current_case__\": 1}}, \"height\": \"450\", \"intensities\": {\"__class__\": \"ConnectedValue\"}, \"mask\": {\"enabled\": \"true\", \"__current_case__\": 1, \"image\": {\"__class__\": \"ConnectedValue\"}, \"color\": \"#00ff00\"}, \"mode\": {\"name\": \"mip\", \"__current_case__\": 0}, \"sample_rate\": \"800\", \"sample_rate_override\": \"0\", \"units\": \"raw\", \"video\": {\"frames\": \"200\", \"fps\": \"25\"}, \"width\": \"800\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"axes\": \"XYZ\", \"camera\": {\"fov\": \"90.0\", \"distance\": \"100.0\", \"z_near\": \"10.0\", \"z_far\": \"1000.0\"}, \"colorbar\": true, \"colormap\": {\"name\": \"gist_grey\", \"__current_case__\": 76, \"ramp\": {\"enabled\": \"false\", \"__current_case__\": 1}}, \"height\": \"450\", \"intensities\": {\"__class__\": \"ConnectedValue\"}, \"mask\": {\"enabled\": \"true\", \"__current_case__\": 1, \"image\": {\"__class__\": \"ConnectedValue\"}, \"color\": \"#00ff00\"}, \"mode\": {\"name\": \"mip\", \"__current_case__\": 0}, \"sample_rate\": \"800\", \"sample_rate_override\": \"0\", \"units\": \"raw\", \"video\": {\"frames\": \"200\", \"fps\": \"25\"}, \"width\": \"800\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
             "tool_uuid": null,
             "tool_version": "0.2.0+galaxy2",
             "type": "tool",
@@ -268,7 +268,9 @@
             ]
         }
     },
-    "tags": [],
-    "uuid": "6945a8e5-08e5-40d6-90a0-bb18f407e8db",
-    "version": 11
+    "tags": [
+        "imaging"
+    ],
+    "uuid": "07a63ae7-7109-4c54-977c-3b76b1c8393f",
+    "version": 13
 }
