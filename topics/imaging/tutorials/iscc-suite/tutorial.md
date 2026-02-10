@@ -40,7 +40,7 @@ contributions:
 
 # File content and integrity validation with International Standard Content Code (ISCC)
 
-In scientific workflows, ensuring data integrity and tracking modifications to data content is crucial for reproducibility. Traditional checksums (like MD5 or SHA) can verify if files are identical, but they cannot detect similar content or survive format conversions.
+In scientific workflows, ensuring data integrity and tracking modifications of the data content is crucial for reproducibility. Traditional checksums (like MD5 or SHA) can verify if files are identical, but they cannot detect similar content or survive format conversions.
 
 The **International Standard Content Code (ISCC)** is a content-derived identifier that provides both:
 - **Identity verification**: Checksum functionality to verify exact file matches
