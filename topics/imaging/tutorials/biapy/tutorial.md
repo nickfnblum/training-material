@@ -17,13 +17,21 @@ key_points:
 - BiaPy is an open-source tool designed to lower the technical barriers for using DL in bioimage analysis.
 - In Galaxy, BiaPy can run BioImage.IO pre-trained models and provides task-aware pre/post-processing (e.g. instance segmentation decoding) and summary statistics—beyond raw model predictions.
 - The BiaPy pipeline can be controlled via a YAML configuration file, which specifies the task type and model source.
-contributors:
-- rmassei
-- danifranco
+contributions:
+  authors:
+    - rmassei
+    - danifranco
+  reviewing:
+    - beatrizserrano
+    - kostrykin
 tags: 
   - Image segmentation
   - Image annotation
   - Deep learning
+  - Conversion
+  - Overlay
+  - 3D image
+  - Volume rendering
 ---
 
 The application of supervised and unsupervised **Deep Learning (DL)** methods in bioimage analysis have been constantly increasing in biomedical research in the last decades ([Esteva, A. et al.](https://www.nature.com/articles/s41746-020-00376-2)). DL algorithms allow automatically classifying complex biological structures by learning complex patterns and features directly from large-scale imaging data, medical scans, or high-throughput biological datasets ([Franco-Barranco et al., 2025](https://www.nature.com/articles/s41592-025-02699-y)). Furthermore, trained models can be easily
@@ -290,7 +298,7 @@ At IoU ≥ 0.5:
     F1: 0.222
     PQ: 0.157
 
-**Water-buffalo** is clearly stronger at instance detection and segmentation
+**water-buffalo** is clearly stronger at instance detection and segmentation
 
 At a commonly used matching threshold (IoU ≥ 0.5), averaged across the 2 test images:
 
@@ -306,7 +314,7 @@ So **Water-buffalo** is better both in:
 
 ## Conclusions
 
-In this tutorial, you executed BiaPy inference workflows directly in Galaxy using YAML configuration files, and compared two pre-trained BioImage.IO models on the same 3D dataset.
+In this tutorial, you executed BiaPy inference pipelines directly in Galaxy using YAML configuration files, and compared two pre-trained BioImage.IO models on the same 3D dataset.
 
 You learned how to:
 
