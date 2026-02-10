@@ -120,12 +120,12 @@ Once the tool finishes running, you will have three different datasets in your h
 
 **1. Test predictions**: Full-size output images produced by the model on the test set. Because the model predicts small, overlapping patches, these patch outputs are merged back together to form one prediction per original image.
 
-![test-prediction.png](../../images/biapy/test-prediction.png "Test predition on 22th z-stack of 01_raw_image.tiff"){: width="50%"}
+![test-prediction.png](../../images/biapy/test-prediction.png "Test predition on 22th z-stack of 02_raw_image.tiff"){: width="10%"}
 
 **2. Post-Processed Test Prediction**: Test predictions after automatic “clean-up” steps defined in the configuration. These steps can refine the raw output (for example, removing small spurious regions or separating touching objects). 
 In this tutorial, Voronoi tessellation is automatically applied to help split instances.
 
-![post-test-prediction.png](../../images/biapy/post-test-prediction.png "Post test predition on 22th z-stack of 01_raw_image.tiff"){: width="50%"}
+![post-test-prediction.png](../../images/biapy/post-test-prediction.png "Post test predition on 22th z-stack of 02_raw_image.tiff"){: width="10%"}
 
 **3. Test metrics:** Numerical scores that measure how well the predictions match the ground truth (if provided). 
 In instance segmentation, the report typically includes:
