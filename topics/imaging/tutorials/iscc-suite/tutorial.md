@@ -104,7 +104,7 @@ For this tutorial, we'll use a simple dataset with microscope images that demons
 
 # Generate ISCC codes
 
-The first step is generating ISCC codes for your input files. This creates a content fingerprint that can be used throughout your workflow.
+The first step is generating ISCC codes for your input files. This creates a content fingerprint that can be used for later content-based identification of the file (e.g., within your workflow or within a publication).
 
 > <hands-on-title>Generate ISCC codes for input files</hands-on-title>
 >
