@@ -18,7 +18,7 @@ key_points:
 - In Galaxy, BiaPy can run BioImage.IO pre-trained models and provides task-aware pre/post-processing (e.g. instance segmentation decoding) and summary statistics—beyond raw model predictions.
 - The BiaPy pipeline can be controlled via a YAML configuration file, which specifies the task type and model source.
 contributions:
-  authors:
+  authorship:
     - rmassei
     - danifranco
   reviewing:
