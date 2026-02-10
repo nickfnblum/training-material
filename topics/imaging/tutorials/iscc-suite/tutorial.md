@@ -30,6 +30,11 @@ contributions:
   authorship:
     - maartenpaul
     - etzm
+    reviewing:
+    - beatrizserrano
+    - dianichj
+    - pavanvidem
+    - kostrykin
 ---
 
 # File content and integrity validation with International Standard Content Code (ISCC)
