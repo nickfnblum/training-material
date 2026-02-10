@@ -282,7 +282,6 @@ When working with a collection of files, you can identify all similar items. Thi
 >| 238219006 | example_image.tiff | K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI | 238219003 | >example_image3.tiff | K4AI45QXX6J3LYNEHONZMQD2GJ6YO4GFNFH7UPCBORVJW4FOABL2ZPY | 3 |
 >| 238219004 | example_image2.tiff | K4AHJAICHVVDAB3C6LLJ5PJV6AON3JZUGFOTAAOELT5QTVGYELO55BA | | | | -1 |
 >| 238219005 | example_thresholded1.tiff | K4AC3DH66DCNU22KNYVHQOFIMESNRZCZNEOAD3UVWNI6ZVHPWMMFWYI | | | | -1 |
-
 {: .hands_on}
 
 > <tip-title>Understanding the Hamming distance threshold</tip-title>
