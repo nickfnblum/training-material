@@ -38,7 +38,7 @@ The application of supervised and unsupervised **Deep Learning (DL)** methods in
 shared on online repositories (e.g., [BioImage.IO](https://bioimage.io/#/models)) to be reused by other scientists and support open science. 
 
 However, running DL models often requires high-level programming skills which can often be a barrier to general audience especially the 
-one without a proper computation background. Additionally, many DL models require GPU acceleration, which is not always accessible to all researchers. 
+one without a proper computational background. Additionally, many DL models require GPU acceleration, which is not always accessible to all researchers. 
 Such obstacoles might the practical and routine adoption of DL models in bioimaging. 
 
 *So, how to make DL models accessible to a larger audience?* Well, [BiaPy](https://biapyx.github.io/) is an open source library and application that streamlines the use of common deep-learning workflows for a large variety of bioimage analysis tasks, including 2D and 3D semantic segmentation, instance segmentation, object detection, image denoising, single image super-resolution, self-supervised learning (for model pretraining), image classification and image-to-image translation. 
