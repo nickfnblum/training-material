@@ -35,7 +35,7 @@ tags:
 ---
 
 The application of supervised and unsupervised **Deep Learning (DL)** methods in bioimage analysis have been constantly increasing in biomedical research in the last decades ([Esteva, A. et al.](https://www.nature.com/articles/s41746-020-00376-2)). DL algorithms allow automatically classifying complex biological structures by learning complex patterns and features directly from large-scale imaging data, medical scans, or high-throughput biological datasets ([Franco-Barranco et al., 2025](https://www.nature.com/articles/s41592-025-02699-y)). Furthermore, trained models can be easily
-share on online repositories [(BioImage.IO)](https://bioimage.io/#/models) to be reused by other scientists and support open science. 
+shared on online repositories (e.g., [BioImage.IO](https://bioimage.io/#/models)) to be reused by other scientists and support open science. 
 
 However, running DL models often require high-level programming skills which can be often be a barrier to general audience especially the 
 one without a proper computation background. Additionally, many DL models require GPU acceleration, which is not always accessible to all researchers. 
