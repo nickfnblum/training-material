@@ -63,7 +63,7 @@ Let's start with BiaPy!
 
 ## Getting test data and the BiaPy YAML configuration file
 
-The dataset required for this tutorial is available from [Zenodo]({{ page.zenodo_link }}). The CartoCell dataset containts whole epithelial cysts acquired at low resolution with minimal human intervention ([more information]({{ page.zenodo_link }})). The dataset is divided into *test*, *train* and *validation* data each folder containg images and associated masks.
+The dataset required for this tutorial is available from [Zenodo]({{ page.zenodo_link }}). The CartoCell dataset containts whole epithelial cysts acquired at low resolution with minimal human intervention ([more information]({{ page.zenodo_link }})). The dataset is divided into *test*, *train* and *validation* data, each folder containing images and associated segmentation masks.
 
 In order to simplify the upload, we already prepared the test images and YAML files in the **Data Library** that you can access on the left panel in Galaxy.
 
