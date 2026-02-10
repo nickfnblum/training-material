@@ -154,7 +154,6 @@ During workflow execution, you may want to verify that intermediate files match 
 >    - Status: OK (match) or FAILED (mismatch)
 >    - Expected ISCC code
 >    - Generated ISCC code
-
 {: .hands_on}
 
 ## Workflow integration
