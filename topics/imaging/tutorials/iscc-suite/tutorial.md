@@ -248,7 +248,6 @@ One of ISCC's unique features is detecting similar content, even across differen
 >
 > 2. The tool will create tabular output which indicates which datasets are similar.
 >    The table will list all the files that has been set as input. For the files which have a similar file, below the set threshold, the similar file is listed.
-
 {: .hands_on}
 
 ## Find similar files in collections
