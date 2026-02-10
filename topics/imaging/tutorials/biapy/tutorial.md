@@ -69,7 +69,7 @@ In order to simplify the upload, we already prepared the test images and YAML fi
 
 {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
 
-After importing from the Data Library, you should have the following files in your history: 
+After importing the data from the Data Library, you should have the following files in your history: 
 - `01_raw_image.tiff`
 - `01_raw_mask.tiff`
 - `02_raw_image.tiff`
