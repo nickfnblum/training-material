@@ -217,7 +217,7 @@ This can be applied in an image analysis workflow to verify an image processing 
 >
 > 1. Import and run the ready-to-use workflow:
 >
->    {% snippet faqs/galaxy/workflows_run_trs.md path="topics/imaging/tutorials/iscc-suite/workflows/Galaxy-Workflow-ISCC_-_image_analysis_workflow_example.ga" title="ISCC Image Analysis Verification" %}
+>    {% snippet faqs/galaxy/workflows_run_trs.md path="topics/imaging/tutorials/iscc-suite/workflows/ISCC---image-analysis-workflow-example.ga" title="ISCC Image Analysis Verification" %}
 >
 > 2. Provide the inputs:
 >    - **Original image**: Select `example_image.tiff` - the image to be processed

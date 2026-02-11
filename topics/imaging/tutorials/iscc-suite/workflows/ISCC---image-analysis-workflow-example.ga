@@ -142,7 +142,7 @@
         },
         "4": {
             "annotation": "",
-            "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum/iscc_sum/0.1.0+galaxy0",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum/iscc_sum/0.1.0+galaxy1",
             "errors": null,
             "id": 4,
             "input_connections": {
@@ -153,7 +153,7 @@
             },
             "inputs": [],
             "label": null,
-            "name": "Generate ISCC hash",
+            "name": "Generate ISCC-CODE",
             "outputs": [
                 {
                     "name": "output_file",
@@ -165,16 +165,16 @@
                 "top": 244.85709549535304
             },
             "post_job_actions": {},
-            "tool_id": "toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum/iscc_sum/0.1.0+galaxy0",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum/iscc_sum/0.1.0+galaxy1",
             "tool_shed_repository": {
-                "changeset_revision": "b9caa783059f",
+                "changeset_revision": "7d2c95a58897",
                 "name": "iscc_sum",
                 "owner": "imgteam",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
             "tool_state": "{\"input_file\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
             "tool_uuid": null,
-            "tool_version": "0.1.0+galaxy0",
+            "tool_version": "0.1.0+galaxy1",
             "type": "tool",
             "uuid": "5ab2e5d6-5c39-453a-88d7-80a063b51b1d",
             "when": null,
@@ -336,8 +336,8 @@
                 }
             ],
             "position": {
-                "left": 1020.4745568063031,
-                "top": 122.05710770238427
+                "left": 1018.358525120562,
+                "top": 124.84907607852331
             },
             "post_job_actions": {},
             "tool_id": "toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum_verify/iscc_sum_verify/0.1.0+galaxy1",
@@ -366,6 +366,6 @@
         "imaging",
         "bioimaging"
     ],
-    "uuid": "fc56315c-2935-4a09-a50e-2e1e0c1d5314",
-    "version": 1
+    "uuid": "db7c936f-0801-4d13-8ea3-474e0d7ce266",
+    "version": 3
 }
