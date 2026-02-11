@@ -300,7 +300,7 @@ Results will look like this:
 
 ![comparison_2D_buffalo.png](../../images/biapy/comparison_2D_buffalo.png "Segmentation results with the 'merry-water-buffalo' model from BioImage.IO"){: width="50%"}
 
-Just by visually inspecting the results, it seems that **'venomous-swan'** model predict more sharp contours and cells, but **'merry-water-buffalo'** seems to capture better the cells with less merges... however segmentation is a bit noiser.
+Just by visually inspecting the results, it seems that **'venomous-swan'** model predict more sharp contours and cells, but **'merry-water-buffalo'** seems to capture better the cells with less merges... however, the segmentation is a bit noiser.
 
 It is hard to say that a prediction is better than other by just looking at a slice when working in 3D! 
 
