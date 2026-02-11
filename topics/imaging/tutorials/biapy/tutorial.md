@@ -34,8 +34,8 @@ tags:
   - Volume rendering
 ---
 
-The application of supervised and unsupervised **Deep Learning (DL)** methods in bioimage analysis have been constantly increasing in biomedical research in the last decades {% cite esteva2021deep %}. 
-DL algorithms allow automatically classifying complex biological structures by learning complex patterns and features directly from large-scale imaging data, medical scans, or high-throughput biological datasets {% cite franco2025biapy %}. Furthermore, trained models can be easily
+The application of supervised and unsupervised **Deep Learning (DL)** methods in bioimage analysis have been constantly increasing in biomedical research in the last decades ({% cite esteva2021deep %}). 
+DL algorithms allow automatically classifying complex biological structures by learning complex patterns and features directly from large-scale imaging data, medical scans, or high-throughput biological datasets ({% cite franco2025biapy %}). Furthermore, trained models can be easily
 shared on online repositories (e.g., [BioImage.IO](https://bioimage.io/#/models)) to be reused by other scientists and support open science. 
 
 However, running DL models often requires high-level programming skills which can often be a barrier to general audience especially the 
@@ -47,9 +47,7 @@ So, how to make DL models accessible to a larger audience? Well, [BiaPy](https:/
 In this training, you will learn how to execute a BiaPy workflow directly in Galaxy by running [inference](https://en.wikipedia.org/wiki/Deep_learning) on a set of images using two pre-trained models from BioImage.IO defined in a 
 BiaPy YAML configuration file. 
 
-![example-yaml.png](../../images/biapy/example-yaml.png "Example of a BiaPy YAML file where the model with ID in BioImage.IO 'merry-water-buffalo' is defined (red box).
-A BiaPy YAML configuration file includes information about the hardware to be used, such as the number of CPUs or GPUs, 
-the specific image analysis task, the model to be used, optional hyperparameters, the optimizer, and the paths for loading and storing data.")
+![example-yaml.png](../../images/biapy/example-yaml.png "Example of a BiaPy YAML file where the model with ID in BioImage.IO 'merry-water-buffalo' is defin (red box). A BiaPy YAML configuration file includes information about the hardware to be used, such as the number of CPUs or GPUs, the specific image analysis task, the model to be used, optional hyperparameters, the optimizer, and the paths for loading and storing data.")
 
 You will perform a comparative analysis of the segmentation performance of two models from BioImage.IO, namely
 [venomous-swan](https://bioimage.io/#/artifacts/venomous-swan) and [merry-water-buffalo](https://bioimage.io/#/artifacts/merry-water-buffalo).
@@ -120,17 +118,17 @@ Once the tool finishes running, you will have three different datasets in your h
 
 **1. Test predictions**: Full-size output images produced by the model on the test set. Because the model predicts small, overlapping patches, these patch outputs are merged back together to form one prediction per original image.
 
-![test-prediction.png](../../images/biapy/test-prediction.png "Test predition on 22th z-stack of 02_raw_image.tiff"){: width="10%"}
+![test-prediction.png](../../images/biapy/test-prediction.png "Test predition on 22th z-stack of 02_raw_image.tiff"){: style="width:50%;" } 
 
 **2. Post-Processed Test Prediction**: Test predictions after automatic “clean-up” steps defined in the configuration. These steps can refine the raw output (for example, removing small spurious regions or separating touching objects). 
-In this tutorial, Voronoi tessellation is automatically applied to help split instances.
+In the YAML file definition, [Voronoi tessellation](https://en.wikipedia.org/wiki/Voronoi_diagram) is automatically applied to ensure that all instances touch each other.
 
-![post-test-prediction.png](../../images/biapy/post-test-prediction.png "Post test predition on 22th z-stack of 02_raw_image.tiff"){: width="10%"}
+![post-test-prediction.png](../../images/biapy/post-test-prediction.png "Post test predition on 22th z-stack of 02_raw_image.tiff"){: style="width:50%;" } 
 
 **3. Test metrics:** Numerical scores that measure how well the predictions match the ground truth (if provided). 
 In instance segmentation, the report typically includes:
 
-- Intersection Over Union (IoU) per output channel (how well pixel regions overlap), and
+- Intersection Over Union (IoU) per output channel (how well pixel regions overlap). This metric, also referred as the [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index), is essentially a method to quantify the percent of overlap between the target mask and the prediction output.
 
 - Matching metrics (how well individual predicted objects match true objects), shown for raw predictions and post-processed predictions.
 
@@ -310,7 +308,7 @@ The **Test metrics** will give us a better overview on which model is performing
 
 **'venomous-swam'** struggles mainly with missing objects (low recall)
 
-At IoU ≥ 0.5:
+Let's evaluate segmentation at a IoU ≥ 0.5, a moderate and not-too-strict matching threshold:
 
     Precision: 0.328
     Recall: 0.171
