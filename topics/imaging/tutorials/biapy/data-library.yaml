@@ -5,8 +5,8 @@ destination:
   description: Galaxy Training Network Material
   synopsis: Galaxy Training Network Material. See https://training.galaxyproject.org
 items:
-- name: New topic
-  description: Topic summary
+- name: Imaging
+  description: Image analysis using Galaxy
   items:
   - name: BiaPy Training
     items:
