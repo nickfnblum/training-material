@@ -10,7 +10,7 @@
       elements:
       - class: File
         identifier: 01_raw_mask.tiff
-        path: test-data/Input the image ground truth_01_raw_mask.tiff.tiff
+        path: test-data/Input the image ground truth_01_raw_mask.tiff
       - class: File
         identifier: 02_raw_mask
         path: test-data/Input the image ground truth_02_raw_mask.tiff
@@ -28,9 +28,9 @@
     predictions_post_proc:
       element_tests:
         test-0:
-          path: test-data/predictions_post_proc_test-0.tif
+          path: test-data/predictions_post_proc_test-0.tiff
         test-1:
-          path: test-data/predictions_post_proc_test-1.tif
+          path: test-data/predictions_post_proc_test-1.tiff
     html:
       element_tests:
         01_raw_image:
