@@ -3,7 +3,7 @@ layout: tutorial_hands_on
 title: Content Tracking and Verification in Galaxy Workflows with ISCC-SUM
 level: Intermediate
 subtopic: advanced
-zenodo_link: https://zenodo.org/records/18435595
+zenodo_link: https://zenodo.org/records/18611428
 answer_histories:
 - label: UseGalaxy.eu - ISCC workflow integration
   history: https://usegalaxy.eu/u/maartenpaul/h/iscc-tutorial-1
@@ -31,7 +31,7 @@ contributions:
   authorship:
     - maartenpaul
     - etzm
-    reviewing:
+  reviewing:
     - beatrizserrano
     - dianichj
     - pavanvidem
@@ -61,11 +61,13 @@ For example, the ISCC hash for this file [`example_image.tiff`](workflows/test-d
 ```
 ISCC:K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI
 ```
-Which is composed of the **Data-Code** and **Instance-Code** hashes.
-``` 
-    ISCC:GADY45QGX6J3LYNEHONZMQT2GJ6YPZ4BXJQ7ZHWZ7EHRLKANDCSACWI
-    ISCC:IAD2I4X7BCAWWDETUJPEXJ7MSR4EDZCTTBQS6LQQDWDHS6T4KDDPZ5A
+This ISCC-CODE is built from two individual components — a **Data-Code** and an **Instance-Code**:
 ```
+    ISCC:GADY45QGX6J3LYNEHONZMQT2GJ6YPZ4BXJQ7ZHWZ7EHRLKANDCSACWI  (Data-Code)
+    ISCC:IAD2I4X7BCAWWDETUJPEXJ7MSR4EDZCTTBQS6LQQDWDHS6T4KDDPZ5A  (Instance-Code)
+```
+You might notice that the combined ISCC-CODE (`K4AI...`) looks completely different from these two components. That is expected: the ISCC algorithm takes shortened versions of both hashes, packs them together, and encodes the result as a new string. Think of it like combining two barcodes into a single, shorter barcode — the information is still there, just represented differently.
+
 Files with similar content will have similar Data-Code components, but their Instance-Code will be different. Hence the Instance-Code allows to verify file integrity.
 
 > <agenda-title></agenda-title>
@@ -108,7 +110,7 @@ The first step is generating ISCC codes for your input files. This creates a con
 
 > <hands-on-title>Generate ISCC codes for input files</hands-on-title>
 >
-> 1. {% tool [Generate ISCC-CODE](toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum/0.1.0+galaxy1) %} with the following parameters:
+> 1. {% tool [Generate ISCC-CODE](toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum/iscc_sum/0.1.0+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Input File"*: Select the first example image (`example_image.tiff`.)
 >  
 >    Run the tool. This will generate a 55-character ISCC code for the file.
@@ -143,13 +145,17 @@ During workflow execution, you may want to verify that intermediate files match 
 
 > <hands-on-title>Verify a file against its ISCC code</hands-on-title>
 >
-> 1. {% tool [Verify ISCC-CODE](toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_verify/0.1.0+galaxy1) %} with the following parameters:
+> 1. {% tool [Verify ISCC-CODE](toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum_verify/iscc_sum_verify/0.1.0+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Dataset to verify"*: Select the first example image
 >    - *"Expected ISCC-CODE"*: 
 >        - *"Expected ISCC code"*: Paste the ISCC code you generated in the previous step
 >
-> 2. Check the verification report in the output.
->    
+> 2. Check the output, which contains a verification report which looks like this:
+> ```
+> OK - ISCC-CODEs match
+> Expected:  K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI
+> Generated: K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI
+> ```
 >    The report shows:
 >    - Status: OK (match) or FAILED (mismatch)
 >    - Expected ISCC code
@@ -194,7 +200,7 @@ Now we add the ISCC verification tool and connect all the inputs.
 
 > <hands-on-title>Add the ISCC verification step</hands-on-title>
 >
-> 1. Add {% tool [Verify ISCC-CODE](toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_verify/0.1.0+galaxy1) %} from the list of tools:
+> 1. Add {% tool [Verify ISCC-CODE](toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum_verify/iscc_sum_verify/0.1.0+galaxy1) %} from the list of tools:
 >    - Connect the output of {% icon param-file %} **1: Input image** to the "Dataset to verify" input of {% icon tool %} **4: Verify ISCC-CODE**.
 >    - Connect the output of {% icon tool %} **3: Parse parameter value** to the "File containing expected ISCC code" input of {% icon tool %} **4: Verify ISCC-CODE**.
 {: .hands_on}
@@ -241,7 +247,7 @@ One of ISCC's unique features is detecting similar content, even across differen
 
 > <hands-on-title>Compare two files for similarity</hands-on-title>
 >
-> 1. {% tool [Find datasets with similar ISCC-CODEs](toolshed.g2.bx.psu.edu/view/imgteam/iscc_sum_similarity/0.1.0+galaxy1) %} with the following parameters:
+> 1. {% tool [Find datasets with similar ISCC-CODEs](toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum_similarity/iscc_sum_similarity/0.1.0+galaxy1) %} with the following parameters:
 >    - *"Input type"*: `Datasets to compare`
 >        - {% icon param-file %} Select multiple datasets (or a collection, see below)
 >    - *"Similarity threshold (Hamming distance)"*: `12` (default)
@@ -276,22 +282,14 @@ When working with a collection of files, you can identify all similar items. Thi
 >
 >
 >
->| file_id | filename | iscc_code | match_id | match_filename | match_iscc_code | distance |
->|---------|----------|-----------|----------|----------------|-----------------|----------|
->| 238219003 | example_image3.tiff |  K4AI45QXX6J3LYNEHONZMQD2GJ6YO4GFNFH7UPCBORVJW4FOABL2ZPY | 238219006 | >example_image.tiff | K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI | 3 |
->| 238219006 | example_image.tiff | K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI | 238219003 | >example_image3.tiff | K4AI45QXX6J3LYNEHONZMQD2GJ6YO4GFNFH7UPCBORVJW4FOABL2ZPY | 3 |
->| 238219004 | example_image2.tiff | K4AHJAICHVVDAB3C6LLJ5PJV6AON3JZUGFOTAAOELT5QTVGYELO55BA | | | | -1 |
->| 238219005 | example_thresholded1.tiff | K4AC3DH66DCNU22KNYVHQOFIMESNRZCZNEOAD3UVWNI6ZVHPWMMFWYI | | | | -1 |
+![ISCC similarity table](<../../images/iscc-suite/similarity_table.png>)
 {: .hands_on}
 
 > <tip-title>Understanding the Hamming distance threshold</tip-title>
 >
-> Data-Code similarity reflects byte-level similarity, not semantic content. Interpreting whether observed differences are scientifically significant requires domain expertise. For the default 64-bit Data-Code, Hamming distance ranges from 0 to 64. A threshold of 12 represents approximately 19% bit difference. Lower values mean more similar content:
-> - **0**: Identical Data-Code 
-> - **1-12**: Very similar (default threshold)
-> - **>12**: Increasingly different content
+> The Hamming distance counts how many bits differ between two Data-Codes. For the default 64-bit Data-Code, this ranges from 0 (identical) to 64 (completely different). The tool uses a default threshold of 12, meaning files with a distance of 12 or less are considered similar.
 >
-> Adjust the threshold based on your use case: lower values for stricter matching, higher values to catch more distant similarities.
+> This threshold is a practical starting point — adjust it based on your use case: lower values for stricter matching, higher values to catch more distant similarities. Keep in mind that Data-Code similarity reflects byte-level similarity, not semantic content. Whether a given distance is scientifically meaningful depends on your domain and data.
 {: .tip}
 
 
