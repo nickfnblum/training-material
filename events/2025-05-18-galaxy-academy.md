@@ -178,5 +178,5 @@ You will be able to obtain a certificate by the end of the event. To ensure you 
 
 
 ## Do you want to join the GTA as a trainer?
-Please fill out our `link to come` to indicate in what capacity you would like to help.
+Please fill out our [Google Form](https://training.galaxyproject.org/training-material/events/2025-05-18-galaxy-academy.html#do-you-want-to-join-the-gta-as-a-trainer) to indicate in what capacity you would like to help.
 
