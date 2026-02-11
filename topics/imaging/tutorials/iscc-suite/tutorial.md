@@ -150,7 +150,7 @@ During workflow execution, you may want to verify that intermediate files match 
 >    - *"Expected ISCC-CODE"*: 
 >        - *"Expected ISCC code"*: Paste the ISCC code you generated in the previous step
 >
-> 2. Check the output, which contains a verification report which looks like this:
+> 2. Check the output, which contains a verification report that looks like this:
 > ```
 > OK - ISCC-CODEs match
 > Expected:  K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI
@@ -282,7 +282,7 @@ When working with a collection of files, you can identify all similar items. Thi
 >
 >
 >
-![ISCC similarity table](<../../images/iscc-suite/similarity_table.png>)
+![ISCC similarity table](../../images/iscc-suite/similarity_table.png)
 {: .hands_on}
 
 > <tip-title>Understanding the Hamming distance threshold</tip-title>
