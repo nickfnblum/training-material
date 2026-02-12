@@ -157,7 +157,7 @@ During workflow execution, you may want to verify that intermediate files match 
 >
 > 3. Click on the {% icon details %} icon.
 >
-> 4. Scroll down to the **Job Output** section. Select the output to expand it this will show you verification report, that looks like this:
+> 4. Scroll down to the **Job Output** section. Select the output to expand it, this will show you verification report, that looks like this:
 > ```
 > OK - ISCC-CODEs match
 > Expected:  K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI
