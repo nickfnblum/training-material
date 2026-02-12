@@ -311,9 +311,7 @@ When working with a collection of files, you can identify all similar items. Thi
 >
 >    Files that share content (like `example_image.tiff` and `example_image3.tiff`, which is slightly modified ) will be grouped together, although their ISCC-SUM codes are different.
 >
->
->
-![ISCC similarity table](../../images/iscc-suite/similarity_table.png)
+>    ![ISCC similarity table](../../images/iscc-suite/similarity_table.png)
 {: .hands_on}
 
 > <tip-title>Understanding the Hamming distance threshold</tip-title>
