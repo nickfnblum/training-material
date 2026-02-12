@@ -115,13 +115,16 @@ The first step is generating ISCC codes for your input files. This creates a con
 >  
 >    Run the tool. This will generate a 55-character ISCC code for the file.
 >
-> 2. Inspect the output by clicking on the dataset.
->    
->    You should see a single line containing the ISCC code in the output. For the first example image the code is expected to be:
+> 2. Expand the history item for the output of the {% tool [Generate ISCC-CODE](toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum/iscc_sum/0.1.0+galaxy1) %} tool.
+>
+> 3. Click on the {% icon details %} icon.
+>
+> 4. Scroll down to the **Job Information** section to view the "Tool Standard Output" log. You should see a single line containing the ISCC code in the output. For the first example image the code is expected to be:
 > ```
 > K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI 
 > ```
-> 3. Repeat for the other example images to generate another ISCC code for comparison.
+>
+> 5. Repeat for the other example images to generate another ISCC code for comparison.
 >
 {: .hands_on}
 
