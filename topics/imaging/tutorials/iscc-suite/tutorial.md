@@ -119,7 +119,7 @@ The first step is generating ISCC codes for your input files. This creates a con
 >
 > 3. Click on the {% icon details %} icon.
 >
-> 4. Scroll down to the **Job Information** section to view the "Tool Standard Output" log. You should see a single line containing the ISCC code in the output. For the first example image the code is expected to be:
+> 4. Scroll down to the **Job Outputs** section. Select the Dataset. You should see a single line containing the ISCC code in the output. For the first example image the code is expected to be:
 > ```
 > K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI 
 > ```
@@ -148,12 +148,16 @@ During workflow execution, you may want to verify that intermediate files match 
 
 > <hands-on-title>Verify a file against its ISCC code</hands-on-title>
 >
-> 1. {% tool [Verify ISCC-CODE](toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum_verify/iscc_sum_verify/0.1.0+galaxy1) %} with the following parameters:
+> 1. Run {% tool [Verify ISCC-CODE](toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum_verify/iscc_sum_verify/0.1.0+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Dataset to verify"*: Select the first example image
 >    - *"Expected ISCC-CODE"*: 
 >        - *"Expected ISCC code"*: Paste the ISCC code you generated in the previous step
 >
-> 2. Check the output, which contains a verification report that looks like this:
+> 2. Expand the history item for the output of the {% tool [Verify ISCC-CODE](toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum_verify/iscc_sum_verify/0.1.0+galaxy1) %} tool.
+>
+> 3. Click on the {% icon details %} icon.
+>
+> 4. Scroll down to the **Job Output** section. Select the output to expand it this will show you verification report, that looks like this:
 > ```
 > OK - ISCC-CODEs match
 > Expected:  K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI
@@ -208,9 +212,27 @@ Now we add the ISCC verification tool and connect all the inputs.
 >    - Connect the output of {% icon tool %} **3: Parse parameter value** to the "File containing expected ISCC code" input of {% icon tool %} **4: Verify ISCC-CODE**.
 {: .hands_on}
 
-When placing this verification step in a full workflow, it can help validate that your processing didn't unexpectedly alter the content.
+The completed workflow should look like this:
 
 ![Workflow diagram showing ISCC verification integrated into a simple workflow](../../images/iscc-suite/verify_wf1.png)
+
+### Step 4 - Run the workflow
+
+> <hands-on-title>Run the verification workflow</hands-on-title>
+>
+> 1. Run the workflow with the following inputs:
+>    - **Input image**: Select the first example image (`example_image.tiff`)
+>    - **Expected ISCC code file**: Select the ISCC code output generated in a previous step
+>
+> 2. Wait for the workflow to complete. Subsequently , expand the history item for the output of the {% tool [Verify ISCC-CODE](toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum_verify/iscc_sum_verify/0.1.0+galaxy1) %} tool.
+>
+> 3. Click on the {% icon details %} icon.
+>
+> 4. Scroll down to the **Job Output** section and select the output dataset. You should see a verification report similar to the one described in the manual verification section above.
+>
+{: .hands_on}
+
+When placing this verification step in a full workflow, it can help validate that your processing didn't unexpectedly alter the content.
 
 ## Image analysis workflow integration
 
@@ -226,7 +248,13 @@ This can be applied in an image analysis workflow to verify an image processing 
 >    - **Original image**: Select `example_image.tiff` - the image to be processed
 >    - **Segmented image**: Select `example_thresholded1.tiff` - the reference segmentation to compare against
 >
-> 3. Run the workflow and inspect the verification output.
+> 3. Run the workflow.
+>
+> 4. Expand the history item for the output of the {% tool [Verify ISCC-CODE](toolshed.g2.bx.psu.edu/repos/imgteam/iscc_sum_verify/iscc_sum_verify/0.1.0+galaxy1) %} tool.
+>
+> 5. Click on the {% icon details %} icon.
+>
+> 6. Scroll down to the **Job Information** section to view the "Tool Standard Output" log. You should see a verification report similar to the one described in the manual verification section above.
 >
 > The workflow performs Otsu thresholding on the original image and verifies whether the result matches the expected segmentation using ISCC codes. This allows you to verify whether the thresholding method is working as expected and the algorithm has not been altered (e.g., in a new version).
 >
