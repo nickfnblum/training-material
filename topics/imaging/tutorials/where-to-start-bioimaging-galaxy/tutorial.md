@@ -374,8 +374,7 @@ In Galaxy, ROIs can take three forms depending on the tool you use:
 * **Label Images:** A "smart map" where every individual ROI has its own unique integer ID ({% cite Tosi2021 %}).
 
 > <comment-title>ROIs in interactive vs. automated tools</comment-title>
->Interactive tools like QuPath allows users to inspect images and create ROIs either manually (e.g. drawing with the mouse) or through built-in detection algorithms that generate ROIs automatically.
-In automated Galaxy workflows, algorithms like Cellpose generate thousands of ROIs programmatically in a fully reproducible pipeline without user interaction ({% cite Stringer2021 %}).
+>Interactive tools like QuPath allows users to inspect images and create ROIs either manually (e.g. drawing with the mouse) or through built-in detection algorithms that generate ROIs automatically. In automated Galaxy workflows, algorithms like Cellpose generate thousands of ROIs programmatically in a fully reproducible pipeline without user interaction ({% cite Stringer2021 %}).
 {: .comment}
 
 ## Stage C: Post-processing (Refining)
@@ -502,11 +501,13 @@ To navigate the tree correctly, you must understand your image type:
 ## Practice: applying the roadmap
 
 > <question-title> Scenario 1: The High-Volume Screen </question-title>
+>
 > You have 500 images of crowded mitochondria. Which path do you choose?
+> 
 > > <solution-title></solution-title>
-> 
+> >
 > > You should look toward a **Deep Learning** approach (like **Cellpose**) within a **CellProfiler** workflow. Why?
-> 
+> >
 > > 1. **Crowding:** Cellpose handles overlapping structures better than simple thresholding.
 > > 2. **Volume:** With 500 images, you need the batch-processing power of **CellProfiler** to stay efficient.
 > > 
@@ -514,9 +515,11 @@ To navigate the tree correctly, you must understand your image type:
 {: .question}
 
 > <question-title> Scenario 2: The 3D Volume </question-title>
+>
 > You have a single 3D Z-stack of a zebrafish embryo with one fluorescent marker. What is your path?
+>
 > > <solution-title></solution-title>
-> 
+> >
 > > 1. **Microscopy?** Yes.
 > > 2. **Color or B&W?** B&W (Single-channel fluorescence).
 > > 3. **Dimensionality?** 3D volume.
