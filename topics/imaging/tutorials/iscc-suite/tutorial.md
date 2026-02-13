@@ -57,7 +57,7 @@ An ISCC-SUM code is a 55-character identifier with two main components, which ar
 
 The Instance-Code uses BLAKE3 hashing, truncated to 64 bits by default. For applications requiring cryptographic-strength verification, ISCC-SUM can output the full 256-bit hash.
 
-For example, the ISCC hash for this file [`example_image.tiff`](workflows/test-data/example_image.tiff) is:
+For example, the ISCC hash for this file [`example_image.tiff`](https://zenodo.org/records/18611428/files/example_image.tiff) is:
 ```
 ISCC:K4AI45QGX6J3LYNEHONZMQT2GJ6YPJDS74EIC2YMSORF4S5H5SKHQQI
 ```
