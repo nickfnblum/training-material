@@ -33,17 +33,15 @@ contributions:
     - kostrykin
   reviewing:
     - maartenpaul
-    - beatrizserrano
-    - kostrykin
 ---
 
 Bioimage analysis is the process of extracting meaningful information (e.g., quantitative data) from image data in the life sciences (usually microscopy images). Whether you are looking at stained tissue sections (histology) or fluorescently labeled proteins in live cells, the goal is often the same: **turning pixels into numbers**.
 
-In Galaxy, we provide a robust ecosystem to make this process reproducible and scalable. We focus on making image analysis **FAIR by design** _(Findable, Accesible, Interoperable, Reusable)_, ensuring that your image formats, metadata, tools, and workflows remain reusable, transparent, and traceable from the very first upload to the final figure ({% cite GalaxyCommunity2024 %}).
+In Galaxy, we provide an ecosystem to make this process reproducible and scalable. We focus on making image analysis **FAIR by design** _(Findable, Accesible, Interoperable, Reusable)_, ensuring that your image formats, metadata, tools, and workflows remain reusable, transparent, and traceable from the very first upload to the final figure ({% cite GalaxyCommunity2024 %}).
 
-This tutorial acts as your **compass** to navigate the Galaxy imaging landscape, specifically as it applies to bioimage data pre-processing and analysis. You will establish the foundations necessary to transform raw, complex image data into structured tables of measurements, ready for downstream statistical analysis.
+This tutorial acts as your **compass** to navigate the Galaxy imaging landscape, specifically as it applies to bioimage data pre-processing and analysis. You will understand how to transform raw, complex image data into structured tables of measurements, ready for downstream statistical analysis.
 
-*To be add: image showing simple workflow, Raw image-Pixels, Numerical Grid for intensities, Data extraction, Final Data*
+![Turning pixels into numbers!](../../images/where-to-start-bioimaging-galaxy/imaging_summary_image.png)
 
 > <agenda-title></agenda-title>
 >
@@ -54,7 +52,7 @@ This tutorial acts as your **compass** to navigate the Galaxy imaging landscape,
 
 # 1. Know your data (the "digital anatomy" of an image)
 
-As Pete Bankhead points out in *[Introduction to Bioimage Analysis](https://bioimagebook.github.io/index.html)* ({% cite Bankhead2022 %}), an image is not just a picture, it is a collection of measurements. Therefore, before starting any analysis, you must understand the underlying structure of your data.
+As Pete Bankhead points out in *[Introduction to Bioimage Analysis](https://bioimagebook.github.io/index.html)* ({% cite Bankhead2022 %}), an image is not just a picture, it is a collection of measurements. Therefore, before starting any analysis, it is important that you understand the structure of your data.
 
 To the human eye, an image is a visual representation of a biological sample. However, to a computer, it is a **numerical array** ({% cite Sedgewick2010 %}). The dimensionality of this array depends on your data:
 
@@ -64,9 +62,14 @@ To the human eye, an image is a visual representation of a biological sample. Ho
 * A **3D color image (volume)** is a **4D array**: X × Y × Z × C
 * A multi-dimensional hyperstack is a **tensor**: a multi-dimensional array (e.g., X × Y × Z × C × T)
 
-Every point in that array—the **pixel** (2D) or **voxel** (3D)—is a data point representing the number of photons or the signal intensity detected at that specific coordinate. Understanding your "digital anatomy" means knowing exactly how those numbers were recorded, how they are organized across dimensions, how they are spaced and oriented in 3D space, and what the limitations of the employed imaging technique are (e.g., due to over/undersaturation that leads to clipped intensities).
+Every point in that array—the **pixel** (2D) or **voxel** (3D)—is a data point representing the number of photons or the signal intensity detected at that specific coordinate. Understanding "digital anatomy" of an image means knowing exactly how those numbers were recorded, how they are organized across dimensions, how they are spaced and oriented in 3D space, and what the limitations of the employed imaging technique are (e.g., due to over/undersaturation that leads to clipped intensities).
 
-*Add Pete B's Image from his book*
+![Example digital image and its pixel representation](../../images/where-to-start-bioimaging-galaxy/pete_bank_imaging.png)
+
+A digital image can be represented visually or numerically.  
+**(A–B)** The image is visualized as a grid of small squares with different gray intensities, where each square corresponds to one pixel. This square pattern is only a display convention to help us interpret the image.  
+**(C)** Internally, the image is stored as numerical values arranged in an array. Inspecting these raw numbers directly makes it difficult to recognize the image content. *Figure reproduced from Pete Bankhead, _Introduction to Bioimage Analysis_ (CC BY 4.0): <https://bioimagebook.github.io/chapters/1-concepts/1-images_and_pixels/images_and_pixels.html>. Caption adapted.*
+
 
 If you don't understand the numbers behind the colors, you risk performing "image processing" (simply making a pretty picture) rather than "image analysis" (extracting quantitative data and meaningful insights). Let's unpack the data behind an image step by step.
 
@@ -74,9 +77,7 @@ If you don't understand the numbers behind the colors, you risk performing "imag
 
 An image is a grid of **pixels** (2D images) or **voxels** (3D images). Think of an image as a vast mosaic where every tile is a "picture element." In 2D, these tiles are flat, but in 3D imaging, they have depth and are called **voxels** ("volumetric elements", e.g., {% cite Pawley2006 %}). Each one is like a small bucket that has captured a specific amount of signal (usually light), which the computer records as a single number.
 
-Image intensities represent the measurements of the imaging system.
-
-To make these numbers useful for science, we must define their **range** and their **spatial extent** (i.e., the *resolution* of the image, like pixels or voxels per real-world unit).
+Image intensities represent the measurements of the imaging system. To make these numbers useful for science, we must define their **range** and their **spatial extent** (i.e., the *resolution* of the image, like pixels or voxels per real-world unit).
 
 ## The 5 dimensions (5D)
 
@@ -130,18 +131,7 @@ Unlike integer representations where the precision (smallest distinguishable dif
 
 Many analysis tools automatically convert to floating-point internally to preserve accuracy during calculations.
 
-## Spatial calibration (the size)
-
-Image pixels (or voxels) have no _intrinsic_ physical size; they are just units of storage and representation. **Spatial calibration** is the metadata that links these digital units to physical reality (e.g., $1 \text{ pixel} = 0.25 \mu m$). Without this "secret sauce," you can count objects, but you cannot accurately measure how big they are, how fast they move, or their concentration (e.g., {% cite Linkert2010 %}, {% cite Haase2022 %}). 
-
-Metadata like the calibration information is usually stored in the image header. If you lose this metadata during a file conversion (e.g., saving as a standard .jpg), your analysis will only be able to provide quantitative results in "pixels," which may have no biological meaning.
-
-> <tip-title> Avoid saturation </tip-title> 
-> If you see an image intensity value of "0", the sensor may have detected nothing, or it could represent true absence of signal—context matters. If you see the maximum value (e.g., $255$ or $65,535$), your sensor was overwhelmed. These phenomena are called **saturation** (under- and oversaturation, respectively). Saturated pixels are often "clipped," meaning the true biological signal was lower or higher than what the camera could record (e.g., {% cite Pawley2006 %}). This data is lost forever and cannot be accurately quantified. 
->
-{: .tip}
-
-## Bit depth: why it matters for science
+### Bit depth: why it matters for science?
 
 A common misconception is that if two images look identical on a desktop monitor, they contain the same data. However, our eyes are used to computer screens that are usually limited to 8-bit, while your microscope sensor is far more sensitive. 
 
@@ -152,7 +142,7 @@ When you perform certain pre-processing tasks, such as subtracting the image bac
 
 The key difference is not whether artifacts appear, but their **magnitude in relation to your data range**. Think of it this way: spreading 256 values across a wider range creates larger "holes" between adjacent intensity levels than spreading 65,536 values across the same range.
 
-*Add here example images of how two images that look the same to the human eye have different data*
+![Bit depth: why it matters in science](../../images/where-to-start-bioimaging-galaxy/bit_depth.png)
 
 > <tip-title> Precision </tip-title> 
 > Always try to keep your data in **16-bit integer** or **floating-point formats** (16-bit, 32-bit, or 64-bit float) during analysis. Converting to 8-bit too early reduces your ability to detect subtle intensity differences and makes quantization artifacts more severe during processing. This lost precision can never be recovered ({% cite Haase2022 %}). 
@@ -177,13 +167,25 @@ The key difference is not whether artifacts appear, but their **magnitude in rel
 > {: .solution}
 {: .question}
 
+## Spatial calibration (the size)
+
+Image pixels (or voxels) have no _intrinsic_ physical size; they are just units of storage and representation. **Spatial calibration** is the metadata that links these digital units to physical reality (e.g., $1 \text{ pixel} = 0.25 \mu m$). Without this "secret sauce," you can count objects, but you cannot accurately measure how big they are, how fast they move, or their concentration (e.g., {% cite Linkert2010 %}, {% cite Haase2022 %}). 
+
+Metadata like the calibration information is usually stored in the image header. If you lose this metadata during a file conversion (e.g., saving as a standard .jpg), your analysis will only be able to provide quantitative results in "pixels," which may have no biological meaning.
+
+> <tip-title> Avoid saturation </tip-title> 
+> If you see an image intensity value of "0", the sensor may have detected nothing, or it could represent true absence of signal—context matters. If you see the maximum value (e.g., $255$ or $65,535$), your sensor was overwhelmed. These phenomena are called **saturation** (under- and oversaturation, respectively). Saturated pixels are often "clipped," meaning the true biological signal was lower or higher than what the camera could record (e.g., {% cite Pawley2006 %}). This data is lost forever and cannot be accurately quantified. 
+>
+{: .tip}
+
 # 2. How to get your images into Galaxy
 
 Galaxy is built to handle the complexity of biological data. However, microscopy images often come in "vendor-specific" formats. Your entry point into Galaxy depends on how your data was saved:
 
 * **Standard Formats (.tiff, .png):** Use the standard Galaxy **Upload** tool.
+* **Open Formats:** OME-tiff that includes metadata and OME-Zarr for spatial transcriptomics.
 * **Proprietary Formats (.czi, .nd2, .lif):** These formats "wrap" image data and metadata together. While you can often export TIFFs from your microscope software, using the **{% tool [Convert image format with Bioformats](toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %}** tool allows Galaxy to "unlock" and standardize the metadata hidden inside these files ({% cite Moore2021 %}).
-* **OMERO Integration:** If your institution uses an **OMERO server**, you can import images directly via the **Remote Files** section in the upload tool.
+* **OMERO Integration:** If your institution uses an **OMERO server**, you can import images directly via the **Remote Files** section in the upload tool. You can access OMERO using galaxy. See [Overview of the Galaxy OMERO-suite](https://training.galaxyproject.org/training-material/topics/imaging/tutorials/omero-suite/tutorial.html)
 
 ## Why use the Bio-Formats tool suite?
 
@@ -195,7 +197,68 @@ The **{% tool [Convert image format with Bio-formats](toolshed.g2.bx.psu.edu/rep
 >    - {% icon param-file %} *"Input image"*: `Select your uploaded microscopy file`
 > 2. **Review the output:** Examine the resulting text file. Look for key metadata fields like "PhysicalSizeX" (pixel calibration) and "BitDepth". 
 >
-> *Add image and output example*
+> Example output:
+>
+> ```
+> Checking file format [Tagged Image File Format]
+> Initializing reader
+> TiffDelegateReader initializing /data/dnb10/galaxy_db/files/2/3/0/dataset_23048ef7-e850-41f4-9fc0-da24b2b4c36b.dat
+> Reading IFDs
+> Populating metadata
+> Checking comment style
+> Populating OME metadata
+> Initialization took 1.994s
+>
+> Reading core metadata
+> filename = /data/dnb10/galaxy_db/files/2/3/0/dataset_23048ef7-e850-41f4-9fc0-da24b2b4c36b.dat
+> Series count = 1
+> Series #0 :
+> 	Image count = 1
+> 	RGB = true (3) 
+> 	Interleaved = false
+> 	Indexed = false (false color)
+> 	Width = 2752
+> 	Height = 2208
+> 	SizeZ = 1
+> 	SizeT = 1
+> 	SizeC = 3 (effectively 1)
+> 	Thumbnail size = 128 x 102
+> 	Endianness = intel (little)
+> 	Dimension order = XYCZT (certain)
+> 	Pixel type = uint8
+> 	Valid bits per pixel = 8
+> 	Metadata complete = true
+> 	Thumbnail series = false
+> 	-----
+> 	Plane #0 <=> Z 0, C 0, T 0
+>
+>
+> Reading global metadata
+> BIG_TIFF: false
+> BitsPerSample: 8
+> Compression: LZW
+> DATE_TIME_DIGITIZED: 2023:07:31 16:51:32
+> DATE_TIME_ORIGINAL: 2023:07:31 16:51:32
+> ImageLength: 2208
+> ImageWidth: 2752
+> LITTLE_ENDIAN: true
+> MetaDataPhotometricInterpretation: RGB
+> MetaMorph: no
+> NewSubfileType: 0
+> NumberOfChannels: 3
+> PhotometricInterpretation: RGB
+> PlanarConfiguration: Chunky
+> Predictor: No prediction scheme
+> ResolutionUnit: Inch
+> SUB_SEC_TIME_DIGITIZED: 00
+> SUB_SEC_TIME_ORIGINAL: 00
+> SamplesPerPixel: 3
+> Software: ZEN 3.1 (blue edition)
+> XResolution: 300.0
+> YResolution: 300.0
+>
+> Reading metadata
+> ```
 > > <comment-title>Why check this first?</comment-title>
 > > Before starting a long analysis, this tool helps you verify if Galaxy correctly "unlocked" the metadata inside your proprietary file. If pixel sizes are missing here, your final results will be in pixels rather than biological units like micrometers ($\mu m$).
 > {: .comment}
@@ -208,7 +271,7 @@ For modern, large-scale, or cloud-based datasets, you can use **{% tool [Convert
 >
 > While there are many options, two open community-endorsed formats are increasingly dominant in bioimaging:
 > * **OME-TIFF:** Best for "classic" microscopy (2D/3D stacks) and maximum compatibility with classical software like ImageJ/Fiji or QuPath.
-> * **OME-Zarr:** The modern choice for "Big Data," cloud storage, and spatial transcriptomics. {% cite Moore2021 %}
+> * **OME-Zarr:** The modern choice for "Big Data," cloud storage, and for image data in spatial transcriptomics. {% cite Moore2021 %}
 > 
 > Both are superior to proprietary formats because they make it possible to preserve your metadata attached to your pixel data throughout the entire Galaxy workflow.
 >
@@ -230,11 +293,16 @@ For modern, large-scale, or cloud-based datasets, you can use **{% tool [Convert
 
 The first step in any analysis is to characterize the data you have. Before clicking any tools, ask yourself these four questions:
 
-
  - **What was the imaging modality?** (Fluorescence microscopy, brightfield histology, high-content screening?)
  - **What is the biological subject?** (Individual cells, complex tissues, or subcellular structures?)
  - **What is the file format?** (Standard formats like .tif and .png, or proprietary vendor formats like .czi, .nd2, or .lif?)
  - **Where is the data stored?** (A local drive, an OMERO server, a public repository, or a remote URL?)
+
+ Then, define your quantitative goals:
+
+ - **What do you want to measure?** (Cell count? Nuclear size? Protein intensity? Colocalization? Movement over time?)
+ - **What level of detail do you need?** (Measurements per object, summary statistics across many objects, or maps of where things are located?)
+ - **What comparison will you make?** (Differences between conditions, changes across time, or descriptive characterization?)
 
 Depending on your answers, your starting path in Galaxy will change.
 
@@ -272,7 +340,7 @@ In Galaxy, you can start the pre-processing stage with tools like **{% tool [App
 This is the most critical step. Here, you tell the computer which pixels belong to an "object" (like a nucleus) and which belong to the "background." 
 
 * **Thresholding:** A "cutoff" method where pixels above (or below) a certain intensity value are classified as object. This value can be set manually or determined automatically using algorithms like Otsu or Li. The result is typically a **Binary Mask**.
-* **Inference (Deep Learning):** Advanced AI models like **Cellpose** or **StarDist** use pre-trained neural networks to recognize complex shapes. These methods might be superior at specific segmentation tasks such as "untangling" cells that are touching or overlapping in high-density environments ({% cite Stringer2021 %}, {% cite Schmidt2018 %}).
+* **Inference (Deep Learning):** Advanced AI models like **Cellpose** use pre-trained neural networks to recognize complex shapes. These methods might be superior at specific segmentation tasks such as "untangling" cells that are touching or overlapping in high-density environments ({% cite Stringer2021 %}, {% cite Schmidt2018 %}).
 
 [Image comparing simple thresholding versus AI-based instance segmentation in crowded tissues]
 
@@ -296,7 +364,7 @@ This is the most critical step. Here, you tell the computer which pixels belong 
 >
 {: .comment}
 
-## Stage B.2: The Region of Interest (ROI)
+### Stage B.1: The Region of Interest (ROI)
 
 Once you have segmented your image, you have created **Regions of Interest (ROIs)**. This is a central concept in bioimaging. An ROI is a spatial selection that tells the software: "Ignore the background; only calculate values for these specific coordinates."
 
@@ -306,7 +374,8 @@ In Galaxy, ROIs can take three forms depending on the tool you use:
 * **Label Images:** A "smart map" where every individual ROI has its own unique integer ID ({% cite Tosi2021 %}).
 
 > <comment-title>ROIs in interactive vs. automated tools</comment-title>
-> In interactive tools like **QuPath**, you often draw ROIs by hand with a mouse. In automated Galaxy workflows, we use algorithms like **Cellpose** to "draw" thousands of ROIs instantly and reproducibly ({% cite Stringer2021 %}).
+>Interactive tools like QuPath allows users to inspect images and create ROIs either manually (e.g. drawing with the mouse) or through built-in detection algorithms that generate ROIs automatically.
+In automated Galaxy workflows, algorithms like Cellpose generate thousands of ROIs programmatically in a fully reproducible pipeline without user interaction ({% cite Stringer2021 %}).
 {: .comment}
 
 ## Stage C: Post-processing (Refining)
@@ -463,7 +532,10 @@ Even with the best tools, it is easy to accidentally "break" your data before yo
 
 ## 1. The "JPG" trap
 **Never use JPEG for science.** JPEGs use "lossy" compression, meaning the computer slightly changes pixel intensities to save space. This creates "blocky" artifacts that ruin your ability to measure protein concentration or fine textures.
-* **The fix:** Always use **TIFF**, **OME-TIFF**, or **PNG**. These are "lossless" formats that preserve every photon counted by the camera.
+
+* **The fix:** Always store quantitative microscopy data in **TIFF** or **OME-TIFF**. These formats preserve the original pixel values and metadata.
+
+* **When is PNG OK?** PNG is lossless and suitable for small 2-D single-channel or RGB images where intensities are not used for quantitative measurements. For example: 2-D label images, segmentation masks, or visualization outputs. In these cases it can reduce file size by orders of magnitude compared to TIFF. However, it should not be used for raw or measurement-grade microscopy data.
 
 ## 2. The "merged image" mistake
 Analyzing a "Merge" (RGB) image is risky because the intensities of different channels (like DAPI and GFP) are mathematically blended into a single color value.
