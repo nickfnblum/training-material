@@ -93,10 +93,10 @@ For this tutorial, we'll use a simple dataset with microscope images that demons
 >    {% snippet faqs/galaxy/histories_create_new.md %}
 >
 > 2. Download the following image and import it into your Galaxy history.
->    - [`example_image.tiff`](workflows/test-data/example_image.tiff)
->    - [`example_image2.tiff`](workflows/test-data/example_image2.tiff)
->    - [`example_image3.tiff`](workflows/test-data/example_image3.tiff)
->    - [`example_thresholded1.tiff`](workflows/test-data/example_thresholded1.tiff)
+>    - [`example_image.tiff`](https://zenodo.org/records/18611428/files/example_image.tiff)
+>    - [`example_image2.tiff`](https://zenodo.org/records/18611428/files/example_image2.tiff)
+>    - [`example_image3.tiff`](https://zenodo.org/records/18611428/files/example_image3.tiff)
+>    - [`example_thresholded1.tiff`](https://zenodo.org/records/18611428/files/example_thresholded1.tiff)
 >    
 >    If you are importing the image via URL:
 >
