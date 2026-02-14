@@ -36,6 +36,13 @@ contributions:
     - dianichj
     - pavanvidem
     - kostrykin
+tags:
+  - data management
+  - data handling
+  - data sharing
+  - validation
+  - image validation
+
 ---
 
 # File content and integrity validation with International Standard Content Code (ISCC)
