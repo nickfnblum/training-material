@@ -37,11 +37,10 @@ contributions:
     - pavanvidem
     - kostrykin
 tags:
-  - data management
-  - data handling
-  - data sharing
-  - validation
-  - image validation
+  - Data management
+  - Data handling
+  - Data sharing
+  - Validation
 
 ---
 
