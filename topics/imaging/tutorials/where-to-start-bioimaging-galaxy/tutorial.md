@@ -182,7 +182,7 @@ Metadata like the calibration information is usually stored in the image header.
 
 # 2. How to get your images into Galaxy
 
-Galaxy is built to handle the complexity of biological data. However, microscopy images often come in "vendor-specific" formats. Your entry point into Galaxy depends on how your data was saved:
+Galaxy is built to handle the complexity of biological data. However, microscopy images often come in "vendor-specific" or "proprietary" formats. Your entry point into Galaxy depends on how your data was saved:
 
 * **Standard Formats (.tiff, .png):** Use the standard Galaxy **Upload** tool.
 * **Open Formats:** OME-tiff that includes metadata and OME-Zarr for spatial transcriptomics.
