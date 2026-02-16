@@ -394,9 +394,11 @@ Now that you have a clean mask, Galaxy "overlays" it back onto your original raw
 
 **Never trust an algorithm blindly.** The final step is a visual inspection to ensure your numerical outputs represent biological reality rather than processing artifacts ({% cite Bankhead2022 %}). 
 
-* **{% tool [Overlay outlines](toolshed.g2.bx.psu.edu/repos/bgruening/cp_overlay_outlines/cp_overlay_outlines/3.1.9+galaxy1) %}**: This tool takes your **original image** and draws the boundaries of your **detected objects** (from your Label Image) on top of it as colored lines. It is the gold standard for visual validation, allowing you to confirm that the computer's segmentation accurately followed the biological edges of your cells.
+* **{% tool [Overlay outlines](toolshed.g2.bx.psu.edu/repos/bgruening/cp_overlay_outlines/cp_overlay_outlines/3.1.9+galaxy1) %}**: This tool takes your **original image** and draws the boundaries of your **detected objects** (from your Label Image) on top of it as colored lines. It is the gold standard for visual validation, allowing you to confirm that the computer's segmentation accurately followed the biological edges of your cells. For a detailed guide on visualizing results, see the "Visualizing Results" section in {% icon level %} [Object Tracking using CellProfiler]({% link topics/imaging/tutorials/object-tracking-using-cell-profiler/tutorial.md %}).
 
 * **{% tool [Overlay images](toolshed.g2.bx.psu.edu/repos/imgteam/overlay_images/ip_overlay_images/0.0.5) %}**: A versatile tool for visualizing colocalization or blending two different channels to see where biological signals overlap.
+
+* **{% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render) %}**: For 3-D images, this tool provides similar visualization functionality, allowing you to render and inspect volumetric data.
 
 > <tip-title> Garbage In, Garbage Out </tip-title>
 > If your segmentation (Stage B) is poor, your quantification (Stage D) will be meaningless. Always spend the most time optimizing your segmentation and validating it visually before trusting the final spreadsheet of numbers ({% cite Haase2022 %}).
@@ -419,25 +421,7 @@ Bioimage analysis is not "one size fits all." Galaxy provides a diverse suite of
 
 ## The decision tree: your logical roadmap
 
-```mermaid
-graph TD
-    Start(I have an image) --> Q1{Is it Microscopy?}
-    Q1 -- No --> Med[Medical Imaging: Use DICOM/HighDICOM tools]
-    Q1 -- Yes --> Q2{Imaging Type?}
-    
-    Q2 -- Brightfield/Color (IHC/H&E) --> IHC[Pathology: Color Deconvolution & Thresholding]
-    Q2 -- Fluorescence (Grayscale) --> Q3{Dimensionality?}
-    
-    Q3 -- 2D/3D Static --> Seg[Segmentation: Cellpose or StarDist]
-    Q3 -- Time-lapse (T) --> Track[Tracking: TrackObjects or CellProfiler workflows]
-    Q3 -- High-Throughput --> HCS[Automation: Bioimage Model Zoo or Batch Processing]
-
-    style Start fill:#f9f,stroke:#333
-    style Q1 fill:#fff4dd,stroke:#d4a017
-    style Q2 fill:#fff4dd,stroke:#d4a017
-    style Q3 fill:#fff4dd,stroke:#d4a017
-
-```
+![Microscopy imaging workflow decision tree]({% link topics/imaging/images/where-to-start-bioimaging-galaxy/Microscopy_Imaging_Workflow-2026.png %} "Decision tree to guide you through choosing the right imaging analysis approach.")
 
 ## The Galaxy imaging toolbox 
 
