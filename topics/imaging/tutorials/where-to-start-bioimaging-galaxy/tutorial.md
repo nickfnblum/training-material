@@ -398,7 +398,7 @@ Now that you have a clean mask, Galaxy "overlays" it back onto your original raw
 
 * **{% tool [Overlay images](toolshed.g2.bx.psu.edu/repos/imgteam/overlay_images/ip_overlay_images/0.0.5) %}**: A versatile tool for visualizing colocalization or blending two different channels to see where biological signals overlap.
 
-* **{% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render) %}**: For 3-D images, this tool provides similar visualization functionality, allowing you to render and inspect volumetric data.
+* **{% tool [Render 3-D image data](toolshed.g2.bx.psu.edu/repos/imgteam/libcarna_render/libcarna_render/0.2.0+galaxy2) %}**: For 3-D images, this tool provides similar visualization functionality, allowing you to render and inspect volumetric data.
 
 > <tip-title> Garbage In, Garbage Out </tip-title>
 > If your segmentation (Stage B) is poor, your quantification (Stage D) will be meaningless. Always spend the most time optimizing your segmentation and validating it visually before trusting the final spreadsheet of numbers ({% cite Haase2022 %}).
