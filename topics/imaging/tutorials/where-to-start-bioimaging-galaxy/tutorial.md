@@ -66,7 +66,7 @@ To the human eye, an image is a visual representation of a biological sample. Ho
 
 Every point in that array—the **pixel** (2D) or **voxel** (3D)—is a data point representing the number of photons or the signal intensity detected at that specific coordinate. Understanding "digital anatomy" of an image means knowing exactly how those numbers were recorded, how they are organized across dimensions, how they are spaced and oriented in 3D space, and what the limitations of the employed imaging technique are (e.g., due to over/undersaturation that leads to clipped intensities).
 
-![Example digital image and its pixel representation]({% link topics/imaging/images/where-to-start-bioimaging-galaxy/pete_bank_imaging.png %} "A digital image can be represented visually or numerically. <strong>(A–B)</strong> The image is visualized as a grid of small squares with different gray intensities, where each square corresponds to one pixel. This square pattern is only a display convention to help us interpret the image. <strong>(C)</strong> Internally, the image is stored as numerical values arranged in an array. Inspecting these raw numbers directly makes it difficult to recognize the image content. Figure adapted from {% cite Bankhead2022 %}.")
+![Example digital image and its pixel representation]({% link topics/imaging/images/where-to-start-bioimaging-galaxy/pete_bank_imaging.png %} "A digital image can be represented visually or numerically. <strong>(A–B)</strong> The image is visualized as a grid of small squares with different gray intensities, where each square corresponds to one pixel. This square pattern is only a display convention to help us interpret the image. <strong>(C)</strong> Internally, the image is stored as numerical values arranged in an array. Inspecting these raw numbers directly makes it difficult to recognize the image content. Figure from {% cite Bankhead2022 %} (CC BY 4.0).")
 
 
 If you don't understand the numbers behind the colors, you risk performing "image processing" (simply making a pretty picture) rather than "image analysis" (extracting quantitative data and meaningful insights). Let's unpack the data behind an image step by step.
@@ -171,12 +171,12 @@ The key difference is not whether artifacts appear, but their **magnitude in rel
 
 ## Spatial calibration (the size)
 
-Image pixels (or voxels) have no _intrinsic_ physical size; they are just units of storage and representation. **Spatial calibration** is the metadata that links these digital units to physical reality (e.g., $1 \text{ pixel} = 0.25 \mu m$). Without this "secret sauce," you can count objects, but you cannot accurately measure how big they are, how fast they move, or their concentration (e.g., {% cite Linkert2010 %}, {% cite Haase2022 %}). 
+Image pixels (or voxels) have no _intrinsic_ physical size; they are just units of storage and representation. **Spatial calibration** is the metadata that links these digital units to physical reality (e.g., $$1 \text{ pixel} = 0.25 \mu m$$). Without this "secret sauce," you can count objects, but you cannot accurately measure how big they are, how fast they move, or their concentration (e.g., {% cite Linkert2010 %}, {% cite Haase2022 %}). 
 
 Metadata like the calibration information is usually stored in the image header. If you lose this metadata during a file conversion (e.g., saving as a standard .jpg), your analysis will only be able to provide quantitative results in "pixels," which may have no biological meaning.
 
 > <tip-title> Avoid saturation </tip-title> 
-> If you see an image intensity value of "0", the sensor may have detected nothing, or it could represent true absence of signal—context matters. If you see the maximum value (e.g., $255$ or $65,535$), your sensor was overwhelmed. These phenomena are called **saturation** (under- and oversaturation, respectively). Saturated pixels are often "clipped," meaning the true biological signal was lower or higher than what the camera could record (e.g., {% cite Pawley2006 %}). This data is lost forever and cannot be accurately quantified. 
+> If you see an image intensity value of "0", the sensor may have detected nothing, or it could represent true absence of signal—context matters. If you see the maximum value (e.g., $$255$$ or $$65,535$$), your sensor was overwhelmed. These phenomena are called **saturation** (under- and oversaturation, respectively). Saturated pixels are often "clipped," meaning the true biological signal was lower or higher than what the camera could record (e.g., {% cite Pawley2006 %}). This data is lost forever and cannot be accurately quantified. 
 >
 {: .tip}
 
