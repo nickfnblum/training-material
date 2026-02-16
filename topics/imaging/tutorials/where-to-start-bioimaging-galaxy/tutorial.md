@@ -588,7 +588,7 @@ By building modular workflows in Galaxy, you have created a pipeline that is not
 * **OME-TIFF:** An open-source, standardized file format designed for microscopy that packages raw pixel data together with its essential metadata.
 * **Saturation:** A digital clipping artifact that occurs when light intensity exceeds the camera sensor's maximum capacity, resulting in lost data and "flat" peaks where the brightest signals should be.
 
-# 8. Next Steps: Choose your Tutorial
+# 8. Next Steps: Choose your tutorial
 
 Now that you have your "compass," it is time to choose a specific path. Pick the tutorial that matches your research goal:
 
