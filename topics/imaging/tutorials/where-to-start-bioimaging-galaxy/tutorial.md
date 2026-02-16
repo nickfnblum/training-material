@@ -373,7 +373,7 @@ Once you have segmented your image, you have created **Regions of Interest (ROIs
 In Galaxy, ROIs can take three forms depending on the tool you use:
 * **Bounding Boxes:** Simple rectangles used to crop an image or define a search area. In Galaxy, this is only possible to perform this step using interactive tools like QuPath.
 * **Binary Masks:** A "stencil" where the ROI is white and everything else is black.
-* **Label Images:** A "smart map" where every individual ROI has its own unique integer ID ({% cite Tosi2021 %}).
+* **Label Images:** A "smart map" where every individual ROI has its own unique integer ID (e.g., {% cite Tosi2021 %}).
 
 > <comment-title>ROIs in interactive vs. automated tools</comment-title>
 >Interactive tools like QuPath allows users to inspect images and create ROIs either manually (e.g. drawing with the mouse) or through built-in detection algorithms that generate ROIs automatically. In automated Galaxy workflows, algorithms like Cellpose generate thousands of ROIs programmatically in a fully reproducible pipeline without user interaction ({% cite Stringer2021 %}).
