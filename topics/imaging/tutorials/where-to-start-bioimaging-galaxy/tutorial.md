@@ -191,7 +191,7 @@ Galaxy is built to handle the complexity of biological data. However, microscopy
 
 ## Why use the Bio-Formats tool suite?
 
-The **{% tool [Convert image format with Bio-formats](toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %}** tool does more than just open a file; it acts as a **translator**. It extracts the "digital anatomy" (metadata)—such as pixel size, laser wavelengths, and objective settings—and converts the proprietary data into standardized open formats. This ensures that your analysis remains reproducible and that your metadata remains **FAIR** throughout the entire Galaxy workflow ({% cite GalaxyCommunity2024 %}).
+The **{% tool [Convert image format with Bio-formats](toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %}** tool does more than just open a file; 
 
 > <hands-on-title> Inspecting Image Metadata </hands-on-title>
 >
