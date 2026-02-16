@@ -1,3 +1,50 @@
+GTN_GTN:1771061697
+
+A	topics/imaging/images/iscc-suite/similarity_table.png
+A	topics/imaging/images/iscc-suite/verify_wf1.png
+A	topics/imaging/images/iscc-suite/verify_wf2.png
+A	topics/imaging/tutorials/iscc-suite/data-library.yaml
+A	topics/imaging/tutorials/iscc-suite/tutorial.md
+A	topics/imaging/tutorials/iscc-suite/workflows/ISCC---image-analysis-workflow-example-tests.yml
+A	topics/imaging/tutorials/iscc-suite/workflows/ISCC---image-analysis-workflow-example.ga
+A	topics/imaging/tutorials/iscc-suite/workflows/example_image.tiff
+A	topics/imaging/tutorials/iscc-suite/workflows/example_image2.tiff
+A	topics/imaging/tutorials/iscc-suite/workflows/example_image3.tiff
+A	topics/imaging/tutorials/iscc-suite/workflows/example_thresholded1.tiff
+A	topics/imaging/tutorials/iscc-suite/workflows/index.md
+A	topics/imaging/tutorials/iscc-suite/workflows/test-data/ISCC-code.txt
+A	topics/imaging/tutorials/iscc-suite/workflows/test-data/original_image.tiff
+A	topics/imaging/tutorials/iscc-suite/workflows/test-data/otsu_segmented.tiff
+A	topics/imaging/tutorials/iscc-suite/workflows/test-data/segmented image.tiff
+GTN_GTN:1770801089
+
+A	topics/imaging/images/biapy/carto_segm.mp4
+A	topics/imaging/images/biapy/carto_segm_2.mp4
+A	topics/imaging/images/biapy/comparison_2D_buffalo.png
+A	topics/imaging/images/biapy/comparison_2D_swam.png
+A	topics/imaging/images/biapy/example-yaml.png
+A	topics/imaging/images/biapy/post-test-prediction.png
+A	topics/imaging/images/biapy/test-prediction.png
+A	topics/imaging/tutorials/biapy/data-library.yaml
+A	topics/imaging/tutorials/biapy/faqs/index.md
+A	topics/imaging/tutorials/biapy/tutorial.bib
+A	topics/imaging/tutorials/biapy/tutorial.md
+A	topics/imaging/tutorials/biapy/workflows/BiaPy-tests.yml
+A	topics/imaging/tutorials/biapy/workflows/BiaPy.ga
+A	topics/imaging/tutorials/biapy/workflows/index.md
+A	topics/imaging/tutorials/biapy/workflows/test-data/Input a BiaPy YAML configuration file.yaml
+A	topics/imaging/tutorials/biapy/workflows/test-data/Input the image ground truth_01_raw_mask.tiff
+A	topics/imaging/tutorials/biapy/workflows/test-data/Input the image ground truth_02_raw_mask.tiff
+A	topics/imaging/tutorials/biapy/workflows/test-data/Input the test data_01_raw_image.tiff
+A	topics/imaging/tutorials/biapy/workflows/test-data/Input the test data_02_raw_image.tiff
+A	topics/imaging/tutorials/biapy/workflows/test-data/html_01_raw_image.html
+A	topics/imaging/tutorials/biapy/workflows/test-data/html_02_raw_image.html
+A	topics/imaging/tutorials/biapy/workflows/test-data/predictions_post_proc_test-0.tiff
+A	topics/imaging/tutorials/biapy/workflows/test-data/predictions_post_proc_test-1.tiff
+GTN_GTN:1770624058
+
+R099	metadata/git-mod-22f9a39480b13bbb9bc2ae9f303567767c701b8e.txt	metadata/git-mod-f9718439a4406af38cf4c5210c4dda9affa97e5d.txt
+R099	metadata/git-pub-22f9a39480b13bbb9bc2ae9f303567767c701b8e.txt	metadata/git-pub-f9718439a4406af38cf4c5210c4dda9affa97e5d.txt
 GTN_GTN:1770018091
 
 R099	metadata/git-mod-d6e95451808b17357ab275654780821662e084ca.txt	metadata/git-mod-22f9a39480b13bbb9bc2ae9f303567767c701b8e.txt
