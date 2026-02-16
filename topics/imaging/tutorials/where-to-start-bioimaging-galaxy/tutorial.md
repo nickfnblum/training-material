@@ -31,17 +31,19 @@ contributions:
     - dianichj
     - beatrizserrano
     - kostrykin
+  editing:
+   - maartenpaul
   reviewing:
     - maartenpaul
 ---
 
-Bioimage analysis is the process of extracting meaningful information (e.g., quantitative data) from image data in the life sciences (usually microscopy images). Whether you are looking at stained tissue sections (histology) or fluorescently labeled proteins in live cells, the goal is often the same: **turning pixels into numbers**.
+Bioimage analysis is the process of extracting meaningful information, such as quantitative data, from images in the life sciences. In this field, images are typically acquired using microscopy. Whether examining stained tissue sections in histology or tracking fluorescently labeled proteins in live cells, the fundamental goal remains consistent: **turning pixels into numbers**.
 
 In Galaxy, we provide an ecosystem to make this process reproducible and scalable. We focus on making image analysis **FAIR by design** _(Findable, Accesible, Interoperable, Reusable)_, ensuring that your image formats, metadata, tools, and workflows remain reusable, transparent, and traceable from the very first upload to the final figure ({% cite GalaxyCommunity2024 %}).
 
-This tutorial acts as your **compass** to navigate the Galaxy imaging landscape, specifically as it applies to bioimage data pre-processing and analysis. You will understand how to transform raw, complex image data into structured tables of measurements, ready for downstream statistical analysis.
+This tutorial serves as your **compass** for navigating the Galaxy imaging landscape, specifically for bioimage data preprocessing and analysis. You will learn how image data is structured, explore the tools available in Galaxy, and discover how to kickstart your image analysis journey. By the end, you'll understand how to transform raw, complex image data into structured tables of measurements ready for downstream statistical analysis—and know where to find the tools and resources to continue your work.
 
-![Turning pixels into numbers!](../../images/where-to-start-bioimaging-galaxy/imaging_summary_image.png)
+![Turning pixels into numbers!]({% link topics/imaging/images/where-to-start-bioimaging-galaxy/imaging_summary_image.png %} "Workflow showing the transformation from raw microscopy images to quantitative measurements.")
 
 > <agenda-title></agenda-title>
 >
@@ -52,7 +54,7 @@ This tutorial acts as your **compass** to navigate the Galaxy imaging landscape,
 
 # 1. Know your data (the "digital anatomy" of an image)
 
-As Pete Bankhead points out in *[Introduction to Bioimage Analysis](https://bioimagebook.github.io/index.html)* ({% cite Bankhead2022 %}), an image is not just a picture, it is a collection of measurements. Therefore, before starting any analysis, it is important that you understand the structure of your data.
+As Pete Bankhead points out in *[Introduction to Bioimage Analysis](https://bioimagebook.github.io/index.html)* ({% cite Bankhead2022 %}), _"an image is not just a picture, it is a collection of measurements."_ Therefore, before starting any analysis, it is important that you understand the structure of your data.
 
 To the human eye, an image is a visual representation of a biological sample. However, to a computer, it is a **numerical array** ({% cite Sedgewick2010 %}). The dimensionality of this array depends on your data:
 
@@ -64,11 +66,7 @@ To the human eye, an image is a visual representation of a biological sample. Ho
 
 Every point in that array—the **pixel** (2D) or **voxel** (3D)—is a data point representing the number of photons or the signal intensity detected at that specific coordinate. Understanding "digital anatomy" of an image means knowing exactly how those numbers were recorded, how they are organized across dimensions, how they are spaced and oriented in 3D space, and what the limitations of the employed imaging technique are (e.g., due to over/undersaturation that leads to clipped intensities).
 
-![Example digital image and its pixel representation](../../images/where-to-start-bioimaging-galaxy/pete_bank_imaging.png)
-
-A digital image can be represented visually or numerically.  
-**(A–B)** The image is visualized as a grid of small squares with different gray intensities, where each square corresponds to one pixel. This square pattern is only a display convention to help us interpret the image.  
-**(C)** Internally, the image is stored as numerical values arranged in an array. Inspecting these raw numbers directly makes it difficult to recognize the image content. *Figure reproduced from Pete Bankhead, _Introduction to Bioimage Analysis_ (CC BY 4.0): <https://bioimagebook.github.io/chapters/1-concepts/1-images_and_pixels/images_and_pixels.html>. Caption adapted.*
+![Example digital image and its pixel representation]({% link topics/imaging/images/where-to-start-bioimaging-galaxy/pete_bank_imaging.png %} "A digital image can be represented visually or numerically. <strong>(A–B)</strong> The image is visualized as a grid of small squares with different gray intensities, where each square corresponds to one pixel. This square pattern is only a display convention to help us interpret the image. <strong>(C)</strong> Internally, the image is stored as numerical values arranged in an array. Inspecting these raw numbers directly makes it difficult to recognize the image content. Figure adapted from {% cite Bankhead2022 %}.")
 
 
 If you don't understand the numbers behind the colors, you risk performing "image processing" (simply making a pretty picture) rather than "image analysis" (extracting quantitative data and meaningful insights). Let's unpack the data behind an image step by step.
@@ -77,14 +75,14 @@ If you don't understand the numbers behind the colors, you risk performing "imag
 
 An image is a grid of **pixels** (2D images) or **voxels** (3D images). Think of an image as a vast mosaic where every tile is a "picture element." In 2D, these tiles are flat, but in 3D imaging, they have depth and are called **voxels** ("volumetric elements", e.g., {% cite Pawley2006 %}). Each one is like a small bucket that has captured a specific amount of signal (usually light), which the computer records as a single number.
 
-Image intensities represent the measurements of the imaging system. To make these numbers useful for science, we must define their **range** and their **spatial extent** (i.e., the *resolution* of the image, like pixels or voxels per real-world unit).
+Image intensities represent measurements from the imaging system. To make these numbers meaningful for scientific analysis, we must define two key properties: their **range** (the possible values intensities can take) and their **spatial extent** (the physical size represented by each pixel or voxel, which determines the image resolution).
 
 ## The 5 dimensions (5D)
 
-In everyday photography, we usually deal with 2D color images. However, in the life sciences, we can capture **hyperstacks**: multi-dimensional data structures that represent a biological sample across space (`X`, `Y`, `Z` axes), spectrum (`C` axis), and time (`T` axis). Although many scientific images adopt the `XYZCT` ({% cite Goldberg2005 %}) or `TCZYX` axes order (e.g., Moore et al. 2023), making wrong assumptions about that order is a frequent source of error. It is thus important to make sure that the axes order is properly annotated in the image metadata.
+In everyday photography, we usually deal with 2D color images. However, in the life sciences, we can capture **hyperstacks**: multi-dimensional data structures that represent a biological sample across space (`X`, `Y`, `Z` axes), spectrum (`C` axis), and time (`T` axis). Although many scientific images adopt the `XYZCT` ({% cite Goldberg2005 %}) or `TCZYX` axes order (e.g., ({% cite Moore2021%}), making wrong assumptions about that order is a frequent source of error. It is thus important to make sure that the axes order is properly annotated in the image metadata.
 
 * **X, Y & Z (Spatial):** X and Y represent the width and height of your image (the 2D plane). Z represents multiple optical sections or "slices" taken at different focal planes to reconstruct a 3D volume. In confocal or light-sheet microscopy, Z captures different depths through the sample.
-* **C (Channel):** Different wavelengths or fluorescent probes corresponding to specific biological structures or molecules (e.g., DAPI for nuclei, GFP for proteins, Phalloidin for actin).
+* **C (Channel):** Different wavelengths, fluorescent probes, or staining methods corresponding to specific biological structures or molecules. In fluorescence microscopy, examples include DAPI for nuclei, GFP for proteins, and Phalloidin for actin. In histology, different channels can represent various antibody stains (immunohistochemistry) or traditional stains like hematoxylin and eosin (H&E).
 * **T (Time):** Separate frames captured over a duration (time-lapse), allowing you to track movement, growth, or dynamic changes in cellular processes.
 
 However, it is important to note that while we describe them in `XYZCT` order, different microscope vendors, tools, and file formats store them in different orders (e.g., `TZCXY` or `XYCZT`). Ensuring that the dimensional order is properly annotated within the image metadata is essential so that Galaxy (and any image analysis software in general) doesn't accidentally interpret a Z-slice as a time-point or a channel as a Z-position (e.g., {% cite Linkert2010 %}).
@@ -94,15 +92,15 @@ However, it is important to note that while we describe them in `XYZCT` order, d
 > 
 {: .tip}
 
-> <question-title> Identify the dimensions </question-title>
+> <question-title>Identify the dimensions</question-title>
 >
 > If you have a time-lapse experiment where you recorded 3 different fluorescent markers across 10 focal planes (Z-slices) every minute for an hour, how many total 2D images (planes) are in your file?
 >
 > > <solution-title></solution-title>
+> > You would have: $$3 \text{ (Channels)} \times 10 \text{ (Z-slices)} \times 60 \text{ (Time points)} = 1,800 \text{ total 2D planes}$$
 > >
-> > You would have $$3 \text{ (Channels)} \times 10 \text{ (Z-slices)} \times 60 \text{ (Time points)} = 1,800$$ total 2D planes. Each individual plane is an $X \times Y$ image. Galaxy tools need to know the correct dimensional order (e.g., `XYZCT` vs `XYCZT` vs `TZCXY`) to ensure they correctly interpret which dimension is which—otherwise, you might accidentally measure intensity changes across Z-depth when you meant to measure changes over time!
-> >
-> {: .solution} 
+> > Each individual plane is an $$X \times Y$$ image. Galaxy tools need to know the correct dimensional order (e.g., `XYZCT` vs `XYCZT` vs `TZCXY`) to ensure they correctly interpret which dimension is which—otherwise, you might accidentally measure intensity changes across Z-depth when you meant to measure changes over time!
+> {: .solution}
 {: .question}
 
 ## Bit depth (the range and precision limits)
@@ -115,23 +113,27 @@ When it comes to the representation of the measurements of the imaging system as
 
 These are the natural format for raw camera data, as imaging sensors essentially count photons:
 
-* **8-bit:** $2^{8} = 256$ possible values (range: $0$ to $255$ for unsigned, or $-128$ to $127$ for signed). While this looks fine to our eyes, it is often too "coarse" for thorough quantitative analysis.
-* **16-bit:** $2^{16} = 65,536$ possible values (range: $0$ to $65,535$ for unsigned, or $-32,768$ to $32,767$ for signed). This is the **scientific gold standard for image acquisition** and storing the image data, because it allows you to detect even subtle differences in image intensities that would be lost (e.g., due to rounding) when using an 8-bit representation (e.g., {% cite Haase2022 %}).
-* **32-bit:** $2^{32} = 4,294,967,296$ possible values. While less common in direct acquisition, 32-bit integer formats are sometimes used in intermediate processing steps or for label images where many distinct regions need to be encoded.
+* **8-bit:** 2<sup>8</sup> = 256 possible values (range: 0 to 255 for unsigned, or -128 to 127 for signed). While this looks fine to our eyes, it is often too "coarse" for thorough quantitative analysis.
+
+* **16-bit:** 2<sup>16</sup> = 65,536 possible values (range: 0 to 65,535 for unsigned, or -32,768 to 32,767 for signed). This is the **scientific gold standard for image acquisition and storage**, because it allows you to detect even subtle differences in image intensities that would be lost (e.g., due to rounding) when using an 8-bit representation {% cite Haase2022 %}.
+
+* **32-bit:** 2<sup>32</sup> = 4,294,967,296 possible values. While less common in direct acquisition, 32-bit integer formats are sometimes used in intermediate processing steps or for label images where many distinct regions need to be encoded.
 
 ### Floating-point representations
 
 After image processing operations (e.g., background subtraction, normalization, deconvolution), intensity values often become non-integer (i.e., decimal, fractional) or fall outside the original acquisition range. Floating-point formats accommodate this by representing both positive and negative values with decimal precision:
 
-* **16-bit float (half precision):** Can represent values approximately in the range of $\pm 65,504$ with limited decimal precision. This format is increasingly used in machine learning and GPU-accelerated image processing because it saves memory while providing sufficient precision for many applications.
-* **32-bit float (single precision):** Can represent values approximately in the range of $\pm 10^{38}$ with about 7 significant decimal digits of precision. This is the **most common format for image processing** as it balances precision, range, and computational efficiency.
-* **64-bit float (double precision):** Can represent values approximately in the range of $\pm 10^{308}$ with about 15-16 significant decimal digits of precision, useful for iterative algorithms or when accumulating many operations where small errors could compound.
+* **16-bit float (half precision):** Can represent values approximately in the range of ±65,504 with limited decimal precision. This format is increasingly used in machine learning and GPU-accelerated image processing because it saves memory while providing sufficient precision for many applications.
+
+* **32-bit float (single precision):** Can represent values approximately in the range of ±10<sup>38</sup> with about 7 significant decimal digits of precision. This is the **most common format for image processing** as it balances precision, range, and computational efficiency.
+
+* **64-bit float (double precision):** Can represent values approximately in the range of ±10<sup>308</sup> with about 15-16 significant decimal digits of precision, useful for iterative algorithms or when accumulating many operations where small errors could compound.
 
 Unlike integer representations where the precision (smallest distinguishable difference) is constant across the entire range, floating-point precision varies: it is highest near zero and decreases as values approach the limits of the representable range.
 
 Many analysis tools automatically convert to floating-point internally to preserve accuracy during calculations.
 
-### Bit depth: why it matters for science?
+### Bit depth: why it matters for science
 
 A common misconception is that if two images look identical on a desktop monitor, they contain the same data. However, our eyes are used to computer screens that are usually limited to 8-bit, while your microscope sensor is far more sensitive. 
 
@@ -142,7 +144,7 @@ When you perform certain pre-processing tasks, such as subtracting the image bac
 
 The key difference is not whether artifacts appear, but their **magnitude in relation to your data range**. Think of it this way: spreading 256 values across a wider range creates larger "holes" between adjacent intensity levels than spreading 65,536 values across the same range.
 
-![Bit depth: why it matters in science](../../images/where-to-start-bioimaging-galaxy/bit_depth.png)
+![Bit depth: why it matters in science]({% link topics/imaging/images/where-to-start-bioimaging-galaxy/bit_depth.png %} "Comparison showing how different bit depths affect the ability to detect subtle differences in image intensities during quantitative analysis.")
 
 > <tip-title> Precision </tip-title> 
 > Always try to keep your data in **16-bit integer** or **floating-point formats** (16-bit, 32-bit, or 64-bit float) during analysis. Converting to 8-bit too early reduces your ability to detect subtle intensity differences and makes quantization artifacts more severe during processing. This lost precision can never be recovered ({% cite Haase2022 %}). 
@@ -310,7 +312,7 @@ Depending on your answers, your starting path in Galaxy will change.
 
 A typical project in Galaxy is not a single click, but a sequence of logical steps. Think of it as a factory assembly line: you start with raw materials (pixels) and move through various stations until you have a finished product (a table of measurements). Let's examine these stages together.
 
-## **Stage A:** Pre-processing (cleaning)
+## Stage A: Pre-processing (cleaning)
 Raw images are rarely perfect. They often contain electronic noise from the camera, uneven illumination from the microscope, or staining artifacts. Pre-processing prepares your digital image for analysis by enhancing the structures you want to identify and suppressing unwanted features like noise or artifacts ({% cite Bankhead2022 %}).
 
 * **Background subtraction:** Removes the "haze" or background fluorescence caused by out-of-focus light. This is crucial for accurate intensity measurements later on.
@@ -541,15 +543,16 @@ Even with the best tools, it is easy to accidentally "break" your data before yo
 * **When is PNG OK?** PNG is lossless and suitable for small 2-D single-channel or RGB images where intensities are not used for quantitative measurements. For example: 2-D label images, segmentation masks, or visualization outputs. In these cases it can reduce file size by orders of magnitude compared to TIFF. However, it should not be used for raw or measurement-grade microscopy data.
 
 ## 2. The "merged image" mistake
-Analyzing a "Merge" (RGB) image is risky because the intensities of different channels (like DAPI and GFP) are mathematically blended into a single color value.
-* **The fix:** Always **Split Channels** in Galaxy. For this purpose you may the **{% tool [Split image along axes
-with NumPy](toolshed.g2.bx.psu.edu/repos/imgteam/split_image/ip_split_image/2.3.5+galaxy0). Measure your DAPI (nuclei) and GFP (protein) separately to ensure scientific accuracy.} 
 
-## 3. Ignoring Saturation
+Analyzing a "Merge" (RGB) image is risky because the intensities of different channels (like DAPI and GFP) are mathematically blended into a single color value.
+
+* **The fix:** Always **Split Channels** in Galaxy. For this purpose you may use the {% tool [Split image along axes with NumPy](toolshed.g2.bx.psu.edu/repos/imgteam/split_image/ip_split_image/2.3.5+galaxy0) %} tool. Measure your DAPI (nuclei) and GFP (protein) separately to ensure scientific accuracy.
+
+## 3. Ignoring saturation
 If your image is too bright, you might hit the camera sensor's limit ($255$ for 8-bit or $65,535$ for 16-bit). This is called **Clipping**. 
 * **The fix:** Check your histogram. If you see a giant "spike" at the very end of the graph, your data is saturated and you cannot accurately quantify the brightest parts of your sample.
 
-> <question-title> The Artifact Detective </question-title>
+> <question-title> The artifact detective </question-title>
 >
 > You notice that in your time-lapse, the image gets slightly dimmer with every frame. Is this a biological change or an artifact?
 >
@@ -579,16 +582,16 @@ In this tutorial, you have learned that:
 
 By building modular workflows in Galaxy, you have created a pipeline that is not only accurate but also shareable and reproducible, the **_gold standard_** of modern open science.
 
-# 7. Glossary of Bioimage Terms
+# 7. Glossary of bioimage terms
 
-* **Binary Image:** A black-and-white image where pixels can only have two values: 0 (Background) and 1 (Object).
-* **Color Deconvolution:** The mathematical separation of overlapping color stains (like the purple Hematoxylin and pink Eosin in H&E histology) into individual intensity channels for measurement.
+* **Binary image:** A black-and-white image where pixels can only have two values: 0 (Background) and 1 (Object).
+* **Color deconvolution:** The mathematical separation of overlapping color stains (like the purple Hematoxylin and pink Eosin in H&E histology) into individual intensity channels for measurement.
 
 * **Mask:** A binary "stencil" or digital cutout that tells the computer exactly which pixels belong to an object of interest and which should be ignored.
 * **OME-TIFF:** An open-source, standardized file format designed for microscopy that packages raw pixel data together with its essential metadata.
 * **Saturation:** A digital clipping artifact that occurs when light intensity exceeds the camera sensor's maximum capacity, resulting in lost data and "flat" peaks where the brightest signals should be.
 
-# 8. Next Steps: Choose your tutorial
+# 8. Next Steps: choose your tutorial
 
 Now that you have your "compass," it is time to choose a specific path. Pick the tutorial that matches your research goal:
 
