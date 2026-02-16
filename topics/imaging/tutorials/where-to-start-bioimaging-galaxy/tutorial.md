@@ -187,7 +187,7 @@ Galaxy is built to handle the complexity of biological data. However, microscopy
 * **Standard Formats (.tiff, .png):** Use the standard Galaxy **Upload** tool.
 * **Open Formats:** OME-TIFF that includes metadata and OME-Zarr for spatial transcriptomics.
 * **Proprietary Formats (.czi, .nd2, .lif):** These formats "wrap" image data and metadata together. While you can often export TIFFs from your microscope software, using the **{% tool [Convert image format with Bioformats](toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %}** tool allows Galaxy to "unlock" and standardize the metadata hidden inside these files ({% cite Moore2021 %}).
-* **OMERO Integration:** If your institution uses an **OMERO server**, you can import images directly via the **Remote Files** section in the upload tool. You can access OMERO using galaxy. See [Overview of the Galaxy OMERO-suite]({% link topics/imaging/tutorials/omero-suite/tutorial.md %})
+* **OMERO Integration:** If your institution uses an **OMERO server**, you can import images directly via the **Remote Files** section in the upload panel. You can access OMERO using Galaxy. See [Overview of the Galaxy OMERO-suite]({% link topics/imaging/tutorials/omero-suite/tutorial.md %})
 
 ## Why use the Bio-Formats tool suite?
 
