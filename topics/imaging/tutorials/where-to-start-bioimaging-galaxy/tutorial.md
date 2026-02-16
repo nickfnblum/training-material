@@ -100,7 +100,7 @@ However, it is important to note that while we describe them in this $(X, Y, Z, 
 >
 > > <solution-title></solution-title>
 > >
-> > You would have $3 \text{ (Channels)} \times 10 \text{ (Z-slices)} \times 60 \text{ (Time points)} = 1,800$ total 2D planes. Each individual plane is an $X \times Y$ image. Galaxy tools need to know the correct dimensional order (e.g., $XYZCT$ vs. $XYCZT$ vs. $TZCXY$) to ensure they correctly interpret which dimension is which—otherwise, you might accidentally measure intensity changes across Z-depth when you meant to measure changes over time!
+> > You would have $$3 \text{ (Channels)} \times 10 \text{ (Z-slices)} \times 60 \text{ (Time points)} = 1,800$$ total 2D planes. Each individual plane is an $X \times Y$ image. Galaxy tools need to know the correct dimensional order (e.g., `XYZCT` vs `XYCZT` vs `TZCXY`) to ensure they correctly interpret which dimension is which—otherwise, you might accidentally measure intensity changes across Z-depth when you meant to measure changes over time!
 > >
 > {: .solution} 
 {: .question}
