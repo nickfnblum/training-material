@@ -310,7 +310,7 @@ Depending on your answers, your starting path in Galaxy will change.
 
 A typical project in Galaxy is not a single click, but a sequence of logical steps. Think of it as a factory assembly line: you start with raw materials (pixels) and move through various stations until you have a finished product (a table of measurements). Let's examine these stages together.
 
-## Stage A: Pre-processing (cleaning)
+## **Stage A:** Pre-processing (cleaning)
 Raw images are rarely perfect. They often contain electronic noise from the camera, uneven illumination from the microscope, or staining artifacts. Pre-processing prepares your digital image for analysis by enhancing the structures you want to identify and suppressing unwanted features like noise or artifacts ({% cite Bankhead2022 %}).
 
 * **Background subtraction:** Removes the "haze" or background fluorescence caused by out-of-focus light. This is crucial for accurate intensity measurements later on.
