@@ -33,8 +33,11 @@ contributions:
     - kostrykin
   editing:
    - maartenpaul
+   - rmassei
   reviewing:
     - maartenpaul
+    - rmassei
+    - arrmunoz
 ---
 
 Bioimage analysis is the process of extracting meaningful information, such as quantitative data, from images in the life sciences. In this field, images are typically acquired using microscopy. Whether examining stained tissue sections in histology or tracking fluorescently labeled proteins in live cells, the fundamental goal remains consistent: **turning pixels into numbers**.
@@ -185,9 +188,9 @@ Metadata like the calibration information is usually stored in the image header.
 Galaxy is built to handle the complexity of biological data. However, microscopy images often come in "vendor-specific" or "proprietary" formats. Your entry point into Galaxy depends on how your data was saved:
 
 * **Standard Formats (.tiff, .png):** Use the standard Galaxy **Upload** tool.
-* **Open Formats:** OME-TIFF that includes metadata and OME-Zarr for spatial transcriptomics.
-* **Proprietary Formats (.czi, .nd2, .lif):** These formats "wrap" image data and metadata together. While you can often export TIFFs from your microscope software, using the **{% tool [Convert image format with Bioformats](toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %}** tool allows Galaxy to "unlock" and standardize the metadata hidden inside these files ({% cite Moore2021 %}).
-* **OMERO Integration:** If your institution uses an **OMERO server**, you can import images directly via the **Remote Files** section in the upload panel. You can access OMERO using Galaxy. See [Overview of the Galaxy OMERO-suite]({% link topics/imaging/tutorials/omero-suite/tutorial.md %})
+* **Open Formats:** OME-TIFF, which includes standardized metadata, and OME-Zarr, a cloud-friendly image format designed to efficiently store and access very large, multi-dimensional bioimaging datasets (such as spatial transcriptomics) along with their metadata.
+* **Proprietary Formats (.czi, .nd2, .lif):** These formats "wrap" image data and metadata together. While you can often export TIFFs from your microscope software, using the **{% tool [Convert image format with Bioformats](toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %}** tool allows Galaxy to "unlock" and standardize the metadata hidden inside these files ({% cite Moore2021 %}). For more information on supported formats, see the [Bio-Formats documentation](https://bio-formats.readthedocs.io/en/v8.4.0/).
+* **OMERO Integration:** If your institution uses an **OMERO server**, you can import images directly via the **Remote Files** section in the upload panel. You can access OMERO using Galaxy. Additionally, you can fetch images directly using the {% tool [IDR Download by IDs](toolshed.g2.bx.psu.edu/repos/iuc/idr_download_by_ids/idr_download_by_ids/0.45) %} tool. See [Overview of the Galaxy OMERO-suite]({% link topics/imaging/tutorials/omero-suite/tutorial.md %}) for more details.
 
 ## Why use the Bio-Formats tool suite?
 
@@ -273,7 +276,7 @@ For modern, large-scale, or cloud-based datasets, you can use **{% tool [Convert
 >
 > While there are many options, two open community-endorsed formats are increasingly dominant in bioimaging:
 > * **OME-TIFF:** Best for "classic" microscopy (2D/3D stacks) and maximum compatibility with classical software like ImageJ/Fiji or QuPath.
-> * **OME-Zarr:** The modern choice for "Big Data," cloud storage, and for image data in spatial transcriptomics. {% cite Moore2021 %}
+> * **OME-Zarr:** A cloud-optimized format for very large, multi-dimensional bioimaging datasets (including spatial transcriptomics), enabling scalable storage and efficient data access. {% cite Moore2021 %}
 > 
 > Both are superior to proprietary formats because they make it possible to preserve your metadata attached to your pixel data throughout the entire Galaxy workflow.
 >
@@ -316,7 +319,7 @@ A typical project in Galaxy is not a single click, but a sequence of logical ste
 Raw images are rarely perfect. They often contain electronic noise from the camera, uneven illumination from the microscope, or staining artifacts. Pre-processing prepares your digital image for analysis by enhancing the structures you want to identify and suppressing unwanted features like noise or artifacts ({% cite Bankhead2022 %}).
 
 * **Background subtraction:** Removes the "haze" or background fluorescence caused by out-of-focus light. This is crucial for accurate intensity measurements later on.
-* **Denoising:** Uses linear or non-linear filters to smooth the image. A **Gaussian filter** is a linear filter that uses a non-uniform mask of weights for *weighted local averaging*. The weights for local averaging are chosen so the influence of pixels decreases monotonically with increasing distance, forming a Gaussian bell. Gaussian filters are particularly suited for removal of image noise that approximately corresponds to [Additive White Gaussian Noise (AWGN)](https://en.wikipedia.org/wiki/Additive_white_Gaussian_noise). On the other hand, a **Median filter** is a non-linear filter that is particularly suited for removing [Salt-and-Pepper noise](https://en.wikipedia.org/wiki/Salt-and-pepper_noise) by computing the local median at each pixel of the image. Compared to Gaussian filters, median filters are also suited for binary and label images, the set of values obtained from a median filter is a subset of the original values. As a consequence, median filters also better preserve the sharpness of edges of your cells ({% cite Haase2022 %}).
+* **Denoising:** Applies linear or non-linear filters to reduce noise while preserving meaningful structures. A **Gaussian filter** is a linear method that performs spatially weighted averaging using a kernel whose coefficients decrease smoothly with distance from the center, following a Gaussian (bell-shaped) distribution. It is well suited for reducing noise that approximates [Additive White Gaussian Noise (AWGN)](https://en.wikipedia.org/wiki/Additive_white_Gaussian_noise). In contrast, a **Median filter** is a non-linear method that replaces each pixel value with the median of its local neighborhood. It is particularly effective for removing [salt-and-pepper noise](https://en.wikipedia.org/wiki/Salt-and-pepper_noise) and is also appropriate for binary or label images because it preserves original intensity values. Compared to Gaussian smoothing, median filtering better maintains sharp edges—such as cell boundaries—while reducing impulsive noise often observed in fluorescence microscopy ({% cite Haase2022 %}).
 
 > <tip-title> Document your filters </tip-title> 
 > Every filter you apply changes the pixel values. While this is necessary for segmentation, you must document these steps to ensure reproducibility. In Galaxy, this is done automatically by your history, which records every parameter used in your pre-processing steps.
@@ -343,8 +346,6 @@ This is the most critical step. Here, you tell the computer which pixels belong 
 
 * **Thresholding:** A "cutoff" method where pixels above (or below) a certain intensity value are classified as object. This value can be set manually or determined automatically using algorithms like Otsu or Li. The result is typically a **Binary Mask**.
 * **Inference (Deep Learning):** Advanced AI models like **Cellpose** use pre-trained neural networks to recognize complex shapes. These methods might be superior at specific segmentation tasks such as "untangling" cells that are touching or overlapping in high-density environments ({% cite Stringer2021 %}, {% cite Schmidt2018 %}).
-
-[Image comparing simple thresholding versus AI-based instance segmentation in crowded tissues]
 
 > <hands-on-title> Creating a Segmentation Mask </hands-on-title>
 >
@@ -415,7 +416,7 @@ Now that you have a clean mask, Galaxy "overlays" it back onto your original raw
 > {: .solution}
 {: .question}
 
-# 4. Finding your workflow: modality and tools
+# 5. Finding your workflow: modality and tools
 
 Bioimage analysis is not "one size fits all." Galaxy provides a diverse suite of tools, from classical computer vision to state-of-the-art Deep Learning. Use the logical roadmap below to identify your specific path.
 
@@ -469,7 +470,7 @@ These other set of "wrapped" tools allow you to run them on hundreds of images a
 
 If you prefer a "hands-on" approach to see your results in real-time before scaling up, launch an **Interactive Tool (IT)** directly in your browser:
 
-* **{% tool [QuPath IT](interactive_tool_qupath) %}:** The gold standard for digital pathology. Use this for large tissue sections and to access **StarDist** segmentation.
+* **{% tool [QuPath IT](interactive_tool_qupath) %}:** The gold standard for digital pathology. Use this for large tissue sections and to access **StarDist**, a deep learning-based plugin for instance segmentation of star-convex shapes (e.g., nuclei), available in Galaxy through QuPath.
 * **{% tool [Ilastik IT](interactive_tool_ilastik) %}:** Best for "training by example"—manually paint a few cells to teach the computer how to segment the rest based on texture.
 * **{% tool [Cellpose IT](interactive_tool_cellpose) %}:** & **{% tool [Cellprofiler IT](interactive_tool_cellprofiler) %}:** Useful for building and fine-tuning your parameters visually before running a massive batch job.
 
@@ -566,16 +567,31 @@ In this tutorial, you have learned that:
 
 By building modular workflows in Galaxy, you have created a pipeline that is not only accurate but also shareable and reproducible, the **_gold standard_** of modern open science.
 
-# 7. Glossary of bioimage terms
+## Further Reading
+
+For more inspiration and a complementary perspective on designing bioimage analysis pipelines, we recommend {% cite Fazeli2025 %}, which provides a decision tree approach to bioimage analysis that complements the workflows covered in this tutorial.
+
+# Glossary of bioimage terms
+
+# Glossary of bioimage terms
 
 * **Binary image:** A black-and-white image where pixels can only have two values: 0 (Background) and 1 (Object).
+* **Bit depth:** The number of bits used to store each pixel value, determining the range and precision of intensity values an image can represent (e.g., 8-bit = 256 values, 16-bit = 65,536 values).
 * **Color deconvolution:** The mathematical separation of overlapping color stains (like the purple Hematoxylin and pink Eosin in H&E histology) into individual intensity channels for measurement.
-
+* **Hyperstack:** A multi-dimensional image data structure that extends beyond 2D or 3D, incorporating additional dimensions such as channels (C) and time (T), typically represented as X × Y × Z × C × T.
+* **Label image:** An image where each individual detected object is assigned a unique integer value (e.g., cell 1 = 1, cell 2 = 2), allowing the computer to distinguish and measure each object separately. Unlike a binary mask, a label image encodes object identity.
 * **Mask:** A binary "stencil" or digital cutout that tells the computer exactly which pixels belong to an object of interest and which should be ignored.
+* **Metadata:** Information stored alongside image data that describes how, when, and where the image was acquired (e.g., pixel size, bit depth, dimensional order, microscope settings).
 * **OME-TIFF:** An open-source, standardized file format designed for microscopy that packages raw pixel data together with its essential metadata.
+* **Photobleaching:** An artifact in fluorescence microscopy where fluorescent molecules permanently lose their ability to emit light after repeated exposure to the excitation laser, causing images to appear progressively dimmer over time.
+* **Pixel / Voxel:** The smallest unit of a digital image. A pixel (2D) or voxel (3D) represents a single data point recording the signal intensity detected at a specific location in the image.
+* **ROI (Region of Interest):** A spatial selection that defines the area of an image to be measured or analyzed, telling the software to ignore the background and focus only on specific coordinates.
 * **Saturation:** A digital clipping artifact that occurs when light intensity exceeds the camera sensor's maximum capacity, resulting in lost data and "flat" peaks where the brightest signals should be.
+* **Segmentation:** The process of partitioning an image into meaningful regions by classifying pixels as belonging to either an object of interest or the background.
+* **Spatial calibration:** Metadata that defines the physical size represented by each pixel or voxel (e.g., 1 pixel = 0.25 μm), linking digital units to real-world measurements and enabling biologically meaningful quantification.
+* **Thresholding:** A segmentation method that classifies pixels as object or background based on whether their intensity value falls above or below a defined cutoff, producing a binary mask.
 
-# 8. Next Steps: choose your tutorial
+# Next Steps: choose your tutorial
 
 Now that you have your "compass," it is time to choose a specific path. Pick the tutorial that matches your research goal:
 
