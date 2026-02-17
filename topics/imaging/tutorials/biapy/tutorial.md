@@ -24,6 +24,7 @@ contributions:
   reviewing:
     - beatrizserrano
     - kostrykin
+    - arrmunoz
 tags: 
   - Image segmentation
   - Image annotation
@@ -45,9 +46,9 @@ Such obstacles might limit the practical and routine adoption of DL models in bi
 So, how to make DL models accessible to a larger audience? Well, [BiaPy](https://biapyx.github.io/) is an open source framework that streamlines the use of common deep-learning workflows for a large variety of bioimage analysis tasks, including 2D and 3D semantic segmentation, instance segmentation, object detection, image denoising, single image super-resolution, self-supervised learning (for model pretraining), image classification and image-to-image translation. 
 
 In this training, you will learn how to execute a BiaPy workflow directly in Galaxy by running [inference](https://en.wikipedia.org/wiki/Deep_learning) on a set of images using two pre-trained models from BioImage.IO defined in a 
-BiaPy YAML configuration file. 
+BiaPy YAML configuration file. In particular, we will execute the CartoCell pipeline a high-content pipeline for 3D image analysis, unveils cell morphology patterns in epithelia ({% cite andres2023cartocell %}).
 
-![example-yaml.png](../../images/biapy/example-yaml.png "Example of a BiaPy YAML file where the model with ID in BioImage.IO 'merry-water-buffalo' is defin (red box). A BiaPy YAML configuration file includes information about the hardware to be used, such as the number of CPUs or GPUs, the specific image analysis task, the model to be used, optional hyperparameters, the optimizer, and the paths for loading and storing data.")
+![example-yaml.png](../../images/biapy/example-yaml.png "Example of a BiaPy YAML file where the model with ID in BioImage.IO 'merry-water-buffalo' is defined (red box). A BiaPy YAML configuration file includes information about the hardware to be used, such as the number of CPUs or GPUs, the specific image analysis task, the model to be used, optional hyperparameters, the optimizer, and the paths for loading and storing data.")
 
 You will perform a comparative analysis of the segmentation performance of two models from BioImage.IO, namely
 [venomous-swan](https://bioimage.io/#/artifacts/venomous-swan) and [merry-water-buffalo](https://bioimage.io/#/artifacts/merry-water-buffalo).
@@ -300,7 +301,7 @@ Results will look like this:
 
 ![comparison_2D_buffalo.png](../../images/biapy/comparison_2D_buffalo.png "Segmentation results with the 'merry-water-buffalo' model from BioImage.IO"){: width="50%"}
 
-Just by visually inspecting the results, it seems that **'venomous-swan'** model predict more sharp contours and cells, but **'merry-water-buffalo'** seems to capture better the cells with less merges... however, the segmentation is a bit noiser.
+From a visual inspection of the results, the **'venomous-swam'** model appears to produce sharper contours and more clearly defined cells, whereas **'merry-water-buffalo'** seems better at capturing cells with fewer merges. However, its segmentation is slightly noisier.
 
 It is hard to say that a prediction is better than other by just looking at a slice when working in 3D! 
 
