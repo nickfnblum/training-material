@@ -265,7 +265,7 @@ The **{% tool [Convert image format with Bio-formats](toolshed.g2.bx.psu.edu/rep
 > Reading metadata
 > ```
 > > <comment-title>Why check this first?</comment-title>
-> > Before starting a long analysis, this tool helps you verify if Galaxy correctly "unlocked" the metadata inside your proprietary file. If pixel sizes are missing here, your final results will be in pixels rather than biological units like micrometers ($\mu m$).
+> > Before starting a long analysis, this tool helps you verify if Galaxy correctly "unlocked" the metadata inside your proprietary file. If pixel sizes are missing here, your final results will be in pixels rather than biological units like micrometers ($$\mu m$$).
 > {: .comment}
 >
 {: .hands_on}
