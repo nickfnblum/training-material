@@ -534,7 +534,7 @@ Analyzing a "Merge" (RGB) image is risky because the intensities of different ch
 * **The fix:** Always **Split Channels** in Galaxy. For this purpose you may use the {% tool [Split image along axes with NumPy](toolshed.g2.bx.psu.edu/repos/imgteam/split_image/ip_split_image/2.3.5+galaxy0) %} tool. Measure your DAPI (nuclei) and GFP (protein) separately to ensure scientific accuracy.
 
 ## 3. Ignoring saturation
-If your image is too bright, you might hit the camera sensor's limit ($255$ for 8-bit or $65,535$ for 16-bit). This is called **Clipping**. 
+If your image is too bright, you might hit the camera sensor's limit ($$255$$ for 8-bit or $$65,535$$ for 16-bit). This is called **Clipping**. 
 * **The fix:** Check your histogram. If you see a giant "spike" at the very end of the graph, your data is saturated and you cannot accurately quantify the brightest parts of your sample.
 
 > <question-title> The artifact detective </question-title>
