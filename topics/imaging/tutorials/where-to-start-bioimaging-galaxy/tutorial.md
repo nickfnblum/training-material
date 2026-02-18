@@ -34,6 +34,9 @@ contributions:
   editing:
    - maartenpaul
    - rmassei
+  funding:
+    - nfdi4bioimage
+    - uni-freiburg
   reviewing:
     - maartenpaul
     - rmassei
