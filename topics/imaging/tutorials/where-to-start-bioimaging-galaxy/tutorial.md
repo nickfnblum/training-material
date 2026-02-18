@@ -573,8 +573,6 @@ For more inspiration and a complementary perspective on designing bioimage analy
 
 # Glossary of bioimage terms
 
-# Glossary of bioimage terms
-
 * **Binary image:** A black-and-white image where pixels can only have two values: 0 (Background) and 1 (Object).
 * **Bit depth:** The number of bits used to store each pixel value, determining the range and precision of intensity values an image can represent (e.g., 8-bit = 256 values, 16-bit = 65,536 values).
 * **Color deconvolution:** The mathematical separation of overlapping color stains (like the purple Hematoxylin and pink Eosin in H&E histology) into individual intensity channels for measurement.
