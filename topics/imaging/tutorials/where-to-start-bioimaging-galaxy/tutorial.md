@@ -37,6 +37,7 @@ contributions:
   funding:
     - nfdi4bioimage
     - uni-freiburg
+    - dfg
   reviewing:
     - maartenpaul
     - rmassei
