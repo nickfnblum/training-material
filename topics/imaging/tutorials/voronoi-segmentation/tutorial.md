@@ -33,6 +33,8 @@ contributions:
     - rmassei
     - kostrykin
     - annefou
+  editing:
+    - dianichj
   funding:
     - fiesta
     - oscars
@@ -104,14 +106,15 @@ Thes original image is published by [Legacy Surveys / D. Lang (Perimeter Institu
 >
 {: .agenda}
 
+{% include _includes/cyoa-choices.html option1="Bioimaging" option2="Earth Observation" option3="Astronomy" default="Bioimaging"
+       text="This tutorial can be followed with three different datasets from different scientific fields. Choose the one that interests you most!" %}
 
 ## Data requirements 
 Two images are required for Voronoi segmentation: A source image and a matching seed image containing objects from the source image annotated as white spots on a black background. 
 The seed image can be prepared manually or using an automatic tool. 
 To see how a seed image can be generated from a source image through smoothing and thresholding, see the [Imaging introduction tutorial]({% link topics/imaging/tutorials/imaging-introduction/tutorial.md %}).
 For this tutorial, we have already prepared a seed image, which you can download from Zenodo in the next step. 
-The Zenodo dataset contains two different pairs of seeds and images: one image of cells from the field of bioimaging and one image of tree crowns from the field of earth observation. 
-Depending on your interest, you may choose which dataset to follow the tutorial with. 
+The Zenodo dataset contains three different pairs of seeds and images: one image of cells from the field of bioimaging, one image of tree crowns from the field of earth observation, and one sky image from the field of astronomy. Depending on your interest, you may choose which dataset to follow the tutorial with. 
 
 In principle, this tutorial can be followed with any type of data provided that you have an (image, seeds) pair that satisfies the following requirements: 
 
@@ -129,49 +132,105 @@ In principle, this tutorial can be followed with any type of data provided that 
 
 
 ## Getting data from Zenodo
+
+<div class="Bioimaging" markdown="1">
+
 > <hands-on-title> Data Upload </hands-on-title>
 >
-> 1. Create a new history for this tutorial. When you log in for the first time, an empty, unnamed history is created by default. You can simply rename it.
-> 
+> 1. Create a new history for this tutorial.
+>
 >    {% snippet faqs/galaxy/histories_create_new.md %}
-> 
-> 2. Import {% icon galaxy-upload %} the following dataset from [Zenodo]({{ page.zenodo_link }}). 
-> 
+>
+> 2. Import {% icon galaxy-upload %} the following dataset from [Zenodo]({{ page.zenodo_link }}):
+>
 >    ```
 >    https://zenodo.org/records/15281843/files/images_and_seeds.zip
->    https://zenodo.org/records/15424465/files/image_and_seed.zip
 >    ```
-> 
->    - **Important:** Choose the type of data as `zip`.
-> 
->    The upload might take a few minutes. 
-> 
+>
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
 >
-> 3. {% tool [Unzip](toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy0) %} the image with the following parameters:
+> 3. {% tool [Unzip](toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy0) %} the image:
 >    - {% icon param-file %} *"input_file"*: `images_and_seeds.zip`
 >    - *"Extract single file"*: `Single file`
->    - *"Filepath"*: Choose which data you want to use: 
->        - Cells: `images_and_seeds/cell_image-B2--W00026--P00001--Z00000--T00000--dapi.tiff`
->        - Trees: `images_and_seeds/tree_image_2019_DELA_5_423000_3601000.tiff`
->        - Galaxies: `sky_image_IMAGE.png`
->    
+>    - *"Filepath"*: `images_and_seeds/cell_image-B2--W00026--P00001--Z00000--T00000--dapi.tiff`
+>
 > 4. Rename {% icon galaxy-pencil %} the resulting file as `image`.
 >
-> 5. Check that the datatype is correct.
->
->    {% snippet faqs/galaxy/datasets_change_datatype.md datatype="datatypes" %}
->
-> 6. {% tool [Unzip](toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy0) %} the seed with the following parameters:
+> 5. {% tool [Unzip](toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy0) %} the seed:
 >    - {% icon param-file %} *"input_file"*: `images_and_seeds.zip`
 >    - *"Extract single file"*: `Single file`
->    - *"Filepath"*: Choose the seed image corresponding to the image you chose in the last step. 
->        - Cells: `images_and_seeds/cell_seeds-B2--W00026--P00001--Z00000--T00000--dapi.tiff`
->        - Trees: `images_and_seeds/tree_seeds_2019_DELA_5_423000_3601000.tiff`
->        - Galaxies: `sky_image_SEED.png`
+>    - *"Filepath"*: `images_and_seeds/cell_seeds-B2--W00026--P00001--Z00000--T00000--dapi.tiff`
 >
-> 7. Rename {% icon galaxy-pencil %} the resulting file as `seeds`.
+> 6. Rename {% icon galaxy-pencil %} the resulting file as `seeds`.
 {: .hands_on}
+
+</div>
+
+<div class="Earth Observation" markdown="1">
+
+> <hands-on-title> Data Upload </hands-on-title>
+>
+> 1. Create a new history for this tutorial.
+>
+>    {% snippet faqs/galaxy/histories_create_new.md %}
+>
+> 2. Import {% icon galaxy-upload %} the following dataset from [Zenodo]({{ page.zenodo_link }}):
+>
+>    ```
+>    https://zenodo.org/records/15281843/files/images_and_seeds.zip
+>    ```
+>
+>    {% snippet faqs/galaxy/datasets_import_via_link.md %}
+>
+> 3. {% tool [Unzip](toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy0) %} the image:
+>    - {% icon param-file %} *"input_file"*: `images_and_seeds.zip`
+>    - *"Extract single file"*: `Single file`
+>    - *"Filepath"*: `images_and_seeds/tree_image_2019_DELA_5_423000_3601000.tiff`
+>
+> 4. Rename {% icon galaxy-pencil %} the resulting file as `image`.
+>
+> 5. {% tool [Unzip](toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy0) %} the seed:
+>    - {% icon param-file %} *"input_file"*: `images_and_seeds.zip`
+>    - *"Extract single file"*: `Single file`
+>    - *"Filepath"*: `images_and_seeds/tree_seeds_2019_DELA_5_423000_3601000.tiff`
+>
+> 6. Rename {% icon galaxy-pencil %} the resulting file as `seeds`.
+{: .hands_on}
+
+</div>
+
+<div class="Astronomy" markdown="1">
+
+> <hands-on-title> Data Upload </hands-on-title>
+>
+> 1. Create a new history for this tutorial.
+>
+>    {% snippet faqs/galaxy/histories_create_new.md %}
+>
+> 2. Import {% icon galaxy-upload %} the following dataset from [Zenodo]({{ page.zenodo_link }}):
+>
+>    ```
+>    https://zenodo.org/records/15424465/files/image_and_seed.zip
+>    ```
+>
+>    {% snippet faqs/galaxy/datasets_import_via_link.md %}
+>
+> 3. {% tool [Unzip](toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy0) %} the image:
+>    - {% icon param-file %} *"input_file"*: `image_and_seed.zip`
+>    - *"Extract single file"*: `Single file`
+>    - *"Filepath"*: `sky_image_IMAGE.png`
+>
+> 4. Rename {% icon galaxy-pencil %} the resulting file as `image`.
+>
+> 5. {% tool [Unzip](toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy0) %} the seed:
+>    - {% icon param-file %} *"input_file"*: `image_and_seed.zip`
+>    - *"Extract single file"*: `Single file`
+>    - *"Filepath"*: `sky_image_SEED.png`
+>
+> 6. Rename {% icon galaxy-pencil %} the resulting file as `seeds`.
+{: .hands_on}
+
+</div>
 
 
 ## Generate an object mask from pixel intensity
