@@ -113,8 +113,7 @@ Thes original image is published by [Legacy Surveys / D. Lang (Perimeter Institu
 Two images are required for Voronoi segmentation: A source image and a matching seed image containing objects from the source image annotated as white spots on a black background. 
 The seed image can be prepared manually or using an automatic tool. 
 To see how a seed image can be generated from a source image through smoothing and thresholding, see the [Imaging introduction tutorial]({% link topics/imaging/tutorials/imaging-introduction/tutorial.md %}).
-For this tutorial, we have already prepared a seed image, which you can download from Zenodo in the next step. 
-The Zenodo dataset contains three different pairs of seeds and images: one image of cells from the field of bioimaging, one image of tree crowns from the field of earth observation, and one sky image from the field of astronomy. Depending on your interest, you may choose which dataset to follow the tutorial with. 
+For this tutorial, we have already prepared seed images, which you can download from Zenodo in the next step. The datasets are hosted in two Zenodo records: one containing a cell image and a tree crown image with their corresponding seeds, and one containing a sky image with its corresponding seeds.
 
 In principle, this tutorial can be followed with any type of data provided that you have an (image, seeds) pair that satisfies the following requirements: 
 
