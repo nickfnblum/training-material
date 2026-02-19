@@ -46,7 +46,6 @@ tags:
 - Multi-channel image
 ---
 
-
 Voronoi segmentation is a technique used to divide an image or space into regions
 based on the proximity to a set of defined points, called seeds or sites. Each 
 region, known as a Voronoi cell, contains all locations that are closer to its 
@@ -57,8 +56,24 @@ important to understand the proximity or neighborhood structure of points, such
 as organizing space, studying clustering patterns, or identifying regions of 
 influence around each point in various types of data.
 
+> <agenda-title></agenda-title>
+>
+> In this tutorial, we will cover:
+>
+> 1. TOC
+> {:toc}
+>
+{: .agenda}
 
-### Application to bioimage analysis
+This tutorial demonstrates how Voronoi segmentation can be applied to images from three different scientific fields: bioimaging, earth observation, and astronomy. To make it easier to follow, we have prepared a dedicated path for each field.
+
+{% include _includes/cyoa-choices.html option1="Bioimaging" option2="Earth" option3="Astronomy" default="Bioimaging"
+       text="This tutorial can be followed with three different datasets from different scientific fields. Choose the one that interests you most!" %}
+
+
+<div class="Bioimaging" markdown="1">
+
+### Application to Bioimaging
 
 In bioimage analysis, Voronoi segmentation is a valuable tool for studying the 
 spatial organization of cells, tissues, or other biological structures within an 
@@ -75,6 +90,9 @@ cells to tumor cells or mapping neuron distributions within brain tissue.
 
 These images are from {% cite gunkel2019microscope %}. 
 
+</div>
+
+<div class="Earth" markdown="1">
 
 ### Application to Earth Observation
 
@@ -86,6 +104,9 @@ In Earth observation, Voronoi segmentation is used to analyze spatial patterns a
 
 These images are from {% cite weinstein2022neontree %}.
 
+</div>
+
+<div class="Astronomy" markdown="1">
 
 ### Application to Astronomy
 
@@ -95,35 +116,36 @@ In astronomy and large-scale sky surveys, a key objective is to identify individ
 
 ![Segmented sky image](../../images/voronoi-segmentation/sky_image_OVERLAY_VORONOI.png "Segmented sky image.")
 
-Thes original image is published by [Legacy Surveys / D. Lang (Perimeter Institute)](https://www.legacysurvey.org/acknowledgment/) and can be downloaded from the [official website](https://www.legacysurvey.org/viewer/jpeg-cutout?ra=53.16216667&dec=-27.79149167&layer=ls-dr10&pixscale=0.262&size=1200). The Legacy Surveys are described in {% cite legacy-survey-astronomy %}.
+This original image is published by [Legacy Surveys / D. Lang (Perimeter Institute)](https://www.legacysurvey.org/acknowledgment/) and can be downloaded from the [official website](https://www.legacysurvey.org/viewer/jpeg-cutout?ra=53.16216667&dec=-27.79149167&layer=ls-dr10&pixscale=0.262&size=1200). The Legacy Surveys are described in {% cite legacy-survey-astronomy %}.
 
-> <agenda-title></agenda-title>
->
-> In this tutorial, we will cover:
->
-> 1. TOC
-> {:toc}
->
-{: .agenda}
+</div>
 
-{% include _includes/cyoa-choices.html option1="Bioimaging" option2="Earth Observation" option3="Astronomy" default="Bioimaging"
-       text="This tutorial can be followed with three different datasets from different scientific fields. Choose the one that interests you most!" %}
+## Data requirements
 
-## Data requirements 
-Two images are required for Voronoi segmentation: A source image and a matching seed image containing objects from the source image annotated as white spots on a black background. 
-The seed image can be prepared manually or using an automatic tool. 
-To see how a seed image can be generated from a source image through smoothing and thresholding, see the [Imaging introduction tutorial]({% link topics/imaging/tutorials/imaging-introduction/tutorial.md %}).
-For this tutorial, we have already prepared seed images, which you can download from Zenodo in the next step. The datasets are hosted in two Zenodo records: one containing a cell image and a tree crown image with their corresponding seeds, and one containing a sky image with its corresponding seeds.
+Two images are required for Voronoi segmentation: a source image and a matching seed image containing objects from the source image annotated as white spots on a black background. The seed image can be prepared manually or using an automatic tool. To see how a seed image can be generated from a source image through smoothing and thresholding, see the [Imaging introduction tutorial]({% link topics/imaging/tutorials/imaging-introduction/tutorial.md %}).
+For this tutorial, we have already prepared seed images, which you can download from Zenodo in the next step.
 
-In principle, this tutorial can be followed with any type of data provided that you have an (image, seeds) pair that satisfies the following requirements: 
+<div class="Bioimaging" markdown="1">
+The Zenodo record contains two pairs of seeds and images: a cell image and a tree crown image, each with their corresponding seeds. For this path, you will use the cell image.
+</div>
 
-**Seeds:** 
+<div class="Earth" markdown="1">
+The Zenodo record contains two pairs of seeds and images: a cell image and a tree crown image, each with their corresponding seeds. For this path, you will use the tree crown image.
+</div>
+
+<div class="Astronomy" markdown="1">
+The Zenodo record contains a sky image with its corresponding seeds.
+</div>
+
+In principle, this tutorial can be followed with any type of data provided that you have an (image, seeds) pair that satisfies the following requirements:
+
+**Seeds:**
 - White seeds on a black background.
 - Format: .tiff
 
-**Image:** 
-- Preferrably lighter objects on a darker background for the mask to work well.
-- Format: .tiff stored in [planar, not interleaved format](http://avitevet.com/uncategorized/when-to-use-it-interleaved-vs-planar-image-data-storage/). 
+**Image:**
+- Preferably lighter objects on a darker background for the mask to work well.
+- Format: .tiff stored in [planar, not interleaved format](http://avitevet.com/uncategorized/when-to-use-it-interleaved-vs-planar-image-data-storage/).
 
 > <comment-title> Checking the metadata of an image </comment-title>
 > Tip: You can use the tool {% tool [Show image info](toolshed.g2.bx.psu.edu/repos/imgteam/image_info/ip_imageinfo/5.7.1+galaxy1) %} to extract metadata from your image. The image metadata should have "SizeC = 3". It should not say "SizeC = 3 (effectively 1)", because that means that your image is stored in interleaved, not planar format.
@@ -165,7 +187,7 @@ In principle, this tutorial can be followed with any type of data provided that 
 
 </div>
 
-<div class="Earth Observation" markdown="1">
+<div class="Earth" markdown="1">
 
 > <hands-on-title> Data Upload </hands-on-title>
 >
@@ -233,15 +255,51 @@ In principle, this tutorial can be followed with any type of data provided that 
 
 
 ## Generate an object mask from pixel intensity
-In case there should be empty regions without cells in the image, we wish to constrain the single Voronoi regions to roughly the area where a cell is. 
+In case there should be empty regions without objects in the image, we wish to constrain the single Voronoi regions to roughly the area where an object is. 
 Therefore, we first smooth the image to reduce the influence of noise, and then apply a threshold on the smoothed image to get a binary mask. 
+
 > <comment-title> Mask vs seeds </comment-title>
 > The process used to create a mask can also be used to make seeds, as in the 
 > [Imaging introduction tutorial]({% link topics/imaging/tutorials/imaging-introduction/tutorial.md %}). 
 {: .comment}
 
-> <hands-on-title> Task description </hands-on-title>
-> The image has three channels (red, green, blue). To generate a mask, we have to select a channel, for instance channel `0`. 
+<div class="Bioimaging" markdown="1">
+
+> <comment-title> Single channel image </comment-title>
+> The cell image has a single channel (`SizeC = 1`), so we can skip the channel extraction step and use the image directly. If you are curious about how to extract a single channel from a multi-channel image, check out the Earth Observation path of this tutorial.
+{: .comment}
+
+> <hands-on-title> Generate an object mask </hands-on-title>
+> 1. {% tool [Filter 2-D image](toolshed.g2.bx.psu.edu/repos/imgteam/2d_simple_filter/ip_filter_standard/1.12.0+galaxy1) %} with the following parameters:
+>    - {% icon param-file %} *"Input Image"*: `image`
+>    - *"Filter type"*: `Gaussian`
+>        - *"Sigma"*: `3`
+> 
+> 2. Rename the output to `smoothed image`.
+>
+> 3. {% tool [Threshold image](toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.18.1+galaxy3) %} with the following parameters:
+>    - {% icon param-file %} *"Input Image"*: `smoothed image`
+>    - *"Thresholding method"*: `Manual`
+>        - *"Threshold value"*: `3.0`
+> 
+> 4. Rename the output to `mask`.
+>
+> 5. Rename {% icon galaxy-pencil %} the `image` file to `single channel image`.
+{: .hands_on}
+
+> <comment-title> The value of "Sigma" and the "Threshold value" </comment-title>
+> The default threshold value of `3.0` works well for the cell image, where the background has a very low intensity. If needed, you may adjust these values.
+{: .comment}
+
+</div>
+
+<div class="Earth" markdown="1">
+
+> <comment-title> Multi-channel image </comment-title>
+> The tree crown image has three channels (`SizeC = 3`). To generate a mask, we first need to extract a single channel using the Convert image format tool.
+{: .comment}
+
+> <hands-on-title> Generate an object mask </hands-on-title>
 > 1. {% tool [Convert image format](toolshed.g2.bx.psu.edu/repos/imgteam/bfconvert/ip_convertimage/6.7.0+galaxy3) %} with the following parameters:
 >    - {% icon param-file %} *"Input Image"*: `image`
 >    - *"Extract series"*: `All series`
@@ -253,37 +311,59 @@ Therefore, we first smooth the image to reduce the influence of noise, and then 
 >    - *"Extract crop"*: `Full image`
 >    - *"Tile image"*: `No tiling`
 >    - *"Pyramid image"*: `No Pyramid`
-> 
-> 2. Rename the output to `single channel image`
-> 
-> 
+>
+> 2. Rename the output to `single channel image`.
+>
 > 3. {% tool [Filter 2-D image](toolshed.g2.bx.psu.edu/repos/imgteam/2d_simple_filter/ip_filter_standard/1.12.0+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Input Image"*: `single channel image`
 >    - *"Filter type"*: `Gaussian`
 >        - *"Sigma"*: `3`
 > 
 > 4. Rename the output to `smoothed image`.
-> 
 >
 > 5. {% tool [Threshold image](toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.18.1+galaxy3) %} with the following parameters:
 >    - {% icon param-file %} *"Input Image"*: `smoothed image`
 >    - *"Thresholding method"*: `Manual`
->        - *"Threshold value"*: `3.0`. Note: This threshold value works well for the cell image, where the background has a very low intensity. For images with a brighter background, the threshold value will need to be adjusted.
+>        - *"Threshold value"*: `3.0`
 > 
 > 6. Rename the output to `mask`.
-> 
 {: .hands_on}
 
-> <comment-title> How many channels does my image have? </comment-title>
-> Note: If providing your own image, you can check how many channels your image has with the {% tool [Show image info](toolshed.g2.bx.psu.edu/repos/imgteam/image_info/ip_imageinfo/5.7.1+galaxy1) %} tool.
-> The number of channels is listed as, e.g., `SizeC = 3` for the cell image or `SizeC = 3 (effectively 1)` for the tree image.
+> <comment-title> The value of "Sigma" and the "Threshold value" </comment-title>
+> The tree crown image has a relatively noisy background, so you may need to adjust the value of *"Sigma"* and the *"Threshold value"* to achieve better results.
 {: .comment}
 
-> <comment-title> The value of "Sigma" and the "Threshold value" </comment-title>
-> Note: Generating a robust mask is harder for images with more noise. 
-> Since the tree image has more noise than the cell image, you may have to adjust the value of *"Sigma"* to achieve better results.
-> You may also have to adjust the *"Threshold value"* in the last step.
+</div>
+
+<div class="Astronomy" markdown="1">
+
+> <comment-title> Single channel image </comment-title>
+> The sky image has a single channel (`SizeC = 1`), so we can skip the channel extraction step and use the image directly. If you are curious about how to extract a single channel from a multi-channel image, check out the Earth Observation path of this tutorial.
 {: .comment}
+
+> <hands-on-title> Generate an object mask </hands-on-title>
+> 1. {% tool [Filter 2-D image](toolshed.g2.bx.psu.edu/repos/imgteam/2d_simple_filter/ip_filter_standard/1.12.0+galaxy1) %} with the following parameters:
+>    - {% icon param-file %} *"Input Image"*: `image`
+>    - *"Filter type"*: `Gaussian`
+>        - *"Sigma"*: `3`
+> 
+> 2. Rename the output to `smoothed image`.
+>
+> 3. {% tool [Threshold image](toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.18.1+galaxy3) %} with the following parameters:
+>    - {% icon param-file %} *"Input Image"*: `smoothed image`
+>    - *"Thresholding method"*: `Manual`
+>        - *"Threshold value"*: `3.0`
+> 
+> 4. Rename the output to `mask`.
+>
+> 5. Rename {% icon galaxy-pencil %} the `image` file to `single channel image`.
+{: .hands_on}
+
+> <comment-title> The value of "Sigma" and the "Threshold value" </comment-title>
+> You may need to adjust the value of *"Sigma"* and the *"Threshold value"* depending on the brightness and noise level of your sky image.
+{: .comment}
+
+</div>
 
 
 > <question-title></question-title>
@@ -354,7 +434,7 @@ This can be achieved with the following operation.
 >
 > 3. {% tool [Colorize label map](toolshed.g2.bx.psu.edu/repos/imgteam/colorize_labels/colorize_labels/3.2.1+galaxy3) %}. 
 >    - {% icon param-file %} *"Input Image"*: `masked segmentation`
->    - *"Radius of the neighborhood"*: `10` (works well for the cell image; may need adjustment for the tree image)
+>    - *"Radius of the neighborhood"*: `10` (may need adjustment depending on your image)
 >    - *"Background label"*: `0`
 > 
 > 4. Rename the output to `colorized label map`
@@ -398,8 +478,7 @@ This can be achieved with the following operation.
 
 In this last step, we compute the max, min and mean intensity for each image segment, as well as the area and the major and minor axis lengths. 
 Depending on the use case, the distribution of these extracted features could reveal different subgroups in the data. 
-In this way, the features could be used in to categorize different types of trees, cells, or other items. 
-We will now use a scatter plot to explore the data. 
+In this way, the features could be used to categorize different types of objects.
 
 
 ## Visualize segment features with a scatter plot 
