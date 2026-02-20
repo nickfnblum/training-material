@@ -598,14 +598,7 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
 <br/>
 
 <script>
-function ready(fn) {
-	if (document.readyState != 'loading'){
-		fn();
-	} else {
-		document.addEventListener('DOMContentLoaded', fn);
-	}
-}
-ready(function() {
+window.addEventListener('load', function() {
 	// add sidebar TOC
 	var $myNav = $("#toc");
 	$myNav.empty();
