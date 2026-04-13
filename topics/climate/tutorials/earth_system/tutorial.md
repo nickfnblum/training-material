@@ -22,7 +22,7 @@ tags:
   - ocean
   - atmosphere
   - solid-earth
-  - continental-surfaces
+  - land
   - biodiversity
   - climate
   - ecology  
@@ -85,8 +85,10 @@ Discover how we created the **European subdomain** on Galaxy in our dedicated **
 Climate and ecology are **inextricably linked**:
 
 - **Climate** drives ecological processes (e.g., temperature affects species distribution).
-- **Ecology** influences climate (e.g., forests absorb CO₂, oceans regulate heat).  
+- **Ecology** influences climate (e.g., forests absorb CO₂, oceans regulate heat).
+- 
 On Galaxy, you can explore these connections through:
+
 - **Climate Data**: ERA5 reanalysis, Sentinel-5P atmospheric data.
 - **Ecological Data**: OBIS biodiversity records, Sentinel-2 land cover.
 - **Integrated Workflows**: Combine climate and ecological datasets to study impacts like habitat loss or carbon cycles.
