@@ -2,21 +2,20 @@
 layout: tutorial_hands_on  
 title: Where to start with earth system science in Galaxy
 questions:
-
-- What is the Earth System and why is it important?
-- What types of Earth data are available on Galaxy?
-- How can I access and analyze Earth data for ocean, atmosphere, solid earth, continental surfaces, and biodiversity?  
+  - What is the Earth System and why is it important?
+  - What types of Earth data are available on Galaxy?
+  - How can I access and analyze Earth data for ocean, atmosphere, solid earth, continental surfaces, and biodiversity?  
 objectives:
-- Understand the Earth System and its components
-- Discover the terminology and data sources for Earth science
-- Learn about Earth observations, reanalysis, and visualization tools on Galaxy
-- Explore European and French subdomains, and their relevance to climate and ecology  
+  - Understand the Earth System and its components
+  - Discover the terminology and data sources for Earth science
+  - Learn about Earth observations, reanalysis, and visualization tools on Galaxy
+  - Explore European and French subdomains, and their relevance to climate and ecology  
 time_estimation: 1H30  
 key_points:
-- Earth System as a complex, interconnected system
-- Essential variables and data types (observations, reanalysis, models)
-- European and French subdomains
-- Climate and ecology as interconnected themes  
+  - Earth System as a complex, interconnected system
+  - Essential variables and data types (observations, reanalysis, models)
+  - European and French subdomains
+  - Climate and ecology as interconnected themes  
 tags:
   - earth-system
   - ocean
@@ -26,14 +25,14 @@ tags:
   - biodiversity
   - climate
   - ecology  
-  contributions:  
+contributions:  
   authorship:  
-  - Marie59  
+    - Marie59  
   funding:
-  - gaia-data  
-  - gallantries  
-  - fairease  
-  - eurosciencegateway
+    - gaia-data  
+    - gallantries  
+    - fairease  
+    - eurosciencegateway
 ---
 
 > <agenda-title></agenda-title>
