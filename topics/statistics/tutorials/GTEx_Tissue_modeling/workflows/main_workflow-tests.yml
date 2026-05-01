@@ -1,0 +1,23 @@
+- doc: Test the Image Learner workflow for GTEx tissue classification with prepared tutorial inputs
+  job:
+    'gtex_image_learner_input':
+      class: File
+      path: test-data/gtex_image_learner_input.csv
+      filetype: csv
+    'gtex_tissue_images':
+      class: File
+      path: test-data/gtex_tissue_images.zip
+      filetype: zip
+  outputs:
+    report:
+      asserts:
+        has_text:
+          text: "Image Classification Report"
+    model:
+      asserts:
+        has_text:
+          text: "model"
+    predictions:
+      asserts:
+        has_n_columns:
+          n: 8

@@ -1,0 +1,128 @@
+---
+layout: tutorial_slides
+logo: GTN
+title: "GTEx Tissue Modeling with Galaxy Image Learner"
+
+questions:
+  - "How can GTEx gene expression profiles be transformed into image-like inputs for Image Learner?"
+  - "How do GTEx sample annotations provide tissue labels for supervised classification?"
+  - "How can this workflow be run on any Galaxy server with Image Learner installed?"
+
+objectives:
+  - "Prepare GTEx v11 gene TPM and sample annotation files for tissue classification."
+  - "Create an Image Learner input table and ZIP archive of grayscale expression images."
+  - "Train and evaluate a multi-class tissue classifier in Galaxy."
+
+contributors:
+  - paulocilasjr
+  - jgoecks
+---
+
+# GTEx Tissue Modeling
+
+- GTEx v11 gene TPM profiles are used as model inputs.
+- GTEx sample attributes provide tissue labels.
+- Image Learner trains a multi-class tissue classifier in Galaxy.
+
+???
+
+This tutorial adapts the AnVIL_Galaxy rationale for a general Galaxy server. The workflow no longer assumes Terra, DRS, or AnVIL Helm.
+
+---
+
+# Required Files
+
+- `GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz`
+- `GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt`
+
+Download manually from:
+
+- GTEx Portal bulk tissue expression
+- GTEx Portal metadata
+
+---
+
+# Core Rationale
+
+1. Load the GTEx TPM GCT file.
+2. Transpose the matrix so samples are rows.
+3. Match samples to annotations by `SAMPID`.
+4. Use `SMTSD` as the tissue label.
+5. Convert each expression vector into a grayscale image.
+6. Train Image Learner to classify tissue.
+
+---
+
+# Expression as Image
+
+- Apply `log1p` to TPM values.
+- Pad each sample vector to a square length.
+- Reshape the vector into a 2D array.
+- Save each array as a grayscale JPEG.
+
+This is an engineered representation for Image Learner, not a claim that gene order encodes biological image neighborhoods.
+
+---
+
+# Prepared Galaxy Inputs
+
+| File | Purpose |
+|---|---|
+| `gtex_image_learner_input.csv` | Metadata table with `image_path`, `label`, and `sample_id`. |
+| `gtex_tissue_images.zip` | ZIP archive containing one JPEG per sample. |
+
+The `image_path` values must match filenames inside the ZIP archive.
+
+---
+
+# Example Tissue Set
+
+- Brain - Cortex
+- Heart - Left Ventricle
+- Liver
+- Lung
+- Muscle - Skeletal
+- Adipose - Subcutaneous
+- Skin - Sun Exposed (Lower leg)
+
+Use balanced sampling for a clear tutorial task, then scale up once the workflow runs.
+
+---
+
+# Image Learner Setup
+
+| Parameter | Value |
+|---|---|
+| Task | Multi-class classification |
+| Label column | `label` |
+| Image column | `image_path` |
+| Model | CAFormer S18 384 |
+| Split | 70/10/20 |
+| Random seed | 42 |
+
+---
+
+# Galaxy Scope
+
+- Works on any Galaxy instance with Image Learner installed.
+- Does not require AnVIL Helm.
+- Does not require Terra DRS resolution.
+- Input preparation can happen locally, on a workstation, or on any compute environment with Python.
+
+---
+
+# Results to Inspect
+
+- Dataset composition by tissue and split.
+- Training and validation curves.
+- Held-out test accuracy and weighted F1.
+- Per-class precision, recall, and F1.
+- Confusion matrix for tissue pairs that are difficult to separate.
+
+---
+
+# Takeaways
+
+- GTEx sample-level expression profiles can be converted into Image Learner-compatible image inputs.
+- `SMTSD` provides detailed tissue labels for supervised classification.
+- The workflow preserves the AnVIL_Galaxy modeling idea while making the tutorial portable across Galaxy servers.
