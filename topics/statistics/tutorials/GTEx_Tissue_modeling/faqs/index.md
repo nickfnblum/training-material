@@ -4,7 +4,10 @@ layout: faq-page
 
 ## What GTEx files are used?
 
-This tutorial uses `GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz` and `GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt`, downloaded manually from the GTEx Portal.
+This tutorial uses:
+
+- `GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz`: https://storage.googleapis.com/adult-gtex/bulk-gex/v11/rna-seq/GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz
+- `GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt`: https://storage.googleapis.com/adult-gtex/annotations/v11/metadata-files/GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt
 
 ## What is the label?
 
@@ -14,9 +17,9 @@ The target label is `SMTSD`, the detailed tissue label in the GTEx sample attrib
 
 Image Learner trains image models. The preprocessing step makes one grayscale image per sample by log-transforming the sample's TPM vector, padding it to a square, and saving it as a JPEG. This preserves the expression values in a fixed-size input format that Image Learner can consume.
 
-## Is this workflow AnVIL-specific?
+## Is this workflow tied to one Galaxy server?
 
-No. It is based on the AnVIL_Galaxy rationale, but this version uses manually downloaded GTEx v11 files and any Galaxy server with Image Learner installed.
+No. This tutorial uses GTEx v11 files from public Google Cloud Storage URLs and can run on any Galaxy server with Image Learner installed.
 
 ## Which Galaxy server can run it?
 

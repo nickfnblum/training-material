@@ -26,7 +26,7 @@ contributors:
 
 ???
 
-This tutorial adapts the AnVIL_Galaxy rationale for a general Galaxy server. The workflow no longer assumes Terra, DRS, or AnVIL Helm.
+This tutorial builds a GTEx tissue classifier from expression-derived image inputs on a Galaxy server with Image Learner.
 
 ---
 
@@ -35,14 +35,14 @@ This tutorial adapts the AnVIL_Galaxy rationale for a general Galaxy server. The
 - `GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz`
 - `GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt`
 
-Download manually from:
+Direct URLs:
 
-- GTEx Portal bulk tissue expression
-- GTEx Portal metadata
+- https://storage.googleapis.com/adult-gtex/bulk-gex/v11/rna-seq/GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz
+- https://storage.googleapis.com/adult-gtex/annotations/v11/metadata-files/GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt
 
 ---
 
-# Core Rationale
+# Workflow Steps
 
 1. Load the GTEx TPM GCT file.
 2. Transpose the matrix so samples are rows.
@@ -105,8 +105,6 @@ Use balanced sampling for a clear tutorial task, then scale up once the workflow
 # Galaxy Scope
 
 - Works on any Galaxy instance with Image Learner installed.
-- Does not require AnVIL Helm.
-- Does not require Terra DRS resolution.
 - Input preparation can happen locally, on a workstation, or on any compute environment with Python.
 
 ---
@@ -125,4 +123,4 @@ Use balanced sampling for a clear tutorial task, then scale up once the workflow
 
 - GTEx sample-level expression profiles can be converted into Image Learner-compatible image inputs.
 - `SMTSD` provides detailed tissue labels for supervised classification.
-- The workflow preserves the AnVIL_Galaxy modeling idea while making the tutorial portable across Galaxy servers.
+- The workflow is portable across Galaxy servers that provide Image Learner.

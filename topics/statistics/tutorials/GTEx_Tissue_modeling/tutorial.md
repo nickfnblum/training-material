@@ -14,9 +14,11 @@ time_estimation: "2h"
 key_points:
 - GTEx v11 gene TPM profiles can be represented as fixed-size grayscale images, one image per sample.
 - `SMTSD` from the GTEx sample attributes file is used as the tissue label.
-- This tutorial is independent of the AnVIL Helm deployment and can be run on any Galaxy instance where Image Learner is available or installable.
+- This tutorial can be run on any Galaxy instance where Image Learner is available or installable.
 contributors:
 - paulocilasjr
+- allissadillman
+- nakucher
 - jgoecks
 tags:
 - GTEx
@@ -26,10 +28,10 @@ tags:
 - Deep Learning
 ---
 
-This tutorial adapts the GTEx expression-image modeling rationale from [AnVIL_Galaxy](https://github.com/paulocilasjr/AnVIL_Galaxy) for a general Galaxy setting. Instead of resolving GTEx data through AnVIL DRS in Terra, we use GTEx v11 files downloaded manually from the GTEx Portal:
+This tutorial uses GTEx v11 expression and sample metadata files from the GTEx public Google Cloud Storage bucket:
 
-1. `GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz`
-2. `GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt`
+1. [`GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz`](https://storage.googleapis.com/adult-gtex/bulk-gex/v11/rna-seq/GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz)
+2. [`GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt`](https://storage.googleapis.com/adult-gtex/annotations/v11/metadata-files/GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt)
 
 The first file contains gene-level TPM expression values. The second file contains sample metadata, including tissue labels. We subset samples by tissue, convert each expression profile into a grayscale image, create a metadata CSV with `image_path` and `label`, and train a tissue classifier with Galaxy Image Learner.
 
@@ -50,12 +52,12 @@ The first file contains gene-level TPM expression values. The second file contai
 
 # Input Data
 
-Download the two required GTEx v11 files manually from the GTEx Portal:
+Download the two required GTEx v11 files:
 
-| File | GTEx Portal page | Use |
+| File | Direct URL | Use |
 |---|---|---|
-| `GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz` | [Bulk tissue expression](https://gtexportal.org/home/downloads/adult-gtex/bulk_tissue_expression) | Gene TPM matrix |
-| `GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt` | [Metadata](https://gtexportal.org/home/downloads/adult-gtex/metadata) | Sample labels and QC metadata |
+| `GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz` | [GTEx v11 gene TPM GCT](https://storage.googleapis.com/adult-gtex/bulk-gex/v11/rna-seq/GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz) | Gene TPM matrix |
+| `GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt` | [GTEx v11 sample attributes](https://storage.googleapis.com/adult-gtex/annotations/v11/metadata-files/GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt) | Sample labels and QC metadata |
 
 The GCT expression matrix has genes as rows and samples as columns. The sample attributes file includes:
 
@@ -65,9 +67,9 @@ The GCT expression matrix has genes as rows and samples as columns. The sample a
 | `SMTS` | Broad tissue category. |
 | `SMTSD` | Detailed tissue label used as the classification target in this tutorial. |
 
-# Modeling Rationale
+# Workflow Overview
 
-The workflow follows the same core rationale as the AnVIL_Galaxy prototype:
+The workflow uses the following steps:
 
 1. Load the GTEx TPM GCT file.
 2. Transpose the matrix so samples are rows and genes are columns.
@@ -76,10 +78,7 @@ The workflow follows the same core rationale as the AnVIL_Galaxy prototype:
 5. Convert each sample's TPM vector into a grayscale image.
 6. Train Image Learner to predict tissue label from the generated image.
 
-This tutorial differs from the prototype in two important ways:
-
-- It uses GTEx v11 files downloaded from the GTEx Portal rather than GTEx v8 files resolved through AnVIL DRS.
-- It is written for any Galaxy instance that has Image Learner installed, or where an administrator can install Image Learner from the ToolShed.
+The tutorial is written for any Galaxy instance that has Image Learner installed, or where an administrator can install Image Learner from the ToolShed.
 
 # Prepare the Image Learner Inputs
 
@@ -291,4 +290,4 @@ This workflow is a teaching example and a convenient Image Learner benchmark. It
 
 # Conclusion
 
-You prepared GTEx v11 gene TPM data and sample attributes, generated grayscale images from tissue expression profiles, and trained a Galaxy Image Learner model to classify GTEx tissues. The workflow keeps the AnVIL_Galaxy modeling rationale but removes AnVIL-specific DRS and Helm assumptions, making it suitable for any Galaxy server with Image Learner.
+You prepared GTEx v11 gene TPM data and sample attributes, generated grayscale images from tissue expression profiles, and trained a Galaxy Image Learner model to classify GTEx tissues. The workflow is suitable for any Galaxy server with Image Learner.

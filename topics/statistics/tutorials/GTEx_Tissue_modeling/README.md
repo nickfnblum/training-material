@@ -4,14 +4,14 @@ A Galaxy tutorial for converting GTEx v11 gene expression profiles into grayscal
 
 ## Overview
 
-This tutorial adapts the rationale from `paulocilasjr/AnVIL_Galaxy`: load GTEx gene TPM values, join sample attributes, subset tissues, convert each expression vector into an image, and classify tissue labels with a no-code Galaxy machine learning tool. This version is not tied to AnVIL Helm or Terra DRS. It uses manually downloaded GTEx v11 files and can run on any Galaxy instance that has Image Learner installed.
+This tutorial shows how to load GTEx gene TPM values, join sample attributes, subset tissues, convert each expression vector into an image, and classify tissue labels with a no-code Galaxy machine learning tool. It uses GTEx v11 files from public Google Cloud Storage URLs and can run on any Galaxy instance that has Image Learner installed.
 
 ## Required GTEx Files
 
-- `GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz`
-- `GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt`
+- `GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz`: https://storage.googleapis.com/adult-gtex/bulk-gex/v11/rna-seq/GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz
+- `GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt`: https://storage.googleapis.com/adult-gtex/annotations/v11/metadata-files/GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt
 
-Download sources:
+GTEx Portal source pages:
 
 - Bulk tissue expression: https://gtexportal.org/home/downloads/adult-gtex/bulk_tissue_expression
 - Metadata: https://gtexportal.org/home/downloads/adult-gtex/metadata
@@ -33,6 +33,6 @@ Download sources:
 
 - `tutorial.md` - Main hands-on tutorial
 - `tutorial.bib` - Bibliography
-- `data-library.yaml` - GTEx Portal source references
+- `data-library.yaml` - GTEx raw file URL references
 - `workflows/` - Image Learner workflow skeleton
 - `faqs/` - Tutorial FAQ
