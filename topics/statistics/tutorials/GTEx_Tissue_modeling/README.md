@@ -4,9 +4,14 @@ A Galaxy tutorial for converting GTEx v11 gene expression profiles into grayscal
 
 ## Overview
 
-This tutorial shows how to load GTEx gene TPM values, join sample attributes, subset tissues, convert each expression vector into an image, and classify tissue labels with a no-code Galaxy machine learning tool. It uses GTEx v11 files from public Google Cloud Storage URLs and can run on any Galaxy instance that has Image Learner installed.
+This tutorial shows how to classify GTEx tissues with a no-code Galaxy machine learning tool. The recommended path uses prepared metadata and image files from Zenodo. An optional path shows how to rebuild those files from GTEx v11 raw expression and sample metadata.
 
-## Required GTEx Files
+## Recommended Zenodo Files
+
+- `selected_gtex_v11_tpm_image_tissue_labels.csv`: https://zenodo.org/records/19963477/files/selected_gtex_v11_tpm_image_tissue_labels.csv
+- `selected_gtex_v11_tpm_image_tissue_dataset.zip`: https://zenodo.org/records/19963477/files/selected_gtex_v11_tpm_image_tissue_dataset.zip
+
+## Optional Raw GTEx Files
 
 - `GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz`: https://storage.googleapis.com/adult-gtex/bulk-gex/v11/rna-seq/GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz
 - `GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt`: https://storage.googleapis.com/adult-gtex/annotations/v11/metadata-files/GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt
@@ -16,11 +21,11 @@ GTEx Portal source pages:
 - Bulk tissue expression: https://gtexportal.org/home/downloads/adult-gtex/bulk_tissue_expression
 - Metadata: https://gtexportal.org/home/downloads/adult-gtex/metadata
 
-## Outputs Created Before Galaxy Upload
+## Optional Outputs Created Before Galaxy Upload
 
-- `gtex_image_learner_input.csv`
-- `gtex_tissue_images.zip`
-- Optional audit files: `expression_matrix.csv`, `metadata_base.csv`
+- `ludwig_input.csv`
+- `output_images.zip`
+- Optional audit file: `metadata_base.csv`
 
 ## Galaxy Task
 
@@ -33,6 +38,6 @@ GTEx Portal source pages:
 
 - `tutorial.md` - Main hands-on tutorial
 - `tutorial.bib` - Bibliography
-- `data-library.yaml` - GTEx raw file URL references
+- `data-library.yaml` - Zenodo and raw GTEx URL references
 - `workflows/` - Image Learner workflow skeleton
 - `faqs/` - Tutorial FAQ

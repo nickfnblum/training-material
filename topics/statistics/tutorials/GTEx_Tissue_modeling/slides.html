@@ -9,8 +9,8 @@ questions:
   - "How can this workflow be run on any Galaxy server with Image Learner installed?"
 
 objectives:
-  - "Prepare GTEx v11 gene TPM and sample annotation files for tissue classification."
-  - "Create an Image Learner input table and ZIP archive of grayscale expression images."
+  - "Import a prepared GTEx v11 Image Learner metadata table and image ZIP archive."
+  - "Optionally rebuild the prepared files from GTEx v11 gene TPM and sample annotation files."
   - "Train and evaluate a multi-class tissue classifier in Galaxy."
 
 contributors:
@@ -30,12 +30,22 @@ This tutorial builds a GTEx tissue classifier from expression-derived image inpu
 
 ---
 
-# Required Files
+# Recommended Files
+
+- `selected_gtex_v11_tpm_image_tissue_labels.csv`
+- `selected_gtex_v11_tpm_image_tissue_dataset.zip`
+
+Zenodo URLs:
+
+- https://zenodo.org/records/19963477/files/selected_gtex_v11_tpm_image_tissue_labels.csv
+- https://zenodo.org/records/19963477/files/selected_gtex_v11_tpm_image_tissue_dataset.zip
+
+---
+
+# Optional Raw Files
 
 - `GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz`
 - `GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt`
-
-Direct URLs:
 
 - https://storage.googleapis.com/adult-gtex/bulk-gex/v11/rna-seq/GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz
 - https://storage.googleapis.com/adult-gtex/annotations/v11/metadata-files/GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt
@@ -44,12 +54,11 @@ Direct URLs:
 
 # Workflow Steps
 
-1. Load the GTEx TPM GCT file.
-2. Transpose the matrix so samples are rows.
-3. Match samples to annotations by `SAMPID`.
-4. Use `SMTSD` as the tissue label.
-5. Convert each expression vector into a grayscale image.
-6. Train Image Learner to classify tissue.
+1. Import the prepared Zenodo metadata CSV and image ZIP.
+2. Use `label` as the target column.
+3. Use `image_path` as the image column.
+4. Train Image Learner to classify tissue.
+5. Review test metrics and confusion patterns.
 
 ---
 
@@ -68,8 +77,8 @@ This is an engineered representation for Image Learner, not a claim that gene or
 
 | File | Purpose |
 |---|---|
-| `gtex_image_learner_input.csv` | Metadata table with `image_path`, `label`, and `sample_id`. |
-| `gtex_tissue_images.zip` | ZIP archive containing one JPEG per sample. |
+| `selected_gtex_v11_tpm_image_tissue_labels.csv` | Metadata table with `image_path` and `label`. |
+| `selected_gtex_v11_tpm_image_tissue_dataset.zip` | ZIP archive containing one JPEG per sample. |
 
 The `image_path` values must match filenames inside the ZIP archive.
 

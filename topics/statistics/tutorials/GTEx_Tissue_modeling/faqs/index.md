@@ -4,7 +4,12 @@ layout: faq-page
 
 ## What GTEx files are used?
 
-This tutorial uses:
+The hands-on tutorial uses these prepared Zenodo files:
+
+- `selected_gtex_v11_tpm_image_tissue_labels.csv`: https://zenodo.org/records/19963477/files/selected_gtex_v11_tpm_image_tissue_labels.csv
+- `selected_gtex_v11_tpm_image_tissue_dataset.zip`: https://zenodo.org/records/19963477/files/selected_gtex_v11_tpm_image_tissue_dataset.zip
+
+Optionally, you can rebuild the prepared files from these raw GTEx files:
 
 - `GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz`: https://storage.googleapis.com/adult-gtex/bulk-gex/v11/rna-seq/GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz
 - `GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt`: https://storage.googleapis.com/adult-gtex/annotations/v11/metadata-files/GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt
@@ -19,7 +24,7 @@ Image Learner trains image models. The preprocessing step makes one grayscale im
 
 ## Is this workflow tied to one Galaxy server?
 
-No. This tutorial uses GTEx v11 files from public Google Cloud Storage URLs and can run on any Galaxy server with Image Learner installed.
+No. This tutorial uses prepared Zenodo files and can run on any Galaxy server with Image Learner installed.
 
 ## Which Galaxy server can run it?
 

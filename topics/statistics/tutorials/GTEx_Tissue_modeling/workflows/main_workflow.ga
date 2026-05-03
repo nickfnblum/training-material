@@ -22,18 +22,18 @@
   },
   "steps": {
     "0": {
-      "annotation": "Prepared metadata CSV with columns image_path, label, and sample_id. The label column is derived from SMTSD in GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt.",
+      "annotation": "Prepared metadata CSV with image_path and label columns. The label column is derived from SMTSD in GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt.",
       "content_id": null,
       "errors": null,
       "id": 0,
       "input_connections": {},
       "inputs": [
         {
-          "description": "Prepared metadata CSV with columns image_path, label, and sample_id.",
-          "name": "gtex_image_learner_input.csv"
+          "description": "Prepared metadata CSV with image_path and label columns.",
+          "name": "selected_gtex_v11_tpm_image_tissue_labels.csv"
         }
       ],
-      "label": "gtex_image_learner_input.csv",
+      "label": "selected_gtex_v11_tpm_image_tissue_labels.csv",
       "name": "Input dataset",
       "outputs": [],
       "position": {
@@ -57,10 +57,10 @@
       "inputs": [
         {
           "description": "GTEx expression images generated from log-transformed TPM vectors.",
-          "name": "gtex_tissue_images.zip"
+          "name": "selected_gtex_v11_tpm_image_tissue_dataset.zip"
         }
       ],
-      "label": "gtex_tissue_images.zip",
+      "label": "selected_gtex_v11_tpm_image_tissue_dataset.zip",
       "name": "Input dataset",
       "outputs": [],
       "position": {
@@ -128,7 +128,7 @@
         "owner": "goeckslab",
         "tool_shed": "toolshed.g2.bx.psu.edu"
       },
-      "tool_state": "{\"advanced_settings\": {\"customize_defaults\": \"true\", \"__current_case__\": 0, \"epochs\": \"20\", \"early_stop\": \"10\", \"learning_rate_condition\": {\"learning_rate_define\": \"false\", \"__current_case__\": 1}, \"batch_size_condition\": {\"batch_size_define\": \"false\", \"__current_case__\": 1}, \"train_split\": \"0.7\", \"val_split\": \"0.1\", \"test_split\": \"0.2\", \"threshold\": \"0.5\"}, \"augmentation\": [], \"column_override\": {\"override_columns\": \"true\", \"__current_case__\": 0, \"target_column\": \"2\", \"image_column\": \"1\"}, \"image_resize\": \"original\", \"image_zip\": {\"__class__\": \"RuntimeValue\"}, \"input_csv\": {\"__class__\": \"RuntimeValue\"}, \"model_name\": \"caformer_s18_384\", \"random_seed\": \"42\", \"sample_id_column\": \"3\", \"scratch_fine_tune\": {\"use_pretrained\": \"true\", \"__current_case__\": 0, \"fine_tune\": \"true\"}, \"task_selection\": {\"task\": \"classification\", \"__current_case__\": 1, \"validation_metric_multiclass\": \"\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+      "tool_state": "{\"advanced_settings\": {\"customize_defaults\": \"true\", \"__current_case__\": 0, \"epochs\": \"20\", \"early_stop\": \"10\", \"learning_rate_condition\": {\"learning_rate_define\": \"false\", \"__current_case__\": 1}, \"batch_size_condition\": {\"batch_size_define\": \"false\", \"__current_case__\": 1}, \"train_split\": \"0.7\", \"val_split\": \"0.1\", \"test_split\": \"0.2\", \"threshold\": \"0.5\"}, \"augmentation\": [], \"column_override\": {\"override_columns\": \"true\", \"__current_case__\": 0, \"target_column\": \"2\", \"image_column\": \"1\"}, \"image_resize\": \"original\", \"image_zip\": {\"__class__\": \"RuntimeValue\"}, \"input_csv\": {\"__class__\": \"RuntimeValue\"}, \"model_name\": \"caformer_s18_384\", \"random_seed\": \"42\", \"sample_id_column\": null, \"scratch_fine_tune\": {\"use_pretrained\": \"true\", \"__current_case__\": 0, \"fine_tune\": \"true\"}, \"task_selection\": {\"task\": \"classification\", \"__current_case__\": 1, \"validation_metric_multiclass\": \"\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
       "tool_uuid": null,
       "tool_version": "0.1.5",
       "type": "tool",

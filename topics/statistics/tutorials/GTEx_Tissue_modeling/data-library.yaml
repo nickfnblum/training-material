@@ -10,8 +10,19 @@ items:
   items:
   - name: GTEx Tissue Modeling with Image Learner
     items:
-    - name: GTEx v11 raw files
-      description: Direct URLs for the GTEx v11 files used in this tutorial
+    - name: Prepared GTEx v11 Image Learner dataset
+      description: Prepared Zenodo files used for the hands-on tutorial
+      items:
+      - url: https://zenodo.org/records/19963477/files/selected_gtex_v11_tpm_image_tissue_labels.csv
+        src: url
+        ext: csv
+        info: selected_gtex_v11_tpm_image_tissue_labels.csv
+      - url: https://zenodo.org/records/19963477/files/selected_gtex_v11_tpm_image_tissue_dataset.zip
+        src: url
+        ext: zip
+        info: selected_gtex_v11_tpm_image_tissue_dataset.zip
+    - name: Optional GTEx v11 raw files
+      description: Direct URLs for rebuilding the prepared dataset
       items:
       - url: https://storage.googleapis.com/adult-gtex/bulk-gex/v11/rna-seq/GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz
         src: url
