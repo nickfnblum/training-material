@@ -76,7 +76,7 @@
       "workflow_outputs": []
     },
     "2": {
-      "annotation": "Image Learner tissue classification using image_path as the image column and label as the target column.",
+      "annotation": "Image Learner tissue classification using the metadata table's `image_path` column as the image file and `label` column derived from GTEx `SMTSD` labels.",
       "content_id": "toolshed.g2.bx.psu.edu/repos/goeckslab/image_learner/image_learner/0.1.5",
       "errors": null,
       "id": 2,

@@ -4,7 +4,7 @@ A Galaxy tutorial for converting GTEx v11 gene expression profiles into grayscal
 
 ## Overview
 
-This tutorial shows how to classify GTEx tissues with a no-code Galaxy machine learning tool. The recommended path uses prepared metadata and image files from Zenodo. An optional path shows how to rebuild those files from GTEx v11 raw expression and sample metadata.
+This tutorial shows how to classify GTEx tissues with a no-code Galaxy machine learning tool. The recommended path uses prepared metadata and image files from Zenodo that are ready for Galaxy Image Learner. An optional path shows how to rebuild those files from raw GTEx v11 expression and sample metadata.
 
 ## Recommended Zenodo Files
 
@@ -31,7 +31,7 @@ GTEx Portal source pages:
 
 - **Task**: Multi-class tissue classification
 - **Input image representation**: log-transformed TPM vector padded to a square grayscale image
-- **Label**: `SMTSD` tissue label from GTEx sample attributes
+- **Label**: `SMTSD` tissue label from GTEx sample attributes, pre-mapped into the metadata table
 - **Tool**: Galaxy Image Learner
 
 ## Files

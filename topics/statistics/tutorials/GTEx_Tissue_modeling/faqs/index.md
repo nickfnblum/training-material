@@ -16,7 +16,7 @@ Optionally, you can rebuild the prepared files from these raw GTEx files:
 
 ## What is the label?
 
-The target label is `SMTSD`, the detailed tissue label in the GTEx sample attributes file.
+The target label is `SMTSD`, the detailed tissue label in the GTEx sample attributes file. In the prepared metadata table, this label is stored in the `label` column and the image filename is stored in the `image_path` column.
 
 ## Why convert expression data into images?
 
