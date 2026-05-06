@@ -2,42 +2,20 @@
 layout: faq-page
 ---
 
-## What GTEx files are used?
+## What is the origin of GTEx?
 
-The hands-on tutorial uses these prepared Zenodo files:
+GTEx collected postmortem biospecimens from many human tissues and measured gene expression with bulk RNA sequencing. In the GTEx expression matrix, each sample represents one tissue biospecimen from a donor, each row represents a gene, and each value is a normalized TPM expression measurement. The sample annotation file records the tissue source for each sample.
 
-- `selected_gtex_v11_tpm_image_tissue_labels.csv`: https://zenodo.org/records/19963477/files/selected_gtex_v11_tpm_image_tissue_labels.csv
-- `selected_gtex_v11_tpm_image_tissue_dataset.zip`: https://zenodo.org/records/19963477/files/selected_gtex_v11_tpm_image_tissue_dataset.zip
+GTEx releases are versioned because the project updates data processing, sample sets, annotations, and reference gene models over time. Earlier releases, such as v8 and v10, are still useful for reproducible analyses, but this tutorial uses GTEx v11. When this tutorial was written, GTEx v11 was the latest Adult GTEx release available for download.
 
-Optionally, you can rebuild the prepared files from these raw GTEx files:
+## Could converting tabular data to images lose information?
 
-- `GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz`: https://storage.googleapis.com/adult-gtex/bulk-gex/v11/rna-seq/GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz
-- `GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt`: https://storage.googleapis.com/adult-gtex/annotations/v11/metadata-files/GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt
+Yes. This representation preserves the expression values, but it imposes an artificial spatial layout based on gene order. It is useful for this Image Learner tutorial, but it should not be interpreted as a natural biological image.
 
-## What is the label?
+## Can I use other images?
 
-The target label is `SMTSD`, the detailed tissue label in the GTEx sample attributes file. In the prepared metadata table, this label is stored in the `label` column and the image filename is stored in the `image_path` column.
+Yes. Image Learner can be used with other image datasets, as long as the ZIP archive and metadata table follow the required format.
 
-## Why convert expression data into images?
+## Can I change the tool parameters to test different results?
 
-Image Learner trains image models. The preprocessing step makes one grayscale image per sample by log-transforming the sample's TPM vector, padding it to a square, and saving it as a JPEG. This preserves the expression values in a fixed-size input format that Image Learner can consume.
-
-## Is this workflow tied to one Galaxy server?
-
-No. This tutorial uses prepared Zenodo files and can run on any Galaxy server with Image Learner installed.
-
-## Which Galaxy server can run it?
-
-Any Galaxy instance can run the tutorial if Image Learner is installed from the ToolShed and the instance has enough compute for the selected sample count and model.
-
-## Can I use more tissues?
-
-Yes. Edit `SELECTED_TISSUES` in the preprocessing script. Start with a small balanced tissue set, confirm the workflow runs, then scale up.
-
-## Why use balanced sampling?
-
-Balanced sampling makes tutorial metrics easier to interpret and prevents highly represented tissues from dominating accuracy. For research, compare balanced and naturally distributed tissue sets.
-
-## What metrics should I inspect?
-
-Use held-out test accuracy, weighted precision, weighted recall, weighted F1, per-class metrics, and the confusion matrix. Per-class metrics are especially important when tissue counts are imbalanced.
+Yes. You can adjust parameters such as the model, epochs, batch size, learning rate, and data split to compare results.
