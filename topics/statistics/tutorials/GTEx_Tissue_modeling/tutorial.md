@@ -86,7 +86,7 @@ We will train the model with Image Learner, a Galaxy tool available on Galaxy se
 
 To convert tabular gene expression data into images, we treat each sample's gene expression values as a long list of numbers. First, the values are log-transformed to reduce the effect of very large expression values. Then the vector is padded with zeros until it can fill a square. Finally, the square array is saved as a grayscale image, where darker and lighter pixels represent lower and higher transformed expression values. The image is not a photograph or a biological tissue picture; it is a structured representation of the sample's expression profile that an image model can process.
 
-We have already made the generated Image Learner inputs available on Zenodo, and those prepared files are the recommended starting point for this tutorial. However, you can also generate the files inside Galaxy with the JupyterLab Interactive Tool. By changing parameters such as `SELECTED_TISSUES` and `SAMPLES_PER_TISSUE`, you can create different tissue-classification tasks and test how the model behaves.
+We have already made the generated Image Learner inputs available on Zenodo, and those prepared files are the recommended starting point for this tutorial. However, you can also generate the files inside Galaxy with the JupyterLab Interactive Tool, or run the same script locally if your computer has Python, the required Python packages, enough memory to process the GTEx expression matrix, and enough disk space for the downloaded GTEx files and generated images. By changing parameters such as `SELECTED_TISSUES` and `SAMPLES_PER_TISSUE`, you can create different tissue-classification tasks and test how the model behaves.
 
 > <hands-on-title>Optional: Generate GTEx expression images in Galaxy JupyterLab</hands-on-title>
 >
@@ -524,6 +524,18 @@ The tutorial is written for any Galaxy instance that has Image Learner installed
 
 After training the model, the Image Learner generates a detailed report summarizing its performance across the training, validation, and test datasets.  
 
+> <tip-title>What to look for when reading the report</tip-title>
+>
+> Here are some practical questions to keep in mind when reading the report:
+>
+> 1. How is the model capturing the signals in my dataset?
+> 2. Do the training, validation, and test results tell a consistent story?
+> 3. Are some classes harder for the model to predict than others?
+> 4. Do any results suggest that the model may not perform as well on a different dataset?
+> 5. Is there a parameter that I could modify to improve performance?
+>
+{: .tip}
+
 To access this report, click on the **eye icon** next to the dataset in your Galaxy history (as shown in the figure below).
 ![Open image learner report](figures/open_report.png)
 
@@ -552,8 +564,6 @@ However, such near-perfect results should be interpreted carefully, as they may 
 
 To better understand these results and assess model reliability, we now explore each section of the report in detail. Each tab provides deeper insights into model behavior and helps determine whether adjustments are needed.
 
----
-
 ### Config and Overall Performance Summary
 
 #### 1. Dataset Overview
@@ -569,8 +579,6 @@ When interpreting this table:
 - A balanced dataset (similar number of samples per class) helps the model learn fairly across categories.
 - An imbalanced dataset may bias the model toward dominant classes.
 
----
-
 #### 2. Training Configuration
 
 ![Training configuration](figures/training_config.png)
@@ -585,8 +593,6 @@ This section summarizes how the model was trained, for example:
 
 - Optimizer  
   Controls how model weights are updated (e.g., Adam, SGD).
-
----
 
 ### Training and Validation Results
 
@@ -604,8 +610,6 @@ Interpretation:
 - Training high but validation drops → overfitting  
 - Both low → underfitting  
 
----
-
 #### 2. ROC-AUC Across Epochs
 
 ![ROC-AUC across epochs](figures/rocauc_epochs.png)
@@ -617,8 +621,6 @@ ROC-AUC measures class separability:
 
 A stable high curve indicates strong classification ability.
 
----
-
 #### 3. Overfitting Gap
 
 ![Overfitting gap: ROC-AUC across epochs](figures/overffiting_gap.png)
@@ -627,8 +629,6 @@ This curve shows the difference between training and validation:
 
 - Small gap → good generalization  
 - Large gap → overfitting  
-
----
 
 ### Test Results
 
@@ -648,8 +648,6 @@ This curve shows the difference between training and validation:
 - F1-score: balance between precision and recall  
 - ROC-AUC: class separability  
 
----
-
 #### 2. Grad-CAM Heatmaps
 
 ![Grad-CAM heatmaps](figures/gradcam.png)
@@ -660,8 +658,6 @@ Grad-CAM highlights which regions influenced predictions, providing insight into
 - Random patterns → possible uncertainty  
 
 These are essential for interpreting and validating model behavior.
-
----
 
 ## Summary
 
