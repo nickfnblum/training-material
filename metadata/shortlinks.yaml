@@ -736,6 +736,7 @@ name:
   statistics/multimodal_learner: "/topics/statistics/tutorials/multimodal_learner/tutorial.html"
   statistics/multimodal_learner/slides: "/topics/statistics/tutorials/multimodal_learner/slides.html"
   digital-humanities/Whisper_speech_recognition: "/topics/digital-humanities/tutorials/Whisper_speech_recognition/tutorial.html"
+  visualisation/jbrowse2: "/topics/visualisation/tutorials/jbrowse2/tutorial.html"
 id:
   T00000: "/topics/admin/tutorials/ansible/tutorial.html"
   T00001: "/topics/admin/tutorials/ansible-galaxy/tutorial.html"
@@ -2592,6 +2593,7 @@ id:
   T00577: "/topics/digital-humanities/tutorials/Whisper_speech_recognition/tutorial.html"
   N00124: "/news/2026/04/01/biont.html"
   W00379: "/topics/digital-humanities/tutorials/Whisper_speech_recognition/workflows/main_workflow.html"
+  T00578: "/topics/visualisation/tutorials/jbrowse2/tutorial.html"
 misc:
   ansible-galaxy: "/topics/admin/tutorials/ansible-galaxy/tutorial.html"
   feeds: "/feeds/index.html"

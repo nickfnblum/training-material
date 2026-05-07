@@ -33,8 +33,8 @@ contributions:
     - deNBI
 answer_histories:
   - label: "UseGalaxy.eu"
-    history: https://usegalaxy.eu/u/schnda/h/answer-key-history-text-mining-differences-in-chinese-newspaper-articles
-    date: 2026-04-29
+    history: https://usegalaxy.eu/u/schnda/h/example-answer-history-text-mining-differences-in-chinese-newspaper-articles-3
+    date: 2026-05-06
 ---
 
 
@@ -355,9 +355,11 @@ If you are only interested in the quantitative results, this can be your final o
 
 > <hands-on-title> Sort </hands-on-title>
 >
-> 1. {% tool [Sort](sort1) %} with the following parameters:
->    - {% icon param-file %} *"Sort Dataset"*: `Quantified Results` (output of **Datamash** {% icon tool %})
->    - *"on column"*: `c2`
+> 1. {% tool [Sort](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sort_header_tool/9.5+galaxy3) %} with the following parameters:
+>    - {% icon param-file %} *"Sort Query"*: `Quantified Results` (output of **Datamash** {% icon tool %})
+>    - *"Sort on column"*: `Column 2`
+>    - *"in"*: `Descending order`
+>    - *"using sort flavor"*: `Fast numeric sort`
 >    - Click *"Run Tool"*
 >
 > 2. Rename the output file `Sorted Results`. 

@@ -165,12 +165,15 @@ program:
       - title: Assembly
       - title: Climate
       - title: Digital Humanities
+        link: events/tracks/gta2026-dh.md
       - title: From Zero to Hero with Python
       - title: Machine Learning
         link: events/tracks/gta2026-ml.md
       - title: Microbiome
+        link: events/tracks/gta2026-microbiome.md
       - title: Proteomics
       - title: Single Cell
+        link: events/tracks/gta2026-single-cell.md
       - title: Transcriptomics
       - title: Variant Analysis
 
@@ -213,7 +216,7 @@ You will not be alone! If you ever need help, you can contact one of our many tr
 
 **Certificates**
 
-You will be able to obtain a certificate by the end of the event. To ensure you have all the time you need to learn at your own pace, you will be able to claim a certificate for a few weeks after the end of the official event. More information  will be provided as we get closer to the event. 
+You will be able to obtain a certificate by the end of the event. To ensure you have all the time you need to learn at your own pace, you will be able to claim a certificate for a few weeks after the end of the official event. More information  will be provided as we get closer to the event.
 
 ## Do you want to join the GTA as a trainer?
 Please fill out our [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdyNhUhWtk2W6nxDwpxao4aRgV9921_PGGyQpGIaRbZynHnAQ/viewform?usp=header) to indicate in what capacity you would like to help.

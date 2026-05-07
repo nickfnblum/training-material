@@ -1,3 +1,25 @@
+GTN_GTN:1777537383
+
+A	shared/images/logos/brgm.svg
+GTN_GTN:1777455822
+
+A	topics/visualisation/images/JBrowse2_complex_gene_tracks.png
+A	topics/visualisation/images/JBrowse2_overview_Hi-c_tracks.png
+A	topics/visualisation/images/jbrowse2-gtf-track.png
+A	topics/visualisation/images/jbrowse2-gtf-track_info.png
+A	topics/visualisation/images/jbrowse2-hic-track.png
+A	topics/visualisation/images/jbrowse2_select-remove_tracks.png
+A	topics/visualisation/tutorials/jbrowse2/data-library.yaml
+A	topics/visualisation/tutorials/jbrowse2/tutorial.md
+GTN_GTN:1777452336
+
+A	topics/admin/images/gjr_global_data_flow.png
+A	topics/admin/images/gjr_local_data_flow.png
+A	topics/admin/images/gjr_logo.png
+GTN_GTN:1777277701
+
+R099	metadata/git-mod-62109de25ee1319f220dccf62f761692b4076281.txt	metadata/git-mod-cfbc53003a792bfab3979a4e874f9a36e6c05c61.txt
+R099	metadata/git-pub-62109de25ee1319f220dccf62f761692b4076281.txt	metadata/git-pub-cfbc53003a792bfab3979a4e874f9a36e6c05c61.txt
 GTN_GTN:1776854415
 
 A	topics/proteomics/tutorials/proteogenomics-dbsearch/workflows/galaxy-workflow-mouse_rnaseq_dbsearch-tests.yml
