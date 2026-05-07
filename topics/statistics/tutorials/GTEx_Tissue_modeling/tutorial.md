@@ -86,13 +86,53 @@ We will train the model with Image Learner, a Galaxy tool available on Galaxy se
 
 To convert tabular gene expression data into images, we treat each sample's gene expression values as a long list of numbers. First, the values are log-transformed to reduce the effect of very large expression values. Then the vector is padded with zeros until it can fill a square. Finally, the square array is saved as a grayscale image, where darker and lighter pixels represent lower and higher transformed expression values. The image is not a photograph or a biological tissue picture; it is a structured representation of the sample's expression profile that an image model can process.
 
-We have already made the generated Image Learner inputs available on Zenodo, and those prepared files are the recommended starting point for this tutorial. However, you are encouraged to run the script yourself after completing the tutorial. By changing parameters such as `SELECTED_TISSUES` and `SAMPLES_PER_TISSUE`, you can create different tissue-classification tasks and test how the model behaves.
+We have already made the generated Image Learner inputs available on Zenodo, and those prepared files are the recommended starting point for this tutorial. However, you can also generate the files inside Galaxy with the JupyterLab Interactive Tool. By changing parameters such as `SELECTED_TISSUES` and `SAMPLES_PER_TISSUE`, you can create different tissue-classification tasks and test how the model behaves.
 
-> <hands-on-title>Optional: Generate GTEx expression images locally</hands-on-title>
+> <hands-on-title>Optional: Generate GTEx expression images in Galaxy JupyterLab</hands-on-title>
 >
-> 1. Place the two downloaded GTEx files in the same directory.
+> 1. Create or switch to the Galaxy history where you want the rebuilt files to appear.
 >
-> 2. Save the following script as `local_gtex_v11_to_images_adaptive.py`.
+> 2. In the Galaxy tool panel, open **Interactive Tools** and select **JupyterLab Notebook**.
+>
+> 3. Use the default JupyterLab environment. Click **Run Tool** to start the JupyterLab Interactive Tool.
+>
+>    The JupyterLab job will appear in your Galaxy history. Wait until it is running, then open it from the history dataset or from **User** > **Active Interactive Tools**.
+>
+> 4. In JupyterLab, open a terminal with **Others** > **Terminal**.
+>
+> 5. Check that the Python packages needed by the script are available:
+>
+>    ```bash
+>    python -c "import numpy, pandas, matplotlib, psutil; print('Python environment is ready')"
+>    ```
+>
+>    If this command reports a missing package, install the missing dependencies in the JupyterLab environment:
+>
+>    ```bash
+>    python -m pip install --user numpy pandas matplotlib psutil
+>    ```
+>
+> 6. Download the GTEx v11 expression matrix and sample annotation file directly from the GTEx links:
+>
+>    ```bash
+>    curl -L -o GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz https://storage.googleapis.com/adult-gtex/bulk-gex/v11/rna-seq/GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz
+>    curl -L -o GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt https://storage.googleapis.com/adult-gtex/annotations/v11/metadata-files/GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt
+>    ```
+>
+> 7. Create the Python script in JupyterLab:
+>
+>    - Click **File** > **New** > **Python File**.
+>    - Paste the script below into the editor.
+>    - Save the file, then rename it in the JupyterLab file browser to `gtex_v11_to_images_adaptive.py`.
+>    - Keep it in the same folder as the two downloaded GTEx files.
+>
+> 8. Before running the script, edit the variables near the top if you want to change the dataset:
+>
+>    - `SELECTED_TISSUES`: choose which GTEx tissue labels to model. The names must match `SMTSD` values in the GTEx annotation file.
+>    - `SAMPLES_PER_TISSUE`: choose how many samples to use per tissue. Use a small value first if the Galaxy server has limited memory.
+>    - `RANDOM_SEED`: keep this fixed for reproducible sampling, or change it to select a different random subset.
+>    - `NORMALIZATION_METHOD`: use `log` for the recommended default, or test `minmax`, `zscore`, or `none`.
+>    - `LUDWIG_OUTPUT` and `ZIP_OUTPUT`: change these only if you want different output filenames.
 >
 >    > <tip-title>Choosing tissues and sample counts</tip-title>
 >    >
@@ -101,9 +141,9 @@ We have already made the generated Image Learner inputs available on Zenodo, and
 >    {: .tip}
 >
 >    ```python
->    # local_gtex_v11_to_images_adaptive.py
+>    # gtex_v11_to_images_adaptive.py
 >    #
->    # Memory-adaptive GTEx V11 image pipeline.
+>    # Memory-adaptive GTEx V11 image pipeline for Galaxy JupyterLab.
 >    #
 >    # What this script does:
 >    #   1. Checks available CPU and RAM.
@@ -120,8 +160,11 @@ We have already made the generated Image Learner inputs available on Zenodo, and
 >    import zipfile
 >    from pathlib import Path
 >
+>    import matplotlib
 >    import numpy as np
 >    import pandas as pd
+>
+>    matplotlib.use("Agg")
 >    from matplotlib import pyplot as plt
 >
 >
@@ -339,19 +382,40 @@ We have already made the generated Image Learner inputs available on Zenodo, and
 >        main()
 >    ```
 >
-> 3. Run the script.
+> 9. Run the script in the JupyterLab terminal.
 >
 >    ```bash
->    python local_gtex_v11_to_images_adaptive.py
+>    python gtex_v11_to_images_adaptive.py
 >    ```
 >
-> 4. The script creates:
+>    The script prints the detected memory profile, selected samples per tissue, progress while reading the TPM matrix, and progress while saving images.
+>
+> 10. Confirm that the expected output files were created:
+>
+>    ```bash
+>    ls -lh metadata_base.csv ludwig_input.csv output_images.zip
+>    ```
+>
+>    The script creates:
 >
 >    - `metadata_base.csv`: selected sample IDs and labels
 >    - `ludwig_input.csv`: Image Learner metadata table with `image_path` and `label`
 >    - `output_images.zip`: grayscale expression image ZIP archive
 >
-> 5. Use `ludwig_input.csv` as the metadata table and `output_images.zip` as the image ZIP in Galaxy.
+> 11. Push the two Image Learner inputs back to your Galaxy history.
+>
+>    Open the Python notebook in JupyterLab by double-clicking the file named `ipython_galaxy_notebook.ipynb`, or open a new one with **File** > **New** > **Notebook**. Choose the Python kernel, then run the following commands.
+>    The `put()` function is available in Galaxy JupyterLab and exports files from the JupyterLab workspace into the Galaxy history. Copy and paste the following commands into a Jupyter notebook cell:
+>
+>    ```python
+>    put("ludwig_input.csv")
+>    put("output_images.zip")
+>    ```
+>
+>    Look for the play icon at the top of the window and click it to execute the commands.
+>    The files will appear as new datasets in the Galaxy history that launched JupyterLab. Wait for both datasets to turn green before using them in Image Learner.
+>
+> 12. Return to Galaxy and use `ludwig_input.csv` as the metadata table and `output_images.zip` as the image ZIP.
 >
 {: .hands_on}
 
