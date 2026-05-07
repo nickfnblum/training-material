@@ -86,338 +86,342 @@ We will train the model with Image Learner, a Galaxy tool available on Galaxy se
 
 To convert tabular gene expression data into images, we treat each sample's gene expression values as a long list of numbers. First, the values are log-transformed to reduce the effect of very large expression values. Then the vector is padded with zeros until it can fill a square. Finally, the square array is saved as a grayscale image, where darker and lighter pixels represent lower and higher transformed expression values. The image is not a photograph or a biological tissue picture; it is a structured representation of the sample's expression profile that an image model can process.
 
-We have already made the generated Image Learner inputs available on Zenodo, and those prepared files are the recommended starting point for this tutorial. However, you can also generate the files inside Galaxy with the JupyterLab Interactive Tool, or run the same script locally if your computer has Python, the required Python packages, enough memory to process the GTEx expression matrix, and enough disk space for the downloaded GTEx files and generated images. By changing parameters such as `SELECTED_TISSUES` and `SAMPLES_PER_TISSUE`, you can create different tissue-classification tasks and test how the model behaves.
-
-> <hands-on-title>Optional: Generate GTEx expression images in Galaxy JupyterLab</hands-on-title>
->
-> 1. Create or switch to the Galaxy history where you want the rebuilt files to appear.
->
-> 2. In the Galaxy tool panel, open **Interactive Tools** and select **JupyterLab Notebook**.
->
-> 3. Use the default JupyterLab environment. Click **Run Tool** to start the JupyterLab Interactive Tool.
->
->    The JupyterLab job will appear in your Galaxy history. Wait until it is running, then open it from the history dataset or from **User** > **Active Interactive Tools**.
->
-> 4. In JupyterLab, open a terminal with **Others** > **Terminal**.
->
-> 5. Check that the Python packages needed by the script are available:
->
->    ```bash
->    python -c "import numpy, pandas, matplotlib, psutil; print('Python environment is ready')"
->    ```
->
->    If this command reports a missing package, install the missing dependencies in the JupyterLab environment:
->
->    ```bash
->    python -m pip install --user numpy pandas matplotlib psutil
->    ```
->
-> 6. Download the GTEx v11 expression matrix and sample annotation file directly from the GTEx links:
->
->    ```bash
->    curl -L -o GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz https://storage.googleapis.com/adult-gtex/bulk-gex/v11/rna-seq/GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz
->    curl -L -o GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt https://storage.googleapis.com/adult-gtex/annotations/v11/metadata-files/GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt
->    ```
->
-> 7. Create the Python script in JupyterLab:
->
->    - Click **File** > **New** > **Python File**.
->    - Paste the script below into the editor.
->    - Save the file, then rename it in the JupyterLab file browser to `gtex_v11_to_images_adaptive.py`.
->    - Keep it in the same folder as the two downloaded GTEx files.
->
-> 8. Before running the script, edit the variables near the top if you want to change the dataset:
->
->    - `SELECTED_TISSUES`: choose which GTEx tissue labels to model. The names must match `SMTSD` values in the GTEx annotation file.
->    - `SAMPLES_PER_TISSUE`: choose how many samples to use per tissue. Use a small value first if the Galaxy server has limited memory.
->    - `RANDOM_SEED`: keep this fixed for reproducible sampling, or change it to select a different random subset.
->    - `NORMALIZATION_METHOD`: use `log` for the recommended default, or test `minmax`, `zscore`, or `none`.
->    - `LUDWIG_OUTPUT` and `ZIP_OUTPUT`: change these only if you want different output filenames.
->
->    > <tip-title>Choosing tissues and sample counts</tip-title>
->    >
->    > `SELECTED_TISSUES` and `SAMPLES_PER_TISSUE` are intentionally explicit. Start with a small balanced task so the tutorial runs quickly, then expand the tissue list or increase the sample count once the workflow is working on your Galaxy server.
->    >
->    {: .tip}
->
->    ```python
->    # gtex_v11_to_images_adaptive.py
->    #
->    # Memory-adaptive GTEx V11 image pipeline for Galaxy JupyterLab.
->    #
->    # What this script does:
->    #   1. Checks available CPU and RAM.
->    #   2. Chooses safer/faster settings based on the computer.
->    #   3. Loads GTEx annotation metadata.
->    #   4. Selects samples from selected tissues.
->    #   5. Reads the large TPM matrix in chunks.
->    #   6. Creates one grayscale JPG image per sample.
->    #   7. Creates ludwig_input.csv.
->    #   8. Zips all images for Galaxy upload.
->
->    import math
->    import os
->    import zipfile
->    from pathlib import Path
->
->    import matplotlib
->    import numpy as np
->    import pandas as pd
->
->    matplotlib.use("Agg")
->    from matplotlib import pyplot as plt
->
->
->    TPM_FILE = "GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz"
->    ANNOTATION_FILE = "GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt"
->
->    SELECTED_TISSUES = [
->        "Brain - Cortex",
->        "Heart - Left Ventricle",
->        "Liver",
->        "Lung",
->        "Muscle - Skeletal",
->        "Adipose - Subcutaneous",
->        "Skin - Sun Exposed (Lower leg)",
->    ]
->    SAMPLES_PER_TISSUE = 200
->    RANDOM_SEED = 42
->    NORMALIZATION_METHOD = "log"
->    IMAGE_DIR = "output_images"
->    METADATA_OUTPUT = "metadata_base.csv"
->    LUDWIG_OUTPUT = "ludwig_input.csv"
->    ZIP_OUTPUT = "output_images.zip"
->
->
->    def get_available_ram_gb():
->        try:
->            import psutil
->
->            return psutil.virtual_memory().available / (1024 ** 3)
->        except ImportError:
->            print("psutil is not installed. Using conservative memory settings.")
->            return 4.0
->
->
->    def get_cpu_count():
->        return os.cpu_count() or 1
->
->
->    def choose_runtime_settings():
->        ram_gb = get_available_ram_gb()
->        cpu_count = get_cpu_count()
->
->        if ram_gb >= 32:
->            profile = "high-resource"
->            chunksize = 5000
->        elif ram_gb >= 16:
->            profile = "medium-resource"
->            chunksize = 2500
->        elif ram_gb >= 8:
->            profile = "low-resource"
->            chunksize = 1000
->        else:
->            profile = "very-low-resource"
->            chunksize = 250
->
->        print("Computer resource profile:")
->        print(f"  Available RAM: {ram_gb:.2f} GB")
->        print(f"  CPU cores: {cpu_count}")
->        print(f"  Selected profile: {profile}")
->        print(f"  TPM read chunksize: {chunksize}")
->
->        return {"ram_gb": ram_gb, "cpu_count": cpu_count, "profile": profile, "chunksize": chunksize}
->
->
->    def load_and_select_metadata():
->        print("Loading annotation file...")
->        annot = pd.read_csv(ANNOTATION_FILE, sep="\t")
->
->        required = {"SAMPID", "SMTSD"}
->        missing = required - set(annot.columns)
->        if missing:
->            raise ValueError(f"Missing required annotation columns: {missing}")
->
->        annot = annot[annot["SMTSD"].isin(SELECTED_TISSUES)].copy()
->        annot = annot.drop_duplicates(subset=["SAMPID"])
->
->        selected = []
->        for tissue, group in annot.groupby("SMTSD"):
->            n = min(SAMPLES_PER_TISSUE, len(group))
->            selected.append(group.sample(n=n, random_state=RANDOM_SEED))
->
->        if not selected:
->            raise ValueError("No samples found for SELECTED_TISSUES.")
->
->        meta = pd.concat(selected).reset_index(drop=True)
->        labels = meta[["SAMPID", "SMTSD"]].rename(columns={"SAMPID": "sample_id", "SMTSD": "label"})
->        labels.to_csv(METADATA_OUTPUT, index=False)
->
->        print("Selected samples per tissue:")
->        print(labels["label"].value_counts().sort_index())
->        return labels
->
->
->    def get_available_selected_samples(selected_sample_ids):
->        print("Reading GCT header...")
->        header = pd.read_csv(TPM_FILE, sep="\t", skiprows=2, nrows=0, compression="gzip")
->
->        available_samples = [sample_id for sample_id in selected_sample_ids if sample_id in header.columns]
->        missing = sorted(set(selected_sample_ids) - set(available_samples))
->        if missing:
->            print(f"Warning: {len(missing)} selected samples were not found in TPM matrix.")
->
->        if not available_samples:
->            raise ValueError("None of the selected samples were found in the TPM matrix.")
->
->        print(f"Samples found in TPM matrix: {len(available_samples)}")
->        return available_samples
->
->
->    def read_selected_expression(sample_ids, chunksize):
->        print("Reading selected TPM expression values in chunks...")
->        sample_vectors = {sample_id: [] for sample_id in sample_ids}
->        total_genes = 0
->        usecols = ["Name"] + sample_ids
->
->        reader = pd.read_csv(
->            TPM_FILE,
->            sep="\t",
->            skiprows=2,
->            compression="gzip",
->            usecols=usecols,
->            chunksize=chunksize,
->        )
->
->        for chunk_index, chunk in enumerate(reader, start=1):
->            chunk_values = chunk[sample_ids].astype(np.float32)
->            for sample_id in sample_ids:
->                sample_vectors[sample_id].extend(chunk_values[sample_id].to_numpy())
->            total_genes += len(chunk)
->            if chunk_index % 10 == 0:
->                print(f"Processed {total_genes} genes...")
->
->        print(f"Finished reading {total_genes} genes.")
->        return sample_vectors, total_genes
->
->
->    def normalize_values(values, method):
->        values = np.asarray(values, dtype=np.float32)
->        if method == "log":
->            return np.log1p(values)
->        if method == "minmax":
->            return (values - np.min(values)) / (np.max(values) - np.min(values) + 1e-8)
->        if method == "zscore":
->            return (values - np.mean(values)) / (np.std(values) + 1e-8)
->        if method == "none":
->            return values
->        raise ValueError(f"Unknown normalization method: {method}")
->
->
->    def vector_to_image(values, total_genes):
->        values = normalize_values(values, NORMALIZATION_METHOD)
->        image_size = math.ceil(math.sqrt(total_genes))
->
->        padded = np.zeros(image_size * image_size, dtype=np.float32)
->        padded[:total_genes] = values
->        return padded.reshape((image_size, image_size))
->
->
->    def save_images(sample_vectors, total_genes):
->        Path(IMAGE_DIR).mkdir(parents=True, exist_ok=True)
->        total_samples = len(sample_vectors)
->
->        for i, (sample_id, values) in enumerate(sample_vectors.items(), start=1):
->            image = vector_to_image(values, total_genes)
->            output_path = Path(IMAGE_DIR) / f"{sample_id}.jpg"
->            plt.imsave(output_path, image, cmap="gray", format="jpg")
->            plt.close("all")
->
->            if i % 50 == 0 or i == total_samples:
->                print(f"Saved {i}/{total_samples} images.")
->
->
->    def create_ludwig_csv(labels, available_samples):
->        labels = labels[labels["sample_id"].isin(available_samples)].copy()
->        labels["image_path"] = labels["sample_id"] + ".jpg"
->        labels[["image_path", "label"]].to_csv(LUDWIG_OUTPUT, index=False)
->        print(f"Created {LUDWIG_OUTPUT}")
->
->
->    def zip_images():
->        jpg_files = sorted(filename for filename in os.listdir(IMAGE_DIR) if filename.endswith(".jpg"))
->        if not jpg_files:
->            raise ValueError(f"No JPG images found in {IMAGE_DIR}")
->
->        with zipfile.ZipFile(ZIP_OUTPUT, "w", compression=zipfile.ZIP_DEFLATED) as handle:
->            for filename in jpg_files:
->                handle.write(Path(IMAGE_DIR) / filename, arcname=filename)
->
->        print(f"Created {ZIP_OUTPUT}")
->
->
->    def main():
->        settings = choose_runtime_settings()
->        labels = load_and_select_metadata()
->        selected_sample_ids = labels["sample_id"].tolist()
->        available_samples = get_available_selected_samples(selected_sample_ids)
->        labels = labels[labels["sample_id"].isin(available_samples)].copy()
->
->        sample_vectors, total_genes = read_selected_expression(
->            sample_ids=available_samples,
->            chunksize=settings["chunksize"],
->        )
->
->        save_images(sample_vectors=sample_vectors, total_genes=total_genes)
->        create_ludwig_csv(labels=labels, available_samples=available_samples)
->        zip_images()
->
->        print("Done.")
->        print(f"Images folder: {IMAGE_DIR}")
->        print(f"Ludwig CSV: {LUDWIG_OUTPUT}")
->        print(f"Images ZIP: {ZIP_OUTPUT}")
->
->
->    if __name__ == "__main__":
->        main()
->    ```
->
-> 9. Run the script in the JupyterLab terminal.
->
->    ```bash
->    python gtex_v11_to_images_adaptive.py
->    ```
->
->    The script prints the detected memory profile, selected samples per tissue, progress while reading the TPM matrix, and progress while saving images.
->
-> 10. Confirm that the expected output files were created:
->
->    ```bash
->    ls -lh metadata_base.csv ludwig_input.csv output_images.zip
->    ```
->
->    The script creates:
->
->    - `metadata_base.csv`: selected sample IDs and labels
->    - `ludwig_input.csv`: Image Learner metadata table with `image_path` and `label`
->    - `output_images.zip`: grayscale expression image ZIP archive
->
-> 11. Push the two Image Learner inputs back to your Galaxy history.
->
->    Open the Python notebook in JupyterLab by double-clicking the file named `ipython_galaxy_notebook.ipynb`, or open a new one with **File** > **New** > **Notebook**. Choose the Python kernel, then run the following commands.
->    The `put()` function is available in Galaxy JupyterLab and exports files from the JupyterLab workspace into the Galaxy history. Copy and paste the following commands into a Jupyter notebook cell:
->
->    ```python
->    put("ludwig_input.csv")
->    put("output_images.zip")
->    ```
->
->    Look for the play icon at the top of the window and click it to execute the commands.
->    The files will appear as new datasets in the Galaxy history that launched JupyterLab. Wait for both datasets to turn green before using them in Image Learner.
->
-> 12. Return to Galaxy and use `ludwig_input.csv` as the metadata table and `output_images.zip` as the image ZIP.
->
-{: .hands_on}
+> <tip-title>How expression values become image inputs</tip-title>
+>
+> We have already made the generated Image Learner inputs available on Zenodo, and those prepared files are the recommended starting point for this tutorial. However, you can also generate the files inside Galaxy with the JupyterLab Interactive Tool, or run the same script locally if your computer has Python, the required Python packages, enough memory to process the GTEx expression matrix, and enough disk space for the downloaded GTEx files and generated images. By changing parameters such as `SELECTED_TISSUES` and `SAMPLES_PER_TISSUE`, you can create different tissue-classification tasks and test how the model behaves.
+>
+>> <hands-on-title>Optional: Generate GTEx expression images in Galaxy JupyterLab</hands-on-title>
+>>
+>> 1. Create or switch to the Galaxy history where you want the rebuilt files to appear.
+>>
+>> 2. In the Galaxy tool panel, open **Interactive Tools** and select **JupyterLab Notebook**.
+>>
+>> 3. Use the default JupyterLab environment. Click **Run Tool** to start the JupyterLab Interactive Tool.
+>>
+>>    The JupyterLab job will appear in your Galaxy history. Wait until it is running, then open it from the history dataset or from **User** > **Active Interactive Tools**.
+>>
+>> 4. In JupyterLab, open a terminal with **Others** > **Terminal**.
+>>
+>> 5. Check that the Python packages needed by the script are available:
+>>
+>>    ```bash
+>>    python -c "import numpy, pandas, matplotlib, psutil; print('Python environment is ready')"
+>>    ```
+>>
+>>    If this command reports a missing package, install the missing dependencies in the JupyterLab environment:
+>>
+>>    ```bash
+>>    python -m pip install --user numpy pandas matplotlib psutil
+>>    ```
+>>
+>> 6. Download the GTEx v11 expression matrix and sample annotation file directly from the GTEx links:
+>>
+>>    ```bash
+>>    curl -L -o GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz https://storage.googleapis.com/adult-gtex/bulk-gex/v11/rna-seq/GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz
+>>    curl -L -o GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt https://storage.googleapis.com/adult-gtex/annotations/v11/metadata-files/GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt
+>>    ```
+>>
+>> 7. Create the Python script in JupyterLab:
+>>
+>>    - Click **File** > **New** > **Python File**.
+>>    - Paste the script below into the editor.
+>>    - Save the file, then rename it in the JupyterLab file browser to `gtex_v11_to_images_adaptive.py`.
+>>    - Keep it in the same folder as the two downloaded GTEx files.
+>>
+>> 8. Before running the script, edit the variables near the top if you want to change the dataset:
+>>
+>>    - `SELECTED_TISSUES`: choose which GTEx tissue labels to model. The names must match `SMTSD` values in the GTEx annotation file.
+>>    - `SAMPLES_PER_TISSUE`: choose how many samples to use per tissue. Use a small value first if the Galaxy server has limited memory.
+>>    - `RANDOM_SEED`: keep this fixed for reproducible sampling, or change it to select a different random subset.
+>>    - `NORMALIZATION_METHOD`: use `log` for the recommended default, or test `minmax`, `zscore`, or `none`.
+>>    - `LUDWIG_OUTPUT` and `ZIP_OUTPUT`: change these only if you want different output filenames.
+>>
+>>    > <tip-title>Choosing tissues and sample counts</tip-title>
+>>    >
+>>    > `SELECTED_TISSUES` and `SAMPLES_PER_TISSUE` are intentionally explicit. Start with a small balanced task so the tutorial runs quickly, then expand the tissue list or increase the sample count once the workflow is working on your Galaxy server.
+>>    >
+>>    {: .tip}
+>>
+>>    ```python
+>>    # gtex_v11_to_images_adaptive.py
+>>    #
+>>    # Memory-adaptive GTEx V11 image pipeline for Galaxy JupyterLab.
+>>    #
+>>    # What this script does:
+>>    #   1. Checks available CPU and RAM.
+>>    #   2. Chooses safer/faster settings based on the computer.
+>>    #   3. Loads GTEx annotation metadata.
+>>    #   4. Selects samples from selected tissues.
+>>    #   5. Reads the large TPM matrix in chunks.
+>>    #   6. Creates one grayscale JPG image per sample.
+>>    #   7. Creates ludwig_input.csv.
+>>    #   8. Zips all images for Galaxy upload.
+>>
+>>    import math
+>>    import os
+>>    import zipfile
+>>    from pathlib import Path
+>>
+>>    import matplotlib
+>>    import numpy as np
+>>    import pandas as pd
+>>
+>>    matplotlib.use("Agg")
+>>    from matplotlib import pyplot as plt
+>>
+>>
+>>    TPM_FILE = "GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_tpm.gct.gz"
+>>    ANNOTATION_FILE = "GTEx_Analysis_v11_Annotations_SampleAttributesDS.txt"
+>>
+>>    SELECTED_TISSUES = [
+>>        "Brain - Cortex",
+>>        "Heart - Left Ventricle",
+>>        "Liver",
+>>        "Lung",
+>>        "Muscle - Skeletal",
+>>        "Adipose - Subcutaneous",
+>>        "Skin - Sun Exposed (Lower leg)",
+>>    ]
+>>    SAMPLES_PER_TISSUE = 200
+>>    RANDOM_SEED = 42
+>>    NORMALIZATION_METHOD = "log"
+>>    IMAGE_DIR = "output_images"
+>>    METADATA_OUTPUT = "metadata_base.csv"
+>>    LUDWIG_OUTPUT = "ludwig_input.csv"
+>>    ZIP_OUTPUT = "output_images.zip"
+>>
+>>
+>>    def get_available_ram_gb():
+>>        try:
+>>            import psutil
+>>
+>>            return psutil.virtual_memory().available / (1024 ** 3)
+>>        except ImportError:
+>>            print("psutil is not installed. Using conservative memory settings.")
+>>            return 4.0
+>>
+>>
+>>    def get_cpu_count():
+>>        return os.cpu_count() or 1
+>>
+>>
+>>    def choose_runtime_settings():
+>>        ram_gb = get_available_ram_gb()
+>>        cpu_count = get_cpu_count()
+>>
+>>        if ram_gb >= 32:
+>>            profile = "high-resource"
+>>            chunksize = 5000
+>>        elif ram_gb >= 16:
+>>            profile = "medium-resource"
+>>            chunksize = 2500
+>>        elif ram_gb >= 8:
+>>            profile = "low-resource"
+>>            chunksize = 1000
+>>        else:
+>>            profile = "very-low-resource"
+>>            chunksize = 250
+>>
+>>        print("Computer resource profile:")
+>>        print(f"  Available RAM: {ram_gb:.2f} GB")
+>>        print(f"  CPU cores: {cpu_count}")
+>>        print(f"  Selected profile: {profile}")
+>>        print(f"  TPM read chunksize: {chunksize}")
+>>
+>>        return {"ram_gb": ram_gb, "cpu_count": cpu_count, "profile": profile, "chunksize": chunksize}
+>>
+>>
+>>    def load_and_select_metadata():
+>>        print("Loading annotation file...")
+>>        annot = pd.read_csv(ANNOTATION_FILE, sep="\t")
+>>
+>>        required = {"SAMPID", "SMTSD"}
+>>        missing = required - set(annot.columns)
+>>        if missing:
+>>            raise ValueError(f"Missing required annotation columns: {missing}")
+>>
+>>        annot = annot[annot["SMTSD"].isin(SELECTED_TISSUES)].copy()
+>>        annot = annot.drop_duplicates(subset=["SAMPID"])
+>>
+>>        selected = []
+>>        for tissue, group in annot.groupby("SMTSD"):
+>>            n = min(SAMPLES_PER_TISSUE, len(group))
+>>            selected.append(group.sample(n=n, random_state=RANDOM_SEED))
+>>
+>>        if not selected:
+>>            raise ValueError("No samples found for SELECTED_TISSUES.")
+>>
+>>        meta = pd.concat(selected).reset_index(drop=True)
+>>        labels = meta[["SAMPID", "SMTSD"]].rename(columns={"SAMPID": "sample_id", "SMTSD": "label"})
+>>        labels.to_csv(METADATA_OUTPUT, index=False)
+>>
+>>        print("Selected samples per tissue:")
+>>        print(labels["label"].value_counts().sort_index())
+>>        return labels
+>>
+>>
+>>    def get_available_selected_samples(selected_sample_ids):
+>>        print("Reading GCT header...")
+>>        header = pd.read_csv(TPM_FILE, sep="\t", skiprows=2, nrows=0, compression="gzip")
+>>
+>>        available_samples = [sample_id for sample_id in selected_sample_ids if sample_id in header.columns]
+>>        missing = sorted(set(selected_sample_ids) - set(available_samples))
+>>        if missing:
+>>            print(f"Warning: {len(missing)} selected samples were not found in TPM matrix.")
+>>
+>>        if not available_samples:
+>>            raise ValueError("None of the selected samples were found in the TPM matrix.")
+>>
+>>        print(f"Samples found in TPM matrix: {len(available_samples)}")
+>>        return available_samples
+>>
+>>
+>>    def read_selected_expression(sample_ids, chunksize):
+>>        print("Reading selected TPM expression values in chunks...")
+>>        sample_vectors = {sample_id: [] for sample_id in sample_ids}
+>>        total_genes = 0
+>>        usecols = ["Name"] + sample_ids
+>>
+>>        reader = pd.read_csv(
+>>            TPM_FILE,
+>>            sep="\t",
+>>            skiprows=2,
+>>            compression="gzip",
+>>            usecols=usecols,
+>>            chunksize=chunksize,
+>>        )
+>>
+>>        for chunk_index, chunk in enumerate(reader, start=1):
+>>            chunk_values = chunk[sample_ids].astype(np.float32)
+>>            for sample_id in sample_ids:
+>>                sample_vectors[sample_id].extend(chunk_values[sample_id].to_numpy())
+>>            total_genes += len(chunk)
+>>            if chunk_index % 10 == 0:
+>>                print(f"Processed {total_genes} genes...")
+>>
+>>        print(f"Finished reading {total_genes} genes.")
+>>        return sample_vectors, total_genes
+>>
+>>
+>>    def normalize_values(values, method):
+>>        values = np.asarray(values, dtype=np.float32)
+>>        if method == "log":
+>>            return np.log1p(values)
+>>        if method == "minmax":
+>>            return (values - np.min(values)) / (np.max(values) - np.min(values) + 1e-8)
+>>        if method == "zscore":
+>>            return (values - np.mean(values)) / (np.std(values) + 1e-8)
+>>        if method == "none":
+>>            return values
+>>        raise ValueError(f"Unknown normalization method: {method}")
+>>
+>>
+>>    def vector_to_image(values, total_genes):
+>>        values = normalize_values(values, NORMALIZATION_METHOD)
+>>        image_size = math.ceil(math.sqrt(total_genes))
+>>
+>>        padded = np.zeros(image_size * image_size, dtype=np.float32)
+>>        padded[:total_genes] = values
+>>        return padded.reshape((image_size, image_size))
+>>
+>>
+>>    def save_images(sample_vectors, total_genes):
+>>        Path(IMAGE_DIR).mkdir(parents=True, exist_ok=True)
+>>        total_samples = len(sample_vectors)
+>>
+>>        for i, (sample_id, values) in enumerate(sample_vectors.items(), start=1):
+>>            image = vector_to_image(values, total_genes)
+>>            output_path = Path(IMAGE_DIR) / f"{sample_id}.jpg"
+>>            plt.imsave(output_path, image, cmap="gray", format="jpg")
+>>            plt.close("all")
+>>
+>>            if i % 50 == 0 or i == total_samples:
+>>                print(f"Saved {i}/{total_samples} images.")
+>>
+>>
+>>    def create_ludwig_csv(labels, available_samples):
+>>        labels = labels[labels["sample_id"].isin(available_samples)].copy()
+>>        labels["image_path"] = labels["sample_id"] + ".jpg"
+>>        labels[["image_path", "label"]].to_csv(LUDWIG_OUTPUT, index=False)
+>>        print(f"Created {LUDWIG_OUTPUT}")
+>>
+>>
+>>    def zip_images():
+>>        jpg_files = sorted(filename for filename in os.listdir(IMAGE_DIR) if filename.endswith(".jpg"))
+>>        if not jpg_files:
+>>            raise ValueError(f"No JPG images found in {IMAGE_DIR}")
+>>
+>>        with zipfile.ZipFile(ZIP_OUTPUT, "w", compression=zipfile.ZIP_DEFLATED) as handle:
+>>            for filename in jpg_files:
+>>                handle.write(Path(IMAGE_DIR) / filename, arcname=filename)
+>>
+>>        print(f"Created {ZIP_OUTPUT}")
+>>
+>>
+>>    def main():
+>>        settings = choose_runtime_settings()
+>>        labels = load_and_select_metadata()
+>>        selected_sample_ids = labels["sample_id"].tolist()
+>>        available_samples = get_available_selected_samples(selected_sample_ids)
+>>        labels = labels[labels["sample_id"].isin(available_samples)].copy()
+>>
+>>        sample_vectors, total_genes = read_selected_expression(
+>>            sample_ids=available_samples,
+>>            chunksize=settings["chunksize"],
+>>        )
+>>
+>>        save_images(sample_vectors=sample_vectors, total_genes=total_genes)
+>>        create_ludwig_csv(labels=labels, available_samples=available_samples)
+>>        zip_images()
+>>
+>>        print("Done.")
+>>        print(f"Images folder: {IMAGE_DIR}")
+>>        print(f"Ludwig CSV: {LUDWIG_OUTPUT}")
+>>        print(f"Images ZIP: {ZIP_OUTPUT}")
+>>
+>>
+>>    if __name__ == "__main__":
+>>        main()
+>>    ```
+>>
+>> 9. Run the script in the JupyterLab terminal.
+>>
+>>    ```bash
+>>    python gtex_v11_to_images_adaptive.py
+>>    ```
+>>
+>>    The script prints the detected memory profile, selected samples per tissue, progress while reading the TPM matrix, and progress while saving images.
+>>
+>> 10. Confirm that the expected output files were created:
+>>
+>>    ```bash
+>>    ls -lh metadata_base.csv ludwig_input.csv output_images.zip
+>>    ```
+>>
+>>    The script creates:
+>>
+>>    - `metadata_base.csv`: selected sample IDs and labels
+>>    - `ludwig_input.csv`: Image Learner metadata table with `image_path` and `label`
+>>    - `output_images.zip`: grayscale expression image ZIP archive
+>>
+>> 11. Push the two Image Learner inputs back to your Galaxy history.
+>>
+>>    Open the Python notebook in JupyterLab by double-clicking the file named `ipython_galaxy_notebook.ipynb`, or open a new one with **File** > **New** > **Notebook**. Choose the Python kernel, then run the following commands.
+>>    The `put()` function is available in Galaxy JupyterLab and exports files from the JupyterLab workspace into the Galaxy history. Copy and paste the following commands into a Jupyter notebook cell:
+>>
+>>    ```python
+>>    put("ludwig_input.csv")
+>>    put("output_images.zip")
+>>    ```
+>>
+>>    Look for the play icon at the top of the window and click it to execute the commands.
+>>    The files will appear as new datasets in the Galaxy history that launched JupyterLab. Wait for both datasets to turn green before using them in Image Learner.
+>>
+>> 12. Return to Galaxy and use `ludwig_input.csv` as the metadata table and `output_images.zip` as the image ZIP.
+>>
+>{: .hands_on}
+>
+{: .tip}
 
 # Workflow
 
@@ -566,7 +570,7 @@ To better understand these results and assess model reliability, we now explore 
 
 ### Config and Overall Performance Summary
 
-#### 1. Dataset Overview
+#### Dataset Overview
 
 ![Dataset Overview](figures/dataset_overview.png)
 
@@ -579,7 +583,7 @@ When interpreting this table:
 - A balanced dataset (similar number of samples per class) helps the model learn fairly across categories.
 - An imbalanced dataset may bias the model toward dominant classes.
 
-#### 2. Training Configuration
+#### Training Configuration
 
 ![Training configuration](figures/training_config.png)
 
@@ -596,7 +600,7 @@ This section summarizes how the model was trained, for example:
 
 ### Training and Validation Results
 
-#### 1. Accuracy Across Epochs
+#### Accuracy Across Epochs
 
 ![Accuracy across epochs](figures/accuracy_epochs.png)
 
@@ -610,7 +614,7 @@ Interpretation:
 - Training high but validation drops → overfitting  
 - Both low → underfitting  
 
-#### 2. ROC-AUC Across Epochs
+#### ROC-AUC Across Epochs
 
 ![ROC-AUC across epochs](figures/rocauc_epochs.png)
 
@@ -621,7 +625,7 @@ ROC-AUC measures class separability:
 
 A stable high curve indicates strong classification ability.
 
-#### 3. Overfitting Gap
+#### Overfitting Gap
 
 ![Overfitting gap: ROC-AUC across epochs](figures/overffiting_gap.png)
 
@@ -634,13 +638,13 @@ This curve shows the difference between training and validation:
 
 ![Test Performance Summary](figures/test_metrics.png)
 
-#### 1a. Macro, Micro, and Weighted Metrics
+#### Macro, Micro, and Weighted Metrics
 
 - Macro: treats all classes equally  
 - Micro: aggregates all predictions globally  
 - Weighted: accounts for class frequency  
 
-#### 1b. Key Metrics Explained
+#### Key Metrics Explained
 
 - Accuracy: overall correctness  
 - Precision: correctness of positive predictions  
@@ -648,16 +652,17 @@ This curve shows the difference between training and validation:
 - F1-score: balance between precision and recall  
 - ROC-AUC: class separability  
 
-#### 2. Grad-CAM Heatmaps
+#### Grad-CAM Heatmaps
 
 ![Grad-CAM heatmaps](figures/gradcam.png)
 
-Grad-CAM highlights which regions influenced predictions, providing insight into whether the model is focusing on meaningful patterns rather than noise or artifacts.
+Grad-CAM highlights which regions of the expression-derived image influenced the model prediction. In this tutorial dataset, each image is not a real tissue image; it is a reshaped vector of GTEx gene expression values. Bright Grad-CAM regions should therefore be interpreted as parts of the expression profile that were important for predicting the tissue label.
 
-- Bright areas → important regions  
-- Random patterns → possible uncertainty  
+In the examples above, the model does not appear to rely on the entire image equally. Instead, the heatmaps show localized bright regions and bands, suggesting that specific subsets of expression values contributed more strongly to the classification. This matches the biological expectation that tissue identity is driven by particular gene expression patterns rather than by all genes equally.
 
-These are essential for interpreting and validating model behavior.
+However, these regions should be interpreted carefully. The spatial layout of the image is engineered from gene order, so nearby pixels are not necessarily nearby in a biological tissue, genome, or pathway. A useful follow-up analysis would be to map the highlighted pixel positions back to the original genes and ask whether those genes are known tissue markers or belong to relevant biological pathways.
+
+For this tutorial, the main conclusion is that the model is learning from structured expression patterns in the GTEx samples. Grad-CAM helps us inspect where the model focuses, but it does not prove which genes are biologically causal.
 
 ## Summary
 
