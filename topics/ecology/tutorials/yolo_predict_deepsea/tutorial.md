@@ -112,7 +112,7 @@ The [SEANOE](https://www.seanoe.org/data/00907/101899) collection features real 
 >
 >    > <tip-title> Filter history to only show 100 files </tip-title>
 >    > To select only last 100 files, you can use the history search function and specify `extension:jpg deleted:false hid>XXXX visible:any` in the search bar where XXXX is the id of the last image dataset minus 100.
->    > For example `extension:jpg deleted:false hid>3885visible:any` if you have images until the history dataset ID 3985.
+>    > For example `extension:jpg deleted:false hid>3885 visible:any` if you have images until the history dataset ID 3985.
 >    {: .tip}
 >
 > 6. **Create class name file** "Buccinide_classnames", copying and pasting this content in the file uploader:    ***Optional step - Only if using under "Galaxy Version 8.3.0+galaxy5" tool version***
@@ -151,7 +151,7 @@ This dataset provides two pretrained YOLOv8 detection models tailored for the ma
 > 1. {% tool [Perform YOLO image labeling](toolshed.g2.bx.psu.edu/repos/bgruening/yolo_predict/yolo_predict/8.3.0+galaxy2) %} with the following parameters:
 >    - {% icon param-file %} *"Input images"*: `DeepSeaSpy 100 images sample` (click the {% icon param-collection %} button, then select "DeepSeaSpy 100 images sample" from the list)
 >    - {% icon param-file %} *"YOLO class name file"*: `Buccinide_classnames` (input plain text file that lists the names of the classes the model can detect)
->    - {% icon param-file %} *"Model file"*: `dataset_seanoe_101899_YOLOv8-weights-for-Buccinidae-detection` (click the "…" button, then search for the name of the file)
+>    - {% icon param-file %} *"Model file"*: `dataset_seanoe_101899_YOLOv8-weights-for-Buccinidae-detection` (click the "…" button, then search for the name of the file or just filter with ".pt" statement)
 >    - *"Prediction mode"*: `detect`
 >    - *"Image size"*: `1000`
 >    - *"Confidence"*: `0.25`
