@@ -81,6 +81,7 @@ ecology/remote-sensing/sentinel-2-example: '1669'
 ? ecology/species-distribution-modeling/galaxy-workflow-species-distribution-modeling-with-wallace-from-gbif---training-material
 : '1687'
 ecology/x-array-map-plot/main-workflow: '1652'
+ecology/yolo_predict_deepsea/galaxy-workflow-tuto-yolo-deepseaspy: '2170'
 epigenetics/atac-seq/main-workflow: '1568'
 epigenetics/cut_and_run/main-workflow: '1562'
 epigenetics/estrogen-receptor-binding-site-identification/chip-seq: '1620'

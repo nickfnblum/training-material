@@ -32,6 +32,8 @@ contributions:
 lang: en
 translations:
     - fr
+
+subtopic: ecologymediaannotation
 ---
 
 This tutorial will guide you through using the {% tool [SAM3](toolshed.g2.bx.psu.edu/repos/ecology/sam3_semantic_segmentation/sam3_semantic_segmentation/1.0.1+galaxy4) %} (Segment Anything Model 3) tool on Galaxy. SAM3 can automatically detect and segment objects in images or videos using text prompts, with no specific training required.
@@ -74,16 +76,15 @@ Before running SAM3 Galaxy tool, you need to import the following files into Gal
 - The jellyfish photo: `https://zenodo.org/records/19890809/files/Moorev-jellyfish.jpg`
 - The shrimp video: `https://zenodo.org/records/19891364/files/2024-09-20-PorzBreign-shrimps.mp4`
 
-> <tip-title>Upload data to Galaxy</tip-title>
-> * Copy the link location
-> * 1- Click {% icon galaxy-upload %} **Upload** at the top of the activity panel
-> * 2- Select {% icon galaxy-wf-edit %} **Paste/Fetch Data**
-> * 3- Paste the link(s) into the text field `https://zenodo.org/records/19890809/files/Moorev-jellyfish.jpg`
-> * 4- Press **Start**
-> * 5- **Close** the window
-> ![Galaxy upload link](../../images/SAM3/upload_by_link.gif){: style="width:80%; display:block; margin:auto;"}
-{: .tip}
+{% snippet faqs/galaxy/datasets_import_via_link.md %}
 
+> <warning-title>File format not recognised?</warning-title>
+>
+> If you want to try with other files, make sure the file extension is correct before uploading, as Galaxy may not detect it automatically. In that case, two options:
+> - During upload, specify the format using the **Type (set all)** field
+> - From the history, click the {% icon galaxy-pencil %} **pencil** icon, go to the **Datatype** tab and search for your extension
+>
+{: .warning}
 
 # Segmenting an image: the jellyfish photograph
 

@@ -2,6 +2,7 @@
 layout: tutorial_hands_on
 title: Remove contamination and host reads
 zenodo_link: https://zenodo.org/records/17829290
+level: Introductory
 questions:
 - What preprocessing steps are required to obtain cleaned reads for downstream analysis?
 - How can we identify and remove contaminant or host-derived reads from raw sequencing
@@ -20,6 +21,12 @@ contributions:
   authorship:
   - minamehr
   - bebatut
+subtopic: metagenomics
+tags:
+- host-removal
+- preprocessing
+- metagenomics
+- microgalaxy
 recordings:
 - youtube_id: DNO3ZG-EOBo
   length: 23M

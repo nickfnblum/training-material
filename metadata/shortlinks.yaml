@@ -737,6 +737,8 @@ name:
   statistics/multimodal_learner/slides: "/topics/statistics/tutorials/multimodal_learner/slides.html"
   digital-humanities/Whisper_speech_recognition: "/topics/digital-humanities/tutorials/Whisper_speech_recognition/tutorial.html"
   visualisation/jbrowse2: "/topics/visualisation/tutorials/jbrowse2/tutorial.html"
+  ecology/SAM3: "/topics/ecology/tutorials/SAM3/tutorial.html"
+  ecology/yolo_predict_deepsea: "/topics/ecology/tutorials/yolo_predict_deepsea/tutorial.html"
 id:
   T00000: "/topics/admin/tutorials/ansible/tutorial.html"
   T00001: "/topics/admin/tutorials/ansible-galaxy/tutorial.html"
@@ -2594,6 +2596,9 @@ id:
   N00124: "/news/2026/04/01/biont.html"
   W00379: "/topics/digital-humanities/tutorials/Whisper_speech_recognition/workflows/main_workflow.html"
   T00578: "/topics/visualisation/tutorials/jbrowse2/tutorial.html"
+  T00579: "/topics/ecology/tutorials/SAM3/tutorial.html"
+  T00580: "/topics/ecology/tutorials/yolo_predict_deepsea/tutorial.html"
+  W00380: "/topics/ecology/tutorials/yolo_predict_deepsea/workflows/Galaxy-Workflow-tuto_yolo_DeepSeaSpy.html"
 misc:
   ansible-galaxy: "/topics/admin/tutorials/ansible-galaxy/tutorial.html"
   feeds: "/feeds/index.html"

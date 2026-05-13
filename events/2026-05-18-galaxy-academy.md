@@ -199,6 +199,9 @@ We provide you with training materials which you can study at your own pace and 
 
 On the first day, you can make yourself familiar with the Galaxy platform. In the next days, you can learn about Proteomics, Assembly, Transcriptomics, Single Cell, Microbiome or Machine Learning data analysis in Galaxy.
 
+**New for 2026**
+
+We are pleased to announce that in addition to the learning tracks, we will also have a "Meet the Expert" video for each day of the course. See the announcement page for it [for more information](/training-material/news/2026/05/11/gta-meet-experts.html).
 
 **Course format**
 

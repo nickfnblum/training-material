@@ -302,18 +302,18 @@ Both tools are available in Galaxy. But currently, only **MEGAHIT** can be used 
 > <details-title>Co-assembly with MetaSPAdes</details-title>
 > MetaSPAdes supports co-assembly by passing a list of paired-end read files.
 >
-> <hands-on-title>Assembly with MetaSPAdes</hands-on-title>
-> 1. {% tool [MetaSPAdes](toolshed.g2.bx.psu.edu/repos/nml/metaspades/metaspades/4.2.0+galaxy0) %} with the following parameters:
+> > <hands-on-title>Assembly with MetaSPAdes</hands-on-title>
+> > 1. {% tool [MetaSPAdes](toolshed.g2.bx.psu.edu/repos/nml/metaspades/metaspades/4.2.0+galaxy0) %} with the following parameters:
 >     - *"Pair-end reads input format"*: `Paired-end: list of dataset pairs`
->       - {% icon param-collection %} *"FASTQ file(s): collection"*: `Raw reads`
->
->       > <comment-title>Tip</comment-title>
->       > To run **individual assembly** instead, follow the previous FAQ to create a **nested list of samples**.
->       {: .comment}
->
->     - *"Select k-mer detection option"*: `User specific`
->       - *"K-mer size values"*: `21,33,55,77`
-{: .hands_on}
+> >      - {% icon param-collection %} *"FASTQ file(s): collection"*: `Raw reads`
+> >
+> >    > <comment-title>Tip</comment-title>
+> >    > To run **individual assembly** instead, follow the previous FAQ to create a **nested list of samples**.
+> >     {: .comment}
+> >
+> >   - *"Select k-mer detection option"*: `User specific`
+> >    - *"K-mer size values"*: `21,33,55,77`
+> {: .hands_on}
 {: .details}
 
 # Quality control of assembly

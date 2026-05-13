@@ -87,6 +87,15 @@ Avant de lancer SAM3, vous devez importer les fichiers suivants dans Galaxy :
 >
 {: .tip}
 
+
+> <warning-title>Format de fichier non reconnu ?</warning-title>
+>
+> Si vous souhaitez essayer avec d'autres fichiers, assurez-vous que l'extension est correcte avant d'upload, car Galaxy peut ne pas la détecter automatiquement. Dans ce cas, deux solutions :
+> - Lors de l'upload, spécifiez le format via le champ **Type (set all)**
+> - Depuis l'historique, cliquez sur l'icône {% icon galaxy-pencil %} **crayon**, allez dans l'onglet **Datatype** et recherchez votre extension
+>
+{: .warning}
+
 # Segmentation d'une image : la photo de méduse
 
 Dans cette première partie, nous allons utiliser SAM3 sur la photo `Moorev-jellyfish.jpg` pour détecter et segmenter la méduse.
