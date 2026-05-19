@@ -2,12 +2,16 @@
 layout: event-track
 
 title: Machine Learning
-description: This module will introduce you to the world of machine learning using Galaxy. Start with the tutorial at your own pace. If you need support contact us via the Slack Channel [gta_machine-learning](https://gtnsmrgsbord.slack.com/channels/{{page.slack_channel}}). 
+description: |
+    This module will introduce you to the world of machine learning using Galaxy. 
+    
+    Start with the tutorial at your own pace. If you need support contact us via the Slack Channel [gta_machine-learning](https://gtnsmrgsbord.slack.com/channels/{{page.slack_channel}}).
+    
+    🚨 Choose one of the other Galaxy instances - [US/Main](https://usegalaxy.org/), [EU](https://usegalaxy.eu/), [AU](https://usegalaxy.org.au/) - to follow the training.
 
-🚨 **Please note**: 
-
-- The French Galaxy server does not support the Galaxy machine learning tools at the moment. Please choose one of the other Galaxy instances - [US/Main](https://usegalaxy.org/), [EU](https://usegalaxy.eu/), [AU](https://usegalaxy.org.au/) - to follow the training
-- The tutorial 'Building the LORIS LLR6 PanCancer Model Using PyCaret' works on the US and the EU servers.
+    🚨 The French Galaxy server does not support the Galaxy machine learning tools at the moment. 
+    
+    🚨 The tutorial 'Building the LORIS LLR6 PanCancer Model Using PyCaret' works on the US and the EU servers.
 
 slack_channel: gta_machine-learning
 

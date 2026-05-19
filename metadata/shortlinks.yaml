@@ -2599,6 +2599,8 @@ id:
   T00579: "/topics/ecology/tutorials/SAM3/tutorial.html"
   T00580: "/topics/ecology/tutorials/yolo_predict_deepsea/tutorial.html"
   W00380: "/topics/ecology/tutorials/yolo_predict_deepsea/workflows/Galaxy-Workflow-tuto_yolo_DeepSeaSpy.html"
+  N00125: "/news/2026/05/11/gta-meet-experts.html"
+  E00047: "/events/2026-06-29-profiling-microbial-communities-bari.html"
 misc:
   ansible-galaxy: "/topics/admin/tutorials/ansible-galaxy/tutorial.html"
   feeds: "/feeds/index.html"
