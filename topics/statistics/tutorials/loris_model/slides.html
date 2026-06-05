@@ -1,0 +1,194 @@
+---
+layout: tutorial_slides
+logo: GTN
+title: "Galaxy Tabular Learner: Building a Model using Chowell clinical data"
+zenodo_link: "https://zenodo.org/records/13885908"
+
+questions:
+  - "How can Tabular Learner in Galaxy be used to reconstruct a LORIS-style (LLR6) logistic regression model using the same dataset and predictor set?"
+  - "How should the decision threshold be configured (default vs selected cutoff) to align predictions with the intended clinical operating point?"
+  - "Which components of the Tabular Learner report best support a transparent comparison to the published LORIS baseline?"
+
+objectives:
+  - "Build an immunotherapy-response classifier in Galaxy using Tabular Learner."
+  - "Train and compare candidate models, then re-evaluate with a selected probability threshold."
+  - "Benchmark discrimination, calibration, and threshold-dependent metrics against the published LORIS LLR6 model."
+
+contributors:
+  - paulocilasjr
+  - qchiujunhao
+  - jgoecks
+---
+
+# What you will do
+
+- Upload preprocessed **Chowell_train** and **Chowell_test** tables (Zenodo).
+- Train a classification model with **Tabular Learner** in Galaxy.
+- Re-evaluate the selected model at a **chosen probability threshold**.
+- Use the HTML report to compare results to **LORIS LLR6 (Chang et al., 2024)**.
+
+???
+
+This tutorial treats the published LORIS LLR6 model as a benchmark baseline. The main goal is to understand what changes (and what does not) when the model is rebuilt under a standardized Galaxy workflow.
+
+---
+
+# Tool availability
+
+- Tabular Learner is available on:
+  - **Cancer-Galaxy** (Galaxy-ML tools → Tabular Learner)
+  - **Galaxy US** (Statistics and Visualization → Machine Learning → Tabular Learner)
+
+---
+
+# Use case: LORIS LLR6 (Chang et al., 2024)
+
+- **Task**: Predict patient benefit from immune checkpoint blockade (ICB) therapy.
+- **Model**: Logistic regression (LLR6) trained on 6 predictors.
+- **Data**: LORIS PanCancer; this tutorial uses **Chowell_train** (train) and **Chowell_test** (test).
+
+![schema of the whole process of training model and test.](../../images/loris_tutorial/tutorial_schema.png "Overview of the process steps to obtain the model from the Chowell dataset."){: style="width: 70%; display: block; margin-left: auto; margin-right: auto;"}
+
+---
+
+# Dataset and predictors
+
+**Predictors (LLR6):**
+- TMB (truncated at 50)
+- Systemic Therapy History (0/1)
+- Albumin
+- Cancer Type (one-hot encoded)
+- NLR (truncated at 25)
+- Age (truncated at 85)
+
+**Target:**
+- Response (0 = no benefit, 1 = benefit)
+
+---
+
+# Model selection idea
+
+Tabular Learner can:
+1. Compare multiple candidate classifiers and pick the best under its evaluation protocol.
+2. Restrict candidates to a specific family (e.g., logistic regression only).
+
+In this tutorial, we **train all candidate models** and check whether logistic regression remains among the best performers.
+
+---
+
+# Data upload
+
+Import the preprocessed TSV files from Zenodo:
+
+- `Chowell_train_Response.tsv`
+- `Chowell_test_Response.tsv`
+
+Ensure the datatype is **tabular**, and optionally tag datasets for traceability.
+
+???
+
+The tutorial focuses on the preprocessed tables; a separate notebook/script performs the truncation and encoding steps.
+
+---
+
+# Run 1: Train and select a best model
+
+Tabular Learner parameters:
+
+- Input Dataset: `Chowell_train_Response.tsv`
+- Test Dataset: `Chowell_test_Response.tsv`
+- Target column: `Response`
+- Task: `Classification`
+
+Run the tool to produce the **Best Model** and the **HTML report**.
+
+---
+
+# Run 2: Re-evaluate at a selected threshold
+
+Rerun Tabular Learner with:
+
+- Customize Default Settings?: **Yes**
+- Classification Probability Threshold: **0.25**
+
+???
+
+Threshold-dependent metrics (accuracy, precision, recall, F1, MCC) change with the cutoff. This second run makes threshold choice explicit for comparisons.
+
+---
+
+# Outputs to inspect
+
+- **Tabular Learner Best Model** (`.h5`): trained model + preprocessing.
+- **Tabular Learner Model Report** (HTML): setup, validation, test metrics, plots.
+- (Optional) **best_model.csv** (hidden): selected hyperparameters.
+
+---
+
+# Report structure
+
+The report has four tabs:
+
+- **Model Config Summary**: data split + run settings + chosen threshold + best model hyperparameters.
+- **Validation Summary**: cross-validation table and diagnostic plots (e.g., calibration, threshold plot).
+- **Test Summary**: holdout/test metrics and ROC/PR/confusion matrix plots.
+- **Feature Importance**: coefficients/importance + SHAP/permutation/PDPs where available.
+
+![report tabs](../../images/loris_tutorial/report_tabs.png "Tabs in the Tabular Learner Report"){: style="width: 85%; display: block; margin-left: auto; margin-right: auto;"}
+
+---
+
+# Benchmarking approach
+
+Separate metrics into:
+
+- **Threshold-independent**
+  - ROC-AUC, PR-AUC (compare discrimination without choosing a cutoff)
+- **Threshold-dependent**
+  - Accuracy, F1 (report together with the selected cutoff)
+
+Use the report to check:
+- split strategy and evaluation protocol
+- calibration and probability diagnostics
+- threshold plot (precision/recall/F1 vs cutoff)
+
+---
+
+# Key numbers
+
+| Model | Threshold | Accuracy | ROC-AUC | PR-AUC | F1 |
+| --- | --- | --- | --- | --- | --- |
+| LLR6 (reference) | 0.30 | 0.68 | 0.72 | 0.53 | 0.53 |
+| Tabular Learner Run 1 | 0.50 | 0.80 | 0.76 | 0.55 | 0.42 |
+| Tabular Learner Run 2 | 0.25 | 0.67 | 0.76 | 0.55 | 0.52 |
+
+---
+
+# Interpreting the differences
+
+- Both Tabular Learner runs show higher **ROC-AUC/PR-AUC** than LLR6, suggesting similar-or-better discrimination.
+- Changing the **threshold** shifts the operating point:
+  - Run 1 (0.50): higher accuracy, lower F1
+  - Run 2 (0.25): lower accuracy, higher F1
+- Check **calibration** to see whether probability scores are over/under-confident.
+
+![Bar chart comparing LLR6 metrics vs. Tabular Learner (threshold = 0.25)](../../images/loris_tutorial/test_metrics_results.png "Comparison of LLR6 model metrics and Tabular Learner model metrics at a 0.25 threshold."){: style="width: 80%; display: block; margin-left: auto; margin-right: auto;"}
+
+---
+
+# Conclusion
+
+- Tabular Learner enables a reproducible workflow to:
+  - train, compare, and select models on tabular clinical data
+  - evaluate discrimination, calibration, and threshold effects via a single report
+- Threshold choice must be justified because it can change clinical tradeoffs (false positives vs false negatives).
+
+---
+
+# Galaxy Training Resources
+
+- Galaxy Training Materials: training.galaxyproject.org
+- Help Forum: help.galaxyproject.org
+- Events: galaxyproject.org/events
+
+![GTN stats]({{site.baseurl}}/topics/introduction/images/gtn_stats.png)

@@ -25,6 +25,13 @@ requirements:
         - scrna-case_alevin-combine-datasets
         - scrna-case_basic-pipeline
 
+follow_up_training:
+-
+    type: "internal"
+    topic_name: single-cell
+    tutorials:
+        - EBI-retrieval
+
 time_estimation: 2H
 
 key_points:

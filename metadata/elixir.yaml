@@ -1,0 +1,62 @@
+---
+name: elixir
+type: use
+topic_type: technology
+title: ELIXIR
+summary: |
+  <img alt="ELIXIR Logo" src="/training-material/shared/images/elixir.png" style="width:9em;margin:0" class="float-right">
+  Tutorials developed within ELIXIR, a European life sciences infrastructure, bringing together scientists from over 240 research institutes spread over 21 Member countries
+
+  <img alt="EU Flag" src="/training-material/assets/images/eu.svg" style="width:3em;margin:0"> ELIXIR is partly funded by the European Commission within the Research Infrastructures programme of Horizon 2020.
+
+tag_based: true
+
+og_image: /shared/images/elixir.png
+logo: /training-material/assets/images/elixir/ELIXIR_logo_negative_orange.png
+logo_alt: "The ELIXIR logo where the X is DNA"
+
+editorial_board:
+  - bebatut
+  - fpsom
+
+subtopics:
+  - id: ai-ml
+    title: Artificial Intelligence and Machine Learning in Life Sciences
+    description: |
+      Artificial intelligence (AI) has permeated our lives, transforming how we live and work. Over the past few years, a rapid and disruptive acceleration of progress in AI has occurred, driven by significant advances in widespread data availability, computing power and machine learning. Remarkable strides were made in particular in the development of foundation models - AI models trained on extensive volumes of unlabelled data. Moreover, given the large amounts of omics data that are being generated and made accessible to researchers due to the drop in the cost of high-throughput technologies, analysing these complex high-volume data is not trivial, and the use of classical statistics can not explore their full potential. As such, Machine Learning (ML) and Artificial Intelligence (AI) have been recognized as key opportunity areas for ELIXIR, as evidenced by a number of ongoing activities and efforts throughout the community.
+      However, beyond the technological advances, it is equally important that the individual researchers acquire the necessary knowledge and skills to fully take advantage of Machine Learning. Being aware of the challenges, opportunities and constraints that ML applications entail, is a critical aspect in ensuring high quality research in life sciences
+  - id: train-the-trainers
+    title: ELIXIR-GOBLET Train-the-Trainer
+    description: One of the ELIXIR Training Platform's objectives is to increase bioinformatics capacity and competency in Europe. This programme, established in collaboration with GOBLET, relies in the development of new courses and materials, and also specifically in the Train-the-Trainer (TtT) courses. 
+
+custom_css: |
+  @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+  :root {
+    --brand-color: #023452;
+    --accent-color: #f47d20;
+  }
+  body, body.remark-container h1, body.remark-container h2, body.remark-container h3 {
+    font-family: "Lato", Verdana, Helvetica, sans-serif !important;
+  }
+  body.remark-container .remark-slide-number {
+    color: white;
+  }
+
+  body.remark-container .my-footer {
+      background: #023452;
+      color: white;
+  }
+  body.remark-container .my-footer div {
+      padding-top: 0.5em;
+  }
+  body.remark-container .my-footer a {
+      color: white;
+  }
+  nav.navbar {
+    background: #023452 !important;
+  }
+  nav.navbar a, nav.navbar input {
+    color: white !important;
+  }
+

@@ -31,11 +31,20 @@ time_estimation: 2H
 key_points:
   - Filtering parameters are dependent on the dataset, and should be explored using scatter or violin plots
   - A DotPlot is a fantastic way to validate clusters across different analyses
-contributors:
-  - mtekman
-  - beatrizserrano
-  - gallardoalba
-  - pavanvidem
+
+contributions:
+  authorship:
+    - mtekman
+    - beatrizserrano
+    - gallardoalba
+    - pavanvidem
+
+follow_up_training:
+  -
+      type: "internal"
+      topic_name: single-cell
+      tutorials:
+          - EBI-retrieval
 
 gitter: Galaxy-Training-Network/galaxy-single-cell
 

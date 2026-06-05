@@ -35,6 +35,9 @@ contributions:
     - elixir-goblet-ttt
   funding:
     - gallantries
+tags:
+  - elixir
+  - train-the-trainers
 ---
 
 # Running a demo training

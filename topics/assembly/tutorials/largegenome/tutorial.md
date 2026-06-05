@@ -8,6 +8,11 @@ tags:
   - polishing
   - nanopore
   - plants
+  - biodiversity
+edam_ontology:
+- topic_0622 # Genomics
+- topic_0196 # Assembly
+- topic_3050 # Biodiversity
 questions:
   - "How can we assemble a large plant or animal genome?"
 objectives:
@@ -20,8 +25,13 @@ key_points:
   - "We can assemble long reads from plant or animal species into large contigs"
   - "These contigs can be polished with both long and short reads"
   - "We can assess the quality of this assembly with various tools"
-contributors:
-  - annasyme
+contributions:
+  authorship:
+    - annasyme
+  funding:
+    - unimelb
+    - melbournebioinformatics
+    - AustralianBioCommons
 
 recordings:
 - youtube_id: BM70nvwWjOY
@@ -97,8 +107,13 @@ Here is a list of the workflows:
 |Polish assembly | Assembly polishing |
 |Assess quality | Assess genome quality|
 
-
-{% snippet faqs/galaxy/workflows_import_from_workflowhub.md filter="Large-genome-assembly" %}
+> <tip-title>Importing the workflows from WorkflowHub</tip-title>
+>
+> [WorkflowHub](https://workflowhub.eu/) is a workflow management system which allows workflows to be FAIR (Findable, Accessible, Interoperable, and Reusable), citable, have managed metadata profiles, and be openly available for review and analytics.
+>
+> {% snippet faqs/galaxy/workflows_import_search.md box_type="none" trs_server="workflowhub.eu" search_query='"large genome assembly"' %}
+>
+{: .tip}
 
 After importing the workflows into your account:
 

@@ -41,6 +41,9 @@ requirements:
   topic_name: contributing
   tutorials:
   - learning-principles
+tags:
+  - elixir
+  - train-the-trainers
 contributions:
   authorship:
     - bebatut

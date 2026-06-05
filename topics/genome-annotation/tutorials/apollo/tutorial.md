@@ -8,6 +8,7 @@ tags:
   - prokaryote
   - microgalaxy
   - jbrowse1
+  - biodiversity
   - apollo2
 questions:
   - How to visualize your genome after automated annotations have been performed?
@@ -104,11 +105,6 @@ In this tutorial we have obtained some data from NCBI related to [*Escherichia c
 {: .comment}
 
 ## Get data
-
-<!-- Data for E.coli from https://usegalaxy.eu/u/helena-rasche/h/e-coli-k-12-apollo -->
-<!-- other datasets available: -->
-<!-- Apis mellifera: https://zenodo.org/record/3270822 (based on https://hymenoptera.elsiklab.missouri.edu/beebase/download_sequences probably) -->
-<!-- Schizosaccharomyces pombe: https://usegalaxy.eu/u/abretaud/h/apollo-eukaryote-data -->
 
 > <hands-on-title>Data upload</hands-on-title>
 >

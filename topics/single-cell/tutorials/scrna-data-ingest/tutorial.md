@@ -18,7 +18,7 @@ objectives:
 time_estimation: 1H
 key_points:
 - Single cell data from different sources may have unfamiliar formatting and thus may require different ways of ingesting it into Galaxy.
-- There are many ways of importing single cell files into Galaxy and converting between single cell formats. 
+- There are many ways of importing single cell files into Galaxy and converting between single cell formats.
 contributions:
   authorship:
     - wee-snufkin
@@ -29,9 +29,17 @@ contributions:
   testing:
     - pavanvidem
     - mtekman
-  funding: 
-    - elixir-fair-data
+  funding:
+    - elixir-uk-dash
 zenodo_link: 'https://zenodo.org/record/4574153'
+
+requirements:
+-
+    type: "internal"
+    topic_name: single-cell
+    tutorials:
+        - scrna-data-formats
+
 follow_up_training:
   -
     type: "internal"
@@ -41,8 +49,8 @@ tags:
   - data import
 ---
 
-You finally decided to analyse some single cell data, you got your files either from the lab or publicly available sources, you opened the first tutorial available on Galaxy Training Network and... you hit the wall! The format of your files is not compatible with the one used in tutorial! Have you been there? 
-This tutorial was created to help you overcome that problem and ensure data interoperability in single cell analysis. Once you get your data into Galaxy in the right format, that's already 50% of success. Additionally, by using format conversion, you will be able to use different packages presented in tutorials that may require different datatypes. 
+You finally decided to analyse some single cell data, you got your files either from the lab or publicly available sources, you opened the first tutorial available on Galaxy Training Network and... you hit the wall! The format of your files is not compatible with the one used in tutorial! Have you been there?
+This tutorial was created to help you overcome that problem and ensure data interoperability in single cell analysis. Once you get your data into Galaxy in the right format, that's already 50% of success. Additionally, by using format conversion, you will be able to use different packages presented in tutorials that may require different datatypes.
 
 > <agenda-title></agenda-title>
 >
@@ -56,11 +64,11 @@ This tutorial was created to help you overcome that problem and ensure data inte
 # Single cell datatypes
 
 To start with, here are the most common formats and datatypes that you might come across if you work with single cell data:
-- **Tabular** - simply using TSV, CSV or TXT formats to store expression matrix as well as cell and gene metadata. 
+- **Tabular** - simply using TSV, CSV or TXT formats to store expression matrix as well as cell and gene metadata.
 - **MTX** - it's just a sparse matrix format with genes on the rows and cells on the columns as output by Cell Ranger.
-- **HDF5** - Hierarchical Data Format - can store datasets and groups. A dataset is a  a multidimensional array of data elements, together with supporting metadata. A group is a structure for organizing objects in an HDF5 file. This format allows for storing both the count matrices and all metadata in a single file rather than having separate features, barcodes and matrix files. 
-- **AnnData objects** - [anndata](https://anndata.readthedocs.io/en/latest/) is a Python package for handling annotated data matrices. In Galaxy, you'll see AnnData objects in **h5ad** format, which is based on the standard HDF5 (h5) format. There are lots of Python tools that work with this format, such as Scanpy, MUON, Cell Oracle, SquidPy, etc. 
-- **Loom** - it is simply an HDF5 file that contains specific groups containing the main matrix as well as row and column attributes and can be read by any language supporting HDF5. [Loompy](https://linnarssonlab.org/loompy/) has been released as a Python API to interact with loom files, and [loomR](https://github.com/mojaveazure/loomR) is its implementation in R. 
+- **HDF5** - Hierarchical Data Format - can store datasets and groups. A dataset is a  a multidimensional array of data elements, together with supporting metadata. A group is a structure for organizing objects in an HDF5 file. This format allows for storing both the count matrices and all metadata in a single file rather than having separate features, barcodes and matrix files.
+- **AnnData objects** - [anndata](https://anndata.readthedocs.io/en/latest/) is a Python package for handling annotated data matrices. In Galaxy, you'll see AnnData objects in **h5ad** format, which is based on the standard HDF5 (h5) format. There are lots of Python tools that work with this format, such as Scanpy, MUON, Cell Oracle, SquidPy, etc.
+- **Loom** - it is simply an HDF5 file that contains specific groups containing the main matrix as well as row and column attributes and can be read by any language supporting HDF5. [Loompy](https://linnarssonlab.org/loompy/) has been released as a Python API to interact with loom files, and [loomR](https://github.com/mojaveazure/loomR) is its implementation in R.
 - **Zarr** - a Python package providing an implementation of compressed, chunked, N-dimensional arrays, designed for use in parallel computing. The Zarr file format offers powerful compression options, supports multiple data store backends, and can read/write your NumPy arrays.
 - **Seurat objects** - a representation of single-cell expression data for R, in Galaxy you might see them in **rdata** format.
 - **Single Cell Experiment (SCE) object** - defines a S4 class for storing data from single-cell experiments and provides a more formalized approach towards construction and accession of data. The S4 system is one of R's systems for object oriented programing. In Galaxy you might see SCE objects in **rdata** format.
@@ -74,7 +82,7 @@ include images showing the structure of those files
 {% snippet faqs/galaxy/tutorial_mode.md %}
 
 # Data import
-As you can see above, there are multiple ways to store single cell data. Therefore, there are also many ways how you can get that data! 
+As you can see above, there are multiple ways to store single cell data. Therefore, there are also many ways how you can get that data!
 Obviously, before any format conversion, we need to import the data. In our tutorials we often use [Zenodo](https://zenodo.org/) links, but you can also upload the files directly from your computer. There are also publicly available resources which you can easily access through public atlases, such as [Single Cell Expression Atlas](https://www.ebi.ac.uk/gxa/sc/home) or [Human Cell Atlas data portal](https://data.humancellatlas.org/). We created a [dedicated tutorial]({% link topics/single-cell/tutorials/EBI-retrieval/tutorial.md %}) to show how to use those atlases to retrieve data. But today we're here to focus on data conversion!
 
 # SCEasy Tool
@@ -90,19 +98,19 @@ In Galaxy Toolshed there is a wonderful tool called {% tool [SCEasy](toolshed.g2
 
 > <warning-title>Two SCEasy tools</warning-title>
 >  
-> As of the writing of this tutorial, the updated SCEasy tool is called {% tool [SCEasy Converter](toolshed.g2.bx.psu.edu/repos/iuc/sceasy_convert/sceasy_convert/0.0.7+galaxy2) %} and it's only available on *usegalaxy.eu*. The second tool is called {% tool [SCEasy convert](toolshed.g2.bx.psu.edu/repos/ebi-gxa/sceasy_convert/sceasy_convert/0.0.5+galaxy1) %} and it works on *usegalaxy.org*, however has limited conversion options. Both tools should be visible on *singlecell.usegalaxy.eu* if you try to find them in the search box. 
-> 
+> As of the writing of this tutorial, the updated SCEasy tool is called {% tool [SCEasy Converter](toolshed.g2.bx.psu.edu/repos/iuc/sceasy_convert/sceasy_convert/0.0.7+galaxy2) %} and it's only available on *usegalaxy.eu*. The second tool is called {% tool [SCEasy convert](toolshed.g2.bx.psu.edu/repos/ebi-gxa/sceasy_convert/sceasy_convert/0.0.5+galaxy1) %} and it works on *usegalaxy.org*, however has limited conversion options. Both tools should be visible on *singlecell.usegalaxy.eu* if you try to find them in the search box.
+>
 {: .warning}
 
 In this tutorial you will see multiple examples of SCEasy Tool in action. However, sometimes it is useful to know how to do this conversion manually or at least to know how it all works and better understand the structure of the files. Therefore, we also have examples showing how to convert objects manually or prepare the input files for some of our single cell tutorials and workflows.
 
-# Seurat -> AnnData 
-As mentioned above, there are two SCEasy tools currently available. When we speak about conversion to AnnData, the latest tool {% tool [SCEasy Converter](toolshed.g2.bx.psu.edu/repos/iuc/sceasy_convert/sceasy_convert/0.0.7+galaxy2) %} converts Seurat into the latest version of AnnData object. However, currently it is not possible to use that output with downstream EBI single-cell tools because they only support older versions of the AnnData. If you need to use those tools, the solution is to take advantage of the second SCEasy tool {% tool [SCEasy convert](toolshed.g2.bx.psu.edu/repos/ebi-gxa/sceasy_convert/sceasy_convert/0.0.5+galaxy1) %} which has limited conversion options but can generate AnnData files compatible with the EBI single-cell tools that we are going to use next in the workflow. 
+# Seurat -> AnnData
+As mentioned above, there are two SCEasy tools currently available. When we speak about conversion to AnnData, the latest tool {% tool [SCEasy Converter](toolshed.g2.bx.psu.edu/repos/iuc/sceasy_convert/sceasy_convert/0.0.7+galaxy2) %} converts Seurat into the latest version of AnnData object. However, currently it is not possible to use that output with downstream EBI single-cell tools because they only support older versions of the AnnData. If you need to use those tools, the solution is to take advantage of the second SCEasy tool {% tool [SCEasy convert](toolshed.g2.bx.psu.edu/repos/ebi-gxa/sceasy_convert/sceasy_convert/0.0.5+galaxy1) %} which has limited conversion options but can generate AnnData files compatible with the EBI single-cell tools that we are going to use next in the workflow.
 Our Seurat starting file was generated by pulling data from [Single Cell Expression Atlas](https://www.ebi.ac.uk/gxa/sc/home) and transforming it into the desired format, what was shown in the [data import tutorial]({% link topics/single-cell/tutorials/EBI-retrieval/tutorial.md %}). It will be our toy dataset.
 
 > <hands-on-title>Get toy data</hands-on-title>
 >
-> 1. Create a new history for this tutorial 
+> 1. Create a new history for this tutorial
 > 2. Import the AnnData object from [Zenodo](https://zenodo.org/records/10397653)
 >
 >    ```
@@ -111,7 +119,7 @@ Our Seurat starting file was generated by pulling data from [Single Cell Express
 >
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
 >    
-> 3. Alternatively, you can import history where we created the Seurat object: [Input history](https://singlecell.usegalaxy.eu/u/j.jakiela/h/ebi-scxa---anndata-scanpy-or-seurat-object-1) 
+> 3. Alternatively, you can import history where we created the Seurat object: [Input history](https://singlecell.usegalaxy.eu/u/j.jakiela/h/ebi-scxa---anndata-scanpy-or-seurat-object-1)
 >
 >    {% snippet faqs/galaxy/histories_import.md %}
 >
@@ -122,8 +130,9 @@ Our Seurat starting file was generated by pulling data from [Single Cell Express
 >
 {: .hands_on}
 
+You will now have the option of using one tool to do the conversion, or going through a more complex conversion to an anndata object usable in the [**Filter, plot and explore single-cell RNA-seq data with Scanpy** tutorial]({% link topics/single-cell/tutorials/scrna-case_basic-pipeline/tutorial.md %})
 
-{% include _includes/cyoa-choices.html option1="Quick one tool method" option2="Convert to AnnData object compatible with Filter, Plot, Explore workflow" default="Quick one tool method"
+{% include _includes/cyoa-choices.html option1="Quick one tool method" option2="Convert to AnnData object" default="Quick one tool method"
        text="Choose below if you just want to convert your object quickly or see how it all happens behind the scenes!" disambiguation="seurat2anndata" %}
 
 <div class="Quick-one-tool-method" markdown="1">
@@ -139,15 +148,15 @@ Our Seurat starting file was generated by pulling data from [Single Cell Express
 >    
 {: .hands_on}
 
-And that's it! Please note that the output file is the newest AnnData version and is not compatible with EBI tools used in [Filter, Plot, Explore workflow](https://singlecell.usegalaxy.eu/u/j.jakiela/w/copy-of-filter-plot-and-explore-single-cell-rna-seq-data-imported-from-uploaded-file-3). 
+And that's it! Please note that the output file is the newest AnnData version and is not compatible with EBI tools used in [Filter, Plot, Explore workflow](https://singlecell.usegalaxy.eu/u/j.jakiela/w/copy-of-filter-plot-and-explore-single-cell-rna-seq-data-imported-from-uploaded-file-3).
 
 </div>
 
-<div class="Convert-to-AnnData-object-compatible-with-Filter,-Plot,-Explore-workflow" markdown="1">
+<div class="Convert-to-AnnData-object" markdown="1">
 
 ## Convert to AnnData object compatible with Filter, Plot, Explore workflow
 
-Here, we use the other SCEasy tool which generates older version of the AnnData which is compatible with the EBI single-cell tools that we are going to use next in the workflow. 
+Here, we use the other SCEasy tool which generates older version of the AnnData which is compatible with the EBI single-cell tools that we are going to use next in the workflow.
 
 > <hands-on-title> Seurat to AnnData with SCEasy convert </hands-on-title>
 >
@@ -187,17 +196,17 @@ Now, if we do small modification to metadata, we can use the generated dataset a
 >
 {: .hands_on}
 
-The object is ready to start its journey through the [Filter, Plot, Explore workflow](https://singlecell.usegalaxy.eu/u/j.jakiela/w/copy-of-filter-plot-and-explore-single-cell-rna-seq-data-imported-from-uploaded-file-3). All thanks to one conversion tool - how awesome that is! 
+The object is ready to start its journey through the [Filter, Plot, Explore workflow](https://singlecell.usegalaxy.eu/u/j.jakiela/w/copy-of-filter-plot-and-explore-single-cell-rna-seq-data-imported-from-uploaded-file-3). All thanks to one conversion tool - how awesome that is!
 
 </div>
 
 # AnnData -> Seurat
 
-Let's get an **AnnData object** that we can further work on. It's the object used in [many tutorials]({% link topics/single-cell/tutorials/scrna-case_basic-pipeline/tutorial.md %}), so check it out if you're curious. 
+Let's get an **AnnData object** that we can further work on. It's the object used in [many tutorials]({% link topics/single-cell/tutorials/scrna-case_basic-pipeline/tutorial.md %}), so check it out if you're curious.
 
 > <hands-on-title>Get toy data</hands-on-title>
 >
-> 1. Create a new history for this tutorial 
+> 1. Create a new history for this tutorial
 > 2. Import the AnnData object from [Zenodo]({{ page.zenodo_link }})
 >
 >    If you do this tutorial just for learning purposes, you can download the downsampled dataset which will be much quicker to process:
@@ -271,7 +280,7 @@ First, we will extract observations (cell metadata) and the full matrix from our
 > > <solution-title></solution-title>
 > >
 > > If you just click on the `Matrix` dataset, you will see a preview showing barcodes in the first column, and genes in the first row.
-> > 
+> >
 > {: .solution}
 >
 {: .question}
@@ -285,7 +294,7 @@ However, the next tool we need expects a matrix wherein the genes are listed in 
 >
 {: .hands_on}
 
-And now we are ready to input that data into **DropletUtils** tool, which will separate this matrix into the cells, genes, and matrix tabular files needed to build a Seurat object. 
+And now we are ready to input that data into **DropletUtils** tool, which will separate this matrix into the cells, genes, and matrix tabular files needed to build a Seurat object.
 
 > <hands-on-title> DropletUtils </hands-on-title>
 >
@@ -323,7 +332,7 @@ As usual, you can check the [example history](https://usegalaxy.eu/u/j.jakiela/h
 </div>
 
 # AnnData -> SingleCellExperiment (SCE)
-We will work on the same AnnData object so if you create a new history for this exercise, you can either get this file from Zenodo again or just copy this dataset from the previous history. 
+We will work on the same AnnData object so if you create a new history for this exercise, you can either get this file from Zenodo again or just copy this dataset from the previous history.
 
 > <hands-on-title>Get toy data</hands-on-title>
 >
@@ -397,7 +406,7 @@ First, we will extract observations and the full matrix from our AnnData.
 > > <solution-title></solution-title>
 > >
 > > If you just click on the `Matrix` dataset, you will see a preview, showing barcodes in the first column, while genes are in the first row.
-> > 
+> >
 > {: .solution}
 >
 {: .question}
@@ -459,7 +468,7 @@ Cell Data Set (CDS) format is usually used when working with a package called Mo
 
 ## CDS input for Monocle3 tutorial (use for pre-processed data)
 The [dedicated tutorial]({% link topics/single-cell/tutorials/scrna-case_monocle3-trajectories/tutorial.md %}) shows how to perform trajectory analysis using Monocle3 which is the next step in the single-cell case study tutorial series, right after [pre-processing tutorial]({% link topics/single-cell/tutorials/scrna-case_alevin-combine-datasets/tutorial.md %}) and [analysing the metadata]({% link topics/single-cell/tutorials/scrna-case_basic-pipeline/tutorial.md %}). To keep the continuity of the series, we will continue to work on the case study data from a mouse model of fetal growth restriction {% cite Bacon2018 %} (see [the study in Single Cell Expression Atlas](https://www.ebi.ac.uk/gxa/sc/experiments/E-MTAB-6945/results/tsne) and [the project submission](https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-6945/)). After successfully completing this section with the mentioned dataset, you can use it directly in the [Monocle3 tutorial workflow](https://humancellatlas.usegalaxy.eu/u/j.jakiela/w/copy-of-trajectory-analysis-using-monocle3-1).
-If you work on your own data, you might also need to follow this method since it shows how to deal with already pre-processed datasets. Since Monocle3 performs its own pre-processing, you will need both annotated and unprocessed matrices. 
+If you work on your own data, you might also need to follow this method since it shows how to deal with already pre-processed datasets. Since Monocle3 performs its own pre-processing, you will need both annotated and unprocessed matrices.
 
 ## Get data
 Monocle3 works great with annotated data, so we will make use of our annotated AnnData object, generated in the [previous tutorial]({% link topics/single-cell/tutorials/scrna-case_basic-pipeline/tutorial.md %}). We will also need a ‘clean’ expression matrix, extracted from the AnnData object just before we started the processing.
@@ -711,7 +720,7 @@ Now we will perform the same steps, but for gene IDs. But gene IDs are currently
 >
 {: .hands_on}
 
-{% icon congratulations %} Finally! We have prepared all the files to pass them onto the Monocle3 workflow! 
+{% icon congratulations %} Finally! We have prepared all the files to pass them onto the Monocle3 workflow!
 
 ## Creating CDS object
 Monocle3 turns the expression matrix, cell and gene annotations into an object called cell_data_set (CDS), which holds single-cell expression data.
@@ -742,12 +751,12 @@ Monocle3 turns the expression matrix, cell and gene annotations into an object c
 > 2. **Rename** {% icon galaxy-pencil %} the output: `CDS input for Monocle3 tutorial`
 {: .hands_on}
 
-It was quite a long conversion, but we did it! If you're interested, the "Tip" below describes how we could possibly speed up the process using alternative tools. 
+It was quite a long conversion, but we did it! If you're interested, the "Tip" below describes how we could possibly speed up the process using alternative tools.
 
 > <tip-title> Alternative tools </tip-title>
 >
 > Generally in coding you can use different ways to achieve the same result. Similarly, in Galaxy you can use different tools but the outcome will be the same.
-> For example, we could have used some tools on our starting AnnData object to remove macrophages and rename the column header, and afterwards extract observations and variables. It is a good practice to use methods from the libraries (such as Scanpy below) rather than dealing with text files rows and columns. The shown approach works well, but it might be problematic with much bigger datasets sizes. Then, you can use the following route: 
+> For example, we could have used some tools on our starting AnnData object to remove macrophages and rename the column header, and afterwards extract observations and variables. It is a good practice to use methods from the libraries (such as Scanpy below) rather than dealing with text files rows and columns. The shown approach works well, but it might be problematic with much bigger datasets sizes. Then, you can use the following route:
 > 1. {% tool [Scanpy FilterCells](toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_filter_cells/scanpy_filter_cells/1.8.1+galaxy93) %} on annotated Anndata to remove macrophages.
 > 2. {% tool [AnnData Operations](toolshed.g2.bx.psu.edu/repos/ebi-gxa/anndata_ops/anndata_ops/1.8.1+galaxy92) %} to change the genes name from *Symbol* to *gene_short_name*.
 > 3. {% tool [Inspect AnnData](toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.10.3+galaxy0) %} to extract genes and cells (to be used for Monocle).
@@ -756,7 +765,7 @@ It was quite a long conversion, but we did it! If you're interested, the "Tip" b
 > You've probably used the mentioned tools before, so **challenge yourself** and try to replicate the process using the tools above!
 {: .tip}
 
-You might want to consult your results with this [control history](https://singlecell.usegalaxy.eu/u/j.jakiela/h/anndata---cds-conversion-for-monocle3-tutorial), or check out the [workflow](https://singlecell.usegalaxy.eu/u/j.jakiela/w/copy-of-trajectory-analysis-using-monocle3). 
+You might want to consult your results with this [control history](https://singlecell.usegalaxy.eu/u/j.jakiela/h/anndata---cds-conversion-for-monocle3-tutorial), or check out the [workflow](https://singlecell.usegalaxy.eu/u/j.jakiela/w/copy-of-trajectory-analysis-using-monocle3).
 And now you have your input file ready to start the [Monocle3 tutorial]({% link topics/single-cell/tutorials/scrna-case_monocle3-trajectories/tutorial.md %})!
 
 </div>
@@ -764,7 +773,7 @@ And now you have your input file ready to start the [Monocle3 tutorial]({% link 
 <div class="General-AnnData-to-CDS-conversion" markdown="1">
 
 ## General AnnData to CDS conversion
-In fact, you can do this conversion just in one step - check the {% icon tip %} **Tip** below! 
+In fact, you can do this conversion just in one step - check the {% icon tip %} **Tip** below!
 
 > <tip-title>Conversion in a single step</tip-title>
 >
@@ -781,15 +790,15 @@ In fact, you can do this conversion just in one step - check the {% icon tip %} 
 >
 {: .tip}
 
-Below we will also show the manual conversion, just to make you familiar with the structure of the files and operations needed. 
-We will continue working on previously used dataset, so you can copy it from your history or download from Zenodo. 
+Below we will also show the manual conversion, just to make you familiar with the structure of the files and operations needed.
+We will continue working on previously used dataset, so you can copy it from your history or download from Zenodo.
 
 > <hands-on-title>Get toy data again</hands-on-title>
 >
 > 1. Create a new history for this tutorial
-> 
+>
 > 2. You can either copy the previously used dataset from your history:
-> 
+>
 >    {% snippet faqs/galaxy/histories_copy_dataset.md %}
 >
 >    Or, alternatively, download the dataset from [Zenodo]({{ page.zenodo_link }})
@@ -797,7 +806,7 @@ We will continue working on previously used dataset, so you can copy it from you
 >    ```
 >    https://zenodo.org/record/10391629/files/Downsampled_annotated_AnnData.h5ad
 >    ```
-> 
+>
 > 3. **Rename** {% icon galaxy-pencil %} the datasets `Downsampled AnnData object`
 > 4. Check that the datatype is `h5ad`
 >
@@ -805,7 +814,7 @@ We will continue working on previously used dataset, so you can copy it from you
 >
 {: .hands_on}
 
-Now we just need to extract information about cells, genes and an expression matrix. 
+Now we just need to extract information about cells, genes and an expression matrix.
 
 > <hands-on-title> Inspect AnnData </hands-on-title>
 >
@@ -840,7 +849,7 @@ Hold on here! As mentioned, if you're converting your files to CDS, you'll proba
 >        - {% icon param-repeat %} *"Insert Check"*
 >            - *"Find Regex"*: `Symbol`
 >            - *"Replacement"*: `gene_short_name`
-> 2. Check that the datatype is `tabular`. If not, change it. 
+> 2. Check that the datatype is `tabular`. If not, change it.
 >
 >    {% snippet faqs/galaxy/datasets_change_datatype.md datatype="tabular" %}
 >     
@@ -853,31 +862,31 @@ We're almost there, but there is one last modification we have to do - transpose
 > <hands-on-title> Transpose the matrix </hands-on-title>
 >
 > 1. {% tool [Transpose](toolshed.g2.bx.psu.edu/repos/iuc/datamash_transpose/datamash_transpose/1.8+galaxy1) %} with the following parameters:
->    - {% icon param-file %} *"Input tabular dataset"*: `Expression matrix` 
+>    - {% icon param-file %} *"Input tabular dataset"*: `Expression matrix`
 {: .hands_on}
 
 And the final step is to create the CDS file using Monocle tool!
- 
+
 > <hands-on-title> Create Cell Data Set </hands-on-title>
 >
 > 1. {% tool [Monocle3 create](toolshed.g2.bx.psu.edu/repos/ebi-gxa/monocle3_create/monocle3_create/0.1.4+galaxy2) %} with the following parameters:
 >    - {% icon param-file %} *"Expression matrix, genes as rows, cells as columns. Required input. Provide as TSV, CSV or RDS."*: output of **Transpose** {% icon tool %}
 >    - *"Format of expression matrix"*: `TSV`
->    - {% icon param-file %} *"Per-cell annotation, optional. Row names must match the column names of the expression matrix. Provide as TSV, CSV or RDS."*: `Cell barcodes (obs)` 
+>    - {% icon param-file %} *"Per-cell annotation, optional. Row names must match the column names of the expression matrix. Provide as TSV, CSV or RDS."*: `Cell barcodes (obs)`
 >    - *"Format of cell metadata"*: `TSV`
->    - {% icon param-file %} *"Per-gene annotation, optional. Row names must match the row names of the expression matrix. Provide as TSV, CSV or RDS."*: `Genes renamed` 
+>    - {% icon param-file %} *"Per-gene annotation, optional. Row names must match the row names of the expression matrix. Provide as TSV, CSV or RDS."*: `Genes renamed`
 >    - *"Format of gene annotation"*: `TSV`
 >
 > 2. **Rename** {% icon galaxy-pencil %} the output: `CDS Monocle file`
 {: .hands_on}
 
-As usual, you can check the [example history](https://usegalaxy.eu/u/j.jakiela/h/anndata-to-cell-data-set-cds-conversion) and the dedicated [workflow](https://usegalaxy.eu/u/j.jakiela/w/anndata-to-cell-data-set-cds-conversion) (it doesn't include the step on renaming the column header though). 
+As usual, you can check the [example history](https://usegalaxy.eu/u/j.jakiela/h/anndata-to-cell-data-set-cds-conversion) and the dedicated [workflow](https://usegalaxy.eu/u/j.jakiela/w/anndata-to-cell-data-set-cds-conversion) (it doesn't include the step on renaming the column header though).
 
 </div>
 
 # Downsampling FASTQ files
 Sometimes, it is useful to work on smaller subsets of data (especially for teaching / learning purposes). Here is an example of how you can downsample your FASTQ files.
-First, let's get some toy data. We just need two FASTQ files - one containing barcodes, the other with transcripts. 
+First, let's get some toy data. We just need two FASTQ files - one containing barcodes, the other with transcripts.
 
 > <hands-on-title>Get toy data</hands-on-title>
 >
@@ -898,7 +907,7 @@ Quickly check which file contains barcodes and which file contains transcripts. 
 
 > <hands-on-title>Rename the files</hands-on-title>
 >
-> 1. Rename file `s_1.r_1` as `Barcodes` 
+> 1. Rename file `s_1.r_1` as `Barcodes`
 >
 > 2. Rename file `s_1.r_2` as `Transcripts`
 >
@@ -911,10 +920,10 @@ Now we will convert the FASTQ files to tabular:
 > <hands-on-title> FASTQ to tabular </hands-on-title>
 >
 > 1. {% tool [FASTQ to Tabular](toolshed.g2.bx.psu.edu/repos/devteam/fastq_to_tabular/fastq_to_tabular/1.1.5) %} with the following parameters:
->    - {% icon param-file %} *"FASTQ file to convert"*: {% icon param-files %} Select multiple files: `Barcodes` and `Transcripts` 
+>    - {% icon param-file %} *"FASTQ file to convert"*: {% icon param-files %} Select multiple files: `Barcodes` and `Transcripts`
 >
 > 3. **Rename**  {% icon galaxy-pencil %} the datasets `Barcodes tabular` and `Transcripts tabular`
-> 
+>
 {: .hands_on}
 
 Now let's select the number of the reads we would like to keep. It's totally up to you, we choose `100000` here.
@@ -927,7 +936,7 @@ Now let's select the number of the reads we would like to keep. It's totally up 
 >    - *"Number of lines"*: `100000`
 >
 > 2. **Rename** {% icon galaxy-pencil %} the dataset `Barcodes cut` and `Transcripts cut`
-> 
+>
 {: .hands_on}
 
 All done, now we just need to go back to FASTQ from Tabular again!
@@ -941,7 +950,7 @@ All done, now we just need to go back to FASTQ from Tabular again!
 >    - *"Quality column"*: `c3` or `Column 3`
 >
 > 2. **Rename** {% icon galaxy-pencil %} the dataset `Downsampled barcode read` and `Downsampled transcript read`
-> 
+>
 {: .hands_on}
 
 And that's all! Your downsampled data is ready to use. You can check your answers in this [example history](https://usegalaxy.eu/u/j.jakiela/h/how-to-downsample-fastq-files) or if you want to accelerate this process, feel free to use the [workflow](https://singlecell.usegalaxy.eu/u/j.jakiela/w/workflow-constructed-from-history-copy-of-cs1generating-a-single-cell-matrix-using-alevin---how-to-downsample) next time!

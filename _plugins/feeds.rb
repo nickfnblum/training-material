@@ -182,6 +182,18 @@ def generate_topic_feeds(site, topic, bucket)
               end
             end
           end
+
+          if page.data.key?('contributions')
+            page.data['contributions'].each do |role, ids|
+              Array(ids).each do |id|
+                xml.category(term: "contributions:#{role}:#{id}")
+              end
+            end
+          elsif page.data.key?('contributors')
+            Array(page.data['contributors']).each do |id|
+              xml.category(term: "contributions:authorship:#{id}")
+            end
+          end
         end
       end
     end
@@ -349,6 +361,18 @@ def generate_matrix_feed_itemized(site, mats, group_by: 'day', filter_by: nil)
                     if c !~ / /
                       xml.uri("#{site.config['url']}#{site.baseurl}/hall-of-fame/#{c}/")
                     end
+                  end
+                end
+
+                if page.data.key?('contributions')
+                  page.data['contributions'].each do |role, ids|
+                    Array(ids).each do |id|
+                      xml.category(term: "contributions:#{role}:#{id}")
+                    end
+                  end
+                elsif page.data.key?('contributors')
+                  Array(page.data['contributors']).each do |id|
+                    xml.category(term: "contributions:authorship:#{id}")
                   end
                 end
 
@@ -541,9 +565,12 @@ def generate_event_feeds(site)
           xml.updated(Gtn::PublicationTimes.obtain_time(page.path).to_datetime.rfc3339)
 
           # TODO: find a better solution maybe with namespaces?
-          # xml.category(term: "starts:#{page.data['date_start'].to_datetime.rfc3339}")
-          # xml.category(term: "ends:#{(page.data['date_end'] || page.data['date_start']).to_datetime.rfc3339}")
-          # xml.category(term: "days:#{page.data['duration']}")
+          xml.category(term: "starts:#{page.data['date_start'].to_datetime.rfc3339}")
+          xml.category(term: "ends:#{(page.data['date_end'] || page.data['date_start']).to_datetime.rfc3339}")
+          xml.category(term: "days:#{page.data['duration']}")
+          if page.data['external']
+            xml.link(href: page.data['external'])
+          end
 
           # xml.path(page.path)
           xml.category(term: "new #{page['layout']}")
@@ -570,6 +597,18 @@ def generate_event_feeds(site)
             xml.contributor do
               xml.name(Gtn::Contributors.fetch_name(site, c, warn:false))
               xml.uri("#{site.config['url']}#{site.baseurl}/hall-of-fame/#{c}/")
+            end
+          end
+
+          if page.data.key?('contributions')
+            page.data['contributions'].each do |role, ids|
+              Array(ids).each do |id|
+                xml.category(term: "contributions:#{role}:#{id}")
+              end
+            end
+          elsif page.data.key?('contributors')
+            Array(page.data['contributors']).each do |id|
+              xml.category(term: "contributions:authorship:#{id}")
             end
           end
         end

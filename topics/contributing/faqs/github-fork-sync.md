@@ -9,7 +9,7 @@ contributors: [hexylena, shiltemann]
 Whenever you want to contribute something new to the GTN, it is important to start with an up-to-date branch. To do this, you should always update the main branch of your fork, before creating a so-called *feature branch*, a branch where you make your changes.
 
 1. Point your browser to your fork of the GTN repository
-   - The url will be `https://github.com/<your username>/training_material` (replacing 'your username' with your GitHub username)
+   - The url will be `https://github.com/<your username>/training-material` (replacing 'your username' with your GitHub username)
 
 2. You might see a message like "This branch is 367 commits behind galaxyproject/training-material:main." as in the screenshot below.
 

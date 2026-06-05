@@ -36,12 +36,14 @@ follow_up_training:
     tutorials:
       - scrna-scanpy-pbmc3k
 
-contributors:
-  - mtekman
-  - hrhotz
-  - blankenberg
-  - nomadscientist
-  - pavanvidem
+contributions:
+  authorship:
+    - mtekman
+    - hrhotz
+    - blankenberg
+    - pavanvidem
+  editing:
+    - nomadscientist
 
 gitter: Galaxy-Training-Network/galaxy-single-cell
 
@@ -65,6 +67,18 @@ recordings:
   - nomadscientist
 
 answer_histories:
+  - label: "UseGalaxy.org"
+    history: https://usegalaxy.org/u/videmp/h/gtn-preprocessing-of-10x-scrna-seq-data-april-2025
+    date: 2025-04-28
+  - label: "UseGalaxy.eu"
+    history: https://usegalaxy.eu/u/videmp/h/gtn-preprocessing-of-10x-scrna-seq-data-april-2025
+    date: 2025-04-28
+  - label: "UseGalaxy.org.au"
+    history: https://usegalaxy.org.au/u/videmp/h/gtn-preprocessing-of-10x-scrna-seq-data-april-2025
+    date: 2025-04-28
+  - label: "UseGalaxy.fr"
+    history: https://usegalaxy.fr/u/videmp/h/gtn-preprocessing-of-10x-scrna-seq-data-april-2025
+    date: 2025-04-28
   - label: "UseGalaxy.org"
     history: https://usegalaxy.org/u/wendi_bacon/h/pre-processing-of-10x-single-cell-rna-datasets
     date: 2024-12-10
@@ -279,7 +293,7 @@ We will now proceed to demultiplex, map, and quantify both sets of reads using t
 
 > <hands-on-title></hands-on-title>
 >
-> {% tool [RNA STARsolo](toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/rna_starsolo/2.7.10b+galaxy3) %}  with the following parameters:
+> {% tool [RNA STARsolo](toolshed.g2.bx.psu.edu/repos/iuc/rna_starsolo/rna_starsolo/2.7.11a+galaxy1) %}  with the following parameters:
 >    - *"Custom or built-in reference genome"*: `Use a built-in index`
 >        - *"Reference genome with or without an annotation"*: `use genome reference without builtin gene-model`
 >            - *"Select reference genome"*: `Human (Homo Sapiens): hg19 Full` or `Human (Homo Sapiens) (b37): hg19`
@@ -327,7 +341,7 @@ Let us investigate the output log. This type of quality control is essential in 
 
 > <hands-on-title></hands-on-title>
 >
-> {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.9+galaxy1) %} with the following parameters:
+> {% tool [MultiQC](toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.27+galaxy0) %} with the following parameters:
 >    - In *"Results"*:
 >      - In *"1:Results"*:
 >        - *"Which tool was used generate logs?"*: `STAR`
@@ -544,7 +558,7 @@ On large 10x datasets we can use these thresholds as metrics to utilise in our o
 ![cells]({% link topics/single-cell/images/scrna-pre-processing/tenx_cells.png %} "Detected Cells (red)")
 
 
-Here we recover 282 high quality cells instead of the 272 detected via the default method previously. On large datasets, this difference can help clean downstream clustering. For example, soft or less well-defined clusters are derived from too much noise in the data due to too many low quality cells being in the data during the clustering. Filtering these out during the pre-processing would produce much better separation, albeit at the cost of having less cells to cluster. This filter-cluster trade-off is discussed in more detail in the downstream analysis training materials.
+Here we recover 279 high quality cells instead of the 272 detected via the default method previously. On large datasets, this difference can help clean downstream clustering. For example, soft or less well-defined clusters are derived from too much noise in the data due to too many low quality cells being in the data during the clustering. Filtering these out during the pre-processing would produce much better separation, albeit at the cost of having less cells to cluster. This filter-cluster trade-off is discussed in more detail in the downstream analysis training materials.
 
 
 # Conclusion

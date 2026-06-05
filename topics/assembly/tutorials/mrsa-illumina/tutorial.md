@@ -37,9 +37,14 @@ contributions:
   - bazante1
   - shiltemann
   - miaomiaozhou88
+  - VerenaMoo
+  - tflowers15
   funding:
   - avans-atgm
   - abromics
+  - unimelb
+  - melbournebioinformatics
+  - AustralianBioCommons
 follow_up_training:
 - type: internal
   topic_name: genome-annotation
@@ -128,11 +133,15 @@ Now, we need to import the data: 2 FASTQ files containing the reads from the seq
 >
 >    {% snippet faqs/galaxy/datasets_rename.md name="DRR187559_1" %}
 >
-> 3. Tag both datasets `#unfiltered`
+> 3. Create a paired collection named `Paired Reads`
 >
->    {% snippet faqs/galaxy/datasets_add_tag.md %}
+>    {% snippet faqs/galaxy/collections_build_list_paired.md %}
 >
-> 4. **View** {% icon galaxy-eye %} the renamed file
+> 4. Tag the collection `#unfiltered`
+>
+>    {% snippet faqs/galaxy/collections_add_tag.md %}
+>
+> 5. **View** {% icon galaxy-eye %} the renamed files in the collection
 >
 {: .hands_on}
 
@@ -162,9 +171,9 @@ During sequencing, errors are introduced, such as incorrect nucleotides being ca
 
 Assessing the quality by hand would be too much work. That's why tools like
 [NanoPlot](https://github.com/wdecoster/NanoPlot) or
-[FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) are made, as they  generate a summary and plots of the data statistics. NanoPlot is
-mainly used for long-read data, like ONT and PACBIO and FastQC for short read,
-like Illumina and Sanger. You can read more in our dedicated [Quality Control
+[Falco](https://falco.readthedocs.io/en/latest/) are made, as they  generate a summary and plots of the data statistics. NanoPlot is
+mainly used for long-read data, like ONT and PACBIO and Falco for short read,
+like Illumina and Sanger. Falco is an efficiency-optimized rewrite of [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). You can read more in our dedicated [Quality Control
 Tutorial]({% link topics/sequence-analysis/tutorials/quality-control/tutorial.md %}).
 
 Before doing any assembly, the first questions we should ask about the input
@@ -177,32 +186,29 @@ reads include:
 
 > <hands-on-title>Quality Control</hands-on-title>
 >
-> 1. {% tool [FastQC](toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.74+galaxy0) %} with the following parameters:
->    - {% icon param-files %} *"Short read data from your current history"*: both `DRR187559_1` and `DRR187559_2`
->
->    {% snippet faqs/galaxy/tools_select_multiple_datasets.md %}
+> 1. {% tool [Falco](toolshed.g2.bx.psu.edu/repos/iuc/falco/falco/1.2.4+galaxy0) %} with the following parameters:
+>    - {% icon param-collection %} *"Raw read data from your current history"*: `Paired Reads`
 >
 > 2. Inspect the webpage outputs
 >
 {: .hands_on}
 
-FastQC combines quality statistics from all separate reads and combines them in plots. An important plot is the Per base sequence quality. 
+Falco combines quality statistics from all separate reads and combines them in plots. An important plot is the Per base sequence quality. 
 
 DRR187559_1 | DRR187559_2
 ----------- | -----------
-![FastQC plot showing reads that mostly stay in the green](../../images/mrsa/fastqc-1.png) | ![Same as previous plot, but the beginning of the reads are slightly better quality](../../images/mrsa/fastqc-2.png)
+![Falco plot showing reads that are green](../../images/mrsa/falco-1.png) | ![Same as previous plot, but the beginning of the reads are slightly better quality](../../images/mrsa/falco-2.png)
 
-Here you have the reads sequence length on the x-axes against the quality score (Phred-score) on the y-axis. The y-axis is divided in three sections: 
+Here you have the reads sequence length on the x-axes against the quality score (Phred-score) on the y-axis. The colour of the beams indicates three quality levels: 
 - Green = good quality, 
-- Orange = mediocre quality, and 
+- Yellow = mediocre quality, and 
 - Red = bad quality.
 
 For each position, a boxplot is drawn with:
 
-- the median value, represented by the central red line
-- the inter-quartile range (25-75%), represented by the yellow box
+- the median value, represented by the central intense coloured line
+- the inter-quartile range (25-75%), represented by the geen, yellow or red box
 - the 10% and 90% values in the upper and lower whiskers
-- the mean quality, represented by the blue line
 
 For Illumina data it is normal that the first few bases are of some lower quality and how longer the reads get the worse the quality becomes. This is often due to signal decay or phasing during the sequencing run.
 
@@ -226,17 +232,16 @@ is needed. In this case we are going to trim the data using **fastp** ({% cite C
 
 > <hands-on-title>Quality improvement</hands-on-title>
 >
-> 1. {% tool [fastp](toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/0.23.2+galaxy0) %} with the following parameters:
->    - *"Single-end or paired reads"*: `Paired`
->        - {% icon param-file %} *"Input 1"*: `DRR187559_1`
->        - {% icon param-file %} *"Input 2"*: `DRR187559_2`
+> 1. {% tool [fastp](toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/1.0.1+galaxy3) %} with the following parameters:
+>    - *"Single-end or paired reads"*: `Paired Collection`
+>        - *"Select paired collection(s)"*: `Paired Reads`
 >    - In *"Filter Options"*:
 >        - In *"Length filtering Options"*:
 >            - *Length required*: `30`
 >    - In *"Read Modification Options"*:
 >        - In *"Per read cuitting by quality options"*:
 >            - *Cut by quality in front (5')*: `Yes`
->            - *Cut by quality in front (3')*: `Yes`
+>            - *Cut by quality in tail (3')*: `Yes`
 >            - *Cutting window size*: `4`
 >            - *Cutting mean quality*: `20`
 >    - In *"Output Options"*:
@@ -247,7 +252,7 @@ is needed. In this case we are going to trim the data using **fastp** ({% cite C
 >    2. Add a new tag `#filtered`
 {: .hands_on}
 
-**fastp** generates also a report, similar to FASTQC, useful to compare the impact of the trimming and filtering.
+**fastp** generates also a report, similar to Falco, useful to compare the impact of the trimming and filtering.
 
 > <question-title></question-title>
 >
@@ -284,9 +289,8 @@ There are many tools that create assembly for short-read data, e.g. SPAdes ({% c
 > <hands-on-title>Assembly using Shovill</hands-on-title>
 >
 > 1. {% tool [Shovill](toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.1.0+galaxy1) %} with the following parameters:
->    - *"Input reads type, collection or single library"*: `Paired End`
->        - {% icon param-file %} *"Forward reads (R1)"*: **fastp** `Read 1 output`
->        - {% icon param-file %} *"Reverse reads (R2)"*: **fastp** `Read 2 output`
+>    - *"Input reads type, collection or single library"*: `Paired Collection`
+>        - *"Paired collection"*: **fastp** `Paired-end output`
 >    - In *"Advanced options"*:
 >        - *"Estimated genome size"*: `2914567`
 ><!--        - *"Minimum contig length"*: `500`
@@ -324,6 +328,7 @@ Th assembly graph format takes some getting used to before you can make sense ou
 > <hands-on-title>Assembly inspection</hands-on-title>
 > 1. {% tool [Bandage Info](toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_info/2022.09+galaxy2) %} with the following parameters:
 >    - {% icon param-file %} *"Graphical Fragment Assembly"*: **Shovill** `Contig Graph`
+>    - *"Produce jpg, png or svg file?"*: `.jpg`
 >
 {: .hands_on}
 
@@ -390,7 +395,7 @@ This fasta file contains
 >
 > > <solution-title></solution-title>
 > >
-> > 1. 32 contigs, meaning the chromosome is separated over multiple contigs. These contigs can also contain (parts of) plasmids.
+> > 1. 30 contigs, meaning the chromosome is separated over multiple contigs. These contigs can also contain (parts of) plasmids.
 > > 2. 2,911,349 (*Total length (>= 0 bp)*). Not far from the estimated genome size: 2,914,567 
 > > 1. The GC content for our assembly was 32.77%. For comparison [MRSA Isolate HC1335 Strain](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5174738/) GC% is 32.89%.
 > >

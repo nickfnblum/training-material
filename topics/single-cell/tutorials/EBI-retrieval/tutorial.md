@@ -22,7 +22,7 @@ contributions:
     - wee-snufkin
     - nomadscientist
   funding:
-    - elixir-fair-data
+    - elixir-uk-dash
 
 answer_histories:
   - label: "EBI SCXA retrieval tool (UseGalaxy.eu)"
@@ -195,7 +195,7 @@ While we're renaming things, let's also fix our titles.
 
 > <hands-on-title> Change cell metadata titles </hands-on-title>
 >
-> 1. {% tool [Replace parts of text](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_find_and_replace/1.1.4) %} with the following parameters:
+> 1. {% tool [Replace parts of text](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_find_and_replace/9.3+galaxy1) %} with the following parameters:
 >    - {% icon param-file %} *"Select lines from"*: output from **Column Regex and Replace** {% icon tool %}
 >    - In *"Find and Replace"*:
 >        - *"Find pattern"*: `"Sample Characteristic[genotype]"`
@@ -218,7 +218,7 @@ We might like to flag mitochondrial genes. They can be identified quite easily s
 
 > <hands-on-title> Check the format of mitochondrial genes names </hands-on-title>
 >
-> 1. {% tool [Search in textfiles](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/1.1.1) %} with the following parameters:
+> 1. {% tool [Search in textfiles](toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_grep_tool/9.3+galaxy1) %} with the following parameters:
 >    - {% icon param-file %}  *"Select lines from"*: `EBI SCXA Data Retrieval on E-MTAB-6945 genes.tsv (Raw filtered counts)`
 >    - *"that"*: `Match`
 >    - *"Regular Expression"*: `mt`
@@ -244,7 +244,7 @@ We will do several modifications within the AnnData object so that you can follo
 
 > <hands-on-title> Create the AnnData Object </hands-on-title>
 >
-> 1. {% tool [Scanpy Read10x](toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_read_10x/scanpy_read_10x/1.8.1+galaxy9) %}
+> 1. {% tool [Scanpy Read10x](toolshed.g2.bx.psu.edu/repos/ebi-gxa/scanpy_read_10x/scanpy_read_10x/1.9.3+galaxy0) %}
 > 2. Make sure you are using version **1.8.1+galaxy9** of the tool (change by clicking on {% icon tool-versions %} Versions button):
 >   ![List of available tool versions shown when clicking on the 'Versions' button on the top of the page.](../../images/scrna-casestudy/version.png "How to change the version of the tool")
 >
@@ -265,7 +265,7 @@ And the good news is that we can do both those steps using only one tool!
 
 > <hands-on-title> Modify AnnData object </hands-on-title>
 >
-> 1. {% tool [AnnData Operations](toolshed.g2.bx.psu.edu/repos/ebi-gxa/anndata_ops/anndata_ops/1.8.1+galaxy92) %}
+> 1. {% tool [AnnData Operations](toolshed.g2.bx.psu.edu/repos/ebi-gxa/anndata_ops/anndata_ops/1.9.3+galaxy0) %}
 > 2. Make sure you are using version **1.8.1+galaxy92** of the tool (change by clicking on {% icon tool-versions %} Versions button)
 > 3. Set the following parameters:
 >    - {% icon param-file %} In *"Input object in hdf5 AnnData format"*: `AnnData object`

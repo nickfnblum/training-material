@@ -29,6 +29,8 @@ module Gtn
       text += " <a href=\"https://doi.org/#{doi}\">#{doi}</a>" if doi
       url = entry.fetch('url', nil)
       text += " <a href=\"#{url}\">#{url}</a>" if url && !(url.index('doi.org') && entry.doi)
+      isbn = entry.fetch('isbn', nil)
+      text += " ISBN: #{isbn}" if isbn
 
       text
     end
@@ -36,7 +38,7 @@ module Gtn
     def self.discover_bib
       Jekyll.logger.info '[GTN/scholar] Creating global bib cache'
       global_bib = BibTeX::Bibliography.new
-      bib_paths = [Find.find('./topics'), Find.find('./faqs'), Find.find('./news')].lazy.flat_map(&:lazy).grep(/bib$/)
+      bib_paths = [Find.find('./topics'), Find.find('./faqs'), Find.find('./learning-pathways'), Find.find('./news')].lazy.flat_map(&:lazy).grep(/bib$/)
       bib_paths.each do |path|
         BibTeX.open(path).each do |x|
           x = x.convert_latex

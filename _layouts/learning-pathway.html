@@ -23,7 +23,7 @@ layout: base
 
     {% snippet faqs/gtn/what-is-a-learning-pathway.md %}
 
-    <p>{{ pathway.description | markdownify }}</p>
+    <p>{{ pathway.description | liquefy | markdownify }}</p>
     <p>{{ content | markdownify }}</p>
 
 
@@ -40,7 +40,7 @@ layout: base
 
     {% for section in page.pathway %}
         <h3 id="st-{{ section.section | slugify }}">{{ section.section }}</h3>
-        <p>{{ section.description | markdownify }}</p>
+        <p>{{ section.description | liquefy | markdownify }}</p>
 
 	{% if section.tutorials %}
         {% assign material_list = site | convert_to_material_list: section.tutorials %}
@@ -82,3 +82,12 @@ layout: base
 	{% endif %}
 
 </section>
+
+<section>
+ {% if pathway.cited %}
+ <h2 id="bibliography">{{locale['references']| default: "References" }}</h2>
+ {% bibliography --cited %}
+ {% endif %}
+</section>
+
+

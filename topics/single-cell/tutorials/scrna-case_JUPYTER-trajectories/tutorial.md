@@ -43,10 +43,16 @@ requirements:
     topic_name: galaxy-interface
     tutorials:
         - galaxy-intro-jupyter
+
+follow_up_training:
+-
+    type: "internal"
+    topic_name: single-cell
+    tutorials:
+        - EBI-retrieval
+
 tags:
-- 10x
 - paper-replication
-- Python
 - MIGHTS
 
 contributions:

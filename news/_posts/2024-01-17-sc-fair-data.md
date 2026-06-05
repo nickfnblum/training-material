@@ -3,7 +3,7 @@ title: "FAIR Data management in single cell analysis"
 tags: [single-cell,data management,data import,fair]
 contributions:
   authorship: [wee-snufkin, hexhowells, nomadscientist]
-  funding: [elixir-fair-data]
+  funding: [elixir-uk-dash]
 layout: news
 ---
 

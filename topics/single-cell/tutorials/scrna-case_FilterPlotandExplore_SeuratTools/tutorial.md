@@ -28,8 +28,15 @@ requirements:
         - scrna-intro
         - scrna-preprocessing-tenx
 
+follow_up_training:
+-
+    type: "internal"
+    topic_name: single-cell
+    tutorials:
+        - scrna-case_monocle3-trajectories
+        - GO-enrichment
+
 tags:
-- 10x
 - paper-replication
 - MIGHTS
 

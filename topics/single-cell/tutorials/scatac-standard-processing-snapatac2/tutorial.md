@@ -29,6 +29,12 @@ requirements:
     topic_name: single-cell
     tutorials:
       - scatac-preprocessing-tenx
+follow_up_training:
+  -
+    type: "internal"
+    topic_name: single-cell
+    tutorials:
+      - EBI-retrieval
 tags:
 - 10x
 - epigenetics
@@ -48,6 +54,12 @@ contributions:
     - bgruening
   testing:
     - pavanvidem
+  funding:
+    - elixir-europe
+    - deNBI
+    - uni-freiburg
+    - eurosciencegateway
+    - deKCD
 gitter: Galaxy-Training-Network/galaxy-single-cell
 
 
@@ -404,8 +416,8 @@ After creating the variables, the most accessible features are selected.
 > 1. {% tool [SnapATAC2 Preprocessing](toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1) %} with the following parameters:
 >    - *"Method used for preprocessing"*: `Generate cell by bin count matrix, using 'pp.add_tile_matrix'`
 >        - {% icon param-file %} *"Annotated data matrix"*: `Anndata 5k PBMC TSSe filtered` (output of **pp.filter_cells** {% icon tool %})
->        - *"The size of consecutive genomic regions used to record the counts"*: `500` 
->        - *"The strategy to compute feature counts"*: `"insertion": based on the number of insertions that overlap with a region of interest` 
+>        - *"The size of consecutive genomic regions used to record the counts"*: `500`
+>        - *"The strategy to compute feature counts"*: `"insertion": based on the number of insertions that overlap with a region of interest`
 >
 > 2. {% tool [SnapATAC2 Preprocessing](toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1) %} with the following parameters:
 >    - *"Method used for preprocessing"*: `Perform feature selection, using 'pp.select_features'`
@@ -1021,14 +1033,14 @@ In this tutorial, we produced a count matrix of {scATAC-seq} reads in the `AnnDa
 
 ![SnapATAC2 processing pipeline]({% link topics/single-cell/images/scatac-standard-snapatac2/snapatac2-pipeline.png %})
 
-The {scATAC-seq} analysis can now continue with downstream analysis, for example *differential peak analysis*. 
+The {scATAC-seq} analysis can now continue with downstream analysis, for example *differential peak analysis*.
 
 > <details-title>Differential peak analysis</details-title>
 >
-> The **SnapATAC2** tools for differential peak analysis are already accessible on Galaxy. However, there are no GTN trainings available yet. Until such a tutorial is uploaded, you can visit the **SnapATAC2** documentation for a [tutorial on differential peak analysis](https://kzhang.org/SnapATAC2/version/2.6/tutorials/diff.html). And check out our [example history](https://usegalaxy.eu/u/timonschlegel/h/differential-peak-analysis-with-snapatac2) and the exemplary [workflow](https://usegalaxy.eu/u/timonschlegel/w/copy-of-differential-peak-analysissnapatac2). 
+> The **SnapATAC2** tools for differential peak analysis are already accessible on Galaxy. However, there are no GTN trainings available yet. Until such a tutorial is uploaded, you can visit the **SnapATAC2** documentation for a [tutorial on differential peak analysis](https://kzhang.org/SnapATAC2/version/2.6/tutorials/diff.html). And check out our [example history](https://usegalaxy.eu/u/timonschlegel/h/differential-peak-analysis-with-snapatac2) and the exemplary [workflow](https://usegalaxy.eu/u/timonschlegel/w/copy-of-differential-peak-analysissnapatac2).
 >
-> The tools are available in Galaxy under {% tool [SnapATAC2 Peaks and Motif](toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_peaks_and_motif/snapatac2_peaks_and_motif/2.6.4+galaxy1) %}. 
-> - If you want to continue with differential peak analysis, please make sure that the AnnData object with the annotated cell types contains unspecified annotations for the reference sequences (`uns: 'reference_sequences'`). 
->   - The section [Copy-over embeddings]( {% link topics/single-cell/tutorials/scatac-standard-processing-snapatac2/tutorial.md %}#copy-over-embeddings ) explains how to copy annotations from one AnnData object to another. 
+> The tools are available in Galaxy under {% tool [SnapATAC2 Peaks and Motif](toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_peaks_and_motif/snapatac2_peaks_and_motif/2.6.4+galaxy1) %}.
+> - If you want to continue with differential peak analysis, please make sure that the AnnData object with the annotated cell types contains unspecified annotations for the reference sequences (`uns: 'reference_sequences'`).
+>   - The section [Copy-over embeddings]( {% link topics/single-cell/tutorials/scatac-standard-processing-snapatac2/tutorial.md %}#copy-over-embeddings ) explains how to copy annotations from one AnnData object to another.
 >
 {: .details}

@@ -139,7 +139,7 @@ Once the topic name has been chosen, we can create it.
 > 5. Make sure that Jekyll is running
 >
 >    > <comment-title>Jekyll</comment-title>
->    > Want to learn how to start Jekyll? [Check out our tutorial to serve the website locally]({% link topics/contributing/tutorials/running-jekyll/tutorial.md %})
+>    > Want to learn how to start Jekyll? [Check out our tutorial to serve the website locally]({% link topics/contributing/tutorials/rendering_gtn/tutorial.md %})
 >    {: .comment}
 >
 > 6. Check if the topic has been correctly added at [http://localhost:4000/training-material/](http://localhost:4000/training-material/)
@@ -161,7 +161,7 @@ Several metadata are defined in `metadata.yaml` file in your topic folder to :
 > 3. Make sure that Jekyll is running
 >
 >    > <comment-title>Jekyll</comment-title>
->    > Want to learn how to start Jekyll? [Check out our tutorial to serve the website locally]({% link topics/contributing/tutorials/running-jekyll/tutorial.md %})
+>    > Want to learn how to start Jekyll? [Check out our tutorial to serve the website locally]({% link topics/contributing/tutorials/rendering_gtn/tutorial.md %})
 >    {: .comment}
 >
 > 4. Check how it changes the local website
@@ -191,6 +191,10 @@ subtopics:
 - id: visualisation
   title: "Visualisation"
   description: "Tutorials covering data visualisation"
+  crosstopic_tutorials:  ## optional
+    - topic: microbiome
+      tutorial: beer-data-analysis
+      priority: 2  ## optional
 ```
 
 Each subtopic has:
@@ -198,7 +202,11 @@ Each subtopic has:
 - a short descriptive title
 - a longer description discussion what is contained in that subtopic
 
+Each subtopic **optionally** may define:
+- tutorials from other topics to show, via the `crosstopic_tutorials` metadata
+
 Tutorials can be assigned to subtopics by adding e.g. `subtopic: singlecell` to the tutorial metadata. An example of this subtopic division can be found in the [admin section]({{site.baseurl}}/topics/admin/ )
+
 
 # Creating a tag based topic
 

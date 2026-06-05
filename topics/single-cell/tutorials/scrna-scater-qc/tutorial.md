@@ -11,7 +11,8 @@ answer_histories:
   - label: "UseGalaxy.eu"
     history: https://singlecell.usegalaxy.eu/u/videmp/h/single-cell-qc-with-scater
     date: 2024-12-12
-tags:
+draft: true
+tags: []
 questions:
 - How to ensure the quality of single-cell RNA-seq data?
 - What are the confounding factors that may affect the interpretation of downstream analyses?

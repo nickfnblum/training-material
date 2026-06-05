@@ -34,7 +34,17 @@ contributions:
   testing:
     - pavanvidem
   funding:
-    - elixir-fair-data
+    - elixir-uk-dash
+
+requirements:
+    -
+        type: "internal"
+        topic_name: single-cell
+        tutorials:
+            - scrna-data-formats
+            - scrna-case_alevin
+            - scrna-case_alevin-combine-datasets
+            - scrna-case_basic-pipeline
 
 follow_up_training:
   -

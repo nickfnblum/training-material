@@ -16,6 +16,8 @@ key_points:
 tags:
   - taxonomic data
   - data quality
+  - biodiversity
+level: Introductory
 contributions:
   authorship:
   - onorvez
@@ -27,7 +29,6 @@ contributions:
   - gallantries
   - pndb
   - fnso2019
-
 
 recordings:
 - captioners:

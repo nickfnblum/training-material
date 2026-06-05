@@ -21,10 +21,15 @@ key_points:
   - "We used a tool called Snippy to call variants between our reads and our reference genome."
   - "As our reference genome had annotations, we could see what effect the changes have on the features as annotated in the reference and therefore make inferences on the possible changes to the phenotype."
   - "We used the JBrowse genome browser to visualise what these changes look like."
-contributors:
-  - annasyme
-  - slugger70
-  - tseemann
+contributions:
+  authorship:
+    - annasyme
+    - slugger70
+    - tseemann
+  funding:
+    - unimelb
+    - melbournebioinformatics
+    - AustralianBioCommons
 edam_ontology:
 - topic_0622 # Genomics
 - topic_0196 # Sequence assembly
@@ -185,7 +190,7 @@ We could go through all of the variants like this and read them out of a text ta
 >
 >       This sequence will be the reference against which annotations are displayed
 >
->    - "Produce Standalone Instance" to `Yes`
+>    - *"Output JBrowse"*: `Minimal for viewing (Documentation removed)`
 >    - "Genetic Code" to `11: The Bacterial, Archaeal and Plant Plastid Code`
 >    - "JBrowse-in-Galaxy Action" to `New JBrowse Instance`
 >    - "Track Group"

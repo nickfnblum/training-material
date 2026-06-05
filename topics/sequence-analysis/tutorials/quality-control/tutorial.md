@@ -27,6 +27,15 @@ key_points:
 - Check the impact of the quality control
 - Different tools are available to provide additional quality metrics
 - For paired-end reads analyze the forward and reverse reads together
+lang: en
+tags:
+  - deutsch
+  - español
+  - italiano
+translations:
+  - de
+  - es
+  - it
 contributions:
   authorship:
   - bebatut
@@ -161,9 +170,9 @@ It means that the fragment named `@M00970` corresponds to the DNA sequence `GTGC
 > >    - ASCII code for `/` is 47
 > >    - Quality score = 47-33=14
 > >    - Formula to find the probability of error: \\(P = 10^{-Q/10}\\)
-> >    - Probability of error = \\(10^{-14/10}\\) = 0.03981
-> >    - Therefore Accuracy = 100 - 0.03981 = 99.96%
-> > 4. The corresponding nucleotide `G` has an accuracy of almost 99.96%
+> >    - Probability of error = \\(10^{-14/10}\\) = 0.03981 = 3.981 %
+> >    - Therefore Accuracy = 100 - 3.981 = 96.019%
+> > 4. The corresponding nucleotide `G` has an accuracy of approximately 96%
 > >
 > {: .solution }
 {: .question}
@@ -181,7 +190,7 @@ To take a look at sequence quality along all sequences, we can use [FASTQE](http
 
 > <hands-on-title>Quality check</hands-on-title>
 >
-> 1. {% tool [FASTQE](toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.2.6+galaxy2) %} with the following parameters
+> 1. {% tool [FASTQE](toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.3.1+galaxy0) %} with the following parameters
 >    - {% icon param-files %} *"FastQ data"*: `Reads`
 >    - {% icon param-select %} *"Score types to show"*: `Mean`
 >
@@ -616,7 +625,7 @@ To accomplish this task we will use [Cutadapt](https://cutadapt.readthedocs.io/e
 >       - *"Quality cutoff(s) (R1)"*: `20`
 >    - In *"Read Filtering Options"*
 >       - *"Minimum length (R1)"*: `20`
->    - {% icon param-select %} *"Outputs selector"*: `Report`
+>    - {% icon param-select %} *"Additional outputs to generate"*: `Report`
 >
 > 2. Inspect the generated txt file (`Report`)
 >
@@ -690,7 +699,7 @@ We can examine our trimmed data with FASTQE and/or FastQC.
 
 > <hands-on-title>Checking quality after trimming</hands-on-title>
 >
-> 1. {% tool [FASTQE](toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.2.6+galaxy2) %}: Re-run **FASTQE** with the following parameters
+> 1. {% tool [FASTQE](toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.3.1+galaxy0) %}: Re-run **FASTQE** with the following parameters
 >    - {% icon param-files %} *"FastQ data"*: `Cutadapt Read 1 Output`
 >    - {% icon param-select %} *"Score types to show"*: `Mean`
 >
@@ -853,23 +862,22 @@ With paired-end reads the average quality scores for forward reads will almost a
 After trimming, reverse reads will be shorter because of their quality and then will be eliminated during the filtering step. If one of the reverse reads is removed, its corresponding forward read should be removed too. Otherwise we will get different number of reads in both files and in different order, and order is important for the next steps. Therefore **it is important to treat the forward and reverse reads together for trimming and filtering**.
 
 > <hands-on-title>Improving the quality of paired-end data</hands-on-title>
-> 1. {% tool [Cutadapt](toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/3.4+galaxy2) %} with the following parameters
+> 1. {% tool [Cutadapt](toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/4.9+galaxy1) %} with the following parameters
 >    - *"Single-end or Paired-end reads?"*: `Paired-end`
 >       - {% icon param-file %} *"FASTQ/A file #1"*: `GSM461178_untreat_paired_subset_1.fastq` (Input dataset)
 >       - {% icon param-file %} *"FASTQ/A file #2"*: `GSM461178_untreat_paired_subset_2.fastq` (Input dataset)
 >
 >          The order is important here!
 >
->       - In *Read 1 Options* or *Read 2 Options*
+>       - In *Read 1 Adapters* or *Read 2 Adapters*
 >
 >         No adapters were found in these datasets. When you process your own data and you know which adapter sequences were used during library preparation, you should provide their sequences here.
 >
->    - In *"Filter Options"*
->       - *"Minimum length"*: `20`
->    - In *"Read Modification Options"*
->       - *"Quality cutoff"*: `20`
->    - In *"Output Options"*
->       - *"Report"*: `Yes`
+>    - In *"Other Read Trimming Options"*
+>       - *"Quality cutoff(s) (R1)"*: `20`
+>    - In *"Read Filtering Options"*
+>       - *"Minimum length (R1)"*: `20`
+>    - {%icon param-select%} *"Additional outputs to generate"*: `Report`
 >
 > 2. Inspect the generated txt file (`Report`)
 >
@@ -1125,7 +1133,7 @@ This step is the usual first step for analyses such as RNA-Seq, ChIP-Seq, or any
 Quality control steps are similar for any type of sequencing data:
 
 - Quality assessment with tools like:
-  - *Short Reads*: {% tool [FASTQE](toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.2.6+galaxy2) %}
+  - *Short Reads*: {% tool [FASTQE](toolshed.g2.bx.psu.edu/repos/iuc/fastqe/fastqe/0.3.1+galaxy0) %}
   - *Short+Long*: {% tool [FASTQC](toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0) %}
   - *Long Reads*:  {% tool [Nanoplot](toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.41.0+galaxy0) %}
   - *Nanopore only*: {% tool [PycoQC](toolshed.g2.bx.psu.edu/repos/iuc/pycoqc/pycoqc/2.5.2+galaxy0) %}

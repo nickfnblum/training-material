@@ -12,6 +12,7 @@ hour: "hora"
 hours: "horas"
 
 level: "Nivel"
+translations: "Traducciones"
 introductory: "Introductorio"
 intermediate: "Intermedio"
 advanced: "Avanzado"
@@ -22,14 +23,44 @@ datasets: "Conjuntos de datos"
 workflows: "Flujos de trabajos"
 supporting-galaxies: "Disponible en estas instancias de Galaxy"
 last-modification: "Última modificación"
+published: "Published"
+revision: "Revision"
 
-
-# other boxes
+# boxes
 tip: "Consejo"
-handson: "Práctica"
+hands-on: "Práctica"
+agenda: "Agenda"
+code-in: 'Entrada'
+code-out: 'Salida'
+comment: 'Comentario'
+details: 'Detalles'
+solution: 'Solución'
+warning: '¡Precaucion!'
+question: 'Preguntas'
+
+# contributions
+authors: "Autores/as"
+translation: "Traducción"
+editors: "Editores/as"
+testers: "Tester(s)"
+reviewers: "Revisores/as"
+infrastructure: "Infrastructura"
+
+instructors: "Instructors(s)"
+organisers: "Organiser(s)"
+data-providers: "Data Provider(s)"
+ux-designers: "UX/Designer(s)"
+
+topic: "Topic"
+tutorial: "Tutorial"
+getting-support: "Have questions about this tutorial? Have a look at the available FAQ pages and support channels"
+
 figure: "Figura"
 
+
 # endmatter
+you-finished-tutorial: "You've finished the tutorial"
+i-finished-tutorial: "I finished this tutorial"
 key-points: "Puntos clave"
 faqs: "Preguntas frecuentes"
 #Have questions about this tutorial? Check out the FAQ page for the Introduction to Galaxy Analyses topic to see if your question is listed there. If not, please ask your question on the GTN Gitter Channel or the Galaxy Help Forum: "¿Tienes preguntas sobre este tutorial? Consulta la página de preguntas frecuentes para ver si tu pregunta aparece allí. De lo contrario, haz tu pregunta en en el canal GTN de Gitter o en el Foro de ayuda de Galaxy"
@@ -38,13 +69,14 @@ feedback: "Retroalimentación"
 feedback-text: "¿Utilizaste este material como instructor?"
 feedback-link-text: "Cuéntanos tu experiencia"
 feedback-text-learner: "¿Has usado este material como aprendiz o estudiante? Haz click en el formulario a continuación para dejarnos tu opinión"
-
+feedback-none: "No feedback has been recieved yet for this training. Be the first one by filling in the feedback form."
+funders-ack: "These individuals or organisations provided funding support for the development of this resource"
 
 glossary: "Glosario"
 citing-tutorial: "Cómo citar este tutorial"
 congrats: "¡Felicitaciones! ¡Completaste con éxito este tutorial!"
 
-want-exend-knowledge: "¿Quieres expandir tus conocimientos?" # want to extend your knowledge?
+want-extend-knowledge: "¿Quieres expandir tus conocimientos?" # want to extend your knowledge?
 recommended-followup: "Continúa tu aprendizaje completando uno de nuestros entrenamientos recomendados" # Follow one of our recommended follow-up trainings
 
 
@@ -80,3 +112,5 @@ presenter-notes-explanation: |
 plaintext-slides: "Diapositivas en modo texto" # Plain-text slides
 video-slides: "Diapositivas en video" # Video slides
 before-diving-in: "Antes de profundizar en el contenido de estas diapositivas, te recomendamos que le eches un vistazo a" # Before diving into this slide deck, we recommend you to have a look at
+
+cyoa-explanation: "Esto es una sección 'Choose Your Own Tutorial' (CYOT) (también conocida como 'Choose Your Own Analysis' (CYOA)), donde puedes elegir entre varios caminos. Haz click en alguno de los botones debajo para elegir qué quieres seguir en este tutorial"

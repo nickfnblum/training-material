@@ -37,9 +37,7 @@ answer_histories:
     history: https://colab.research.google.com/drive/1DkCysA77iaFAWoKJ1vwE5_qYV8Su7UsX?usp=sharing
     date: 2024-09-09
 tags:
-- 10x
 - paper-replication
-- Python
 - MIGHTS
 contributions:
   authorship:

@@ -28,6 +28,9 @@ contributions:
     - elixir-goblet-ttt
   funding:
     - gallantries
+tags:
+  - elixir
+  - train-the-trainers
 ---
 
 In order to facilitate learning, we had to learn (a bit) how learning works. But motivation is key to learning. If we want to enhance motivation, we have to learn a bit how motivation works.

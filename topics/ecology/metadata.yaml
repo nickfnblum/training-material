@@ -3,9 +3,9 @@ name: "ecology"
 type: "use"
 topic_type: field
 title: "Ecology"
-summary: "Learn to analyse Ecological data through Galaxy."
+summary: "Learn to access, manage and analyse Biodiversity data through Galaxy."
 docker_image: "quay.io/galaxy/ecology-training"
-edam_ontology: ["topic_0610"]
+edam_ontology: ["topic_0610","topic_3050"]
 
 requirements:
   -
@@ -21,18 +21,28 @@ subtopics:
     description: "These lessons focus on ways to access data classicaly used in Ecology"
   - id: ecologypreprocess
     title: "Data preprocessing"
-    description: "These lessons focus on manners to preprocess data used in Ecology"
+    description: "These lessons focus on manners to preprocess Biodiversity data"
+  - id: ecologymediaannotation
+    title: "Media annotation, manually or through AI"
+    description: "These lessons focus on manners to annotate media  data (sounds, images, videos)"
   - id: ecologyanalysis
     title: "Data analysis"
-    description: "These lessons focus on ways to analyse data in Ecology"
+    description: "These lessons focus on ways to analyse Biodiversity data"
   - id: ecologyviz
     title: "Data visualization"
-    description: "These tutorials showcase data visualization in Ecology"
-    
+    description: "These tutorials showcase Biodiveristy data visualization in Ecology"
+
 editorial_board:
   - yvanlebras
+  - Marie59
+  - PaulineSGN
 
 references:
+  -
+    authors: "Coline Royaux et al"
+    title: "Guidance framework to apply best practices in ecological data analysis: lessons learned from building Galaxy-Ecology"
+    link: "https://doi.org/10.1093/gigascience/giae122"
+    summary: "Numerous conceptual frameworks exist for best practices in research data and analysis (e.g., Open Science and FAIR principles). In practice, there is a need for further progress to improve transparency, reproducibility, and confidence in ecology. Here, we propose a practical and operational framework for researchers and experts in ecology to achieve best practices for building analytical procedures from individual research projects to production-level analytical pipelines. We introduce the concept of atomization to identify analytical steps that support generalization by allowing us to go beyond single analyses. The term atomization is employed to convey the idea of single analytical steps as “atoms” composing an analytical procedure. When generalized, “atoms” can be used in more than a single case analysis. These guidelines were established during the development of the Galaxy-Ecology initiative, a web platform dedicated to data analysis in ecology. Galaxy-Ecology allows us to demonstrate a way to reach higher levels of reproducibility in ecological sciences by increasing the accessibility and reusability of analytical workflows once atomized and generalized."
   -
     authors: "Reto Schmucki et al"
     title: "A regionally informed abundance index for supporting integrative analyses across butterfly monitoring schemes"

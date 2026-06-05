@@ -9,7 +9,7 @@ contributors: [hexylena, shiltemann]
 If you created your fork a long time ago, the default branch on your fork may still be called **master** instead of **main**
 
 1. Point your browser to your fork of the GTN repository
-   - The url will be `https://github.com/<your username>/training_material` (replacing <your username> with your GitHub username)
+   - The url will be `https://github.com/<your username>/training-material` (replacing <your username> with your GitHub username)
 
 2. Check the default branch that is shown (at top left).
 

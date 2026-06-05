@@ -5,6 +5,7 @@ require 'jekyll'
 module Gtn
   # Generate boxes
   module Boxify
+
     @@ICONS = {
       'agenda' => '',
       'code-in' => 'far fa-keyboard',
@@ -36,51 +37,6 @@ module Gtn
       'feedback' => '⁉️',
       'details' => '💬',
       'hands_on' => '✏️',
-    }
-
-    @@BOX_TITLES = {
-      'en' => {
-        'agenda' => 'Agenda',
-        'code-in' => 'Input',
-        'code-out' => 'Output',
-        'comment' => 'Comment',
-        'details' => 'Details',
-        'hands-on' => 'Hands-on',
-        'hands_on' => 'Hands-on',
-        'question' => 'Question',
-        'solution' => 'Solution',
-        'tip' => 'Tip',
-        'warning' => 'Warning',
-      },
-      'es' => {
-        # Just google translated these.
-        'agenda' => 'Agenda',
-        'code-in' => 'Entrada',
-        'code-out' => 'Salida',
-        'comment' => 'Comentario',
-        'details' => 'Detalles',
-        'solution' => 'Solución',
-        'warning' => '¡Precaucion!',
-
-        # The only ones we have translations for??
-        'hands-on' => 'Práctica',
-        'hands_on' => 'Práctica',
-        'question' => 'Preguntas',
-        'tip' => 'Consejo',
-      },
-      'fr' => {
-        'agenda' => 'Agenda',
-        'code-in' => 'Entrée',
-        'code-out' => 'Sortie',
-        'comment' => 'Commentaire',
-        'details' => 'Détails',
-        'hands-on' => 'En pratique',
-        'hands_on' => 'En pratique',
-        'question' => 'Question',
-        'solution' => 'Solution',
-        'tip' => 'Astuce',
-        'warning' => 'Attention',
-      }
     }
 
     @title_unique_offsets = {}
@@ -137,12 +93,16 @@ module Gtn
     end
 
     def self.format_box_title(title, box_type, lang = 'en', noprefix: false)
+      if box_type == 'hands_on'
+        box_type = "hands-on"
+      end
       lang = 'en' if (lang == '') || lang.nil?
       title_fmted = (!title.nil? && title.length.positive? ? ": #{title}" : '')
       if noprefix && !title.nil?
         title
       else
-        "#{@@BOX_TITLES[lang][box_type]}#{title_fmted}"
+        box_title = Jekyll.sites.first.data['lang'][lang][box_type]
+        "#{box_title}#{title_fmted}"
       end
     end
 
@@ -236,3 +196,4 @@ if $PROGRAM_NAME == __FILE__
     end
   end
 end
+

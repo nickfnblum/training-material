@@ -7,8 +7,10 @@ title: "Pre-processing of Single-Cell RNA Data"
 subtopic: end-to-end
 priority: 1
 
+draft: true
+
 zenodo_link: "https://zenodo.org/record/3253142"
-tags:
+tags: []
 questions:
   - "What is single-cell?"
   - "How do we process a batch?"
@@ -39,20 +41,18 @@ follow_up_training:
     tutorials:
         - scrna-umis
 
-contributors:
-  - mtekman
-  - bebatut
-  - erxleben
-  - wm75
+contributions:
+  authorship:
+    - mtekman
+    - bebatut
+    - erxleben
+    - wm75
+  funding:
+    - deNBI
 
 gitter: Galaxy-Training-Network/galaxy-single-cell
 
 ---
-
-
-
-# Introduction
-
 
 
 ## Why do Single Cell sequencing?

@@ -14,20 +14,20 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request' || !github.event.pull_request.draft
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 1
           persist-credentials: false
 
       # BEGIN Dependencies
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
           architecture: 'x64'
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.2"
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: |
             vendor/bundle
@@ -49,10 +49,10 @@ jobs:
         run: |
           bundle exec htmlproofer \
             --ignore-urls "/.*localhost.*/","/.*vimeo\.com.*/","/.*gitter\.im.*/","/.*drmaa\.org.*/","/.*slides.html#.*/,/#embedded_jbrowse/","/.*videos.*.mp4.png/","/krona_(all|multisample).html/","/workflows\/trs_import/","/api/","/by-tool/" \
-            --ignore-files "/.*krona.*\.html/","/.*\/files\/.*/","/.*\/node_modules\/.*/","/\/tutorials\/.*\/docker\//","/.*content.html/","/.*recentrifuge.*\.html/","/short/" \
+            --ignore-files "/.*krona.*\.html/","/.*\/files\/.*/","/.*\/node_modules\/.*/","/\/tutorials\/.*\/docker\//","/.*content.html/","/.*recentrifuge.*\.html/","/short/","/test-data/" \
             --swap-urls "github.com/galaxyproject/training-material/tree/main:github.com/${GITHUB_REPOSITORY}/tree/${GITHUB_HEAD_REF}" \
-            --disable-external=true \
-            --enforce-https=false \
+            --disable-external \
+            --no-enforce-https \
             ./_site
 
       - name: Ensure no unexpected encoded HTML in output, ask a GTN contributor for help with this one.
@@ -78,3 +78,6 @@ jobs:
       - name: Check URL persistence
         run: |
           bash bin/check-url-persistence.sh
+      - name: Check File Sizes
+        run: |
+          bash bin/check-file-sizes.sh

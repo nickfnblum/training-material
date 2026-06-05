@@ -5,16 +5,36 @@ destination:
   description: Galaxy Training Network Material
   synopsis: Galaxy Training Network Material. See https://training.galaxyproject.org
 items:
-- name: User Interface and Features
+- name: Using Galaxy and Managing your Data
   description: A collection of microtutorials explaining various features of the Galaxy
-    user interface
+    user interface and manipulating data within Galaxy.
   items:
-  - name: 'Jupyter: Use Jupyter notebooks in Galaxy'
+  - name: Use Jupyter notebooks in Galaxy
     items:
-    - name: 'DOI: 10.5281/zenodo.1185122'
+    - name: 'DOI: 10.5281/zenodo.15263830'
       description: latest
       items:
-      - url: https://zenodo.org/api/files/1d804082-4153-47f1-a320-4ac261ce091d/GSM461176_untreat_single.counts
+      - url: https://zenodo.org/record/15263830/files/gapminder_gdp_africa.csv
         src: url
-        ext: tabular
-        info: https://doi.org/10.5281/zenodo.1185122
+        ext:
+        info: https://doi.org/10.5281/zenodo.15263830
+      - url: https://zenodo.org/record/15263830/files/gapminder_all.csv
+        src: url
+        ext:
+        info: https://doi.org/10.5281/zenodo.15263830
+      - url: https://zenodo.org/record/15263830/files/gapminder_gdp_americas.csv
+        src: url
+        ext:
+        info: https://doi.org/10.5281/zenodo.15263830
+      - url: https://zenodo.org/record/15263830/files/gapminder_gdp_asia.csv
+        src: url
+        ext:
+        info: https://doi.org/10.5281/zenodo.15263830
+      - url: https://zenodo.org/record/15263830/files/gapminder_gdp_oceania.csv
+        src: url
+        ext:
+        info: https://doi.org/10.5281/zenodo.15263830
+      - url: https://zenodo.org/record/15263830/files/gapminder_gdp_europe.csv
+        src: url
+        ext:
+        info: https://doi.org/10.5281/zenodo.15263830

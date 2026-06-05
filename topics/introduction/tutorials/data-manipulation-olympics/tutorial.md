@@ -27,6 +27,7 @@ contributions:
     - lybCNU
   editing:
     - hexylena
+    - scottcain
   funding:
     - gallantries
 level: Introductory
@@ -99,7 +100,7 @@ If you've opened this tutorial via the {% icon level %} icon in Galaxy (top menu
 | Find and Replace       | in a specific column               | {% tool [Column Regex Find and Replace]({{version_replace_text_column}}) %}|
 | Find and Replace       | on every line                      | {% tool [Regex Find and Replace]({{version_replace_text_line}}) %}|
 | Join two Datasets      | side by side on a specified field  | {% tool [Join two Datasets]({{version_join}}) %} |
-| Concatenate datasets   | one after the other                | {% tool [Concatenate datasets]({{version_cat}}) %} |
+| Concatenate datasets   | one after the other                | {% tool [Concatenate multiple datasets or collections]({{version_cat}}) %} |
 | Remove Beginning       | Good for removing header lines     | {% tool [Remove beginning of a file]({{version_remove_beginning}}) %} |
 | Select First lines     | Good for finding top 10s or saving header lines | {% tool [Select first lines]({{version_select_first}}) %} |
 | Cut Columns            | By header name                     | {% tool [Remove columns by heading]({{version_remove_columns_by_header}}) %}|
@@ -160,8 +161,8 @@ Before we can do any manipulation, we will need some data. Let's upload our tabl
 >    > > 4. There are 17 columns in this file. There are multiple ways to find this answer:
 >    > >    - Count the columns manually (only doable for small files)
 >    > >    - In the expanded view, scroll sideways on the dataset preview, at the top the columns are numbered
->    > >    - Click on the {% icon galaxy-info %} i icon on the dataset, here you will find more detailed information about the file and the job that created it.
->    > >      At the bottom is also a preview (peek) of the dataset, and numbered columns
+>    > >    - Click on the {% icon galaxy-info %} i icon on the dataset; here you will find more detailed information about the file and the job that created it.
+>    > >      At the bottom is also a preview (peek) of the dataset and numbered columns
 >    > >
 >    > > ![a screenshot of the expanded view of the dataset in the history, it shows the datatype, number of lines in the file, and a preview
 >    > > of the dataset with numbered columns](./images/columns-number.png)
@@ -207,7 +208,7 @@ This tutorial is structured a bit differently than most. **You do not have to do
 
 # File Format Conversion
 
-The file we uploaded is a `.tsv` file. This stands for *tab-separated values*. This means that this is a file containing rows and columns, where a TAB character is used to signify a column ends and a new one begins. Galaxy is great at understanding tab-separated files files, and most of the data manipulation tools are designed to work with such files.
+The file we uploaded is a `.tsv` file. This stands for *tab-separated values*. This means that this is a file containing rows and columns, where a TAB character is used to signify a column ends and a new one begins. Galaxy is great at understanding tab-separated files, and most of the data manipulation tools are designed to work with such files.
 
 A similar format you may come across a lot in data science, is the `.csv` file, or *comma-separated values* file. This is the same as `.tsv`, but uses comma (`,`) characters to indicate new columns, instead of TAB (`\t`) characters.
 
@@ -230,9 +231,8 @@ Galaxy can convert these two formats into each other.
 >    >
 >    > > <solution-title></solution-title>
 >    > >
->    > > 1. Galaxy does not display the table as nicely as before.
->    > >    This is because Galaxy is optimized to work with `tsv` files. For most rows you now see commas separating the different columns.
->    > > 2. If the data in a column contains a comma (e.g. in this file we have events such as `swimming 5,000 meters`), we put the value in quotes to signifiy that that comma is part of the data, not a column delimiter.
+>    > > 1. The display in the center panel should be indistinguishable from before the conversion; however, if you look at the "quick view" of the data in the history step, you will see the commas separating columns.
+>    > > 2. If the data in a column contains a comma (e.g. in this file we have events such as `swimming 5,000 meters`), we put the value in quotes to signify that that comma is part of the data, not a column delimiter.
 >    > >
 >    > {: .solution}
 >    {: .question}
@@ -343,7 +343,7 @@ This is great, but maybe it would make more sense to sort alphabetically by athl
 
 ## Sort on multiple columns at once
 
-So we want to sort twice, first by year, an then within each year, we sort again alphabetically by name. The sort tool can do this!
+So we want to sort twice, first by year, and then within each year, we sort again alphabetically by name. The sort tool can do this!
 
 
 > <hands-on-title>Sort table based on a column</hands-on-title>
@@ -547,7 +547,7 @@ This file contains a lot of data, but we may only be interested in a subset of t
 >
 >    > <question-title></question-title>
 >    >
->    > 1. How many lines do you expect in the this file?
+>    > 1. How many lines do you expect in this file?
 >    > 2. How many lines are in this file? Were you right?
 >    >
 >    > > <solution-title noprefix>Hints</solution-title>
@@ -560,9 +560,9 @@ This file contains a lot of data, but we may only be interested in a subset of t
 >    > > <solution-title noprefix>Answers</solution-title>
 >    > >
 >    > > 1. The original file has 234,523 lines, and the Winter Olympics had 44,681 lines. So we would expect 234,523 - 44,681 = 189,842 rows of data. Since we have subtracted the header line in this equation as well, we expect the Summer Olympics file to have 1 more line that this, so 189,843 total lines.
->    > > 2. 189,843. If you were off by one or two lines, it may have been that you counted the header lines double
+>    > > 2. 189,843. If you were off by one or two lines, it may have been that you counted the header lines double.
 >    > > <br>
->    > > It is always useful to take a moment to think about the expected outcome, this makes it easier to spot mistakes and will save you time in the long run.
+>    > > It is always useful to take a moment to think about the expected outcome; this makes it easier to spot mistakes and will save you time in the long run.
 >    > >
 >    > {: .solution}
 >    {: .question}
@@ -745,14 +745,14 @@ For example, if we want to find athletes with three-part names by counting space
 >    > <question-title></question-title>
 >    >
 >    > 1. How would you filter rows where the 2nd column contains **three spaces** (i.e., four-part names)?
->    > 2. How many medals were wone by athletes with five-part names **or more**?
+>    > 2. How many medals were won by athletes with five-part names **or more**?
 >    > 3. How many parts does the longest name have? Give an example of such a name.
->    > 4. Bonus: **How many** athletes have 6-part names?
+>    > 4. Bonus: **How many** athletes have 6-part names won a medal?
 >    >
 >    > > <solution-title>Hints</solution-title>
 >    > >
 >    > > 1. None ;)
->    > > 2. You can also use greater than or less than symbols in your expression
+>    > > 2. You can also use greater than or less than symbols in your expression. You can filter on two lines using  logical operators like `and`.
 >    > > 3. Keep increasing the count until no results are returned
 >    > > 4. The number of lines returned indicates the number of medals won by long-named athletes, to
 >    > >    find out how many different athletes have such a name, we can use the {% tool [Count - occurrences of each record](Count1) %}
@@ -762,12 +762,12 @@ For example, if we want to find athletes with three-part names by counting space
 >    > > <solution-title>Answers</solution-title>
 >    > >
 >    > > 1. `c2.count(' ') == 3`
->    > > 2. `c2.count(' ') >= 4` returns 252 lines, meaning 251 medals won accounting for the header line excluding the header line.
+>    > > 2. `c17 != 'NA' and c2.count(' ') >= 4` returns 27 lines, meaning 26 medals won accounting for the header line excluding the header line. Appart from the name you need to additionally filter out athletes that did not won a medal.
 >    > > 3. `c2.count(' ') == 5` is the maximum value to still return results.
 >    > >    Five spaces means a 6-part name. For example Patricia Galvin de la Tour d'Auvergne
->    > > 4. `c2.count(' ') == 5` returns 48 records. So 48 medals were won by these long-named athletes.
+>    > > 4. `c17 != 'NA' and c2.count(' ') == 5` returns 5 records. So 5 medals were won by these long-named athletes.
 >    > >     Using the {% tool [Count - occurrences of each record](Count1) %} to count occurrences in column 2, we
->    > >     discover that there are **20 different athletes with 6-part names**.
+>    > >     discover that there are **3 different athletes with 6-part names**.
 >    > >
 >    > {: .solution}
 >    {: .question}
@@ -1218,7 +1218,7 @@ You may have noticed that we could also provide multiple columns to group on. If
 > > 3. Any calculations you run which try to compute anything over the weight column (Column 8) will fail. Please see the [final exercise section](#exercises-putting-it-all-together) for the solution
 > >    to this question, in which we will first clean up the data in the weight column using the Find and Replace operation.
 > >
-> >    This type of situation occurs quite frequently, where you data does not fit with your expectations or assumptions, and you may have to perform additional data
+> >    This type of situation occurs quite frequently, where your data does not fit with your expectations or assumptions, and you may have to perform additional data
 > >    manipulation steps to clean up your data. It is very useful to know how to read the error messages of tools. Depending on the tool, the error messages may or may
 > >    not be very informative, but in many cases it can give you a clue as to why it failed, which sometimes can be fixed by you. If you think it is a problem with the
 > >    tool itself, please submit a bug report, and the tool authors will be able to have a look at it. More information about troubleshooting and reporting errors can
@@ -1477,7 +1477,7 @@ Look at the `birth_day` column. It has values in a format like `12 December`. Su
 >
 >    > <question-title></question-title>
 >    >
->    > 1. How do we match on the birthday format? How strict/exact shoule we be here?
+>    > 1. How do we match on the birthday format? How strict/exact should we be here?
 >    > 2. How do we captures both the day and the month?
 >    > 3. How do we refer to the values we captured (for the replacement value)
 >    >
@@ -1541,7 +1541,7 @@ To do the reverse, adding one or more columns, we can use the {% tool [Paste]({{
 >    - {% icon param-text %} *"Header name"*: `name`
 >    - {% icon param-repeat %} *"Header name"*: `sport`
 >    - {% icon param-repeat %} *"Header name"*: `games`
->    - {% icon param-repeat %} *"Header name"*: `medals`
+>    - {% icon param-repeat %} *"Header name"*: `medal`
 >    - {% icon param-toggle %} *"Keep named columns"*: `Yes`
 >
 > 3. {% icon galaxy-eye %} **View** the results.
@@ -1593,7 +1593,7 @@ Notice that during this step, we also changed the order of the columns. This too
 > >    - {% icon param-text %} *"Header name"*: `athlete_id`
 > >    - {% icon param-toggle %} *"Keep named columns"*: `No`
 > >
-> >    **Note:** the *"Keep named columns"* parameter determines wheter we keep or remove the columns we specified.
+> >    **Note:** the *"Keep named columns"* parameter determines whether we keep or remove the columns we specified.
 > >    You could have obtained the same result by supplying all column names except the first one, and selecting
 > >    *"Keep named columns"*: `No`, but that would have been a lot more work.
 > >
@@ -1723,7 +1723,7 @@ We would now like to take our Olympics dataset as the basis, and add columns to 
 >    > > <solution-title></solution-title>
 >    > >
 >    > > 1. All the columns from the country information file are added to the end of each row of our olympics dataset
->    > > 2. Our olympics datset had 17 columns, the country information file has 56 columns. Therefore we have 17+56=73 columns columns in our resulting file. This also means the NOC column
+>    > > 2. Our Olympics dataset had 17 columns, the country information file has 56 columns. Therefore, we have 17+56=73 columns in our resulting file. This also means the NOC column
 >    > >    we joined on appears twice in our output.
 >    > > 3. There is a lot of data duplication in this file now. The exact same country information is added to every line of every athlete from a certain country.
 >    > >    This means much larger file size, and more usage of your quota.
@@ -1770,7 +1770,7 @@ First, let's get this data for the 2022 Olympics
 {: .hands_on}
 
 
-Since this new dataset has the exact same structure (number and order of columns), we can simple add the lines from this file to the end of our existing `olympics.tsv` file.
+Since this new dataset has the exact same structure (number and order of columns), we can simply add the lines from this file to the end of our existing `olympics.tsv` file.
 
 
 > <hands-on-title>Adding 2022 Olympics to our dataset</hands-on-title>
@@ -1783,7 +1783,7 @@ Since this new dataset has the exact same structure (number and order of columns
 >
 >    Now we can perform the concatenation:
 >
-> 2. {% tool [Concatenate datasets tail-to-head]({{version_cat}}) %} with the following parameters:
+> 2. {% tool [Concatenate multiple datasets or collections]({{version_cat}}) %} with the following parameters:
 >    - {% icon param-file %} *"Concatenate Datasets"*: `olympics.tsv` (this file will be first)
 >    - {% icon param-repeat%} *"Insert Dataset"*:
 >      - {% icon param-file %}*"Dataset"*: `output from step 1` (2022 data without the header)
@@ -1797,7 +1797,7 @@ Since this new dataset has the exact same structure (number and order of columns
 >    >
 >    > > <solution-title></solution-title>
 >    > >
->    > > 1. The `olympics.tsv` file had 234,523 lines, and the `olympics_2022.tsv` file had 4076 lines. Both of these numbers include a header line, which we removed for the second file, so we expect our concatenated file to contain 234,523 + 4076 - 1 = 238,598 lines (which it does).
+>    > > 1. The `olympics.tsv` file had 234,523 lines, and the `olympics_2022.tsv` file had 4076 lines. Both of these numbers include a header line, which we removed for the second file, so we expect our concatenated file to contain 234,523 + 4076 - 1 = 238,598 lines (which it does). Note that the estimated number of lines in the "quick view" (what you see when you click on the step to expand it) might be off by quite a bit (several thousand lines for example).
 >    > > 2. The new file has the entire contents of `olympics.tsv` at the beginning of the file, followed by the contents of the `olympics_2022.tsv` file at the end.
 >    > {: .solution}
 >    {: .question}
@@ -1809,7 +1809,7 @@ Now this only works so simply because our two datasets had the same structure; t
 
 # Splitting Files
 
-This dataset contains a lot of data, we might want to split the data into one file per Olympic games, or have one file for all the winter games, and another file for all the summer games. In these situtations, where we want to create new, smaller files, based on the values in a column, we can use the tool {% tool [Split file according to the values of a column]({{version_split}}) %}.
+This dataset contains a lot of data, we might want to split the data into one file per Olympic games, or have one file for all the winter games, and another file for all the summer games. In these situtations, where we want to create new, smaller files, based on the values in a column, we can use the tool {% tool [Split by group]({{version_split}}) %}.
 
 Tip: use this tool only if you want a separate file for **all values** in a column. For example, if you want a file for each Olympic games, use the split tool, but if you just want a file for one particular Olympics (say Tokyo 2020), you could simply use the [Filter](#filtering) tools to extract the data from the full dataset, without making files for all the other Olympics as well.
 
@@ -1818,10 +1818,10 @@ Tip: use this tool only if you want a separate file for **all values** in a colu
 >
 > We would like to create a separate file for each Olympic event.
 >
-> 1. Open the tool {% tool [Split file according to the values of a column]({{version_split}}) %}, and read the help text at the bottom
+> 1. Open the tool {% tool [Split by group]({{version_split}}) %}, and read the help text at the bottom
 >    - which settings do you think we need to use?
 >
-> 2. {% tool [Split file according to the values of a column]({{version_split}}) %} with the following parameters:
+> 2. {% tool [Split by group]({{version_split}}) %} with the following parameters:
 >    - {% icon param-file %} *"File to select"*: `olympics.tsv`
 >    - {% icon param-select %} *"on column"*: `Column 11` (the `games` column)
 >    - {% icon param-toggle %} *"Include the header in all splitted files?"*: `Yes`
@@ -1934,7 +1934,7 @@ This section provides a number of exercises that require you to combine two or m
 > >
 > >    {% tool [Filter - data on any column using simple expressions]({{version_filter}}) %} with the following parameters:
 > >     - {% icon param-file %} *"Filter"*:  `output from previous exercise`
-> >     - {% icon param-text %} *"With following expression"*: `c13='Winter'`
+> >     - {% icon param-text %} *"With following expression"*: `c13=='Winter'`
 > >     - {% icon param-text %} *"Number of header lines to skip"*: `1`
 > >
 > > 3. First we filter out the NA values from the weight column:
@@ -1948,7 +1948,7 @@ This section provides a number of exercises that require you to combine two or m
 > >
 > >    {% tool [Filter - data on any column using simple expressions]({{version_filter}}) %} with the following parameters:
 > >     - {% icon param-file %} *"Filter"*:  `output from previous step`
-> >     - {% icon param-text %} *"With following expression"*: `c13='Summer'`
+> >     - {% icon param-text %} *"With following expression"*: `c13=='Summer'`
 > >     - {% icon param-text %} *"Number of header lines to skip"*: `1`
 > >
 > >    Then we can sort by weigth, in ascending order to get the shortest athletes on top:
@@ -1982,7 +1982,7 @@ row a weight range is used), and then answering the question a couple of questio
 > <question-title noprefix>Exercise 2: Data cleaning and computations of the weight column</question-title>
 >
 > 1. Get a list of all the values that occur in the weight column, take note of all the values that are not a single number or `NA`; anything else should be cleaned up
-> 2. Clean up the weight column (Colum 8) so that we only have single numbers; weight classes (e.g. `63-78`) should be replace by the lower bound (`63`) of that class
+> 2. Clean up the weight column (Column 8) so that we only have single numbers; weight classes (e.g. `63-78`) should be replace by the lower bound (`63`) of that class
 > 3. How heavy was the lightest woman competing in the Biathlon? And the heaviest?
 >
 > > <solution-title noprefix>Hints</solution-title>
@@ -2041,7 +2041,7 @@ row a weight range is used), and then answering the question a couple of questio
 > >
 > > 2. {% tool [Column Regex Find and Replace]({{version_replace_text_column}}) %} with the following parameters:
 > >    - {% icon param-file %} *"Select cells from"*: `olympics.tsv`
-> >    - {% icon param-select %}*"using column"*: `Column 14`
+> >    - {% icon param-select %}*"using column"*: `Column 8`
 > >    - {% icon param-repeat %} *"Check"*
 > >     - *"Find Regex"*: `(\d+)(,|-).*` (one or more digits (captured), followed by a dash or comma, then zero or more of any other characters)
 > >     - *"Replacement"*: `\1` (only the first set of numbers we captured)

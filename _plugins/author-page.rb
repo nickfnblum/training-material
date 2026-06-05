@@ -91,7 +91,7 @@ module Jekyll
             pusher(t, slides_by_author, false)
           end
 
-          pusher(t, events_by_author, false) if t['layout'] == 'event'
+          pusher(t, events_by_author, false) if t['layout'] == 'event' or t['layout'] == "event-external"
 
           pusher(t, faqs_by_author, false) if t['layout'] == 'faq'
 
@@ -124,6 +124,10 @@ module Jekyll
           page2.data['personname'] = name
           page2.data['title'] = "GTN Contributor: #{name}"
           page2.data['layout'] = 'contributor_index'
+
+          if contributor != contributor.downcase
+              page2.data['redirect_from'] = "hall-of-fame/#{contributor.downcase}"
+          end
 
           page2.data['tutorials'] = tutorials_by_author[contributor].group_by{|x| x[0] }.map{|k, v| [k, v.map{|vv| vv[1]}.compact]}
           page2.data['slides'] = slides_by_author[contributor].group_by{|x| x[0] }.map{|k, v| [k, v.map{|vv| vv[1]}.compact]}

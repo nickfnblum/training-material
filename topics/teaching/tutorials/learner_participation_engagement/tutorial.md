@@ -16,6 +16,9 @@ key_points:
 - Select teaching practices (learning techniques) that will allow learners to achieve the LOs
 - Always remember that learning occurs BY DOING, which means that learners will be able to DESCRIBE something if and only if they will have the chance to practice it; they will be able to APPLY a rule only after having applied themselves the rule, and that, in order to successfully practice the APPLICATION of the rule, they must remember the rule, they must have understood it and how it can be used for applications, and they must have seen examples of how to apply it.
 - Be aware of other practices and behaviours supporting interactivity, a positive and engaging learning environment, active and collaborative learning, stimulating lessons, frequent feedback
+tags:
+  - elixir
+  - train-the-trainers
 requirements:
 -
     type: "internal"

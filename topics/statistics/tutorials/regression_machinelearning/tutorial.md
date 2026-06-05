@@ -15,11 +15,15 @@ key_points:
   using the test set.
 - For each regression algorithm, its parameters should be optimized based on the dataset.
 time_estimation: 2H
-contributors:
-- khanteymoori
-- anuprulez
-- simonbray
-
+contributions:
+  authorship:
+    - khanteymoori
+    - anuprulez
+    - simonbray
+  funding:
+    - elixir-europe
+    - deNBI
+    - uni-freiburg
 recordings:
 - captioners:
   - anuprulez
@@ -129,7 +133,7 @@ The dataset is divided into two parts - training and test sets. The training set
 
 > <hands-on-title>Train a model</hands-on-title>
 >
-> 1. {% tool [Generalized linear models for classification and regression](toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.11.0) %}:
+> 1. {% tool [Generalized linear models for classification and regression](toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.11.2) %}:
 >    - *"Select a Classification Task"*: `Train a model`
 >       - *"Select a linear method"*: `Linear Regression model`
 >          - *"Select input type"*: `tabular data`
@@ -165,7 +169,7 @@ Now, we will predict age in the test dataset using this model in order to see if
 
 > <hands-on-title>Predict targets using the model</hands-on-title>
 >
-> 1. {% tool [Generalized linear models for classification and regression](toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.11.0) %}:
+> 1. {% tool [Generalized linear models for classification and regression](toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.11.2) %}:
 >    - *"Select a Classification Task"*: `Load a model and predict`
 >       - {% icon param-file %} *"Models"*: `LinearRegression_model`
 >       - {% icon param-file %} *"Data (tabular)"*: `test_rows`
@@ -255,7 +259,7 @@ Like the random forest method, gradient boosting is an ensemble-based regressor,
 
 > <hands-on-title>Train a model</hands-on-title>
 >
-> 1. {% tool [Ensemble methods for classification and regression](toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.11.0) %}:
+> 1. {% tool [Ensemble methods for classification and regression](toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.11.2) %}:
 >    - *"Select a Classification Task"*: `Train a model`
 >       - *"Select an ensemble method"*: `Gradient Boosting Regressor` (*Note:* choose `Gradient Boosting Regressor` not `Gradient Boosting Classifier`)
 >          - *"Select input type"*: `tabular data`
@@ -288,7 +292,7 @@ After learning on the training dataset, we should evaluate the performance on th
 
 > <hands-on-title>Predict targets using the model</hands-on-title>
 >
-> 1. {% tool [Ensemble methods for classification and regression](toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.11.0) %}:
+> 1. {% tool [Ensemble methods for classification and regression](toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.11.2) %}:
 >    - *"Select a Classification Task"*: `Load a model and predict`
 >       - {% icon param-file %} *"Models"*: `gradient_boosting_model`
 >       - {% icon param-file %} *"Data (tabular)"*: `test_rows`
@@ -311,11 +315,11 @@ R2 score is 0.93, the same as the linear model, but the RMSE is smaller (3.85), 
 
 ## Create data processing pipeline
 
-In the final step, we will create a pipeline learner with the **Pipeline builder** tool but this time, we just specify the regressor. The **Pipeline builder** tool will wrap this regressor and return a zip file. By choosing `Yes` from the boolean option, tunable hyperparameters will be output in a separate file.
+In the final step, we will create a pipeline learner with the **Pipeline builder** tool but this time, we just specify the regressor. The **Pipeline builder** tool will wrap this regressor and return a `h5mlm` file. This file also contains a list of tunable hyperparameters.
 
 > <hands-on-title>Create pipeline</hands-on-title>
 >
-> {% tool [Pipeline builder](toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_build_pipeline/sklearn_build_pipeline/1.0.11.0) %}:
+> {% tool [Pipeline builder](toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_build_pipeline/sklearn_build_pipeline/1.0.11.2) %}:
 >    - In *"Final Estimator"*:
 >        - *"Choose the module that contains target estimator"*: `sklearn.ensemble`
 >            - *"Choose estimator class"*: `GradientBoostingRegressor`
@@ -342,7 +346,7 @@ After the **New Pipeline/Estimator** dataset and its tunable hyperparameters are
 
 > <hands-on-title>Hyperparameter search</hands-on-title>
 >
-> {% tool [Hyperparameter search](toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_searchcv/sklearn_searchcv/1.0.11.0) %}:
+> {% tool [Hyperparameter search](toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_searchcv/sklearn_searchcv/1.0.11.2) %}:
 >    - *"Select a model selection search scheme"*: `GridSearchCV - Exhaustive search over specified parameter values for an estimator `
 >        - {% icon param-files %} *"Choose the dataset containing pipeline/estimator object"*: `h5mlm` file (output of **Pipeline builder** {% icon tool %})
 >        - *"Is the estimator a deep learning model?"*: `No`
@@ -402,7 +406,7 @@ Using the **Hyperparameter search** tool, we optimized our model, based on the t
 
 > <hands-on-title>Predict age</hands-on-title>
 >
-> 1. {% tool [Ensemble methods for classification and regression](toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.11.0) %}:
+> 1. {% tool [Ensemble methods for classification and regression](toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.11.2) %}:
 >    - *"Select a Classification Task"*: `Load a model and predict`
 >        - {% icon param-files %} *"Models"*: `h5mlm` file (output of **Hyperparameter search** {% icon tool %})
 >        - {% icon param-files %} *"Data (tabular)"*: `test_rows` tabular file

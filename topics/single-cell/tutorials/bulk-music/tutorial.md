@@ -25,9 +25,13 @@ requirements:
     topic_name: single-cell
     tutorials:
       - scrna-intro
-contributors:
-- mtekman
-- nomadscientist
+
+contributions:
+  authorship:
+    - mtekman
+    - nomadscientist
+  editing:
+    - hexhowells
 
 follow_up_training:
   -
@@ -294,7 +298,7 @@ Here we shall build two ExpressionSet objects corresponding to the bulk and sing
 
 > <hands-on-title>Build the Expression Set inputs</hands-on-title>
 >
-> 1. {% tool [Construct Expression Set Object](toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy3) %} with the following parameters:
+> 1. {% tool [Construct Expression Set Object](toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy4) %} with the following parameters:
 >    - {% icon param-file %} *"Assay Data"*: `GSE50244bulkeset.expression.tabular` (Input dataset)
 >    - {% icon param-file %} *"Phenotype Data"*: `GSE50244bulkeset.phenotype.tabular` (Input dataset)
 >
@@ -303,7 +307,7 @@ Here we shall build two ExpressionSet objects corresponding to the bulk and sing
 >    > An ExpressionSet object has many data slots, the principle of which are the experiment data (*exprs*), the phenotype data (*pData*), as well metadata pertaining to experiment information and additional annotations (*fData*).
 >    {: .comment}
 >
-> 2. {% tool [Construct Expression Set Object](toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy3) %} with the following parameters:
+> 2. {% tool [Construct Expression Set Object](toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy4) %} with the following parameters:
 >    - {% icon param-file %} *"Assay Data"*: `EMTABesethealthy.expression.tabular` (Input dataset)
 >    - {% icon param-file %} *"Phenotype Data"*: `EMTABesethealthy.phenotype.tabular` (Input dataset)
 >
@@ -318,7 +322,7 @@ We will now inspect these objects we just created to see what information we can
 > 1. Obtain General Info about the data set
 >    - {% icon galaxy-eye %} Click on the `#scrna` *General Info* dataset in the history view (output of **Construct Expression Set Object** {% icon tool %})
 > 1. Obtain Feature Information about the data set
->    - {% tool [Inspect Expression Set Object](toolshed.g2.bx.psu.edu/repos/bgruening/music_inspect_eset/music_inspect_eset/0.1.1+galaxy3) %} with the following parameters:
+>    - {% tool [Inspect Expression Set Object](toolshed.g2.bx.psu.edu/repos/bgruening/music_inspect_eset/music_inspect_eset/0.1.1+galaxy4) %} with the following parameters:
 >         > <warning-title>Danger: This tool has needs!</warning-title>
 >         > You may need to click the dataset from your history and drag it into the input of this tool. Some browsers don't allow this.
 >         {: .warning}
@@ -332,7 +336,7 @@ We will now inspect these objects we just created to see what information we can
 > By inspecting the `Feature Data Table`, you should see a list of gene names.
 >
 > 1. Obtain the dimensions of the data set
->    - {% tool [Inspect Expression Set Object](toolshed.g2.bx.psu.edu/repos/bgruening/music_inspect_eset/music_inspect_eset/0.1.1+galaxy3) %} with the following parameters:
+>    - {% tool [Inspect Expression Set Object](toolshed.g2.bx.psu.edu/repos/bgruening/music_inspect_eset/music_inspect_eset/0.1.1+galaxy4) %} with the following parameters:
 >      - {% icon param-file %} *"ESet Dataset"*: `#scrna` (output of **Construct Expression Set Object** {% icon tool %})
 >      - *"Inspect"*: `Dimension`
 >
@@ -383,7 +387,7 @@ It's also important that input scRNA-seq datasets (ideally) have some representa
 
 > <hands-on-title>Task description</hands-on-title>
 >
-> 1. {% tool [MuSiC](toolshed.g2.bx.psu.edu/repos/bgruening/music_deconvolution/music_deconvolution/0.1.1+galaxy3) %} with the following parameters:
+> 1. {% tool [MuSiC](toolshed.g2.bx.psu.edu/repos/bgruening/music_deconvolution/music_deconvolution/0.1.1+galaxy4) %} with the following parameters:
 >    - *MuSiC sometimes does not show up from the tool search box. You may need to look for it under the **Single Cell** heading
 >    - {% icon param-file %} *"scRNA Dataset"*: `#scrna` (output of **Construct Expression Set Object** {% icon tool %})
 >    - {% icon param-file %} *"Bulk RNA Dataset"*: `#bulk` (output of **Construct Expression Set Object** {% icon tool %})
@@ -520,7 +524,7 @@ You will need to again create ExpressionSet objects, as before.
 
 > <hands-on-title>Build the Expression Set inputs</hands-on-title>
 >
-> 1. {% tool [Construct Expression Set Object](toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy3) %} with the following parameters:
+> 1. {% tool [Construct Expression Set Object](toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy4) %} with the following parameters:
 >    - {% icon param-file %} *"Assay Data"*: `Mousebulkeset.expression.tabular` (Input dataset)
 >    - {% icon param-file %} *"Phenotype Data"*: `Mousebulkeset.phenotype.tabular` (Input dataset)
 >
@@ -529,7 +533,7 @@ You will need to again create ExpressionSet objects, as before.
 >    > An ExpressionSet object has many data slots, the principle of which are the experiment data (*exprs*), the phenotype data (*pData*), as well metadata pertaining to experiment information and additional annotations (*fData*).
 >    {: .comment}
 >
-> 2. {% tool [Construct Expression Set Object](toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy3) %} with the following parameters:
+> 2. {% tool [Construct Expression Set Object](toolshed.g2.bx.psu.edu/repos/bgruening/music_construct_eset/music_construct_eset/0.1.1+galaxy4) %} with the following parameters:
 >    - {% icon param-file %} *"Assay Data"*: `Mousesubeset.expression.tabular` (Input dataset)
 >    - {% icon param-file %} *"Phenotype Data"*: `Mousesubeset.phenotype.tabular` (Input dataset)
 >
@@ -541,7 +545,7 @@ You will need to again create ExpressionSet objects, as before.
 
 > <hands-on-title>Task description</hands-on-title>
 >
-> 1. {% tool [MuSiC](toolshed.g2.bx.psu.edu/repos/bgruening/music_deconvolution/music_deconvolution/0.1.1+galaxy3) %} with the following parameters:
+> 1. {% tool [MuSiC](toolshed.g2.bx.psu.edu/repos/bgruening/music_deconvolution/music_deconvolution/0.1.1+galaxy4) %} with the following parameters:
 >    - {% icon param-file %} *"scRNA Dataset"*: `#scrna` (output of **Construct Expression Set Object** {% icon tool %})
 >    - {% icon param-file %} *"Bulk RNA Dataset"*: `#bulk` (output of **Construct Expression Set Object** {% icon tool %})
 >    - *"Purpose"*: `Compute Dendrogram`
@@ -594,7 +598,7 @@ We shall use the 4 cell type groups determined by the cut off threshold in the a
 >
 >    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
 >
-> 2. {% tool [MuSiC](toolshed.g2.bx.psu.edu/repos/bgruening/music_deconvolution/music_deconvolution/0.1.1+galaxy3) %} with the following parameters:
+> 2. {% tool [MuSiC](toolshed.g2.bx.psu.edu/repos/bgruening/music_deconvolution/music_deconvolution/0.1.1+galaxy4) %} with the following parameters:
 >    - **Note**
 >      > <warning-title>Shortcut!</warning-title>
 >      >

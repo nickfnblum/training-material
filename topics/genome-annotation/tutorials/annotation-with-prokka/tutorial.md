@@ -20,10 +20,15 @@ level: Introductory
 key_points:
   - "Prokka is a useful tool to annotate a bacterial genome."
   - "JBrowse can be used to inspect the annotation of a genome."
-contributors:
-  - annasyme
-  - tseemann
-  - slugger70
+contributions:
+  authorship:
+    - annasyme
+    - tseemann
+    - slugger70
+  funding:
+    - unimelb
+    - melbournebioinformatics
+    - AustralianBioCommons
 subtopic: prokaryote
 edam_ontology:
 - topic_0622 # Genomics
@@ -115,7 +120,7 @@ Now that we have annotated the draft genome sequence, we would like to view the 
 >
 >       This sequence will be the reference against which annotations are displayed
 >
->    - *"Produce Standalone Instance"*: `Yes`
+>    - *"Output JBrowse"*: `Minimal for viewing (Documentation removed)`
 >    - *"Genetic Code"*: `11: The Bacterial, Archaeal and Plant Plastid Code`
 >    - Click on `Insert Track Group`
 >
