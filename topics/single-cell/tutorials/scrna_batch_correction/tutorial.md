@@ -31,8 +31,10 @@ requirements:
 tags:
 - singlecell
 contributors:
-- MarisaJL
-- dianichj
+  authorship:
+    - MarisaJL
+  editing:
+    - nomadscientist
 
 ---
 
@@ -76,6 +78,16 @@ Scanpy and Seurat are two of the most commonly used pipelines (sets of tools) fo
 The Scanpy and Seurat pipelines include tools for preprocessing single cell data, performing dimensional reductions such as PCA, constructing a neighbourhood graph and finding clusters in it. Although both pipelines perform the same basic steps, there are some differences in how these steps are performed that mean you can end up with slightly different results depending on which pipeline you choose. However, your results should be broadly the same, no matter which pipeline you use.
 
 The main difference between these two pipelines is that Scanpy is written for Python while Seurat is written for R. If we were working in a Python or R environment, then we would need to choose the appropriate pipeline. However, since we're working on Galaxy, we're free to choose either set of tools.
+
+# Batch Correction or Integration?
+
+We will often need to perform batch correction or integration during single cell analyses. If we are working with different experimental batches, donors, conditions, or datasets, then we need to look beyond the technical differences between them. Batch correction or integration can do this by matching cells of similar types of states across batches or datasets. Effectively, we are looking for cell subpopulations that are shared across the groups.
+
+Scanpy and Seurat's integration tools will create a dimensional reduction that captures the shared sources of variation across the batches or datasets. The dimensional reduction can be used to find clusters or produce visualisations such as UMAP.
+
+The terms batch correction and integration can be used somewhat interchangably, because they both refer to the same process of looking for shared cell subpopulations across groups. The same tools are used in the same way for both procedures, so you could use the workflow described in this tutorial to perform integration as well as batch correction.
+
+The only difference is that we tend to talk about batch correction when we are working with groups produced in a single study (e.g. different experimental batches), while we would say integration when we're combining separate datasets from multiple studies.
 
 ## Get data
 
@@ -178,16 +190,6 @@ occurrences of each record](Count1) %} with the following parameters:
 > The cell metadata is any information about the cells that the original authors have included in the SeuratObject. As well as the cell barcode or identifier for each individual cell, the metadata will usually include information such as which donor or sample the cell came from, or which experimental group it was in. Sometimes, this metadata will include lots of useful details, such as demographic information about human donors. Such information can help us to better understand our results. 
 {: .comment}
 
-# Batch Correction and Integration
-
-We will often need to perform batch correction or integration during single cell analyses. If we are working with different experimental batches, donors, conditions, or datasets, then we need to look beyond the technical differences between them. Batch correction or integration can do this by matching cells of similar types of states across batches or datasets. Effectively, we are looking for cell subpopulations that are shared across the groups.
-
-Scanpy and Seurat's integration tools will create a dimensional reduction that captures the shared sources of variation across the batches or datasets. The dimensional reduction can be used to find clusters or produce visualisations such as UMAP.
-
-The terms batch correction and integration can be used somewhat interchangably, because they both refer to the same process of looking for shared cell subpopulations across groups. The same tools are used in the same way for both procedures, so you could use the workflow described in this tutorial to perform integration as well as batch correction.
-
-The only difference is that we tend to talk about batch correction when we are working with groups produced in a single study (e.g. different experimental batches), while we would say integration when we're combining separate datasets from multiple studies.
-
 # Clustering without Batch Correction
 
 We suspect that batch correction will be needed because of the different technologies used to construct this dataset, but we'll try clustering without any correction first. This will confirm whether batch correction is truly needed on the basis of `Method`. Comparing the results we get now with those we'll get after batch correction should also help us to understand what batch correction is doing to our single cell data.
@@ -209,8 +211,6 @@ Splitting our data into layers means that the Seurat preprocessing tools can wor
 The other tools in the Seurat pipeline, such as `RunPCA` and `FindClusters` will still work on the entire dataset.
 
 Splitting the batches into separate layers could help to address some of the technical differences between them because of the separate preprocessing, but we'll have to wait for the results to see if this has been enough to eliminate these differences.
-
-If you want to understand the impact of splitting and preprocessing the batches separately, then you could skip ahead to the next section, **Clustering with Seurat** and compare your results to those shown in this tutorial.
 
 > <hands-on-title> Task description </hands-on-title>
 >
@@ -527,5 +527,3 @@ Discuss what batch correction has done to the data
 {% icon congratulations %} Well done, you've successfully used Seurat to prepare and cluster single cell data. You might want to check your results against the example histories for the [Scanpy](add link here) or [Seurat](https://singlecell.usegalaxy.eu/u/marisa_jl/h/batch-correction--integration-with-seurat---answer-key) pipelines. You can also take a look at the whole workflow for [Scanpy](add link here) or [Seurat](https://singlecell.usegalaxy.eu/u/marisa_jl/w/batch-correction---seurat).
 
 In this tutorial, we've learned how to perform batch correction or integration when analysing single cell data with either the Scanpy or Seurat pipelines. If you want to learn more about these pipelines then you might want to try analysing a slightly trickier dataset in the [Scanpy]({% link topics/single-cell/tutorials/scrna-case_basic-pipeline/tutorial.md %}) or [Seurat]({% link topics/single-cell/tutorials/scrna-case_FilterPlotandExplore_SeuratTools/tutorial.md %}) case study tutorials.
-
-This tutorial is part of the https://singlecell.usegalaxy.eu portal ({% cite tekman2020single %}).
