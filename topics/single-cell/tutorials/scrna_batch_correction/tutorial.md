@@ -43,7 +43,7 @@ Single cell analyses can be complex. We might have data from different experimen
 
 If we simply run these different batches or combined datasets through a clustering pipeline such as Scanpy or Seurat, we might not get useful results. Clustering prioritises the genes that show the biggest differences in expression and uses these to identify groups of cells that share similar expression patterns. When we have different experimental batches or have combined multiple studies, these big differences might relate more to the differences between batches or datasets than to the biological differences we're interested in, such as cell type. Our clusters could therefore end up representing different batches or datasets, rather than anything more useful.
 
-In order to look beyond these technical differences, we can perform batch correction or integration. Both the Scanpy and Seurat pipelines include tools that can be used to correct for differences between experimental batches or to integrate datasets - we actually use the same tools to do both. In this tutorial, we will learn how to use these tools in either the Scanpy or Seurat pipeline - you can choose which one you would like to use.
+In order to look beyond these technical differences, we can perform batch correction or integration. Both the Scanpy and Seurat pipelines include tools that can be used to correct for differences between experimental batches or to integrate datasets - we actually use the same tools to do both. In this tutorial, you will learn how to use these tools in either the Scanpy or Seurat pipeline - you can choose which one you would like to use.
 
 > <comment-title></comment-title>
 >
@@ -71,7 +71,7 @@ In order to look beyond these technical differences, we can perform batch correc
 
 # Scanpy or Seurat?
 
-Scanpy and Seurat are two of the most commonly used pipelines (sets of tools) for analysing single cell data. Both pipelines have all the tools required to perform clustering, which identifies groups of cells that share similar expression profiles. Clustering is often the first step in single cell analysis because it makes our data easier to interpret. Clusters represent groups of cells that are expressing the same genes, which often correspond to specific cell types or states. Our goal is to identify biologically relevant clusters that will help us to better understand our data.
+Scanpy and Seurat are two of the most commonly used pipelines (sets of tools) for analysing single cell data. Both pipelines have all the tools required to perform clustering, which identifies groups of cells that share similar expression profiles. Clustering is often a key goal in single cell analysis because it makes our data easier to interpret. Clusters represent groups of cells that are expressing the same genes, which often correspond to specific cell types or states. Our goal is to identify biologically relevant clusters that will help us to better understand our data.
 
 The Scanpy and Seurat pipelines include tools for preprocessing single cell data, performing dimensional reductions such as PCA, constructing a neighbourhood graph and finding clusters in it. Although both pipelines perform the same basic steps, there are some differences in how these steps are performed that mean you can end up with slightly different results depending on which pipeline you choose. However, your results should be broadly the same, no matter which pipeline you use.
 
@@ -152,7 +152,9 @@ SCANPY INSPECT
 > 1. {% tool [Seurat Data Management](toolshed.g2.bx.psu.edu/repos/iuc/seurat_data/seurat_data/5.0+galaxy0) %} with the following parameters:
 >    - *"Method used"*: `Inspect Seurat Object`
 >        - *"Display information about"*: `Cell Metadata`
->
+> 2. {% tool [**Count**
+occurrences of each record](Count1) %} with the following parameters:
+>    - *"Count occurrences of values in column(s)"*: `c11` This is the 11th column in your table, which contains the `Method` metadata
 {: .hands_on}
 
 </div>
@@ -165,7 +167,7 @@ SCANPY INSPECT
 > > <solution-title></solution-title>
 > >
 > > 1. The dataset that we're using comes from a study that compared different single cell techniques. The `Method` column tells us which technique was used on each cell.
-> > 2. Each experimental technique can be considered as its own experimental batch. Each of these batches was processed independently, which by itself can be enough to require batch correction, even if the same experimental protocol is used - batches can vary simply because they were processed at different times or by different people in the same lab! In this case, we have an even stronger reason to believe that these batches will differ - we know that each batch was produced using a different technique, so it seems likely that we'll need to perform batch correction. We would consider this to be batch correction rather than integration because these data all came from the same original study.
+> > 2. Each experimental technique can be considered as its own experimental batch. Each of these batches was processed independently, which by itself can be enough to require batch correction, even if the same experimental protocol is used. Batches can vary simply because they were processed at different times or by different people in the same lab! In this case, we have an even stronger reason to believe that these batches will differ - we know that each batch was produced using a different technique. It seems likely that we'll need to perform batch correction. We would consider this to be batch correction rather than integration because these data all came from the same original study.
 > >
 > {: .solution}
 >
@@ -173,7 +175,7 @@ SCANPY INSPECT
 
 > <comment-title></comment-title>
 >
-> The cell metadata is any information about the cells that the original authors have included in the SeuratObject. As well as the cell barcode or identifier for each individual cell, the metadata will usually include information such as which donor or sample the cell came from or which experimental group it was in. Sometimes, this metadata will include lots of useful details such as demographic information about human donors that can help us to better understand our results. 
+> The cell metadata is any information about the cells that the original authors have included in the SeuratObject. As well as the cell barcode or identifier for each individual cell, the metadata will usually include information such as which donor or sample the cell came from, or which experimental group it was in. Sometimes, this metadata will include lots of useful details, such as demographic information about human donors. Such information can help us to better understand our results. 
 {: .comment}
 
 # Batch Correction and Integration
@@ -242,7 +244,7 @@ Let's take a look to see what we've done to our data.
 > > <solution-title></solution-title>
 > >
 > > 1. We can see that there are now 9 layers in our SeuratObject. 
-> > 2. We started out with one layer of raw data, called `counts`. That layer has now been split up according to `Method`. We now have nine `counts` layers. Each layer represents one of the batches named in the `Method` column of the cell metadata. We can see the names of the methods in the layer names. For example, the counts.Drop-seq layer contains the raw counts produced using the Drop-seq technique. Seven different methods were used in this study, but one of them was applied to three different batches - you should be able to see three layers with `Chromium_v2` in thier names.
+> > 2. We started out with one layer of raw data, called `counts`. That layer has now been split up according to `Method`. We now have nine `counts` layers. Each layer represents one of the batches named in the `Method` column of the cell metadata. We can see the names of the methods in the layer names. For example, the `counts.Drop-seq` layer contains the raw counts produced using the Drop-seq technique. Seven different methods were used in this study, but one of them was applied to three different batches - you should be able to see three layers with `Chromium_v2` in their names.
 > >
 > {: .solution}
 >
@@ -253,11 +255,11 @@ Now that we have split our data so that each batch is in its own layer, we will 
 We'll follow the default Seurat pipeline here, except that we'll use `30` PCs to build the neighborhood graph and cluster with a resolution of `2` as these were the parameters used in [the original Seurat version of this tutorial](https://satijalab.org/seurat/articles/seurat5_integration). We'll also give our clusters and UMAP more recognisable names as we'll be running these tools again later, after batch correction. 
 
 > <comment-title></comment-title>
-> Seurat has another option for preprocessing - rather than use the three separate functions presented below, you can use a single function called `SCTransform` to preform normalisation, identification of variable genes, and scaling all in one go. You will find this option on Galaxy's {% tool Seurat Preprocessing} tool.
+> Seurat has another option for preprocessing - rather than use the three separate functions presented below, you can use a single function called `SCTransform` to preform normalisation, identification of variable genes, and scaling all in one go. You will find this option on Galaxy's {% icon tool %} **Seurat Preprocessing** tool.
 >
-> If you use `SCTransform` for preprocessing then you'll need to click the button to choose `Yes` for `Use SCT as Normalization Method` when you run `IntegrateLayers`. The `SCTransform` normalises the data in its own way, so we just need to let the tool know what to expect!
+> If you use `SCTransform` for preprocessing, then you'll need to choose `Yes` for `Use SCT as Normalization Method` when you run `IntegrateLayers`. The `SCTransform` normalises the data in its own way, so we just need to let the tool know what to expect!
 >
-> The next step after identifying clusters would usually be to look for marker genes that are differentially expressed between clusters. If you perform integration/batch correction after using `SCTransform` then you will need to run the `PrepSCTFindMarkers` function before using tools such as `FindMarkers`. You'll find this in the {% tool Seurat Integrate %} tool.
+> The next step after identifying clusters would usually be to look for marker genes that are differentially expressed between clusters. If you perform integration/batch correction after using `SCTransform`, then you will need to run the `PrepSCTFindMarkers` function before using tools such as `FindMarkers`. You'll find this in the {% tool Seurat Integrate %} tool.
 >
 > The rest of the workflow will be the same as shown in this tutorial, but you will end up with different results because `SCTransform` handles preprocessing in a slightly different way than the three separate tools. If you want to learn more about these differences then you can choose the SCTransform route in the [Clustering 3k PBMCs with Seurat]({% link topics/single-cell/tutorials/scrna-seurat-pbmc3k/tutorial.html %}) tutorial.
 {: .comment}
@@ -289,7 +291,7 @@ We'll follow the default Seurat pipeline here, except that we'll use `30` PCs to
 >    >
 >    > We will use the output from `RunPCA` in the  following section when we perform batch correction.
 >    >
->    > If you're already very familiar with the Seurat clustering pipeline and you just want to try using the  {% tool Seurat Integrate %} tools, then you can skip ahead to the **Clustering after Integration** step now.
+>    > If you're already familiar with the Seurat clustering pipeline and you just want to try using the  {% icon tool %} **Seurat Integrate** tools, then you can skip ahead to the **Clustering after Integration** step now.
 >    {: .comment}
 >
 > 5. {% tool [Seurat Find Clusters](toolshed.g2.bx.psu.edu/repos/iuc/seurat_clustering/seurat_clustering/5.0+galaxy0) %} with the following parameters:
@@ -304,10 +306,10 @@ We'll follow the default Seurat pipeline here, except that we'll use `30` PCs to
 >        - *"Algorithm for modularity optimization"*: `1. Original Louvain`
 >        - *"Name for output clusters"*: `unintegrated_clusters`
 >
->    > <comment-title> short description </comment-title>
+>    > <warning-title> short description </warning-title>
 >    >
 >    > Make sure that you change the default name for the clusters to `unintegrated_clusters`! 
->    {: .comment}
+>    {: .warning}
 >
 > 1. {% tool [Seurat Run Dimensional Reduction](toolshed.g2.bx.psu.edu/repos/iuc/seurat_reduce_dimension/seurat_reduce_dimension/5.0+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Input file with the Seurat object"*: `rds_out` (output of **Seurat Find Clusters** {% icon tool %})
@@ -318,14 +320,14 @@ We'll follow the default Seurat pipeline here, except that we'll use `30` PCs to
 >        - In *"Advanced Options"*:
 >            - *"Name for dimensional reduction"*: `umap.unintegrated`
 >
->    > <comment-title> short description </comment-title>
+>    > <warning-title> short description </warning-title>
 >    >
 >    > Make sure that you change the default name for the UMAP results to `umap.unintegrated`! 
->    {: .comment}
+>    {: .warning}
 >
 {: .hands_on}
 
-Now let's take a look at our results. We'll first plot a UMAP showing the clusters we've just identified and then colour this plot in by `Method` to see if that might be influencing our results.
+Now let's take a look at our results. We'll first plot a UMAP showing the clusters we've just identified. Then, we will colour this plot in by `Method` to see if that might be influencing our results.
 
 > <hands-on-title> Task description </hands-on-title>
 >
@@ -343,7 +345,7 @@ Now let's take a look at our results. We'll first plot a UMAP showing the cluste
 >
 {: .hands_on}
 
-![Two UMAP plots showing many small and fragmented clusters of cells. Image A is coloured into 48 clusters. Image B shows many clusters as a single colour of cells analysed with the same method.](../../images/scrna_batch_correction/UMAP_Before_Seurat.png "UMAP before batch correction integration coloured by A. cluster B. Method")
+![Two UMAP plots showing many small and fragmented clusters of cells. Image A is coloured into 48 clusters. Image B shows many clusters as a single colour of cells analysed with the same method.](../../images/scrna_batch_correction/UMAP_Before_Seurat.png "UMAP before batch correction integration coloured by A: cluster, and B: Method")
 
 > <question-title></question-title>
 >
@@ -377,7 +379,7 @@ We will now run Seurat's batch correction tool - it's called `IntegrateLayers`, 
 
 > <comment-title> short description </comment-title>
 >
-> {% tool Seurat Integrate %} provides several integration methods, which all perform the integration or batch correction in their own way. You might want to experiment by using one of the other methods to see how it affects the results. When you are working on your own data, it can be a good idea to try a few different integration methods to see which one produces the best results. The best integration or batch correction would be the one that eliminates the most of the technical differences between datasets or batches while producing biologically meaningful results. If we end up with completely unexpected results rather than clusters that match up well with known cell types, then we know that something has gone wrong!
+> {% tool Seurat Integrate %} provides several integration methods, which all perform the integration or batch correction in their own way. You might want to experiment by using different methods to see how they affect the results. When you are working on your own data, it can be a good idea to try a few different integration methods to see which one produces the best results. The best integration or batch correction would be the one that eliminates the most of the technical differences between datasets or batches while producing biologically meaningful results. If we end up with completely unexpected results rather than clusters that match up well with known cell types, then we know that something has gone wrong!
 {: .comment} 
 
 > <hands-on-title> Task description </hands-on-title>
@@ -388,14 +390,14 @@ We will now run Seurat's batch correction tool - it's called `IntegrateLayers`, 
 >        - *"Integration method to use"*: `CCA Integration`
 >        - *"Name for new dimensional reduction"*: `integrated.cca`
 >
->    > <comment-title> short description </comment-title>
+>    > <comment-title> Remember the name </comment-title>
 >    >
 >    > Make sure you remember the name you've used for the new dimensional reduction - we'll be using this later instead of the PCA we produced previously.
 >    {: .comment}
 >
 {: .hands_on}
 
-It's good practice to rejoin our layers now, so that those separate layers or batches will end up back in the same layer. We don't actually need to do this now as it won't affect the clustering results, but it is important if we want to perform downstream analyses such as Differential Expression analysis.
+It's good practice to rejoin our layers now, so that those separate layers/batches will end up together. We don't actually need to do this now (as it won't affect the clustering results), but it is important if we want to perform downstream analyses such as Differential Expression analysis.
 
 > <hands-on-title> Task description </hands-on-title>
 >
@@ -491,7 +493,7 @@ Let's see how the batch correction has changed our results. As before, we'll mak
 > > <solution-title></solution-title>
 > >
 > > 1. The first plot shows 25 clusters (remember that Seurat starts from cluster 0!). Although the high resolution means we still have plenty of clusters, the batch correction has reduced the number. The clusters also look less fragmented than they did before.
-> > 2. When we colour in the plot by `Method` we can see that all the colours are mixed together across all of the clusters. We don't have any clusters that are all one colour and there aren't any big patches of colour. The batch correction has successfully removed the differences between the batches so that they're no longer dominating the results.
+> > 2. When we colour in the plot by `Method`, we can see that all the colours are mixed together across all of the clusters. We don't have any clusters that contain only one colour. The batch correction has successfully removed the differences between the batches so that they're no longer dominating the results.
 > >
 > {: .solution}
 >
