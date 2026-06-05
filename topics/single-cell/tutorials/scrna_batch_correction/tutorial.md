@@ -30,11 +30,13 @@ requirements:
         - scrna-seurat-pbmc3k
 tags:
 - singlecell
-contributors:
+contributions:
   authorship:
     - MarisaJL
   editing:
     - nomadscientist
+  funding:
+    - biofair
 
 ---
 
@@ -95,7 +97,25 @@ The only difference is that we tend to talk about batch correction when we are w
 
 <div class='Scanpy' markdown='1'>
 
-SCANPY GET DATA
+> <hands-on-title> Data Upload </hands-on-title>
+>
+> 1. Create a new history for this tutorial
+>
+> 2. Import the files from [Zenodo]({{ page.zenodo_link }})
+>
+>    ```
+>   https://zenodo.org/records/20562556/files/Input_Anndata.h5ad
+>    ```
+>
+>    {% snippet faqs/galaxy/datasets_import_via_link.md %}
+>
+>    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
+>
+> 3. Check that the datatype is `h5ad`
+>
+>    {% snippet faqs/galaxy/datasets_change_datatype.md datatype="datatypes" %}
+>
+{: .hands_on}
 
 </div>
 
@@ -131,7 +151,22 @@ Let's take a look at our data before we begin the analysis to see whether we mig
 
 <div class='Scanpy' markdown='1'>
 
-SCANPY INSPECT
+> <hands-on-title> Task description </hands-on-title>
+>
+> 1. {% tool [Inspect AnnData](toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.11.4+galaxy3) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `output` (Input dataset)
+>    - *"What to inspect?"*: `General information about the object`
+>
+{: .hands_on}
+
+
+> 1. {% tool [Inspect AnnData](toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.11.4+galaxy3) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `output` (Input dataset)
+>    - *"What to inspect?"*: `Key-indexed observations annotation (obs)`
+> 2. {% tool [Count](Count1) %} with the following parameters:
+>    - {% icon param-file %} *"from dataset"*: `obs` (output of **Inspect AnnData** {% icon tool %})
+>    - *"Count occurrences of values in column(s)"*: `c['11']`
+{: .hands_on}
 
 </div>
 
@@ -164,8 +199,7 @@ SCANPY INSPECT
 > 1. {% tool [Seurat Data Management](toolshed.g2.bx.psu.edu/repos/iuc/seurat_data/seurat_data/5.0+galaxy0) %} with the following parameters:
 >    - *"Method used"*: `Inspect Seurat Object`
 >        - *"Display information about"*: `Cell Metadata`
-> 2. {% tool [**Count**
-occurrences of each record](Count1) %} with the following parameters:
+> 2. {% tool [**Count** occurrences of each record](Count1) %} with the following parameters:
 >    - *"Count occurrences of values in column(s)"*: `c11` This is the 11th column in your table, which contains the `Method` metadata
 {: .hands_on}
 
@@ -198,7 +232,57 @@ Since our focus is batch correction/integration, we won't go into too much detai
 
 <div class='Scanpy' markdown='1'>
 
-SCANPY CLUSTERING
+> <hands-on-title> Task description </hands-on-title>
+>
+> 1. {% tool [Scanpy normalize](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_normalize/scanpy_normalize/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `output` (Input dataset)
+>    - *"Method used for normalization"*: `Normalize counts per cell, using 'pp.normalize_total'`
+>        - *"Exclude (very) highly expressed genes for the computation of the normalization factor (size factor) for each cell"*: `No`
+>
+>
+> 2. {% tool [Scanpy Inspect and manipulate](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy normalize** {% icon tool %})
+>    - *"Method used for inspecting"*: `Logarithmize the data matrix, using 'pp.log1p'`
+>
+>
+> 3. {% tool [Scanpy filter](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_filter/scanpy_filter/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy Inspect and manipulate** {% icon tool %})
+>    - *"Method used for filtering"*: `Annotate (and filter) highly variable genes, using 'pp.highly_variable_genes'`
+>        - *"Choose the flavor for identifying highly variable genes"*: `Seurat`
+>
+>
+> 4. {% tool [Scanpy Inspect and manipulate](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy filter** {% icon tool %})
+>    - *"Method used for inspecting"*: `Scale data to unit variance and zero mean, using 'pp.scale'`
+>        - *"Maximum value"*: `10.0`
+>
+> 5. {% tool [Scanpy cluster, embed](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_cluster_reduce_dimension/scanpy_cluster_reduce_dimension/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy Inspect and manipulate** {% icon tool %})
+>    - *"Method used"*: `Computes PCA (principal component analysis) coordinates, loadings and variance decomposition, using 'pp.pca'`
+>        - *"Type of PCA?"*: `Full PCA`
+>
+> 6. {% tool [Scanpy Inspect and manipulate](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy cluster, embed** {% icon tool %})
+>    - *"Method used for inspecting"*: `Compute a neighborhood graph of observations, using 'pp.neighbors'`
+>        - *"Number of PCs to use"*: `30`
+>
+> 7. {% tool [Scanpy cluster, embed](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_cluster_reduce_dimension/scanpy_cluster_reduce_dimension/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy Inspect and manipulate** {% icon tool %})
+>    - *"Method used"*: `Cluster cells into subgroups, using 'tl.louvain'`
+>        - *"Flavor for the clustering"*: `vtraag (much more powerful than igraph)`
+>            - *"Resolution"*: `2.0`
+>
+> 8. {% tool [Scanpy cluster, embed](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_cluster_reduce_dimension/scanpy_cluster_reduce_dimension/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy cluster, embed** {% icon tool %})
+>    - *"Method used"*: `Embed the neighborhood graph using UMAP, using 'tl.umap'`
+>
+> 9. {% tool [Scanpy plot](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy cluster, embed** {% icon tool %})
+>    - *"Method used for plotting"*: `Embeddings: Scatter plot in UMAP basis, using 'pl.umap'`
+>        - *"Keys for annotations of observations/cells or variables/genes"*: `louvain,Method`
+>        - *"Show edges?"*: `No`
+>
+{: .hands_on}
 
 </div>
 
@@ -287,7 +371,7 @@ We'll follow the default Seurat pipeline here, except that we'll use `30` PCs to
 >    - {% icon param-file %} *"Input file with the Seurat object"*: `rds_out` (output of **Seurat Preprocessing** {% icon tool %})
 >    - *"Method used"*: `Run a PCA dimensionality reduction using 'RunPCA'`
 >
->    > <comment-title> short description </comment-title>
+>    > <comment-title></comment-title>
 >    >
 >    > We will use the output from `RunPCA` in the  following section when we perform batch correction.
 >    >
@@ -306,12 +390,12 @@ We'll follow the default Seurat pipeline here, except that we'll use `30` PCs to
 >        - *"Algorithm for modularity optimization"*: `1. Original Louvain`
 >        - *"Name for output clusters"*: `unintegrated_clusters`
 >
->    > <warning-title> short description </warning-title>
+>    > <warning-title></warning-title>
 >    >
 >    > Make sure that you change the default name for the clusters to `unintegrated_clusters`! 
 >    {: .warning}
 >
-> 1. {% tool [Seurat Run Dimensional Reduction](toolshed.g2.bx.psu.edu/repos/iuc/seurat_reduce_dimension/seurat_reduce_dimension/5.0+galaxy0) %} with the following parameters:
+> 7. {% tool [Seurat Run Dimensional Reduction](toolshed.g2.bx.psu.edu/repos/iuc/seurat_reduce_dimension/seurat_reduce_dimension/5.0+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Input file with the Seurat object"*: `rds_out` (output of **Seurat Find Clusters** {% icon tool %})
 >    - *"Method used"*: `Run a UMAP dimensional reduction using 'RunUMAP'`
 >        - *"UMAP implementation to run"*: `uwot`
@@ -320,7 +404,7 @@ We'll follow the default Seurat pipeline here, except that we'll use `30` PCs to
 >        - In *"Advanced Options"*:
 >            - *"Name for dimensional reduction"*: `umap.unintegrated`
 >
->    > <warning-title> short description </warning-title>
+>    > <warning-title></warning-title>
 >    >
 >    > Make sure that you change the default name for the UMAP results to `umap.unintegrated`! 
 >    {: .warning}
@@ -369,7 +453,71 @@ It looks like we do need to perform batch correction on our dataset. The Scanpy 
 
 <div class='Scanpy' markdown='1'>
 
-SCANPY CLUSTERING with INTEGRATION
+> 1. {% tool [Scanpy filter](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_filter/scanpy_filter/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy Inspect and manipulate** {% icon tool %})
+>    - *"Method used for filtering"*: `Annotate (and filter) highly variable genes, using 'pp.highly_variable_genes'`
+>        - *"Choose the flavor for identifying highly variable genes"*: `Seurat`
+>        - *"Specify the batch key"*: `Method`
+>
+>    > <comment-title> short description </comment-title>
+>    >
+>    > We will specify 'Method' as the batch key. This means that Highly Variable Genes will be identified within each batch and then combined.
+>    {: .comment}
+>
+> 2. {% tool [Scanpy Inspect and manipulate](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy filter** {% icon tool %})
+>    - *"Method used for inspecting"*: `Scale data to unit variance and zero mean, using 'pp.scale'`
+>        - *"Maximum value"*: `10.0`
+>
+> 3. {% tool [Scanpy cluster, embed](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_cluster_reduce_dimension/scanpy_cluster_reduce_dimension/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy Inspect and manipulate** {% icon tool %})
+>    - *"Method used"*: `Computes PCA (principal component analysis) coordinates, loadings and variance decomposition, using 'pp.pca'`
+>        - *"Type of PCA?"*: `Full PCA`
+>
+> 4. {% tool [Scanpy remove confounders](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_remove_confounders/scanpy_remove_confounders/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy cluster, embed** {% icon tool %})
+>    - *"Method used for plotting"*: `Integrate multiple single-cell experiments with Harmony, using 'external.pp.harmony_integrate'`
+>        - *"The name of the column in adata.obs that differentiates among experiments/batches"*: `Method`
+>
+> 5. {% tool [Scanpy Inspect and manipulate](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy remove confounders** {% icon tool %})
+>    - *"Method used for inspecting"*: `Compute a neighborhood graph of observations, using 'pp.neighbors'`
+>        - *"Number of PCs to use"*: `30`
+>        - *"Use the indicated representation"*: `X_pca_harmony`
+>
+>    > <comment-title></comment-title>
+>    >
+>    > We will use the corrected dimentional reduction, 'X_pca_harmony' to calculate the neighborhood graph. Make sure to enter this as the representation to use.
+>    {: .comment}
+>
+> 6. {% tool [Scanpy cluster, embed](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_cluster_reduce_dimension/scanpy_cluster_reduce_dimension/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy Inspect and manipulate** {% icon tool %})
+>    - *"Method used"*: `Cluster cells into subgroups, using 'tl.louvain'`
+>        - *"Flavor for the clustering"*: `vtraag (much more powerful than igraph)`
+>            - *"Resolution"*: `2.0`
+>        - *"Key under which to add the cluster labels"*: `louvain_integrated`
+>
+>    > <comment-title></comment-title>
+>    >
+>    > We'll use a different name for this clustering so that we don't get confused. Enter 'louvain_integrated' as the key to add the cluster labels under. We'll use this when we plot our integrated clusters.
+>    {: .comment}
+>
+> 7. {% tool [Scanpy cluster, embed](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_cluster_reduce_dimension/scanpy_cluster_reduce_dimension/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy cluster, embed** {% icon tool %})
+>    - *"Method used"*: `Embed the neighborhood graph using UMAP, using 'tl.umap'`
+>
+> 8. {% tool [Scanpy plot](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy cluster, embed** {% icon tool %})
+>    - *"Method used for plotting"*: `Embeddings: Scatter plot in UMAP basis, using 'pl.umap'`
+>        - *"Keys for annotations of observations/cells or variables/genes"*: `louvain_integrated,Method`
+>        - *"Show edges?"*: `No`
+>
+>    > <comment-title> short description </comment-title>
+>    >
+>    > Make sure to use 'louvain_integrated' rather than 'louvain' for the cluster annotation to plot. This is the name we used for our integrated clusters.
+>    {: .comment}
+>
+{: .hands_on}
 
 </div>
 
@@ -377,7 +525,7 @@ SCANPY CLUSTERING with INTEGRATION
 
 We will now run Seurat's batch correction tool - it's called `IntegrateLayers`, but despite the name we can use the same tool to address differences between batches as we would for integrating datasets.
 
-> <comment-title> short description </comment-title>
+> <comment-title></comment-title>
 >
 > {% tool Seurat Integrate %} provides several integration methods, which all perform the integration or batch correction in their own way. You might want to experiment by using different methods to see how they affect the results. When you are working on your own data, it can be a good idea to try a few different integration methods to see which one produces the best results. The best integration or batch correction would be the one that eliminates the most of the technical differences between datasets or batches while producing biologically meaningful results. If we end up with completely unexpected results rather than clusters that match up well with known cell types, then we know that something has gone wrong!
 {: .comment} 
@@ -431,7 +579,7 @@ Now let's try clustering our integrated data. We'll repeat the steps we performe
 >        - *"Name of reduction to use"*: `integrated.cca`
 >        - *"Number of dimensions from reduction to use as input"*: `30`
 >
->    > <comment-title> short description </comment-title>
+>    > <comment-title></comment-title>
 >    >
 >    > Make sure to use `integrate.cca` as the reduction, not the `pca` we made previously.
 >    {: .comment}
@@ -443,7 +591,7 @@ Now let's try clustering our integrated data. We'll repeat the steps we performe
 >        - *"Algorithm for modularity optimization"*: `1. Original Louvain`
 >        - *"Name for output clusters"*: `cca_clusters`
 >
->    > <comment-title> short description </comment-title>
+>    > <comment-title></comment-title>
 >    >
 >    > Make sure that you know what name you used for your clusters as we'll use this for the UMAP!
 >    {: .comment}
@@ -458,7 +606,7 @@ Now let's try clustering our integrated data. We'll repeat the steps we performe
 >        - In *"Advanced Options"*:
 >            - *"Name for dimensional reduction"*: `umap.cca`
 >
->    > <comment-title> short description </comment-title>
+>    > <comment-title></comment-title>
 >    >
 >    > Make sure that you know what name you used for your UMAP results as we'll use this for the plots!
 >    {: .comment}
@@ -506,7 +654,6 @@ Let's see how the batch correction has changed our results. As before, we'll mak
 Before vs after batch correction
 Side by side pictures...
 Discuss what batch correction has done to the data
-
 
 
 > <comment-title></comment-title>
