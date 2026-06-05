@@ -118,11 +118,11 @@
             "inputs": [
                 {
                     "description": "An AnnData of human PBMCs profiled with seven different single cell technologies.",
-                    "name": "Input_AnnData.h5ad"
+                    "name": "Input_AnnData"
                 }
             ],
-            "label": "Input_AnnData.h5ad",
-            "name": "Input dataset",
+            "label": "Input_AnnData",
+            "name": "Input_Anndata",
             "outputs": [],
             "position": {
                 "left": 0.0,
@@ -174,7 +174,9 @@
             "type": "tool",
             "uuid": "e39ac12b-0a7c-4e26-8d93-f84f01a7a8d7",
             "when": null,
-            "workflow_outputs": []
+            "workflow_outputs": [
+                {"output_name": "general", "label": "Inspect_Input_Anndata"}
+            ]
         },
         "2": {
             "annotation": "",
@@ -848,7 +850,9 @@
             "type": "tool",
             "uuid": "9af2a7b9-010b-40b3-a87f-03d612d76d47",
             "when": null,
-            "workflow_outputs": []
+            "workflow_outputs": [
+                {"output_name": "out_png", "label": "UMAP_before_Integrate"}
+            ]
         },
         "19": {
             "annotation": "",
@@ -928,7 +932,9 @@
             "type": "tool",
             "uuid": "71bf36bb-aa69-44f5-8308-84ec5b52a1e5",
             "when": null,
-            "workflow_outputs": []
+            "workflow_outputs": [
+                {"output_name": "out_png", "label": "UMAP_after_Integrate"}
+            ]
         }
     },
     "tags": [
