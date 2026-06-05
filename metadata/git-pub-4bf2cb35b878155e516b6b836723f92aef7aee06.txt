@@ -1,3 +1,7 @@
+GTN_GTN:1779798291
+
+R099	metadata/git-mod-9871bac6aaad37acfda9d955386dcf809020f2dc.txt	metadata/git-mod-b6f27a54f7f22f7bcb2119c03ca8077bd8f3812c.txt
+R099	metadata/git-pub-9871bac6aaad37acfda9d955386dcf809020f2dc.txt	metadata/git-pub-b6f27a54f7f22f7bcb2119c03ca8077bd8f3812c.txt
 GTN_GTN:1779267257
 
 A	shared/images/logos/logo-dataterra.png
