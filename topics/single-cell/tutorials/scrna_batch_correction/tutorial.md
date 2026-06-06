@@ -324,7 +324,7 @@ Now let's take a look at our results. We'll plot one version of the UMAP showing
 >
 {: .hands_on}
 
-![Two UMAP plots showing many small and fragmented clusters of cells. The first UMAP is coloured into 47 clusters. The second UMAP shows many clusters as a single colour of cells analysed with the same method.](../../images/scrna_batch_correction/UMAP_Before_Scanpy.png "UMAPs before batch correction integration coloured by A. louvain (cluster) and B. Method")
+![Two UMAP plots showing many small and fragmented clusters of cells. The first UMAP is coloured into 47 clusters. The second UMAP shows many clusters as a single colour of cells analysed with the same method.](../../images/scrna_batch_correction/UMAP_before_Scanpy.png "UMAPs before batch correction integration coloured by A. louvain (cluster) and B. Method")
 
 > <question-title></question-title>
 >
@@ -588,7 +588,7 @@ Now let's visualise the results again to see if the batch correction has worked.
 >
 {: .hands_on}
 
-![Two UMAP plots showing three large groups of cells, each made up of multiple clusters. The first UMAP is coloured as 25 clusters. The second UMAP shows a mix of colours across all the clusters.](../../images/scrna_batch_correction/UMAP_After_Scanpy.png "UMAP after batch correction coloured by A. louvain_integrated (cluster) and B. Method")
+![Two UMAP plots showing three large groups of cells, each made up of multiple clusters. The first UMAP is coloured as 25 clusters. The second UMAP shows a mix of colours across all the clusters.](../../images/scrna_batch_correction/UMAP_after_Scanpy.png "UMAP after batch correction coloured by A. louvain_integrated (cluster) and B. Method")
 
 > <question-title></question-title>
 >
