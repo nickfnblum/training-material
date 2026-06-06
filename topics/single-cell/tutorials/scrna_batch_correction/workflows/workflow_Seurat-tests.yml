@@ -6,8 +6,8 @@
       location: https://zenodo.org/records/14734574/files/Input_SeuratObject.rds
       filetype: rds
   outputs:
-    Inspect_before_Split: https://zenodo.org/records/14734574/files/Inspect_before_Split.txt
-      location: 
+    Inspect_before_Split:
+      location: https://zenodo.org/records/14734574/files/Inspect_before_Split.txt
       compare: diff
     Inspect_after_Split:
       location: https://zenodo.org/records/14734574/files/Inspect_after_Split.txt
