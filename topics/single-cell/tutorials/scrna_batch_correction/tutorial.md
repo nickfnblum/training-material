@@ -4,9 +4,8 @@ layout: tutorial_hands_on
 title: "Batch Correction and Integration with Seurat or Scanpy"
 subtopic: tricks
 priority: 4
-zenodo_link: https://zenodo.org/records/14734574
 answer_histories:
-  - label: "Using Seurat"
+  - label: Using Seurat
     history: https://singlecell.usegalaxy.eu/u/marisa_jl/h/batch-correction--integration-with-seurat---answer-key
     date: 2025-01-21
 questions:
@@ -29,7 +28,7 @@ requirements:
         - scrna-scanpy-pbmc3k
         - scrna-seurat-pbmc3k
 tags:
-- singlecell
+- single cell
 contributions:
   authorship:
     - MarisaJL
@@ -43,7 +42,7 @@ contributions:
 
 # Introduction
 
-Single cell analyses can be complex. We might have data from different experimental batches, perhaps because we ran our experiments at different times, in different labs, or using different sequencing platforms. Sometimes we might want to combine multiple datasets, for example if we want to compare our own experimental data to a similar public dataset. 
+Single cell analyses can be complex. We may have data from different experimental batches, perhaps because we ran our experiments at different times, in different labs, or using different sequencing platforms. Sometimes we might want to combine multiple datasets, for example if we want to compare our own experimental data to a similar public dataset.
 
 If we simply run these different batches or combined datasets through a clustering pipeline such as Scanpy or Seurat, we might not get useful results. Clustering prioritises the genes that show the biggest differences in expression and uses these to identify groups of cells that share similar expression patterns. When we have different experimental batches or have combined multiple studies, these big differences might relate more to the differences between batches or datasets than to the biological differences we're interested in, such as cell type. Our clusters could therefore end up representing different batches or datasets, rather than anything more useful.
 
@@ -51,7 +50,7 @@ In order to look beyond these technical differences, we can perform batch correc
 
 > <comment-title></comment-title>
 >
-> This tutorial is based on the [Introduction to scRNE-seq integration](https://satijalab.org/seurat/articles/integration_introduction) and [Integrative analysis in Seurat v5](https://satijalab.org/seurat/articles/seurat5_integration) tutorials.
+> This tutorial is based on the [Introduction to scRNA-seq integration](https://satijalab.org/seurat/articles/integration_introduction) and [Integrative analysis in Seurat v5](https://satijalab.org/seurat/articles/seurat5_integration) tutorials.
 >
 {: .comment}
 
@@ -73,6 +72,16 @@ In order to look beyond these technical differences, we can perform batch correc
 
 {% snippet faqs/galaxy/analysis_troubleshooting.md sc=true %}
 
+# Batch Correction or Integration?
+
+We will often need to perform batch correction or integration during single cell analyses. If we are working with different experimental batches, donors, conditions, or datasets, then we need to look beyond the technical differences between them. Batch correction or integration may be required to enable us to do this. These techniques work by matching cells of similar types of states across batches or datasets. Effectively, we are looking for cell subpopulations that are shared across the groups.
+
+The terms batch correction and integration are closely related and you may see them being used somewhat interchangably, because they both refer to the same process of looking for shared cell subpopulations across groups. The same tools are used in the same way for both procedures, so you could use the workflow described in this tutorial to perform integration as well as batch correction.
+
+The only difference is that we tend to talk about batch correction when we are working with groups produced in a single study (e.g. different experimental batches), while we would say integration when we're combining separate datasets from multiple studies. Batch correction is performed to remove unwanted technical variation, while integration aims to align cell populations across studies.
+
+In this tutorial, you can choose whether you want to use the Scanpy or Seurat pipelines for clustering and batch correction. Scanpy and Seurat's integration tools will create a dimensional reduction that captures the shared sources of variation across the batches or datasets. The dimensional reduction can be used to find clusters or produce visualisations such as UMAP.
+
 # Scanpy or Seurat?
 
 Scanpy and Seurat are two of the most commonly used pipelines (sets of tools) for analysing single cell data. Both pipelines have all the tools required to perform clustering, which identifies groups of cells that share similar expression profiles. Clustering is often a key goal in single cell analysis because it makes our data easier to interpret. Clusters represent groups of cells that are expressing the same genes, which often correspond to specific cell types or states. Our goal is to identify biologically relevant clusters that will help us to better understand our data.
@@ -80,16 +89,6 @@ Scanpy and Seurat are two of the most commonly used pipelines (sets of tools) fo
 The Scanpy and Seurat pipelines include tools for preprocessing single cell data, performing dimensional reductions such as PCA, constructing a neighbourhood graph and finding clusters in it. Although both pipelines perform the same basic steps, there are some differences in how these steps are performed that mean you can end up with slightly different results depending on which pipeline you choose. However, your results should be broadly the same, no matter which pipeline you use.
 
 The main difference between these two pipelines is that Scanpy is written for Python while Seurat is written for R. If we were working in a Python or R environment, then we would need to choose the appropriate pipeline. However, since we're working on Galaxy, we're free to choose either set of tools.
-
-# Batch Correction or Integration?
-
-We will often need to perform batch correction or integration during single cell analyses. If we are working with different experimental batches, donors, conditions, or datasets, then we need to look beyond the technical differences between them. Batch correction or integration can do this by matching cells of similar types of states across batches or datasets. Effectively, we are looking for cell subpopulations that are shared across the groups.
-
-Scanpy and Seurat's integration tools will create a dimensional reduction that captures the shared sources of variation across the batches or datasets. The dimensional reduction can be used to find clusters or produce visualisations such as UMAP.
-
-The terms batch correction and integration can be used somewhat interchangably, because they both refer to the same process of looking for shared cell subpopulations across groups. The same tools are used in the same way for both procedures, so you could use the workflow described in this tutorial to perform integration as well as batch correction.
-
-The only difference is that we tend to talk about batch correction when we are working with groups produced in a single study (e.g. different experimental batches), while we would say integration when we're combining separate datasets from multiple studies.
 
 ## Get data
 
@@ -108,8 +107,6 @@ The only difference is that we tend to talk about batch correction when we are w
 >    ```
 >
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
->
->    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
 >
 > 3. Check that the datatype is `h5ad`
 >
@@ -133,8 +130,6 @@ The only difference is that we tend to talk about batch correction when we are w
 >
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
 >
->    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
->
 > 3. Check that the datatype is `rds`
 >
 >    {% snippet faqs/galaxy/datasets_change_datatype.md datatype="datatypes" %}
@@ -147,11 +142,13 @@ You should now have either an AnnData or SeuratObject dataset in your history. B
 
 We are using a single cell dataset of human Peripheral Blood Mononuclear Cells (PBMCs) that was also used in Seurat's [Integrative analysis in Seurat v5](https://satijalab.org/seurat/articles/seurat5_integration) tutorial. The original study compared the results from seven different single cell and single nuclear techniques {% cite Ding2020 %}.
 
-Let's take a look at our data before we begin the analysis to see whether we might need to perform batch correction or integration.
+Let's take a look at our data before we begin the analysis to see whether we might need to perform batch correction or integration. While batches or combined datasets often do require correction, we should examine the data first to check whether it is necessary.
+
+Correcting batch effects is important, but we also have to be careful about overcorrecting or overintegrating our data. If we apply batch correction or integration tools when they aren't needed, we could end up removing the real biological differences we're interested in. Even when some correction is needed, we should be careful to avoid overcorrecting and losing these biological differences. We'll need to interpret our results carefully to see if they're driven by technical or biological variation.
 
 <div class='Scanpy' markdown='1'>
 
-> <hands-on-title> Task description </hands-on-title>
+> <hands-on-title> Inspect the Data </hands-on-title>
 >
 > 1. {% tool [Inspect AnnData](toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.11.4+galaxy3) %} with the following parameters:
 >    - {% icon param-file %} *"Annotated data matrix"*: `output` (Input dataset)
@@ -159,7 +156,22 @@ Let's take a look at our data before we begin the analysis to see whether we mig
 >
 {: .hands_on}
 
+> <question-title></question-title>
+>
+> 1. How many cells and genes are in this dataset?
+>
+> > <solution-title></solution-title>
+> >
+> > 1. If we click on the {% icon galaxy-eye %} of the new output in our history, we can see that this dataset contains information about the expression of 33,694 vars (genes) in 10,434 obs (cells).
+> >
+> {: .solution}
+>
+{: .question}
 
+Now we'll take a closer look at the metadata describing how the dataset was produced. It can tell us whether the dataset is made up of different batches that might require correction.
+
+> <hands-on-title> Inspect the Cell Metadata </hands-on-title>
+>
 > 1. {% tool [Inspect AnnData](toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.11.4+galaxy3) %} with the following parameters:
 >    - {% icon param-file %} *"Annotated data matrix"*: `output` (Input dataset)
 >    - *"What to inspect?"*: `Key-indexed observations annotation (obs)`
@@ -172,7 +184,7 @@ Let's take a look at our data before we begin the analysis to see whether we mig
 
 <div class='Seurat' markdown='1'>
 
-> <hands-on-title> Task description </hands-on-title>
+> <hands-on-title> Inspect the Data </hands-on-title>
 >
 > 1. {% tool [Seurat Data Management](toolshed.g2.bx.psu.edu/repos/iuc/seurat_data/seurat_data/5.0+galaxy0) %} with the following parameters:
 >    - *"Method used"*: `Inspect Seurat Object`
@@ -194,7 +206,9 @@ Let's take a look at our data before we begin the analysis to see whether we mig
 >
 {: .question}
 
-> <hands-on-title> Task description </hands-on-title>
+Now we'll take a closer look at the metadata describing how the dataset was produced. It can tell us whether the dataset is made up of different batches that might require correction.
+
+> <hands-on-title> Inspect the Cell Metadata </hands-on-title>
 >
 > 1. {% tool [Seurat Data Management](toolshed.g2.bx.psu.edu/repos/iuc/seurat_data/seurat_data/5.0+galaxy0) %} with the following parameters:
 >    - *"Method used"*: `Inspect Seurat Object`
@@ -212,8 +226,8 @@ Let's take a look at our data before we begin the analysis to see whether we mig
 >
 > > <solution-title></solution-title>
 > >
-> > 1. The dataset that we're using comes from a study that compared different single cell techniques. The `Method` column tells us which technique was used on each cell.
-> > 2. Each experimental technique can be considered as its own experimental batch. Each of these batches was processed independently, which by itself can be enough to require batch correction, even if the same experimental protocol is used. Batches can vary simply because they were processed at different times or by different people in the same lab! In this case, we have an even stronger reason to believe that these batches will differ - we know that each batch was produced using a different technique. It seems likely that we'll need to perform batch correction. We would consider this to be batch correction rather than integration because these data all came from the same original study.
+> > 1. The dataset that we're using comes from a study that compared different single cell techniques. The `Method` column tells us which technique was used on each cell. Use the {% icon galaxy-eye %} to look at both outputs. The first one shows the metadata for all cells, with `Method` in column 11. The seocnd output shows how many times each method appeared in this column. We can see there are nine different methods or experimental batches (as well as the `Method` heading which the tool has counted too!).
+> > 2. Each experimental technique can be considered as its own experimental batch. Each of these batches was processed independently, which by itself can be enough to require batch correction, even if the same experimental protocol is used. Batches can vary simply because they were processed at different times or by different people in the same lab! In this case, we have an even stronger reason to believe that these batches will differ - we know that each batch was produced using a different technique. It seems likely that we'll need to perform batch correction, but we'll check what happen when we cluster without correction first. Batches often require correction, but we should always examine the data first to be sure. If we decide that correction is needed, we would consider this to be batch correction rather than integration because these data all came from the same original study.
 > >
 > {: .solution}
 >
@@ -221,7 +235,7 @@ Let's take a look at our data before we begin the analysis to see whether we mig
 
 > <comment-title></comment-title>
 >
-> The cell metadata is any information about the cells that the original authors have included in the SeuratObject. As well as the cell barcode or identifier for each individual cell, the metadata will usually include information such as which donor or sample the cell came from, or which experimental group it was in. Sometimes, this metadata will include lots of useful details, such as demographic information about human donors. Such information can help us to better understand our results. 
+> The cell metadata is any information about the cells that the original authors have included with the dataset. As well as the cell barcode or identifier for each individual cell, the metadata will usually include information such as which donor or sample the cell came from, or which experimental group it was in. Sometimes, this metadata will include lots of useful details, such as demographic information about human donors. Such information can help us to better understand our results. 
 {: .comment}
 
 # Clustering without Batch Correction
@@ -232,24 +246,30 @@ Since our focus is batch correction/integration, we won't go into too much detai
 
 <div class='Scanpy' markdown='1'>
 
-> <hands-on-title> Task description </hands-on-title>
+We'll follow the default Scanpy pipeline here, except that we'll use `30` PCs to build the neighborhood graph and cluster with a resolution of `2` as these were the parameters used in [the original Seurat version of this tutorial](https://satijalab.org/seurat/articles/seurat5_integration).
+
+> <hands-on-title> Cluster without Batch Correction </hands-on-title>
 >
 > 1. {% tool [Scanpy normalize](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_normalize/scanpy_normalize/1.11.5+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Annotated data matrix"*: `output` (Input dataset)
 >    - *"Method used for normalization"*: `Normalize counts per cell, using 'pp.normalize_total'`
 >        - *"Exclude (very) highly expressed genes for the computation of the normalization factor (size factor) for each cell"*: `No`
 >
->
+>    > <comment-title></comment-title>
+>    >
+>    > We will use the output from `Scanpy normalize` in the  following section when we perform batch correction.
+>    >
+>    > If you're already familiar with the Scanpy clustering pipeline and you just want to try using the  {% icon tool %} **Scanpy remove confounders** tools, then you can skip ahead to the **Clustering after Integration** step now.
+>    {: .comment}
+> 
 > 2. {% tool [Scanpy Inspect and manipulate](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.11.5+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy normalize** {% icon tool %})
 >    - *"Method used for inspecting"*: `Logarithmize the data matrix, using 'pp.log1p'`
->
 >
 > 3. {% tool [Scanpy filter](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_filter/scanpy_filter/1.11.5+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy Inspect and manipulate** {% icon tool %})
 >    - *"Method used for filtering"*: `Annotate (and filter) highly variable genes, using 'pp.highly_variable_genes'`
 >        - *"Choose the flavor for identifying highly variable genes"*: `Seurat`
->
 >
 > 4. {% tool [Scanpy Inspect and manipulate](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.11.5+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy filter** {% icon tool %})
@@ -284,19 +304,46 @@ Since our focus is batch correction/integration, we won't go into too much detai
 >
 {: .hands_on}
 
+Now let's take a look at our results. We'll plot one version of the UMAP showing the clusters we've just identified and another coloured by `Method` to see if that might be influencing our results.
+
+> <hands-on-title> Visualise the Results </hands-on-title>
+> 9. {% tool [Scanpy plot](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy cluster, embed** {% icon tool %})
+>    - *"Method used for plotting"*: `Embeddings: Scatter plot in UMAP basis, using 'pl.umap'`
+>        - *"Keys for annotations of observations/cells or variables/genes"*: `louvain,Method`
+>        - *"Show edges?"*: `No`
+>
+{: .hands_on}
+
+![Two UMAP plots showing many small and fragmented clusters of cells. The first UMAP is coloured into 47 clusters. The second UMAP shows many clusters as a single colour of cells analysed with the same method.](../../images/scrna_batch_correction/UMAP_Before_Scanpy.png "UMAPs before batch correction integration coloured by louvain (cluster) and Method")
+
+> <question-title></question-title>
+>
+> 1. How many clusters did we identify?
+> 2. Are the batches well mixed?
+>
+> > <solution-title></solution-title>
+> >
+> > 1. The first plot is coloured by cluster. We can see there are 47 clusters (Scanpy numbers the clusters starting from 0). That's a lot - this is partly because we used a relatively high clustering resolution, but these fragmented clusters could also be a sign that something has gone wrong with our analysis.
+> > 2. The second plot shows the UMAP coloured by `Method`. Each colour here represents cells that were sequenced by a different experimental technique. We can see lots of clusters and patches of cells that are only made up of one colour - this suggests that our cells are grouping together by batch rather than a biologically relevant characteristic such as cell type. This is a problem as it means we're not learning anything new about our cells since we already knew which batches they were in! If we want to find out something more interesting, we'll need to get rid of the technical differences between the batches.
+> >
+> {: .solution}
+>
+{: .question}
+
 </div>
 
 <div class='Seurat' markdown='1'>
 
 In the Seurat pipeline, we can use the ability of the SeuratObject to store multiple layers to split our data up before we begin the analysis. We might do this when we have different batches or if we've combined datasets. 
 
-Splitting our data into layers means that the Seurat preprocessing tools can work on each layer separately. Each layer (in this case, each of our batches) will be normalised independently. We'll also identify the highly variable genes within each batch, rather than across the whole dataset. Seurat will then create a single consensus list of highly variable genes to use for the whole dataset.
+Splitting our data into layers means that the Seurat preprocessing tools can work on each layer separately. Seurat can treat each layer as if it were a separate dataset during preprocessing. Each layer (in this case, each of our batches) will be normalised independently. We'll also identify the highly variable genes within each batch, rather than across the whole dataset. Seurat will then create a single consensus list of highly variable genes to use for the whole dataset.
 
 The other tools in the Seurat pipeline, such as `RunPCA` and `FindClusters` will still work on the entire dataset.
 
 Splitting the batches into separate layers could help to address some of the technical differences between them because of the separate preprocessing, but we'll have to wait for the results to see if this has been enough to eliminate these differences.
 
-> <hands-on-title> Task description </hands-on-title>
+> <hands-on-title> Split the Batches into Layers </hands-on-title>
 >
 > 1. {% tool [Seurat Integrate](toolshed.g2.bx.psu.edu/repos/iuc/seurat_integrate/seurat_integrate/5.0+galaxy0) %} with the following parameters:
 >    - *"Method used"*: `Split data into layers using 'split'`
@@ -311,7 +358,7 @@ Splitting the batches into separate layers could help to address some of the tec
 
 Let's take a look to see what we've done to our data.
 
-> <hands-on-title> Task description </hands-on-title>
+> <hands-on-title> Inspect the Data </hands-on-title>
 >
 > 2. {% tool [Seurat Data Management](toolshed.g2.bx.psu.edu/repos/iuc/seurat_data/seurat_data/5.0+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Input file with the Seurat object"*: `rds_out` (output of **Seurat Integrate** {% icon tool %})
@@ -348,7 +395,7 @@ We'll follow the default Seurat pipeline here, except that we'll use `30` PCs to
 > The rest of the workflow will be the same as shown in this tutorial, but you will end up with different results because `SCTransform` handles preprocessing in a slightly different way than the three separate tools. If you want to learn more about these differences then you can choose the SCTransform route in the [Clustering 3k PBMCs with Seurat]({% link topics/single-cell/tutorials/scrna-seurat-pbmc3k/tutorial.html %}) tutorial.
 {: .comment}
 
-> <hands-on-title> Task description </hands-on-title>
+> <hands-on-title> Cluster without Batch Correction </hands-on-title>
 >
 > 1. {% tool [Seurat Preprocessing](toolshed.g2.bx.psu.edu/repos/iuc/seurat_preprocessing/seurat_preprocessing/5.0+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Input file with the Seurat object"*: `rds_out` (output of **Seurat Integrate** {% icon tool %})
@@ -413,7 +460,7 @@ We'll follow the default Seurat pipeline here, except that we'll use `30` PCs to
 
 Now let's take a look at our results. We'll first plot a UMAP showing the clusters we've just identified. Then, we will colour this plot in by `Method` to see if that might be influencing our results.
 
-> <hands-on-title> Task description </hands-on-title>
+> <hands-on-title> Visualise the Results </hands-on-title>
 >
 > 1. {% tool [Seurat Visualize](toolshed.g2.bx.psu.edu/repos/iuc/seurat_plot/seurat_plot/5.0+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Input file with the Seurat object"*: `rds_out` (output of **Seurat Run Dimensional Reduction** {% icon tool %})
@@ -453,6 +500,14 @@ It looks like we do need to perform batch correction on our dataset. The Scanpy 
 
 <div class='Scanpy' markdown='1'>
 
+Two simple changes will enable us to perform batch corrections within the Scanpy pipeline. 
+
+First, we will go back to the step where we identified Highly Variable Genes (HVGs). This time, we will add in `Method` as the batch key. Now, the tool will select the most variable genes within each batch before merging them into a shared list. Doing this can prevent selection of batch-specific genes and acts as a lightweight form of batch correction.
+
+Secondly, we will add in one more step using a tool called Harmony. We will use Harmony in between performing the PCA and constructing the neighborhood graph. Harmony will take the principal components and adjust them to remove batch effects. It will create a corrected low-dimensional representation that we can use instead of the uncorrected PCA reduction. We will use then `X_pca_harmony` instead of the PCA when we construct the neighbourhood graph.
+
+> <hands-on-title> Recluster with Batch Correction </hands-on-title>
+>
 > 1. {% tool [Scanpy filter](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_filter/scanpy_filter/1.11.5+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy Inspect and manipulate** {% icon tool %})
 >    - *"Method used for filtering"*: `Annotate (and filter) highly variable genes, using 'pp.highly_variable_genes'`
@@ -461,7 +516,7 @@ It looks like we do need to perform batch correction on our dataset. The Scanpy 
 >
 >    > <comment-title> short description </comment-title>
 >    >
->    > We will specify 'Method' as the batch key. This means that Highly Variable Genes will be identified within each batch and then combined.
+>    > We will specify `Method` as the batch key. This means that Highly Variable Genes will be identified within each batch and then combined.
 >    {: .comment}
 >
 > 2. {% tool [Scanpy Inspect and manipulate](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.11.5+galaxy0) %} with the following parameters:
@@ -487,7 +542,7 @@ It looks like we do need to perform batch correction on our dataset. The Scanpy 
 >
 >    > <comment-title></comment-title>
 >    >
->    > We will use the corrected dimentional reduction, 'X_pca_harmony' to calculate the neighborhood graph. Make sure to enter this as the representation to use.
+>    > We will use the corrected embedding, 'X_pca_harmony' to calculate the neighborhood graph. Make sure to enter this as the representation to use.
 >    {: .comment}
 >
 > 6. {% tool [Scanpy cluster, embed](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_cluster_reduce_dimension/scanpy_cluster_reduce_dimension/1.11.5+galaxy0) %} with the following parameters:
@@ -506,7 +561,12 @@ It looks like we do need to perform batch correction on our dataset. The Scanpy 
 >    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy cluster, embed** {% icon tool %})
 >    - *"Method used"*: `Embed the neighborhood graph using UMAP, using 'tl.umap'`
 >
-> 8. {% tool [Scanpy plot](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.11.5+galaxy0) %} with the following parameters:
+{: .hands_on}
+
+Now let's visualise the results again to see if the batch correction has worked. As before, we'll make one plot coloured by cluster ans another coloured by batch (`Method`). We're hoping that the batches in that second plot will be more mixed together instead of forming separate groups like they did before batch correction.
+
+> <hands-on-title> Recluster with Batch Correction </hands-on-title>
+> 1. {% tool [Scanpy plot](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.11.5+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy cluster, embed** {% icon tool %})
 >    - *"Method used for plotting"*: `Embeddings: Scatter plot in UMAP basis, using 'pl.umap'`
 >        - *"Keys for annotations of observations/cells or variables/genes"*: `louvain_integrated,Method`
@@ -518,6 +578,22 @@ It looks like we do need to perform batch correction on our dataset. The Scanpy 
 >    {: .comment}
 >
 {: .hands_on}
+
+![Two UMAP plots showing three large groups of cells, each made up of multiple clusters. The first UMAP is coloured as 25 clusters. The second UMAP shows a mix of colours across all the clusters.](../../images/scrna_batch_correction/UMAP_After_Scanpy.png "UMAP after batch correction coloured by cluster and Method")
+
+> <question-title></question-title>
+>
+> 1. How many clusters did we identify?
+> 2. How well mixed are the batches?
+>
+> > <solution-title></solution-title>
+> >
+> > 1. The first plot shows 25 clusters (remember that Scanpy starts from cluster 0!). Although the high resolution means we still have plenty of clusters, the batch correction has reduced the number. The clusters also look less fragmented than they did before. The reduced number of clusters doesn't necessarily mean the analysis is better, but removing the batch-specific structure has allowed biologically similar cells from different batches to cluster together.
+> > 2. When we colour in the plot by `Method`, we can see that all the colours are mixed together across all of the clusters. We don't have any clusters that contain only one colour. The batch correction has successfully removed the differences between the batches so that they're no longer dominating the results.
+> >
+> {: .solution}
+>
+{: .question}
 
 </div>
 
@@ -561,7 +637,7 @@ It's good practice to rejoin our layers now, so that those separate layers/batch
 >
 > > <solution-title></solution-title>
 > >
-> > 1. You might think that we should only have one layer in our dataset now, because we split it into nine layers that we have now rejoined. However, if you use {% tool Seurat Data Management %} to check, you'll see that we actually have three layers now! This is because the procesessing functions we ran (normalisation and scaling) created their own layers of data. We still have the original raw `counts` layer, but we now have a normalised layer called `data` and a scaled one called `scale.data` as well.
+> > 1. You might think that we should only have one layer in our dataset now, because we split it into nine layers that we have now rejoined. However, if you use {% tool Seurat Data Management %} to check, you'll see that we actually have three layers now! This is because the preprocessing functions we ran (normalisation and scaling) created their own layers of data. We still have the original raw `counts` layer, but we now have a normalised layer called `data` and a scaled one called `scale.data` as well.
 > >
 > >    In fact, if you run {% tool Seurat Data Management %} on the previous dataset in your history, from before we rejoined the layers, you'll see that it actually had 19 layers in it - each of the nine `counts` layers we split the dataset was normalised into its own `data` layer. We then had the `scale.data` layer too.
 > >
@@ -569,7 +645,7 @@ It's good practice to rejoin our layers now, so that those separate layers/batch
 >
 {: .question}
 
-Now let's try clustering our integrated data. We'll repeat the steps we performed earlier, but this time we'll be using the dimensional reduction produced by `Integrate Layers` instead of the PCA. Let's also give our clusters and UMAP results some new names to differentiate them from the uncorrected results.
+Now let's try clustering our integrated data. We'll repeat the steps we performed earlier, but this time we'll be using the dimensional reduction produced by `Integrate Layers` instead of the PCA. The clustering will be based on the integrated embedding rather than the original PCA embedding. Let's also give our clusters and UMAP results some new names to differentiate them from the uncorrected results.
 
 > <hands-on-title> Task description </hands-on-title>
 >
@@ -581,10 +657,10 @@ Now let's try clustering our integrated data. We'll repeat the steps we performe
 >
 >    > <comment-title></comment-title>
 >    >
->    > Make sure to use `integrate.cca` as the reduction, not the `pca` we made previously.
+>    > Make sure to use `integrated.cca` as the reduction, not the `pca` we made previously.
 >    {: .comment}
 >
-> 1. {% tool [Seurat Find Clusters](toolshed.g2.bx.psu.edu/repos/iuc/seurat_clustering/seurat_clustering/5.0+galaxy0) %} with the following parameters:
+> 2. {% tool [Seurat Find Clusters](toolshed.g2.bx.psu.edu/repos/iuc/seurat_clustering/seurat_clustering/5.0+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Input file with the Seurat object"*: `rds_out` (output of **Seurat Find Clusters** {% icon tool %})
 >    - *"Method used"*: `Identify cell clusters with 'FindClusters'`
 >        - *"Resolution"*: `2.0`
@@ -596,7 +672,7 @@ Now let's try clustering our integrated data. We'll repeat the steps we performe
 >    > Make sure that you know what name you used for your clusters as we'll use this for the UMAP!
 >    {: .comment}
 >
-> 1. {% tool [Seurat Run Dimensional Reduction](toolshed.g2.bx.psu.edu/repos/iuc/seurat_reduce_dimension/seurat_reduce_dimension/5.0+galaxy0) %} with the following parameters:
+> 3. {% tool [Seurat Run Dimensional Reduction](toolshed.g2.bx.psu.edu/repos/iuc/seurat_reduce_dimension/seurat_reduce_dimension/5.0+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Input file with the Seurat object"*: `rds_out` (output of **Seurat Find Clusters** {% icon tool %})
 >    - *"Method used"*: `Run a UMAP dimensional reduction using 'RunUMAP'`
 >        - *"Name of reduction to use"*: `integrated.cca`
@@ -640,7 +716,7 @@ Let's see how the batch correction has changed our results. As before, we'll mak
 >
 > > <solution-title></solution-title>
 > >
-> > 1. The first plot shows 25 clusters (remember that Seurat starts from cluster 0!). Although the high resolution means we still have plenty of clusters, the batch correction has reduced the number. The clusters also look less fragmented than they did before.
+> > 1. The first plot shows 25 clusters (remember that Seurat starts from cluster 0!). Although the high resolution means we still have plenty of clusters, the batch correction has reduced the number. The clusters also look less fragmented than they did before. The reduced number of clusters doesn't necessarily mean the analysis is better, but removing the batch-specific structure has allowed biologically similar cells from different batches to cluster together.
 > > 2. When we colour in the plot by `Method`, we can see that all the colours are mixed together across all of the clusters. We don't have any clusters that contain only one colour. The batch correction has successfully removed the differences between the batches so that they're no longer dominating the results.
 > >
 > {: .solution}
