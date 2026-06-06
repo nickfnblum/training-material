@@ -12,10 +12,14 @@ items:
   items:
   - name: Batch Correction and Integration with Seurat or Scanpy
     items:
-    - name: 'DOI: 10.5281/zenodo.7311628'
+    - name: 'DOI: 10.5281/zenodo.20574474'
       description: latest
       items:
-      - url: https://zenodo.org/records/14734574/files/Input_SeuratObject.rds
+      - url: https://zenodo.org/records/20574474/files/Input_SeuratObject%20.rds
         src: url
         ext: rds
-        info: https://doi.org/10.5281/zenodo.14734574
+        info: https://zenodo.org/records/20574474
+      - url: https://zenodo.org/records/20574474/files/Input_Anndata.h5ad
+        src: url
+        ext: h5ad
+        info: https://zenodo.org/records/20574474
