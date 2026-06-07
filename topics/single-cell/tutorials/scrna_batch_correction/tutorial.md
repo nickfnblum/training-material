@@ -736,23 +736,41 @@ Let's see how the batch correction has changed our results. As before, we'll mak
 
 # Comparing the Results
 
-Before vs after batch correction
-Side by side pictures
-Discuss what batch correction has done to the data
+Let's take another look at our UMAPs coloured by `Method` to see what the batch correction process has done to our data. In the 'before' picture, we can see that the different batches are forming their own clusters or patches in the UMAP plot, with very little mixing between colours. The differences between batches or methods are having a big impact on the clustering, which means that the biological differences we're interested in are being missed. In the 'after' picture, we can see that the colours are all mixed up and the clusters are no longer separating out based on method. We have removed the technical differences between batches, so hopefully these clusters are now based on the biological differences we're interested in.
 
+<div class='Scanpy' markdown='1'>
 
-> <comment-title></comment-title>
->
-> We've seen from our plots that the batch correction has mixed the different methods together, but this alone isn't enough to convince us that the batch correction has been successful. As always with single cell analysis, we also want to confirm that the clusters we've found are biologically meaningful. The Scanpy and Seurat pipelines will always present us with clusters, but it is up to us to make sure these results make sense!
->
-> In order to do this, we would usually take a closer look at the clusters to work out what they represent, for example by looking for clusters expressing genes that are known to be present in specific cell types. Luckily, we don't need to do this right now, because we have the annotations provided by the researchers who created this dataset. 
->
->If you look back at the cell metadata table we created at the beginning of this tutorial, you'll see there is an annotation called `CellType`. We can colour in our UMAPs using this annotation instead of the `Method`. If our clusters make biological cell sense, we should see that these cell types are clumped together because cells of the same type should be close to each other.
->
-> If the cell types are all blended together across the entire UMAP (as with our `Method` plot) then this would be a sign that something has gone wrong. When we are performing batch correction or integration, there is a risk that we could over-integrate the data, eliminating the biological differences we're interested in alongside the technical differences we wanted to remove.
->
-> The `CellType` annotation won't match up exactly with our clusters (remember we used a high resolution to make lots of clusters!) but they certainly shouldn't be scattered across the whole plot!
-{: .comment}
+![Two UMAP plots showing three large groups of cells, each made up of multiple clusters. Each UMAP is coloured in based on Method. The first shows patches and clusters that are all the same colour or method, with little mixing between colours. The second UMAP shows the colours are well mixed and all clusters include a mixture of multiple colours](../../images/scrna_batch_correction/Scanpy_before_after.png "UMAP coloured by Method A. before and B. after batch correction")
+
+</div>
+
+<div class='Seurat' markdown='1'>
+
+![Two UMAP plots showing three large groups of cells, each made up of multiple clusters. Each UMAP is coloured in based on Method. The first shows patches and clusters that are all the same colour or method, with little mixing between colours. The second UMAP shows the colours are well mixed and all clusters include a mixture of multiple colours](../../images/scrna_batch_correction/Seurat_before_after.png "UMAP coloured by Method A. before and B. after batch correction")
+
+</div>
+
+# Checking the Clusters are Biologically Meaningful
+
+We've seen from our plots that the batch correction has mixed the different methods together, but this alone isn't enough to convince us that the batch correction has been successful. As always with single cell analysis, we also want to confirm that the clusters we've found are biologically meaningful. The Scanpy and Seurat pipelines will always present us with clusters, but it is up to us to make sure these results make sense!
+
+In order to do this, we would usually take a closer look at the clusters to work out what they represent, for example by looking for clusters expressing genes that are known to be present in specific cell types. If you've worked through the [Scanpy]({% link topics/single-cell/tutorials/scrna-scanpy-pbmc3k/tutorial.md %}) or [Seurat]({% link topics/single-cell/tutorials/scrna-seurat-pbmc3k/tutorial.md %}) clustering tutorials then you'll already have seen how this can be done using the top differentially expressed genes, known markers of gene types, or even automated annotation. If you haven't already completed these tutorials then they can tell you more about identifying cell types.
+
+We don't need to go through this process again now, because we have the annotations provided by the researchers who created this dataset. If you look back at the cell metadata table we created at the beginning of this tutorial, you'll see there is an annotation called `CellType`. We can colour in our UMAPs using this annotation instead of the `Method`. If our clusters make biological cell sense, we should see that these cell types are clumped together because cells of the same type should be close to each other. If the cell types are all blended together across the entire UMAP (as with the methods in our integrated plots) then this would be a sign that something has gone wrong - we want the different methods to be mixed up together, but we'd like the biologically meaningful differences between cell types to be preserved. When we are performing batch correction or integration, there is a risk that we could over-integrate the data, eliminating the biological differences we're interested in alongside the technical differences we wanted to remove.
+
+You can rerun the UMAP plots yourself if you like, or just take a look at the plots below to see how the integration has grouped together the cells in a biologically meaningful way. The `CellType` annotation won't match up exactly with our clusters (remember we used a high resolution to make lots of clusters!) but they certainly shouldn't be scattered across the whole plot.
+
+<div class='Scanpy' markdown='1'>
+
+![Two UMAP plots showing three large groups of cells, each made up of multiple clusters. Each UMAP is coloured in based on cell types. The first shows patches of the same cell types appearing in different parts of the plot. The second UMAP shows each colour or cell type is centred in just one cluster or area of the plot](../../images/scrna_batch_correction/Scanpy_CellType.png "UMAP coloured by cell type A. before and B. after batch correction")
+
+</div>
+
+<div class='Seurat' markdown='1'>
+
+![Two UMAP plots showing three large groups of cells, each made up of multiple clusters. Each UMAP is coloured in based on cell types. The first shows patches of the same cell types appearing in different parts of the plot. The second UMAP shows each colour or cell type is centred in just one cluster or area of the plot](../../images/scrna_batch_correction/Seurat_CellType.png "UMAP coloured by cell type A. before and B. after batch correction")
+
+</div>
 
 # Conclusion
 
