@@ -125,4 +125,4 @@ After saving, your new entry appears in **My Repositories**.
 >
 > Once the progress bar turns green, the files will appear in the right-hand history panel as standard Galaxy datasets, ready to be routed into any analytical tool or workflow.
 >
-> {: .hands_on}
+{: .hands_on}
