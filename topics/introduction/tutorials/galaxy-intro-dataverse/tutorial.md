@@ -58,7 +58,7 @@ Galaxy has integrated Dataverse directly into its **File Sources (Remote Files)*
 
 Galaxy instances frequently maintain a list of pre-configured public repositories for major data platforms.
 
-> ### {% icon hands_on %} Hands-on: Browse Pre-configured Dataverses
+> <hands-on-title>Browse Pre-configured Dataverses</hands-on-title>
 >
 > 1. Click the **Upload Data** icon at the top of the Galaxy tool panel.
 > 2. Inside the upload dialog box, select the **Choose from repository** button at the bottom.
@@ -67,42 +67,41 @@ Galaxy instances frequently maintain a list of pre-configured public repositorie
 >
 > ![Pre-Configured Dataverse](https://galaxyproject.org/images/news/2026-01-15-dataverse/preconfigured_dataverse.png)
 >
-> {: .hands_on}
+{: .hands_on}
 
 
-![Pre-Configured Dataverse](https://galaxyproject.org/images/news/2026-01-15-dataverse/preconfigured_dataverse.png)
 
 Is the Dataverse instance you were hoping to use missing? Let us know!
 
-From here, you can select your instance and browse or search for existing files. Beware, the search is case-sensitive. 
+From here, you can select your instance and browse or search for existing files. **Note**: the search is case-sensitive. 
 If you have already found the file you want to work with, scroll down to "Importing Discovered Files into Your History".
 
 ### Method 2: Adding and Browsing a Custom Dataverse Repository
 
 If you need to connect to an institutional Dataverse instance not listed by default, or if you need to access your own private datasets, you must first link your account using an [API](https://en.wikipedia.org/wiki/API) token.
 
-> ### {% icon hands_on %} Hands-on: Generate an API Token in Dataverse
+> <hands-on-title>Generate an API Token in Dataverse</hands-on-title>
 >
 > 1. Log into the target Dataverse instance (e.g., [Harvard Dataverse](https://dataverse.harvard.edu/)).
-> 2. Click on your account name and select API Token.
-> 3. Click Create Token and Copy to Clipboard to copy the token string.
-> {: .hands_on}
+> 2. Click on your account name and select **API Token**.
+> 3. Click **Create Token** and **Copy to Clipboard** to copy the token string.
+{: .hands_on}
 
-> ### {% icon hands_on %} Hands-on: Link the Repository in Galaxy
+> <hands-on-title>Link the Repository in Galaxy</hands-on-title>
 >
 > 1. In Galaxy, navigate to the top menu and **click on your user name** and then **Preferences**.
 > 2. Select **Manage your Repositories** and click the **Create** button.
 > 3. Select **Dataverse**.
 > 4. Complete the configuration form:
 >  * **Name:** A descriptive title (e.g., *My Institutional Dataverse*).
->  * **Dataverse instance endpoint:** The full base URL of the repository (e.g., `[https://dataverse.harvard.edu](https://dataverse.harvard.edu)`).
+>  * **Dataverse instance endpoint:** The full base URL of the repository (e.g., `https://dataverse.harvard.edu`).
 >  * **API Token:** Paste the token generated in Step 1.
 >  * **Allow Galaxy to export data:** Set to **Yes** if you want the flexibility to push finalized Galaxy histories back to Dataverse later.
 > 5. Click **Create**.
 >
-> {: .hands_on}
+{: .hands_on}
 
-The remote repository configuration menu look like this:
+The remote repository configuration menu looks like this:
 
 ![Remote Repositories](https://galaxyproject.org/images/news/2026-01-15-dataverse/bsc_dv_1.png)
 
@@ -114,7 +113,7 @@ After saving, your new entry appears in **My Repositories**.
 
 ![My Repositories](https://galaxyproject.org/images/news/2026-01-15-dataverse/bsc_dv_3.png)
 
-> ### {% icon hands_on %} Hands-on: Importing Discovered Files into Your History
+> <hands-on-title>Importing Discovered Files into Your History</hands-on-title>
 >
 > Once the connection is established (via Method 1 or Method 2), navigating and uploading the files follows a standardized routine:
 >
