@@ -81,11 +81,12 @@ If you have already found the file you want to work with, scroll down to "Import
 
 If you need to connect to an institutional Dataverse instance not listed by default, or if you need to access your own private datasets, you must first link your account using an [API](https://en.wikipedia.org/wiki/API) token.
 
-#### Step 1: Generate an API Token in Dataverse
-
-1. Log into the target Dataverse instance (e.g., [Harvard Dataverse](https://dataverse.harvard.edu/)).
-2. Click on your account name and select **API Token**.
-3. Click **Create Token** and **Copy to Clipboard** to copy the token string.
+> ### {% icon hands_on %} Hands-on: Generate an API Token in Dataverse
+>
+> 1. Log into the target Dataverse instance (e.g., [Harvard Dataverse](https://dataverse.harvard.edu/)).
+> 2. Click on your account name and select API Token.
+> 3. Click Create Token and Copy to Clipboard to copy the token string.
+> {: .hands_on}
 
 #### Step 2: Link the Repository in Galaxy
 
