@@ -904,6 +904,11 @@ diegodepanis:
     github: false
     joined: 2026-01
 
+eamonnbell-dur:
+    gtn-halloffame: "no"
+    name: Eamonn Bell
+    joined: 2026-05
+
 emilylescak:
     gtn-halloffame: "no"
     name: Emily Lescak
@@ -1299,6 +1304,10 @@ paulklemm:
     name: Paul Klemm
     github: false
     joined: 2026-01
+
+perrinejegousse:
+    name: Perrine Jégousse
+    joined: 2026-05
 
 peterbickerton:
     gtn-halloffame: "no"
@@ -2666,6 +2675,13 @@ manabuishii:
     name: Manabu ISHII
     joined: 2017-09
 
+Maed0x:
+    name: Niklas Mayle
+    joined: 2026-05
+    email: niklas.mayle@email.uni-freiburg.de
+    matrix: 'maed0x:matrix.org'
+    orcid: 0009-0009-0059-1887
+
 mjostaszewski:
     name: Marek Ostaszewski
     joined: 2023-12
@@ -3501,8 +3517,15 @@ reid-wagner:
     email: wagnerr@umn.edu
     joined: 2024-11
 
-reytakop:
-    name: Reyhaneh Tavakoli
+reyhaneh-tavakoli:
+    name: Reyhaneh Tavakoli-Koopaei
+    email: rey.ta.kop.biochem@gmail.com
+    affiliations:
+      - uni-freiburg
+    orcid: 0000-0002-8964-3023
+    linkedin: reyhaneh-tavakoli-koopaei
+    matrix: 'reytakop:matrix.org'
+    
     joined: 2025-05
 
 rikeshi:
@@ -4392,3 +4415,18 @@ gdefazio:
         lat: 41.11029383404589
         lon: 16.881129820971942
 
+kevinrue:
+    name: Kevin Rue-Albrecht
+    matrix: 'kevinrue67:matrix.org'
+    joined: 2026-005
+    email: kevin.rue-albrecht@imm.ox.ac.uk
+    orcid: 0000-0003-3899-3872
+    bio: Bioinformatics PostDoc Researcher at University of Oxford
+    elixir_node: uk
+    contact_for_training: true
+    affiliations:
+        - elixir-europe
+    location:
+        country: UK
+        lat: 51.764301
+        lon: -1.2178922
