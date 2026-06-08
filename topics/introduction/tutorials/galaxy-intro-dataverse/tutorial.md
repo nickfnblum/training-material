@@ -100,7 +100,11 @@ If you need to connect to an institutional Dataverse instance not listed by defa
   * **Allow Galaxy to export data:** Set to **Yes** if you want the flexibility to push finalized Galaxy histories back to Dataverse later.
 5. Click **Create**.
 
+The remote repository configuration menu look like this:
+
 ![Remote Repositories](https://galaxyproject.org/images/news/2026-01-15-dataverse/bsc_dv_1.png)
+
+Your completed form could look like this (but with information of the desired Dataverse):
 
 ![Remote Repositories filled form](https://galaxyproject.org/images/news/2026-01-15-dataverse/bsc_dv_2.png)
 
