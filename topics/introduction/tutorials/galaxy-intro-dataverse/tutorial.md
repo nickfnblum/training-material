@@ -58,10 +58,17 @@ Galaxy has integrated Dataverse directly into its **File Sources (Remote Files)*
 
 Galaxy instances frequently maintain a list of pre-configured public repositories for major data platforms.
 
-1. Click the **Upload Data** icon at the top of the Galaxy tool panel.
-2. Inside the upload dialog box, select the **Choose from repository** button at the bottom.
-3. In the search/filter box at the top of the repository browser, type `Dataverse`.
-4. A list of globally available, pre-configured Dataverse instances will appear. Click on an instance to explore its public directories, datasets, and files. It will look similar to this:
+> ### {% icon hands_on %} Hands-on: Browse Pre-configured Dataverses
+>
+> 1. Click the **Upload Data** icon at the top of the Galaxy tool panel.
+> 2. Inside the upload dialog box, select the **Choose from repository** button at the bottom.
+> 3. In the search/filter box at the top of the repository browser, type `Dataverse`.
+> 4. A list of globally available, pre-configured Dataverse instances will appear. Click on an instance to explore its public directories, datasets, and files. It will look similar to this:
+>
+> ![Pre-Configured Dataverse](https://galaxyproject.org/images/news/2026-01-15-dataverse/preconfigured_dataverse.png)
+>
+> {: .hands_on}
+
 
 ![Pre-Configured Dataverse](https://galaxyproject.org/images/news/2026-01-15-dataverse/preconfigured_dataverse.png)
 
