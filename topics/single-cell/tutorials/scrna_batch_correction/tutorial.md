@@ -108,7 +108,7 @@ The main difference between these two pipelines is that Scanpy is written for Py
 > 2. Import the files from [Zenodo]({{ page.zenodo_link }}) or from the shared data library
 >
 >    ```
->  https://zenodo.org/records/20574474/files/Input_Anndata.h5ad
+>    {{ page.zenodo_link }}/files/Input_Anndata.h5ad
 >    ```
 >
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
@@ -132,7 +132,7 @@ The main difference between these two pipelines is that Scanpy is written for Py
 > 2. Import the files from [Zenodo]({{ page.zenodo_link }}) or from the shared data library
 >
 >    ```
->   https://zenodo.org/records/20574474/files/Input_SeuratObject%20.rds
+>    {{ page.zenodo_link }}/files/Input_SeuratObject%20.rds
 >    ```
 >
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
