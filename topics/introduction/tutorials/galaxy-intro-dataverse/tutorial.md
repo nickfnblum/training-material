@@ -88,17 +88,19 @@ If you need to connect to an institutional Dataverse instance not listed by defa
 > 3. Click Create Token and Copy to Clipboard to copy the token string.
 > {: .hands_on}
 
-#### Step 2: Link the Repository in Galaxy
-
-1. In Galaxy, navigate to the top menu and **click on your user name** and then **Preferences**.
-2. Select **Manage your Repositories** and click the **Create** button.
-3. Select **Dataverse**.
-4. Complete the configuration form:
-  * **Name:** A descriptive title (e.g., *My Institutional Dataverse*).
-  * **Dataverse instance endpoint:** The full base URL of the repository (e.g., `[https://dataverse.harvard.edu](https://dataverse.harvard.edu)`).
-  * **API Token:** Paste the token generated in Step 1.
-  * **Allow Galaxy to export data:** Set to **Yes** if you want the flexibility to push finalized Galaxy histories back to Dataverse later.
-5. Click **Create**.
+> ### {% icon hands_on %} Hands-on: Link the Repository in Galaxy
+>
+> 1. In Galaxy, navigate to the top menu and **click on your user name** and then **Preferences**.
+> 2. Select **Manage your Repositories** and click the **Create** button.
+> 3. Select **Dataverse**.
+> 4. Complete the configuration form:
+>  * **Name:** A descriptive title (e.g., *My Institutional Dataverse*).
+>  * **Dataverse instance endpoint:** The full base URL of the repository (e.g., `[https://dataverse.harvard.edu](https://dataverse.harvard.edu)`).
+>  * **API Token:** Paste the token generated in Step 1.
+>  * **Allow Galaxy to export data:** Set to **Yes** if you want the flexibility to push finalized Galaxy histories back to Dataverse later.
+> 5. Click **Create**.
+>
+> {: .hands_on}
 
 The remote repository configuration menu look like this:
 
