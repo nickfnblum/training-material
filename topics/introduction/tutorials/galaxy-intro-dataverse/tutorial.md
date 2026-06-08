@@ -108,14 +108,16 @@ After saving, your new entry appears in **My Repositories**.
 
 ![My Repositories](https://galaxyproject.org/images/news/2026-01-15-dataverse/bsc_dv_3.png)
 
-#### Importing Discovered Files into Your History
-
-Once the connection is established (via Method 1 or Method 2), navigating and uploading the files follows a standardized routine:
-
-1. Open the **Upload Data** menu and click **Choose from repository**.
-2. Select your newly configured or pre-configured Dataverse source.
-3. **Browse or Search:** You can navigate through the hierarchical Dataverse collections or use the search filter for dataset names.
-4. **Select Files:** Once you find the correct dataset container, click into it, tick the checkbox next to the desired files and hit **Select**.
-5. **Execute Import:** The selected items will populate the standard Galaxy upload queue. Click **Start** to run the import process.
-
-Once the progress bar turns green, the files will appear in the right-hand history panel as standard Galaxy datasets, ready to be routed into any analytical tool or workflow.
+> ### {% icon hands_on %} Hands-on: Importing Discovered Files into Your History
+>
+> Once the connection is established (via Method 1 or Method 2), navigating and uploading the files follows a standardized routine:
+>
+> 1. Open the **Upload Data** menu and click **Choose from repository**.
+> 2. Select your newly configured or pre-configured Dataverse source.
+> 3. **Browse or Search:** You can navigate through the hierarchical Dataverse collections or use the search filter for dataset names.
+> 4. **Select Files:** Once you find the correct dataset container, click into it, tick the checkbox next to the desired files and hit **Select**.
+> 5. **Execute Import:** The selected items will populate the standard Galaxy upload queue. Click **Start** to run the import process.
+>
+> Once the progress bar turns green, the files will appear in the right-hand history panel as standard Galaxy datasets, ready to be routed into any analytical tool or workflow.
+>
+> {: .hands_on}
