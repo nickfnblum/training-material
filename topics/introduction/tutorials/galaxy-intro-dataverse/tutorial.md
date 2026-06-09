@@ -52,6 +52,7 @@ By connecting Galaxy to Dataverse, researchers can directly export their finaliz
 
 ## How can you browse existing Dataverse repositories from within Galaxy?
 
+**Please note that the Galaxy Dataverse integration is currently only available on [usegalaxy.eu](https://usegalaxy.eu).**
 Galaxy has integrated Dataverse directly into its **File Sources (Remote Files)** framework. This allows researchers to search, browse, and import remote repository datasets directly into an active Galaxy history without downloading them locally first.
 
 ### Method 1: Browsing Pre-configured Public Dataverses
@@ -68,10 +69,6 @@ Galaxy instances frequently maintain a list of pre-configured public repositorie
 > ![Pre-Configured Dataverse](https://galaxyproject.org/images/news/2026-01-15-dataverse/preconfigured_dataverse.png)
 >
 {: .hands_on}
-
-
-
-Is the Dataverse instance you were hoping to use missing? Let us know!
 
 From here, you can select your instance and browse or search for existing files. **Note**: the search is case-sensitive. 
 If you have already found the file you want to work with, scroll down to "Importing Discovered Files into Your History".
