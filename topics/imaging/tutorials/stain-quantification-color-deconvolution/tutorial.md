@@ -377,7 +377,7 @@ Use the outline image to quickly check whether the detected regions match the st
 
 # Step 7 — Extract Quantitative Features
 
-With a validated binary mask, you can now measure the stained area. The feature extraction tool measures properties of the labelled regions in the mask, using the grayscale stain channel for intensity information.
+With a validated binary mask, you can now measure the stained area. The feature extraction tool measures properties of the labeled regions in the mask, using the grayscale stain channel for intensity information.
 
 > <hands-on-title>Measure stained pixel area and intensity</hands-on-title>
 >
