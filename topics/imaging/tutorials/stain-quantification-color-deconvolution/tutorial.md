@@ -95,7 +95,7 @@ The images in this tutorial come from a study ({% cite Rettkowski2025 %}) invest
 
 **IHC for CD11b** detects myeloid leukocytes (monocytes, macrophages, neutrophils), a readout of local inflammation. Higher CD11b-positive area = more immune cell infiltration after MI.
 
-The hypothesis in the study is that 4-oxo RA reduces immune cell mobilization from bone marrow, leading to less inflammatory infiltration (reduced presence of CD11b+ cells positive stained regions) that would lead to less fibrosis and prevent adverse cardiac remodelling concluding on preserved cardiac function.
+The hypothesis in the study is that 4-oxo RA reduces immune cell mobilization from bone marrow, leading to less inflammatory infiltration (reduced presence of CD11b+ cells positive stained regions) that would lead to less fibrosis and prevent adverse cardiac remodeling concluding on preserved cardiac function.
 
 **What you are working with:** In the original study, regions of interest (ROIs) were manually selected from whole-slide images to focus on specific anatomical zones (Infarct, Border, Remote) and exclude tissue artifacts. For this tutorial, we will keep it simple and focus on analyzing the whole-slide image and process the data as a list of collection allowing you to focus entirely in understanding the analysis and quantification workflow.
 
