@@ -262,7 +262,7 @@ layout: base
         {% if maintains_num > 0 %}<p class="card-text">Editorial board member for {% for res in maintains %}{{res.title}}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>{% endif %}
         <p class="card-text">{{ page.counts_fmt }}</p>
         <p class="card-text"><small class="text-muted">GTN contributor since {{ entity.joined }}</small></p>
-        <img src="{{site.baseurl}}/assets/images/GTN-60px.png" style="width: 2em; position: absolute; bottom: 0; right: 0.5em;"/>
+        <img src="{{site.baseurl}}/assets/images/GTN-60px.png" style="width: 2em; position: absolute; bottom: 0; right: 0.5em;" alt="GTN logo"/>
       </div>
     </div>
   </div>
