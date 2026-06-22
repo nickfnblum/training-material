@@ -1,3 +1,37 @@
+GTN_GTN:1782030886
+
+A	_layouts/contributor_card.html
+GTN_GTN:1781772345
+
+A	news/_posts/2026-06-16-galaxy_labs.md
+A	news/images/2026_06_16-galaxy_labs.png
+GTN_GTN:1781617173
+
+R099	metadata/git-mod-59655d8b4f55a0c1913a173bc4afef8894d3749c.txt	metadata/git-mod-4cf819bf8d394c90fbf2c689cecbb357a0e69628.txt
+R099	metadata/git-pub-59655d8b4f55a0c1913a173bc4afef8894d3749c.txt	metadata/git-pub-4cf819bf8d394c90fbf2c689cecbb357a0e69628.txt
+GTN_GTN:1781612466
+
+A	events/2026-07-06-biofair.md
+A	events/images/BioFAIR_logo.png
+GTN_GTN:1781519449
+
+A	topics/imaging/images/stain-quantification-color-deconvolution/OMERO_ROI_overlay.png
+A	topics/imaging/images/stain-quantification-color-deconvolution/ROI_outline.png
+A	topics/imaging/images/stain-quantification-color-deconvolution/ROI_table.png
+A	topics/imaging/images/stain-quantification-color-deconvolution/deconvolution_output_IHC.png
+A	topics/imaging/images/stain-quantification-color-deconvolution/example_IHC_input.png
+A	topics/imaging/images/stain-quantification-color-deconvolution/example_MT_input.png
+A	topics/imaging/images/stain-quantification-color-deconvolution/example_normalized_output.png
+A	topics/imaging/images/stain-quantification-color-deconvolution/isolated_DAB_channel.png
+A	topics/imaging/images/stain-quantification-color-deconvolution/threshold_output_IHC.png
+A	topics/imaging/images/stain-quantification-color-deconvolution/workflow_overview.png
+A	topics/imaging/tutorials/stain-quantification-color-deconvolution/data-library.yaml
+A	topics/imaging/tutorials/stain-quantification-color-deconvolution/faqs/index.md
+A	topics/imaging/tutorials/stain-quantification-color-deconvolution/tutorial.bib
+A	topics/imaging/tutorials/stain-quantification-color-deconvolution/tutorial.md
+A	topics/imaging/tutorials/stain-quantification-color-deconvolution/workflows/index.md
+A	topics/imaging/tutorials/stain-quantification-color-deconvolution/workflows/main_workflow-tests.yml
+A	topics/imaging/tutorials/stain-quantification-color-deconvolution/workflows/main_workflow.ga
 GTN_GTN:1780907576
 
 R099	metadata/git-mod-4bf2cb35b878155e516b6b836723f92aef7aee06.txt	metadata/git-mod-59655d8b4f55a0c1913a173bc4afef8894d3749c.txt
