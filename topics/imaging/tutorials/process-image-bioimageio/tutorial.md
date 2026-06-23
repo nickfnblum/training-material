@@ -36,7 +36,6 @@ contributions:
   funding:
     - nfdi4bioimage
     - deNBI
-    - fiesta
     - oscars
 ---
 
