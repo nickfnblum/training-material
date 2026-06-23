@@ -138,7 +138,7 @@ This path uses a time series of **atmospheric-river** activity over the North Pa
 >    - **Important:** If setting the type to 'Auto-detect', make sure that after upload, the datatype is set to zip.
 >
 >    ```
->    https://zenodo.org/records/ZENODO-EO-RECORD/files/npacific_ivt_frames.zip
+>    https://zenodo.org/records/20813832/files/npacific_ivt_frames.zip
 >    ```
 >
 >    {% snippet faqs/galaxy/datasets_import_via_link.md %}
@@ -148,7 +148,7 @@ This path uses a time series of **atmospheric-river** activity over the North Pa
 {: .hands_on}
 
 > <comment-title> How the atmospheric-river frames were prepared </comment-title>
-> The frames come from the [ERA5 reanalysis](https://doi.org/10.1002/qj.3803) accessed through the public, anonymous ARCO-ERA5 archive. For each 6-hourly time step we took the eastward and northward vertically integrated vapour-transport components and combined them into the IVT magnitude, IVT = √(u² + v²), over the North Pacific (2 – 11 February 2017). Each field was rescaled to an 8-bit image (bright river on dark background) and written as a three-channel PNG named `NPacific_IVT_0000.png`, `NPacific_IVT_0001.png`, … so the filename carries the time index — exactly the structure the *Metadata* step below expects. The preprocessing notebooks, the full Galaxy run provenance, and a citable archive are in the [OSCARS-FIESTA example repository](https://github.com/annefou/fiesta-galaxy-cellprofiler-eo).
+> The frames come from the [ERA5 reanalysis](https://doi.org/10.1002/qj.3803) accessed through the public, anonymous ARCO-ERA5 archive. For each 6-hourly time step we took the eastward and northward vertically integrated vapour-transport components and combined them into the IVT magnitude, IVT = √(u² + v²), over the North Pacific (2 – 11 February 2017). Each field was rescaled to an 8-bit image (bright river on dark background) and written as a three-channel PNG named `NPacific_IVT_0000.png`, `NPacific_IVT_0001.png`, … so the filename carries the time index — exactly the structure the *Metadata* step below expects. These frames are archived on Zenodo ([10.5281/zenodo.20813831](https://doi.org/10.5281/zenodo.20813831)); the preprocessing notebooks, the full Galaxy run provenance, and a citable software archive are in the [OSCARS-FIESTA example repository](https://github.com/annefou/fiesta-galaxy-cellprofiler-eo).
 {: .comment}
 
 </div>
