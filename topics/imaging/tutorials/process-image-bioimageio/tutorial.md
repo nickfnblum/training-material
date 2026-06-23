@@ -25,7 +25,6 @@ tags:
 - Image segmentation
 - Image annotation
 - Deep learning
-- Earth observation
 contributions:
   authorship:
     - dianichj
