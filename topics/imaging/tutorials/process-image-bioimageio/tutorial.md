@@ -14,7 +14,7 @@ objectives:
 - Learn how to run a BioImage.IO model using Galaxy
 - Understand how to format image inputs and model axes
 - Interpret and download the model output
-- Reuse the same model and workflow on an Earth-observation image (cross-discipline reuse)
+- Reuse the same AI model and workflow on an Earth observation image (cross-discipline reuse)
 time_estimation: 30M
 key_points:
 - BioImage.IO models can be run in Galaxy using a dedicated tool
