@@ -71,7 +71,7 @@ recordings:
 tags:
   - data import
   - data management
-  - sc_format
+  - sc_formats
 
 ---
 
