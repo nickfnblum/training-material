@@ -50,7 +50,7 @@ At its core, a Lab can be any HTML page. Historically, communities created these
 
 The Galaxy Labs engine generates HTML content from **YAML specifications** hosted in repositories such as GitHub or GitLab. By simply providing the repository path to the engine, the Lab content is automatically rendered.
 
-For more information also read the [publication](https://doi.org/10.1093/gigascience/giag041) of the labs.
+For more information also read the publication of the labs {% cite giag041 %}.
 
 The Galaxy Labs documentation provides additional details about architecture and configuration.
 
