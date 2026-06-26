@@ -60,10 +60,10 @@ Using the Galaxy Labs engine alone is sufficient to create and host your own cus
 
 However, **CoDex extends this workflow by automating the generation of Lab YAML files**, which is the focus of this tutorial.
 
-> <comment-title>Scope of CoDex</comment-title>
+> <comment-title>Limitations of CoDex</comment-title>
 >
 > CoDex supports generating **Galaxy Community Labs only**.
-> If you want to create a Lab for another purpose—such as a specific project, or custom use case—you can still create and host the YAML specification independently and render it through the Galaxy Labs engine.
+> If you want to create a Lab for another purpose—such as a specific project, event, or custom use case—you can still create and host the YAML specification independently and render it through the Galaxy Labs engine.
 >
 {: .comment}
 
