@@ -39,8 +39,8 @@ translations:
 Dans ce tutoriel, nous allons explorer un pipeline complet pour l'annotation d'images et de vidéos d'espèces marines. Nous utiliserons comme exemple une vidéo issue du projet [Moorev](https://moorev.fr/), découpée et disponible sur Zenodo.
 
 Ce pipeline se décompose en deux grandes étapes :
-1. **Annotation automatique** par prompt textuel avec {% tool [SAM3 Semantic Segmentation](https://usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/ecology/sam3_semantic_segmentation/sam3_semantic_segmentation/1.0.1+galaxy6) %}
-2. **Correction et validation** des annotations avec {% tool [Edit COCO Annotation](https://usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/edit_coco_annotation/edit_coco_annotation/1.0.0+galaxy0) %}
+1. **Annotation automatique** par prompt textuel avec {% tool [SAM3 Semantic Segmentation](toolshed.g2.bx.psu.edu/repos/ecology/sam3_semantic_segmentation/sam3_semantic_segmentation/1.0.1+galaxy6) %}
+2. **Correction et validation** des annotations avec {% tool [Edit COCO Annotation](toolshed.g2.bx.psu.edu/repos/bgruening/edit_coco_annotation/edit_coco_annotation/1.0.0+galaxy0) %}
 
 > <details-title>En savoir plus sur le projet MOOREV</details-title>
 >
@@ -122,7 +122,7 @@ SAM3 est un modèle de segmentation guidé par texte. Il détecte et segmente au
 
 > <hands-on-title>Paramétrage de SAM3</hands-on-title>
 >
-> 1. {% tool [SAM3 Semantic Segmentation](toolshed.g2.bx.psu.edu/repos/ecology/sam3_semantic_segmentation/sam3_semantic_segmentation/1.0.1+galaxy4) %} avec ces paramètres :
+> 1. {% tool [SAM3 Semantic Segmentation](toolshed.g2.bx.psu.edu/repos/ecology/sam3_semantic_segmentation/sam3_semantic_segmentation/1.0.1+galaxy6) %} avec ces paramètres :
 >
 >    - {% icon param-file %} *"Model data"* : `Segment Anything Model 3 (SAM 3)` (par défaut)
 >    - {% icon param-select %} *"Input type"* : `One video`
@@ -176,7 +176,7 @@ L'outil **Edit COCO Annotation** permet de modifier les annotations COCO sans av
 
 > <hands-on-title>Garder, supprimer ou renommer des annotations</hands-on-title>
 >
-> 1. {% tool [Edit COCO Annotation](edit_coco_annotation) %} avec ces paramètres :
+> 1. {% tool [Edit COCO Annotation](toolshed.g2.bx.psu.edu/repos/bgruening/edit_coco_annotation/edit_coco_annotation/1.0.0+galaxy0) %} avec ces paramètres :
 >
 >    - {% icon param-file %} *"COCO annotation file"* : `5: Annotation COCO `
 >    - {% icon param-select %} *"Mode"* : `Keep - keep only listed IDs (remove all others)`
@@ -210,7 +210,8 @@ Cet outil permet de visualiser facilement un fichier JSON au format COCO superpo
 
 > <hands-on-title>Visualiser les annotations COCO</hands-on-title>
 >
-> 1. {% tool [COCO Annotation Visualizer](coco_annotation_visualizer) %} avec ces paramètres :
+> 1. {% tool [COCO Annotation Visualizer](toolshed.g2.bx.psu.edu/repos/bgruening/coco_annotation_visualizer/coco_annotation_visualizer/1.0.0) %} avec ces paramètres :
+
 >
 >    - {% icon param-select %} *"Input Type"* : `One Video`
 >    - {% icon param-file %} *"Input video file"* : `1: Lieujaune-PorzBreign-GOPR5167_Edited.mp4`
