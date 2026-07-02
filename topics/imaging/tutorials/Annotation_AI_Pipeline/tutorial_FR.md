@@ -211,7 +211,7 @@ Cet outil permet de visualiser facilement un fichier JSON au format COCO superpo
 > <hands-on-title>Visualiser les annotations COCO</hands-on-title>
 >
 > 1. {% tool [COCO Annotation Visualizer](toolshed.g2.bx.psu.edu/repos/bgruening/coco_annotation_visualizer/coco_annotation_visualizer/1.0.0) %} avec ces paramètres :
-
+> 
 >
 >    - {% icon param-select %} *"Input Type"* : `One Video`
 >    - {% icon param-file %} *"Input video file"* : `1: Lieujaune-PorzBreign-GOPR5167_Edited.mp4`
