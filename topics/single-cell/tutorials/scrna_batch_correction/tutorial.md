@@ -49,9 +49,9 @@ contributions:
 
 Single cell analyses can be complex. We may have data from different experimental batches, perhaps because we ran our experiments at different times, in different labs, or using different sequencing platforms. Sometimes we might want to combine multiple datasets, for example if we want to compare our own experimental data to a similar public dataset.
 
-If we simply run these different batches or combined datasets through a clustering pipeline such as Scanpy or Seurat, we might not get useful results. Clustering prioritises the genes that show the biggest differences in expression and uses these to identify groups of cells that share similar expression patterns. When we have different experimental batches or have combined multiple studies, these big differences might relate more to the differences between batches or datasets than to the biological differences we're interested in, such as cell type. Our clusters could therefore end up representing different batches or datasets, rather than anything more useful.
+Running different batches or combined datasets through a clustering pipeline like Scanpy or Seurat without any pre-processing may not yield useful results. This is because clustering works by identifying genes with the largest differences in expression and grouping cells that share similar expression patterns. When data comes from multiple experimental batches or studies, however, the largest sources of variation often reflect technical differences between batches rather than the biology of interest like cell type. As a result, clusters may end up capturing batch or dataset identity rather than anything biologically meaningful.
 
-In order to look beyond these technical differences, we can perform batch correction or integration. Both the Scanpy and Seurat pipelines include tools that can be used to correct for differences between experimental batches or to integrate datasets - we actually use the same tools to do both. In this tutorial, you will learn how to use these tools in either the Scanpy or Seurat pipeline - you can choose which pipeline you would like to use.
+To look beyond these technical differences, we can perform batch correction or integration. Both Scanpy and Seurat include tools for correcting differences between experimental batches and integrating datasets, and in practice we use the same tools for both. In this tutorial, you will learn how to use these tools in either pipeline. The choice of Scanpy or Seurat is yours.
 
 > <comment-title></comment-title>
 >
@@ -81,7 +81,7 @@ In order to look beyond these technical differences, we can perform batch correc
 
 We will often need to perform batch correction or integration during single cell analyses. If we are working with different experimental batches, donors, conditions, or datasets, then we need to look beyond the technical differences between them. Batch correction or integration may be required to enable us to do this. These techniques work by matching cells of similar types or states across batches or datasets. Effectively, we are looking for cell subpopulations that are shared across the groups.
 
-The terms batch correction and integration are closely related and you may see them being used somewhat interchangably, because they both refer to the same process of looking for shared cell subpopulations across groups. The same tools are used in the same way for both procedures, so you could use the workflow described in this tutorial to perform integration as well as batch correction.
+The terms batch correction and integration are closely related and are often used interchangeably, since they refer to the same underlying process and use the same tools in the same way. The distinction is mainly one of context: batch correction typically refers to removing unwanted technical variation between groups from a single study, such as different experimental batches, while integration refers to aligning cell populations across separate datasets from multiple studies.
 
 The only difference is that we tend to talk about batch correction when we are working with groups produced in a single study (e.g. different experimental batches), while we would say integration when we're combining separate datasets from multiple studies. Batch correction is performed to remove unwanted technical variation, while integration aims to align cell populations across studies.
 
@@ -89,9 +89,9 @@ In this tutorial, you can choose whether you want to use the Scanpy or Seurat pi
 
 # Scanpy or Seurat?
 
-Scanpy and Seurat are two of the most commonly used pipelines (sets of tools) for analysing single cell data. Both pipelines have all the tools required to perform clustering, which identifies groups of cells that share similar expression profiles. Clustering is often a key goal in single cell analysis because it makes our data easier to interpret. Clusters represent groups of cells that are expressing the same genes, which often correspond to specific cell types or states. Our goal is to identify biologically relevant clusters that will help us to better understand our data.
+Scanpy and Seurat are two of the most commonly used pipelines for analysing single cell data. Both include tools for preprocessing, dimensional reduction (such as PCA), neighbourhood graph construction, and clustering. Clustering is often a key goal in single cell analysis, as it groups cells with similar expression profiles. These groups frequently correspond to specific cell types or states, making the data easier to interpret and understand.
 
-The Scanpy and Seurat pipelines include tools for preprocessing single cell data, performing dimensional reductions such as PCA, constructing a neighbourhood graph and finding clusters in it. Although both pipelines perform the same basic steps, there are some differences in how these steps are performed that mean you can end up with slightly different results depending on which pipeline you choose. However, your results should be broadly the same, no matter which pipeline you use.
+Although both pipelines follow the same basic steps, small differences in how those steps are implemented mean results can vary slightly depending on your choice. Broadly speaking, though, you should reach the same conclusions either way.
 
 The main difference between these two pipelines is that Scanpy is written for Python while Seurat is written for R. If we were working in a Python or R environment, then we would need to choose the appropriate pipeline. However, since we're working on Galaxy, we're free to choose either set of tools.
 
@@ -153,7 +153,7 @@ We are using a single cell dataset of human Peripheral Blood Mononuclear Cells (
 
 Let's take a look at our data before we begin the analysis to see whether we might need to perform batch correction or integration. While batches or combined datasets often do require correction, we should examine the data first to check whether it is necessary.
 
-Correcting batch effects is important, but we also have to be careful about overcorrecting or overintegrating our data. If we apply batch correction or integration tools when they aren't needed, we could end up removing the real biological differences we're interested in. Even when some correction is needed, we should be careful to avoid overcorrecting and losing these biological differences. We'll need to interpret our results carefully to see if they're driven by technical or biological variation.
+Correcting batch effects is important, but we also need to be careful not to overcorrect. Applying batch correction or integration when it isn't needed, or overcorrecting when it is, risks removing the very biological differences we are interested in. Either way, it is important to interpret results carefully to determine whether they reflect true biological variation or technical artefacts.
 
 <div class='Scanpy' markdown='1'>
 
