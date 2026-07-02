@@ -1,0 +1,247 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "Workflow constructed from history 'imported from archive: imported from archive: Copy of 'imported from archive: Moorev Tuto creation''",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Lieujaune-PorzBreign-GOPR5167_Edited.mp4"
+                }
+            ],
+            "label": "Lieujaune-PorzBreign-GOPR5167_Edited.mp4",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0.0,
+                "top": 0.0
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "836cef19-ab5f-4363-b527-8f5e563ef042",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "sam3_semantic_segmentation",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "input|source": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SAM3 Semantic Segmentation",
+                    "name": "input"
+                }
+            ],
+            "label": null,
+            "name": "SAM3 Semantic Segmentation",
+            "outputs": [
+                {
+                    "name": "Coco_Frames",
+                    "type": "input"
+                },
+                {
+                    "name": "Outputs_annotated",
+                    "type": "input"
+                },
+                {
+                    "name": "Annotations_coco",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "left": 371.74719949863197,
+                "top": 121.4517910140153
+            },
+            "post_job_actions": {},
+            "tool_id": "sam3_semantic_segmentation",
+            "tool_state": "{\"conf\": \"0.25\", \"do_normalization\": false, \"imgsz\": \"644\", \"input\": {\"input_kind\": \"video\", \"__current_case__\": 1, \"source\": {\"__class__\": \"RuntimeValue\"}, \"quality\": \"copy\", \"coco_video_mode\": \"frames\", \"outputs_format\": null}, \"sam3_models\": \"7\", \"show_bbox\": true, \"text_prompt\": \"fish\", \"vid_stride\": \"5\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.0.1+galaxy4",
+            "type": "tool",
+            "uuid": "288f221c-6a44-4efe-a27c-c8bcc13c33cd",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "edit_coco_annotation",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "annotations": {
+                    "id": 1,
+                    "output_name": "Annotations_coco"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Edit COCO Annotation",
+            "outputs": [
+                {
+                    "name": "output_json",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "left": 862.3262358824074,
+                "top": 101.35167813155421
+            },
+            "post_job_actions": {},
+            "tool_id": "edit_coco_annotation",
+            "tool_state": "{\"__input_ext\": \"input\", \"annotations\": {\"__class__\": \"ConnectedValue\"}, \"chromInfo\": \"/tmp/tmpczxhrj3c/galaxy-dev/tool-data/shared/ucsc/chrom/?.len\", \"mode\": {\"mode\": \"keep\", \"__current_case__\": 0, \"entries\": [{\"__index__\": 0, \"track_ids\": \"0,4-6\", \"rename\": \"Gobiusculus flavescens\", \"frame_min\": null, \"frame_max\": null}, {\"__index__\": 1, \"track_ids\": \"2\", \"rename\": \"Crenilabre\", \"frame_min\": null, \"frame_max\": null}]}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.0.0+galaxy0",
+            "type": "tool",
+            "uuid": "7107efba-06f5-45cb-aa07-cb9e1365bfa4",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "coco2labelme",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "coco_file": {
+                    "id": 1,
+                    "output_name": "Coco_Frames"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool COCO to LabelMe JSON Converter",
+                    "name": "coco_file"
+                }
+            ],
+            "label": null,
+            "name": "COCO to LabelMe JSON Converter",
+            "outputs": [
+                {
+                    "name": "outputs",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 870.2285347752284,
+                "top": 390.75960556280234
+            },
+            "post_job_actions": {},
+            "tool_id": "coco2labelme",
+            "tool_state": "{\"coco_file\": {\"__class__\": \"RuntimeValue\"}, \"image_path_mode\": {\"path_mode\": \"custom\", \"__current_case__\": 1, \"custom_image_path\": \"\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "fe79d890-2aa0-4f50-97b1-288c41f6e8b0",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "coco_annotation_visualizer",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "annotations": {
+                    "id": 2,
+                    "output_name": "output_json"
+                },
+                "input|source": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool COCO Annotation Visualizer",
+                    "name": "input"
+                }
+            ],
+            "label": null,
+            "name": "COCO Annotation Visualizer",
+            "outputs": [
+                {
+                    "name": "annotated_images",
+                    "type": "input"
+                },
+                {
+                    "name": "output_video",
+                    "type": "mp4"
+                }
+            ],
+            "position": {
+                "left": 1196.2747242767362,
+                "top": 21.61939939450673
+            },
+            "post_job_actions": {},
+            "tool_id": "coco_annotation_visualizer",
+            "tool_state": "{\"__input_ext\": \"input\", \"annotations\": {\"__class__\": \"ConnectedValue\"}, \"chromInfo\": \"/tmp/tmpczxhrj3c/galaxy-dev/tool-data/shared/ucsc/chrom/?.len\", \"display\": {\"show_bbox\": false, \"show_mask\": true, \"show_labels\": true, \"show_count\": false, \"mask_opacity\": \"0.4\", \"bbox_thickness\": \"2\", \"font_scale\": \"0.6\", \"color_mode\": \"per_instance\", \"output_format\": \"png\"}, \"filter_categories\": \"\", \"input\": {\"input_kind\": \"video\", \"__current_case__\": 1, \"source\": {\"__class__\": \"ConnectedValue\"}, \"vid_stride\": \"5\"}, \"only_annotated\": true, \"output_mode\": {\"mode\": \"both\", \"__current_case__\": 2, \"video_fps\": \"5.0\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "0f139a49-e7e2-4454-962e-766f4a9c6128",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "interactive_tool_anylabeling",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "annotations": {
+                    "id": 3,
+                    "output_name": "outputs"
+                },
+                "input_images": {
+                    "id": 1,
+                    "output_name": "Coco_Frames"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "AnyLabeling Interactive",
+            "outputs": [
+                {
+                    "name": "annotations_json",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1207.6639674638304,
+                "top": 301.7544181673045
+            },
+            "post_job_actions": {},
+            "tool_id": "interactive_tool_anylabeling",
+            "tool_state": "{\"__input_ext\": \"input\", \"annotations\": {\"__class__\": \"ConnectedValue\"}, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"class_file\": null, \"input_images\": {\"__class__\": \"ConnectedValue\"}, \"models\": null, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "0.4.32",
+            "type": "tool",
+            "uuid": "0aadcd8e-4e0b-4217-81f4-91847adb9817",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "861974a2-ce74-43f1-80cc-1567682122fa",
+    "version": 1
+}
