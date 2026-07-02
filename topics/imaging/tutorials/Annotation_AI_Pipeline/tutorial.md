@@ -114,7 +114,7 @@ SAM3 is a text-guided segmentation model. It automatically detects and segments 
 > <tip-title>A dedicated SAM3 tutorial exists</tip-title>
 >
 > If you want to learn more about SAM3 and its parameters, check out the dedicated tutorial:
-> [SAM3 Tutorial](https://training.galaxyproject.org/training-material/topics/ecology/tutorials/SAM3/tutorial.html)
+> [SAM3 Tutorial]({% link topics/ecology/tutorials/SAM3/tutorial.md %})
 >
 {: .tip}
 
