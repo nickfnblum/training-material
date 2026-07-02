@@ -42,6 +42,7 @@ contributions:
     - MarisaJL
   editing:
     - nomadscientist
+    - dianichj
   funding:
     - biofair
 
@@ -79,11 +80,9 @@ To look beyond these technical differences, we can perform batch correction or i
 
 # Batch Correction or Integration?
 
-We will often need to perform batch correction or integration during single cell analyses. If we are working with different experimental batches, donors, conditions, or datasets, then we need to look beyond the technical differences between them. Batch correction or integration may be required to enable us to do this. These techniques work by matching cells of similar types or states across batches or datasets. Effectively, we are looking for cell subpopulations that are shared across the groups.
+We will often need to perform batch correction or integration when working with different experimental batches, donors, conditions, or datasets. We need to look beyond the technical differences between them and batch correction or integration are the techniques we use to do this. Both work by identifying cell subpopulations that are shared across groups, effectively matching cells of similar types or states.
 
 The terms batch correction and integration are closely related and are often used interchangeably, since they refer to the same underlying process and use the same tools in the same way. The distinction is mainly one of context: batch correction typically refers to removing unwanted technical variation between groups from a single study, such as different experimental batches, while integration refers to aligning cell populations across separate datasets from multiple studies.
-
-The only difference is that we tend to talk about batch correction when we are working with groups produced in a single study (e.g. different experimental batches), while we would say integration when we're combining separate datasets from multiple studies. Batch correction is performed to remove unwanted technical variation, while integration aims to align cell populations across studies.
 
 In this tutorial, you can choose whether you want to use the Scanpy or Seurat pipelines for clustering and batch correction. Scanpy and Seurat's integration tools will create a dimensional reduction that captures the shared sources of variation across the batches or datasets. The dimensional reduction can be used to find clusters or produce visualisations such as UMAP.
 
