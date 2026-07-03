@@ -2,14 +2,14 @@
 layout: tutorial_hands_on
 
 title: Pipeline d'annotation d'espèces marines par IA (Project Moorev - Marine)
-zenodo_link: https://zenodo.org/records/20639741/files/Lieujaune-PorzBreign-GOPR5167_Edited.mp4?download=1
+zenodo_link: https://doi.org/10.5281/zenodo.20639741
 questions:
 - Comment utiliser l'intelligence artificielle pour annoter des images d'espèces marines ?
 - Comment vérifier et corriger ces annotations ?
 objectives:
 - Utiliser SAM3 pour détecter automatiquement des espèces marines à partir d'un simple mot-clé
 - Corriger les annotations générées avec Edit COCO Annotation
-time_estimation: 30min
+time_estimation: 30m
 key_points:
 - L'IA fait le gros du travail d'annotation, mais un œil humain reste indispensable pour vérifier et corriger.
 - Une fois mis en place, ce pipeline est réutilisable pour d'autres espèces ou d'autres projets.

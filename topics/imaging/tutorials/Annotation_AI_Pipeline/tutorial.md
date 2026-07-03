@@ -2,14 +2,14 @@
 layout: tutorial_hands_on
 
 title: AI pipeline for annotating marine species (Project Moorev - Marine)
-zenodo_link: https://zenodo.org/records/20639741/files/Lieujaune-PorzBreign-GOPR5167_Edited.mp4?download=1
+zenodo_link: https://doi.org/10.5281/zenodo.20639741
 questions:
 - How can we use artificial intelligence to annotate images of marine species?
 - How can we check and correct these annotations?
 objectives:
 - Use SAM3 to automatically detect marine species from a simple keyword
 - Correct generated annotations with Edit COCO Annotation
-time_estimation: 30min
+time_estimation: 30m
 key_points:
 - AI does most of the annotation work, but a human eye is still needed to check and correct it.
 - Once set up, this pipeline can be reused for other species or other projects.
