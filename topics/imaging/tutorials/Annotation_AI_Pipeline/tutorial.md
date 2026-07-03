@@ -134,7 +134,7 @@ SAM3 is a text-guided segmentation model. It automatically detects and segments 
 >    - {% icon param-toggle %} *"Show bounding boxes on annotated output"*: `Yes`
 >    - {% icon param-toggle %} *"Normalize outputs?"*: `No` (default)
 >
-> 2. Click **Execute**
+> 2. Click **Run Tool**
 >
 >    > <comment-title>Processing time</comment-title>
 >    >
