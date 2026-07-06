@@ -204,7 +204,7 @@ Now, we will configure Galaxy to run tools using Apptainer containers, which wil
 >    ```diff
 >    --- a/group_vars/galaxyservers.yml
 >    +++ b/group_vars/galaxyservers.yml
->    @@ -78,8 +78,13 @@ galaxy_config:
+>    @@ -78,8 +78,11 @@ galaxy_config:
 >         tus_upload_store: "{{ galaxy_tus_upload_store }}"
 >         # CVMFS
 >         tool_data_table_config_path:
@@ -216,9 +216,10 @@ Now, we will configure Galaxy to run tools using Apptainer containers, which wil
 >       gravity:
 >         process_manager: systemd
 >         galaxy_root: "{{ galaxy_root }}/server"
->    @@ -117,6 +120,12 @@ galaxy_config_files:
+>    @@ -118,5 +121,11 @@ galaxy_config_files:
 >       - src: files/galaxy/themes.yml
 >         dest: "{{ galaxy_config.galaxy.themes_config_file }}"
+>
 >    +galaxy_config_templates:
 >    +  - src: templates/galaxy/config/container_resolvers_conf.yml.j2
 >    +    dest: "{{ galaxy_config.galaxy.container_resolvers_config_file }}"
