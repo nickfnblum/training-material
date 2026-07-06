@@ -177,7 +177,9 @@ In this tutorial, we know our organism is within the 'Bacillales' order.
 {: .question}
 
 > <comment-title>BUSCO Databases</comment-title>
-> The available lineages and number of BUSCO genes that will be compared in a chosen lineage will depend on the selected BUSCO database. For example, for the `Bacillales` lineage used in this tutorial, the `All odb10 2026-03-19-213122` database contains 450 BUSCO genes, while the `All odb12 2026-03-20-145944` database contains 429 BUSCO genes. The `Busco v5 Lineage Datasets` database does not include BUSCO genes for the `Bacillales` lineage. Care should always be taken to select a BUSCO database that contains the lineage of interest and using a consistent database when comparing BUSCO results.
+> - The available lineages and number of BUSCO genes that will be compared in a chosen lineage will depend on the selected BUSCO database.
+> - For example, for the `Bacillales` lineage used in this tutorial, the `All odb10 2026-03-19-213122` database contains 450 BUSCO genes, while the `All odb12 2026-03-20-145944` database contains 429 BUSCO genes. The `Busco v5 Lineage Datasets` database does not include BUSCO genes for the `Bacillales` lineage.
+> - Care should always be taken to select a BUSCO database that contains the lineage of interest and use a consistent database when comparing BUSCO results.
 {: .comment}
 
 
