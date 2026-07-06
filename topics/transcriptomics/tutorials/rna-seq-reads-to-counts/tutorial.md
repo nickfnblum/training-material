@@ -315,7 +315,7 @@ The Cutadapt tool Help section provides the sequence we can use to trim this sta
 > 1. {% tool [Cutadapt](toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/5.2+galaxy2) %}
 >    - {% icon param-select %} *"Single-end or Paired-end reads?"*: `Single-end`
 >        - {% icon param-collection %} *"FASTQ/A file"*: `fastqs` (Input dataset collection)
->        - In *"Read 1 Options"*:
+>        - In *"Read 1 Adapters"*:
 >            - In *"3' (End) Adapters"*:
 >                - Click on *"Insert 3' (End) Adapters"*:
 >                - In *"1: 3' (End) Adapters"*:
