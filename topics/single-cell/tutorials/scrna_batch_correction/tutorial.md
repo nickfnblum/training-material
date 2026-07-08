@@ -35,7 +35,7 @@ requirements:
         - scrna-seurat-pbmc3k
 
 tags:
-- single cell
+- 10x
 
 contributions:
   authorship:
@@ -248,7 +248,7 @@ Now we'll take a closer look at the metadata describing how the dataset was prod
 
 # Clustering without Batch Correction
 
-We suspect that batch correction will be needed because of the different technologies used to construct this dataset, but we'll try clustering without any correction first. This will confirm whether batch correction is truly needed on the basis of `Method`. Comparing the results we get now with those we'll get after batch correction should also help us to understand what batch correction is doing to our single cell data.
+We suspect that batch correction will be needed because of the different technologies used to construct this dataset, but we'll try clustering without any correction first. It is considered good practice to perform this uncorrected clustering to confirm whether batch correction is truly needed. We don't want to perform a correction unless there are technical differences between batches that need to be removed, otherwise we risk overcorrecting our data and eliminating the biological differences we're interested in. We will check whether we need to correct on the basis of `Method`. Comparing the results we get now with those we'll get after batch correction should also help us to understand what batch correction is doing to our single cell data.
 
 Since our focus is batch correction/integration, we won't go into too much detail on the clustering process. We just want to see how the integration steps fit into the main clustering pipeline and understand the impact it has on our data. If you aren't already familiar with this process, then you can learn more about clustering using the [Scanpy]({% link topics/single-cell/tutorials/scrna-scanpy-pbmc3k/tutorial.html %}) or [Seurat]({% link topics/single-cell/tutorials/scrna-seurat-pbmc3k/tutorial.html %}) pipelines from the other single cell tutorials available on the GTN.
 
@@ -304,18 +304,17 @@ We'll follow the default Scanpy pipeline here, except that we'll use `30` PCs to
 >    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy cluster, embed** {% icon tool %})
 >    - *"Method used"*: `Embed the neighborhood graph using UMAP, using 'tl.umap'`
 >
-> 9. {% tool [Scanpy plot](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.11.5+galaxy0) %} with the following parameters:
->    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy cluster, embed** {% icon tool %})
->    - *"Method used for plotting"*: `Embeddings: Scatter plot in UMAP basis, using 'pl.umap'`
->        - *"Keys for annotations of observations/cells or variables/genes"*: `louvain,Method`
->        - *"Show edges?"*: `No`
->
 {: .hands_on}
 
 Now let's take a look at our results. We'll plot one version of the UMAP showing the clusters we've just identified and another coloured by `Method` to see if that might be influencing our results.
 
+> <tip-title>Interactive Visualisations</tip-title>
+>
+> * Select `Yes` for `Make an interactive plot?` if you want to explore the data further. You'll be able to colour the interactive plot by `Method` or any of the other metadata categories.
+{: .tip}
+
 > <hands-on-title> Visualise the Results </hands-on-title>
-> 9. {% tool [Scanpy plot](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.11.5+galaxy0) %} with the following parameters:
+> 1. {% tool [Scanpy plot](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.11.5+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Annotated data matrix"*: `anndata_out` (output of **Scanpy cluster, embed** {% icon tool %})
 >    - *"Method used for plotting"*: `Embeddings: Scatter plot in UMAP basis, using 'pl.umap'`
 >        - *"Keys for annotations of observations/cells or variables/genes"*: `louvain,Method`
@@ -343,13 +342,13 @@ Now let's take a look at our results. We'll plot one version of the UMAP showing
 
 <div class='Seurat' markdown='1'>
 
-In the Seurat pipeline, we can use the ability of the SeuratObject to store multiple layers to split our data up before we begin the analysis. We might do this when we have different batches or if we've combined datasets.
+In the Seurat pipeline, we can split each of our batches into its own 'layer' within the SeuratObject before we begin the analysis. We could do the same with each dataset if we were integrating multiple datasets together.
 
 Splitting our data into layers means that the Seurat preprocessing tools can work on each layer separately. Seurat can treat each layer as if it were a separate dataset during preprocessing. Each layer (in this case, each of our batches) will be normalised independently. We'll also identify the highly variable genes within each batch, rather than across the whole dataset. Seurat will then create a single consensus list of highly variable genes to use for the whole dataset.
 
 The other tools in the Seurat pipeline, such as `RunPCA` and `FindClusters` will still work on the entire dataset.
 
-Splitting the batches into separate layers could help to address some of the technical differences between them because of the separate preprocessing, but we'll have to wait for the results to see if this has been enough to eliminate these differences.
+Splitting the batches into separate layers within our SeuratObject can act as a very mild form of batch correction. The separate preprocessing of each layer can reduce some of the technical differences between the batches. We have to wait for the results to see if this has been enough to eliminate these differences or if full batch correction is still needed.
 
 > <hands-on-title> Split the Batches into Layers </hands-on-title>
 >
@@ -394,13 +393,13 @@ Now that we have split our data so that each batch is in its own layer, we will 
 We'll follow the default Seurat pipeline here, except that we'll use `30` PCs to build the neighborhood graph and cluster with a resolution of `2` as these were the parameters used in [the original Seurat version of this tutorial](https://satijalab.org/seurat/articles/seurat5_integration). We'll also give our clusters and UMAP more recognisable names as we'll be running these tools again later, after batch correction.
 
 > <comment-title></comment-title>
-> Seurat has another option for preprocessing - rather than use the three separate functions presented below, you can use a single function called `SCTransform` to preform normalisation, identification of variable genes, and scaling all in one go. You will find this option on Galaxy's {% icon tool %} **Seurat Preprocessing** tool.
+> Seurat has another option for preprocessing - rather than use the three separate functions we're using in this tutorial, you can use a single function called `SCTransform` to preform normalisation, identification of variable genes, and scaling all in one go. You will find this option on Galaxy's {% icon tool %} **Seurat Preprocessing** tool.
 >
 > If you use `SCTransform` for preprocessing, then you'll need to choose `Yes` for `Use SCT as Normalization Method` when you run `IntegrateLayers`. The `SCTransform` normalises the data in its own way, so we just need to let the tool know what to expect!
 >
-> The next step after identifying clusters would usually be to look for marker genes that are differentially expressed between clusters. If you perform integration/batch correction after using `SCTransform`, then you will need to run the `PrepSCTFindMarkers` function before using tools such as `FindMarkers`. You'll find this in the {% tool Seurat Integrate %} tool.
+> The next step after identifying clusters would usually be to look for marker genes that are differentially expressed between clusters. If you perform integration/batch correction after using `SCTransform`, then you will need to run the `PrepSCTFindMarkers` function before using tools such as `FindMarkers`. You'll find this in the {% icon tool %} **Seurat Integrate** tool.
 >
-> The rest of the workflow will be the same as shown in this tutorial, but you will end up with different results because `SCTransform` handles preprocessing in a slightly different way than the three separate tools. If you want to learn more about these differences then you can choose the SCTransform route in the [Clustering 3k PBMCs with Seurat]({% link topics/single-cell/tutorials/scrna-seurat-pbmc3k/tutorial.html %}) tutorial.
+> The rest of the workflow will be the same as shown in this tutorial, but you will end up with slightly different results because `SCTransform` handles preprocessing in a different way than the three separate tools. If you want to learn more about these differences then you can follow the SCTransform route in the [Clustering 3k PBMCs with Seurat]({% link topics/single-cell/tutorials/scrna-seurat-pbmc3k/tutorial.html %}) tutorial.
 {: .comment}
 
 > <hands-on-title> Cluster without Batch Correction </hands-on-title>
@@ -577,6 +576,11 @@ Secondly, we will add in one more step using a tool called Harmony. We will use 
 {: .hands_on}
 
 Now let's visualise the results again to see if the batch correction has worked. As before, we'll make one plot coloured by cluster and another coloured by batch (`Method`). We're hoping that the batches in that second plot will be more mixed together instead of forming separate groups like they did before batch correction.
+
+> <tip-title>Interactive Visualisations</tip-title>
+>
+> * Select `Yes` for `Make an interactive plot?` if you want to explore the data further. You'll be able to colour the interactive plot by `Method` or any of the other metadata categories.
+{: .tip}
 
 > <hands-on-title> Visualise the Results </hands-on-title>
 > 1. {% tool [Scanpy plot](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.11.5+galaxy0) %} with the following parameters:
