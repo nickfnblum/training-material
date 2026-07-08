@@ -243,7 +243,7 @@ Now we'll take a closer look at the metadata describing how the dataset was prod
 
 > <comment-title></comment-title>
 >
-> The cell metadata is any information about the cells that the original authors have included with the dataset. As well as the cell barcode or identifier for each individual cell, the metadata will usually include information such as which donor or sample the cell came from, or which experimental group it was in. Sometimes, this metadata will include lots of useful details, such as demographic information about human donors. Such information can help us to better understand our results.
+> The cell metadata is any information about the cells that the original authors have included with the dataset. As well as the cell barcode or identifier for each individual cell, the metadata will usually include information such as which donor or sample the cell came from, or which experimental group it was in. Sometimes, this metadata will include a lot of useful details, such as demographic information about human donors. This information can help us to better understand our results.
 {: .comment}
 
 # Clustering without Batch Correction
@@ -756,7 +756,7 @@ Let's take another look at our UMAPs coloured by `Method` to see what the batch 
 
 # Checking the Clusters are Biologically Meaningful
 
-We've seen from our plots that the batch correction has mixed the different methods together, but this alone isn't enough to convince us that the batch correction has been successful. As always with single cell analysis, we also want to confirm that the clusters we've found are biologically meaningful. The Scanpy and Seurat pipelines will always present us with clusters, but it is up to us to make sure these results make sense!
+Our plots suggest that the batch correction has successfully brought the different methods together, but this alone is not enough to confirm that it has worked. As always in single cell analysis, we also need to verify that the clusters we have found are biologically meaningful. Scanpy and Seurat will always produce clusters, but it is up to us to evaluate whether those results actually make sense.
 
 In order to do this, we would usually take a closer look at the clusters to work out what they represent, for example by looking for clusters expressing genes that are known to be present in specific cell types. If you've worked through the [Scanpy]({% link topics/single-cell/tutorials/scrna-scanpy-pbmc3k/tutorial.md %}) or [Seurat]({% link topics/single-cell/tutorials/scrna-seurat-pbmc3k/tutorial.md %}) clustering tutorials then you'll already have seen how this can be done using the top differentially expressed genes or known markers of gene types. If you haven't already completed these tutorials then they can tell you more about identifying cell types.
 
