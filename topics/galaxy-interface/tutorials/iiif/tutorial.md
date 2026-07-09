@@ -71,4 +71,5 @@ Once you have added your IIIF Manifest, you can access its content and load imag
 {: .hands_on}
 
 Depending on your needs, you can crop or preprocess the uploaded images in Galaxy, segment them or use them with other tools, for example, for optical character recognition. 
+
 It is up to you!
