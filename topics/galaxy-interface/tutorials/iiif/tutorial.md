@@ -7,6 +7,11 @@ questions:
   - How can you add existing IIIF repositories to Galaxy?
 objectives:
   - Import datasets to Galaxy using the IIIF integration in Galaxy
+requirements:
+  - type: "internal"
+    topic_name: digital-humanities
+    tutorials:
+      - introduction_to_dh
 time_estimation: 15 min
 key_points:
   - With the IIIF integration in Galaxy, you can directly browse IIIF from within Galaxy, eliminating manual download cycles.
@@ -32,6 +37,7 @@ By connecting Galaxy to IIIF, researchers can directly browse IIIF images and up
 ## Adding IIIF repositories to Galaxy
 
 **Please note:** the Galaxy IIIF integration is currently only available on [usegalaxy.eu](https://usegalaxy.eu).
+
 Galaxy has integrated IIIF directly into its **File Sources (Remote Files)** framework. 
 This allows researchers to search, browse, and import images from remote repositories directly into an active Galaxy history without downloading them locally first.
 
@@ -52,7 +58,8 @@ This allows researchers to search, browse, and import images from remote reposit
 
 After saving, your new entry appears in **My Repositories**.
 
-![My Repositories](/bodleian.png)
+![My Repositories] {% link topics/digital-humanities/tutorials/text_mining_chinese/images/Diff_WF_HTML.jpg %}
+(/bodleian.png)
 
 Once you have added your IIIF Manifest, you can access its content and load images into your history for further processing.
 
@@ -71,5 +78,4 @@ Once you have added your IIIF Manifest, you can access its content and load imag
 {: .hands_on}
 
 Depending on your needs, you can crop or preprocess the uploaded images in Galaxy, segment them or use them with other tools, for example, for optical character recognition. 
-
-It is up to you!
+Why not try adding your favourite IIIF images now?
