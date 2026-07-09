@@ -5,7 +5,7 @@ level: Introductory
 questions:
   - What is IIIF?
   - How can you add existing IIIF repositories to Galaxy?
-  objectives:
+objectives:
   - Import datasets to Galaxy using the IIIF integration in Galaxy
 time_estimation: 15 min
 key_points:
