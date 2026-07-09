@@ -58,8 +58,7 @@ This allows researchers to search, browse, and import images from remote reposit
 
 After saving, your new entry appears in **My Repositories**.
 
-![My Repositories] {% link topics/digital-humanities/tutorials/text_mining_chinese/images/Diff_WF_HTML.jpg %}
-(/bodleian.png)
+![My Repositories] {% link topics/galaxy-interface/tutorials/iiif/bodleian.png %}
 
 Once you have added your IIIF Manifest, you can access its content and load images into your history for further processing.
 
