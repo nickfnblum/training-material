@@ -12,7 +12,7 @@ requirements:
     topic_name: digital-humanities
     tutorials:
       - introduction_to_dh
-time_estimation: 15 min
+time_estimation: 15 minutes
 key_points:
   - With the IIIF integration in Galaxy, you can directly browse IIIF from within Galaxy, eliminating manual download cycles.
 contributions:
