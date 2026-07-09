@@ -342,7 +342,7 @@ Now let's take a look at our results. We'll plot one version of the UMAP showing
 
 <div class='Seurat' markdown='1'>
 
-In the Seurat pipeline, we can split each of our batches into its own 'layer' within the SeuratObject before we begin the analysis. We could do the same with each dataset if we were integrating multiple datasets together.
+In the Seurat pipeline, we will split each of our batches into its own 'layer' within the SeuratObject before we begin the analysis. We could do the same with each dataset if we were integrating multiple datasets together. Splitting will affect some aspects of preprocessing but it also sets up the dataset for the integration tools, which expect each batch or dataset to be in its own layer.
 
 Splitting our data into layers means that the Seurat preprocessing tools can work on each layer separately. Seurat can treat each layer as if it were a separate dataset during preprocessing. Each layer (in this case, each of our batches) will be normalised independently. We'll also identify the highly variable genes within each batch, rather than across the whole dataset. Seurat will then create a single consensus list of highly variable genes to use for the whole dataset.
 
