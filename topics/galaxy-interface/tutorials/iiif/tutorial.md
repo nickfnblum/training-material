@@ -32,14 +32,13 @@ IIIF stands for Image Interoperability Framework. According to [their website](h
 It comes with an international community and is backed by cultural institutions. 
 IIIF allows you to access high-quality images quickly and flexibly.
 
-By connecting Galaxy to IIIF, researchers can directly browse IIIF images and upload them to their history for further analysis. 
+By connecting Galaxy to IIIF, researchers can directly browse IIIF resources and import images into their Galaxy history for further analysis.
 
 ## Adding IIIF repositories to Galaxy
 
 **Please note:** the Galaxy IIIF integration is currently only available on [usegalaxy.eu](https://usegalaxy.eu).
 
-Galaxy has integrated IIIF directly into its **File Sources (Remote Files)** framework. 
-This allows researchers to search, browse, and import images from remote repositories directly into an active Galaxy history without downloading them locally first.
+Galaxy integrates IIIF through its File Sources (Remote Files) framework, enabling researchers to search, browse, and import images from remote IIIF repositories directly into an active Galaxy history without first downloading them locally.
 
 ### Adding and Browsing your IIIF repository
 
