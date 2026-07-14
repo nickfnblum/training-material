@@ -1,7 +1,7 @@
 ---
 layout: tutorial_hands_on
 
-title: "Pangenome Analysis using Roary"
+title: "Pangenome analysis with Roary"
 zenodo_link: "https://doi.org/10.5281/zenodo.21339040"
 tags:
   - pangenome
@@ -25,7 +25,6 @@ contributions:
   authorship:
     - Maed0x
     - SaimMomin12
-subtopic: pangenome
 edam_ontology:
 - topic_0362 # Genome annotation
 - topic_0622 # Genomics
