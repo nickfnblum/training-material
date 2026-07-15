@@ -214,7 +214,7 @@ Now that you have a phylogenetic tree from your bacterial strains, you can view 
 >
 {: .hands_on}
 
-You should see a phylogenetic tree like in Figure 3. Zoom in to look at each branch.
+The resulting phylogenetic tree should resemble Figure 3. Zoom in to examine individual branches.
 
 <figure style="text-align: center;">
   <img src="./images/phylo_tree.png" alt="Phylogenetic tree of the five analyzed bacterial strains based on core genome" style="width:45%;">
