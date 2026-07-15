@@ -33,7 +33,7 @@ edam_ontology:
 
 # Pangenomics
 
-When the sequencing era truly began in the 1970s with the establishment of Sanger sequencing, it laid the foundation for the Human Genome Project, which in turn led to the human reference genome as we know it today.
+When the sequencing era truly began in the 1970s with the establishment of Sanger sequencing, it laid the foundation for the Human Genome Project, which in turn led to the human reference genome used widely today.
 
 In traditional bioinformatic workflows, a single, linear reference genome (like the human reference genome) is dominantly used as the standard approach for comparative genomics. While this has driven great advancements in genetics, it suffers from a fundamental limitation known as reference bias ({% cite Ballouz2019 %}). Because a single reference genome only represents the genetic assembly of one individual (or a mosaic of a few), it fails to capture the broader genetic profile of an entire species. Consequently, structural variations or novel sequences present in other strains are often misaligned, unaligned, or completely discarded during mapping ({% cite Matthews2024 %}). Therefore, linear reference genomes are insufficient to represent true genetic diversity.
 
