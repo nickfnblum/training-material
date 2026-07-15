@@ -124,7 +124,7 @@ You will use Prokka to annotate all bacterial strains simultaneously using the d
 
 Once Prokka has finished, two new dataset collections will appear in your history:
 
-- One containing the GFF3 output files for each strain. This is the dataset collection you will use further on. Take a look at each output file in this collection.
+- One containing the GFF3 output files for each strain. This is the dataset collection you will use further on. Examine each output file in this collection.
 - One containing the logs of each run.
 
 > <details-title>What is a GFF3 file?</details-title>
