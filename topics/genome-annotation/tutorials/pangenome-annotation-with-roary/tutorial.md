@@ -137,7 +137,7 @@ Once Prokka has finished, two new dataset collections will appear in your histor
 
 # Calculate the Pangenome with Roary
 
-Now you will run Roary to compare the genes identified across all strains by Prokka. Roary will cluster the genes based on their sequence similarity to construct the pangenome by identifying the core genes and the accessory genes.
+Now you will run Roary to compare the genes identified across all strains by Prokka. Roary clusters the genes according to sequence similarity, thereby identifying the core and accessory genes that constitute the pangenome.
 
 > <hands-on-title>Identify Core and Accessory Genes</hands-on-title>
 >
