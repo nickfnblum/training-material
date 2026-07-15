@@ -154,7 +154,7 @@ Now you will run Roary to compare the genes identified across all strains by Pro
 
 ## Examine the Output
 
-Once Roary has finished, four different output files will appear in your history. Take a look at each output file:
+Once Roary has finished, four different output files will appear in your history. Examine each output file:
 
 - {% icon param-file %} **Summary statistics** file: Gives you a quick overview of how many genes belong to the core genome and the accessory genome.
 - {% icon param-file %} **Gene Presence Absence** file: Shows which genes are found in which strains. 
