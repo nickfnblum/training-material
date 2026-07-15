@@ -104,7 +104,7 @@ To identify core and accessory genes across multiple bacterial strains, you will
 
 # Annotate the Strains with Prokka
 
-You will use Prokka to annotate all bacterial strains simultaneously using the dataset collection. Prokka will scan the DNA sequences to locate genomic features, such as genes, and assign them their names and biological functions.
+You will use Prokka to annotate all bacterial strains simultaneously using the dataset collection. Prokka analyzes the DNA sequences to identify genomic features, such as genes, and assigns each a name and predicted biological function.
 
 > <hands-on-title>Annotate Strains</hands-on-title>
 >
