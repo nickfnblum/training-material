@@ -225,7 +225,7 @@ The resulting phylogenetic tree should resemble Figure 3. Zoom in to examine ind
 
 > <comment-title>What can we deduce from these results?</comment-title>
 >
-> - Strains that appear highly similar in this tree might have completely different traits in reality. This is because variations can exist within their accessory genes.
+> - Strains that appear highly similar in this tree may nonetheless differ substantially in phenotype. This is because variations can exist within their accessory genes.
 > - For example, one strain might carry plasmids with antibiotic resistance, while another might harbor toxin genes introduced by phages.
 > - These differences are hidden in this specific phylogenetic tree because it was built on core genes.
 > - A core genome tree is precise for tracing evolutionary descent and relatedness, but it does not reveal the complete individual genetic repertoire.
