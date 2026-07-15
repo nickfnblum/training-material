@@ -46,7 +46,7 @@ To overcome this, pangenomes can be used. The field of Pangenomics is an approac
   </figcaption>
 </figure>
 
-The concept of a pangenome is not brand new. However, when the term "Pangenome" was born, it was simply not financially or computationally feasible to pursue it further. "Pangenome" was first used by {% cite Sigaux2000 %} to describe a database of genomic and transcriptomic alterations found in tumor cells versus normal cells. {% cite Tettelin2005 %} also brought the concept of pangenomics into the spotlight while sequencing multiple strains of Group B Streptococcus (GBS) to help develop a vaccine. During this process, they noticed that with every new strain they sequenced, they kept finding new genes that did not exist in any of the previously sequenced strains. They realized that a single reference genome could never capture the entire genetic diversity of a species. If they had used the first sequenced strain as their sole reference, all the novel genes from the new strains would have been unmapped and discarded during analysis.
+The concept of a pangenome is not novel. However, when the term "Pangenome" was born, it was not financially or computationally feasible to pursue it further. "Pangenome" was first used by {% cite Sigaux2000 %} to describe a database of genomic and transcriptomic alterations found in tumor cells versus normal cells. {% cite Tettelin2005 %} also brought the concept of pangenomics into the spotlight while sequencing multiple strains of Group B Streptococcus (GBS) to help develop a vaccine. During this process, they noticed that with every new strain they sequenced, they continued to identify novel genes absent from previously sequenced strains. They concluded that a single reference genome was insufficient to capture the full genetic diversity of a species. If they had used the first sequenced strain as their sole reference, all the novel genes from the new strains would have been unmapped and discarded during analysis.
 
 With the advent of Next-Generation Sequencing technologies around 2010, sequencing became significantly faster and more affordable. Today, the reduced sequencing costs, combined with increased computational resources compared to the early 2000s, make it possible to properly realize true pangenomes. This technological leap led to the release of the first human pangenome draft in 2023 ({% cite Liao2023 %}).
 
@@ -115,7 +115,7 @@ You will use Prokka to annotate all bacterial strains simultaneously using the d
 >    - *"Genus name"*: Enter `Listeria`
 >    - *"Species name"*: Enter `monocytogenes` 
 >    - *"Additional outputs"*: Deselect all options except `Annotation in GFF3 format, containing both sequences and annotations (.gff)`
->   
+>
 > 3. Run the tool. 
 >
 {: .hands_on}
@@ -147,7 +147,7 @@ Now you will run Roary to compare the genes identified across all strains by Pro
 >    - *"Individual gff files or a dataset collection"*: Select `Collection` in the dropdown
 >      - {% icon param-file %} *"Dataset collection to submit to Roary"*: Select the collection containing the GFF3 output files from the previous step.
 >    - *"Additional outputs"*: Tick `Accessory binary genes in newick format`
->   
+>
 > 3. Run the tool. 
 >
 {: .hands_on}
