@@ -1,0 +1,295 @@
+---
+layout: tutorial_hands_on
+
+title: MFA Tutorial
+zenodo_link: https://zenodo.org/records/20640646
+questions:
+- Which biological questions are addressed by the tutorial?
+- Which bioinformatics techniques are important to know for this type of data?
+objectives:
+- The learning objectives are the goals of the tutorial
+- They will be informed by your audience and will communicate to them and to yourself
+  what you should focus on during the course
+- They are single sentences describing what a learner should be able to do once they
+  have completed the tutorial
+- You can use Bloom's Taxonomy to write effective learning objectives
+time_estimation: 3H
+key_points:
+- The take-home messages
+- They will appear at the end of the tutorial
+contributors:
+- contributor1
+- contributor2
+
+---
+
+
+# Introduction
+
+<!-- This is a comment. -->
+
+This tutorial explains how to use the Montreal Forced Aligner (MFA)
+{% raw %}`{% cite mcauliffe17_interspeech}`{% endraw %} on the Galaxy platform. 
+
+The aligner breaks down speech into its smallest possible sounds (phones) and aligns the indivdual 
+sounds to their corresponding orthographic transcription. For example, the word 'fox' is broken down
+into four sounds: F - AA1 - K - S. The phonetic transcription of each sound is given a precise time 
+boundary to match it to the corresponding sound in the audio file. Each sound can then be analyzed 
+individually without the need for a lengthy manual segmentation. For example, researchers can then 
+measure and compare each pronunciation of 'R' in very little time.
+
+To achieve this, MFA has acoustic models and pronunciation dictionaries for numerous languages, 
+which can be selected in Galaxy. 
+
+The tool requires an audio or video file and an orthographic transcription as a TextGrid file. 
+Audio can be transcribed using e.g. {% raw %}`{% cite wittenburg-etal-2006-elan %}`{% endraw %} or {% raw %} `{% cite Praat %}`{% endraw %}. Speech should be segmented into breath groups (the speech in between two breaths) and the transcript exported as a TextGrid. The audio file and TextGrid should then be compressed into one .zip file to be uploaded into Galaxy.
+
+
+> <agenda-title></agenda-title>
+>
+> In this tutorial, we will cover:
+>
+> {:toc}
+>
+{: .agenda}
+
+# Preprocessing
+
+Audio or video files must first be segmented and transcribed using e.g. 
+{% raw %}`{% cite Praat %}`{% endraw %} or 
+{% raw %}`{% cite wittenburg-etal-2006-elan %}`{% endraw %} and the transcript 
+exported as a TextGrid (theoretically alternatively as a .lab/.txt file but 
+these must be pasted in as a single line). The TextGrid should contain a single 
+tier with short intervals. Each interval should correspond to an utterance in the 
+audio file. The tier name can be a speaker ID (though this is not necessary).
+
+
+## Required data formats
+The filenames of the audio/video file and the transcript must be identical except 
+for the extension (e.g. .wav or .TextGrid). It is helpful to have the speaker ID 
+prefix to the filename (e.g. JW_interview.wav, JW_interview.TextGrid), then you 
+can instruct the aligner to use the corresponding number of characters (2 in our 
+example) as the speaker information. This speaker ID will be retained in the output,
+allowing you to later identify and analyze speech patterns by speaker.
+
+These should then be compressed into one .zip file to be uploaded into Galaxy.
+
+## Data Validation Checklist
+
+Before uploading, verify your files meet these requirements:
+
+- {% icon checkbox-checked %} Audio file and TextGrid have identical base filenames (e.g., `JW_interview.wav` and `JW_interview.TextGrid`)
+- {% icon checkbox-checked %} Audio format is WAV or MP3 (preferred: WAV for quality)
+- {% icon checkbox-checked %} TextGrid contains a single tier with short intervals, each representing one breath group
+- {% icon checkbox-checked %} Transcription text matches the actual spoken content (typos will cause alignment errors)
+- {% icon checkbox-checked %} Speaker ID prefix is consistent (e.g. all files start with 2-3 character speaker code)
+- {% icon checkbox-checked %} Files are compressed into a single .zip archive
+
+
+## Uploading the data
+> <hands-on-title> Data Upload </hands-on-title>
+>
+> 1. Create a new history for this tutorial
+> 2. Import the files from [Zenodo]({{ page.zenodo_link }}) or from
+>    the shared data library (`GTN - Material` -> `{{ page.topic_name }}`
+>     -> `{{ page.title }}`):
+>
+>    ```
+>    https://zenodo.org/api/records/20640646/files/the_fox_and_the_grapes.zip/content
+>    https://zenodo.org/api/records/20640646/files/english_us_arpa.dict/content
+>    ```
+>    
+>
+>    {% snippet faqs/galaxy/datasets_import_via_link.md %}
+>
+>    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
+>
+> 3. Rename the datasets
+> 4. Change the datatype of the dataset to is mfa_corpus_model.zip
+>
+>    {% snippet faqs/galaxy/datasets_change_datatype.md datatype="datatypes" %}
+>
+{: .hands_on}
+
+# Align the files
+
+Before we align the files, we need to first check whether all of the words are 
+in our dictionary. MFA offers the Find OOVs (out of vocabulary words) tool to do this.
+
+
+## Sub-step with **MFA Find OOVs**
+
+> <hands-on-title> Task description </hands-on-title>
+>
+> 1. {% tool [MFA Find OOVs](mfa_find_oovs) %} with the following parameters:
+>    - {% icon param-file %} *"Corpus Archive"*: `output` (Input dataset)
+>    - *"Dictionary Source"*: `Use a built-in MFA Dictionary`
+>        - *"Select Dictionary"*: `English Us (ARPA)`
+>
+> 2. Rename the output file for clarity:
+>    - Click on the dataset produced by MFA Find OOVs
+>    - Click the {% icon galaxy-pencil %} (edit) icon
+>    - Change the name to `OOVs_english_us` or similar
+>    - This will help you identify this as the out-of-vocabulary words file
+>
+> **Expected output:** A .zip file containing a text file (`oovs_found_english_us_arpa.txt`) listing all words from your transcription that are not in the English US ARPA dictionary. If no OOVs are found, the file will be empty (which is ideal!)
+>
+{: .hands_on}
+
+## Sub-step with **Unzip**
+
+> <hands-on-title> Task description </hands-on-title>
+>
+> 1. {% tool [Unzip](toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy5) %} with the following parameters:
+>    - {% icon param-file %} *"Input file"*: `output_archive` (output of **MFA Find OOVs** {% icon tool %})
+>    - *"What to extract"*: `Single file`
+>        - *"File path"*: `oovs_found_english_us_arpa.txt`
+>
+>
+>    > <comment-title> Why do we need to do this? </comment-title>
+>    >
+>    > We need to unzip this file so that the pronunciations of the OOVs can be generated in the next step. 
+>    > You could also do this manually and then upload the file to be merged with the dictionary using MFA merge dictionaries.
+>    > {: .comment}
+
+>    > <comment-title> Check the OOVs </comment-title>
+>    >
+>    > Check the OOVs found file and make sure that none of the OOVs are typos. To do so, click on the {% galaxy-eye %} icon next to the dataset name to look at the file. If you do find a typo, you must correct this in the transcription, then upload the .TextGrid again and rerun the previous steps.
+>    > {: .comment}
+
+>
+{: .hands_on}
+
+
+## Sub-step with **MFA G2P**
+
+> <hands-on-title> Task description </hands-on-title>
+>
+> 1. {% tool [MFA G2P](mfa_g2p) %} with the following parameters:
+>    - *"Input Mode"*: `Word List (Text File)`
+>        - {% icon param-file %} *"Word List"*: `unzipped_single` (output of **Unzip** {% icon tool %})
+>    - *"G2P Model Source"*: `Use a built-in MFA Model`
+>        - *"Select G2P Model"*: `English Us (ARPA)`
+>
+>    > <comment-title> Check the pronunciations manually </comment-title>
+>    >
+>    > It is important to check the pronunciations manually. MFA can also offer multiple possible pronunciations for each >    > word. 
+>    > Delete any that are not correct and correct any incorrect pronunciations. To do so, you can use the editor which can be found in Visualization on the side bar. There you can select the generated dictionary and correct the pronunciation.
+>    > {: .comment}
+>
+>    > <tip-title> Phonetic notation </tip-title>
+>    >
+>    > This tutorial uses ARPA phonetic notation for US English (e.g., AE, IH, K). Other models use IPA.
+>    > {: .tip}
+>
+> 2. Rename the output file for clarity:
+>    - Click on the `output_dictionary` dataset produced by MFA G2P
+>    - Click the {% icon galaxy-pencil %} (edit) icon
+>    - Change the name to `generated_pronunciations_oovs` or `generated_dictionary`
+>    - This clearly identifies this as the file containing generated pronunciations for OOV words
+>
+> **Expected output:** A dictionary file in MFA format (one entry per line: word followed by phonetic transcription). File size depends on the number of OOVs; typically ranges from a few words to hundreds.
+>
+{: .hands_on}
+
+
+## Sub-step with **MFA Merge**
+
+> <hands-on-title> Task description </hands-on-title>
+>
+> 1. {% tool [MFA Merge](mfa_merge) %} with the following parameters:
+>    - *"Dictionary Source"*: `Use a built-in MFA Dictionary`
+>        - *"Select Dictionary"*: `English Us (ARPA)`
+>    - In *"Dictionary to add"*:
+>        - {% icon param-repeat %} *"Insert Dictionary to add"*
+>            - {% icon param-file %} *"MFA dictionary"*: `output_dictionary` (output of **MFA G2P** {% icon tool %})
+>
+>
+>    > <comment-title> If corrections are needed </comment-title>
+>    >
+>    > If you had to correct some of the pronunciations or delete some, you will have to select the uploaded file with the corrected dictionary entries as your dictionary to add.
+>    > {: .comment}
+>
+> 2. Rename the output file for clarity:
+>    - Click on the `output` dataset produced by MFA Merge
+>    - Click the {% icon galaxy-pencil %} (edit) icon
+>    - Change the name to `updated_dictionary_english_us` or `merged_dictionary`
+>    - This clearly identifies this as the merged dictionary containing both built-in entries and newly generated pronunciations
+>
+> **Expected output:** A merged dictionary file (single file, not a .zip) containing all entries from the built-in English US ARPA dictionary plus your newly generated pronunciations for OOV words. This is the complete dictionary your audio will be aligned against.
+>
+{: .hands_on}
+
+## Sub-step with **MFA Align**
+
+> <hands-on-title> Task description </hands-on-title>
+>
+> 1. {% tool [MFA Align](mfa_align) %} with the following parameters:
+>    - {% icon param-file %} *"Corpus Archive"*: `output` (Input dataset)
+>    - *"Dictionary Source"*: `Upload from History`
+>        - {% icon param-file %} *"Dictionary File"*: `output` (Input dataset)
+>    - *"Acoustic Model Source"*: `Use a built-in MFA Model`
+>        - *"Select Acoustic Model"*: `English Us (ARPA)`
+>
+>
+>    > <comment-title> Check the output in Praat </comment-title>
+>    >
+>    > Always validate the alignment output:
+>    >
+>    > 1. Download the .TextGrid file from the output archive (see steps below)
+>    > 2. Open the original audio file + aligned TextGrid together in Praat
+>    > 3. Check: Do phoneme boundaries align with actual speech transitions?
+>    > 4. Listen for obvious misalignments: does silence have phoneme labels? Are vowels properly segmented?
+>    > 5. Some misalignment is normal, but widespread errors suggest checking your transcription or OOVs
+>    >
+>    > **Praat playback tip:** Right-click on a TextGrid interval and select "Play" to hear just that phoneme segment.
+>    {: .comment}
+>
+> 2. Rename the output file for clarity:
+>    - Click on the output archive produced by MFA Align
+>    - Click the {% icon galaxy-pencil %} (edit) icon
+>    - Change the name to `aligned_textgrids` or `mfa_output_aligned`
+>    - This clearly identifies this as the final aligned output containing the TextGrid files with time boundaries for each phoneme
+>
+> **Expected output:** A .zip archive containing TextGrid files (one per input file) with three tiers: words, phones (individual sounds), and word confidence scores. Total runtime depends on audio length (typically 2-10 minutes for 5-30 minute audio files).
+>
+{: .hands_on}
+
+## Downloading and Exporting Results
+
+> <hands-on-title> Extract and download your aligned files </hands-on-title>
+>
+> 1. Download the aligned archive:
+>    - Click the download icon ({% icon download %}) next to the `aligned_textgrids` dataset
+>    - Save the .zip file to your computer
+>
+> 2. Extract the files on your computer
+>   
+> 3. Open in Praat for analysis:
+>    - In Praat, open the original audio file (File → Open → Read from file...)
+>    - Then open the corresponding TextGrid (Objects window → Read → Read from file...)
+>    - Select both and click "View & Edit" to visualize the alignment
+>
+>
+{: .hands_on}
+
+
+# Next Steps and Use Cases
+
+Once you have aligned TextGrids, you can:
+
+- **Measure vowel formants:** Extract and analyze vowel characteristics from aligned vowel intervals. To do so, you can use new_fave.
+- **Compare pronunciations:** Analyze pronunciation variation across speakers or time
+- **Assess speech rate:** Measure duration of phonemes or words to study articulation speed
+- **Study consonant voicing:** Use the precise time boundaries to measure voice onset time (VOT)
+- **Export for further analysis:** Use aligned intervals in acoustic analysis software (PRAAT, R, Python)
+- **Create visible transcriptions:** Generate publication-quality spectrogram images with phoneme labels overlaid
+
+
+# Conclusion
+
+In this tutorial, we uploaded a sample audio file and transcription. 
+We checked for any out-of-vocabulary words (OOVs) missing from our dictionary and generated the pronunciations using G2P. 
+After checking and, if necessary, correcting these pronunciations, we merged the generated pronunciations with the built-in dictionary and ran the aligner on our files, producing aligned TextGrid files with precise phoneme-level time boundaries.
+
+You now have a fully aligned and labeled corpus ready for phonetic or linguistic analysis!

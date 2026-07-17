@@ -1,0 +1,23 @@
+---
+destination:
+  type: library
+  name: GTN - Material
+  description: Galaxy Training Network Material
+  synopsis: Galaxy Training Network Material. See https://training.galaxyproject.org
+items:
+- name: New topic
+  description: Topic summary
+  items:
+  - name: MFA Tutorial
+    items:
+    - name: 'DOI: 10.5281/zenodo.20640646'
+      description: latest
+      items:
+      - url: https://zenodo.org/api/records/20640646/files/the_fox_and_the_grapes.zip/content
+        src: url
+        ext: ''
+        info: https://zenodo.org/records/20640646
+      - url: https://zenodo.org/api/records/20640646/files/english_us_arpa.dict/content
+        src: url
+        ext: ''
+        info: https://zenodo.org/records/20640646
