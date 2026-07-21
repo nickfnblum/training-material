@@ -89,10 +89,10 @@ Before uploading, verify your files meet these requirements:
 >    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
 >
 > 3. Rename the datasets to a more meaningful name(optional):
->    - Click on the {% icon galaxy-pencil %} **pencil icon** for the 
->    dataset to edit its attributes
->    - In the central panel, change the **Name** field {% if include.name %} to `{{ include.name }}` {% endif %}
->    - Click the **Save** button
+>    - Click on the dataset produced by MFA Find OOVs
+>    - Click the {% icon galaxy-pencil %} (edit) icon
+>    - Choose a meaningful name
+>    
 > 4. Change the datatype of the dataset to mfa_corpus_model.zip
 >
 >    {% snippet faqs/galaxy/datasets_change_datatype.md datatype="datatypes" %}
@@ -134,6 +134,12 @@ In order to generate the  pronunciations of the OOVs, we need the single file oo
 >    - {% icon param-file %} *"Input file"*: `output_archive` (output of **MFA Find OOVs** {% icon tool %})
 >    - *"What to extract"*: `Single file`
 >        - *"File path"*: `oovs_found_english_us_arpa.txt`
+>
+2. Rename the output file for clarity:
+>    - Click on the dataset produced by MFA Find OOVs
+>    - Click the {% icon galaxy-pencil %} (edit) icon
+>    - Change the name to `unknown_words` or similar
+>    - This will help you identify this as the out-of-vocabulary words file
 >
 >
 >    > <comment-title> Check the OOVs </comment-title>
@@ -209,7 +215,7 @@ Now we will add the new words to the built-in dictionary so that they are recogn
 
 ## Sub-step with **MFA Align**
 
-Now we're ready to align the pronunciations with the audio.
+Now we're ready to align the pronunciations with the audio. Since we only have one spekaer and no spekaer ID, we leave the number of spekaer characters at 0. If you have a spekaer ID at the start of your file name, then select the number of characters corresponding to the speaker ID.qq
 
 > <hands-on-title> Task description </hands-on-title>
 >
@@ -279,4 +285,4 @@ In this tutorial, we uploaded a sample audio file and transcription.
 We checked for any out-of-vocabulary words (OOVs) missing from our dictionary and generated the pronunciations using G2P. 
 After checking and, if necessary, correcting these pronunciations, we merged the generated pronunciations with the built-in dictionary and ran the aligner on our files, producing aligned TextGrid files with precise phoneme-level time boundaries.
 
-You now have a fully aligned and labeled corpus ready for phonetic analysis!
+You now have a fully aligned and labeled corpus ready for phonetic anal
