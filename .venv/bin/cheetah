@@ -1,0 +1,3 @@
+#!/home/jazz/Documents/galaxy/training-material/.venv/bin/python3
+from Cheetah.CheetahWrapper import _cheetah
+_cheetah()
