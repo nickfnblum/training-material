@@ -1,5 +1,3 @@
-layout: tutorial_hands_on
-
 title: Montreal Forced Aligner
 zenodo_link: https://zenodo.org/records/21371207
 questions:
