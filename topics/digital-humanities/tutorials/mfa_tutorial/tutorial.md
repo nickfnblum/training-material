@@ -98,7 +98,7 @@ Before uploading, verify your files meet these requirements:
 > 3. Rename the datasets to a more meaningful name(optional):
 >    - Click on the dataset produced by MFA Find OOVs
 >    - Click the {% icon galaxy-pencil %} (edit) icon
->    - Choose a meaningful name
+>    - Choose a meaningful name, for example, `the_fox_and_the_grapes.zip`
 >    
 > 4. Change the datatype of the dataset to mfa_corpus_model.zip
 >
