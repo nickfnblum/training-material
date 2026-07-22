@@ -87,7 +87,10 @@ ALLOWED_SHORT_IDS = [
   'MAF_To_Fasta1',
   'MAF_To_Interval1',
   'master2pgSnp',
-  'metabolicmine',
+  'metabolicmine',#
+  'mfa_align',
+  'mfa_g2p',
+  'mfa_merge',
   'microbial_import1',
   'modENCODEfly',
   'modENCODEworm',
