@@ -6,7 +6,13 @@ zenodo_link: https://zenodo.org/records/21371207
 objectives:
 - Use the Montreal Forced Aligner to break down speech into its smallest sounds and align them with their corresponding transcription.
 time_estimation: 1H
-contributors:
+contributions:
+  authorship:
+    - wallajess
+   reviewing:
+    - Sch-Da
+  testing:
+    - Sch-Da
 - Jessica Wallace
 
 ---
