@@ -86,7 +86,7 @@ Before uploading, verify your files meet these requirements:
 >     -> `{{ page.title }}`):
 >
 >    ```
->    https://zenodo.org/api/records/20640646/files/the_fox_and_the_grapes.zip
+>    https://zenodo.org/records/21371207/files/the_fox_and_the_grapes.zip?download
 >    
 >    ```
 >    
