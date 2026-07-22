@@ -225,7 +225,7 @@ Now we will add the new words to the built-in dictionary so that they are recogn
 
 Now we're ready to align the pronunciations with the audio. Since we only have one spekaer and no spekaer ID, we leave the number of spekaer characters at 0. If you have a spekaer ID at the start of your file name, then select the number of characters corresponding to the speaker ID.qq
 
-> <hands-on-title> Task description </hands-on-title>
+> <hands-on-title> Align Audio and Pronounciation </hands-on-title>
 >
 > 1. {% tool [MFA Align](mfa_align) %} with the following parameters:
 >    - {% icon param-file %} *"Corpus Archive"*: `output` (Input dataset)
