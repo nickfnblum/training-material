@@ -196,7 +196,7 @@ Now we can generate pronunciations for each of the out of vocabulary words using
 
 Now we will add the new words to the built-in dictionary so that they are recognized when we run the aligner.
 
-> <hands-on-title> Task description </hands-on-title>
+> <hands-on-title> Add new words to your dictionary </hands-on-title>
 >
 > 1. {% tool [MFA Merge](mfa_merge) %} with the following parameters:
 >    - *"Dictionary Source"*: `Use a built-in MFA Dictionary`
