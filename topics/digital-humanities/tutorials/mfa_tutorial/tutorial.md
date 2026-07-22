@@ -163,7 +163,7 @@ In order to generate the  pronunciations of the OOVs, we need the single file oo
 
 Now we can generate pronunciations for each of the out of vocabulary words using MFA's built in grapheme-to-phoneme (G2P) tool. Select the same model you used for finding OOVs.
 
-> <hands-on-title> Task description </hands-on-title>
+> <hands-on-title> Generate pronunciations with G2P </hands-on-title>
 >
 > 1. {% tool [MFA G2P](mfa_g2p) %} with the following parameters:
 >    - *"Input Mode"*: `Word List (Text File)`
