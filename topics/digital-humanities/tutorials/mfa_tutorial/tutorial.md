@@ -11,16 +11,12 @@ objectives:
 time_estimation: 1H
 contributions:
   authorship:
-    - wallajess
-   reviewing:
+    - wallajess    
+  reviewing:
     - Sch-Da
   testing:
     - Sch-Da
-
 ---
-
-
-# Introduction
 
 <!-- This is a comment. -->
 
