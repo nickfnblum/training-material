@@ -290,4 +290,4 @@ In this tutorial, we uploaded a sample audio file and transcription.
 We checked for any out-of-vocabulary words (OOVs) missing from our dictionary and generated the pronunciations using G2P. 
 After checking and, if necessary, correcting these pronunciations, we merged the generated pronunciations with the built-in dictionary and ran the aligner on our files, producing aligned TextGrid files with precise phoneme-level time boundaries.
 
-You now have a fully aligned and labeled corpus ready for phonetic anal
+You now have a fully aligned and labeled corpus ready for phonetic analysis.
