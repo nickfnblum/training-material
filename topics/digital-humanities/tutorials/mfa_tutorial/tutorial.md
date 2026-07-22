@@ -25,7 +25,7 @@ This tutorial explains how to use the Montreal Forced Aligner (MFA) {% cite mcau
 
 The aligner breaks down speech into its smallest possible sounds (phones) and aligns the indivdual 
 sounds to their corresponding orthographic transcription. For example, the word 'fox' is broken down
-into four sounds: F AA K S or /f ɑː k s/ (depending on whether you use ARPAbet or IPA). The phonetic transcription of 
+into four sounds: F AA K S or /f ɑː k s/ (depending on whether you use ARPAbet or IPA for the transcription). The phonetic transcription of 
 each sound is given a precise time boundary to match it to the corresponding sound in the audio file. 
 Each sound can then be analyzed individually without the need for lengthy manual segmentation. For example, researchers can then 
 measure and compare each pronunciation of a certain sound in very little time.
