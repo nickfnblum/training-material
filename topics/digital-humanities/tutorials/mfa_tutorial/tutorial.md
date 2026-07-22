@@ -13,7 +13,6 @@ contributions:
     - Sch-Da
   testing:
     - Sch-Da
-- Jessica Wallace
 
 ---
 
