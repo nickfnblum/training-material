@@ -228,7 +228,7 @@ Now we're ready to align the pronunciations with the audio. Since we only have o
 > <hands-on-title> Align Audio and Pronounciation </hands-on-title>
 >
 > 1. {% tool [MFA Align](mfa_align) %} with the following parameters:
->    - {% icon param-file %} *"Corpus Archive"*: `output` (Input dataset)
+>    - {% icon param-file %} *"Corpus Archive"*: `the_fox_and_the_grapes.zip` (Input dataset)
 >    - *"Dictionary Source"*: `Upload from History`
 >        - {% icon param-file %} *"Dictionary File"*: `output` (Input dataset)
 >    - *"Acoustic Model Source"*: `Use a built-in MFA Model`
