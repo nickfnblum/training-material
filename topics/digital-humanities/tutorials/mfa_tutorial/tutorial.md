@@ -114,7 +114,7 @@ in our dictionary. MFA offers the Find OOVs (out of vocabulary words) tool to do
 
 ## Sub-step with **MFA Find OOVs**
 
-> <hands-on-title> Task description </hands-on-title>
+> <hands-on-title> Find out-of-vocabulary-words </hands-on-title>
 >
 > 1. {% tool [MFA Find OOVs](mfa_find_oovs) %} with the following parameters:
 >    - {% icon param-file %} *"Corpus Archive"*: `output` (Input dataset)
