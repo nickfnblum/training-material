@@ -138,7 +138,7 @@ In order to generate the  pronunciations of the OOVs, we need the single file oo
 
 > <hands-on-title> Task description </hands-on-title>
 >
-> 1. {% tool [Unzip](toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy5) %} with the following parameters:
+> 1. {% tool [Unzip a file](toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy5) %} with the following parameters:
 >    - {% icon param-file %} *"Input file"*: `output_archive` (output of **MFA Find OOVs** {% icon tool %})
 >    - *"What to extract"*: `Single file`
 >        - *"File path"*: `oovs_found_english_us_arpa.txt`
