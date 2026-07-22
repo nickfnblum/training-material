@@ -3,6 +3,8 @@ layout: tutorial_hands_on
 
 title: Montreal Forced Aligner
 zenodo_link: https://zenodo.org/records/21371207
+questions:
+  - How can you use Montreal Forced Aligner to align an audio and a TextGrid file in Galaxy?
 objectives:
 - Use the Montreal Forced Aligner to break down speech into its smallest sounds and align them with their corresponding transcription.
 time_estimation: 1H
