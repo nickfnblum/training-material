@@ -528,143 +528,111 @@ The tutorial is written for any Galaxy instance that has Image Learner installed
 
 ## Interpret the Outputs
 
-After training the model, the Image Learner generates a detailed report summarizing its performance across the training, validation, and test datasets.  
+Image Learner creates an interactive report with three tabs. Read them from left to right: first check the data and settings, then examine how the model learned, and finally evaluate it on the test set.
 
 > <tip-title>What to look for when reading the report</tip-title>
 >
-> Here are some practical questions to keep in mind when reading the report:
+> Keep three questions in mind:
 >
-> 1. How is the model capturing the signals in my dataset?
-> 2. Do the training, validation, and test results tell a consistent story?
-> 3. Are some classes harder for the model to predict than others?
-> 4. Do any results suggest that the model may not perform as well on a different dataset?
-> 5. Is there a parameter that I could modify to improve performance?
+> 1. Do the training and validation curves follow a similar pattern?
+> 2. Does performance remain high on data that were not used for training?
+> 3. Which tissue classes are confused with one another?
 >
 {: .tip}
 
-To access this report, click on the **eye icon** next to the dataset in your Galaxy history (as shown in the figure below).
+To open the report, click the **eye icon** next to the report dataset in your Galaxy history.
+
 ![Open image learner report](figures/open_report.png)
 
-### Overall Performance Overview
-
-Before diving into each tab, let’s first interpret the key performance metrics:
-
-| Metric | Train | Validation | Test |
-|--------|------|------------|------|
-| Accuracy | 1.0000 | 1.0000 | 0.9890 |
-| Micro Accuracy | 1.0000 | 1.0000 | 0.9915 |
-| Hits at K | 1.0000 | 1.0000 | 1.0000 |
-| Loss | 0.0000 | 0.0000 | 0.0473 |
-| ROC-AUC | 1.0000 | 1.0000 | 1.0000 |
-
-These results indicate strong model performance:
-
-- Perfect training and validation performance suggests the model has captured patterns in the dataset very effectively.
-- Test performance remains very high, with only a slight drop in accuracy and a small increase in loss, indicating good generalization.
-- ROC-AUC of 1.0 across all splits shows excellent class separability.
-- Low test loss (0.0473) suggests only minor prediction uncertainty on unseen data.
-
-However, such near-perfect results should be interpreted carefully, as they may indicate:
-- A very clean and well-separated dataset, or  
-- Potential overfitting if the dataset is small or not diverse enough  
-
-To better understand these results and assess model reliability, we now explore each section of the report in detail. Each tab provides deeper insights into model behavior and helps determine whether adjustments are needed.
-
 ### Config and Overall Performance Summary
+
+Start with the **Config and Overall Performance Summary** tab. It contains the dataset split, training settings, and a first comparison of training, validation, and test performance. The figures below show selected parts of this tab; scroll through the report to inspect the complete configuration.
 
 #### Dataset Overview
 
 ![Dataset Overview](figures/dataset_overview.png)
 
-This table shows how samples are distributed across:
-- Training set  
-- Validation set  
-- Test set  
-
-When interpreting this table:
-- A balanced dataset (similar number of samples per class) helps the model learn fairly across categories.
-- An imbalanced dataset may bias the model toward dominant classes.
+The samples were divided into training, validation, and test sets using a stratified 70/10/20 split. Stratification preserves similar tissue proportions in each set. Some tissues have more samples than others, so per-class results remain important.
 
 #### Training Configuration
 
 ![Training configuration](figures/training_config.png)
 
-This section summarizes how the model was trained, for example:
+The configuration records the settings needed to understand and reproduce the run. Here, Image Learner fine-tunes a pretrained CAFormer model for 30 epochs using Adam. Accuracy is the validation metric used to monitor the model, while cross-entropy loss guides updates to its weights.
 
-- Validation Metric  
-  The metric used to monitor performance during training and select the best model.
+For this tutorial, both **Epochs** and **Early Stop** are set to 30 so that training can continue for the full 30 epochs. Although performance reaches its maximum early, the additional epochs make the later plateau visible in the learning curves. In future experiments, use **Epochs** to set the maximum training length and lower **Early Stop** to end training sooner when the validation metric stops improving.
 
-- Loss Function  
-  Measures how far predictions are from true labels.
+#### Overall Performance Overview
 
-- Optimizer  
-  Controls how model weights are updated (e.g., Adam, SGD).
+The summary uses several metrics. **Accuracy** is the proportion of samples assigned the correct tissue. **Micro accuracy** combines results across all classes, so larger classes contribute more. **Hits at K** checks whether the correct tissue is among the top K predictions; here, the default is K = 3. **Loss** measures prediction error, and **ROC-AUC** measures how well the model separates the classes.
+
+![Model Performance Summary](figures/model_performance_summary.png)
+
+What do the results show?
+
+- Training and validation scores are perfect to the displayed precision.
+- Test accuracy remains high at 0.9890, with a small loss of 0.0473.
+- Test Hits at K and ROC-AUC are 1.0000, indicating strong top-three predictions and class separation.
+
+The test set provides the most useful estimate of performance on unseen samples. These results are excellent for this dataset, but an external dataset is still needed to test broader generalization.
 
 ### Training and Validation Results
+
+Next, open the **Training and Validation Results** tab. An epoch is one complete pass through the training data. This tab shows how loss, accuracy, and ROC-AUC change across epochs, compares training with validation, and reports the best validation epoch. Hover over the report's interactive plots to see exact values.
 
 #### Accuracy Across Epochs
 
 ![Accuracy across epochs](figures/accuracy_epochs.png)
 
-This curve shows how accuracy evolves over training epochs:
-
-- Training accuracy: performance on training data  
-- Validation accuracy: generalization performance  
-
-Interpretation:
-- Both curves increasing → good learning  
-- Training high but validation drops → overfitting  
-- Both low → underfitting  
+Training and validation accuracy rise quickly and reach 1.0 within the first ten epochs. The curves remain close, showing that performance improves similarly on data used to fit the model and data used to monitor it. A growing gap or falling validation accuracy would instead suggest overfitting.
 
 #### ROC-AUC Across Epochs
 
 ![ROC-AUC across epochs](figures/rocauc_epochs.png)
 
-ROC-AUC measures class separability:
-
-- Close to 1.0 → excellent performance  
-- Close to 0.5 → random guessing  
-
-A stable high curve indicates strong classification ability.
+ROC-AUC approaches 1.0 within the first few epochs and then remains stable for both splits. This indicates that the model learns to separate the tissue classes early in training.
 
 #### Overfitting Gap
 
 ![Overfitting gap: ROC-AUC across epochs](figures/overffiting_gap.png)
 
-This curve shows the difference between training and validation:
-
-- Small gap → good generalization  
-- Large gap → overfitting  
+This plot shows the difference between training and validation ROC-AUC. The gap quickly approaches zero and stays there, so the two curves agree closely. There is no widening gap in this metric during training.
 
 ### Test Results
 
+Finally, open the **Test Results** tab. The test set was not used to fit the model and therefore provides the clearest check of final performance. The tab includes overall and per-class metrics, a confusion matrix, prediction confidence, and Grad-CAM heatmaps. The tutorial shows selected outputs; explore the full tab for class-level details.
+
 ![Test Performance Summary](figures/test_metrics.png)
 
-#### Macro, Micro, and Weighted Metrics
+How to read the metrics:
 
-- Macro: treats all classes equally  
-- Micro: aggregates all predictions globally  
-- Weighted: accounts for class frequency  
+- **Accuracy:** proportion of correct predictions.
+- **Precision:** proportion of predictions for a tissue that are correct.
+- **Recall:** proportion of samples from a tissue that are identified correctly.
+- **F1-score:** balance between precision and recall.
+- **Macro / micro / weighted:** treat classes equally / combine all predictions / account for class size.
+- **Hits at K / ROC-AUC:** whether the correct label is in the top three / how well classes are separated.
 
-#### Key Metrics Explained
+Key observations:
 
-- Accuracy: overall correctness  
-- Precision: correctness of positive predictions  
-- Recall: ability to find positives  
-- F1-score: balance between precision and recall  
-- ROC-AUC: class separability  
+- All precision, recall, and F1-scores are at least 0.9890, indicating very few classification errors.
+- Micro and weighted scores are 0.9915; these summarize all samples or account for class size.
+- Macro scores are slightly lower because they give every tissue equal weight, making errors in smaller classes more visible.
+- Hits at K and ROC-AUC are 1.0000, showing that the correct tissue is always among the top three predictions and that the classes are well separated.
+
+![Test Confusion Matrix](figures/test_confusion_matrix.png)
+
+- Rows are observed tissues and columns are predicted tissues; correct predictions fall on the diagonal.
+- The only visible error is one **Heart - Left Ventricle** sample predicted as **Skin - Sun Exposed (Lower leg)**.
+- All other tissue classes are classified correctly in this test set.
 
 #### Grad-CAM Heatmaps
 
 ![Grad-CAM heatmaps](figures/gradcam.png)
 
-Grad-CAM highlights which regions of the expression-derived image influenced the model prediction. In this tutorial dataset, each image is not a real tissue image; it is a reshaped vector of GTEx gene expression values. Bright Grad-CAM regions should therefore be interpreted as parts of the expression profile that were important for predicting the tissue label.
+Grad-CAM highlights regions that influenced a prediction: warmer colors indicate greater influence. The heatmaps show that the model focuses on selected regions rather than using every pixel equally.
 
-In the examples above, the model does not appear to rely on the entire image equally. Instead, the heatmaps show localized bright regions and bands, suggesting that specific subsets of expression values contributed more strongly to the classification. This matches the biological expectation that tissue identity is driven by particular gene expression patterns rather than by all genes equally.
-
-However, these regions should be interpreted carefully. The spatial layout of the image is engineered from gene order, so nearby pixels are not necessarily nearby in a biological tissue, genome, or pathway. A useful follow-up analysis would be to map the highlighted pixel positions back to the original genes and ask whether those genes are known tissue markers or belong to relevant biological pathways.
-
-For this tutorial, the main conclusion is that the model is learning from structured expression patterns in the GTEx samples. Grad-CAM helps us inspect where the model focuses, but it does not prove which genes are biologically causal.
+These are expression-derived images, not photographs or spatial tissue maps. Pixel positions follow gene order, so nearby highlighted pixels are not necessarily biologically related. Grad-CAM shows where the model focused, but it does not identify causal genes. Mapping highlighted pixels back to genes would be a separate follow-up analysis.
 
 ## Summary
 
