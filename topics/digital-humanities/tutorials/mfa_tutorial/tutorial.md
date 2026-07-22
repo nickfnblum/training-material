@@ -136,7 +136,7 @@ in our dictionary. MFA offers the Find OOVs (out of vocabulary words) tool to do
 
 In order to generate the  pronunciations of the OOVs, we need the single file oovs_found_english_us_arpa.txt. We therefore need to unzip the output of Find OOVs so we can work with the file. The missing pronunciations can be generated automatically in the next step (MFA G2P) or manually using the editor.
 
-> <hands-on-title> Task description </hands-on-title>
+> <hands-on-title> Unzipping your file </hands-on-title>
 >
 > 1. {% tool [Unzip a file](toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy5) %} with the following parameters:
 >    - {% icon param-file %} *"Input file"*: `output_archive` (output of **MFA Find OOVs** {% icon tool %})
