@@ -120,6 +120,7 @@ in our dictionary. MFA offers the Find OOVs (out of vocabulary words) tool to do
 >    - {% icon param-file %} *"Corpus Archive"*: `output` (Input dataset)
 >    - *"Dictionary Source"*: `Use a built-in MFA Dictionary`
 >        - *"Select Dictionary"*: `English Us (ARPA)`
+>- *"Speaker Characters"*: `0`
 >
 > 2. Rename the output file for clarity:
 >    - Click on the dataset produced by MFA Find OOVs
