@@ -96,7 +96,7 @@ Before uploading, verify your files meet these requirements:
 >
 >    {% snippet faqs/galaxy/datasets_import_from_data_library.md %}
 >
-> 3. Rename the datasets to a more meaningful name(optional):
+> 3. Rename the datasets to a more meaningful name (optional):
 >    - Click on the dataset produced by MFA Find OOVs
 >    - Click the {% icon galaxy-pencil %} (edit) icon
 >    - Choose a meaningful name, for example, `the_fox_and_the_grapes.zip`
@@ -118,13 +118,13 @@ in our dictionary. MFA offers the Find OOVs (out of vocabulary words) tool to do
 > <hands-on-title> Find out-of-vocabulary-words </hands-on-title>
 >
 > 1. {% tool [MFA Find OOVs](mfa_find_oovs) %} with the following parameters:
->    - {% icon param-file %} *"Corpus Archive"*: `output` (Input dataset)
+>    - {% icon param-file %} *"Corpus Archive"*: `the_fox_and_the_grapes.zip` (Uploaded dataset)
 >    - *"Dictionary Source"*: `Use a built-in MFA Dictionary`
 >        - *"Select Dictionary"*: `English Us (ARPA)`
 >- *"Speaker Characters"*: `0`
 >
 > 2. Rename the output file for clarity:
->    - Click on the dataset produced by MFA Find OOVs
+>    - Click on the dataset you uploaded
 >    - Click the {% icon galaxy-pencil %} (edit) icon
 >    - Change the name to `OOVs_english_us` or similar
 >    - This will help you identify this as the out-of-vocabulary words file
@@ -155,7 +155,6 @@ In order to generate the  pronunciations of the OOVs, we need the single file oo
 >    >
 >    > Double-check the OOVs found file and make sure that none of the OOVs are typos. To do so, click on the {% icon galaxy-eye %} icon next to the dataset name to look at the file. If you do find a typo, you must correct this in the transcription, then upload the .TextGrid again and rerun the previous steps.
 >   {: .comment}
-
 >
 {: .hands_on}
 
@@ -175,12 +174,12 @@ Now we can generate pronunciations for each of the out of vocabulary words using
 >    > <comment-title> Check the pronunciations manually </comment-title>
 >    >
 >    > It is important to check the pronunciations manually. MFA can also offer multiple possible pronunciations for each word. Correct any incorrect pronunciations and delete any additional pronunciations that do not apply. To do so, you can use the editor which can be found in Visualization on the side bar. There you can select the generated dictionary and correct the pronunciation.
->    > {: .comment}
+>    {: .comment}
 >
 >    > <tip-title> Phonetic notation </tip-title>
 >    >
 >    > This tutorial uses ARPAbet phonetic notation for US English (e.g., AE, IH, K). Other models use IPA, which is the international standard for most other languages and varieties.
->    > {: .tip}
+>    {: .tip}
 >
 > 2. Rename the output file for clarity:
 >    - Click on the `output_dictionary` dataset produced by MFA G2P
@@ -210,7 +209,7 @@ Now we will add the new words to the built-in dictionary so that they are recogn
 >    > <comment-title> If corrections were uploaded </comment-title>
 >    >
 >    > If you uploaded a file with corrected pronunciations, you will have to select the uploaded file with the corrected dictionary entries as your dictionary to add.
->    > {: .comment}
+>    {: .comment}
 >
 > 2. Rename the output file for clarity:
 >    - Click on the `output` dataset produced by MFA Merge
