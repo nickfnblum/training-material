@@ -167,7 +167,7 @@ Now we can generate pronunciations for each of the out of vocabulary words using
 >
 > 1. {% tool [MFA G2P](mfa_g2p) %} with the following parameters:
 >    - *"Input Mode"*: `Word List (Text File)`
->        - {% icon param-file %} *"Word List"*: `unzipped_single` (output of **Unzip** {% icon tool %})
+>        - {% icon param-file %} *"Word List"*: `unkown_words` (output of **Unzip** {% icon tool %})
 >    - *"G2P Model Source"*: `Use a built-in MFA Model`
 >        - *"Select G2P Model"*: `English Us (ARPA)`
 >
