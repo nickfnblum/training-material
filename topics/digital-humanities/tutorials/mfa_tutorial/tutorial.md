@@ -67,7 +67,7 @@ Before uploading, verify your files meet these requirements:
 - {% icon param-check %} Audio format is WAV or MP3 (WAV is best for quality)
 - {% icon param-check %} TextGrid contains a single tier with short intervals, each representing one breath group
 - {% icon param-check %} Transcription text matches the actual spoken content (typos will cause alignment errors)
-- {% icon param-check %} Speaker ID prefix is consistent (e.g. all files start with 2-3 character speaker code)
+- {% icon param-check %} Speaker ID prefix is consistent, if present (e.g. all files start with 2-3 character speaker code)
 - {% icon param-check %} Files are compressed into a single .zip archive
 
 The following example file matches the above criteria and will be used in the next steps.
@@ -216,7 +216,7 @@ Now we will add the new words to the built-in dictionary so that they are recogn
 
 ## Sub-step with **MFA Align**
 
-Now we're ready to align the pronunciations with the audio. Since we only have one spekaer and no spekaer ID, we leave the number of spekaer characters at 0. If you have a spekaer ID at the start of your file name, then select the number of characters corresponding to the speaker ID.qq
+Now we're ready to align the pronunciations with the audio. Since we only have one spekaer and no spekaer ID, we leave the number of spekaer characters at 0. If you have a spekaer ID at the start of your file name, then select the number of characters corresponding to the speaker ID.
 
 > <hands-on-title> Align Audio and Pronounciation </hands-on-title>
 >
@@ -274,7 +274,7 @@ Now we're ready to align the pronunciations with the audio. Since we only have o
 
 Once you have aligned TextGrids, you can:
 
-- **Measure vowel formants:** Extract and analyze vowel characteristics from aligned vowel intervals. To do so, you can use new_fave.
+- **Measure vowel formants:** Extract and analyze vowel characteristics from aligned vowel intervals. To do so, you can use new-fave.
 - **Compare pronunciations:** Analyze variation across speakers or time
 - **Assess speech rate:** Measure duration of phonemes or words to study articulation speed
 - **Study consonant voicing:** Use the precise time boundaries to measure voice onset time (VOT)
