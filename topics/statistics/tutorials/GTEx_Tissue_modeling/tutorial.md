@@ -19,6 +19,8 @@ contributors:
 - paulocilasjr
 - allissadillman
 - nakucher
+- afpybus
+- qchiujunhao
 - jgoecks
 tags:
 - GTEx
@@ -28,11 +30,11 @@ tags:
 - Deep Learning
 ---
 
-Deep learning models are especially powerful for image classification because they can learn visual patterns directly from pixels. Instead of asking a researcher to define every important feature by hand, a deep learning model can discover combinations of edges, textures, shapes, and higher-level image structures that help separate one class from another. Galaxy's Image Learner tool makes this strategy accessible from a web interface: users provide images, labels, and training settings, and Galaxy runs the deep learning workflow.
+Convolutional neural networks can learn hierarchical features directly from image pixels, making them powerful tools for image classification. This capability has motivated researchers to encode genomic and other non-image data as image-like representations that can be analyzed with image-based deep learning models {% cite Sharma2019 Zhang2024 %}. In particular, RNA-seq gene expression profiles have been transformed into two-dimensional images and classified by fine-tuning pretrained convolutional neural networks {% cite Alharbi2020 %}. Galaxy's Image Learner makes this general strategy accessible through a web interface in which users provide images, labels, and training settings.
 
-In this tutorial, we use that image-learning strategy in an unusual but useful way. GTEx gene expression data are normally stored as tables, where each sample has thousands of gene-level TPM values. We transform each sample's expression vector into a grayscale image, then train Image Learner to classify the tissue of origin. This lets us explore two techniques at once: preparing image datasets for deep learning in Galaxy, and converting high-dimensional tabular biological data into an image-like representation that can be modeled with image classifiers.
+In this tutorial, we apply that strategy to GTEx gene expression data, which are normally represented as tables containing thousands of gene-level TPM values for each sample. We log-transform each sample's expression vector, place the values into a fixed-order square array, save the array as a grayscale image, and train Image Learner to predict the tissue of origin. This simple transformation is intended as a teaching example: unlike methods that arrange related features near one another {% cite Sharma2019 %}, the spatial relationships in these images are determined by gene order and should not be interpreted as biological proximity.
 
-The fastest path uses prepared files from Zenodo, so you can focus on running Image Learner and interpreting the results. An optional section shows how the images were generated from the raw GTEx v11 files, so you can rebuild the dataset, change the selected tissues, or test different sample sizes.
+The main tutorial uses prepared files from Zenodo so that you can focus on configuring Image Learner, training the tissue classifier, and interpreting its outputs. An optional section explains how to generate the images and labels from the raw GTEx v11 files, allowing you to rebuild the dataset, select different tissues, change the number of samples per tissue, or explore alternative preprocessing choices.
 
 > <agenda-title></agenda-title>
 >
