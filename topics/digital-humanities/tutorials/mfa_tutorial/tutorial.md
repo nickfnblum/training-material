@@ -203,7 +203,7 @@ Now we will add the new words to the built-in dictionary so that they are recogn
 >        - *"Select Dictionary"*: `English Us (ARPA)`
 >    - In *"Dictionary to add"*:
 >        - {% icon param-repeat %} *"Insert Dictionary to add"*
->            - {% icon param-file %} *"MFA dictionary"*: `output_dictionary` (output of **MFA G2P** {% icon tool %})
+>            - {% icon param-file %} *"MFA dictionary"*: `generated_pronunciations_oovs` (output of **MFA G2P** {% icon tool %})
 >
 >
 >    > <comment-title> If corrections were uploaded </comment-title>
