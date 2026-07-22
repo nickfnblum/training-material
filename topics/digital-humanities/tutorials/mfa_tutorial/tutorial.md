@@ -37,7 +37,7 @@ To achieve this, MFA has acoustic models and pronunciation dictionaries for nume
 which can be selected in Galaxy. 
 
 The tool requires an audio or video file and an orthographic transcription as a TextGrid file. 
-Audio can be transcribed using e.g. {% cite wittenburg-etal-2006-elan %} or {% cite Praat %}. Speech should be segmented into breath groups (the speech in between two breaths) and the transcript exported as a TextGrid. The audio file and TextGrid should then be compressed into one .zip file to be uploaded into Galaxy.
+Audio can be transcribed using e.g. Elan {% cite wittenburg-etal-2006-elan %} or Praat {% cite Praat %}. Speech should be segmented into breath groups (the speech in between two breaths) and the transcript exported as a TextGrid. The audio file and TextGrid should then be compressed into one .zip file to be uploaded into Galaxy.
 
 
 > <agenda-title></agenda-title>
@@ -51,10 +51,8 @@ Audio can be transcribed using e.g. {% cite wittenburg-etal-2006-elan %} or {% c
 
 # Preprocessing
 
-Audio or video files must first be segmented and transcribed using e.g. 
-{% cite Praat %} or {% cite wittenburg-etal-2006-elan %} and the transcript 
-exported as a TextGrid (alternatively as a .lab/.txt file but 
-these must be pasted in as a single line). The TextGrid should contain a single 
+Audio or video files must first be segmented and transcribed using e.g. Elan {% cite wittenburg-etal-2006-elan %} or Praat
+{% cite Praat %} and the transcript exported as a TextGrid (alternatively as a .lab/.txt file but these must be pasted in as a single line). The TextGrid should contain a single 
 tier with short intervals (a breath gorup). Each interval should correspond to an utterance in the audio file. The tier name can be a speaker ID (though this is not necessary).
 
 
@@ -77,6 +75,7 @@ Before uploading, verify your files meet these requirements:
 - {% icon param-check %} Speaker ID prefix is consistent (e.g. all files start with 2-3 character speaker code)
 - {% icon param-check %} Files are compressed into a single .zip archive
 
+The following example file matches the above criteria and will be used in the next steps.
 
 ## Uploading the data
 > <hands-on-title> Data Upload </hands-on-title>
@@ -115,13 +114,13 @@ in our dictionary. MFA offers the Find OOVs (out of vocabulary words) tool to do
 
 ## Sub-step with **MFA Find OOVs**
 
-> <hands-on-title> Find out-of-vocabulary-words </hands-on-title>
+> <hands-on-title> Find out-of-vocabulary words </hands-on-title>
 >
 > 1. {% tool [MFA Find OOVs](mfa_find_oovs) %} with the following parameters:
 >    - {% icon param-file %} *"Corpus Archive"*: `the_fox_and_the_grapes.zip` (Uploaded dataset)
 >    - *"Dictionary Source"*: `Use a built-in MFA Dictionary`
 >        - *"Select Dictionary"*: `English Us (ARPA)`
->- *"Speaker Characters"*: `0`
+>    - *"Speaker Characters"*: `0`
 >
 > 2. Rename the output file for clarity:
 >    - Click on the dataset you uploaded
@@ -140,16 +139,15 @@ In order to generate the  pronunciations of the OOVs, we need the single file oo
 > <hands-on-title> Unzipping your file </hands-on-title>
 >
 > 1. {% tool [Unzip a file](toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy5) %} with the following parameters:
->    - {% icon param-file %} *"Input file"*: `output_archive` (output of **MFA Find OOVs** {% icon tool %})
+>    - {% icon param-file %} *"Input file"*: `OOVs_english_us` (output of **MFA Find OOVs** {% icon tool %})
 >    - *"What to extract"*: `Single file`
 >        - *"File path"*: `oovs_found_english_us_arpa.txt`
 >
-2. Rename the output file for clarity:
+> 2. Rename the output file for clarity:
 >    - Click on the dataset produced by MFA Find OOVs
 >    - Click the {% icon galaxy-pencil %} (edit) icon
 >    - Change the name to `unknown_words` or similar
 >    - This will help you identify this as the out-of-vocabulary words file
->
 >
 >    > <comment-title> Check the OOVs </comment-title>
 >    >
@@ -167,7 +165,7 @@ Now we can generate pronunciations for each of the out of vocabulary words using
 >
 > 1. {% tool [MFA G2P](mfa_g2p) %} with the following parameters:
 >    - *"Input Mode"*: `Word List (Text File)`
->        - {% icon param-file %} *"Word List"*: `unkown_words` (output of **Unzip** {% icon tool %})
+>        - {% icon param-file %} *"Word List"*: `unknown_words` (output of **Unzip** {% icon tool %})
 >    - *"G2P Model Source"*: `Use a built-in MFA Model`
 >        - *"Select G2P Model"*: `English Us (ARPA)`
 >
