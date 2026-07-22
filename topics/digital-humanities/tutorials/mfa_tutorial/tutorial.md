@@ -1,4 +1,9 @@
+---
+layout: tutorial_hands_on
+title: Montreal Forced Aligner
+level: Introductory
 zenodo_link: https://zenodo.org/records/21371207
+questions:
 questions:
   - How can you use Montreal Forced Aligner to align an audio and a TextGrid file in Galaxy?
 objectives:
