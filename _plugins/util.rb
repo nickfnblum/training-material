@@ -89,8 +89,10 @@ ALLOWED_SHORT_IDS = [
   'master2pgSnp',
   'metabolicmine',#
   'mfa_align',
+  'mfa_find_oovs',
   'mfa_g2p',
   'mfa_merge',
+  'mfa_validate',
   'microbial_import1',
   'modENCODEfly',
   'modENCODEworm',
