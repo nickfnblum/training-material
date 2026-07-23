@@ -124,14 +124,16 @@ SAM3 is a text-guided segmentation model. It automatically detects and segments 
 >
 >    - {% icon param-file %} *"Model data"*: `Segment Anything Model 3 (SAM 3)` (default)
 >    - {% icon param-select %} *"Input type"*: `One video`
->    - {% icon param-file %} *"Input video file"*: `1: Lieujaune-PorzBreign-GOPR5167_Edited.mp4`
->    - {% icon param-select %} *"Video quality"*: `Original quality (lossles)` (default)
->    - {% icon param-select %} *"Additional output formats"*: `Empty` (default)
->    - {% icon param-select %} *"Export individual frames"*: `Both annoted and raw frames`
+>        - {% icon param-file %} *"Input video file"*: `1: Lieujaune-PorzBreign-GOPR5167_Edited.mp4`
+>        - {% icon param-select %} *"Video quality"*: `Original quality (lossless)` (default)
+>        - {% icon param-select %} *"Additional output formats"*: `Empty` (default)
+>        - {% icon param-select %} *"Export individual frames"*: `Both annoted and raw frames`
 >    - {% icon param-text %} *"Text prompt"*: `fish`
 >    - {% icon version %} *"Confidence threshold"*: `0.5`
 >    - {% icon version %} *"Video frame stride"*: `5`
 >    - {% icon param-toggle %} *"Show bounding boxes on annotated output"*: `Yes`
+>    - {% icon param-toggle %}  *"Inference image size"*: `644 (default, balanced)` (default)
+>    - {% icon param-toggle %} *"Normalize outputs?"*: `No` (default)
 >    - {% icon param-toggle %} *"Normalize outputs?"*: `No` (default)
 >
 > 2. Click **Run Tool**
@@ -177,16 +179,16 @@ The **Edit COCO Annotation** tool lets you modify COCO annotations without openi
 > 1. {% tool [Edit COCO Annotation](toolshed.g2.bx.psu.edu/repos/bgruening/edit_coco_annotation/edit_coco_annotation/1.0.0+galaxy0) %} with these parameters:
 >
 >    - {% icon param-file %} *"COCO annotation file"*: `5: Annotation COCO `
->    - {% icon param-select %} *"Mode"*: `Keep - keep only listed IDs (remove all others)`
->    - {% icon param-repeat %} *"1: Track to keep"*
->        - {% icon param-text %} *"Track IDs"*: `0,4-6`
->        - {% icon param-text %} *"Rename"*: `Gobiusculus flavescens`
->        - {% icon param-text %} *"Frame min"*: `Empty` (default)
->        - {% icon param-text %} *"Frame max"*: `Empty` (default)
->    - {% icon param-repeat %} *"2: Track to keep"*
->        - {% icon param-text %} *"Track IDs"*: `2`
->        - {% icon param-text %} *"Rename"*: `Crenilabre`
->        - {% icon param-text %} *"Frame min"*: `Empty` (default)
+>        - {% icon param-repeat %} *"1: Track to keep"*
+>            - {% icon param-text %} *"Track IDs"*: `0,4-6`
+>            - {% icon param-text %} *"Rename"*: `Gobiusculus flavescens`
+>            - {% icon param-text %} *"Frame min"*: `Empty` (default)
+>            - {% icon param-text %} *"Frame max"*: `Empty` (default)
+>        - {% icon param-repeat %} *"2: Track to keep"*
+>            - {% icon param-text %} *"Track IDs"*: `2`
+>            - {% icon param-text %} *"Rename"*: `Crenilabre`
+>            - {% icon param-text %} *"Frame min"*: `Empty` (default)
+>            - {% icon param-text %} *"Frame max"*: `Empty` (default)
 >        - {% icon param-text %} *"Frame max"*: `Empty` (default)
 >
 >    > <comment-title>The same result in two steps</comment-title>
@@ -210,8 +212,8 @@ This tool lets you easily visualize a JSON file in COCO format, shown on top of 
 >
 > 1. {% tool [COCO Annotation Visualizer](toolshed.g2.bx.psu.edu/repos/bgruening/coco_annotation_visualizer/coco_annotation_visualizer/1.0.0) %} with these parameters:
 >
->    - {% icon param-select %} *"Input Type"*: `One Video`
->    - {% icon param-file %} *"Input video file"*: `1: Lieujaune-PorzBreign-GOPR5167_Edited.mp4`
+>        - {% icon param-file %} *"Input video file"*: `1: Lieujaune-PorzBreign-GOPR5167_Edited.mp4`
+>        - {% icon version %} *"Frame stride"*: `5`
 >    - {% icon version %} *"Frame stride"*: `5`
 >    - {% icon param-file %} *"COCO annotation file"*: `54: Edited COCO annotations`
 >    - {% icon param-text %} *"Filter categories"*: `Empty` (default)
@@ -225,7 +227,7 @@ This tool lets you easily visualize a JSON file in COCO format, shown on top of 
 >        - {% icon version %} *"Label font scale"*: `0.6` (default)
 >        - {% icon param-select %} *"Color mode"*: `Per instance (different color for each annotation)`
 >        - {% icon param-select %} *"Output image format"*: `PNG (lossless)` (default)
->    - {% icon param-select %} *"Output mode"*: `Both (frames and video)`
+>        - {% icon version %} *"Video frame rate (FPS)"*: `5.0`
 >    - {% icon version %} *"Video frame rate (FPS)"*: `5.0`
 >    - {% icon param-toggle %} *"Annotated frames only"*: `Yes` (default)
 >
